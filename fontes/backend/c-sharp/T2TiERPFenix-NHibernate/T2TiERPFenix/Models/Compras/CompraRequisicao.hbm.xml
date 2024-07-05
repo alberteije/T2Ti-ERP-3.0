@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CompraRequisicao" table="COMPRA_REQUISICAO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Descricao" column="DESCRICAO" />
+	<property name="DataRequisicao" column="DATA_REQUISICAO" />
+	<property name="Observacao" column="OBSERVACAO" />
+
+	<many-to-one name="CompraTipoRequisicao" class="CompraTipoRequisicao" column="ID_COMPRA_TIPO_REQUISICAO" />
+	<many-to-one name="Colaborador" class="Colaborador" column="ID_COLABORADOR" />
+
+	<bag name="ListaCompraRequisicaoDetalhe" table="compra_requisicao_detalhe" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_COMPRA_REQUISICAO"/>
+	  <one-to-many class="CompraRequisicaoDetalhe"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

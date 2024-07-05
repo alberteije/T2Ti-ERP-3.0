@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ViewSpedNfeItem" table="VIEW_SPED_NFE_ITEM" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Nome" column="NOME" />
+	<property name="Gtin" column="GTIN" />
+	<property name="Sigla" column="SIGLA" />
+	<property name="CodigoNcm" column="CODIGO_NCM" />
+
+	<many-to-one name="ProdutoUnidade" class="ProdutoUnidade" column="ID_PRODUTO_UNIDADE" />
+
+	    
+  </class>
+</hibernate-mapping>

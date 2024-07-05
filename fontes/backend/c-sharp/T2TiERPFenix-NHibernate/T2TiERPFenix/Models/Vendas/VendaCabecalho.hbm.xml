@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="VendaCabecalho" table="VENDA_CABECALHO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="DataVenda" column="DATA_VENDA" />
+	<property name="DataSaida" column="DATA_SAIDA" />
+	<property name="HoraSaida" column="HORA_SAIDA" />
+	<property name="NumeroFatura" column="NUMERO_FATURA" />
+	<property name="LocalEntrega" column="LOCAL_ENTREGA" />
+	<property name="LocalCobranca" column="LOCAL_COBRANCA" />
+	<property name="ValorSubtotal" column="VALOR_SUBTOTAL" />
+	<property name="TaxaComissao" column="TAXA_COMISSAO" />
+	<property name="ValorComissao" column="VALOR_COMISSAO" />
+	<property name="TaxaDesconto" column="TAXA_DESCONTO" />
+	<property name="ValorDesconto" column="VALOR_DESCONTO" />
+	<property name="ValorTotal" column="VALOR_TOTAL" />
+	<property name="TipoFrete" column="TIPO_FRETE" />
+	<property name="FormaPagamento" column="FORMA_PAGAMENTO" />
+	<property name="ValorFrete" column="VALOR_FRETE" />
+	<property name="ValorSeguro" column="VALOR_SEGURO" />
+	<property name="Observacao" column="OBSERVACAO" />
+	<property name="Situacao" column="SITUACAO" />
+	<property name="DiaFixoParcela" column="DIA_FIXO_PARCELA" />
+
+	<many-to-one name="VendaOrcamentoCabecalho" class="VendaOrcamentoCabecalho" column="ID_VENDA_ORCAMENTO_CABECALHO" />
+	<many-to-one name="VendaCondicoesPagamento" class="VendaCondicoesPagamento" column="ID_VENDA_CONDICOES_PAGAMENTO" />
+	<many-to-one name="NotaFiscalTipo" class="NotaFiscalTipo" column="ID_NOTA_FISCAL_TIPO" />
+	<many-to-one name="Cliente" class="Cliente" column="ID_CLIENTE" />
+	<many-to-one name="Transportadora" class="Transportadora" column="ID_TRANSPORTADORA" />
+	<many-to-one name="Vendedor" class="Vendedor" column="ID_VENDEDOR" />
+	<one-to-one name="VendaFrete" class="VendaFrete" property-ref="VendaCabecalho" cascade="all"/>
+
+	<bag name="ListaVendaComissao" table="venda_comissao" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_VENDA_CABECALHO"/>
+	  <one-to-many class="VendaComissao"/>
+	</bag>
+	<bag name="ListaVendaDetalhe" table="venda_detalhe" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_VENDA_CABECALHO"/>
+	  <one-to-many class="VendaDetalhe"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

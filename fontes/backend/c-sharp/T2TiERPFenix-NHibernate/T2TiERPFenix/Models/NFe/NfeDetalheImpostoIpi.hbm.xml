@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeDetalheImpostoIpi" table="NFE_DETALHE_IMPOSTO_IPI" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="CnpjProdutor" column="CNPJ_PRODUTOR" />
+	<property name="CodigoSeloIpi" column="CODIGO_SELO_IPI" />
+	<property name="QuantidadeSeloIpi" column="QUANTIDADE_SELO_IPI" />
+	<property name="EnquadramentoLegalIpi" column="ENQUADRAMENTO_LEGAL_IPI" />
+	<property name="CstIpi" column="CST_IPI" />
+	<property name="ValorBaseCalculoIpi" column="VALOR_BASE_CALCULO_IPI" />
+	<property name="QuantidadeUnidadeTributavel" column="QUANTIDADE_UNIDADE_TRIBUTAVEL" />
+	<property name="ValorUnidadeTributavel" column="VALOR_UNIDADE_TRIBUTAVEL" />
+	<property name="AliquotaIpi" column="ALIQUOTA_IPI" />
+	<property name="ValorIpi" column="VALOR_IPI" />
+
+	<many-to-one name="NfeDetalhe" class="NfeDetalhe" column="ID_NFE_DETALHE" unique="true" />
+
+	    
+  </class>
+</hibernate-mapping>

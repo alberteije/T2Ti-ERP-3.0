@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Cargo" table="CARGO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Nome" column="NOME" />
+	<property name="Descricao" column="DESCRICAO" />
+	<property name="Salario" column="SALARIO" />
+	<property name="Cbo1994" column="CBO_1994" />
+	<property name="Cbo2002" column="CBO_2002" />
+
+
+	    
+  </class>
+</hibernate-mapping>

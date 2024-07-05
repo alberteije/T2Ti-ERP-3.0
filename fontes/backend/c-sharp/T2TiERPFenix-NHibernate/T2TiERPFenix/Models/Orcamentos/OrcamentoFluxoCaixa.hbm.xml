@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="OrcamentoFluxoCaixa" table="ORCAMENTO_FLUXO_CAIXA" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdOrcFluxoCaixaPeriodo" column="ID_ORC_FLUXO_CAIXA_PERIODO" />
+	<property name="Nome" column="NOME" />
+	<property name="Descricao" column="DESCRICAO" />
+	<property name="DataInicial" column="DATA_INICIAL" />
+	<property name="NumeroPeriodos" column="NUMERO_PERIODOS" />
+	<property name="DataBase" column="DATA_BASE" />
+
+
+	    
+  </class>
+</hibernate-mapping>

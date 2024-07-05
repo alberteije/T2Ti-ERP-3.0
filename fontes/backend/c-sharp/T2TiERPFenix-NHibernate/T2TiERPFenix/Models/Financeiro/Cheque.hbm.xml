@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Cheque" table="CHEQUE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Numero" column="NUMERO" />
+	<property name="StatusCheque" column="STATUS_CHEQUE" />
+	<property name="DataStatus" column="DATA_STATUS" />
+
+
+	<many-to-one name="TalonarioCheque" class="TalonarioCheque" column="ID_TALONARIO_CHEQUE" />
+	    
+  </class>
+</hibernate-mapping>

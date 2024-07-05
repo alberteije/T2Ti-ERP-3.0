@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CteCarga" table="CTE_CARGA" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="CodigoUnidadeMedida" column="CODIGO_UNIDADE_MEDIDA" />
+	<property name="TipoMedida" column="TIPO_MEDIDA" />
+	<property name="Quantidade" column="QUANTIDADE" />
+
+
+	<many-to-one name="CteCabecalho" class="CteCabecalho" column="ID_CTE_CABECALHO" />
+	    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TabelaPreco" table="TABELA_PRECO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Nome" column="NOME" />
+	<property name="Principal" column="PRINCIPAL" />
+	<property name="Coeficiente" column="COEFICIENTE" />
+
+
+	<bag name="ListaTabelaPrecoProduto" table="tabela_preco_produto" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_TABELA_PRECO"/>
+	  <one-to-many class="TabelaPrecoProduto"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

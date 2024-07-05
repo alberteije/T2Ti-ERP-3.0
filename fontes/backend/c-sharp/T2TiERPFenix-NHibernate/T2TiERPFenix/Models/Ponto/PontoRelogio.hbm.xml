@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PontoRelogio" table="PONTO_RELOGIO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Localizacao" column="LOCALIZACAO" />
+	<property name="Marca" column="MARCA" />
+	<property name="Fabricante" column="FABRICANTE" />
+	<property name="NumeroSerie" column="NUMERO_SERIE" />
+	<property name="Utilizacao" column="UTILIZACAO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

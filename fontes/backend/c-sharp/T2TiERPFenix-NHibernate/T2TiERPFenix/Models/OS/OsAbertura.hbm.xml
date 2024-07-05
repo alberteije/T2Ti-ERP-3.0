@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="OsAbertura" table="OS_ABERTURA" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Numero" column="NUMERO" />
+	<property name="DataInicio" column="DATA_INICIO" />
+	<property name="HoraInicio" column="HORA_INICIO" />
+	<property name="DataPrevisao" column="DATA_PREVISAO" />
+	<property name="HoraPrevisao" column="HORA_PREVISAO" />
+	<property name="DataFim" column="DATA_FIM" />
+	<property name="HoraFim" column="HORA_FIM" />
+	<property name="NomeContato" column="NOME_CONTATO" />
+	<property name="FoneContato" column="FONE_CONTATO" />
+	<property name="ObservacaoCliente" column="OBSERVACAO_CLIENTE" />
+	<property name="ObservacaoAbertura" column="OBSERVACAO_ABERTURA" />
+
+	<many-to-one name="OsStatus" class="OsStatus" column="ID_OS_STATUS" />
+	<many-to-one name="Cliente" class="Cliente" column="ID_CLIENTE" />
+	<many-to-one name="Colaborador" class="Colaborador" column="ID_COLABORADOR" />
+
+	<bag name="ListaOsAberturaEquipamento" table="os_abertura_equipamento" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_OS_ABERTURA"/>
+	  <one-to-many class="OsAberturaEquipamento"/>
+	</bag>
+	<bag name="ListaOsEvolucao" table="os_evolucao" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_OS_ABERTURA"/>
+	  <one-to-many class="OsEvolucao"/>
+	</bag>
+	<bag name="ListaOsProdutoServico" table="os_produto_servico" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_OS_ABERTURA"/>
+	  <one-to-many class="OsProdutoServico"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

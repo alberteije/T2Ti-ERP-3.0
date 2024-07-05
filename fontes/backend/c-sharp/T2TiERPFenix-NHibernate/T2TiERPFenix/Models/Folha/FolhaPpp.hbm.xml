@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FolhaPpp" table="FOLHA_PPP" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Observacao" column="OBSERVACAO" />
+
+	<many-to-one name="Colaborador" class="Colaborador" column="ID_COLABORADOR" />
+
+	<bag name="ListaFolhaPppAtividade" table="folha_ppp_atividade" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_FOLHA_PPP"/>
+	  <one-to-many class="FolhaPppAtividade"/>
+	</bag>
+	<bag name="ListaFolhaPppCat" table="folha_ppp_cat" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_FOLHA_PPP"/>
+	  <one-to-many class="FolhaPppCat"/>
+	</bag>
+	<bag name="ListaFolhaPppExameMedico" table="folha_ppp_exame_medico" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_FOLHA_PPP"/>
+	  <one-to-many class="FolhaPppExameMedico"/>
+	</bag>
+	<bag name="ListaFolhaPppFatorRisco" table="folha_ppp_fator_risco" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_FOLHA_PPP"/>
+	  <one-to-many class="FolhaPppFatorRisco"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

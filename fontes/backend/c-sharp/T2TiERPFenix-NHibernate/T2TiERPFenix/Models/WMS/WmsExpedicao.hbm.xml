@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="WmsExpedicao" table="WMS_EXPEDICAO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdWmsOrdemSeparacaoDet" column="ID_WMS_ORDEM_SEPARACAO_DET" />
+	<property name="IdWmsArmazenamento" column="ID_WMS_ARMAZENAMENTO" />
+	<property name="Quantidade" column="QUANTIDADE" />
+	<property name="DataSaida" column="DATA_SAIDA" />
+
+
+	    
+  </class>
+</hibernate-mapping>

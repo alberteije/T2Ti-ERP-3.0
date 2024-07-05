@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="WmsAgendamento" table="WMS_AGENDAMENTO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="DataOperacao" column="DATA_OPERACAO" />
+	<property name="HoraOperacao" column="HORA_OPERACAO" />
+	<property name="LocalOperacao" column="LOCAL_OPERACAO" />
+	<property name="QuantidadeVolume" column="QUANTIDADE_VOLUME" />
+	<property name="PesoTotalVolume" column="PESO_TOTAL_VOLUME" />
+	<property name="QuantidadePessoa" column="QUANTIDADE_PESSOA" />
+	<property name="QuantidadeHora" column="QUANTIDADE_HORA" />
+
+
+	    
+  </class>
+</hibernate-mapping>

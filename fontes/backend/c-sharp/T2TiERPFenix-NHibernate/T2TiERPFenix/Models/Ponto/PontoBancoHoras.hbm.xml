@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PontoBancoHoras" table="PONTO_BANCO_HORAS" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdColaborador" column="ID_COLABORADOR" />
+	<property name="DataTrabalho" column="DATA_TRABALHO" />
+	<property name="Quantidade" column="QUANTIDADE" />
+	<property name="Situacao" column="SITUACAO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

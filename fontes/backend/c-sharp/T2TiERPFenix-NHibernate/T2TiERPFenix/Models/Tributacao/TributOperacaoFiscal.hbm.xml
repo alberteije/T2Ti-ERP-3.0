@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TributOperacaoFiscal" table="TRIBUT_OPERACAO_FISCAL" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Descricao" column="DESCRICAO" />
+	<property name="DescricaoNaNf" column="DESCRICAO_NA_NF" />
+	<property name="Cfop" column="CFOP" />
+	<property name="Observacao" column="OBSERVACAO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="VendaDetalhe" table="VENDA_DETALHE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Quantidade" column="QUANTIDADE" />
+	<property name="ValorUnitario" column="VALOR_UNITARIO" />
+	<property name="ValorSubtotal" column="VALOR_SUBTOTAL" />
+	<property name="TaxaDesconto" column="TAXA_DESCONTO" />
+	<property name="ValorDesconto" column="VALOR_DESCONTO" />
+	<property name="ValorTotal" column="VALOR_TOTAL" />
+
+	<many-to-one name="Produto" class="Produto" column="ID_PRODUTO" />
+
+	<many-to-one name="VendaCabecalho" class="VendaCabecalho" column="ID_VENDA_CABECALHO" />
+	    
+  </class>
+</hibernate-mapping>

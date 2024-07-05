@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CtResultadoNtFinanceira" table="CT_RESULTADO_NT_FINANCEIRA" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdCentroResultado" column="ID_CENTRO_RESULTADO" />
+	<property name="IdFinNaturezaFinanceira" column="ID_FIN_NATUREZA_FINANCEIRA" />
+	<property name="PercentualRateio" column="PERCENTUAL_RATEIO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

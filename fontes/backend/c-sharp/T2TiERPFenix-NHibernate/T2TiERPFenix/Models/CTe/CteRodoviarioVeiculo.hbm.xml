@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CteRodoviarioVeiculo" table="CTE_RODOVIARIO_VEICULO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdCteRodoviario" column="ID_CTE_RODOVIARIO" />
+	<property name="CodigoInterno" column="CODIGO_INTERNO" />
+	<property name="Renavam" column="RENAVAM" />
+	<property name="Placa" column="PLACA" />
+	<property name="Tara" column="TARA" />
+	<property name="CapacidadeKg" column="CAPACIDADE_KG" />
+	<property name="CapacidadeM3" column="CAPACIDADE_M3" />
+	<property name="TipoPropriedade" column="TIPO_PROPRIEDADE" />
+	<property name="TipoVeiculo" column="TIPO_VEICULO" />
+	<property name="TipoRodado" column="TIPO_RODADO" />
+	<property name="TipoCarroceria" column="TIPO_CARROCERIA" />
+	<property name="Uf" column="UF" />
+	<property name="ProprietarioCpf" column="PROPRIETARIO_CPF" />
+	<property name="ProprietarioCnpj" column="PROPRIETARIO_CNPJ" />
+	<property name="ProprietarioRntrc" column="PROPRIETARIO_RNTRC" />
+	<property name="ProprietarioNome" column="PROPRIETARIO_NOME" />
+	<property name="ProprietarioIe" column="PROPRIETARIO_IE" />
+	<property name="ProprietarioUf" column="PROPRIETARIO_UF" />
+	<property name="ProprietarioTipo" column="PROPRIETARIO_TIPO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

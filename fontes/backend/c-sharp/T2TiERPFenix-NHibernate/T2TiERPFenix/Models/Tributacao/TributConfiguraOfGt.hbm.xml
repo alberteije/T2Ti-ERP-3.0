@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TributConfiguraOfGt" table="TRIBUT_CONFIGURA_OF_GT" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+
+	<one-to-one name="TributCofins" class="TributCofins" property-ref="TributConfiguraOfGt" cascade="all"/>
+	<one-to-one name="TributIpi" class="TributIpi" property-ref="TributConfiguraOfGt" cascade="all"/>
+	<one-to-one name="TributPis" class="TributPis" property-ref="TributConfiguraOfGt" cascade="all"/>
+	<many-to-one name="TributGrupoTributario" class="TributGrupoTributario" column="ID_TRIBUT_GRUPO_TRIBUTARIO" />
+	<many-to-one name="TributOperacaoFiscal" class="TributOperacaoFiscal" column="ID_TRIBUT_OPERACAO_FISCAL" />
+
+	<bag name="ListaTributIcmsUf" table="tribut_icms_uf" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_TRIBUT_CONFIGURA_OF_GT"/>
+	  <one-to-many class="TributIcmsUf"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

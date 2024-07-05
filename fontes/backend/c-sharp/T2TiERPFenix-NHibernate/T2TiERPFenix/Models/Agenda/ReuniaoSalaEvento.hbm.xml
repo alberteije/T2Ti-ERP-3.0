@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ReuniaoSalaEvento" table="REUNIAO_SALA_EVENTO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdAgendaCompromisso" column="ID_AGENDA_COMPROMISSO" />
+	<property name="IdReuniaoSala" column="ID_REUNIAO_SALA" />
+	<property name="DataReserva" column="DATA_RESERVA" />
+
+
+	    
+  </class>
+</hibernate-mapping>

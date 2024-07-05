@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="VendedorMeta" table="VENDEDOR_META" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="PeriodoMeta" column="PERIODO_META" />
+	<property name="MetaOrcada" column="META_ORCADA" />
+	<property name="MetaRealizada" column="META_REALIZADA" />
+	<property name="DataInicio" column="DATA_INICIO" />
+	<property name="DataFim" column="DATA_FIM" />
+
+	<many-to-one name="Vendedor" class="Vendedor" column="ID_VENDEDOR" />
+	<many-to-one name="Cliente" class="Cliente" column="ID_CLIENTE" />
+
+	    
+  </class>
+</hibernate-mapping>

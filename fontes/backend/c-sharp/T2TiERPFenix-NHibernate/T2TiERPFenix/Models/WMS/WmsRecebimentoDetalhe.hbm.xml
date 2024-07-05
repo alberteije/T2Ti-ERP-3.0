@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="WmsRecebimentoDetalhe" table="WMS_RECEBIMENTO_DETALHE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdWmsRecebimentoCabecalho" column="ID_WMS_RECEBIMENTO_CABECALHO" />
+	<property name="IdProduto" column="ID_PRODUTO" />
+	<property name="QuantidadeVolume" column="QUANTIDADE_VOLUME" />
+	<property name="QuantidadeItemPorVolume" column="QUANTIDADE_ITEM_POR_VOLUME" />
+	<property name="QuantidadeRecebida" column="QUANTIDADE_RECEBIDA" />
+	<property name="Destino" column="DESTINO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeTransporte" table="NFE_TRANSPORTE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="ModalidadeFrete" column="MODALIDADE_FRETE" />
+	<property name="Cnpj" column="CNPJ" />
+	<property name="Cpf" column="CPF" />
+	<property name="Nome" column="NOME" />
+	<property name="InscricaoEstadual" column="INSCRICAO_ESTADUAL" />
+	<property name="Endereco" column="ENDERECO" />
+	<property name="NomeMunicipio" column="NOME_MUNICIPIO" />
+	<property name="Uf" column="UF" />
+	<property name="ValorServico" column="VALOR_SERVICO" />
+	<property name="ValorBcRetencaoIcms" column="VALOR_BC_RETENCAO_ICMS" />
+	<property name="AliquotaRetencaoIcms" column="ALIQUOTA_RETENCAO_ICMS" />
+	<property name="ValorIcmsRetido" column="VALOR_ICMS_RETIDO" />
+	<property name="Cfop" column="CFOP" />
+	<property name="Municipio" column="MUNICIPIO" />
+	<property name="PlacaVeiculo" column="PLACA_VEICULO" />
+	<property name="UfVeiculo" column="UF_VEICULO" />
+	<property name="RntcVeiculo" column="RNTC_VEICULO" />
+
+	<many-to-one name="NfeCabecalho" class="NfeCabecalho" column="ID_NFE_CABECALHO" unique="true" />
+	<many-to-one name="Transportadora" class="Transportadora" column="ID_TRANSPORTADORA" />
+
+	<bag name="ListaNfeTransporteReboque" table="nfe_transporte_reboque" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_NFE_TRANSPORTE"/>
+	  <one-to-many class="NfeTransporteReboque"/>
+	</bag>
+	<bag name="ListaNfeTransporteVolume" table="nfe_transporte_volume" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_NFE_TRANSPORTE"/>
+	  <one-to-many class="NfeTransporteVolume"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

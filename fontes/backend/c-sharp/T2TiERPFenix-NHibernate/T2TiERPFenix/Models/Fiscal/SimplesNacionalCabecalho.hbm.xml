@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SimplesNacionalCabecalho" table="SIMPLES_NACIONAL_CABECALHO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="VigenciaInicial" column="VIGENCIA_INICIAL" />
+	<property name="VigenciaFinal" column="VIGENCIA_FINAL" />
+	<property name="Anexo" column="ANEXO" />
+	<property name="Tabela" column="TABELA" />
+
+
+	    
+  </class>
+</hibernate-mapping>

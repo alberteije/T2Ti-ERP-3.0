@@ -1,0 +1,18 @@
+targets:
+  $default:
+    builders:
+      drift_dev:
+        options:
+          named_parameters: true
+          data_class_to_companions: false
+      build_web_compilers:entrypoint:
+        generate_for:
+          - web/**.dart
+        options:
+          compiler: dart2js
+        dev_options:
+          dart2js_args:
+            - --no-minify
+        release_options:
+          dart2js_args:
+            - -O4

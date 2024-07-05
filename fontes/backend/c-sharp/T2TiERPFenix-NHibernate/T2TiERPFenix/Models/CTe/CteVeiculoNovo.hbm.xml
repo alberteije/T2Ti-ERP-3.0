@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CteVeiculoNovo" table="CTE_VEICULO_NOVO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdCteCabecalho" column="ID_CTE_CABECALHO" />
+	<property name="Chassi" column="CHASSI" />
+	<property name="Cor" column="COR" />
+	<property name="DescricaoCor" column="DESCRICAO_COR" />
+	<property name="CodigoMarcaModelo" column="CODIGO_MARCA_MODELO" />
+	<property name="ValorUnitario" column="VALOR_UNITARIO" />
+	<property name="ValorFrete" column="VALOR_FRETE" />
+
+
+	    
+  </class>
+</hibernate-mapping>

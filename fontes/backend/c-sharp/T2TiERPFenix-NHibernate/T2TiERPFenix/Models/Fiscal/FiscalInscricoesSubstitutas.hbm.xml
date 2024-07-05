@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FiscalInscricoesSubstitutas" table="FISCAL_INSCRICOES_SUBSTITUTAS" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Uf" column="UF" />
+	<property name="InscricaoEstadual" column="INSCRICAO_ESTADUAL" />
+	<property name="Pmpf" column="PMPF" />
+
+	<many-to-one name="FiscalParametro" class="FiscalParametro" column="ID_FISCAL_PARAMETROS" />
+
+	    
+  </class>
+</hibernate-mapping>

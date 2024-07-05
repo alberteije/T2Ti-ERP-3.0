@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="GedVersaoDocumento" table="GED_VERSAO_DOCUMENTO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Versao" column="VERSAO" />
+	<property name="DataVersao" column="DATA_VERSAO" />
+	<property name="HoraVersao" column="HORA_VERSAO" />
+	<property name="HashArquivo" column="HASH_ARQUIVO" />
+	<property name="Caminho" column="CAMINHO" />
+	<property name="Acao" column="ACAO" />
+
+	<many-to-one name="Colaborador" class="Colaborador" column="ID_COLABORADOR" />
+
+	<many-to-one name="GedDocumentoDetalhe" class="GedDocumentoDetalhe" column="ID_GED_DOCUMENTO_DETALHE" />
+	    
+  </class>
+</hibernate-mapping>

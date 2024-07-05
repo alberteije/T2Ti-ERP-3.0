@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="RequisicaoInternaDetalhe" table="REQUISICAO_INTERNA_DETALHE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Quantidade" column="QUANTIDADE" />
+
+	<many-to-one name="Produto" class="Produto" column="ID_PRODUTO" />
+
+	<many-to-one name="RequisicaoInternaCabecalho" class="RequisicaoInternaCabecalho" column="ID_REQUISICAO_INTERNA_CABECALHO" />
+	    
+  </class>
+</hibernate-mapping>

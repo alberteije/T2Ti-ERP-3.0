@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FinParcelaReceber" table="FIN_PARCELA_RECEBER" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="NumeroParcela" column="NUMERO_PARCELA" />
+	<property name="DataEmissao" column="DATA_EMISSAO" />
+	<property name="DataVencimento" column="DATA_VENCIMENTO" />
+	<property name="DataRecebimento" column="DATA_RECEBIMENTO" />
+	<property name="DescontoAte" column="DESCONTO_ATE" />
+	<property name="Valor" column="VALOR" />
+	<property name="TaxaJuro" column="TAXA_JURO" />
+	<property name="TaxaMulta" column="TAXA_MULTA" />
+	<property name="TaxaDesconto" column="TAXA_DESCONTO" />
+	<property name="ValorJuro" column="VALOR_JURO" />
+	<property name="ValorMulta" column="VALOR_MULTA" />
+	<property name="ValorDesconto" column="VALOR_DESCONTO" />
+	<property name="EmitiuBoleto" column="EMITIU_BOLETO" />
+	<property name="BoletoNossoNumero" column="BOLETO_NOSSO_NUMERO" />
+	<property name="ValorRecebido" column="VALOR_RECEBIDO" />
+	<property name="Historico" column="HISTORICO" />
+
+	<many-to-one name="FinStatusParcela" class="FinStatusParcela" column="ID_FIN_STATUS_PARCELA" />
+	<many-to-one name="FinTipoRecebimento" class="FinTipoRecebimento" column="ID_FIN_TIPO_RECEBIMENTO" />
+	<many-to-one name="FinChequeRecebido" class="FinChequeRecebido" column="ID_FIN_CHEQUE_RECEBIDO" />
+
+	<many-to-one name="FinLancamentoReceber" class="FinLancamentoReceber" column="ID_FIN_LANCAMENTO_RECEBER" />
+	    
+  </class>
+</hibernate-mapping>

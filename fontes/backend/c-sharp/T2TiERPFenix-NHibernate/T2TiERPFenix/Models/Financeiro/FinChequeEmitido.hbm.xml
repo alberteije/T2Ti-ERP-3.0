@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FinChequeEmitido" table="FIN_CHEQUE_EMITIDO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="DataEmissao" column="DATA_EMISSAO" />
+	<property name="BomPara" column="BOM_PARA" />
+	<property name="DataCompensacao" column="DATA_COMPENSACAO" />
+	<property name="Valor" column="VALOR" />
+	<property name="NominalA" column="NOMINAL_A" />
+
+	<many-to-one name="Cheque" class="Cheque" column="ID_CHEQUE" />
+
+	    
+  </class>
+</hibernate-mapping>

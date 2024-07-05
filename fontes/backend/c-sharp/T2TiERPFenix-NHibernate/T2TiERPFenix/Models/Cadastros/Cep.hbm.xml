@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Cep" table="CEP" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Numero" column="NUMERO" />
+	<property name="Logradouro" column="LOGRADOURO" />
+	<property name="Complemento" column="COMPLEMENTO" />
+	<property name="Bairro" column="BAIRRO" />
+	<property name="Municipio" column="MUNICIPIO" />
+	<property name="Uf" column="UF" />
+	<property name="CodigoIbgeMunicipio" column="CODIGO_IBGE_MUNICIPIO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

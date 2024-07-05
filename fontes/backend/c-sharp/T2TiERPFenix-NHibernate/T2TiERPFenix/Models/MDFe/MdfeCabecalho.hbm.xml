@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="MdfeCabecalho" table="MDFE_CABECALHO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Uf" column="UF" />
+	<property name="TipoAmbiente" column="TIPO_AMBIENTE" />
+	<property name="TipoEmitente" column="TIPO_EMITENTE" />
+	<property name="TipoTransportadora" column="TIPO_TRANSPORTADORA" />
+	<property name="Modelo" column="MODELO" />
+	<property name="Serie" column="SERIE" />
+	<property name="NumeroMdfe" column="NUMERO_MDFE" />
+	<property name="CodigoNumerico" column="CODIGO_NUMERICO" />
+	<property name="ChaveAcesso" column="CHAVE_ACESSO" />
+	<property name="DigitoVerificador" column="DIGITO_VERIFICADOR" />
+	<property name="Modal" column="MODAL" />
+	<property name="DataHoraEmissao" column="DATA_HORA_EMISSAO" />
+	<property name="TipoEmissao" column="TIPO_EMISSAO" />
+	<property name="ProcessoEmissao" column="PROCESSO_EMISSAO" />
+	<property name="VersaoProcessoEmissao" column="VERSAO_PROCESSO_EMISSAO" />
+	<property name="UfInicio" column="UF_INICIO" />
+	<property name="UfFim" column="UF_FIM" />
+	<property name="DataHoraPrevisaoViagem" column="DATA_HORA_PREVISAO_VIAGEM" />
+	<property name="QuantidadeTotalCte" column="QUANTIDADE_TOTAL_CTE" />
+	<property name="QuantidadeTotalNfe" column="QUANTIDADE_TOTAL_NFE" />
+	<property name="QuantidadeTotalMdfe" column="QUANTIDADE_TOTAL_MDFE" />
+	<property name="CodigoUnidadeMedida" column="CODIGO_UNIDADE_MEDIDA" />
+	<property name="PesoBrutoCarga" column="PESO_BRUTO_CARGA" />
+	<property name="ValorCarga" column="VALOR_CARGA" />
+	<property name="NumeroProtocolo" column="NUMERO_PROTOCOLO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

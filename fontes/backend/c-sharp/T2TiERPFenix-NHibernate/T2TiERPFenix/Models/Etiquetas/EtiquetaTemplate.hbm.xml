@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="EtiquetaTemplate" table="ETIQUETA_TEMPLATE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdEtiquetaLayout" column="ID_ETIQUETA_LAYOUT" />
+	<property name="Tabela" column="TABELA" />
+	<property name="Campo" column="CAMPO" />
+	<property name="Formato" column="FORMATO" />
+	<property name="QuantidadeRepeticoes" column="QUANTIDADE_REPETICOES" />
+	<property name="Filtro" column="FILTRO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

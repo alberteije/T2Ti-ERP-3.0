@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FolhaLancamentoDetalhe" table="FOLHA_LANCAMENTO_DETALHE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Origem" column="ORIGEM" />
+	<property name="Provento" column="PROVENTO" />
+	<property name="Desconto" column="DESCONTO" />
+
+	<many-to-one name="FolhaEvento" class="FolhaEvento" column="ID_FOLHA_EVENTO" />
+
+	<many-to-one name="FolhaLancamentoCabecalho" class="FolhaLancamentoCabecalho" column="ID_FOLHA_LANCAMENTO_CABECALHO" />
+	    
+  </class>
+</hibernate-mapping>

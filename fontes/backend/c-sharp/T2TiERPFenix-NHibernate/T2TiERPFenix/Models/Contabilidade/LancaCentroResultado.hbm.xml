@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="LancaCentroResultado" table="LANCA_CENTRO_RESULTADO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdCentroResultado" column="ID_CENTRO_RESULTADO" />
+	<property name="Valor" column="VALOR" />
+	<property name="Historico" column="HISTORICO" />
+	<property name="DataLancamento" column="DATA_LANCAMENTO" />
+	<property name="DataInclusao" column="DATA_INCLUSAO" />
+	<property name="OrigemDeRateio" column="ORIGEM_DE_RATEIO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

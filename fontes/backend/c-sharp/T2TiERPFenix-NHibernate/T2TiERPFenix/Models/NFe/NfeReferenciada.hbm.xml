@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeReferenciada" table="NFE_REFERENCIADA" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="ChaveAcesso" column="CHAVE_ACESSO" />
+
+
+	<many-to-one name="NfeCabecalho" class="NfeCabecalho" column="ID_NFE_CABECALHO" />
+	    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="MdfeInformacaoSeguro" table="MDFE_INFORMACAO_SEGURO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdMdfeCabecalho" column="ID_MDFE_CABECALHO" />
+	<property name="Responsavel" column="RESPONSAVEL" />
+	<property name="CnpjCpf" column="CNPJ_CPF" />
+	<property name="Seguradora" column="SEGURADORA" />
+	<property name="CnpjSeguradora" column="CNPJ_SEGURADORA" />
+	<property name="Apolice" column="APOLICE" />
+	<property name="Averbacao" column="AVERBACAO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

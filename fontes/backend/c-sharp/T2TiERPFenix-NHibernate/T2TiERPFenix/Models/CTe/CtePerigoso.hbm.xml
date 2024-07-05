@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CtePerigoso" table="CTE_PERIGOSO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdCteCabecalho" column="ID_CTE_CABECALHO" />
+	<property name="NumeroOnu" column="NUMERO_ONU" />
+	<property name="NomeApropriado" column="NOME_APROPRIADO" />
+	<property name="ClasseRisco" column="CLASSE_RISCO" />
+	<property name="GrupoEmbalagem" column="GRUPO_EMBALAGEM" />
+	<property name="QuantidadeTotalProduto" column="QUANTIDADE_TOTAL_PRODUTO" />
+	<property name="QuantidadeTipoVolume" column="QUANTIDADE_TIPO_VOLUME" />
+	<property name="PontoFulgor" column="PONTO_FULGOR" />
+
+
+	    
+  </class>
+</hibernate-mapping>

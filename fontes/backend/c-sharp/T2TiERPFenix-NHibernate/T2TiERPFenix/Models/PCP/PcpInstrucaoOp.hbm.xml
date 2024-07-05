@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PcpInstrucaoOp" table="PCP_INSTRUCAO_OP" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdPcpInstrucao" column="ID_PCP_INSTRUCAO" />
+	<property name="IdPcpOpCabecalho" column="ID_PCP_OP_CABECALHO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

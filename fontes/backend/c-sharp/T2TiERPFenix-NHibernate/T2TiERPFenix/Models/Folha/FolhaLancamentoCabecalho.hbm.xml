@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FolhaLancamentoCabecalho" table="FOLHA_LANCAMENTO_CABECALHO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Competencia" column="COMPETENCIA" />
+	<property name="Tipo" column="TIPO" />
+
+	<many-to-one name="Colaborador" class="Colaborador" column="ID_COLABORADOR" />
+
+	<bag name="ListaFolhaLancamentoDetalhe" table="folha_lancamento_detalhe" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_FOLHA_LANCAMENTO_CABECALHO"/>
+	  <one-to-many class="FolhaLancamentoDetalhe"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

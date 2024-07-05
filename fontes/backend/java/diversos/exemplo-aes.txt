@@ -1,0 +1,96 @@
+https://www.jdoodle.com/online-java-compiler/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.security.*;
+import javax.crypto.*;
+import javax.crypto.spec.*;
+
+public class CtrInitialIV
+{
+    
+    private static final String vetor = "#Seu-Vetor-aqui#";
+    
+    private static final int IV_LENGTH = 16;
+    
+    private static byte[] getVetorBytes() throws Exception {
+        return vetor.getBytes("UTF-8");
+    }
+    
+    private static byte[] getMasterPassword() throws Exception {
+        return "#Sua-Chave-de-32-caracteres-aqui".getBytes("UTF-8");
+    }
+    
+    private static void cifrar()  throws java.lang.Exception {
+	    String data = "delphi";
+	    
+		System.out.println("textoDecifrado="+data);
+		
+	    //Get Cipher Instance
+		Cipher cipher = Cipher.getInstance("AES/CTR/NoPadding");
+		
+        //Create SecretKeySpec
+        SecretKeySpec keySpec = new SecretKeySpec(getMasterPassword(), "AES");
+        
+        //Create IvParameterSpec
+        IvParameterSpec ivSpec = new IvParameterSpec(getVetorBytes());   
+        
+        //Initialize Cipher for ENCRYPT_MODE
+        cipher.init(Cipher.ENCRYPT_MODE, keySpec, ivSpec);
+        
+        //System.out.println(cipher.doFinal(data.getBytes("UTF-8")));
+        
+        byte[] dataParaBytes = data.getBytes("UTF-8"); // 'delphi' convertido para bytes
+        System.out.println("dataParaBytes="+dataParaBytes);
+        
+	    String decodedString = new String(dataParaBytes);
+	    System.out.println("decodedString="+decodedString);
+	    
+        byte[] resultado = cipher.doFinal(dataParaBytes); 
+        System.out.println("resultado="+resultado);
+
+	    String decodedString2 = new String(resultado);
+	    System.out.println("decodedString2="+decodedString2); // 'delphi' agora cifrado
+        
+		String base64output = Base64.getEncoder().encodeToString(resultado);
+
+		System.out.println("base64output="+base64output);
+    }
+	
+    private static void decifrar()  throws java.lang.Exception {
+	    String base64input = "XUxY7ash";
+	    System.out.println("base64input="+base64input);
+	    
+	    byte[] decodedBytes = Base64.getDecoder().decode(base64input);
+	    System.out.println("decodedBytes="+decodedBytes);
+	    
+	    String decodedString = new String(decodedBytes);
+	    System.out.println("decodedString="+decodedString);
+	    
+	    //Get Cipher Instance
+		Cipher cipher = Cipher.getInstance("AES/CTR/NoPadding");
+		
+        //Create SecretKeySpec
+        SecretKeySpec keySpec = new SecretKeySpec(getMasterPassword(), "AES");
+        
+        //Create IvParameterSpec
+        IvParameterSpec ivSpec = new IvParameterSpec(getVetorBytes()); 
+        
+        //Initialize Cipher for ENCRYPT_MODE
+        cipher.init(Cipher.DECRYPT_MODE, keySpec, ivSpec);
+        
+        //Perform Decryption
+        byte[] decryptedText = cipher.doFinal(decodedBytes);
+        
+        String textoDecifrado = new String(decryptedText);
+        
+		System.out.println("textoDecifrado="+textoDecifrado);
+    }
+    
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		cifrar();
+		decifrar();
+	}
+}

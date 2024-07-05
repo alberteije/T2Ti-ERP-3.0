@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeImportacaoDetalhe" table="NFE_IMPORTACAO_DETALHE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="NumeroAdicao" column="NUMERO_ADICAO" />
+	<property name="NumeroSequencial" column="NUMERO_SEQUENCIAL" />
+	<property name="CodigoFabricanteEstrangeiro" column="CODIGO_FABRICANTE_ESTRANGEIRO" />
+	<property name="ValorDesconto" column="VALOR_DESCONTO" />
+	<property name="Drawback" column="DRAWBACK" />
+
+
+	<many-to-one name="NfeDeclaracaoImportacao" class="NfeDeclaracaoImportacao" column="ID_NFE_DECLARACAO_IMPORTACAO" />
+	    
+  </class>
+</hibernate-mapping>

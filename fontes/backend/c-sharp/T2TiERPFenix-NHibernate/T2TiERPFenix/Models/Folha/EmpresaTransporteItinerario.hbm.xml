@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="EmpresaTransporteItinerario" table="EMPRESA_TRANSPORTE_ITINERARIO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdEmpresaTransporte" column="ID_EMPRESA_TRANSPORTE" />
+	<property name="Nome" column="NOME" />
+	<property name="Tarifa" column="TARIFA" />
+	<property name="Trajeto" column="TRAJETO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

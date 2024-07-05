@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeTransporteVolumeLacre" table="NFE_TRANSPORTE_VOLUME_LACRE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Numero" column="NUMERO" />
+
+
+	<many-to-one name="NfeTransporteVolume" class="NfeTransporteVolume" column="ID_NFE_TRANSPORTE_VOLUME" />
+	    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,242 @@
+<?php
+/*******************************************************************************
+Title: T2Ti ERP Fenix                                                                
+Description: Model relacionado à tabela [VENDEDOR_META] 
+                                                                                
+The MIT License                                                                 
+                                                                                
+Copyright: Copyright (C) 2020 T2Ti.COM                                          
+                                                                                
+Permission is hereby granted, free of charge, to any person                     
+obtaining a copy of this software and associated documentation                  
+files (the "Software"), to deal in the Software without                         
+restriction, including without limitation the rights to use,                    
+copy, modify, merge, publish, distribute, sublicense, and/or sell               
+copies of the Software, and to permit persons to whom the                       
+Software is furnished to do so, subject to the following                        
+conditions:                                                                     
+                                                                                
+The above copyright notice and this permission notice shall be                  
+included in all copies or substantial portions of the Software.                 
+                                                                                
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,                 
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES                 
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND                        
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT                     
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,                    
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING                    
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR                   
+OTHER DEALINGS IN THE SOFTWARE.                                                 
+                                                                                
+       The author may be contacted at:                                          
+           t2ti.com@gmail.com                                                   
+                                                                                
+@author Albert Eije (alberteije@gmail.com)                    
+@version 1.0.0
+*******************************************************************************/
+declare(strict_types=1);
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="VENDEDOR_META")
+ */
+class VendedorMeta extends ModelBase implements \JsonSerializable
+{
+	/**
+	 * @ORM\Id
+	 * @ORM\Column(type="integer")
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	private $id;
+
+	/**
+	 * @ORM\Column(type="string", name="PERIODO_META")
+	 */
+	private $periodoMeta;
+
+	/**
+	 * @ORM\Column(type="float", name="META_ORCADA")
+	 */
+	private $metaOrcada;
+
+	/**
+	 * @ORM\Column(type="float", name="META_REALIZADA")
+	 */
+	private $metaRealizada;
+
+	/**
+	 * @ORM\Column(type="date", name="DATA_INICIO")
+	 */
+	private $dataInicio;
+
+	/**
+	 * @ORM\Column(type="date", name="DATA_FIM")
+	 */
+	private $dataFim;
+
+
+    /**
+     * Relations
+     */
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Vendedor", fetch="EAGER")
+     * @ORM\JoinColumn(name="ID_VENDEDOR", referencedColumnName="id")
+     */
+    private $vendedor;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Cliente", fetch="EAGER")
+     * @ORM\JoinColumn(name="ID_CLIENTE", referencedColumnName="id")
+     */
+    private $cliente;
+
+
+    /**
+     * Gets e Sets
+     */
+
+    public function getId() 
+	{
+		return $this->id;
+	}
+
+	public function setId($id) 
+	{
+		$this->id = $id;
+	}
+
+    public function getPeriodoMeta() 
+	{
+		return $this->periodoMeta;
+	}
+
+	public function setPeriodoMeta($periodoMeta) 
+	{
+		$this->periodoMeta = $periodoMeta;
+	}
+
+    public function getMetaOrcada() 
+	{
+		return $this->metaOrcada;
+	}
+
+	public function setMetaOrcada($metaOrcada) 
+	{
+		$this->metaOrcada = $metaOrcada;
+	}
+
+    public function getMetaRealizada() 
+	{
+		return $this->metaRealizada;
+	}
+
+	public function setMetaRealizada($metaRealizada) 
+	{
+		$this->metaRealizada = $metaRealizada;
+	}
+
+    public function getDataInicio() 
+	{
+		if ($this->dataInicio != null) {
+			return $this->dataInicio->format('Y-m-d');
+		} else {
+			return null;
+		}
+	}
+	public function setDataInicio($dataInicio) 
+	{
+		$this->dataInicio = $dataInicio != null ? new \DateTime($dataInicio) : null;
+	}
+
+    public function getDataFim() 
+	{
+		if ($this->dataFim != null) {
+			return $this->dataFim->format('Y-m-d');
+		} else {
+			return null;
+		}
+	}
+	public function setDataFim($dataFim) 
+	{
+		$this->dataFim = $dataFim != null ? new \DateTime($dataFim) : null;
+	}
+
+    public function getVendedor(): ?Vendedor 
+	{
+		return $this->vendedor;
+	}
+
+	public function setVendedor(?Vendedor $vendedor) 
+	{
+		$this->vendedor = $vendedor;
+	}
+
+    public function getCliente(): ?Cliente 
+	{
+		return $this->cliente;
+	}
+
+	public function setCliente(?Cliente $cliente) 
+	{
+		$this->cliente = $cliente;
+	}
+
+
+    /**
+     * Constructor
+     */
+    public function __construct($objetoJson)
+    {
+        if (isset($objetoJson)) {
+            isset($objetoJson->id) ? $this->setId($objetoJson->id) : $this->setId(null);
+            $this->mapear($objetoJson);
+        }
+
+		
+    }
+
+    /**
+     * Mapping
+     */
+    public function mapear($objeto)
+    {
+        if (isset($objeto)) {
+			$this->setPeriodoMeta($objeto->periodoMeta);
+			$this->setMetaOrcada($objeto->metaOrcada);
+			$this->setMetaRealizada($objeto->metaRealizada);
+			$this->setDataInicio($objeto->dataInicio);
+			$this->setDataFim($objeto->dataFim);
+		}
+    }
+
+
+    /**
+     * Validation
+     */
+    public function validarObjetoRequisicao($objJson, $id)
+    {
+        return parent::validarObjeto($objJson, $id, 'VendedorMeta');
+    }
+
+
+    /**
+     * Serialization
+     * {@inheritdoc}
+     */
+    public function jsonSerialize()
+    {
+        return [
+			'id' => $this->getId(),
+			'periodoMeta' => $this->getPeriodoMeta(),
+			'metaOrcada' => $this->getMetaOrcada(),
+			'metaRealizada' => $this->getMetaRealizada(),
+			'dataInicio' => $this->getDataInicio(),
+			'dataFim' => $this->getDataFim(),
+			'vendedor' => $this->getVendedor(),
+			'cliente' => $this->getCliente(),
+        ];
+    }
+}

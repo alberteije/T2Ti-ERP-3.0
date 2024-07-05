@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Auditoria" table="AUDITORIA" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="DataRegistro" column="DATA_REGISTRO" />
+	<property name="HoraRegistro" column="HORA_REGISTRO" />
+	<property name="JanelaController" column="JANELA_CONTROLLER" />
+	<property name="Acao" column="ACAO" />
+	<property name="Conteudo" column="CONTEUDO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

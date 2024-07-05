@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Pessoa" table="PESSOA" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Nome" column="NOME" />
+	<property name="Tipo" column="TIPO" />
+	<property name="Site" column="SITE" />
+	<property name="Email" column="EMAIL" />
+	<property name="EhCliente" column="EH_CLIENTE" />
+	<property name="EhFornecedor" column="EH_FORNECEDOR" />
+	<property name="EhTransportadora" column="EH_TRANSPORTADORA" />
+	<property name="EhColaborador" column="EH_COLABORADOR" />
+	<property name="EhContador" column="EH_CONTADOR" />
+
+	<one-to-one name="Cliente" class="Cliente" property-ref="Pessoa" cascade="all"/>
+	<one-to-one name="Colaborador" class="Colaborador" property-ref="Pessoa" cascade="all"/>
+	<one-to-one name="Contador" class="Contador" property-ref="Pessoa" cascade="all"/>
+	<one-to-one name="Fornecedor" class="Fornecedor" property-ref="Pessoa" cascade="all"/>
+	<one-to-one name="PessoaFisica" class="PessoaFisica" property-ref="Pessoa" cascade="all"/>
+	<one-to-one name="PessoaJuridica" class="PessoaJuridica" property-ref="Pessoa" cascade="all"/>
+	<one-to-one name="Transportadora" class="Transportadora" property-ref="Pessoa" cascade="all"/>
+
+	<bag name="ListaPessoaContato" table="pessoa_contato" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_PESSOA"/>
+	  <one-to-many class="PessoaContato"/>
+	</bag>
+	<bag name="ListaPessoaEndereco" table="pessoa_endereco" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_PESSOA"/>
+	  <one-to-many class="PessoaEndereco"/>
+	</bag>
+	<bag name="ListaPessoaTelefone" table="pessoa_telefone" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_PESSOA"/>
+	  <one-to-many class="PessoaTelefone"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/01/12 14:23:40.000.397,=C:\Users\alber\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/01/12 14:30:49.000.163,C:\Users\alber\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\diversos\exemplo_aes_LockBox\Unit1.dfm</Transaction>
+    <Transaction>2022/01/12 14:30:49.000.163,C:\Users\alber\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\diversos\exemplo_aes_LockBox\Unit1.pas</Transaction>
+    <Transaction>2022/01/12 14:30:53.000.447,C:\Users\alber\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\diversos\exemplo_aes_LockBox\Project1.dproj</Transaction>
+    <Transaction>2022/01/12 15:58:13.000.152,=C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\diversos\exemplo_aes_LockBox\SynCrypto.pas</Transaction>
+    <Transaction>2022/01/12 16:18:05.000.054,C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\diversos\exemplo_aes_LockBox\SynCrypto.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

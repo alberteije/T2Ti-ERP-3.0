@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TributIcmsCustomDet" table="TRIBUT_ICMS_CUSTOM_DET" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="UfDestino" column="UF_DESTINO" />
+	<property name="Cfop" column="CFOP" />
+	<property name="Csosn" column="CSOSN" />
+	<property name="Cst" column="CST" />
+	<property name="ModalidadeBc" column="MODALIDADE_BC" />
+	<property name="Aliquota" column="ALIQUOTA" />
+	<property name="ValorPauta" column="VALOR_PAUTA" />
+	<property name="ValorPrecoMaximo" column="VALOR_PRECO_MAXIMO" />
+	<property name="Mva" column="MVA" />
+	<property name="PorcentoBc" column="PORCENTO_BC" />
+	<property name="ModalidadeBcSt" column="MODALIDADE_BC_ST" />
+	<property name="AliquotaInternaSt" column="ALIQUOTA_INTERNA_ST" />
+	<property name="AliquotaInterestadualSt" column="ALIQUOTA_INTERESTADUAL_ST" />
+	<property name="PorcentoBcSt" column="PORCENTO_BC_ST" />
+	<property name="AliquotaIcmsSt" column="ALIQUOTA_ICMS_ST" />
+	<property name="ValorPautaSt" column="VALOR_PAUTA_ST" />
+	<property name="ValorPrecoMaximoSt" column="VALOR_PRECO_MAXIMO_ST" />
+
+
+	<many-to-one name="TributIcmsCustomCab" class="TributIcmsCustomCab" column="ID_TRIBUT_ICMS_CUSTOM_CAB" />
+	    
+  </class>
+</hibernate-mapping>

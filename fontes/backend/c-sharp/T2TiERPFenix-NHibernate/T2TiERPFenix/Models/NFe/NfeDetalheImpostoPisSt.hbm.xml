@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeDetalheImpostoPisSt" table="NFE_DETALHE_IMPOSTO_PIS_ST" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="ValorBaseCalculoPisSt" column="VALOR_BASE_CALCULO_PIS_ST" />
+	<property name="AliquotaPisStPercentual" column="ALIQUOTA_PIS_ST_PERCENTUAL" />
+	<property name="QuantidadeVendidaPisSt" column="QUANTIDADE_VENDIDA_PIS_ST" />
+	<property name="AliquotaPisStReais" column="ALIQUOTA_PIS_ST_REAIS" />
+	<property name="ValorPisSt" column="VALOR_PIS_ST" />
+
+	<many-to-one name="NfeDetalhe" class="NfeDetalhe" column="ID_NFE_DETALHE" unique="true" />
+
+	    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeInformacaoPagamento" table="NFE_INFORMACAO_PAGAMENTO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IndicadorPagamento" column="INDICADOR_PAGAMENTO" />
+	<property name="MeioPagamento" column="MEIO_PAGAMENTO" />
+	<property name="Valor" column="VALOR" />
+	<property name="TipoIntegracao" column="TIPO_INTEGRACAO" />
+	<property name="CnpjOperadoraCartao" column="CNPJ_OPERADORA_CARTAO" />
+	<property name="Bandeira" column="BANDEIRA" />
+	<property name="NumeroAutorizacao" column="NUMERO_AUTORIZACAO" />
+	<property name="Troco" column="TROCO" />
+
+	<many-to-one name="NfeCabecalho" class="NfeCabecalho" column="ID_NFE_CABECALHO" unique="true" />
+
+	    
+  </class>
+</hibernate-mapping>

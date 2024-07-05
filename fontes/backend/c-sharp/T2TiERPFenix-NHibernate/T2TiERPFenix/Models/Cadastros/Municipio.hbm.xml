@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Municipio" table="MUNICIPIO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Nome" column="NOME" />
+	<property name="CodigoIbge" column="CODIGO_IBGE" />
+	<property name="CodigoReceitaFederal" column="CODIGO_RECEITA_FEDERAL" />
+	<property name="CodigoEstadual" column="CODIGO_ESTADUAL" />
+
+	<many-to-one name="Uf" class="Uf" column="ID_UF" />
+
+	    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ViewSpedNfeDestinatario" table="VIEW_SPED_NFE_DESTINATARIO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Nome" column="NOME" />
+	<property name="Cpf" column="CPF" />
+	<property name="Cnpj" column="CNPJ" />
+	<property name="InscricaoEstadual" column="INSCRICAO_ESTADUAL" />
+	<property name="CodigoMunicipio" column="CODIGO_MUNICIPIO" />
+	<property name="Suframa" column="SUFRAMA" />
+	<property name="Logradouro" column="LOGRADOURO" />
+	<property name="Numero" column="NUMERO" />
+	<property name="Complemento" column="COMPLEMENTO" />
+	<property name="Bairro" column="BAIRRO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

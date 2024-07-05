@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="RequisicaoInternaCabecalho" table="REQUISICAO_INTERNA_CABECALHO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="DataRequisicao" column="DATA_REQUISICAO" />
+	<property name="Situacao" column="SITUACAO" />
+
+	<many-to-one name="Colaborador" class="Colaborador" column="ID_COLABORADOR" />
+
+	<bag name="ListaRequisicaoInternaDetalhe" table="requisicao_interna_detalhe" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_REQUISICAO_INTERNA_CABECALHO"/>
+	  <one-to-many class="RequisicaoInternaDetalhe"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

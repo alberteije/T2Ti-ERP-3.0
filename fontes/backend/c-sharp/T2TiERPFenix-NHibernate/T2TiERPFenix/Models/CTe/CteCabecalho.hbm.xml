@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CteCabecalho" table="CTE_CABECALHO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="UfEmitente" column="UF_EMITENTE" />
+	<property name="CodigoNumerico" column="CODIGO_NUMERICO" />
+	<property name="Cfop" column="CFOP" />
+	<property name="NaturezaOperacao" column="NATUREZA_OPERACAO" />
+	<property name="FormaPagamento" column="FORMA_PAGAMENTO" />
+	<property name="Modelo" column="MODELO" />
+	<property name="Serie" column="SERIE" />
+	<property name="Numero" column="NUMERO" />
+	<property name="DataHoraEmissao" column="DATA_HORA_EMISSAO" />
+	<property name="FormatoImpressaoDacte" column="FORMATO_IMPRESSAO_DACTE" />
+	<property name="TipoEmissao" column="TIPO_EMISSAO" />
+	<property name="ChaveAcesso" column="CHAVE_ACESSO" />
+	<property name="DigitoChaveAcesso" column="DIGITO_CHAVE_ACESSO" />
+	<property name="Ambiente" column="AMBIENTE" />
+	<property name="TipoCte" column="TIPO_CTE" />
+	<property name="ProcessoEmissao" column="PROCESSO_EMISSAO" />
+	<property name="VersaoProcessoEmissao" column="VERSAO_PROCESSO_EMISSAO" />
+	<property name="ChaveReferenciado" column="CHAVE_REFERENCIADO" />
+	<property name="CodigoMunicipioEnvio" column="CODIGO_MUNICIPIO_ENVIO" />
+	<property name="NomeMunicipioEnvio" column="NOME_MUNICIPIO_ENVIO" />
+	<property name="UfEnvio" column="UF_ENVIO" />
+	<property name="Modal" column="MODAL" />
+	<property name="TipoServico" column="TIPO_SERVICO" />
+	<property name="CodigoMunicipioIniPrestacao" column="CODIGO_MUNICIPIO_INI_PRESTACAO" />
+	<property name="NomeMunicipioIniPrestacao" column="NOME_MUNICIPIO_INI_PRESTACAO" />
+	<property name="UfIniPrestacao" column="UF_INI_PRESTACAO" />
+	<property name="CodigoMunicipioFimPrestacao" column="CODIGO_MUNICIPIO_FIM_PRESTACAO" />
+	<property name="NomeMunicipioFimPrestacao" column="NOME_MUNICIPIO_FIM_PRESTACAO" />
+	<property name="UfFimPrestacao" column="UF_FIM_PRESTACAO" />
+	<property name="Retira" column="RETIRA" />
+	<property name="RetiraDetalhe" column="RETIRA_DETALHE" />
+	<property name="Tomador" column="TOMADOR" />
+	<property name="DataEntradaContingencia" column="DATA_ENTRADA_CONTINGENCIA" />
+	<property name="JustificativaContingencia" column="JUSTIFICATIVA_CONTINGENCIA" />
+	<property name="CaracAdicionalTransporte" column="CARAC_ADICIONAL_TRANSPORTE" />
+	<property name="CaracAdicionalServico" column="CARAC_ADICIONAL_SERVICO" />
+	<property name="FuncionarioEmissor" column="FUNCIONARIO_EMISSOR" />
+	<property name="FluxoOrigem" column="FLUXO_ORIGEM" />
+	<property name="EntregaTipoPeriodo" column="ENTREGA_TIPO_PERIODO" />
+	<property name="EntregaDataProgramada" column="ENTREGA_DATA_PROGRAMADA" />
+	<property name="EntregaDataInicial" column="ENTREGA_DATA_INICIAL" />
+	<property name="EntregaDataFinal" column="ENTREGA_DATA_FINAL" />
+	<property name="EntregaTipoHora" column="ENTREGA_TIPO_HORA" />
+	<property name="EntregaHoraProgramada" column="ENTREGA_HORA_PROGRAMADA" />
+	<property name="EntregaHoraInicial" column="ENTREGA_HORA_INICIAL" />
+	<property name="EntregaHoraFinal" column="ENTREGA_HORA_FINAL" />
+	<property name="MunicipioOrigemCalculo" column="MUNICIPIO_ORIGEM_CALCULO" />
+	<property name="MunicipioDestinoCalculo" column="MUNICIPIO_DESTINO_CALCULO" />
+	<property name="ObservacoesGerais" column="OBSERVACOES_GERAIS" />
+	<property name="ValorTotalServico" column="VALOR_TOTAL_SERVICO" />
+	<property name="ValorReceber" column="VALOR_RECEBER" />
+	<property name="Cst" column="CST" />
+	<property name="BaseCalculoIcms" column="BASE_CALCULO_ICMS" />
+	<property name="AliquotaIcms" column="ALIQUOTA_ICMS" />
+	<property name="ValorIcms" column="VALOR_ICMS" />
+	<property name="PercentualReducaoBcIcms" column="PERCENTUAL_REDUCAO_BC_ICMS" />
+	<property name="ValorBcIcmsStRetido" column="VALOR_BC_ICMS_ST_RETIDO" />
+	<property name="ValorIcmsStRetido" column="VALOR_ICMS_ST_RETIDO" />
+	<property name="AliquotaIcmsStRetido" column="ALIQUOTA_ICMS_ST_RETIDO" />
+	<property name="ValorCreditoPresumidoIcms" column="VALOR_CREDITO_PRESUMIDO_ICMS" />
+	<property name="PercentualBcIcmsOutraUf" column="PERCENTUAL_BC_ICMS_OUTRA_UF" />
+	<property name="ValorBcIcmsOutraUf" column="VALOR_BC_ICMS_OUTRA_UF" />
+	<property name="AliquotaIcmsOutraUf" column="ALIQUOTA_ICMS_OUTRA_UF" />
+	<property name="ValorIcmsOutraUf" column="VALOR_ICMS_OUTRA_UF" />
+	<property name="SimplesNacionalIndicador" column="SIMPLES_NACIONAL_INDICADOR" />
+	<property name="SimplesNacionalTotal" column="SIMPLES_NACIONAL_TOTAL" />
+	<property name="InformacoesAddFisco" column="INFORMACOES_ADD_FISCO" />
+	<property name="ValorTotalCarga" column="VALOR_TOTAL_CARGA" />
+	<property name="ProdutoPredominante" column="PRODUTO_PREDOMINANTE" />
+	<property name="CargaOutrasCaracteristicas" column="CARGA_OUTRAS_CARACTERISTICAS" />
+	<property name="ModalVersaoLayout" column="MODAL_VERSAO_LAYOUT" />
+	<property name="ChaveCteSubstituido" column="CHAVE_CTE_SUBSTITUIDO" />
+
+	<one-to-one name="CteDestinatario" class="CteDestinatario" property-ref="CteCabecalho" cascade="all"/>
+	<one-to-one name="CteLocalEntrega" class="CteLocalEntrega" property-ref="CteCabecalho" cascade="all"/>
+	<one-to-one name="CteRemetente" class="CteRemetente" property-ref="CteCabecalho" cascade="all"/>
+	<one-to-one name="CteRodoviario" class="CteRodoviario" property-ref="CteCabecalho" cascade="all"/>
+	<one-to-one name="CteTomador" class="CteTomador" property-ref="CteCabecalho" cascade="all"/>
+
+	<bag name="ListaCteCarga" table="cte_carga" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_CTE_CABECALHO"/>
+	  <one-to-many class="CteCarga"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeEmitente" table="NFE_EMITENTE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Cnpj" column="CNPJ" />
+	<property name="Cpf" column="CPF" />
+	<property name="Nome" column="NOME" />
+	<property name="Fantasia" column="FANTASIA" />
+	<property name="Logradouro" column="LOGRADOURO" />
+	<property name="Numero" column="NUMERO" />
+	<property name="Complemento" column="COMPLEMENTO" />
+	<property name="Bairro" column="BAIRRO" />
+	<property name="CodigoMunicipio" column="CODIGO_MUNICIPIO" />
+	<property name="NomeMunicipio" column="NOME_MUNICIPIO" />
+	<property name="Uf" column="UF" />
+	<property name="Cep" column="CEP" />
+	<property name="CodigoPais" column="CODIGO_PAIS" />
+	<property name="NomePais" column="NOME_PAIS" />
+	<property name="Telefone" column="TELEFONE" />
+	<property name="InscricaoEstadual" column="INSCRICAO_ESTADUAL" />
+	<property name="InscricaoEstadualSt" column="INSCRICAO_ESTADUAL_ST" />
+	<property name="InscricaoMunicipal" column="INSCRICAO_MUNICIPAL" />
+	<property name="Cnae" column="CNAE" />
+	<property name="Crt" column="CRT" />
+
+	<many-to-one name="NfeCabecalho" class="NfeCabecalho" column="ID_NFE_CABECALHO" unique="true" />
+
+	    
+  </class>
+</hibernate-mapping>

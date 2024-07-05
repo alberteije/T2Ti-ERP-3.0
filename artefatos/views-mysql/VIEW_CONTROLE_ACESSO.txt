@@ -1,0 +1,19 @@
+CREATE
+VIEW VIEW_CONTROLE_ACESSO
+AS
+
+SELECT 
+CAST( CONCAT(pa.id,fu.id,pafu.id) as UNSIGNED) as id, 
+pe.id AS id_pessoa, pe.nome AS pessoa_nome, 
+c.id AS id_colaborador,  
+u.id AS id_usuario, u.administrador,
+pa.id AS id_papel, pa.nome AS papel_nome, pa.descricao AS papel_descricao,
+fu.id AS id_funcao, fu.nome AS funcao_nome, fu.descricao AS funcao_descricao,
+pafu.id AS id_papel_funcao, pafu.habilitado, pafu.pode_inserir, pafu.pode_alterar, pafu.pode_excluir
+
+FROM pessoa pe
+INNER JOIN colaborador c ON (c.id_pessoa = pe.id)
+INNER JOIN usuario u ON (u.id_colaborador = c.id)
+INNER JOIN papel pa ON (u.id_papel = pa.id)
+INNER JOIN papel_funcao pafu ON (pafu.id_papel = pa.id)
+INNER JOIN funcao fu ON (pafu.id_funcao = fu.id)

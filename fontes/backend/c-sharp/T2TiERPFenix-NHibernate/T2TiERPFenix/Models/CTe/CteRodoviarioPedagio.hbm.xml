@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CteRodoviarioPedagio" table="CTE_RODOVIARIO_PEDAGIO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdCteRodoviario" column="ID_CTE_RODOVIARIO" />
+	<property name="CnpjFornecedor" column="CNPJ_FORNECEDOR" />
+	<property name="ComprovanteCompra" column="COMPROVANTE_COMPRA" />
+	<property name="CnpjResponsavel" column="CNPJ_RESPONSAVEL" />
+	<property name="Valor" column="VALOR" />
+
+
+	    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Produto" table="PRODUTO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Nome" column="NOME" />
+	<property name="Descricao" column="DESCRICAO" />
+	<property name="Gtin" column="GTIN" />
+	<property name="CodigoInterno" column="CODIGO_INTERNO" />
+	<property name="ValorCompra" column="VALOR_COMPRA" />
+	<property name="ValorVenda" column="VALOR_VENDA" />
+	<property name="CodigoNcm" column="CODIGO_NCM" />
+	<property name="EstoqueMinimo" column="ESTOQUE_MINIMO" />
+	<property name="EstoqueMaximo" column="ESTOQUE_MAXIMO" />
+	<property name="QuantidadeEstoque" column="QUANTIDADE_ESTOQUE" />
+	<property name="DataCadastro" column="DATA_CADASTRO" />
+
+	<many-to-one name="ProdutoSubgrupo" class="ProdutoSubgrupo" column="ID_PRODUTO_SUBGRUPO" />
+	<many-to-one name="ProdutoMarca" class="ProdutoMarca" column="ID_PRODUTO_MARCA" />
+	<many-to-one name="ProdutoUnidade" class="ProdutoUnidade" column="ID_PRODUTO_UNIDADE" />
+	<many-to-one name="TributIcmsCustomCab" class="TributIcmsCustomCab" column="ID_TRIBUT_ICMS_CUSTOM_CAB" />
+	<many-to-one name="TributGrupoTributario" class="TributGrupoTributario" column="ID_TRIBUT_GRUPO_TRIBUTARIO" />
+
+	    
+  </class>
+</hibernate-mapping>

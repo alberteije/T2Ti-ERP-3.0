@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeCupomFiscalReferenciado" table="NFE_CUPOM_FISCAL_REFERENCIADO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="ModeloDocumentoFiscal" column="MODELO_DOCUMENTO_FISCAL" />
+	<property name="NumeroOrdemEcf" column="NUMERO_ORDEM_ECF" />
+	<property name="Coo" column="COO" />
+	<property name="DataEmissaoCupom" column="DATA_EMISSAO_CUPOM" />
+	<property name="NumeroCaixa" column="NUMERO_CAIXA" />
+	<property name="NumeroSerieEcf" column="NUMERO_SERIE_ECF" />
+
+
+	<many-to-one name="NfeCabecalho" class="NfeCabecalho" column="ID_NFE_CABECALHO" />
+	    
+  </class>
+</hibernate-mapping>

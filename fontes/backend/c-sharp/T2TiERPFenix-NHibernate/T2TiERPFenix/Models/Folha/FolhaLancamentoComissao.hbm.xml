@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FolhaLancamentoComissao" table="FOLHA_LANCAMENTO_COMISSAO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Competencia" column="COMPETENCIA" />
+	<property name="Vencimento" column="VENCIMENTO" />
+	<property name="BaseCalculo" column="BASE_CALCULO" />
+	<property name="ValorComissao" column="VALOR_COMISSAO" />
+
+	<many-to-one name="Vendedor" class="Vendedor" column="ID_VENDEDOR" />
+
+	    
+  </class>
+</hibernate-mapping>

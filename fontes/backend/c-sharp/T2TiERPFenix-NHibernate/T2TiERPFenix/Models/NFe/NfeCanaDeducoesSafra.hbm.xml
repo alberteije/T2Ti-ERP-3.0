@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeCanaDeducoesSafra" table="NFE_CANA_DEDUCOES_SAFRA" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Decricao" column="DECRICAO" />
+	<property name="ValorDeducao" column="VALOR_DEDUCAO" />
+	<property name="ValorFornecimento" column="VALOR_FORNECIMENTO" />
+	<property name="ValorTotalDeducao" column="VALOR_TOTAL_DEDUCAO" />
+	<property name="ValorLiquidoFornecimento" column="VALOR_LIQUIDO_FORNECIMENTO" />
+
+
+	<many-to-one name="NfeCana" class="NfeCana" column="ID_NFE_CANA" />
+	    
+  </class>
+</hibernate-mapping>

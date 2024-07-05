@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="AgendaNotificacao" table="AGENDA_NOTIFICACAO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdAgendaCompromisso" column="ID_AGENDA_COMPROMISSO" />
+	<property name="DataNotificacao" column="DATA_NOTIFICACAO" />
+	<property name="Hora" column="HORA" />
+	<property name="Tipo" column="TIPO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

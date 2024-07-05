@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeDetEspecificoCombustivel" table="NFE_DET_ESPECIFICO_COMBUSTIVEL" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="CodigoAnp" column="CODIGO_ANP" />
+	<property name="DescricaoAnp" column="DESCRICAO_ANP" />
+	<property name="PercentualGlp" column="PERCENTUAL_GLP" />
+	<property name="PercentualGasNacional" column="PERCENTUAL_GAS_NACIONAL" />
+	<property name="PercentualGasImportado" column="PERCENTUAL_GAS_IMPORTADO" />
+	<property name="ValorPartida" column="VALOR_PARTIDA" />
+	<property name="Codif" column="CODIF" />
+	<property name="QuantidadeTempAmbiente" column="QUANTIDADE_TEMP_AMBIENTE" />
+	<property name="UfConsumo" column="UF_CONSUMO" />
+	<property name="CideBaseCalculo" column="CIDE_BASE_CALCULO" />
+	<property name="CideAliquota" column="CIDE_ALIQUOTA" />
+	<property name="CideValor" column="CIDE_VALOR" />
+	<property name="EncerranteBico" column="ENCERRANTE_BICO" />
+	<property name="EncerranteBomba" column="ENCERRANTE_BOMBA" />
+	<property name="EncerranteTanque" column="ENCERRANTE_TANQUE" />
+	<property name="EncerranteValorInicio" column="ENCERRANTE_VALOR_INICIO" />
+	<property name="EncerranteValorFim" column="ENCERRANTE_VALOR_FIM" />
+
+	<many-to-one name="NfeDetalhe" class="NfeDetalhe" column="ID_NFE_DETALHE" unique="true" />
+
+	    
+  </class>
+</hibernate-mapping>

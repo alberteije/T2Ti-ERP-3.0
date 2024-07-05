@@ -1,0 +1,2741 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{41237016-48D9-45F1-8FFC-66D1B61A206B}</ProjectGuid>
+        <ProjectVersion>19.2</ProjectVersion>
+        <FrameworkType>VCL</FrameworkType>
+        <MainSource>T2TiERPFenix.dpr</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Console</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_UnitSearchPath>..\..\lib\loggerpro;..\..\lib\delphistompclient;..\..\lib\dmustache;..\..\..\delphiredisclient\sources;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <SanitizedProjectName>T2TiERPFenix</SanitizedProjectName>
+        <VerInfo_Locale>1040</VerInfo_Locale>
+        <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
+        <Manifest_File>None</Manifest_File>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_UNSUPPORTED_CONSTRUCT>error</DCC_UNSUPPORTED_CONSTRUCT>
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_UnitSearchPath>..\..\lib\iocpdelphiframework\Base;..\..\lib\luadelphibinding;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_ExeOutput>bin</DCC_ExeOutput>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_UsePackage>FireDACSqliteDriver;FireDACDSDriver;DBXSqliteDriver;SampleListViewMultiDetailAppearancePackage;FireDACPgDriver;fmx;IndySystem;TeeDB;tethering;ITDevCon2012AdapterPackage;inetdbbde;vclib;DBXInterBaseDriver;DataSnapClient;DataSnapServer;DataSnapCommon;DataSnapProviderClient;DBXSybaseASEDriver;DbxCommonDriver;vclimg;dbxcds;DatasnapConnectorsFreePascal;MetropolisUILiveTile;vcldb;vcldsnap;fmxFireDAC;DBXDb2Driver;DBXOracleDriver;CustomIPTransport;vclribbon;dsnap;IndyIPServer;fmxase;vcl;IndyCore;DBXMSSQLDriver;IndyIPCommon;CloudService;FmxTeeUI;FireDACIBDriver;CodeSiteExpressPkg;DataSnapFireDAC;FireDACDBXDriver;soapserver;inetdbxpress;dsnapxml;FireDACInfxDriver;FireDACDb2Driver;adortl;CustomAdaptersMDPackage;FireDACASADriver;bindcompfmx;vcldbx;FireDACODBCDriver;RESTBackendComponents;rtl;dbrtl;DbxClientDriver;FireDACCommon;bindcomp;inetdb;SampleListViewRatingsAppearancePackage;Tee;DBXOdbcDriver;vclFireDAC;xmlrtl;DataSnapNativeClient;svnui;ibxpress;IndyProtocols;DBXMySQLDriver;FireDACCommonDriver;bindcompdbx;bindengine;vclactnband;soaprtl;FMXTee;TeeUI;bindcompvcl;vclie;FireDACADSDriver;vcltouch;VclSmp;FireDACMSSQLDriver;FireDAC;DBXInformixDriver;Intraweb;VCLRESTComponents;DataSnapConnectors;DataSnapServerMidas;dsnapcon;DBXFirebirdDriver;SampleGenerator1Package;inet;fmxobj;FireDACMySQLDriver;soapmidas;vclx;svn;DBXSybaseASADriver;FireDACOracleDriver;fmxdae;RESTComponents;bdertl;FireDACMSAccDriver;dbexpress;DataSnapIndy10ServerTransport;IndyIPClient;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_RemoteDebug>false</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="UWebModule.pas">
+            <Form>FWebModule</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TWebModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="UDataModuleConexao.pas">
+            <Form>FDataModuleConexao</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Model\ModelBase.pas"/>
+        <DCCReference Include="Service\ServiceBase.pas"/>
+        <DCCReference Include="Model\Transiente\Filtro.pas"/>
+        <DCCReference Include="Commons.pas"/>
+        <DCCReference Include="Controller\Cadastros\BancoAgenciaController.pas"/>
+        <DCCReference Include="Controller\Cadastros\BancoContaCaixaController.pas"/>
+        <DCCReference Include="Controller\Cadastros\BancoController.pas"/>
+        <DCCReference Include="Controller\Cadastros\CargoController.pas"/>
+        <DCCReference Include="Controller\Cadastros\CepController.pas"/>
+        <DCCReference Include="Controller\Cadastros\CfopController.pas"/>
+        <DCCReference Include="Controller\Cadastros\ClienteController.pas"/>
+        <DCCReference Include="Controller\Cadastros\CnaeController.pas"/>
+        <DCCReference Include="Controller\Cadastros\ColaboradorController.pas"/>
+        <DCCReference Include="Controller\Cadastros\ContadorController.pas"/>
+        <DCCReference Include="Controller\Cadastros\CsosnController.pas"/>
+        <DCCReference Include="Controller\Cadastros\CstCofinsController.pas"/>
+        <DCCReference Include="Controller\Cadastros\CstIcmsController.pas"/>
+        <DCCReference Include="Controller\Cadastros\CstIpiController.pas"/>
+        <DCCReference Include="Controller\Cadastros\CstPisController.pas"/>
+        <DCCReference Include="Controller\Cadastros\EstadoCivilController.pas"/>
+        <DCCReference Include="Controller\Cadastros\FornecedorController.pas"/>
+        <DCCReference Include="Controller\Cadastros\MunicipioController.pas"/>
+        <DCCReference Include="Controller\Cadastros\NcmController.pas"/>
+        <DCCReference Include="Controller\Cadastros\NivelFormacaoController.pas"/>
+        <DCCReference Include="Controller\Cadastros\PessoaController.pas"/>
+        <DCCReference Include="Controller\Cadastros\ProdutoController.pas"/>
+        <DCCReference Include="Controller\Cadastros\ProdutoGrupoController.pas"/>
+        <DCCReference Include="Controller\Cadastros\ProdutoMarcaController.pas"/>
+        <DCCReference Include="Controller\Cadastros\ProdutoSubgrupoController.pas"/>
+        <DCCReference Include="Controller\Cadastros\ProdutoUnidadeController.pas"/>
+        <DCCReference Include="Controller\Cadastros\SetorController.pas"/>
+        <DCCReference Include="Controller\Cadastros\TransportadoraController.pas"/>
+        <DCCReference Include="Controller\Cadastros\UfController.pas"/>
+        <DCCReference Include="Controller\Cadastros\UsuarioController.pas"/>
+        <DCCReference Include="Controller\Cadastros\VendedorController.pas"/>
+        <DCCReference Include="Model\Cadastros\Banco.pas"/>
+        <DCCReference Include="Model\Cadastros\BancoAgencia.pas"/>
+        <DCCReference Include="Model\Cadastros\BancoContaCaixa.pas"/>
+        <DCCReference Include="Model\Cadastros\Cargo.pas"/>
+        <DCCReference Include="Model\Cadastros\Cep.pas"/>
+        <DCCReference Include="Model\Cadastros\Cfop.pas"/>
+        <DCCReference Include="Model\Cadastros\Cliente.pas"/>
+        <DCCReference Include="Model\Cadastros\Cnae.pas"/>
+        <DCCReference Include="Model\Cadastros\Colaborador.pas"/>
+        <DCCReference Include="Model\Cadastros\Contador.pas"/>
+        <DCCReference Include="Model\Cadastros\Csosn.pas"/>
+        <DCCReference Include="Model\Cadastros\CstCofins.pas"/>
+        <DCCReference Include="Model\Cadastros\CstIcms.pas"/>
+        <DCCReference Include="Model\Cadastros\CstIpi.pas"/>
+        <DCCReference Include="Model\Cadastros\CstPis.pas"/>
+        <DCCReference Include="Model\Cadastros\EstadoCivil.pas"/>
+        <DCCReference Include="Model\Cadastros\Fornecedor.pas"/>
+        <DCCReference Include="Model\Cadastros\Municipio.pas"/>
+        <DCCReference Include="Model\Cadastros\Ncm.pas"/>
+        <DCCReference Include="Model\Cadastros\NivelFormacao.pas"/>
+        <DCCReference Include="Model\Cadastros\Pessoa.pas"/>
+        <DCCReference Include="Model\Cadastros\PessoaContato.pas"/>
+        <DCCReference Include="Model\Cadastros\PessoaEndereco.pas"/>
+        <DCCReference Include="Model\Cadastros\PessoaFisica.pas"/>
+        <DCCReference Include="Model\Cadastros\PessoaJuridica.pas"/>
+        <DCCReference Include="Model\Cadastros\PessoaTelefone.pas"/>
+        <DCCReference Include="Model\Cadastros\Produto.pas"/>
+        <DCCReference Include="Model\Cadastros\ProdutoGrupo.pas"/>
+        <DCCReference Include="Model\Cadastros\ProdutoMarca.pas"/>
+        <DCCReference Include="Model\Cadastros\ProdutoSubgrupo.pas"/>
+        <DCCReference Include="Model\Cadastros\ProdutoUnidade.pas"/>
+        <DCCReference Include="Model\Cadastros\Setor.pas"/>
+        <DCCReference Include="Model\Cadastros\Transportadora.pas"/>
+        <DCCReference Include="Model\Cadastros\Uf.pas"/>
+        <DCCReference Include="Model\Cadastros\Usuario.pas"/>
+        <DCCReference Include="Model\Cadastros\Vendedor.pas"/>
+        <DCCReference Include="Service\Cadastros\BancoAgenciaService.pas"/>
+        <DCCReference Include="Service\Cadastros\BancoContaCaixaService.pas"/>
+        <DCCReference Include="Service\Cadastros\BancoService.pas"/>
+        <DCCReference Include="Service\Cadastros\CargoService.pas"/>
+        <DCCReference Include="Service\Cadastros\CepService.pas"/>
+        <DCCReference Include="Service\Cadastros\CfopService.pas"/>
+        <DCCReference Include="Service\Cadastros\ClienteService.pas"/>
+        <DCCReference Include="Service\Cadastros\CnaeService.pas"/>
+        <DCCReference Include="Service\Cadastros\ColaboradorService.pas"/>
+        <DCCReference Include="Service\Cadastros\ContadorService.pas"/>
+        <DCCReference Include="Service\Cadastros\CsosnService.pas"/>
+        <DCCReference Include="Service\Cadastros\CstCofinsService.pas"/>
+        <DCCReference Include="Service\Cadastros\CstIcmsService.pas"/>
+        <DCCReference Include="Service\Cadastros\CstIpiService.pas"/>
+        <DCCReference Include="Service\Cadastros\CstPisService.pas"/>
+        <DCCReference Include="Service\Cadastros\EstadoCivilService.pas"/>
+        <DCCReference Include="Service\Cadastros\FornecedorService.pas"/>
+        <DCCReference Include="Service\Cadastros\MunicipioService.pas"/>
+        <DCCReference Include="Service\Cadastros\NcmService.pas"/>
+        <DCCReference Include="Service\Cadastros\NivelFormacaoService.pas"/>
+        <DCCReference Include="Service\Cadastros\PessoaService.pas"/>
+        <DCCReference Include="Service\Cadastros\ProdutoGrupoService.pas"/>
+        <DCCReference Include="Service\Cadastros\ProdutoMarcaService.pas"/>
+        <DCCReference Include="Service\Cadastros\ProdutoService.pas"/>
+        <DCCReference Include="Service\Cadastros\ProdutoSubgrupoService.pas"/>
+        <DCCReference Include="Service\Cadastros\ProdutoUnidadeService.pas"/>
+        <DCCReference Include="Service\Cadastros\SetorService.pas"/>
+        <DCCReference Include="Service\Cadastros\TransportadoraService.pas"/>
+        <DCCReference Include="Service\Cadastros\UfService.pas"/>
+        <DCCReference Include="Service\Cadastros\UsuarioService.pas"/>
+        <DCCReference Include="Service\Cadastros\VendedorService.pas"/>
+        <DCCReference Include="Model\Cadastros\Papel.pas"/>
+        <DCCReference Include="Controller\Cadastros\PapelController.pas"/>
+        <DCCReference Include="Service\Cadastros\PapelService.pas"/>
+        <DCCReference Include="Controller\Financeiro\FinChequeEmitidoController.pas"/>
+        <DCCReference Include="Controller\Financeiro\FinChequeRecebidoController.pas"/>
+        <DCCReference Include="Controller\Financeiro\FinConfiguracaoBoletoController.pas"/>
+        <DCCReference Include="Controller\Financeiro\FinDocumentoOrigemController.pas"/>
+        <DCCReference Include="Controller\Financeiro\FinExtratoContaBancoController.pas"/>
+        <DCCReference Include="Controller\Financeiro\FinFechamentoCaixaBancoController.pas"/>
+        <DCCReference Include="Controller\Financeiro\FinLancamentoPagarController.pas"/>
+        <DCCReference Include="Controller\Financeiro\FinLancamentoReceberController.pas"/>
+        <DCCReference Include="Controller\Financeiro\FinNaturezaFinanceiraController.pas"/>
+        <DCCReference Include="Controller\Financeiro\FinStatusParcelaController.pas"/>
+        <DCCReference Include="Controller\Financeiro\FinTipoPagamentoController.pas"/>
+        <DCCReference Include="Controller\Financeiro\FinTipoRecebimentoController.pas"/>
+        <DCCReference Include="Controller\Financeiro\TalonarioChequeController.pas"/>
+        <DCCReference Include="Model\Financeiro\Cheque.pas"/>
+        <DCCReference Include="Model\Financeiro\FinChequeEmitido.pas"/>
+        <DCCReference Include="Model\Financeiro\FinChequeRecebido.pas"/>
+        <DCCReference Include="Model\Financeiro\FinConfiguracaoBoleto.pas"/>
+        <DCCReference Include="Model\Financeiro\FinDocumentoOrigem.pas"/>
+        <DCCReference Include="Model\Financeiro\FinExtratoContaBanco.pas"/>
+        <DCCReference Include="Model\Financeiro\FinFechamentoCaixaBanco.pas"/>
+        <DCCReference Include="Model\Financeiro\FinLancamentoPagar.pas"/>
+        <DCCReference Include="Model\Financeiro\FinLancamentoReceber.pas"/>
+        <DCCReference Include="Model\Financeiro\FinNaturezaFinanceira.pas"/>
+        <DCCReference Include="Model\Financeiro\FinParcelaPagar.pas"/>
+        <DCCReference Include="Model\Financeiro\FinParcelaReceber.pas"/>
+        <DCCReference Include="Model\Financeiro\FinStatusParcela.pas"/>
+        <DCCReference Include="Model\Financeiro\FinTipoPagamento.pas"/>
+        <DCCReference Include="Model\Financeiro\FinTipoRecebimento.pas"/>
+        <DCCReference Include="Model\Financeiro\TalonarioCheque.pas"/>
+        <DCCReference Include="Service\Financeiro\FinChequeEmitidoService.pas"/>
+        <DCCReference Include="Service\Financeiro\FinChequeRecebidoService.pas"/>
+        <DCCReference Include="Service\Financeiro\FinConfiguracaoBoletoService.pas"/>
+        <DCCReference Include="Service\Financeiro\FinDocumentoOrigemService.pas"/>
+        <DCCReference Include="Service\Financeiro\FinExtratoContaBancoService.pas"/>
+        <DCCReference Include="Service\Financeiro\FinFechamentoCaixaBancoService.pas"/>
+        <DCCReference Include="Service\Financeiro\FinLancamentoPagarService.pas"/>
+        <DCCReference Include="Service\Financeiro\FinLancamentoReceberService.pas"/>
+        <DCCReference Include="Service\Financeiro\FinNaturezaFinanceiraService.pas"/>
+        <DCCReference Include="Service\Financeiro\FinStatusParcelaService.pas"/>
+        <DCCReference Include="Service\Financeiro\FinTipoPagamentoService.pas"/>
+        <DCCReference Include="Service\Financeiro\FinTipoRecebimentoService.pas"/>
+        <DCCReference Include="Service\Financeiro\TalonarioChequeService.pas"/>
+        <DCCReference Include="Controller\ViewsDB\ViewPessoaColaboradorController.pas"/>
+        <DCCReference Include="Model\ViewsDB\ViewPessoaColaborador.pas"/>
+        <DCCReference Include="Service\ViewsDB\ViewPessoaColaboradorService.pas"/>
+        <DCCReference Include="Controller\ViewsDB\ViewPessoaFornecedorController.pas"/>
+        <DCCReference Include="Model\ViewsDB\ViewPessoaCliente.pas"/>
+        <DCCReference Include="Model\ViewsDB\ViewPessoaFornecedor.pas"/>
+        <DCCReference Include="Service\ViewsDB\ViewPessoaClienteService.pas"/>
+        <DCCReference Include="Service\ViewsDB\ViewPessoaFornecedorService.pas"/>
+        <DCCReference Include="Controller\Financeiro\FinParcelaPagarController.pas"/>
+        <DCCReference Include="Controller\ViewsDB\ViewFinLancamentoPagarController.pas"/>
+        <DCCReference Include="Model\ViewsDB\ViewFinLancamentoPagar.pas"/>
+        <DCCReference Include="Service\Financeiro\FinParcelaPagarService.pas"/>
+        <DCCReference Include="Service\ViewsDB\ViewFinLancamentoPagarService.pas"/>
+        <DCCReference Include="Service\ViewsDB\ViewFinMovimentoCaixaBancoService.pas"/>
+        <DCCReference Include="Controller\ViewsDB\ViewFinMovimentoCaixaBancoController.pas"/>
+        <DCCReference Include="Model\ViewsDB\ViewFinMovimentoCaixaBanco.pas"/>
+        <DCCReference Include="Controller\ViewsDB\ViewFinChequeNaoCompensadoController.pas"/>
+        <DCCReference Include="Model\ViewsDB\ViewFinChequeNaoCompensado.pas"/>
+        <DCCReference Include="Service\ViewsDB\ViewFinChequeNaoCompensadoService.pas"/>
+        <DCCReference Include="Controller\ViewsDB\ViewPessoaClienteController.pas"/>
+        <DCCReference Include="Controller\ViewsDB\ViewFinFluxoCaixaController.pas"/>
+        <DCCReference Include="Model\ViewsDB\ViewFinFluxoCaixa.pas"/>
+        <DCCReference Include="Service\ViewsDB\ViewFinFluxoCaixaService.pas"/>
+        <DCCReference Include="Controller\Tributacao\TributConfiguraOfGtController.pas"/>
+        <DCCReference Include="Controller\Tributacao\TributGrupoTributarioController.pas"/>
+        <DCCReference Include="Controller\Tributacao\TributIcmsCustomCabController.pas"/>
+        <DCCReference Include="Controller\Tributacao\TributIssController.pas"/>
+        <DCCReference Include="Controller\Tributacao\TributOperacaoFiscalController.pas"/>
+        <DCCReference Include="Model\Tributacao\TributCofins.pas"/>
+        <DCCReference Include="Model\Tributacao\TributConfiguraOfGt.pas"/>
+        <DCCReference Include="Model\Tributacao\TributGrupoTributario.pas"/>
+        <DCCReference Include="Model\Tributacao\TributIcmsCustomCab.pas"/>
+        <DCCReference Include="Model\Tributacao\TributIcmsCustomDet.pas"/>
+        <DCCReference Include="Model\Tributacao\TributIcmsUf.pas"/>
+        <DCCReference Include="Model\Tributacao\TributIpi.pas"/>
+        <DCCReference Include="Model\Tributacao\TributIss.pas"/>
+        <DCCReference Include="Model\Tributacao\TributOperacaoFiscal.pas"/>
+        <DCCReference Include="Model\Tributacao\TributPis.pas"/>
+        <DCCReference Include="Service\Tributacao\TributConfiguraOfGtService.pas"/>
+        <DCCReference Include="Service\Tributacao\TributGrupoTributarioService.pas"/>
+        <DCCReference Include="Service\Tributacao\TributIcmsCustomCabService.pas"/>
+        <DCCReference Include="Service\Tributacao\TributIssService.pas"/>
+        <DCCReference Include="Service\Tributacao\TributOperacaoFiscalService.pas"/>
+        <DCCReference Include="Controller\Estoque\EstoqueReajusteCabecalhoController.pas"/>
+        <DCCReference Include="Controller\Estoque\RequisicaoInternaCabecalhoController.pas"/>
+        <DCCReference Include="Model\Estoque\EstoqueReajusteCabecalho.pas"/>
+        <DCCReference Include="Model\Estoque\EstoqueReajusteDetalhe.pas"/>
+        <DCCReference Include="Model\Estoque\RequisicaoInternaCabecalho.pas"/>
+        <DCCReference Include="Model\Estoque\RequisicaoInternaDetalhe.pas"/>
+        <DCCReference Include="Service\Estoque\EstoqueReajusteCabecalhoService.pas"/>
+        <DCCReference Include="Service\Estoque\RequisicaoInternaCabecalhoService.pas"/>
+        <DCCReference Include="Service\Vendas\NotaFiscalModeloService.pas"/>
+        <DCCReference Include="Service\Vendas\NotaFiscalTipoService.pas"/>
+        <DCCReference Include="Service\Vendas\VendaCabecalhoService.pas"/>
+        <DCCReference Include="Service\Vendas\VendaComissaoService.pas"/>
+        <DCCReference Include="Service\Vendas\VendaCondicoesPagamentoService.pas"/>
+        <DCCReference Include="Service\Vendas\VendaFreteService.pas"/>
+        <DCCReference Include="Service\Vendas\VendaOrcamentoCabecalhoService.pas"/>
+        <DCCReference Include="Controller\Vendas\NotaFiscalModeloController.pas"/>
+        <DCCReference Include="Controller\Vendas\NotaFiscalTipoController.pas"/>
+        <DCCReference Include="Controller\Vendas\VendaCabecalhoController.pas"/>
+        <DCCReference Include="Controller\Vendas\VendaComissaoController.pas"/>
+        <DCCReference Include="Controller\Vendas\VendaCondicoesPagamentoController.pas"/>
+        <DCCReference Include="Controller\Vendas\VendaFreteController.pas"/>
+        <DCCReference Include="Controller\Vendas\VendaOrcamentoCabecalhoController.pas"/>
+        <DCCReference Include="Model\Vendas\NotaFiscalModelo.pas"/>
+        <DCCReference Include="Model\Vendas\NotaFiscalTipo.pas"/>
+        <DCCReference Include="Model\Vendas\VendaCabecalho.pas"/>
+        <DCCReference Include="Model\Vendas\VendaComissao.pas"/>
+        <DCCReference Include="Model\Vendas\VendaCondicoesPagamento.pas"/>
+        <DCCReference Include="Model\Vendas\VendaCondicoesParcelas.pas"/>
+        <DCCReference Include="Model\Vendas\VendaDetalhe.pas"/>
+        <DCCReference Include="Model\Vendas\VendaFrete.pas"/>
+        <DCCReference Include="Model\Vendas\VendaOrcamentoCabecalho.pas"/>
+        <DCCReference Include="Model\Vendas\VendaOrcamentoDetalhe.pas"/>
+        <DCCReference Include="Controller\Compras\CompraCotacaoController.pas"/>
+        <DCCReference Include="Controller\Compras\CompraPedidoController.pas"/>
+        <DCCReference Include="Controller\Compras\CompraRequisicaoController.pas"/>
+        <DCCReference Include="Controller\Compras\CompraTipoPedidoController.pas"/>
+        <DCCReference Include="Controller\Compras\CompraTipoRequisicaoController.pas"/>
+        <DCCReference Include="Model\Compras\CompraCotacao.pas"/>
+        <DCCReference Include="Model\Compras\CompraCotacaoDetalhe.pas"/>
+        <DCCReference Include="Model\Compras\CompraFornecedorCotacao.pas"/>
+        <DCCReference Include="Model\Compras\CompraPedido.pas"/>
+        <DCCReference Include="Model\Compras\CompraPedidoDetalhe.pas"/>
+        <DCCReference Include="Model\Compras\CompraRequisicao.pas"/>
+        <DCCReference Include="Model\Compras\CompraRequisicaoDetalhe.pas"/>
+        <DCCReference Include="Model\Compras\CompraTipoPedido.pas"/>
+        <DCCReference Include="Model\Compras\CompraTipoRequisicao.pas"/>
+        <DCCReference Include="Service\Compras\CompraCotacaoService.pas"/>
+        <DCCReference Include="Service\Compras\CompraPedidoService.pas"/>
+        <DCCReference Include="Service\Compras\CompraRequisicaoService.pas"/>
+        <DCCReference Include="Service\Compras\CompraTipoPedidoService.pas"/>
+        <DCCReference Include="Service\Compras\CompraTipoRequisicaoService.pas"/>
+        <DCCReference Include="Service\NFe\NFeCalculoService.pas"/>
+        <DCCReference Include="Util\Biblioteca.pas"/>
+        <DCCReference Include="Util\Constantes.pas"/>
+        <DCCReference Include="Service\NFe\NfeCabecalhoService.pas"/>
+        <DCCReference Include="Controller\NFe\NfeCabecalhoController.pas"/>
+        <DCCReference Include="Model\NFe\NfeAcessoXml.pas"/>
+        <DCCReference Include="Model\NFe\NfeCabecalho.pas"/>
+        <DCCReference Include="Model\NFe\NfeCana.pas"/>
+        <DCCReference Include="Model\NFe\NfeCanaDeducoesSafra.pas"/>
+        <DCCReference Include="Model\NFe\NfeCanaFornecimentoDiario.pas"/>
+        <DCCReference Include="Model\NFe\NfeCteReferenciado.pas"/>
+        <DCCReference Include="Model\NFe\NfeCupomFiscalReferenciado.pas"/>
+        <DCCReference Include="Model\NFe\NfeDeclaracaoImportacao.pas"/>
+        <DCCReference Include="Model\NFe\NfeDestinatario.pas"/>
+        <DCCReference Include="Model\NFe\NfeDetalhe.pas"/>
+        <DCCReference Include="Model\NFe\NfeDetalheImpostoCofins.pas"/>
+        <DCCReference Include="Model\NFe\NfeDetalheImpostoCofinsSt.pas"/>
+        <DCCReference Include="Model\NFe\NfeDetalheImpostoIcms.pas"/>
+        <DCCReference Include="Model\NFe\NfeDetalheImpostoIcmsUfdest.pas"/>
+        <DCCReference Include="Model\NFe\NfeDetalheImpostoIi.pas"/>
+        <DCCReference Include="Model\NFe\NfeDetalheImpostoIpi.pas"/>
+        <DCCReference Include="Model\NFe\NfeDetalheImpostoIssqn.pas"/>
+        <DCCReference Include="Model\NFe\NfeDetalheImpostoPis.pas"/>
+        <DCCReference Include="Model\NFe\NfeDetalheImpostoPisSt.pas"/>
+        <DCCReference Include="Model\NFe\NfeDetEspecificoArmamento.pas"/>
+        <DCCReference Include="Model\NFe\NfeDetEspecificoCombustivel.pas"/>
+        <DCCReference Include="Model\NFe\NfeDetEspecificoMedicamento.pas"/>
+        <DCCReference Include="Model\NFe\NfeDetEspecificoVeiculo.pas"/>
+        <DCCReference Include="Model\NFe\NfeDuplicata.pas"/>
+        <DCCReference Include="Model\NFe\NfeEmitente.pas"/>
+        <DCCReference Include="Model\NFe\NfeExportacao.pas"/>
+        <DCCReference Include="Model\NFe\NfeFatura.pas"/>
+        <DCCReference Include="Model\NFe\NfeImportacaoDetalhe.pas"/>
+        <DCCReference Include="Model\NFe\NfeInformacaoPagamento.pas"/>
+        <DCCReference Include="Model\NFe\NfeItemRastreado.pas"/>
+        <DCCReference Include="Model\NFe\NfeLocalEntrega.pas"/>
+        <DCCReference Include="Model\NFe\NfeLocalRetirada.pas"/>
+        <DCCReference Include="Model\NFe\NfeNfReferenciada.pas"/>
+        <DCCReference Include="Model\NFe\NfeNumero.pas"/>
+        <DCCReference Include="Model\NFe\NfeNumeroInutilizado.pas"/>
+        <DCCReference Include="Model\NFe\NfeProcessoReferenciado.pas"/>
+        <DCCReference Include="Model\NFe\NfeProdRuralReferenciada.pas"/>
+        <DCCReference Include="Model\NFe\NfeReferenciada.pas"/>
+        <DCCReference Include="Model\NFe\NfeResponsavelTecnico.pas"/>
+        <DCCReference Include="Model\NFe\NfeTransporte.pas"/>
+        <DCCReference Include="Model\NFe\NfeTransporteReboque.pas"/>
+        <DCCReference Include="Model\NFe\NfeTransporteVolume.pas"/>
+        <DCCReference Include="Model\NFe\NfeTransporteVolumeLacre.pas"/>
+        <DCCReference Include="Service\NFe\NfeDetalheService.pas"/>
+        <DCCReference Include="Model\Administrativo\Empresa.pas"/>
+        <DCCReference Include="Model\Administrativo\EmpresaContato.pas"/>
+        <DCCReference Include="Model\Administrativo\EmpresaEndereco.pas"/>
+        <DCCReference Include="Model\Administrativo\EmpresaTelefone.pas"/>
+        <DCCReference Include="Service\Administrativo\EmpresaService.pas"/>
+        <DCCReference Include="Service\Sped\SpedFiscalService.pas"/>
+        <DCCReference Include="Model\ViewsDB\Sped\ViewSpedC190.pas"/>
+        <DCCReference Include="Model\ViewsDB\Sped\ViewSpedNfeDestinatario.pas"/>
+        <DCCReference Include="Model\ViewsDB\Sped\ViewSpedNfeDetalhe.pas"/>
+        <DCCReference Include="Model\ViewsDB\Sped\ViewSpedNfeEmitente.pas"/>
+        <DCCReference Include="Model\ViewsDB\Sped\ViewSpedNfeItem.pas"/>
+        <DCCReference Include="UDataModule.pas">
+            <Form>FDataModule</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Controller\Sped\SpedFiscalController.pas"/>
+        <DCCReference Include="Controller\Sped\SpedContabilController.pas"/>
+        <DCCReference Include="Service\Sped\SpedContabilService.pas"/>
+        <DCCReference Include="Controller\Comissoes\ComissaoObjetivoController.pas"/>
+        <DCCReference Include="Controller\Comissoes\ComissaoPerfilController.pas"/>
+        <DCCReference Include="Model\Comissoes\ComissaoObjetivo.pas"/>
+        <DCCReference Include="Model\Comissoes\ComissaoPerfil.pas"/>
+        <DCCReference Include="Service\Comissoes\ComissaoObjetivoService.pas"/>
+        <DCCReference Include="Service\Comissoes\ComissaoPerfilService.pas"/>
+        <DCCReference Include="Controller\OS\OsAberturaController.pas"/>
+        <DCCReference Include="Controller\OS\OsEquipamentoController.pas"/>
+        <DCCReference Include="Controller\OS\OsStatusController.pas"/>
+        <DCCReference Include="Model\OS\OsAbertura.pas"/>
+        <DCCReference Include="Model\OS\OsAberturaEquipamento.pas"/>
+        <DCCReference Include="Model\OS\OsEquipamento.pas"/>
+        <DCCReference Include="Model\OS\OsEvolucao.pas"/>
+        <DCCReference Include="Model\OS\OsProdutoServico.pas"/>
+        <DCCReference Include="Model\OS\OsStatus.pas"/>
+        <DCCReference Include="Service\OS\OsAberturaService.pas"/>
+        <DCCReference Include="Service\OS\OsEquipamentoService.pas"/>
+        <DCCReference Include="Service\OS\OsStatusService.pas"/>
+        <DCCReference Include="Controller\AFV\TabelaPrecoController.pas"/>
+        <DCCReference Include="Controller\AFV\VendedorMetaController.pas"/>
+        <DCCReference Include="Controller\AFV\VendedorRotaController.pas"/>
+        <DCCReference Include="Model\AFV\TabelaPreco.pas"/>
+        <DCCReference Include="Model\AFV\TabelaPrecoProduto.pas"/>
+        <DCCReference Include="Model\AFV\VendedorMeta.pas"/>
+        <DCCReference Include="Model\AFV\VendedorRota.pas"/>
+        <DCCReference Include="Service\AFV\TabelaPrecoService.pas"/>
+        <DCCReference Include="Service\AFV\VendedorMetaService.pas"/>
+        <DCCReference Include="Service\AFV\VendedorRotaService.pas"/>
+        <DCCReference Include="Controller\GED\GedDocumentoCabecalhoController.pas"/>
+        <DCCReference Include="Controller\GED\GedTipoDocumentoController.pas"/>
+        <DCCReference Include="Model\GED\GedDocumentoCabecalho.pas"/>
+        <DCCReference Include="Model\GED\GedDocumentoDetalhe.pas"/>
+        <DCCReference Include="Model\GED\GedTipoDocumento.pas"/>
+        <DCCReference Include="Model\GED\GedVersaoDocumento.pas"/>
+        <DCCReference Include="Service\GED\GedDocumentoCabecalhoService.pas"/>
+        <DCCReference Include="Service\GED\GedTipoDocumentoService.pas"/>
+        <DCCReference Include="Controller\NFSe\NfseCabecalhoController.pas"/>
+        <DCCReference Include="Controller\NFSe\NfseListaServicoController.pas"/>
+        <DCCReference Include="Model\NFSe\NfseCabecalho.pas"/>
+        <DCCReference Include="Model\NFSe\NfseDetalhe.pas"/>
+        <DCCReference Include="Model\NFSe\NfseIntermediario.pas"/>
+        <DCCReference Include="Model\NFSe\NfseListaServico.pas"/>
+        <DCCReference Include="Service\NFSe\NfseCabecalhoService.pas"/>
+        <DCCReference Include="Service\NFSe\NfseListaServicoService.pas"/>
+        <DCCReference Include="Controller\Cadastros\ChequeController.pas"/>
+        <DCCReference Include="Service\Cadastros\ChequeService.pas"/>
+        <DCCReference Include="Controller\ViewsDB\ViewFinLancamentoReceberController.pas"/>
+        <DCCReference Include="Model\ViewsDB\ViewFinLancamentoReceber.pas"/>
+        <DCCReference Include="Service\ViewsDB\ViewFinLancamentoReceberService.pas"/>
+        <DCCReference Include="UAuthCriteria.pas"/>
+        <DCCReference Include="Model\Cadastros\ColaboradorRelacionamento.pas"/>
+        <DCCReference Include="Model\Cadastros\ColaboradorSituacao.pas"/>
+        <DCCReference Include="Model\Cadastros\ColaboradorTipo.pas"/>
+        <DCCReference Include="Model\Cadastros\TipoAdmissao.pas"/>
+        <DCCReference Include="Model\Cadastros\Sindicato.pas"/>
+        <DCCReference Include="Model\Cadastros\TipoRelacionamento.pas"/>
+        <DCCReference Include="Model\ViewsDB\ViewPessoaTransportadora.pas"/>
+        <DCCReference Include="Model\CTe\CteAereo.pas"/>
+        <DCCReference Include="Model\CTe\CteAquaviario.pas"/>
+        <DCCReference Include="Model\CTe\CteCabecalho.pas"/>
+        <DCCReference Include="Model\CTe\CteCarga.pas"/>
+        <DCCReference Include="Model\CTe\CteComponente.pas"/>
+        <DCCReference Include="Model\CTe\CteDestinatario.pas"/>
+        <DCCReference Include="Model\CTe\CteDocumentoAnterior.pas"/>
+        <DCCReference Include="Model\CTe\CteDuplicata.pas"/>
+        <DCCReference Include="Model\CTe\CteDutoviario.pas"/>
+        <DCCReference Include="Model\CTe\CteEmitente.pas"/>
+        <DCCReference Include="Model\CTe\CteExpedidor.pas"/>
+        <DCCReference Include="Model\CTe\CteFatura.pas"/>
+        <DCCReference Include="Model\CTe\CteFerroviario.pas"/>
+        <DCCReference Include="Model\CTe\CteInformacaoNfOutros.pas"/>
+        <DCCReference Include="Model\CTe\CteLocalColeta.pas"/>
+        <DCCReference Include="Model\CTe\CteLocalEntrega.pas"/>
+        <DCCReference Include="Model\CTe\CteMultimodal.pas"/>
+        <DCCReference Include="Model\CTe\CtePassagem.pas"/>
+        <DCCReference Include="Model\CTe\CtePerigoso.pas"/>
+        <DCCReference Include="Model\CTe\CteRecebedor.pas"/>
+        <DCCReference Include="Model\CTe\CteRemetente.pas"/>
+        <DCCReference Include="Model\CTe\CteRodoviario.pas"/>
+        <DCCReference Include="Model\CTe\CteSeguro.pas"/>
+        <DCCReference Include="Model\CTe\CteTomador.pas"/>
+        <DCCReference Include="Model\CTe\CteVeiculoNovo.pas"/>
+        <DCCReference Include="Controller\CTe\CteCabecalhoController.pas"/>
+        <DCCReference Include="Service\CTe\CteCabecalhoService.pas"/>
+        <DCCReference Include="Controller\Contabilidade\CentroResultadoController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\ContabilContaController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\ContabilContaRateioController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\ContabilDreCabecalhoController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\ContabilDreDetalheController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\ContabilEncerramentoExeCabController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\ContabilEncerramentoExeDetController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\ContabilFechamentoController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\ContabilHistoricoController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\ContabilIndiceController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\ContabilIndiceValorController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\ContabilLancamentoCabecalhoController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\ContabilLancamentoDetalheController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\ContabilLancamentoOrcadoController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\ContabilLancamentoPadraoController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\ContabilLivroController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\ContabilLoteController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\ContabilParametroController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\ContabilTermoController.pas"/>
+        <DCCReference Include="Controller\Contabilidade\PlanoContaController.pas"/>
+        <DCCReference Include="Service\Contabilidade\CentroResultadoService.pas"/>
+        <DCCReference Include="Service\Contabilidade\ContabilContaRateioService.pas"/>
+        <DCCReference Include="Service\Contabilidade\ContabilContaService.pas"/>
+        <DCCReference Include="Service\Contabilidade\ContabilDreCabecalhoService.pas"/>
+        <DCCReference Include="Service\Contabilidade\ContabilDreDetalheService.pas"/>
+        <DCCReference Include="Service\Contabilidade\ContabilEncerramentoExeCabService.pas"/>
+        <DCCReference Include="Service\Contabilidade\ContabilEncerramentoExeDetService.pas"/>
+        <DCCReference Include="Service\Contabilidade\ContabilFechamentoService.pas"/>
+        <DCCReference Include="Service\Contabilidade\ContabilHistoricoService.pas"/>
+        <DCCReference Include="Service\Contabilidade\ContabilIndiceService.pas"/>
+        <DCCReference Include="Service\Contabilidade\ContabilIndiceValorService.pas"/>
+        <DCCReference Include="Service\Contabilidade\ContabilLancamentoCabecalhoService.pas"/>
+        <DCCReference Include="Service\Contabilidade\ContabilLancamentoDetalheService.pas"/>
+        <DCCReference Include="Service\Contabilidade\ContabilLancamentoOrcadoService.pas"/>
+        <DCCReference Include="Service\Contabilidade\ContabilLancamentoPadraoService.pas"/>
+        <DCCReference Include="Service\Contabilidade\ContabilLivroService.pas"/>
+        <DCCReference Include="Service\Contabilidade\ContabilLoteService.pas"/>
+        <DCCReference Include="Service\Contabilidade\ContabilParametroService.pas"/>
+        <DCCReference Include="Service\Contabilidade\ContabilTermoService.pas"/>
+        <DCCReference Include="Service\Contabilidade\PlanoContaService.pas"/>
+        <DCCReference Include="Model\Contabilidade\CentroResultado.pas"/>
+        <DCCReference Include="Model\Contabilidade\ContabilConta.pas"/>
+        <DCCReference Include="Model\Contabilidade\ContabilContaRateio.pas"/>
+        <DCCReference Include="Model\Contabilidade\ContabilDreCabecalho.pas"/>
+        <DCCReference Include="Model\Contabilidade\ContabilDreDetalhe.pas"/>
+        <DCCReference Include="Model\Contabilidade\ContabilEncerramentoExeCab.pas"/>
+        <DCCReference Include="Model\Contabilidade\ContabilEncerramentoExeDet.pas"/>
+        <DCCReference Include="Model\Contabilidade\ContabilFechamento.pas"/>
+        <DCCReference Include="Model\Contabilidade\ContabilHistorico.pas"/>
+        <DCCReference Include="Model\Contabilidade\ContabilIndice.pas"/>
+        <DCCReference Include="Model\Contabilidade\ContabilIndiceValor.pas"/>
+        <DCCReference Include="Model\Contabilidade\ContabilLancamentoCabecalho.pas"/>
+        <DCCReference Include="Model\Contabilidade\ContabilLancamentoDetalhe.pas"/>
+        <DCCReference Include="Model\Contabilidade\ContabilLancamentoOrcado.pas"/>
+        <DCCReference Include="Model\Contabilidade\ContabilLancamentoPadrao.pas"/>
+        <DCCReference Include="Model\Contabilidade\ContabilLivro.pas"/>
+        <DCCReference Include="Model\Contabilidade\ContabilLote.pas"/>
+        <DCCReference Include="Model\Contabilidade\ContabilParametro.pas"/>
+        <DCCReference Include="Model\Contabilidade\ContabilTermo.pas"/>
+        <DCCReference Include="Model\Contabilidade\CtResultadoNtFinanceira.pas"/>
+        <DCCReference Include="Model\Contabilidade\EncerraCentroResultado.pas"/>
+        <DCCReference Include="Model\Contabilidade\LancaCentroResultado.pas"/>
+        <DCCReference Include="Model\Contabilidade\PlanoConta.pas"/>
+        <DCCReference Include="Model\Contabilidade\RateioCentroResultadoCab.pas"/>
+        <DCCReference Include="Model\Contabilidade\RateioCentroResultadoDet.pas"/>
+        <DCCReference Include="Model\Contabilidade\RegistroCartorio.pas"/>
+        <DCCReference Include="Controller\Fiscal\FiscalApuracaoIcmsController.pas"/>
+        <DCCReference Include="Controller\Fiscal\FiscalEstadualPorteController.pas"/>
+        <DCCReference Include="Controller\Fiscal\FiscalEstadualRegimeController.pas"/>
+        <DCCReference Include="Controller\Fiscal\FiscalInscricoesSubstitutasController.pas"/>
+        <DCCReference Include="Controller\Fiscal\FiscalLivroController.pas"/>
+        <DCCReference Include="Controller\Fiscal\FiscalMunicipalRegimeController.pas"/>
+        <DCCReference Include="Controller\Fiscal\FiscalNotaFiscalEntradaController.pas"/>
+        <DCCReference Include="Controller\Fiscal\FiscalNotaFiscalSaidaController.pas"/>
+        <DCCReference Include="Controller\Fiscal\FiscalParametroController.pas"/>
+        <DCCReference Include="Controller\Fiscal\FiscalTermoController.pas"/>
+        <DCCReference Include="Controller\Fiscal\SimplesNacionalCabecalhoController.pas"/>
+        <DCCReference Include="Service\Fiscal\FiscalApuracaoIcmsService.pas"/>
+        <DCCReference Include="Service\Fiscal\FiscalEstadualPorteService.pas"/>
+        <DCCReference Include="Service\Fiscal\FiscalEstadualRegimeService.pas"/>
+        <DCCReference Include="Service\Fiscal\FiscalInscricoesSubstitutasService.pas"/>
+        <DCCReference Include="Service\Fiscal\FiscalLivroService.pas"/>
+        <DCCReference Include="Service\Fiscal\FiscalMunicipalRegimeService.pas"/>
+        <DCCReference Include="Service\Fiscal\FiscalNotaFiscalEntradaService.pas"/>
+        <DCCReference Include="Service\Fiscal\FiscalNotaFiscalSaidaService.pas"/>
+        <DCCReference Include="Service\Fiscal\FiscalParametroService.pas"/>
+        <DCCReference Include="Service\Fiscal\FiscalTermoService.pas"/>
+        <DCCReference Include="Service\Fiscal\SimplesNacionalCabecalhoService.pas"/>
+        <DCCReference Include="Model\Fiscal\FiscalApuracaoIcms.pas"/>
+        <DCCReference Include="Model\Fiscal\FiscalEstadualPorte.pas"/>
+        <DCCReference Include="Model\Fiscal\FiscalEstadualRegime.pas"/>
+        <DCCReference Include="Model\Fiscal\FiscalInscricoesSubstitutas.pas"/>
+        <DCCReference Include="Model\Fiscal\FiscalLivro.pas"/>
+        <DCCReference Include="Model\Fiscal\FiscalMunicipalRegime.pas"/>
+        <DCCReference Include="Model\Fiscal\FiscalNotaFiscalEntrada.pas"/>
+        <DCCReference Include="Model\Fiscal\FiscalNotaFiscalSaida.pas"/>
+        <DCCReference Include="Model\Fiscal\FiscalParametro.pas"/>
+        <DCCReference Include="Model\Fiscal\FiscalTermo.pas"/>
+        <DCCReference Include="Model\Fiscal\SimplesNacionalCabecalho.pas"/>
+        <DCCReference Include="Model\Fiscal\SimplesNacionalDetalhe.pas"/>
+        <DCCReference Include="Controller\Orcamentos\OrcamentoEmpresarialController.pas"/>
+        <DCCReference Include="Controller\Orcamentos\OrcamentoFluxoCaixaController.pas"/>
+        <DCCReference Include="Controller\Orcamentos\OrcamentoFluxoCaixaPeriodoController.pas"/>
+        <DCCReference Include="Controller\Orcamentos\OrcamentoPeriodoController.pas"/>
+        <DCCReference Include="Model\Orcamentos\OrcamentoDetalhe.pas"/>
+        <DCCReference Include="Model\Orcamentos\OrcamentoEmpresarial.pas"/>
+        <DCCReference Include="Model\Orcamentos\OrcamentoFluxoCaixa.pas"/>
+        <DCCReference Include="Model\Orcamentos\OrcamentoFluxoCaixaDetalhe.pas"/>
+        <DCCReference Include="Model\Orcamentos\OrcamentoFluxoCaixaPeriodo.pas"/>
+        <DCCReference Include="Model\Orcamentos\OrcamentoPeriodo.pas"/>
+        <DCCReference Include="Service\Orcamentos\OrcamentoEmpresarialService.pas"/>
+        <DCCReference Include="Service\Orcamentos\OrcamentoFluxoCaixaPeriodoService.pas"/>
+        <DCCReference Include="Service\Orcamentos\OrcamentoFluxoCaixaService.pas"/>
+        <DCCReference Include="Service\Orcamentos\OrcamentoPeriodoService.pas"/>
+        <DCCReference Include="Controller\Etiquetas\EtiquetaFormatoPapelController.pas"/>
+        <DCCReference Include="Controller\Etiquetas\EtiquetaLayoutController.pas"/>
+        <DCCReference Include="Controller\Etiquetas\EtiquetaTemplateController.pas"/>
+        <DCCReference Include="Model\Etiquetas\EtiquetaFormatoPapel.pas"/>
+        <DCCReference Include="Model\Etiquetas\EtiquetaLayout.pas"/>
+        <DCCReference Include="Model\Etiquetas\EtiquetaTemplate.pas"/>
+        <DCCReference Include="Service\Etiquetas\EtiquetaFormatoPapelService.pas"/>
+        <DCCReference Include="Service\Etiquetas\EtiquetaLayoutService.pas"/>
+        <DCCReference Include="Service\Etiquetas\EtiquetaTemplateService.pas"/>
+        <DCCReference Include="Controller\Folha\EmpresaTransporteController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaAfastamentoController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaEventoController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaFechamentoController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaFeriasColetivasController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaHistoricoSalarialController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaInssController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaInssRetencaoController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaInssServicoController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaLancamentoCabecalhoController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaLancamentoComissaoController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaParametroController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaPlanoSaudeController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaPppAtividadeController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaPppCatController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaPppController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaPppExameMedicoController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaPppFatorRiscoController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaRescisaoController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaTipoAfastamentoController.pas"/>
+        <DCCReference Include="Controller\Folha\FolhaValeTransporteController.pas"/>
+        <DCCReference Include="Model\Folha\EmpresaTransporte.pas"/>
+        <DCCReference Include="Model\Folha\EmpresaTransporteItinerario.pas"/>
+        <DCCReference Include="Model\Folha\FolhaAfastamento.pas"/>
+        <DCCReference Include="Model\Folha\FolhaEvento.pas"/>
+        <DCCReference Include="Model\Folha\FolhaFechamento.pas"/>
+        <DCCReference Include="Model\Folha\FolhaFeriasColetivas.pas"/>
+        <DCCReference Include="Model\Folha\FolhaHistoricoSalarial.pas"/>
+        <DCCReference Include="Model\Folha\FolhaInss.pas"/>
+        <DCCReference Include="Model\Folha\FolhaInssRetencao.pas"/>
+        <DCCReference Include="Model\Folha\FolhaInssServico.pas"/>
+        <DCCReference Include="Model\Folha\FolhaLancamentoCabecalho.pas"/>
+        <DCCReference Include="Model\Folha\FolhaLancamentoComissao.pas"/>
+        <DCCReference Include="Model\Folha\FolhaParametro.pas"/>
+        <DCCReference Include="Model\Folha\FolhaPlanoSaude.pas"/>
+        <DCCReference Include="Model\Folha\FolhaPpp.pas"/>
+        <DCCReference Include="Model\Folha\FolhaPppAtividade.pas"/>
+        <DCCReference Include="Model\Folha\FolhaPppCat.pas"/>
+        <DCCReference Include="Model\Folha\FolhaPppExameMedico.pas"/>
+        <DCCReference Include="Model\Folha\FolhaPppFatorRisco.pas"/>
+        <DCCReference Include="Model\Folha\FolhaRescisao.pas"/>
+        <DCCReference Include="Model\Folha\FolhaTipoAfastamento.pas"/>
+        <DCCReference Include="Model\Folha\FolhaValeTransporte.pas"/>
+        <DCCReference Include="Service\Folha\EmpresaTransporteService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaAfastamentoService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaEventoService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaFechamentoService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaFeriasColetivasService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaHistoricoSalarialService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaInssRetencaoService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaInssService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaInssServicoService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaLancamentoCabecalhoService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaLancamentoComissaoService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaParametroService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaPlanoSaudeService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaPppAtividadeService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaPppCatService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaPppExameMedicoService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaPppFatorRiscoService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaPppService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaRescisaoService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaTipoAfastamentoService.pas"/>
+        <DCCReference Include="Service\Folha\FolhaValeTransporteService.pas"/>
+        <DCCReference Include="Model\Folha\FolhaLancamentoDetalhe.pas"/>
+        <DCCReference Include="Controller\Cadastros\OperadoraPlanoSaudeController.pas"/>
+        <DCCReference Include="Model\Cadastros\OperadoraPlanoSaude.pas"/>
+        <DCCReference Include="Service\Cadastros\OperadoraPlanoSaudeService.pas"/>
+        <DCCReference Include="Controller\Inventario\InventarioContagemCabController.pas"/>
+        <DCCReference Include="Model\Inventario\InventarioContagemCab.pas"/>
+        <DCCReference Include="Model\Inventario\InventarioContagemDet.pas"/>
+        <DCCReference Include="Service\Inventario\InventarioContagemCabService.pas"/>
+        <DCCReference Include="Controller\PCP\PcpInstrucaoController.pas"/>
+        <DCCReference Include="Controller\PCP\PcpInstrucaoOpController.pas"/>
+        <DCCReference Include="Controller\PCP\PcpOpCabecalhoController.pas"/>
+        <DCCReference Include="Model\PCP\PcpInstrucao.pas"/>
+        <DCCReference Include="Model\PCP\PcpInstrucaoOp.pas"/>
+        <DCCReference Include="Model\PCP\PcpOpCabecalho.pas"/>
+        <DCCReference Include="Model\PCP\PcpOpDetalhe.pas"/>
+        <DCCReference Include="Model\PCP\PcpServico.pas"/>
+        <DCCReference Include="Model\PCP\PcpServicoColaborador.pas"/>
+        <DCCReference Include="Model\PCP\PcpServicoEquipamento.pas"/>
+        <DCCReference Include="Service\PCP\PcpInstrucaoOpService.pas"/>
+        <DCCReference Include="Service\PCP\PcpInstrucaoService.pas"/>
+        <DCCReference Include="Service\PCP\PcpOpCabecalhoService.pas"/>
+        <DCCReference Include="Controller\MDFe\MdfeCabecalhoController.pas"/>
+        <DCCReference Include="Model\MDFe\MdfeCabecalho.pas"/>
+        <DCCReference Include="Model\MDFe\MdfeEmitente.pas"/>
+        <DCCReference Include="Model\MDFe\MdfeInformacaoCte.pas"/>
+        <DCCReference Include="Model\MDFe\MdfeInformacaoNfe.pas"/>
+        <DCCReference Include="Model\MDFe\MdfeInformacaoSeguro.pas"/>
+        <DCCReference Include="Model\MDFe\MdfeLacre.pas"/>
+        <DCCReference Include="Model\MDFe\MdfeMunicipioCarregamento.pas"/>
+        <DCCReference Include="Model\MDFe\MdfeMunicipioDescarrega.pas"/>
+        <DCCReference Include="Model\MDFe\MdfePercurso.pas"/>
+        <DCCReference Include="Model\MDFe\MdfeRodoviario.pas"/>
+        <DCCReference Include="Model\MDFe\MdfeRodoviarioCiot.pas"/>
+        <DCCReference Include="Model\MDFe\MdfeRodoviarioMotorista.pas"/>
+        <DCCReference Include="Model\MDFe\MdfeRodoviarioPedagio.pas"/>
+        <DCCReference Include="Model\MDFe\MdfeRodoviarioVeiculo.pas"/>
+        <DCCReference Include="Service\MDFe\MdfeCabecalhoService.pas"/>
+        <DCCReference Include="Controller\Agenda\AgendaCompromissoController.pas"/>
+        <DCCReference Include="Controller\Agenda\RecadoRemetenteController.pas"/>
+        <DCCReference Include="Controller\Agenda\ReuniaoSalaController.pas"/>
+        <DCCReference Include="Controller\Agenda\ReuniaoSalaEventoController.pas"/>
+        <DCCReference Include="Model\Agenda\AgendaCompromisso.pas"/>
+        <DCCReference Include="Model\Agenda\AgendaCompromissoConvidado.pas"/>
+        <DCCReference Include="Model\Agenda\AgendaNotificacao.pas"/>
+        <DCCReference Include="Model\Agenda\RecadoDestinatario.pas"/>
+        <DCCReference Include="Model\Agenda\RecadoRemetente.pas"/>
+        <DCCReference Include="Model\Agenda\ReuniaoSala.pas"/>
+        <DCCReference Include="Model\Agenda\ReuniaoSalaEvento.pas"/>
+        <DCCReference Include="Service\Agenda\AgendaCompromissoService.pas"/>
+        <DCCReference Include="Service\Agenda\RecadoRemetenteService.pas"/>
+        <DCCReference Include="Service\Agenda\ReuniaoSalaEventoService.pas"/>
+        <DCCReference Include="Service\Agenda\ReuniaoSalaService.pas"/>
+        <DCCReference Include="Controller\Ponto\PontoAbonoController.pas"/>
+        <DCCReference Include="Controller\Ponto\PontoAbonoUtilizacaoController.pas"/>
+        <DCCReference Include="Controller\Ponto\PontoBancoHorasController.pas"/>
+        <DCCReference Include="Controller\Ponto\PontoBancoHorasUtilizacaoController.pas"/>
+        <DCCReference Include="Controller\Ponto\PontoClassificacaoJornadaController.pas"/>
+        <DCCReference Include="Controller\Ponto\PontoEscalaController.pas"/>
+        <DCCReference Include="Controller\Ponto\PontoFechamentoJornadaController.pas"/>
+        <DCCReference Include="Controller\Ponto\PontoHorarioAutorizadoController.pas"/>
+        <DCCReference Include="Controller\Ponto\PontoHorarioController.pas"/>
+        <DCCReference Include="Controller\Ponto\PontoMarcacaoController.pas"/>
+        <DCCReference Include="Controller\Ponto\PontoParametroController.pas"/>
+        <DCCReference Include="Controller\Ponto\PontoRelogioController.pas"/>
+        <DCCReference Include="Model\Ponto\PontoAbono.pas"/>
+        <DCCReference Include="Model\Ponto\PontoAbonoUtilizacao.pas"/>
+        <DCCReference Include="Model\Ponto\PontoBancoHoras.pas"/>
+        <DCCReference Include="Model\Ponto\PontoBancoHorasUtilizacao.pas"/>
+        <DCCReference Include="Model\Ponto\PontoClassificacaoJornada.pas"/>
+        <DCCReference Include="Model\Ponto\PontoEscala.pas"/>
+        <DCCReference Include="Model\Ponto\PontoFechamentoJornada.pas"/>
+        <DCCReference Include="Model\Ponto\PontoHorario.pas"/>
+        <DCCReference Include="Model\Ponto\PontoHorarioAutorizado.pas"/>
+        <DCCReference Include="Model\Ponto\PontoMarcacao.pas"/>
+        <DCCReference Include="Model\Ponto\PontoParametro.pas"/>
+        <DCCReference Include="Model\Ponto\PontoRelogio.pas"/>
+        <DCCReference Include="Model\Ponto\PontoTurma.pas"/>
+        <DCCReference Include="Service\Ponto\PontoAbonoService.pas"/>
+        <DCCReference Include="Service\Ponto\PontoAbonoUtilizacaoService.pas"/>
+        <DCCReference Include="Service\Ponto\PontoBancoHorasService.pas"/>
+        <DCCReference Include="Service\Ponto\PontoBancoHorasUtilizacaoService.pas"/>
+        <DCCReference Include="Service\Ponto\PontoClassificacaoJornadaService.pas"/>
+        <DCCReference Include="Service\Ponto\PontoEscalaService.pas"/>
+        <DCCReference Include="Service\Ponto\PontoFechamentoJornadaService.pas"/>
+        <DCCReference Include="Service\Ponto\PontoHorarioAutorizadoService.pas"/>
+        <DCCReference Include="Service\Ponto\PontoHorarioService.pas"/>
+        <DCCReference Include="Service\Ponto\PontoMarcacaoService.pas"/>
+        <DCCReference Include="Service\Ponto\PontoParametroService.pas"/>
+        <DCCReference Include="Service\Ponto\PontoRelogioService.pas"/>
+        <DCCReference Include="Controller\Patrimonio\PatrimApoliceSeguroController.pas"/>
+        <DCCReference Include="Controller\Patrimonio\PatrimBemController.pas"/>
+        <DCCReference Include="Controller\Patrimonio\PatrimEstadoConservacaoController.pas"/>
+        <DCCReference Include="Controller\Patrimonio\PatrimGrupoBemController.pas"/>
+        <DCCReference Include="Controller\Patrimonio\PatrimIndiceAtualizacaoController.pas"/>
+        <DCCReference Include="Controller\Patrimonio\PatrimMovimentacaoBemController.pas"/>
+        <DCCReference Include="Controller\Patrimonio\PatrimTaxaDepreciacaoController.pas"/>
+        <DCCReference Include="Controller\Patrimonio\PatrimTipoAquisicaoBemController.pas"/>
+        <DCCReference Include="Controller\Patrimonio\PatrimTipoMovimentacaoController.pas"/>
+        <DCCReference Include="Service\Patrimonio\PatrimApoliceSeguroService.pas"/>
+        <DCCReference Include="Service\Patrimonio\PatrimBemService.pas"/>
+        <DCCReference Include="Service\Patrimonio\PatrimEstadoConservacaoService.pas"/>
+        <DCCReference Include="Service\Patrimonio\PatrimGrupoBemService.pas"/>
+        <DCCReference Include="Service\Patrimonio\PatrimIndiceAtualizacaoService.pas"/>
+        <DCCReference Include="Service\Patrimonio\PatrimMovimentacaoBemService.pas"/>
+        <DCCReference Include="Service\Patrimonio\PatrimTaxaDepreciacaoService.pas"/>
+        <DCCReference Include="Service\Patrimonio\PatrimTipoAquisicaoBemService.pas"/>
+        <DCCReference Include="Service\Patrimonio\PatrimTipoMovimentacaoService.pas"/>
+        <DCCReference Include="Model\Patrimonio\PatrimApoliceSeguro.pas"/>
+        <DCCReference Include="Model\Patrimonio\PatrimBem.pas"/>
+        <DCCReference Include="Model\Patrimonio\PatrimDepreciacaoBem.pas"/>
+        <DCCReference Include="Model\Patrimonio\PatrimDocumentoBem.pas"/>
+        <DCCReference Include="Model\Patrimonio\PatrimEstadoConservacao.pas"/>
+        <DCCReference Include="Model\Patrimonio\PatrimGrupoBem.pas"/>
+        <DCCReference Include="Model\Patrimonio\PatrimIndiceAtualizacao.pas"/>
+        <DCCReference Include="Model\Patrimonio\PatrimMovimentacaoBem.pas"/>
+        <DCCReference Include="Model\Patrimonio\PatrimTaxaDepreciacao.pas"/>
+        <DCCReference Include="Model\Patrimonio\PatrimTipoAquisicaoBem.pas"/>
+        <DCCReference Include="Model\Patrimonio\PatrimTipoMovimentacao.pas"/>
+        <DCCReference Include="Controller\Patrimonio\SeguradoraController.pas"/>
+        <DCCReference Include="Model\Patrimonio\Seguradora.pas"/>
+        <DCCReference Include="Service\Patrimonio\SeguradoraService.pas"/>
+        <DCCReference Include="Service\Estoque\ControleEstoqueService.pas"/>
+        <DCCReference Include="Model\Transiente\ObjetoNfe.pas"/>
+        <DCCReference Include="Controller\NFe\NfeNumeroController.pas"/>
+        <DCCReference Include="Service\NFe\NfeNumeroService.pas"/>
+        <DCCReference Include="Controller\Administrativo\EmpresaController.pas"/>
+        <DCCReference Include="Model\ViewsDB\ViewPessoaVendedor.pas"/>
+        <DCCReference Include="Controller\ViewsDB\ViewPessoaVendedorController.pas"/>
+        <DCCReference Include="Service\ViewsDB\ViewPessoaVendedorService.pas"/>
+        <DCCReference Include="Service\ViewsDB\ViewPessoaTransportadoraService.pas"/>
+        <DCCReference Include="Controller\ViewsDB\ViewPessoaTransportadoraController.pas"/>
+        <None Include="ModelSupport_ordersmanager\default.txvpck"/>
+        <None Include="ModelSupport_ordersmanager\Services\default.txvpck"/>
+        <None Include="ModelSupport_ordersmanager\ordersmanager\default.txvpck"/>
+        <None Include="ModelSupport_ordersmanager\Services\default.txaPackage"/>
+        <None Include="ModelSupport_ordersmanager\BusinessObjects\default.txaPackage"/>
+        <None Include="ModelSupport_ordersmanager\BusinessObjects\default.txvpck"/>
+        <None Include="ModelSupport_ordersmanager\Controllers\Articoli\default.txaPackage"/>
+        <None Include="ModelSupport_articles_crud\default.txvpck"/>
+        <None Include="ModelSupport_articles_crud\Commons\default.txvpck"/>
+        <None Include="ModelSupport_articles_crud\MainDM\default.txvpck"/>
+        <None Include="ModelSupport_articles_crud\BusinessObjects\default.txvpck"/>
+        <None Include="ModelSupport_articles_crud\Services\default.txvpck"/>
+        <None Include="ModelSupport_articles_crud\articles_crud\default.txvpck"/>
+        <None Include="ModelSupport_articles_crud\WebModuleUnit1\default.txvpck"/>
+        <None Include="ModelSupport_articles_crud\Controllers\default.txvpck"/>
+        <None Include="ModelSupport_articles_crud\Controllers\Articoli\default.txvpck"/>
+        <None Include="ModelSupport_articles_crud\Controllers\Base\default.txvpck"/>
+        <None Include="ModelSupport_articles_crud\MainDM\default.txaPackage"/>
+        <None Include="ModelSupport_articles_crud\Controllers\Base\default.txaPackage"/>
+        <None Include="ModelSupport_articles_crud\Services\default.txaPackage"/>
+        <None Include="ModelSupport_articles_crud\Controllers\default.txaPackage"/>
+        <None Include="ModelSupport_articles_crud\WebModuleUnit1\default.txaPackage"/>
+        <None Include="ModelSupport_articles_crud\articles_crud\default.txaPackage"/>
+        <None Include="ModelSupport_articles_crud\Commons\default.txaPackage"/>
+        <None Include="ModelSupport_articles_crud\BusinessObjects\default.txaPackage"/>
+        <None Include="ModelSupport_articles_crud\Controllers\Articoli\default.txaPackage"/>
+        <None Include="ModelSupport_articles_crud\MVCFramework\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\PessoaJuridica\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\BancoAgencia\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoGrupoController\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoGrupoService\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\NivelFormacao\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\ServiceBase\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\T2TiERPFenix\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\EstadoCivil\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\PessoaEndereco\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\Banco\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\BancoService\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoUnidadeService\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoUnidade\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoSubgrupo\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoSubgrupoController\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\BancoAgenciaController\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\NivelFormacaoController\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\WebModuleUnit1\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\EstadoCivilController\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\MainDM\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoSubgrupoService\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\PessoaController\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\BancoAgenciaService\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\Commons\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\UDataModuleConexao\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoMarcaService\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\Services\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\Filtro\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoMarca\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\PessoaFisica\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoMarcaController\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\ModelBase\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\BancoController\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\NivelFormacaoService\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\EstadoCivilService\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoController\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\Produto\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoUnidadeController\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\Controllers\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\Controllers\Base\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\Controllers\Articles\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\Pessoa\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\BusinessObjects\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\PessoaContato\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\PessoaService\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\PessoaTelefone\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoService\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoGrupo\default.txvpck"/>
+        <None Include="ModelSupport_T2TiERPFenix\PessoaJuridica\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\NivelFormacao\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoController\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\Services\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoService\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\BancoAgenciaService\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\PessoaService\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\Controllers\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\ServiceBase\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\Controllers\Base\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoSubgrupoController\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\BancoService\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\PessoaFisica\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\T2TiERPFenix\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\WebModuleUnit1\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\EstadoCivilController\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\BancoAgenciaController\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\Produto\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\Controllers\Articles\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoUnidade\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\BancoAgencia\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\BancoController\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\Pessoa\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\Commons\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\NivelFormacaoService\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoSubgrupoService\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoGrupo\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\UDataModuleConexao\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoUnidadeService\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\PessoaEndereco\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoMarca\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoGrupoController\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\BusinessObjects\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\ModelBase\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoSubgrupo\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\MainDM\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\EstadoCivilService\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoMarcaService\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\PessoaContato\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoGrupoService\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\NivelFormacaoController\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoMarcaController\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\Filtro\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\EstadoCivil\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\Banco\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\PessoaController\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\PessoaTelefone\default.txaPackage"/>
+        <None Include="ModelSupport_T2TiERPFenix\ProdutoUnidadeController\default.txaPackage"/>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">T2TiERPFenix.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k240.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp240.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k240.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp240.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Deployment Version="3">
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\Commons\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\BancoService\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\Commons\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\PessoaService\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\EstadoCivilService\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\Services\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\Produto\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\Controllers\Base\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\BancoAgencia\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoUnidadeService\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\BusinessObjects\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\BusinessObjects\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\UDataModuleConexao\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoSubgrupo\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\EstadoCivil\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\Controllers\Articles\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\Controllers\Articoli\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\Services\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\EstadoCivilService\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\BancoAgencia\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\articles_crud\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\PessoaFisica\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoUnidade\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoGrupoService\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\EstadoCivil\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\Controllers\Articles\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\T2TiERPFenix\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\PessoaContato\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\Services\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\EstadoCivilController\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoUnidadeController\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_ordersmanager\Services\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoController\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\WebModuleUnit1\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\Filtro\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\NivelFormacaoController\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\BusinessObjects\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_ordersmanager\BusinessObjects\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\Produto\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\Controllers\Base\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\Controllers\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoGrupo\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\Pessoa\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoSubgrupo\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_ordersmanager\ordersmanager\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\WebModuleUnit1\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoSubgrupoService\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\MainDM\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\NivelFormacaoController\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\NivelFormacaoService\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoMarcaController\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoUnidade\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\PessoaContato\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoMarcaService\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoUnidadeController\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoMarca\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\NivelFormacao\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\Controllers\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="bin\T2TiERPFenix.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>T2TiERPFenix.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\MVCFramework\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\BancoController\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\NivelFormacao\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\PessoaEndereco\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\BancoService\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoMarca\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\MainDM\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoService\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\BancoAgenciaController\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\Services\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoGrupoController\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\Controllers\Articoli\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\UDataModuleConexao\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\WebModuleUnit1\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ServiceBase\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoGrupoController\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\Banco\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoSubgrupoService\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\NivelFormacaoService\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoGrupo\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\PessoaEndereco\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoService\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\Commons\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoUnidadeService\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoSubgrupoController\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\PessoaController\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoGrupoService\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\Controllers\Base\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\BancoAgenciaController\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\PessoaJuridica\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\BancoAgenciaService\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\Pessoa\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\PessoaTelefone\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\EstadoCivilController\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\PessoaService\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\BancoController\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\Controllers\Base\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\PessoaController\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\Filtro\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_ordersmanager\BusinessObjects\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\MainDM\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_ordersmanager\Services\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\T2TiERPFenix\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\Banco\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\Controllers\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ModelBase\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\PessoaTelefone\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\BusinessObjects\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\BancoAgenciaService\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\Controllers\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoMarcaService\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\articles_crud\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_articles_crud\Commons\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_ordersmanager\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ServiceBase\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoController\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\MainDM\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\WebModuleUnit1\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoMarcaController\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\PessoaFisica\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\PessoaJuridica\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_ordersmanager\Controllers\Articoli\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ModelBase\default.txvpck" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ModelSupport_T2TiERPFenix\ProdutoSubgrupoController\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidFileProvider">
+                    <Platform Name="Android">
+                        <RemoteDir>res\xml</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\xml</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiv7aFile">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeX86File"/>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput_Android32">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV21">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_Colors">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon192">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon24">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_Strings">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iOS_AppStore1024">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_AppIcon152">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_AppIcon167">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024x768">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536x2048">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1668">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1668x2388">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048x1536">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048x2732">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2224">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2388x1668">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2732x2048">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768x1024">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_LaunchDark2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Notification40">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Setting58">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_SpotLight80">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_AppIcon120">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_AppIcon180">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1125">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1136x640">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1242">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1242x2688">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1334">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1792">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2208">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2436">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2688x1242">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch320">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch3x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640x1136">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch750">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch828">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_LaunchDark2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_LaunchDark3x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Notification40">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Notification60">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Setting58">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Setting87">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Spotlight120">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Spotlight80">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceResourceRules"/>
+                <DeployClass Name="ProjectiOSEntitlements"/>
+                <DeployClass Name="ProjectiOSInfoPList"/>
+                <DeployClass Name="ProjectiOSLaunchScreen"/>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXDebug"/>
+                <DeployClass Name="ProjectOSXEntitlements"/>
+                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Linux64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOutput_Android32">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectUWPManifest">
+                    <Platform Name="Win32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo150">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo44">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Android64" Name="$(PROJECTNAME)"/>
+            </Deployment>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+            <ModelSupport>False</ModelSupport>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>

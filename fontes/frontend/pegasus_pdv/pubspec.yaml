@@ -1,0 +1,133 @@
+name: pegasus_pdv
+description: T2Ti ERP - Pegasus PDV
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+
+# version:A.B.C+X --> A.B.C represents the versionName such as 1.0.0 - X (the number after the +) represents the versionCode such as 1, 2, 3, etc.
+version: 1.0.9+9
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  provider: any
+  intl: any
+  font_awesome_flutter: any
+  backdrop: ^0.9.1
+  http: any
+  extended_masked_text: any
+  cpf_cnpj_validator: any
+  flutter_html: ^3.0.0-beta.2
+  bottomreveal: any
+  flutter_barcode_scanner: any
+  flutter_bootstrap: any
+  printing: ^5.11.1
+  drift: ^2.7.0
+  sqlite3_flutter_libs: ^0.5.14
+  path_provider: ^2.0.11
+  path: any
+  image_picker: any
+  desktop_window: any
+  url_launcher: any
+  email_validator: any
+  flutter_dotenv: any
+  encrypt: any
+  bottom_navy_bar: any
+  flutter_spinbox: any
+  ini: ^2.0.1
+  custom_radio_grouped_button: any
+  csv: any
+  file_picker: any
+  crypto: any
+  share_plus: any
+  sparkline: any
+  platform_device_id: any
+  xml: ^6.1.0
+  pdf: ^3.10.1
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  build_runner: ^2.1.4
+  build_web_compilers: ^4.0.8
+  drift_dev:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.0
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/launcher_icon.png"  
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+     - assets/images/
+     - assets/fonts/
+     - assets/text/
+     - .env
+
+msix_config:
+  display_name: T2Ti Pegasus PDV
+  publisher_display_name: T2Ti.COM
+  identity_name: T2Ti.COM.T2TiPegasusPDV
+  msix_version: 1.0.10.0
+  publisher: CN=0A6E4754-6ACC-44ED-81F6-94B57BF2E8BC
+  logo_path: C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Flutter\pegasus_pdv\assets\images\logo_pegasus_pdv.png
+  capabilities: internetClient,systemManagement,pointOfService,bluetooth
+  store: true     
+  
+
+# Flutter Doctor máquina T2Ti
+#Doctor summary (to see all details, run flutter doctor -v):
+#[√] Flutter (Channel stable, 3.16.5, on Microsoft Windows [versÆo 10.0.19045.3803], locale pt-BR)
+#[√] Windows Version (Installed version of Windows is version 10 or higher)
+#[√] Android toolchain - develop for Android devices (Android SDK version 33.0.0)
+#[√] Chrome - develop for the web
+#[√] Visual Studio - develop Windows apps (Visual Studio Community 2022 17.5.5)
+#[√] Android Studio (version 2021.2)
+#[√] VS Code (version 1.85.1)
+#[√] Connected device (3 available)
+#[√] Network resources

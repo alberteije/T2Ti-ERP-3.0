@@ -1,0 +1,6 @@
+projectKey=delphi-pos-correcoes
+serverUrl=http://localhost:9000
+serverVersion=8.4.1.35646
+dashboardUrl=http://localhost:9000/dashboard?id=delphi-pos-correcoes
+ceTaskId=AXTljJWwchi6xo44iPXb
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXTljJWwchi6xo44iPXb

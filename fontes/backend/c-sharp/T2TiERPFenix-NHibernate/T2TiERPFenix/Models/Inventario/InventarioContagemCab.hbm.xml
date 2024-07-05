@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="InventarioContagemCab" table="INVENTARIO_CONTAGEM_CAB" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="DataContagem" column="DATA_CONTAGEM" />
+	<property name="EstoqueAtualizado" column="ESTOQUE_ATUALIZADO" />
+	<property name="Tipo" column="TIPO" />
+
+
+	<bag name="ListaInventarioContagemDet" table="inventario_contagem_det" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_INVENTARIO_CONTAGEM_CAB"/>
+	  <one-to-many class="InventarioContagemDet"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

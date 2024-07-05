@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="EstoqueReajusteCabecalho" table="ESTOQUE_REAJUSTE_CABECALHO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="DataReajuste" column="DATA_REAJUSTE" />
+	<property name="Taxa" column="TAXA" />
+	<property name="TipoReajuste" column="TIPO_REAJUSTE" />
+	<property name="Justificativa" column="JUSTIFICATIVA" />
+
+	<many-to-one name="Colaborador" class="Colaborador" column="ID_COLABORADOR" />
+
+	<bag name="ListaEstoqueReajusteDetalhe" table="estoque_reajuste_detalhe" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_ESTOQUE_REAJUSTE_CABECALHO"/>
+	  <one-to-many class="EstoqueReajusteDetalhe"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

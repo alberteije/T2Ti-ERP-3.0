@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="MdfeEmitente" table="MDFE_EMITENTE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdMdfeCabecalho" column="ID_MDFE_CABECALHO" />
+	<property name="Nome" column="NOME" />
+	<property name="Fantasia" column="FANTASIA" />
+	<property name="Cnpj" column="CNPJ" />
+	<property name="Ie" column="IE" />
+	<property name="Logradouro" column="LOGRADOURO" />
+	<property name="Numero" column="NUMERO" />
+	<property name="Complemento" column="COMPLEMENTO" />
+	<property name="Bairro" column="BAIRRO" />
+	<property name="CodigoMunicipio" column="CODIGO_MUNICIPIO" />
+	<property name="NomeMunicipio" column="NOME_MUNICIPIO" />
+	<property name="Cep" column="CEP" />
+	<property name="Uf" column="UF" />
+	<property name="Telefone" column="TELEFONE" />
+	<property name="Email" column="EMAIL" />
+
+
+	    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,13 @@
+CREATE
+VIEW VIEW_PESSOA_USUARIO
+AS
+
+SELECT 
+CAST( CONCAT(pe.id,c.id,u.id) AS UNSIGNED) AS id, 
+pe.id AS id_pessoa, pe.nome AS pessoa_nome, pe.tipo, pe.email,
+c.id AS id_colaborador,  
+u.id AS id_usuario, u.login, u.senha, u.data_cadastro, u.administrador
+
+FROM pessoa pe
+INNER JOIN colaborador c ON (c.id_pessoa = pe.id)
+INNER JOIN usuario u ON (u.id_colaborador = c.id)

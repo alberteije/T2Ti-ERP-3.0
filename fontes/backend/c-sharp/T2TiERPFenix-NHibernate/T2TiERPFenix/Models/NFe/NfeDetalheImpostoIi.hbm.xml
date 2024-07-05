@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeDetalheImpostoIi" table="NFE_DETALHE_IMPOSTO_II" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="ValorBcIi" column="VALOR_BC_II" />
+	<property name="ValorDespesasAduaneiras" column="VALOR_DESPESAS_ADUANEIRAS" />
+	<property name="ValorImpostoImportacao" column="VALOR_IMPOSTO_IMPORTACAO" />
+	<property name="ValorIof" column="VALOR_IOF" />
+
+	<many-to-one name="NfeDetalhe" class="NfeDetalhe" column="ID_NFE_DETALHE" unique="true" />
+
+	    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ContabilLancamentoCabecalho" table="CONTABIL_LANCAMENTO_CABECALHO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdContabilLote" column="ID_CONTABIL_LOTE" />
+	<property name="DataLancamento" column="DATA_LANCAMENTO" />
+	<property name="DataInclusao" column="DATA_INCLUSAO" />
+	<property name="Tipo" column="TIPO" />
+	<property name="Liberado" column="LIBERADO" />
+	<property name="Valor" column="VALOR" />
+
+
+	    
+  </class>
+</hibernate-mapping>

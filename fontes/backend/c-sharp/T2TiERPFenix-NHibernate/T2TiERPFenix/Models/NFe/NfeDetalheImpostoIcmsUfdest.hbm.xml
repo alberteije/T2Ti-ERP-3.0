@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeDetalheImpostoIcmsUfdest" table="NFE_DETALHE_IMPOSTO_ICMS_UFDEST" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="ValorBcIcmsUfDestino" column="VALOR_BC_ICMS_UF_DESTINO" />
+	<property name="ValorBcFcpUfDestino" column="VALOR_BC_FCP_UF_DESTINO" />
+	<property name="PercentualFcpUfDestino" column="PERCENTUAL_FCP_UF_DESTINO" />
+	<property name="AliquotaInternaUfDestino" column="ALIQUOTA_INTERNA_UF_DESTINO" />
+	<property name="AliquotaInteresdatualUfEnvolvidas" column="ALIQUOTA_INTERESDATUAL_UF_ENVOLVIDAS" />
+	<property name="PercentualProvisorioPartilhaIcms" column="PERCENTUAL_PROVISORIO_PARTILHA_ICMS" />
+	<property name="ValorIcmsFcpUfDestino" column="VALOR_ICMS_FCP_UF_DESTINO" />
+	<property name="ValorInterestadualUfDestino" column="VALOR_INTERESTADUAL_UF_DESTINO" />
+	<property name="ValorInterestadualUfRemetente" column="VALOR_INTERESTADUAL_UF_REMETENTE" />
+
+	<many-to-one name="NfeDetalhe" class="NfeDetalhe" column="ID_NFE_DETALHE" unique="true" />
+
+	    
+  </class>
+</hibernate-mapping>

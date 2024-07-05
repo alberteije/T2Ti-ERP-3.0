@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CompraFornecedorCotacao" table="COMPRA_FORNECEDOR_COTACAO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Codigo" column="CODIGO" />
+	<property name="PrazoEntrega" column="PRAZO_ENTREGA" />
+	<property name="VendaCondicoesPagamento" column="VENDA_CONDICOES_PAGAMENTO" />
+	<property name="ValorSubtotal" column="VALOR_SUBTOTAL" />
+	<property name="TaxaDesconto" column="TAXA_DESCONTO" />
+	<property name="ValorDesconto" column="VALOR_DESCONTO" />
+	<property name="ValorTotal" column="VALOR_TOTAL" />
+
+	<many-to-one name="Fornecedor" class="Fornecedor" column="ID_FORNECEDOR" />
+
+	<bag name="ListaCompraCotacaoDetalhe" table="compra_cotacao_detalhe" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_COMPRA_FORNECEDOR_COTACAO"/>
+	  <one-to-many class="CompraCotacaoDetalhe"/>
+	</bag>
+	<many-to-one name="CompraCotacao" class="CompraCotacao" column="ID_COMPRA_COTACAO" />
+	    
+  </class>
+</hibernate-mapping>

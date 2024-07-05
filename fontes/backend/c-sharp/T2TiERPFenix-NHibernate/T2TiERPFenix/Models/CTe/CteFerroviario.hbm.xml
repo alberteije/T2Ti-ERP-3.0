@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CteFerroviario" table="CTE_FERROVIARIO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdCteCabecalho" column="ID_CTE_CABECALHO" />
+	<property name="TipoTrafego" column="TIPO_TRAFEGO" />
+	<property name="ResponsavelFaturamento" column="RESPONSAVEL_FATURAMENTO" />
+	<property name="FerroviaEmitenteCte" column="FERROVIA_EMITENTE_CTE" />
+	<property name="Fluxo" column="FLUXO" />
+	<property name="ValorFrete" column="VALOR_FRETE" />
+
+
+	    
+  </class>
+</hibernate-mapping>

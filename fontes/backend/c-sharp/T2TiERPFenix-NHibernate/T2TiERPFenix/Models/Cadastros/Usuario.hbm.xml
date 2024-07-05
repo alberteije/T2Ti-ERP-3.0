@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Usuario" table="USUARIO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Login" column="LOGIN" />
+	<property name="Senha" column="SENHA" />
+	<property name="Administrador" column="ADMINISTRADOR" />
+	<property name="DataCadastro" column="DATA_CADASTRO" />
+
+	<many-to-one name="Colaborador" class="Colaborador" column="ID_COLABORADOR" unique="true" />
+	<many-to-one name="Papel" class="Papel" column="ID_PAPEL" />
+
+	    
+  </class>
+</hibernate-mapping>

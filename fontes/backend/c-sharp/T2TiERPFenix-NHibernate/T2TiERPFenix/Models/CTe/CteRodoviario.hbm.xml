@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CteRodoviario" table="CTE_RODOVIARIO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Rntrc" column="RNTRC" />
+	<property name="DataPrevistaEntrega" column="DATA_PREVISTA_ENTREGA" />
+	<property name="IndicadorLotacao" column="INDICADOR_LOTACAO" />
+	<property name="Ciot" column="CIOT" />
+
+	<many-to-one name="CteCabecalho" class="CteCabecalho" column="ID_CTE_CABECALHO" unique="true" />
+
+	    
+  </class>
+</hibernate-mapping>

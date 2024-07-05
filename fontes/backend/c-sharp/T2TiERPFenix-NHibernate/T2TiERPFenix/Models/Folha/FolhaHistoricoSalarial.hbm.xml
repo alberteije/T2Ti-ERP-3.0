@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FolhaHistoricoSalarial" table="FOLHA_HISTORICO_SALARIAL" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Competencia" column="COMPETENCIA" />
+	<property name="SalarioAtual" column="SALARIO_ATUAL" />
+	<property name="PercentualAumento" column="PERCENTUAL_AUMENTO" />
+	<property name="SalarioNovo" column="SALARIO_NOVO" />
+	<property name="ValidoAPartir" column="VALIDO_A_PARTIR" />
+	<property name="Motivo" column="MOTIVO" />
+
+	<many-to-one name="Colaborador" class="Colaborador" column="ID_COLABORADOR" />
+
+	    
+  </class>
+</hibernate-mapping>

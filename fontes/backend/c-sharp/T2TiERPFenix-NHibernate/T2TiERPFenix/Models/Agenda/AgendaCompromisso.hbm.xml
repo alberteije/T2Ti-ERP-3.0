@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="AgendaCompromisso" table="AGENDA_COMPROMISSO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdAgendaCategoriaCompromisso" column="ID_AGENDA_CATEGORIA_COMPROMISSO" />
+	<property name="IdColaborador" column="ID_COLABORADOR" />
+	<property name="DataCompromisso" column="DATA_COMPROMISSO" />
+	<property name="Hora" column="HORA" />
+	<property name="Duracao" column="DURACAO" />
+	<property name="Onde" column="ONDE" />
+	<property name="Descricao" column="DESCRICAO" />
+	<property name="Tipo" column="TIPO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

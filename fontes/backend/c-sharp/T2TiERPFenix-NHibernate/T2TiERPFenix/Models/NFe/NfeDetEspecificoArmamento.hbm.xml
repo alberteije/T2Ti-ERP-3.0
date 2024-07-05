@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeDetEspecificoArmamento" table="NFE_DET_ESPECIFICO_ARMAMENTO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="TipoArma" column="TIPO_ARMA" />
+	<property name="NumeroSerieArma" column="NUMERO_SERIE_ARMA" />
+	<property name="NumeroSerieCano" column="NUMERO_SERIE_CANO" />
+	<property name="Descricao" column="DESCRICAO" />
+
+
+	<many-to-one name="NfeDetalhe" class="NfeDetalhe" column="ID_NFE_DETALHE" />
+	    
+  </class>
+</hibernate-mapping>

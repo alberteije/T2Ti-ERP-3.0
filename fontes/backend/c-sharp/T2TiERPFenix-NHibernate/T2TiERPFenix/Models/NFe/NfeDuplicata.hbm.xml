@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeDuplicata" table="NFE_DUPLICATA" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Numero" column="NUMERO" />
+	<property name="DataVencimento" column="DATA_VENCIMENTO" />
+	<property name="Valor" column="VALOR" />
+
+
+	<many-to-one name="NfeFatura" class="NfeFatura" column="ID_NFE_FATURA" />
+	    
+  </class>
+</hibernate-mapping>

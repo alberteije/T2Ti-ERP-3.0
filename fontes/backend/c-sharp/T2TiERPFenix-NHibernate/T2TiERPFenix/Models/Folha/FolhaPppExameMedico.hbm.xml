@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FolhaPppExameMedico" table="FOLHA_PPP_EXAME_MEDICO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="DataUltimo" column="DATA_ULTIMO" />
+	<property name="Tipo" column="TIPO" />
+	<property name="Natureza" column="NATUREZA" />
+	<property name="Exame" column="EXAME" />
+	<property name="IndicacaoResultados" column="INDICACAO_RESULTADOS" />
+
+
+	<many-to-one name="FolhaPpp" class="FolhaPpp" column="ID_FOLHA_PPP" />
+	    
+  </class>
+</hibernate-mapping>

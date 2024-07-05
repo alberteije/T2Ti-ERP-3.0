@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiRetaguardaSH" namespace="T2TiRetaguardaSH.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PdvTipoPlano" table="PDV_TIPO_PLANO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Modulo" column="MODULO" />
+	<property name="Plano" column="PLANO" />
+	<property name="ModuloFiscal" column="MODULO_FISCAL" />
+	<property name="Valor" column="VALOR" />
+	    
+  </class>
+</hibernate-mapping>

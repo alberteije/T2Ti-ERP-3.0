@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="VendedorRota" table="VENDEDOR_ROTA" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Posicao" column="POSICAO" />
+
+	<many-to-one name="Vendedor" class="Vendedor" column="ID_VENDEDOR" />
+	<many-to-one name="Cliente" class="Cliente" column="ID_CLIENTE" />
+
+	    
+  </class>
+</hibernate-mapping>

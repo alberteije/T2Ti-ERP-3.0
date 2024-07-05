@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FolhaPppCat" table="FOLHA_PPP_CAT" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="NumeroCat" column="NUMERO_CAT" />
+	<property name="DataAfastamento" column="DATA_AFASTAMENTO" />
+	<property name="DataRegistro" column="DATA_REGISTRO" />
+
+
+	<many-to-one name="FolhaPpp" class="FolhaPpp" column="ID_FOLHA_PPP" />
+	    
+  </class>
+</hibernate-mapping>

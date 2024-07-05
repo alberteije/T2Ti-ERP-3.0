@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PatrimApoliceSeguro" table="PATRIM_APOLICE_SEGURO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdPatrimBem" column="ID_PATRIM_BEM" />
+	<property name="IdSeguradora" column="ID_SEGURADORA" />
+	<property name="Numero" column="NUMERO" />
+	<property name="DataContratacao" column="DATA_CONTRATACAO" />
+	<property name="DataVencimento" column="DATA_VENCIMENTO" />
+	<property name="ValorPremio" column="VALOR_PREMIO" />
+	<property name="ValorSegurado" column="VALOR_SEGURADO" />
+	<property name="Observacao" column="OBSERVACAO" />
+	<property name="Imagem" column="IMAGEM" />
+
+
+	    
+  </class>
+</hibernate-mapping>

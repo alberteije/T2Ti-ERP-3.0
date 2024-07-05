@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="WmsEstante" table="WMS_ESTANTE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdWmsRua" column="ID_WMS_RUA" />
+	<property name="Codigo" column="CODIGO" />
+	<property name="QuantidadeCaixa" column="QUANTIDADE_CAIXA" />
+
+
+	    
+  </class>
+</hibernate-mapping>

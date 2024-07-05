@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="EtiquetaFormatoPapel" table="ETIQUETA_FORMATO_PAPEL" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Nome" column="NOME" />
+	<property name="Altura" column="ALTURA" />
+	<property name="Largura" column="LARGURA" />
+
+
+	    
+  </class>
+</hibernate-mapping>

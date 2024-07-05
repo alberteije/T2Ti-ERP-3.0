@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CteDocumentoAnteriorId" table="CTE_DOCUMENTO_ANTERIOR_ID" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdCteDocumentoAnterior" column="ID_CTE_DOCUMENTO_ANTERIOR" />
+	<property name="Tipo" column="TIPO" />
+	<property name="Serie" column="SERIE" />
+	<property name="Subserie" column="SUBSERIE" />
+	<property name="Numero" column="NUMERO" />
+	<property name="DataEmissao" column="DATA_EMISSAO" />
+	<property name="ChaveCte" column="CHAVE_CTE" />
+
+
+	    
+  </class>
+</hibernate-mapping>

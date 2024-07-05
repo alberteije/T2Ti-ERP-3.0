@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CteAereo" table="CTE_AEREO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdCteCabecalho" column="ID_CTE_CABECALHO" />
+	<property name="NumeroMinuta" column="NUMERO_MINUTA" />
+	<property name="NumeroConhecimento" column="NUMERO_CONHECIMENTO" />
+	<property name="DataPrevistaEntrega" column="DATA_PREVISTA_ENTREGA" />
+	<property name="TarifaClasse" column="TARIFA_CLASSE" />
+	<property name="TarifaCodigo" column="TARIFA_CODIGO" />
+	<property name="TarifaValor" column="TARIFA_VALOR" />
+	<property name="CargaDimensao" column="CARGA_DIMENSAO" />
+	<property name="CargaInformacaoManuseio" column="CARGA_INFORMACAO_MANUSEIO" />
+	<property name="CargaEspecial" column="CARGA_ESPECIAL" />
+
+
+	    
+  </class>
+</hibernate-mapping>

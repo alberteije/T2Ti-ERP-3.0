@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Colaborador" table="COLABORADOR" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Matricula" column="MATRICULA" />
+	<property name="DataCadastro" column="DATA_CADASTRO" />
+	<property name="DataAdmissao" column="DATA_ADMISSAO" />
+	<property name="DataDemissao" column="DATA_DEMISSAO" />
+	<property name="CtpsNumero" column="CTPS_NUMERO" />
+	<property name="CtpsSerie" column="CTPS_SERIE" />
+	<property name="CtpsDataExpedicao" column="CTPS_DATA_EXPEDICAO" />
+	<property name="CtpsUf" column="CTPS_UF" />
+	<property name="Observacao" column="OBSERVACAO" />
+
+  <many-to-one name="Pessoa" class="Pessoa" column="ID_PESSOA" />
+  <many-to-one name="ViewPessoaColaborador" class="ViewPessoaColaborador" column="ID_PESSOA" not-found="ignore" insert="false" update="false"/>
+
+  <many-to-one name="Cargo" class="Cargo" column="ID_CARGO" />
+	<many-to-one name="Setor" class="Setor" column="ID_SETOR" />
+	<many-to-one name="ColaboradorSituacao" class="ColaboradorSituacao" column="ID_COLABORADOR_SITUACAO" />
+	<many-to-one name="TipoAdmissao" class="TipoAdmissao" column="ID_TIPO_ADMISSAO" />
+	<many-to-one name="ColaboradorTipo" class="ColaboradorTipo" column="ID_COLABORADOR_TIPO" />
+	<many-to-one name="Sindicato" class="Sindicato" column="ID_SINDICATO" />
+
+	    
+  </class>
+</hibernate-mapping>

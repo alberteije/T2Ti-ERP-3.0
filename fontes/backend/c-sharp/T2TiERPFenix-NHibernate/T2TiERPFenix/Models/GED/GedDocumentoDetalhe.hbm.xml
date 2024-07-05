@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="GedDocumentoDetalhe" table="GED_DOCUMENTO_DETALHE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Nome" column="NOME" />
+	<property name="Descricao" column="DESCRICAO" />
+	<property name="PalavrasChave" column="PALAVRAS_CHAVE" />
+	<property name="PodeExcluir" column="PODE_EXCLUIR" />
+	<property name="PodeAlterar" column="PODE_ALTERAR" />
+	<property name="Assinado" column="ASSINADO" />
+	<property name="DataFimVigencia" column="DATA_FIM_VIGENCIA" />
+	<property name="DataExclusao" column="DATA_EXCLUSAO" />
+
+	<many-to-one name="GedTipoDocumento" class="GedTipoDocumento" column="ID_GED_TIPO_DOCUMENTO" />
+
+	<bag name="ListaGedVersaoDocumento" table="ged_versao_documento" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_GED_DOCUMENTO_DETALHE"/>
+	  <one-to-many class="GedVersaoDocumento"/>
+	</bag>
+	<many-to-one name="GedDocumentoCabecalho" class="GedDocumentoCabecalho" column="ID_GED_DOCUMENTO_CABECALHO" />
+	    
+  </class>
+</hibernate-mapping>

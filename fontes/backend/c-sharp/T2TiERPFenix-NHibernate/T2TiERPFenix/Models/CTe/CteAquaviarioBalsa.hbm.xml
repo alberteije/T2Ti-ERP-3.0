@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CteAquaviarioBalsa" table="CTE_AQUAVIARIO_BALSA" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdCteAquaviario" column="ID_CTE_AQUAVIARIO" />
+	<property name="NumeroViagem" column="NUMERO_VIAGEM" />
+	<property name="Direcao" column="DIRECAO" />
+	<property name="PortoEmbarque" column="PORTO_EMBARQUE" />
+	<property name="PortoTransbordo" column="PORTO_TRANSBORDO" />
+	<property name="PortoDestino" column="PORTO_DESTINO" />
+	<property name="TipoNavegacao" column="TIPO_NAVEGACAO" />
+	<property name="Irin" column="IRIN" />
+
+
+	    
+  </class>
+</hibernate-mapping>

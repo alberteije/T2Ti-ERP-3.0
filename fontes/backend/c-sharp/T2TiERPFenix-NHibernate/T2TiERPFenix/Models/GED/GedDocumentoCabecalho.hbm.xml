@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="GedDocumentoCabecalho" table="GED_DOCUMENTO_CABECALHO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Nome" column="NOME" />
+	<property name="Descricao" column="DESCRICAO" />
+	<property name="DataInclusao" column="DATA_INCLUSAO" />
+
+
+	<bag name="ListaGedDocumentoDetalhe" table="ged_documento_detalhe" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_GED_DOCUMENTO_CABECALHO"/>
+	  <one-to-many class="GedDocumentoDetalhe"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

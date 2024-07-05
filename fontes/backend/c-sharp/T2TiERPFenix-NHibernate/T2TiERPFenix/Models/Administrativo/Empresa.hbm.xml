@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Empresa" table="EMPRESA" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="RazaoSocial" column="RAZAO_SOCIAL" />
+	<property name="NomeFantasia" column="NOME_FANTASIA" />
+	<property name="Cnpj" column="CNPJ" />
+	<property name="InscricaoEstadual" column="INSCRICAO_ESTADUAL" />
+	<property name="InscricaoMunicipal" column="INSCRICAO_MUNICIPAL" />
+	<property name="TipoRegime" column="TIPO_REGIME" />
+	<property name="Crt" column="CRT" />
+	<property name="Email" column="EMAIL" />
+	<property name="Site" column="SITE" />
+	<property name="Contato" column="CONTATO" />
+	<property name="DataConstituicao" column="DATA_CONSTITUICAO" />
+	<property name="Tipo" column="TIPO" />
+	<property name="InscricaoJuntaComercial" column="INSCRICAO_JUNTA_COMERCIAL" />
+	<property name="DataInscJuntaComercial" column="DATA_INSC_JUNTA_COMERCIAL" />
+	<property name="CodigoIbgeCidade" column="CODIGO_IBGE_CIDADE" />
+	<property name="CodigoIbgeUf" column="CODIGO_IBGE_UF" />
+	<property name="Cei" column="CEI" />
+	<property name="CodigoCnaePrincipal" column="CODIGO_CNAE_PRINCIPAL" />
+
+
+	<bag name="ListaEmpresaContato" table="empresa_contato" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_EMPRESA"/>
+	  <one-to-many class="EmpresaContato"/>
+	</bag>
+	<bag name="ListaEmpresaEndereco" table="empresa_endereco" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_EMPRESA"/>
+	  <one-to-many class="EmpresaEndereco"/>
+	</bag>
+	<bag name="ListaEmpresaTelefone" table="empresa_telefone" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_EMPRESA"/>
+	  <one-to-many class="EmpresaTelefone"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

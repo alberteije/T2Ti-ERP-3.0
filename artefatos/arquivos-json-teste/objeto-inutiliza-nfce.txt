@@ -1,0 +1,9 @@
+{
+    "cnpj":"10793118000178",
+    "justificativa":"teste de inutilizacao de numero da nfce",
+    "ano":"2022",
+    "modelo":"65",
+    "serie":"5",
+    "numeroInicial":"1543",
+    "numeroFinal":"1544"
+}

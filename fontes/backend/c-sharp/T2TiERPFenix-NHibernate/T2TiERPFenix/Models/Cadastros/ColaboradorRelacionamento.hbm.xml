@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ColaboradorRelacionamento" table="COLABORADOR_RELACIONAMENTO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Nome" column="NOME" />
+	<property name="DataNascimento" column="DATA_NASCIMENTO" />
+	<property name="Cpf" column="CPF" />
+	<property name="RegistroMatricula" column="REGISTRO_MATRICULA" />
+	<property name="RegistroCartorio" column="REGISTRO_CARTORIO" />
+	<property name="RegistroCartorioNumero" column="REGISTRO_CARTORIO_NUMERO" />
+	<property name="RegistroNumeroLivro" column="REGISTRO_NUMERO_LIVRO" />
+	<property name="RegistroNumeroFolha" column="REGISTRO_NUMERO_FOLHA" />
+	<property name="DataEntregaDocumento" column="DATA_ENTREGA_DOCUMENTO" />
+	<property name="SalarioFamilia" column="SALARIO_FAMILIA" />
+	<property name="SalarioFamiliaIdadeLimite" column="SALARIO_FAMILIA_IDADE_LIMITE" />
+	<property name="SalarioFamiliaDataFim" column="SALARIO_FAMILIA_DATA_FIM" />
+	<property name="ImpostoRendaIdadeLimite" column="IMPOSTO_RENDA_IDADE_LIMITE" />
+	<property name="ImpostoRendaDataFim" column="IMPOSTO_RENDA_DATA_FIM" />
+
+	<many-to-one name="TipoRelacionamento" class="TipoRelacionamento" column="ID_TIPO_RELACIONAMENTO" />
+	<many-to-one name="Colaborador" class="Colaborador" column="ID_COLABORADOR" />
+
+	    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="MdfeMunicipioDescarrega" table="MDFE_MUNICIPIO_DESCARREGA" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdMdfeCabecalho" column="ID_MDFE_CABECALHO" />
+	<property name="NomeMunicipio" column="NOME_MUNICIPIO" />
+	<property name="CodigoMunicipio" column="CODIGO_MUNICIPIO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

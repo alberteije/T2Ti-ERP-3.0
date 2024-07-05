@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CteInfNfTransporteLacre" table="CTE_INF_NF_TRANSPORTE_LACRE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdCteInformacaoNfTransporte" column="ID_CTE_INFORMACAO_NF_TRANSPORTE" />
+	<property name="Numero" column="NUMERO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

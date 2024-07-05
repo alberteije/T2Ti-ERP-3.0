@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FolhaPlanoSaude" table="FOLHA_PLANO_SAUDE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="DataInicio" column="DATA_INICIO" />
+	<property name="Beneficiario" column="BENEFICIARIO" />
+
+	<many-to-one name="Colaborador" class="Colaborador" column="ID_COLABORADOR" />
+	<many-to-one name="OperadoraPlanoSaude" class="OperadoraPlanoSaude" column="ID_OPERADORA_PLANO_SAUDE" />
+
+	    
+  </class>
+</hibernate-mapping>

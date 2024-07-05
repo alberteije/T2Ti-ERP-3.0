@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FinExtratoContaBanco" table="FIN_EXTRATO_CONTA_BANCO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="MesAno" column="MES_ANO" />
+	<property name="Mes" column="MES" />
+	<property name="Ano" column="ANO" />
+	<property name="DataMovimento" column="DATA_MOVIMENTO" />
+	<property name="DataBalancete" column="DATA_BALANCETE" />
+	<property name="Historico" column="HISTORICO" />
+	<property name="Documento" column="DOCUMENTO" />
+	<property name="Valor" column="VALOR" />
+	<property name="Conciliado" column="CONCILIADO" />
+	<property name="Observacao" column="OBSERVACAO" />
+
+	<many-to-one name="BancoContaCaixa" class="BancoContaCaixa" column="ID_BANCO_CONTA_CAIXA" />
+
+	    
+  </class>
+</hibernate-mapping>

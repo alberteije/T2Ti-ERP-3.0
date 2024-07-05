@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="WmsCaixa" table="WMS_CAIXA" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdWmsEstante" column="ID_WMS_ESTANTE" />
+	<property name="Codigo" column="CODIGO" />
+	<property name="Altura" column="ALTURA" />
+	<property name="Largura" column="LARGURA" />
+	<property name="Profundidade" column="PROFUNDIDADE" />
+
+
+	    
+  </class>
+</hibernate-mapping>

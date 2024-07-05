@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ComissaoPerfil" table="COMISSAO_PERFIL" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Codigo" column="CODIGO" />
+	<property name="Nome" column="NOME" />
+
+
+	<bag name="ListaComissaoObjetivo" table="comissao_objetivo" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_COMISSAO_PERFIL"/>
+	  <one-to-many class="ComissaoObjetivo"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
+    version="6.0.1" timestamp="2020-10-01T21:03:35.311">
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Model\ModelBase.pas">
+<violation beginline="22" endline="22" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="27" endline="27" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="32" endline="32" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Model\Transiente\Filtro.pas">
+<violation beginline="39" endline="39" begincolumn="0" endcolumn="0" rule="ConstructorWithoutInheritedStatementRule" ruleset="Missing RuleSet Name" priority="4">
+ConstructorWithoutInheritedStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\AFV\VendedorMetaService.pas">
+<violation beginline="148" endline="148" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'avendedormeta' at TVendedorMetaService.InserirObjetosFilhos
+</violation>
+<violation beginline="149" endline="149" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="159" endline="159" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'avendedormeta' at TVendedorMetaService.ExcluirObjetosFilhos
+</violation>
+<violation beginline="160" endline="160" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\AFV\VendedorRotaService.pas">
+<violation beginline="148" endline="148" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'avendedorrota' at TVendedorRotaService.InserirObjetosFilhos
+</violation>
+<violation beginline="149" endline="149" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="159" endline="159" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'avendedorrota' at TVendedorRotaService.ExcluirObjetosFilhos
+</violation>
+<violation beginline="160" endline="160" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\BancoService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'abanco' at TBancoService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\CargoService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'acargo' at TCargoService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\CepService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'acep' at TCepService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\CfopService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'acfop' at TCfopService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\ChequeService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'acheque' at TChequeService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\CnaeService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'acnae' at TCnaeService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\CsosnService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'acsosn' at TCsosnService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\CstCofinsService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'acstcofins' at TCstCofinsService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\CstIcmsService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'acsticms' at TCstIcmsService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\CstIpiService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'acstipi' at TCstIpiService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\CstPisService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'acstpis' at TCstPisService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\EstadoCivilService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'aestadocivil' at TEstadoCivilService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\NcmService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'ancm' at TNcmService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\NivelFormacaoService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'anivelformacao' at TNivelFormacaoService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\PapelService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'apapel' at TPapelService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\ProdutoGrupoService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'aprodutogrupo' at TProdutoGrupoService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\ProdutoMarcaService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'aprodutomarca' at TProdutoMarcaService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\ProdutoService.pas">
+<violation beginline="160" endline="160" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'aproduto' at TProdutoService.InserirObjetosFilhos
+</violation>
+<violation beginline="161" endline="161" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="171" endline="171" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'aproduto' at TProdutoService.ExcluirObjetosFilhos
+</violation>
+<violation beginline="172" endline="172" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\ProdutoUnidadeService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'aprodutounidade' at TProdutoUnidadeService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\SetorService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'asetor' at TSetorService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Cadastros\UfService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'auf' at TUfService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Comissoes\ComissaoObjetivoService.pas">
+<violation beginline="144" endline="144" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'acomissaoobjetivo' at TComissaoObjetivoService.InserirObjetosFilhos
+</violation>
+<violation beginline="145" endline="145" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="155" endline="155" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'acomissaoobjetivo' at TComissaoObjetivoService.ExcluirObjetosFilhos
+</violation>
+<violation beginline="156" endline="156" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Compras\CompraTipoPedidoService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'acompratipopedido' at TCompraTipoPedidoService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Compras\CompraTipoRequisicaoService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'acompratiporequisicao' at TCompraTipoRequisicaoService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Financeiro\FinDocumentoOrigemService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'afindocumentoorigem' at TFinDocumentoOrigemService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Financeiro\FinNaturezaFinanceiraService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'afinnaturezafinanceira' at TFinNaturezaFinanceiraService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Financeiro\FinStatusParcelaService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'afinstatusparcela' at TFinStatusParcelaService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Financeiro\FinTipoPagamentoService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'afintipopagamento' at TFinTipoPagamentoService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Financeiro\FinTipoRecebimentoService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'afintiporecebimento' at TFinTipoRecebimentoService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\NFe\NFeCalculoService.pas">
+<violation beginline="153" endline="153" begincolumn="21" endcolumn="21" rule="OneClassPerFileRule" ruleset="Missing RuleSet Name" class="TNFeCalculoService" priority="3">
+File has too many classes, maximum number of classes is 1.
+</violation>
+<violation beginline="164" endline="164" begincolumn="6" endcolumn="6" rule="TooLongMethodRule" ruleset="Missing RuleSet Name" priority="3">
+TNFeCalculoService.Calcular is too long (471 lines). Maximum line count is 100
+</violation>
+<violation beginline="188" endline="188" begincolumn="6" endcolumn="6" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="194" endline="194" begincolumn="6" endcolumn="6" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="217" endline="217" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="221" endline="221" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="225" endline="225" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="229" endline="229" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="243" endline="243" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="264" endline="264" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="268" endline="268" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="272" endline="272" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="276" endline="276" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="290" endline="290" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="311" endline="311" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="315" endline="315" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="319" endline="319" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="323" endline="323" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="337" endline="337" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="344" endline="344" begincolumn="6" endcolumn="6" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="350" endline="350" begincolumn="6" endcolumn="6" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="356" endline="356" begincolumn="6" endcolumn="6" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="362" endline="362" begincolumn="6" endcolumn="6" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="401" endline="401" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="405" endline="405" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="409" endline="409" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="438" endline="438" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="442" endline="442" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="446" endline="446" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="471" endline="471" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="475" endline="475" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="479" endline="479" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="483" endline="483" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="497" endline="497" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="507" endline="507" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="511" endline="511" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="515" endline="515" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="548" endline="548" begincolumn="6" endcolumn="6" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="554" endline="554" begincolumn="6" endcolumn="6" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="560" endline="560" begincolumn="6" endcolumn="6" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="566" endline="566" begincolumn="6" endcolumn="6" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="572" endline="572" begincolumn="6" endcolumn="6" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="578" endline="578" begincolumn="6" endcolumn="6" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="584" endline="584" begincolumn="6" endcolumn="6" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="590" endline="590" begincolumn="6" endcolumn="6" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\ServiceBase.pas">
+<violation beginline="204" endline="204" begincolumn="12" endcolumn="12" rule="NoSemicolonRule" ruleset="Missing RuleSet Name" priority="2">
+NoSemicolonRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Sped\SpedContabilService.pas">
+<violation beginline="152" endline="152" begincolumn="6" endcolumn="6" rule="TooLongMethodRule" ruleset="Missing RuleSet Name" priority="3">
+TSpedContabilService.GerarBlocoI is too long (263 lines). Maximum line count is 100
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Sped\SpedFiscalService.pas">
+<violation beginline="94" endline="94" begincolumn="0" endcolumn="0" rule="TooManyVariablesRule" ruleset="Missing RuleSet Name" priority="3">
+Too many variables: 11 (max 10)
+</violation>
+<violation beginline="142" endline="142" begincolumn="6" endcolumn="6" rule="TooLongMethodRule" ruleset="Missing RuleSet Name" priority="3">
+TSpedFiscalService.GerarBloco0 is too long (266 lines). Maximum line count is 100
+</violation>
+<violation beginline="413" endline="413" begincolumn="6" endcolumn="6" rule="TooLongMethodRule" ruleset="Missing RuleSet Name" priority="3">
+TSpedFiscalService.GerarBlocoC is too long (674 lines). Maximum line count is 100
+</violation>
+<violation beginline="414" endline="414" begincolumn="0" endcolumn="0" rule="TooManyVariablesRule" ruleset="Missing RuleSet Name" priority="3">
+Too many variables: 12 (max 10)
+</violation>
+<violation beginline="760" endline="760" begincolumn="8" endcolumn="8" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+<violation beginline="1152" endline="1152" begincolumn="2" endcolumn="2" rule="EmptyFinallyBlockRule" ruleset="Missing RuleSet Name" class="TSpedFiscalService" method="TSpedFiscalService.GerarBlocoE" priority="4">
+EmptyFinallyBlockRule
+</violation>
+<violation beginline="1247" endline="1247" begincolumn="2" endcolumn="2" rule="EmptyFinallyBlockRule" ruleset="Missing RuleSet Name" class="TSpedFiscalService" method="TSpedFiscalService.GerarBloco1" priority="4">
+EmptyFinallyBlockRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Tributacao\TributGrupoTributarioService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'atributgrupotributario' at TTributGrupoTributarioService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Tributacao\TributOperacaoFiscalService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'atributoperacaofiscal' at TTributOperacaoFiscalService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\Vendas\NotaFiscalModeloService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'anotafiscalmodelo' at TNotaFiscalModeloService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\ViewsDB\ViewFinChequeNaoCompensadoService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'aviewfinchequenaocompensado' at TViewFinChequeNaoCompensadoService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\ViewsDB\ViewFinFluxoCaixaService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'aviewfinfluxocaixa' at TViewFinFluxoCaixaService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\ViewsDB\ViewFinLancamentoPagarService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'aviewfinlancamentopagar' at TViewFinLancamentoPagarService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\ViewsDB\ViewFinMovimentoCaixaBancoService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'aviewfinmovimentocaixabanco' at TViewFinMovimentoCaixaBancoService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\ViewsDB\ViewPessoaClienteService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'aviewpessoacliente' at TViewPessoaClienteService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\ViewsDB\ViewPessoaColaboradorService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'aviewpessoacolaborador' at TViewPessoaColaboradorService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Service\ViewsDB\ViewPessoaFornecedorService.pas">
+<violation beginline="67" endline="67" begincolumn="6" endcolumn="6" rule="UnusedArgumentsRule" ruleset="Missing RuleSet Name" priority="3">
+Unused argument: 'aviewpessoafornecedor' at TViewPessoaFornecedorService.AnexarObjetosVinculados
+</violation>
+<violation beginline="68" endline="68" begincolumn="0" endcolumn="0" rule="EmptyBeginStatementRule" ruleset="Missing RuleSet Name" priority="4">
+EmptyBeginStatementRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\T2TiERPFenix.dpr">
+<violation beginline="366" endline="366" begincolumn="0" endcolumn="0" rule="ProjectFileNoFunctionsRule" ruleset="Missing RuleSet Name" priority="3">
+ProjectFileNoFunctionsRule
+</violation>
+<violation beginline="366" endline="366" begincolumn="20" endcolumn="20" rule="ProjectFileNoVariablesRule" ruleset="Missing RuleSet Name" method="RunServer" priority="3">
+ProjectFileNoVariablesRule
+</violation>
+<violation beginline="368" endline="368" begincolumn="2" endcolumn="2" rule="ProjectFileNoVariablesRule" ruleset="Missing RuleSet Name" priority="3">
+ProjectFileNoVariablesRule
+</violation>
+<violation beginline="393" endline="393" begincolumn="8" endcolumn="8" rule="CatchingGeneralExceptionRule" ruleset="Missing RuleSet Name" priority="3">
+CatchingGeneralExceptionRule
+</violation>
+<violation beginline="393" endline="393" begincolumn="20" endcolumn="20" rule="NoBeginAfterDoRule" ruleset="Missing RuleSet Name" priority="2">
+NoBeginAfterDoRule
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\UWebModule.pas">
+<violation beginline="141" endline="141" begincolumn="0" endcolumn="0" rule="TooLongMethodRule" ruleset="Missing RuleSet Name" priority="3">
+TFWebModule.WebModuleCreate is too long (119 lines). Maximum line count is 100
+</violation>
+</file>
+<file name="C:\T2Ti ERP\ERP 3.0 Programas e Fontes\Delphi\dmvc\Util\Biblioteca.pas">
+<violation beginline="353" endline="353" begincolumn="31" endcolumn="31" rule="NoBeginAfterDoRule" ruleset="Missing RuleSet Name" method="StrZero" priority="2">
+NoBeginAfterDoRule
+</violation>
+<violation beginline="365" endline="365" begincolumn="48" endcolumn="48" rule="UppercaseReservedKeywordsRule" ruleset="Missing RuleSet Name" method="MD5File" priority="2">
+Avoid using uppercase keywords: OR
+</violation>
+<violation beginline="449" endline="449" begincolumn="24" endcolumn="24" rule="NoSemicolonRule" ruleset="Missing RuleSet Name" method="UltimoDiaMes" priority="2">
+NoSemicolonRule
+</violation>
+<violation beginline="464" endline="464" begincolumn="24" endcolumn="24" rule="NoSemicolonRule" ruleset="Missing RuleSet Name" method="UltimoDiaMes" priority="2">
+NoSemicolonRule
+</violation>
+<violation beginline="476" endline="476" begincolumn="61" endcolumn="61" rule="NoBeginAfterDoRule" ruleset="Missing RuleSet Name" priority="2">
+NoBeginAfterDoRule
+</violation>
+<violation beginline="481" endline="481" begincolumn="56" endcolumn="56" rule="NoBeginAfterDoRule" ruleset="Missing RuleSet Name" priority="2">
+NoBeginAfterDoRule
+</violation>
+</file>
+</pmd>

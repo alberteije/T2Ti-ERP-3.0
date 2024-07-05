@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="OsEvolucao" table="OS_EVOLUCAO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="DataRegistro" column="DATA_REGISTRO" />
+	<property name="HoraRegistro" column="HORA_REGISTRO" />
+	<property name="Observacao" column="OBSERVACAO" />
+	<property name="EnviarEmail" column="ENVIAR_EMAIL" />
+
+
+	<many-to-one name="OsAbertura" class="OsAbertura" column="ID_OS_ABERTURA" />
+	    
+  </class>
+</hibernate-mapping>

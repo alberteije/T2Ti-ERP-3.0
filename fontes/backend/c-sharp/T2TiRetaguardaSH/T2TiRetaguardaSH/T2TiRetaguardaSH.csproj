@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Models\Cadastros\AcbrMonitorPorta.hbm.xml" />
+    <None Remove="Models\Cadastros\AdmModuloModel.hbm.xml" />
+    <None Remove="Models\Cadastros\Empresa.hbm.xml" />
+    <None Remove="Models\Cadastros\EmpresaModel.hbm.xml" />
+    <None Remove="Models\Cadastros\ErpTipoPlanoModel.hbm.xml" />
+    <None Remove="Models\NFe\NfeConfiguracao.hbm.xml" />
+    <None Remove="Models\PDV\PdvPlanoPagamento.hbm.xml" />
+    <None Remove="Models\PDV\PdvTipoPlano.hbm.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Models\Cadastros\AcbrMonitorPorta.hbm.xml" />
+    <EmbeddedResource Include="Models\Cadastros\AdmModuloModel.hbm.xml" />
+    <EmbeddedResource Include="Models\Cadastros\Empresa.hbm.xml" />
+    <EmbeddedResource Include="Models\Cadastros\EmpresaModel.hbm.xml" />
+    <EmbeddedResource Include="Models\Cadastros\ErpTipoPlanoModel.hbm.xml" />
+    <EmbeddedResource Include="Models\NFe\NfeConfiguracao.hbm.xml" />
+    <EmbeddedResource Include="Models\PDV\PdvPlanoPagamento.hbm.xml" />
+    <EmbeddedResource Include="Models\PDV\PdvTipoPlano.hbm.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.2" />
+    <PackageReference Include="MySql.Data" Version="8.0.26" />
+    <PackageReference Include="NHibernate" Version="5.3.9" />
+    <PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
+    <PackageReference Include="PoweredSoft.DynamicLinq" Version="1.1.0" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.115.5" />
+  </ItemGroup>
+
+
+</Project>

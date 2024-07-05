@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Cliente" table="CLIENTE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Desde" column="DESDE" />
+	<property name="DataCadastro" column="DATA_CADASTRO" />
+	<property name="TaxaDesconto" column="TAXA_DESCONTO" />
+	<property name="LimiteCredito" column="LIMITE_CREDITO" />
+	<property name="Observacao" column="OBSERVACAO" />
+
+	<many-to-one name="Pessoa" class="Pessoa" column="ID_PESSOA" />
+	<many-to-one name="ViewPessoaCliente" class="ViewPessoaCliente" column="ID_PESSOA" not-found="ignore" insert="false" update="false" />
+	<many-to-one name="TabelaPreco" class="TabelaPreco" column="ID_TABELA_PRECO" />
+
+	    
+  </class>
+</hibernate-mapping>

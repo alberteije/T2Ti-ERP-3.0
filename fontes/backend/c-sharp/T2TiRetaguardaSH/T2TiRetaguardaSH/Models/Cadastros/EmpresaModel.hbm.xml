@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiRetaguardaSH" namespace="T2TiRetaguardaSH.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="EmpresaModel" table="empresa" >
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id> 
+
+		<property name="RazaoSocial" column="razao_social" />
+
+		<property name="NomeFantasia" column="nome_fantasia" />
+
+		<property name="Cnpj" column="cnpj" />
+
+		<property name="InscricaoEstadual" column="inscricao_estadual" />
+
+		<property name="InscricaoMunicipal" column="inscricao_municipal" />
+
+		<property name="TipoRegime" column="tipo_regime" />
+
+		<property name="Crt" column="crt" />
+
+		<property name="DataConstituicao" column="data_constituicao" />
+
+		<property name="Tipo" column="tipo" />
+
+		<property name="Email" column="email" />
+
+		<property name="Logradouro" column="logradouro" />
+
+		<property name="Numero" column="numero" />
+
+		<property name="Complemento" column="complemento" />
+
+		<property name="Cep" column="cep" />
+
+		<property name="Bairro" column="bairro" />
+
+		<property name="Cidade" column="cidade" />
+
+		<property name="Uf" column="uf" />
+
+		<property name="Fone" column="fone" />
+
+		<property name="Contato" column="contato" />
+
+		<property name="CodigoIbgeCidade" column="codigo_ibge_cidade" />
+
+		<property name="CodigoIbgeUf" column="codigo_ibge_uf" />
+
+		<property name="Logotipo" column="logotipo" />
+
+		<property name="Registrado" column="registrado" />
+
+		<property name="NaturezaJuridica" column="natureza_juridica" />
+
+		<property name="Simei" column="simei" />
+
+		<property name="EmailPagamento" column="email_pagamento" />
+
+		<property name="DataRegistro" column="data_registro" />
+
+		<property name="HoraRegistro" column="hora_registro" />
+
+		<property name="IdPlataformaPagamento" column="id_plataforma_pagamento" />
+
+		<bag name="AdmModuloModelList" table="adm_modulo" cascade="all-delete-orphan" inverse="true">
+		<key column="id_empresa"/> 
+		<one-to-many class="AdmModuloModel"/> 
+	</bag> 
+
+  </class>
+</hibernate-mapping>

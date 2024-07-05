@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FolhaFeriasColetivas" table="FOLHA_FERIAS_COLETIVAS" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="DataInicio" column="DATA_INICIO" />
+	<property name="DataFim" column="DATA_FIM" />
+	<property name="DiasGozo" column="DIAS_GOZO" />
+	<property name="AbonoPecuniarioInicio" column="ABONO_PECUNIARIO_INICIO" />
+	<property name="AbonoPecuniarioFim" column="ABONO_PECUNIARIO_FIM" />
+	<property name="DiasAbono" column="DIAS_ABONO" />
+	<property name="DataPagamento" column="DATA_PAGAMENTO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

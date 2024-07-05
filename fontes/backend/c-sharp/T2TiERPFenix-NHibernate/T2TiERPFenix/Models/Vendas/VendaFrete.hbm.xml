@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="VendaFrete" table="VENDA_FRETE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Conhecimento" column="CONHECIMENTO" />
+	<property name="Responsavel" column="RESPONSAVEL" />
+	<property name="Placa" column="PLACA" />
+	<property name="UfPlaca" column="UF_PLACA" />
+	<property name="SeloFiscal" column="SELO_FISCAL" />
+	<property name="QuantidadeVolume" column="QUANTIDADE_VOLUME" />
+	<property name="MarcaVolume" column="MARCA_VOLUME" />
+	<property name="EspecieVolume" column="ESPECIE_VOLUME" />
+	<property name="PesoBruto" column="PESO_BRUTO" />
+	<property name="PesoLiquido" column="PESO_LIQUIDO" />
+
+	<many-to-one name="VendaCabecalho" class="VendaCabecalho" column="ID_VENDA_CABECALHO" />
+	<many-to-one name="Transportadora" class="Transportadora" column="ID_TRANSPORTADORA" />
+
+	    
+  </class>
+</hibernate-mapping>

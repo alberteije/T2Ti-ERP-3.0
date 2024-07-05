@@ -1,0 +1,147 @@
+/*******************************************************************************
+Title: T2Ti ERP Fenix                                                                
+Description: Model relacionado à tabela [EMPRESA] 
+                                                                                
+The MIT License                                                                 
+                                                                                
+Copyright: Copyright (C) 2020 T2Ti.COM                                          
+                                                                                
+Permission is hereby granted, free of charge, to any person                     
+obtaining a copy of this software and associated documentation                  
+files (the "Software"), to deal in the Software without                         
+restriction, including without limitation the rights to use,                    
+copy, modify, merge, publish, distribute, sublicense, and/or sell               
+copies of the Software, and to permit persons to whom the                       
+Software is furnished to do so, subject to the following                        
+conditions:                                                                     
+                                                                                
+The above copyright notice and this permission notice shall be                  
+included in all copies or substantial portions of the Software.                 
+                                                                                
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,                 
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES                 
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND                        
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT                     
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,                    
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING                    
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR                   
+OTHER DEALINGS IN THE SOFTWARE.                                                 
+                                                                                
+       The author may be contacted at:                                          
+           t2ti.com@gmail.com                                                   
+                                                                                
+@author Albert Eije (alberteije@gmail.com)                    
+@version 1.0.0
+*******************************************************************************/
+using System.Collections.Generic;
+
+namespace T2TiERPFenix.Models
+{
+    public class Empresa
+    {	
+		public int Id { get; set; }
+
+		public string RazaoSocial { get; set; }
+
+		public string NomeFantasia { get; set; }
+
+		public string Cnpj { get; set; }
+
+		public string InscricaoEstadual { get; set; }
+
+		public string InscricaoMunicipal { get; set; }
+
+		public string TipoRegime { get; set; }
+
+		public string Crt { get; set; }
+
+		public string Email { get; set; }
+
+		public string Site { get; set; }
+
+		public string Contato { get; set; }
+
+		public System.Nullable<System.DateTime> DataConstituicao { get; set; }
+
+		public string Tipo { get; set; }
+
+		public string InscricaoJuntaComercial { get; set; }
+
+		public System.Nullable<System.DateTime> DataInscJuntaComercial { get; set; }
+
+		public int? CodigoIbgeCidade { get; set; }
+
+		public int? CodigoIbgeUf { get; set; }
+
+		public string Cei { get; set; }
+
+		public string CodigoCnaePrincipal { get; set; }
+
+		public EmpresaEndereco EnderecoPrincipal { get; set; }
+
+		private IList<EmpresaContato> listaEmpresaContato;
+		public IList<EmpresaContato> ListaEmpresaContato
+		{
+			get
+			{
+				return listaEmpresaContato;
+			}
+			set
+			{
+				if (value != null)
+				{
+					listaEmpresaContato = value;
+					foreach (EmpresaContato empresaContato in listaEmpresaContato)
+					{
+						empresaContato.Empresa = this;
+					}
+				}
+			}
+		}
+
+		private IList<EmpresaEndereco> listaEmpresaEndereco;
+		public IList<EmpresaEndereco> ListaEmpresaEndereco
+		{
+			get
+			{
+				return listaEmpresaEndereco;
+			}
+			set
+			{
+				if (value != null)
+				{
+					listaEmpresaEndereco = value;
+					foreach (EmpresaEndereco empresaEndereco in listaEmpresaEndereco)
+					{
+						if (empresaEndereco.Principal == "S")
+						{
+							EnderecoPrincipal = empresaEndereco;
+						}
+						empresaEndereco.Empresa = this;
+					}
+				}
+			}
+		}
+
+		private IList<EmpresaTelefone> listaEmpresaTelefone;
+		public IList<EmpresaTelefone> ListaEmpresaTelefone
+		{
+			get
+			{
+				return listaEmpresaTelefone;
+			}
+			set
+			{
+				if (value != null)
+				{
+					listaEmpresaTelefone = value;
+					foreach (EmpresaTelefone empresaTelefone in listaEmpresaTelefone)
+					{
+						empresaTelefone.Empresa = this;
+					}
+				}
+			}
+		}
+
+    }
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PontoEscala" table="PONTO_ESCALA" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Nome" column="NOME" />
+	<property name="DescontoHoraDia" column="DESCONTO_HORA_DIA" />
+	<property name="DescontoDsr" column="DESCONTO_DSR" />
+	<property name="CodigoHorarioDomingo" column="CODIGO_HORARIO_DOMINGO" />
+	<property name="CodigoHorarioSegunda" column="CODIGO_HORARIO_SEGUNDA" />
+	<property name="CodigoHorarioTerca" column="CODIGO_HORARIO_TERCA" />
+	<property name="CodigoHorarioQuarta" column="CODIGO_HORARIO_QUARTA" />
+	<property name="CodigoHorarioQuinta" column="CODIGO_HORARIO_QUINTA" />
+	<property name="CodigoHorarioSexta" column="CODIGO_HORARIO_SEXTA" />
+	<property name="CodigoHorarioSabado" column="CODIGO_HORARIO_SABADO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

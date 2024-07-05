@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CteInformacaoNfOutros" table="CTE_INFORMACAO_NF_OUTROS" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdCteCabecalho" column="ID_CTE_CABECALHO" />
+	<property name="NumeroRomaneio" column="NUMERO_ROMANEIO" />
+	<property name="NumeroPedido" column="NUMERO_PEDIDO" />
+	<property name="ChaveAcessoNfe" column="CHAVE_ACESSO_NFE" />
+	<property name="CodigoModelo" column="CODIGO_MODELO" />
+	<property name="Serie" column="SERIE" />
+	<property name="Numero" column="NUMERO" />
+	<property name="DataEmissao" column="DATA_EMISSAO" />
+	<property name="UfEmitente" column="UF_EMITENTE" />
+	<property name="BaseCalculoIcms" column="BASE_CALCULO_ICMS" />
+	<property name="ValorIcms" column="VALOR_ICMS" />
+	<property name="BaseCalculoIcmsSt" column="BASE_CALCULO_ICMS_ST" />
+	<property name="ValorIcmsSt" column="VALOR_ICMS_ST" />
+	<property name="ValorTotalProdutos" column="VALOR_TOTAL_PRODUTOS" />
+	<property name="ValorTotal" column="VALOR_TOTAL" />
+	<property name="CfopPredominante" column="CFOP_PREDOMINANTE" />
+	<property name="PesoTotalKg" column="PESO_TOTAL_KG" />
+	<property name="PinSuframa" column="PIN_SUFRAMA" />
+	<property name="DataPrevistaEntrega" column="DATA_PREVISTA_ENTREGA" />
+	<property name="OutroTipoDocOrig" column="OUTRO_TIPO_DOC_ORIG" />
+	<property name="OutroDescricao" column="OUTRO_DESCRICAO" />
+	<property name="OutroValorDocumento" column="OUTRO_VALOR_DOCUMENTO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

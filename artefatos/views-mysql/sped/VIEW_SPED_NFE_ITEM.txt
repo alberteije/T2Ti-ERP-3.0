@@ -1,0 +1,19 @@
+CREATE
+VIEW VIEW_SPED_NFE_ITEM
+AS
+
+select 
+	distinct(P.ID),
+	P.NOME,
+	P.GTIN,
+	P.ID_PRODUTO_UNIDADE,
+	U.SIGLA,
+	#P.TIPO_ITEM_SPED, -- deverá ser criado na tabela produto para gerar o registro 0200 da EFD
+	P.CODIGO_NCM
+	#P.EX_TIPI, -- onde pegar esse dado?
+	#P.CODIGO_LST, -- deverá ser criado na tabela produto para gerar o registro 0200 da EFD
+	#P.ALIQUOTA_ICMS -- onde pegar esse dado?
+from
+	PRODUTO P 
+	INNER JOIN NFE_DETALHE NFED ON (NFED.ID_PRODUTO = P.ID)
+	INNER JOIN PRODUTO_UNIDADE U ON (P.ID_PRODUTO_UNIDADE = U.ID)

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiRetaguardaSH" namespace="T2TiRetaguardaSH.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="AdmModuloModel" table="adm_modulo" >
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id> 
+
+		<property name="Codigo" column="codigo" />
+
+		<property name="Bloco" column="bloco" />
+
+		<property name="Nome" column="nome" />
+
+		<property name="Descricao" column="descricao" />
+
+		<property name="Link" column="link" />
+
+		<many-to-one name="EmpresaModel" class="EmpresaModel" column="id_empresa" unique="true" />
+
+  </class>
+</hibernate-mapping>

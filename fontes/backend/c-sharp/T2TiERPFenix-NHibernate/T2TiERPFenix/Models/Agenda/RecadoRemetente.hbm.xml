@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="RecadoRemetente" table="RECADO_REMETENTE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdColaborador" column="ID_COLABORADOR" />
+	<property name="DataEnvio" column="DATA_ENVIO" />
+	<property name="HoraEnvio" column="HORA_ENVIO" />
+	<property name="Assunto" column="ASSUNTO" />
+	<property name="Texto" column="TEXTO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

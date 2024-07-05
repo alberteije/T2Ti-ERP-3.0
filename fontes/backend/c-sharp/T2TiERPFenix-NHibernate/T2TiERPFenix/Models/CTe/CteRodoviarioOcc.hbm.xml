@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CteRodoviarioOcc" table="CTE_RODOVIARIO_OCC" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdCteRodoviario" column="ID_CTE_RODOVIARIO" />
+	<property name="Serie" column="SERIE" />
+	<property name="Numero" column="NUMERO" />
+	<property name="DataEmissao" column="DATA_EMISSAO" />
+	<property name="Cnpj" column="CNPJ" />
+	<property name="CodigoInterno" column="CODIGO_INTERNO" />
+	<property name="Ie" column="IE" />
+	<property name="Uf" column="UF" />
+	<property name="Telefone" column="TELEFONE" />
+
+
+	    
+  </class>
+</hibernate-mapping>

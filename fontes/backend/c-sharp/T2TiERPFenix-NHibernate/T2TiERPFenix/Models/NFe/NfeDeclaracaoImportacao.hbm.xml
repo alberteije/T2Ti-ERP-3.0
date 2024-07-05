@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeDeclaracaoImportacao" table="NFE_DECLARACAO_IMPORTACAO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="NumeroDocumento" column="NUMERO_DOCUMENTO" />
+	<property name="DataRegistro" column="DATA_REGISTRO" />
+	<property name="LocalDesembaraco" column="LOCAL_DESEMBARACO" />
+	<property name="UfDesembaraco" column="UF_DESEMBARACO" />
+	<property name="DataDesembaraco" column="DATA_DESEMBARACO" />
+	<property name="ViaTransporte" column="VIA_TRANSPORTE" />
+	<property name="ValorAfrmm" column="VALOR_AFRMM" />
+	<property name="FormaIntermediacao" column="FORMA_INTERMEDIACAO" />
+	<property name="Cnpj" column="CNPJ" />
+	<property name="UfTerceiro" column="UF_TERCEIRO" />
+	<property name="CodigoExportador" column="CODIGO_EXPORTADOR" />
+
+
+	<bag name="ListaNfeImportacaoDetalhe" table="nfe_importacao_detalhe" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_NFE_DECLARACAO_IMPORTACAO"/>
+	  <one-to-many class="NfeImportacaoDetalhe"/>
+	</bag>
+	<many-to-one name="NfeDetalhe" class="NfeDetalhe" column="ID_NFE_DETALHE" />
+	    
+  </class>
+</hibernate-mapping>

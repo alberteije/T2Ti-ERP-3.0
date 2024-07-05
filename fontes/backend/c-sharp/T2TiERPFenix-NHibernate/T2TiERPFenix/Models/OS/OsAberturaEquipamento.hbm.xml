@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="OsAberturaEquipamento" table="OS_ABERTURA_EQUIPAMENTO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="NumeroSerie" column="NUMERO_SERIE" />
+	<property name="TipoCobertura" column="TIPO_COBERTURA" />
+
+	<many-to-one name="OsEquipamento" class="OsEquipamento" column="ID_OS_EQUIPAMENTO" />
+
+	<many-to-one name="OsAbertura" class="OsAbertura" column="ID_OS_ABERTURA" />
+	    
+  </class>
+</hibernate-mapping>

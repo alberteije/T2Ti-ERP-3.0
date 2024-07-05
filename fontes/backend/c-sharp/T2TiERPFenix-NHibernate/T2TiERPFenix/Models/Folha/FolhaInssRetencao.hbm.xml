@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FolhaInssRetencao" table="FOLHA_INSS_RETENCAO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="ValorMensal" column="VALOR_MENSAL" />
+	<property name="Valor13" column="VALOR_13" />
+
+	<many-to-one name="FolhaInssServico" class="FolhaInssServico" column="ID_FOLHA_INSS_SERVICO" />
+
+	<many-to-one name="FolhaInss" class="FolhaInss" column="ID_FOLHA_INSS" />
+	    
+  </class>
+</hibernate-mapping>

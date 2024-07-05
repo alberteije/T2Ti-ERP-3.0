@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TabelaPrecoProduto" table="TABELA_PRECO_PRODUTO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Preco" column="PRECO" />
+
+	<many-to-one name="Produto" class="Produto" column="ID_PRODUTO" />
+
+	<many-to-one name="TabelaPreco" class="TabelaPreco" column="ID_TABELA_PRECO" />
+	    
+  </class>
+</hibernate-mapping>

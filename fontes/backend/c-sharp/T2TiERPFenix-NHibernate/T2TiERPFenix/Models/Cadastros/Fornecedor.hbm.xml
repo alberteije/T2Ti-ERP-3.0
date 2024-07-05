@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Fornecedor" table="FORNECEDOR" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Desde" column="DESDE" />
+	<property name="DataCadastro" column="DATA_CADASTRO" />
+	<property name="Observacao" column="OBSERVACAO" />
+
+    <many-to-one name="Pessoa" class="Pessoa" column="ID_PESSOA" />
+    <many-to-one name="ViewPessoaFornecedor" class="ViewPessoaFornecedor" column="ID_PESSOA" not-found="ignore" insert="false" update="false"/>
+
+
+  </class>
+</hibernate-mapping>

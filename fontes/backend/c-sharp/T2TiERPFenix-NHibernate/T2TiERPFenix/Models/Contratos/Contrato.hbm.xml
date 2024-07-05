@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Contrato" table="CONTRATO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdSolicitacaoServico" column="ID_SOLICITACAO_SERVICO" />
+	<property name="IdTipoContrato" column="ID_TIPO_CONTRATO" />
+	<property name="Numero" column="NUMERO" />
+	<property name="Nome" column="NOME" />
+	<property name="Descricao" column="DESCRICAO" />
+	<property name="DataCadastro" column="DATA_CADASTRO" />
+	<property name="DataInicioVigencia" column="DATA_INICIO_VIGENCIA" />
+	<property name="DataFimVigencia" column="DATA_FIM_VIGENCIA" />
+	<property name="DiaFaturamento" column="DIA_FATURAMENTO" />
+	<property name="Valor" column="VALOR" />
+	<property name="QuantidadeParcelas" column="QUANTIDADE_PARCELAS" />
+	<property name="IntervaloEntreParcelas" column="INTERVALO_ENTRE_PARCELAS" />
+	<property name="Observacao" column="OBSERVACAO" />
+	<property name="ClassificacaoContabilConta" column="CLASSIFICACAO_CONTABIL_CONTA" />
+
+
+	    
+  </class>
+</hibernate-mapping>

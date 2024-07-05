@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeTransporteVolume" table="NFE_TRANSPORTE_VOLUME" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Quantidade" column="QUANTIDADE" />
+	<property name="Especie" column="ESPECIE" />
+	<property name="Marca" column="MARCA" />
+	<property name="Numeracao" column="NUMERACAO" />
+	<property name="PesoLiquido" column="PESO_LIQUIDO" />
+	<property name="PesoBruto" column="PESO_BRUTO" />
+
+
+	<bag name="ListaNfeTransporteVolumeLacre" table="nfe_transporte_volume_lacre" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_NFE_TRANSPORTE_VOLUME"/>
+	  <one-to-many class="NfeTransporteVolumeLacre"/>
+	</bag>
+	<many-to-one name="NfeTransporte" class="NfeTransporte" column="ID_NFE_TRANSPORTE" />
+	    
+  </class>
+</hibernate-mapping>

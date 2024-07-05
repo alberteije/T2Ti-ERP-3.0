@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PatrimDocumentoBem" table="PATRIM_DOCUMENTO_BEM" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdPatrimBem" column="ID_PATRIM_BEM" />
+	<property name="Nome" column="NOME" />
+	<property name="Descricao" column="DESCRICAO" />
+	<property name="Imagem" column="IMAGEM" />
+
+
+	    
+  </class>
+</hibernate-mapping>

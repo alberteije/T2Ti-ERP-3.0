@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CteInfNfCargaLacre" table="CTE_INF_NF_CARGA_LACRE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdCteInformacaoNfCarga" column="ID_CTE_INFORMACAO_NF_CARGA" />
+	<property name="Numero" column="NUMERO" />
+	<property name="QuantidadeRateada" column="QUANTIDADE_RATEADA" />
+
+
+	    
+  </class>
+</hibernate-mapping>

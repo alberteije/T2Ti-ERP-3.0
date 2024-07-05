@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeResponsavelTecnico" table="NFE_RESPONSAVEL_TECNICO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Cnpj" column="CNPJ" />
+	<property name="Contato" column="CONTATO" />
+	<property name="Email" column="EMAIL" />
+	<property name="Telefone" column="TELEFONE" />
+	<property name="IdentificadorCsrt" column="IDENTIFICADOR_CSRT" />
+	<property name="HashCsrt" column="HASH_CSRT" />
+
+	<many-to-one name="NfeCabecalho" class="NfeCabecalho" column="ID_NFE_CABECALHO" unique="true" />
+
+	    
+  </class>
+</hibernate-mapping>

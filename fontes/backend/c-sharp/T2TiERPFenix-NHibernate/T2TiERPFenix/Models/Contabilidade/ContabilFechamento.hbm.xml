@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ContabilFechamento" table="CONTABIL_FECHAMENTO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="DataInicio" column="DATA_INICIO" />
+	<property name="DataFim" column="DATA_FIM" />
+	<property name="CriterioLancamento" column="CRITERIO_LANCAMENTO" />
+
+
+	    
+  </class>
+</hibernate-mapping>

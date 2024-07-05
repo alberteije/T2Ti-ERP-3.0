@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="RecadoDestinatario" table="RECADO_DESTINATARIO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdRecadoRemetente" column="ID_RECADO_REMETENTE" />
+	<property name="IdColaborador" column="ID_COLABORADOR" />
+
+
+	    
+  </class>
+</hibernate-mapping>

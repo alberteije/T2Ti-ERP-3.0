@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FiscalParametro" table="FISCAL_PARAMETRO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Vigencia" column="VIGENCIA" />
+	<property name="DescricaoVigencia" column="DESCRICAO_VIGENCIA" />
+	<property name="CriterioLancamento" column="CRITERIO_LANCAMENTO" />
+	<property name="Apuracao" column="APURACAO" />
+	<property name="MicroempreeIndividual" column="MICROEMPREE_INDIVIDUAL" />
+	<property name="CalcPisCofinsEfd" column="CALC_PIS_COFINS_EFD" />
+	<property name="SimplesCodigoAcesso" column="SIMPLES_CODIGO_ACESSO" />
+	<property name="SimplesTabela" column="SIMPLES_TABELA" />
+	<property name="SimplesAtividade" column="SIMPLES_ATIVIDADE" />
+	<property name="PerfilSped" column="PERFIL_SPED" />
+	<property name="ApuracaoConsolidada" column="APURACAO_CONSOLIDADA" />
+	<property name="SubstituicaoTributaria" column="SUBSTITUICAO_TRIBUTARIA" />
+	<property name="FormaCalculoIss" column="FORMA_CALCULO_ISS" />
+
+	<many-to-one name="FiscalEstadualPorte" class="FiscalEstadualPorte" column="ID_FISCAL_ESTADUAL_PORTE" />
+	<many-to-one name="FiscalEstadualRegime" class="FiscalEstadualRegime" column="ID_FISCAL_ESTADUAL_REGIME" />
+	<many-to-one name="FiscalMunicipalRegime" class="FiscalMunicipalRegime" column="ID_FISCAL_MUNICIPAL_REGIME" />
+
+	    
+  </class>
+</hibernate-mapping>

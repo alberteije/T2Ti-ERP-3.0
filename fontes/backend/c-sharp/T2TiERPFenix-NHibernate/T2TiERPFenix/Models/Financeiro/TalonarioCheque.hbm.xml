@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TalonarioCheque" table="TALONARIO_CHEQUE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Talao" column="TALAO" />
+	<property name="Numero" column="NUMERO" />
+	<property name="StatusTalao" column="STATUS_TALAO" />
+
+	<many-to-one name="BancoContaCaixa" class="BancoContaCaixa" column="ID_BANCO_CONTA_CAIXA" />
+
+	<bag name="ListaCheque" table="cheque" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_TALONARIO_CHEQUE"/>
+	  <one-to-many class="Cheque"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

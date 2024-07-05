@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="VendaOrcamentoCabecalho" table="VENDA_ORCAMENTO_CABECALHO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Codigo" column="CODIGO" />
+	<property name="DataCadastro" column="DATA_CADASTRO" />
+	<property name="DataEntrega" column="DATA_ENTREGA" />
+	<property name="Validade" column="VALIDADE" />
+	<property name="TipoFrete" column="TIPO_FRETE" />
+	<property name="ValorSubtotal" column="VALOR_SUBTOTAL" />
+	<property name="ValorFrete" column="VALOR_FRETE" />
+	<property name="TaxaComissao" column="TAXA_COMISSAO" />
+	<property name="ValorComissao" column="VALOR_COMISSAO" />
+	<property name="TaxaDesconto" column="TAXA_DESCONTO" />
+	<property name="ValorDesconto" column="VALOR_DESCONTO" />
+	<property name="ValorTotal" column="VALOR_TOTAL" />
+	<property name="Observacao" column="OBSERVACAO" />
+
+	<many-to-one name="VendaCondicoesPagamento" class="VendaCondicoesPagamento" column="ID_VENDA_CONDICOES_PAGAMENTO" />
+	<many-to-one name="Vendedor" class="Vendedor" column="ID_VENDEDOR" />
+	<many-to-one name="Cliente" class="Cliente" column="ID_CLIENTE" />
+	<many-to-one name="Transportadora" class="Transportadora" column="ID_TRANSPORTADORA" />
+
+	<bag name="ListaVendaOrcamentoDetalhe" table="venda_orcamento_detalhe" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_VENDA_ORCAMENTO_CABECALHO"/>
+	  <one-to-many class="VendaOrcamentoDetalhe"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

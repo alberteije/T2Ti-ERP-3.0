@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ViewFinLancamentoReceber" table="VIEW_FIN_LANCAMENTO_RECEBER" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdFinLancamentoReceber" column="ID_FIN_LANCAMENTO_RECEBER" />
+	<property name="QuantidadeParcela" column="QUANTIDADE_PARCELA" />
+	<property name="ValorLancamento" column="VALOR_LANCAMENTO" />
+	<property name="DataLancamento" column="DATA_LANCAMENTO" />
+	<property name="NumeroDocumento" column="NUMERO_DOCUMENTO" />
+	<property name="IdFinParcelaReceber" column="ID_FIN_PARCELA_RECEBER" />
+	<property name="NumeroParcela" column="NUMERO_PARCELA" />
+	<property name="DataVencimento" column="DATA_VENCIMENTO" />
+	<property name="DataRecebimento" column="DATA_RECEBIMENTO" />
+	<property name="ValorParcela" column="VALOR_PARCELA" />
+	<property name="TaxaJuro" column="TAXA_JURO" />
+	<property name="ValorJuro" column="VALOR_JURO" />
+	<property name="TaxaMulta" column="TAXA_MULTA" />
+	<property name="ValorMulta" column="VALOR_MULTA" />
+	<property name="TaxaDesconto" column="TAXA_DESCONTO" />
+	<property name="ValorDesconto" column="VALOR_DESCONTO" />
+	<property name="SiglaDocumento" column="SIGLA_DOCUMENTO" />
+	<property name="NomeCliente" column="NOME_CLIENTE" />
+	<property name="IdFinStatusParcela" column="ID_FIN_STATUS_PARCELA" />
+	<property name="SituacaoParcela" column="SITUACAO_PARCELA" />
+	<property name="DescricaoSituacaoParcela" column="DESCRICAO_SITUACAO_PARCELA" />
+	<property name="IdBancoContaCaixa" column="ID_BANCO_CONTA_CAIXA" />
+	<property name="NomeContaCaixa" column="NOME_CONTA_CAIXA" />
+
+
+	    
+  </class>
+</hibernate-mapping>

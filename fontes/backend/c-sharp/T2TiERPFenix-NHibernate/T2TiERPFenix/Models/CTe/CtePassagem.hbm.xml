@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CtePassagem" table="CTE_PASSAGEM" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdCteCabecalho" column="ID_CTE_CABECALHO" />
+	<property name="SiglaPassagem" column="SIGLA_PASSAGEM" />
+	<property name="SiglaDestino" column="SIGLA_DESTINO" />
+	<property name="Rota" column="ROTA" />
+
+
+	    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeCana" table="NFE_CANA" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Safra" column="SAFRA" />
+	<property name="MesAnoReferencia" column="MES_ANO_REFERENCIA" />
+
+	<many-to-one name="NfeCabecalho" class="NfeCabecalho" column="ID_NFE_CABECALHO" unique="true" />
+
+	<bag name="ListaNfeCanaDeducoesSafra" table="nfe_cana_deducoes_safra" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_NFE_CANA"/>
+	  <one-to-many class="NfeCanaDeducoesSafra"/>
+	</bag>
+	<bag name="ListaNfeCanaFornecimentoDiario" table="nfe_cana_fornecimento_diario" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_NFE_CANA"/>
+	  <one-to-many class="NfeCanaFornecimentoDiario"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

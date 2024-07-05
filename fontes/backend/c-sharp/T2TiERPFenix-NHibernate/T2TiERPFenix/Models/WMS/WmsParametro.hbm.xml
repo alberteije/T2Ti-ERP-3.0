@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="WmsParametro" table="WMS_PARAMETRO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="HoraPorVolume" column="HORA_POR_VOLUME" />
+	<property name="PessoaPorVolume" column="PESSOA_POR_VOLUME" />
+	<property name="HoraPorPeso" column="HORA_POR_PESO" />
+	<property name="PessoaPorPeso" column="PESSOA_POR_PESO" />
+	<property name="ItemDiferenteCaixa" column="ITEM_DIFERENTE_CAIXA" />
+
+
+	    
+  </class>
+</hibernate-mapping>

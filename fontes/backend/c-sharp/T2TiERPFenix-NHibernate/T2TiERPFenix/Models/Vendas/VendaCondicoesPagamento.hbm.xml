@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="VendaCondicoesPagamento" table="VENDA_CONDICOES_PAGAMENTO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Nome" column="NOME" />
+	<property name="Descricao" column="DESCRICAO" />
+	<property name="FaturamentoMinimo" column="FATURAMENTO_MINIMO" />
+	<property name="FaturamentoMaximo" column="FATURAMENTO_MAXIMO" />
+	<property name="IndiceCorrecao" column="INDICE_CORRECAO" />
+	<property name="DiasTolerancia" column="DIAS_TOLERANCIA" />
+	<property name="ValorTolerancia" column="VALOR_TOLERANCIA" />
+	<property name="PrazoMedio" column="PRAZO_MEDIO" />
+	<property name="VistaPrazo" column="VISTA_PRAZO" />
+
+
+	<bag name="ListaVendaCondicoesParcelas" table="venda_condicoes_parcelas" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_VENDA_CONDICOES_PAGAMENTO"/>
+	  <one-to-many class="VendaCondicoesParcelas"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>

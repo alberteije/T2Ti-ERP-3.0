@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="NfeDetEspecificoMedicamento" table="NFE_DET_ESPECIFICO_MEDICAMENTO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="CodigoAnvisa" column="CODIGO_ANVISA" />
+	<property name="MotivoIsencao" column="MOTIVO_ISENCAO" />
+	<property name="PrecoMaximoConsumidor" column="PRECO_MAXIMO_CONSUMIDOR" />
+
+	<many-to-one name="NfeDetalhe" class="NfeDetalhe" column="ID_NFE_DETALHE" unique="true" />
+
+	    
+  </class>
+</hibernate-mapping>

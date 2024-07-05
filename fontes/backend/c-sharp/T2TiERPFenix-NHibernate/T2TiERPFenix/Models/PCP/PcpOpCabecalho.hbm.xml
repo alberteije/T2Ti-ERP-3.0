@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PcpOpCabecalho" table="PCP_OP_CABECALHO" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Inicio" column="INICIO" />
+	<property name="PrevisaoEntrega" column="PREVISAO_ENTREGA" />
+	<property name="Termino" column="TERMINO" />
+	<property name="CustoTotalPrevisto" column="CUSTO_TOTAL_PREVISTO" />
+	<property name="CustoTotalRealizado" column="CUSTO_TOTAL_REALIZADO" />
+	<property name="PorcentoVenda" column="PORCENTO_VENDA" />
+	<property name="PorcentoEstoque" column="PORCENTO_ESTOQUE" />
+
+
+	    
+  </class>
+</hibernate-mapping>

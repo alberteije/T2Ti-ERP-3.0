@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiRetaguardaSH" namespace="T2TiRetaguardaSH.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ErpTipoPlanoModel" table="erp_tipo_plano" >
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id> 
+
+		<property name="Nome" column="nome" />
+
+		<property name="Valor" column="valor" />
+
+		<property name="Frequencia" column="frequencia" />
+
+		<property name="AcessoTotal" column="acesso_total" />
+
+		<property name="Ativo" column="ativo" />
+
+  </class>
+</hibernate-mapping>

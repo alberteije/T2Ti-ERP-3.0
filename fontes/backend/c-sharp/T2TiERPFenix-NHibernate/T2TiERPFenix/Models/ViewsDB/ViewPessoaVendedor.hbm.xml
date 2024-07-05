@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ViewPessoaVendedor" table="VIEW_PESSOA_VENDEDOR" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Nome" column="NOME" />
+	<property name="Tipo" column="TIPO" />
+	<property name="Email" column="EMAIL" />
+	<property name="Site" column="SITE" />
+	<property name="CpfCnpj" column="CPF_CNPJ" />
+	<property name="RgIe" column="RG_IE" />
+	<property name="Matricula" column="MATRICULA" />
+	<property name="DataCadastro" column="DATA_CADASTRO" />
+	<property name="DataAdmissao" column="DATA_ADMISSAO" />
+	<property name="DataDemissao" column="DATA_DEMISSAO" />
+	<property name="CtpsNumero" column="CTPS_NUMERO" />
+	<property name="CtpsSerie" column="CTPS_SERIE" />
+	<property name="CtpsDataExpedicao" column="CTPS_DATA_EXPEDICAO" />
+	<property name="CtpsUf" column="CTPS_UF" />
+	<property name="Observacao" column="OBSERVACAO" />
+	<property name="Logradouro" column="LOGRADOURO" />
+	<property name="Numero" column="NUMERO" />
+	<property name="Complemento" column="COMPLEMENTO" />
+	<property name="Bairro" column="BAIRRO" />
+	<property name="Cidade" column="CIDADE" />
+	<property name="Cep" column="CEP" />
+	<property name="MunicipioIbge" column="MUNICIPIO_IBGE" />
+	<property name="Uf" column="UF" />
+	<property name="IdPessoa" column="ID_PESSOA" />
+	<property name="IdCargo" column="ID_CARGO" />
+	<property name="IdSetor" column="ID_SETOR" />
+	<property name="Comissao" column="COMISSAO" />
+	<property name="MetaVenda" column="META_VENDA" />
+
+
+	    
+  </class>
+</hibernate-mapping>

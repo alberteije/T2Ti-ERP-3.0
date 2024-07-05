@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="MdfeInformacaoNfe" table="MDFE_INFORMACAO_NFE" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="IdMdfeMunicipioDescarrega" column="ID_MDFE_MUNICIPIO_DESCARREGA" />
+	<property name="ChaveNfe" column="CHAVE_NFE" />
+	<property name="SegundoCodigoBarra" column="SEGUNDO_CODIGO_BARRA" />
+	<property name="IndicadorReentrega" column="INDICADOR_REENTREGA" />
+
+
+	    
+  </class>
+</hibernate-mapping>

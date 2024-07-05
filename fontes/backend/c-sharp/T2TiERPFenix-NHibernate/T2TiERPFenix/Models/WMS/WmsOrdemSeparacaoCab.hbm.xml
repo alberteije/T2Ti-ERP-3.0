@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="WmsOrdemSeparacaoCab" table="WMS_ORDEM_SEPARACAO_CAB" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Origem" column="ORIGEM" />
+	<property name="DataSolicitacao" column="DATA_SOLICITACAO" />
+	<property name="DataLimite" column="DATA_LIMITE" />
+
+
+	    
+  </class>
+</hibernate-mapping>

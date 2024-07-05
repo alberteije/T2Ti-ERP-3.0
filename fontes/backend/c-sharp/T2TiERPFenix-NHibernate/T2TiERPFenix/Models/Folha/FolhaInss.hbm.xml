@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="T2TiERPFenix" namespace="T2TiERPFenix.Models" default-lazy="false" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FolhaInss" table="FOLHA_INSS" >
+    <id name="Id" column="ID">
+      <generator class="identity" />
+    </id>
+
+	<property name="Competencia" column="COMPETENCIA" />
+
+
+	<bag name="ListaFolhaInssRetencao" table="folha_inss_retencao" cascade="all-delete-orphan" inverse="true">
+	  <key column="ID_FOLHA_INSS"/>
+	  <one-to-many class="FolhaInssRetencao"/>
+	</bag>
+	    
+  </class>
+</hibernate-mapping>
