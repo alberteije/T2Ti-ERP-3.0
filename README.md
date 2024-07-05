@@ -13,5 +13,9 @@
                     O T2Ti ERP 3.0 é dividido em duas fases: T2Ti ERP Fenix e T2Ti ERP Pegasus. Em ambas as fases
                     construímos 24 módulos do ERP, sendo que no T2Ti ERP Pegasus vamos além e construímos mais 3 módulos.
                 </p>
+                <p class="paragrafo-16-justificado">
+                    Existem mais de 1.000 vídeos em playlists no Youtube com mais de 250 horas. Para compreender em qual ordem assistir aos vídeos
+                            acesse o seguinte link: https://t2ti.com/erp3/
+                </p>                        
             </div>
 </html>
