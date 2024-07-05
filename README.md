@@ -1,3 +1,4 @@
+<html>
             <div class="col-lg-10 col-12 mx-auto">
                 <div class="fumaca-branca">
                     <img class="custom-block-image img-fluid" src="https://t2ti.com/images/erp/erp3-destaque.jpg" alt="Projeto T2Ti ERP 3.0" title="Projeto T2Ti ERP 3.0">
@@ -13,3 +14,4 @@
                     construímos 24 módulos do ERP, sendo que no T2Ti ERP Pegasus vamos além e construímos mais 3 módulos.
                 </p>
             </div>
+</html>
