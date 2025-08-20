@@ -1,57 +1,75 @@
-CREATE
-VIEW VIEW_PESSOA_COLABORADOR
-AS
+create view view_pessoa_colaborador as
 
 select 
-	C.ID,
-	P.NOME, P.TIPO, P.EMAIL, P.SITE, 
-	PF.CPF AS "CPF_CNPJ", 
-	PF.RG AS "RG_IE",
-	C.MATRICULA,
-	C.DATA_CADASTRO,
-	C.DATA_ADMISSAO,
-	C.DATA_DEMISSAO,
-	C.CTPS_NUMERO,
-	C.CTPS_SERIE,
-	C.CTPS_DATA_EXPEDICAO,
-	C.CTPS_UF,
-	C.OBSERVACAO,
-	E.LOGRADOURO, E.NUMERO, E.COMPLEMENTO, E.BAIRRO, E.CIDADE, E.CEP, E.MUNICIPIO_IBGE, E.UF,
-	P.ID as "ID_PESSOA",
-	C.ID_CARGO,
-	C.ID_SETOR
+    c.id as id,
+    p.nome as nome, 
+    p.tipo as tipo, 
+    p.email as email, 
+    p.site as site, 
+    pf.cpf as cpf_cnpj, 
+    pf.rg as rg_ie,
+    c.matricula as matricula,
+    c.data_cadastro as data_cadastro,
+    c.data_admissao as data_admissao,
+    c.data_demissao as data_demissao,
+    c.ctps_numero as ctps_numero,
+    c.ctps_serie as ctps_serie,
+    c.ctps_data_expedicao as ctps_data_expedicao,
+    c.ctps_uf as ctps_uf,
+    c.observacao as observacao,
+    e.logradouro as logradouro, 
+    e.numero as numero, 
+    e.complemento as complemento, 
+    e.bairro as bairro, 
+    e.cidade as cidade, 
+    e.cep as cep, 
+    e.municipio_ibge as municipio_ibge, 
+    e.uf as uf,
+    p.id as id_pessoa,
+    c.id_cargo as id_cargo,
+    c.id_setor as id_setor
 from
-	PESSOA P 
-	INNER JOIN PESSOA_FISICA PF ON (PF.ID_PESSOA = P.ID)
-	INNER JOIN COLABORADOR C ON (C.ID_PESSOA = P.ID)
-	INNER JOIN PESSOA_ENDERECO E ON (E.ID_PESSOA = P.ID)
+    pessoa p 
+    inner join pessoa_fisica pf on (pf.id_pessoa = p.id)
+    inner join colaborador c on (c.id_pessoa = p.id)
+    left join pessoa_endereco e on (e.id_pessoa = p.id)
 where 
-	P.EH_COLABORADOR = "S" and E.PRINCIPAL = "S"
+    p.eh_colaborador = 'S'
 
-UNION
+union
 
 select 
-	C.ID,
-	P.NOME, P.TIPO, P.EMAIL, P.SITE, 
-	PJ.CNPJ AS "CPF_CNPJ", 
-	PJ.INSCRICAO_ESTADUAL AS "RG_IE",
-	C.MATRICULA,
-	C.DATA_CADASTRO,
-	C.DATA_ADMISSAO,
-	C.DATA_DEMISSAO,
-	C.CTPS_NUMERO,
-	C.CTPS_SERIE,
-	C.CTPS_DATA_EXPEDICAO,
-	C.CTPS_UF,
-	C.OBSERVACAO,
-	E.LOGRADOURO, E.NUMERO, E.COMPLEMENTO, E.BAIRRO, E.CIDADE, E.CEP, E.MUNICIPIO_IBGE, E.UF,
-	P.ID as "ID_PESSOA",
-	C.ID_CARGO,
-	C.ID_SETOR
+    c.id as id,
+    p.nome as nome, 
+    p.tipo as tipo, 
+    p.email as email, 
+    p.site as site, 
+    pj.cnpj as cpf_cnpj, 
+    pj.inscricao_estadual as rg_ie,
+    c.matricula as matricula,
+    c.data_cadastro as data_cadastro,
+    c.data_admissao as data_admissao,
+    c.data_demissao as data_demissao,
+    c.ctps_numero as ctps_numero,
+    c.ctps_serie as ctps_serie,
+    c.ctps_data_expedicao as ctps_data_expedicao,
+    c.ctps_uf as ctps_uf,
+    c.observacao as observacao,
+    e.logradouro as logradouro, 
+    e.numero as numero, 
+    e.complemento as complemento, 
+    e.bairro as bairro, 
+    e.cidade as cidade, 
+    e.cep as cep, 
+    e.municipio_ibge as municipio_ibge, 
+    e.uf as uf,
+    p.id as id_pessoa,
+    c.id_cargo as id_cargo,
+    c.id_setor as id_setor
 from
-	PESSOA P 
-	INNER JOIN PESSOA_JURIDICA PJ ON (PJ.ID_PESSOA = P.ID)
-	INNER JOIN COLABORADOR C ON (C.ID_PESSOA = P.ID)
-	INNER JOIN PESSOA_ENDERECO E ON (E.ID_PESSOA = P.ID)
+    pessoa p 
+    inner join pessoa_juridica pj on (pj.id_pessoa = p.id)
+    inner join colaborador c on (c.id_pessoa = p.id)
+    left join pessoa_endereco e on (e.id_pessoa = p.id)
 where 
-	P.EH_COLABORADOR = "S" and E.PRINCIPAL = "S"
+    p.eh_colaborador = 'S';

@@ -1,0 +1,74 @@
+-- Limpa e redefine o contador autoincremento para todas as tabelas do módulo BPe
+
+SET FOREIGN_KEY_CHECKS = 0; -- Desabilita verificação de chave estrangeira
+
+TRUNCATE TABLE bpe_passagem; -- Limpa a tabela bpe_passagem
+TRUNCATE TABLE bpe_agencia; -- Limpa a tabela bpe_agencia
+TRUNCATE TABLE bpe_viagem; -- Limpa a tabela bpe_viagem
+TRUNCATE TABLE bpe_comprador; -- Limpa a tabela bpe_comprador
+TRUNCATE TABLE bpe_passageiro; -- Limpa a tabela bpe_passageiro
+TRUNCATE TABLE bpe_emitente; -- Limpa a tabela bpe_emitente
+TRUNCATE TABLE bpe_cabecalho; -- Limpa a tabela bpe_cabecalho
+
+SET FOREIGN_KEY_CHECKS = 1; -- Habilita novamente a verificação de chave estrangeira
+
+
+-- Inserção na tabela bpe_cabecalho
+INSERT INTO bpe_cabecalho (uf_emitente, ambiente, modelo, serie, numero, codigo_numerico, chave_acesso, digito_chave_acesso, modal, data_hora_emissao, tipo_emissao, versao_processo_emissao, tipo_bpe, consumidor_presenca, uf_inicio_viagem, codigo_municipio_inicio_viagem, uf_fim_viagem, codigo_municipio_fim_viagem, valor_bilhete, valor_desconto, valor_pago, valor_troco, tipo_desconto, desconto_descricao, desconto_concedido_outros, forma_pagamento, forma_pagamento_outros, forma_pagamento_documento, cst, base_calculo_icms, aliquota_icms, valor_icms, percentual_reducao_bc_icms, informacoes_add_fisco)
+VALUES 
+(35, '1', '63', '001', '000000001', '12345678', '12345678901234567890123456789012345678901234', '1', '01', '2024-10-11 09:00:00', '1', '4.00', '1', '1', 'SP', 3550308, 'RJ', 3304557, 150.50, 10.00, 140.50, 0.00, '00', 'Desconto Promocional', '', '01', 'Crédito', 'DOC123', '00', 120.50, 18.00, 21.69, 0.00, 'Nenhuma informação adicional'),
+(33, '2', '63', '002', '000000002', '23456789', '23456789012345678901234567890123456789012345', '2', '01', '2024-09-10 12:30:00', '1', '4.00', '1', '2', 'MG', 3106200, 'SP', 3550308, 180.75, 15.75, 165.00, 0.00, '01', 'Desconto Especial', '', '02', 'Débito', 'DOC456', '10', 150.75, 12.00, 18.09, 0.00, 'Nenhuma'),
+(41, '1', '63', '003', '000000003', '34567890', '34567890123456789012345678901234567890123456', '3', '01', '2024-08-15 14:45:00', '1', '4.00', '1', '1', 'RJ', 3304557, 'ES', 3205309, 200.00, 20.00, 180.00, 0.00, '02', 'Cupom Desconto', '', '03', 'Dinheiro', 'DOC789', '20', 170.00, 17.00, 28.90, 0.00, 'Informações adicionais sobre o fisco'),
+(26, '2', '63', '004', '000000004', '45678901', '45678901234567890123456789012345678901234567', '4', '01', '2024-07-20 18:00:00', '1', '4.00', '1', '2', 'ES', 3205309, 'MG', 3106200, 220.40, 5.00, 215.40, 0.00, '00', 'Desconto para fidelidade', '', '01', 'Crédito', 'DOC321', '00', 190.40, 15.00, 28.56, 0.00, 'Sem adição'),
+(53, '1', '63', '005', '000000005', '56789012', '56789012345678901234567890123456789012345678', '5', '01', '2024-06-30 20:30:00', '1', '4.00', '1', '1', 'SP', 3550308, 'RJ', 3304557, 250.00, 30.00, 220.00, 0.00, '01', 'Desconto Relâmpago', '', '02', 'Débito', 'DOC654', '00', 220.00, 18.00, 39.60, 0.00, 'Nenhuma');
+
+-- Inserção na tabela bpe_emitente
+INSERT INTO bpe_emitente (id_bpe_cabecalho, cnpj, ie, iest, im, cnae, crt, nome, fantasia, logradouro, numero, complemento, bairro, codigo_municipio, nome_municipio, uf, cep, telefone)
+VALUES
+(1, '12345678000101', '123456789012', '', '12345678', '4922-2', 3, 'Empresa 1', 'Fantasia 1', 'Rua A', '123', 'Apto 1', 'Centro', 3550308, 'São Paulo', 'SP', '01000000', '1133334444'),
+(2, '23456789000102', '234567890123', '', '23456789', '4922-3', 1, 'Empresa 2', 'Fantasia 2', 'Rua B', '456', 'Casa 2', 'Bela Vista', 3106200, 'Belo Horizonte', 'MG', '31000000', '3134445555'),
+(3, '34567890000103', '345678901234', '', '34567890', '4922-4', 3, 'Empresa 3', 'Fantasia 3', 'Avenida C', '789', 'Sala 3', 'Centro', 3304557, 'Rio de Janeiro', 'RJ', '20000000', '2135556666'),
+(4, '45678901000104', '456789012345', '', '45678901', '4922-5', 1, 'Empresa 4', 'Fantasia 4', 'Rua D', '101', 'Prédio 4', 'Centro', 3205309, 'Vitória', 'ES', '29000000', '2736667777'),
+(5, '56789012000105', '567890123456', '', '56789012', '4922-6', 3, 'Empresa 5', 'Fantasia 5', 'Rua E', '202', 'Casa 5', 'Centro', 3550308, 'São Paulo', 'SP', '01000001', '1137778888');
+
+-- Inserção na tabela bpe_passageiro
+INSERT INTO bpe_passageiro (id_bpe_cabecalho, nome, cpf, tipo_documento_identificacao, numero_documento, documento_outros_descricao, data_nascimento, telefone, email)
+VALUES
+(1, 'Passageiro 1', '12345678901', '1', '123456', '', '1990-01-01', '11999998888', 'p1@email.com'),
+(2, 'Passageiro 2', '23456789012', '2', '234567', 'Passaporte', '1985-05-05', '21988887777', 'p2@email.com'),
+(3, 'Passageiro 3', '34567890123', '1', '345678', '', '1980-10-10', '31977776666', 'p3@email.com'),
+(4, 'Passageiro 4', '45678901234', '3', '456789', 'Documento Estrangeiro', '1995-07-15', '27966665555', 'p4@email.com'),
+(5, 'Passageiro 5', '56789012345', '2', '567890', 'Passaporte', '2000-12-12', '11955554444', 'p5@email.com');
+
+-- Inserção na tabela bpe_comprador
+INSERT INTO bpe_comprador (id_bpe_cabecalho, cnpj, cpf, ie, nome, fantasia, telefone, logradouro, numero, complemento, bairro, codigo_municipio, nome_municipio, uf, cep, codigo_pais, nome_pais, email)
+VALUES
+(1, '12345678000195', '12345678901', '1234567890', 'Comprador 1', 'Fantasia 1', '11999999999', 'Rua Exemplo, 1', '1', 'Apto 101', 'Centro', 1234567, 'Cidade A', 'SP', '01234000', 1058, 'Brasil', 'comprador1@exemplo.com'),
+(2, '12345678000196', '12345678902', '1234567891', 'Comprador 2', 'Fantasia 2', '11988888888', 'Rua Teste, 2', '2', 'Apto 102', 'Centro', 7654321, 'Cidade B', 'RJ', '02345000', 1058, 'Brasil', 'comprador2@exemplo.com'),
+(3, '12345678000197', '12345678903', '1234567892', 'Comprador 3', 'Fantasia 3', '11977777777', 'Rua Modelo, 3', '3', 'Apto 103', 'Centro', 1234567, 'Cidade C', 'MG', '03456000', 1058, 'Brasil', 'comprador3@exemplo.com'),
+(4, '12345678000198', '12345678904', '1234567893', 'Comprador 4', 'Fantasia 4', '11966666666', 'Rua Exemplar, 4', '4', 'Apto 104', 'Centro', 7654321, 'Cidade D', 'RS', '04567000', 1058, 'Brasil', 'comprador4@exemplo.com'),
+(5, '12345678000199', '12345678905', '1234567894', 'Comprador 5', 'Fantasia 5', '11955555555', 'Rua Simples, 5', '5', 'Apto 105', 'Centro', 1234567, 'Cidade E', 'BA', '05678000', 1058, 'Brasil', 'comprador5@exemplo.com');
+
+-- Inserindo dados na tabela bpe_viagem
+INSERT INTO bpe_viagem (id_bpe_cabecalho, codigo_percurso, descricao_percurso, tipo_viagem, tipo_servico, tipo_acomodacao, tipo_trecho, data_hora_viagem, data_hora_conexao, prefixo_linha, poltrona, plataforma) VALUES
+(1, 'P001', 'Viagem de São Paulo a Rio de Janeiro', '01', '1', '1', '1', '2024-10-11 08:00:00', NULL, 'LINHA A', '101', '1'),
+(1, 'P002', 'Viagem de Rio de Janeiro a Belo Horizonte', '00', '2', '1', '1', '2024-10-12 09:00:00', NULL, 'LINHA B', '102', '2'),
+(2, 'P003', 'Viagem de Belo Horizonte a São Paulo', '01', '3', '1', '1', '2024-10-13 10:00:00', NULL, 'LINHA C', '103', '3'),
+(2, 'P004', 'Viagem de São Paulo a Curitiba', '00', '4', '1', '1', '2024-10-14 11:00:00', NULL, 'LINHA D', '104', '4'),
+(3, 'P005', 'Viagem de Curitiba a Porto Alegre', '01', '5', '1', '1', '2024-10-15 12:00:00', NULL, 'LINHA E', '105', '5');
+
+-- Inserindo dados na tabela bpe_agencia
+INSERT INTO bpe_agencia (id_bpe_cabecalho, cnpj, nome, telefone, logradouro, numero, complemento, bairro, codigo_municipio, nome_municipio, uf, cep, codigo_pais, nome_pais, email) VALUES
+(1, '12345678000195', 'Agência São Paulo', '1122334455', 'Av. Paulista', '1000', 'Sala 101', 'Bela Vista', 3550308, 'São Paulo', 'SP', '01310000', 76, 'Brasil', 'contato@agenciasp.com.br'),
+(1, '12345678000196', 'Agência Rio de Janeiro', '1122334456', 'Rua da Praia', '200', 'Loja 202', 'Copacabana', 3304557, 'Rio de Janeiro', 'RJ', '22010000', 76, 'Brasil', 'contato@agenciarj.com.br'),
+(2, '12345678000197', 'Agência Belo Horizonte', '1122334457', 'Av. Afonso Pena', '3000', 'Suite 303', 'Centro', 3106200, 'Belo Horizonte', 'MG', '30130000', 76, 'Brasil', 'contato@agenciabh.com.br'),
+(2, '12345678000198', 'Agência Curitiba', '1122334458', 'Rua XV de Novembro', '4000', 'Andar 4', 'Centro', 4119500, 'Curitiba', 'PR', '80010000', 76, 'Brasil', 'contato@agenciacuritiba.com.br'),
+(3, '12345678000199', 'Agência Porto Alegre', '1122334459', 'Av. João Pessoa', '5000', 'Bloco B', 'Cidade Baixa', 4314902, 'Porto Alegre', 'RS', '90000000', 76, 'Brasil', 'contato@agenciapoa.com.br');
+
+-- Inserindo dados na tabela bpe_passagem
+INSERT INTO bpe_passagem (id_bpe_cabecalho, codigo_localidade_origem, descricao_localidade_origem, codigo_localidade_destino, descricao_localidade_destino, data_hora_embarque, data_hora_validade) VALUES
+(1, 'SP', 'São Paulo', 'RJ', 'Rio de Janeiro', '2024-10-11 08:00:00', '2024-10-12 08:00:00'),
+(1, 'RJ', 'Rio de Janeiro', 'BH', 'Belo Horizonte', '2024-10-12 09:00:00', '2024-10-13 09:00:00'),
+(2, 'BH', 'Belo Horizonte', 'SP', 'São Paulo', '2024-10-13 10:00:00', '2024-10-14 10:00:00'),
+(2, 'SP', 'São Paulo', 'CU', 'Curitiba', '2024-10-14 11:00:00', '2024-10-15 11:00:00'),
+(3, 'CU', 'Curitiba', 'POA', 'Porto Alegre', '2024-10-15 12:00:00', '2024-10-16 12:00:00');

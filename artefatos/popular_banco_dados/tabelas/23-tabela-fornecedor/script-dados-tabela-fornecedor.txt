@@ -1,0 +1,23 @@
+-- Inserções para a tabela fornecedor
+INSERT INTO `fornecedor` (`id_pessoa`, `desde`, `data_cadastro`, `observacao`) 
+VALUES
+-- Pessoa 2 (TESTE PESSOA JURIDICA)
+(2, '2020-01-15', '2020-01-20', 'Fornecedor de materiais diversos para teste'),
+-- Pessoa 12 (EMPRESA JURIDICA 1)
+(12, '2018-05-10', '2018-05-12', 'Fornecedor de materiais de escritório e papelaria'),
+-- Pessoa 13 (EMPRESA JURIDICA 2)
+(13, '2019-03-22', '2019-03-25', 'Fornecedor de peças mecânicas e componentes industriais'),
+-- Pessoa 14 (EMPRESA JURIDICA 3)
+(14, '2017-11-05', '2017-11-10', 'Fornecedor de materiais de limpeza e higiene'),
+-- Pessoa 15 (EMPRESA JURIDICA 4)
+(15, '2021-02-18', '2021-02-20', 'Fornecedor de uniformes e EPIs'),
+-- Pessoa 16 (EMPRESA JURIDICA 5)
+(16, '2020-07-30', '2020-08-02', 'Fornecedor de insumos industriais'),
+-- Pessoa 17 (EMPRESA JURIDICA 6)
+(17, '2019-09-12', '2019-09-15', 'Fornecedor de equipamentos de segurança'),
+-- Pessoa 18 (EMPRESA JURIDICA 7)
+(18, '2022-01-05', '2022-01-07', 'Fornecedor de materiais elétricos'),
+-- Pessoa 19 (EMPRESA JURIDICA 8)
+(19, '2021-04-15', '2021-04-18', 'Fornecedor de ferramentas e acessórios'),
+-- Pessoa 20 (EMPRESA JURIDICA 9)
+(20, '2018-08-20', '2018-08-22', 'Fornecedor de componentes eletrônicos');

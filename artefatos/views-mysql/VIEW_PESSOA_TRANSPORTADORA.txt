@@ -1,35 +1,33 @@
-CREATE
-VIEW VIEW_PESSOA_TRANSPORTADORA
-AS
+create view view_pessoa_transportadora as
 
 select 
-	T.ID,
-	P.NOME, P.TIPO, P.EMAIL, P.SITE, 
-	PF.CPF AS "CPF_CNPJ", 
-	PF.RG AS "RG_IE",
-	T.DATA_CADASTRO,
-	T.OBSERVACAO,
-	P.ID as "ID_PESSOA"
+    t.id,
+    p.nome, p.tipo, p.email, p.site, 
+    pf.cpf as cpf_cnpj, 
+    pf.rg as rg_ie,
+    t.data_cadastro,
+    t.observacao,
+    p.id as id_pessoa
 from
-	PESSOA P 
-	INNER JOIN PESSOA_FISICA PF ON (PF.ID_PESSOA = P.ID)
-	INNER JOIN TRANSPORTADORA T ON (T.ID_PESSOA = P.ID)
+    pessoa p 
+    inner join pessoa_fisica pf on (pf.id_pessoa = p.id)
+    inner join transportadora t on (t.id_pessoa = p.id)
 where 
-	P.EH_TRANSPORTADORA = "S"
+    p.eh_transportadora = 'S'
 
-UNION
+union
 
 select 
-	T.ID,
-	P.NOME, P.TIPO, P.EMAIL, P.SITE, 
-	PJ.CNPJ AS "CPF_CNPJ", 
-	PJ.INSCRICAO_ESTADUAL AS "RG_IE",
-	T.DATA_CADASTRO,
-	T.OBSERVACAO,
-	P.ID as "ID_PESSOA"
+    t.id,
+    p.nome, p.tipo, p.email, p.site, 
+    pj.cnpj as cpf_cnpj, 
+    pj.inscricao_estadual as rg_ie,
+    t.data_cadastro,
+    t.observacao,
+    p.id as id_pessoa
 from
-	PESSOA P 
-	INNER JOIN PESSOA_JURIDICA PJ ON (PJ.ID_PESSOA = P.ID)
-	INNER JOIN TRANSPORTADORA T ON (T.ID_PESSOA = P.ID)
+    pessoa p 
+    inner join pessoa_juridica pj on (pj.id_pessoa = p.id)
+    inner join transportadora t on (t.id_pessoa = p.id)
 where 
-	P.EH_TRANSPORTADORA = "S"
+    p.eh_transportadora = 'S';

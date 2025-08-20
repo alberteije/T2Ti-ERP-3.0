@@ -1,0 +1,117 @@
+-- STATUS DE OS (os_status)
+INSERT INTO os_status (codigo, nome) VALUES
+('01', 'Aberta'),
+('02', 'Em Andamento'),
+('03', 'Aguardando Peças'),
+('04', 'Aguardando Cliente'),
+('05', 'Concluída'),
+('06', 'Cancelada');
+
+-- EQUIPAMENTOS (os_equipamento)
+INSERT INTO os_equipamento (nome, descricao) VALUES
+('Notebook Dell Inspiron', 'Notebook i5, 8GB RAM, SSD 256GB'),
+('Impressora HP LaserJet', 'Impressora laser monocromática'),
+('Servidor HP ProLiant', 'Servidor rack 1U, 32GB RAM'),
+('Switch Cisco 2960', 'Switch gerenciável 24 portas'),
+('Projetor Epson PowerLite', 'Projetor XGA 3.600 lumens');
+
+-- ABERTURAS DE OS (os_abertura) - IDs de cliente e colaborador de 1 a 10
+INSERT INTO os_abertura (
+  id_os_status, 
+  id_cliente, 
+  id_colaborador, 
+  numero, 
+  data_inicio, 
+  hora_inicio, 
+  data_previsao, 
+  hora_previsao, 
+  data_fim, 
+  hora_fim, 
+  nome_contato, 
+  fone_contato, 
+  observacao_cliente, 
+  observacao_abertura
+) VALUES
+-- OS 1 (Aberta)
+(1, 1, 3, 'OS-2023-001', '2023-06-01', '09:00:00', '2023-06-05', '18:00:00', NULL, NULL, 'João Silva', '(11) 9999-1111', 'Notebook não liga', 'Verificar fonte e placa-mãe'),
+
+-- OS 2 (Em Andamento)
+(2, 2, 5, 'OS-2023-002', '2023-06-02', '10:30:00', '2023-06-07', '18:00:00', NULL, NULL, 'Maria Santos', '(11) 9999-2222', 'Impressora está manchando', 'Limpeza e substituição de toner'),
+
+-- OS 3 (Concluída)
+(5, 3, 2, 'OS-2023-003', '2023-05-28', '14:00:00', '2023-05-30', '18:00:00', '2023-05-29', '17:30:00', 'Carlos Oliveira', '(11) 9999-3333', 'Servidor reiniciando sozinho', 'Substituição da fonte'),
+
+-- OS 4 (Aguardando Peças)
+(3, 4, 4, 'OS-2023-004', '2023-06-03', '11:00:00', '2023-06-10', '18:00:00', NULL, NULL, 'Ana Costa', '(11) 9999-4444', 'Switch com portas defeituosas', 'Aguardando chegada do switch novo'),
+
+-- OS 5 (Cancelada)
+(6, 5, 1, 'OS-2023-005', '2023-06-01', '08:30:00', '2023-06-03', '18:00:00', '2023-06-02', '10:00:00', 'Pedro Rocha', '(11) 9999-5555', 'Projetor com cor alterada', 'Cliente cancelou o serviço');
+
+-- EQUIPAMENTOS VINCULADOS ÀS OS (os_abertura_equipamento)
+INSERT INTO os_abertura_equipamento (id, id_os_equipamento, id_os_abertura, numero_serie, tipo_cobertura) VALUES
+(1, 1, 1, 'DL12345678', 'G'),
+(2, 2, 2, 'HP98765432', 'P'),
+(3, 3, 3, 'HP54321678', 'G'),
+(4, 4, 4, 'CSC87654321', 'E'),
+(5, 5, 5, 'EPS12345678', 'P');
+
+-- PRODUTOS/SERVIÇOS NAS OS (os_produto_servico) - IDs de produto de 1 a 10
+INSERT INTO os_produto_servico (
+  id_os_abertura, 
+  id_produto, 
+  tipo, 
+  complemento, 
+  quantidade, 
+  valor_unitario, 
+  valor_subtotal, 
+  taxa_desconto, 
+  valor_desconto, 
+  valor_total
+) VALUES
+-- Itens para OS 1
+(1, 1, 'P', 'Fonte notebook', 1.000000, 250.000000, 250.000000, 0.000000, 0.000000, 250.000000),
+(1, NULL, 'S', 'Mão de obra troca de fonte', 1.000000, 150.000000, 150.000000, 10.000000, 15.000000, 135.000000),
+
+-- Itens para OS 2
+(2, 2, 'P', 'Toner original HP', 1.000000, 180.000000, 180.000000, 0.000000, 0.000000, 180.000000),
+(2, NULL, 'S', 'Limpeza interna', 1.000000, 80.000000, 80.000000, 0.000000, 0.000000, 80.000000),
+
+-- Itens para OS 3
+(3, 3, 'P', 'Fonte servidor', 1.000000, 450.000000, 450.000000, 5.000000, 22.500000, 427.500000),
+(3, NULL, 'S', 'Substituição de fonte', 2.000000, 120.000000, 240.000000, 0.000000, 0.000000, 240.000000),
+
+-- Itens para OS 4
+(4, NULL, 'S', 'Diagnóstico de portas', 1.000000, 100.000000, 100.000000, 0.000000, 0.000000, 100.000000),
+
+-- Itens para OS 5
+(5, NULL, 'S', 'Diagnóstico projetor', 1.000000, 90.000000, 90.000000, 100.000000, 90.000000, 0.000000);
+
+-- EVOLUÇÕES DAS OS (os_evolucao)
+INSERT INTO os_evolucao (
+  id_os_abertura, 
+  data_registro, 
+  hora_registro, 
+  observacao, 
+  enviar_email
+) VALUES
+-- Evoluções para OS 1
+(1, '2023-06-01', '09:30:00', 'Iniciado diagnóstico do notebook', 'N'),
+(1, '2023-06-02', '14:15:00', 'Confirmada necessidade de troca da fonte', 'S'),
+
+-- Evoluções para OS 2
+(2, '2023-06-02', '11:00:00', 'Impressora desmontada para limpeza', 'N'),
+(2, '2023-06-03', '10:30:00', 'Toner substituído, realizando testes', 'S'),
+
+-- Evoluções para OS 3
+(3, '2023-05-28', '15:30:00', 'Servidor aberto, fonte com defeito identificada', 'N'),
+(3, '2023-05-29', '16:00:00', 'Fonte substituída, testes em andamento', 'S'),
+(3, '2023-05-29', '17:15:00', 'Servidor funcionando normalmente', 'S'),
+
+-- Evoluções para OS 4
+(4, '2023-06-03', '12:00:00', 'Switch testado, 4 portas com defeito', 'S'),
+(4, '2023-06-05', '09:00:00', 'Pedido de peça realizado, aguardando entrega', 'S'),
+
+-- Evoluções para OS 5
+(5, '2023-06-01', '09:00:00', 'Diagnóstico iniciado', 'N'),
+(5, '2023-06-02', '09:30:00', 'Cliente informou que cancelará o serviço', 'S');
+

@@ -1,0 +1,28 @@
+-- Tabela comissao_perfil (Perfis de Comissão)
+
+INSERT INTO comissao_perfil (codigo, nome) VALUES
+('VEN', 'Vendedor'),
+('GER', 'Gerente Comercial'),
+('SUP', 'Supervisor de Vendas'),
+('REP', 'Representante'),
+('TEC', 'Técnico Comercial');
+
+-- Tabela comissao_objetivo (Objetivos de Comissão)
+
+-- Objetivos para Vendedores
+INSERT INTO comissao_objetivo (id_comissao_perfil, codigo, nome, descricao, taxa_pagamento, valor_pagamento, valor_meta, data_inicio, data_fim) VALUES
+(1, 'VM', 'Vendas Mensais', 'Meta de vendas mensais em valor', 5.00, NULL, 50000.00, '2023-01-01', '2023-12-31'),
+(1, 'QC', 'Quantidade Clientes', 'Número de novos clientes captados', NULL, 200.00, 10.00, '2023-01-01', '2023-12-31'),
+
+-- Objetivos para Gerentes Comerciais
+(2, 'TM', 'Time Meta', 'Meta coletiva da equipe de vendas', 3.00, NULL, 300000.00, '2023-01-01', '2023-12-31'),
+(2, 'RT', 'Retenção', 'Taxa de retenção de clientes', 1.00, NULL, 0.90, '2023-01-01', '2023-12-31'),
+
+-- Objetivos para Supervisores
+(3, 'SM', 'Supervisor Meta', 'Meta de vendas da região supervisionada', 2.50, NULL, 150000.00, '2023-01-01', '2023-12-31'),
+
+-- Objetivos para Representantes
+(4, 'RV', 'Representação Vendas', 'Meta de vendas para representantes', 7.00, NULL, 30000.00, '2023-01-01', '2023-12-31'),
+
+-- Objetivos para Técnicos Comerciais
+(5, 'SV', 'Vendas Serviços', 'Meta de venda de serviços técnicos', 4.00, NULL, 20000.00, '2023-01-01', '2023-12-31');

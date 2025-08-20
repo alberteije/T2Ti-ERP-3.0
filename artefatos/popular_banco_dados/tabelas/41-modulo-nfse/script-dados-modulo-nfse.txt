@@ -1,0 +1,97 @@
+-- LISTA DE SERVIÇOS (nfse_lista_servico)
+INSERT INTO nfse_lista_servico (codigo, descricao) VALUES
+('0101', 'Serviços de limpeza, conservação e manutenção'),
+('0201', 'Serviços de engenharia e arquitetura'),
+('0301', 'Serviços de informática e desenvolvimento de software'),
+('0401', 'Serviços de consultoria em geral'),
+('0501', 'Serviços de manutenção e reparação de equipamentos'),
+('0601', 'Serviços de treinamento e capacitação profissional'),
+('0701', 'Serviços de publicidade e propaganda'),
+('0801', 'Serviços de assessoria jurídica'),
+('0901', 'Serviços de contabilidade e auditoria'),
+('1001', 'Serviços de medicina e saúde');
+
+-- CABEÇALHOS DE NFS-E (nfse_cabecalho) - Assumindo IDs de cliente e OS existentes (1-10)
+INSERT INTO nfse_cabecalho (
+  id_cliente, 
+  id_os_abertura, 
+  numero, 
+  codigo_verificacao, 
+  data_hora_emissao, 
+  competencia, 
+  natureza_operacao, 
+  regime_especial_tributacao, 
+  optante_simples_nacional, 
+  incentivador_cultural, 
+  numero_rps, 
+  serie_rps, 
+  tipo_rps, 
+  data_emissao_rps, 
+  outras_informacoes
+) VALUES
+-- NFS-e 1
+(1, 1, '12345', 'A1B2C3D4E', '2023-06-01 14:30:00', '202306', '1', '0', '1', '0', '1001', '1', '1', '2023-06-01', 'Pagamento em 30 dias'),
+
+-- NFS-e 2
+(2, NULL, '12346', 'F5G6H7I8J', '2023-06-05 10:15:00', '202306', '1', '0', '1', '0', '1002', '1', '1', '2023-06-05', 'Serviço prestado com urgência'),
+
+-- NFS-e 3
+(3, 3, '12347', 'K9L0M1N2O', '2023-06-10 16:45:00', '202306', '1', '0', '1', '1', '1003', '1', '1', '2023-06-10', 'Projeto cultural - Lei Rouanet'),
+
+-- NFS-e 4
+(4, NULL, '12348', 'P3Q4R5S6T', '2023-06-15 11:20:00', '202306', '1', '0', '1', '0', '1004', '1', '1', '2023-06-15', 'Manutenção preventiva'),
+
+-- NFS-e 5
+(5, 5, '12349', 'U7V8W9X0Y', '2023-06-20 09:00:00', '202306', '1', '0', '1', '0', '1005', '1', '1', '2023-06-20', 'Consultoria mensal');
+
+-- DETALHES DA NFS-E (nfse_detalhe)
+INSERT INTO nfse_detalhe (
+  id_nfse_lista_servico, 
+  id_nfse_cabecalho, 
+  valor_servicos, 
+  valor_deducoes, 
+  valor_pis, 
+  valor_cofins, 
+  valor_inss, 
+  valor_ir, 
+  valor_csll, 
+  codigo_cnae, 
+  codigo_tributacao_municipio, 
+  valor_base_calculo, 
+  aliquota, 
+  valor_iss, 
+  valor_liquido, 
+  outras_retencoes, 
+  valor_credito, 
+  iss_retido, 
+  valor_iss_retido, 
+  valor_desconto_condicionado, 
+  valor_desconto_incondicionado, 
+  discriminacao, 
+  municipio_prestacao
+) VALUES
+-- Detalhes para NFS-e 1 (ID 1)
+(3, 1, 5000.000000, 0.000000, 32.500000, 150.000000, 0.000000, 75.000000, 45.000000, '6201500', '17.01', 5000.000000, 2.000000, 100.000000, 4597.500000, 0.000000, 0.000000, 'N', 0.000000, 0.000000, 0.000000, 'Desenvolvimento de sistema de gestão empresarial', 3550308),
+
+-- Detalhes para NFS-e 2 (ID 2)
+(1, 2, 1200.000000, 0.000000, 7.800000, 36.000000, 0.000000, 18.000000, 10.800000, '8121400', '07.05', 1200.000000, 2.000000, 24.000000, 1103.400000, 0.000000, 0.000000, 'N', 0.000000, 0.000000, 50.000000, 'Limpeza pós-obra em condomínio comercial', 3550308),
+
+-- Detalhes para NFS-e 3 (ID 3)
+(7, 3, 8000.000000, 0.000000, 52.000000, 240.000000, 0.000000, 120.000000, 72.000000, '7319000', '17.03', 8000.000000, 2.000000, 160.000000, 7356.000000, 0.000000, 0.000000, 'N', 0.000000, 0.000000, 0.000000, 'Campanha publicitária para projeto cultural', 3550308),
+
+-- Detalhes para NFS-e 4 (ID 4)
+(5, 4, 750.000000, 0.000000, 4.875000, 22.500000, 0.000000, 11.250000, 6.750000, '9511800', '17.02', 750.000000, 2.000000, 15.000000, 689.625000, 0.000000, 0.000000, 'N', 0.000000, 0.000000, 0.000000, 'Manutenção de ar condicionado', 3550308),
+
+-- Detalhes para NFS-e 5 (ID 5)
+(4, 5, 3000.000000, 0.000000, 19.500000, 90.000000, 0.000000, 45.000000, 27.000000, '7020400', '17.04', 3000.000000, 2.000000, 60.000000, 2758.500000, 0.000000, 0.000000, 'N', 0.000000, 0.000000, 0.000000, 'Consultoria em gestão empresarial - 20 horas', 3550308);
+
+-- INTERMEDIÁRIOS (nfse_intermediario)
+INSERT INTO nfse_intermediario (
+  id_nfse_cabecalho, 
+  cnpj, 
+  razao, 
+  inscricao_municipal
+) VALUES
+(3, '11222333000144', 'Agência Cultural Brasil', '123456'),
+(5, '55666777000188', 'Consultoria RH Ltda', '654321');
+

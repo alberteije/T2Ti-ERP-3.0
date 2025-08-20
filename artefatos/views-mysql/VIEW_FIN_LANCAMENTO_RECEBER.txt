@@ -1,49 +1,69 @@
-CREATE VIEW VIEW_FIN_LANCAMENTO_RECEBER(
-	ID,
-    ID_FIN_LANCAMENTO_RECEBER,
-    QUANTIDADE_PARCELA,
-    VALOR_LANCAMENTO,
-    DATA_LANCAMENTO,
-	NUMERO_DOCUMENTO,
-    ID_FIN_PARCELA_RECEBER,
-    NUMERO_PARCELA,
-    DATA_VENCIMENTO,
-	DATA_RECEBIMENTO,
-    VALOR_PARCELA,
-	TAXA_JURO,
-	VALOR_JURO,
-	TAXA_MULTA,
-	VALOR_MULTA,
-	TAXA_DESCONTO,
-	VALOR_DESCONTO,
-    SIGLA_DOCUMENTO,
-    NOME_CLIENTE,
-	ID_FIN_STATUS_PARCELA,
-    SITUACAO_PARCELA,
-	DESCRICAO_SITUACAO_PARCELA,
-	ID_BANCO_CONTA_CAIXA,
-	NOME_CONTA_CAIXA)
-AS
+create view view_fin_lancamento_receber (
+    id,
+    id_fin_lancamento_receber,
+    quantidade_parcela,
+    valor_lancamento,
+    data_lancamento,
+    numero_documento,
+    id_fin_parcela_receber,
+    numero_parcela,
+    data_vencimento,
+    data_recebimento,
+    valor_parcela,
+    taxa_juro,
+    valor_juro,
+    taxa_multa,
+    valor_multa,
+    taxa_desconto,
+    valor_desconto,
+    sigla_documento,
+    nome_cliente,
+    id_fin_status_parcela,
+    situacao_parcela,
+    descricao_situacao_parcela,
+    id_banco_conta_caixa,
+    nome_conta_caixa
+) as
+
 select
-  CAST( CONCAT(LR.ID,PR.ID) as UNSIGNED) as ID, LR.ID as ID_LANCAMENTO_RECEBER, LR.QUANTIDADE_PARCELA, LR.VALOR_A_RECEBER AS VALOR_LANCAMENTO, LR.DATA_LANCAMENTO, LR.NUMERO_DOCUMENTO,
-  PR.ID as ID_PARCELA_RECEBER, PR.NUMERO_PARCELA, PR.DATA_VENCIMENTO, PR.DATA_RECEBIMENTO, PR.VALOR AS VALOR_PARCELA, PR.TAXA_JURO, PR.VALOR_JURO, PR.TAXA_MULTA, PR.VALOR_MULTA, PR.TAXA_DESCONTO, PR.VALOR_DESCONTO,
-  DOC.SIGLA,
-  P.NOME as NOME_CLIENTE,
-  S.ID, S.SITUACAO as SITUACAO_PARCELA, S.DESCRICAO as DESCRICAO_SITUACAO_PARCELA,
-  CC.ID AS ID_CONTA_CAIXA, CC.NOME AS NOME_CONTA_CAIXA
+    cast(concat(lr.id, pr.id) as unsigned) as id,
+    lr.id as id_fin_lancamento_receber,
+    lr.quantidade_parcela,
+    lr.valor_a_receber as valor_lancamento,
+    lr.data_lancamento,
+    lr.numero_documento,
+    pr.id as id_fin_parcela_receber,
+    pr.numero_parcela,
+    pr.data_vencimento,
+    pr.data_recebimento,
+    pr.valor as valor_parcela,
+    pr.taxa_juro,
+    pr.valor_juro,
+    pr.taxa_multa,
+    pr.valor_multa,
+    pr.taxa_desconto,
+    pr.valor_desconto,
+    doc.sigla as sigla_documento,
+    p.nome as nome_cliente,
+    s.id as id_fin_status_parcela,
+    s.situacao as situacao_parcela,
+    s.descricao as descricao_situacao_parcela,
+    cc.id as id_banco_conta_caixa,
+    cc.nome as nome_conta_caixa
+
 from
-  FIN_LANCAMENTO_RECEBER LR, FIN_PARCELA_RECEBER PR, FIN_DOCUMENTO_ORIGEM DOC,
-  PESSOA P, CLIENTE C, FIN_STATUS_PARCELA S, BANCO_CONTA_CAIXA CC
+    fin_lancamento_receber lr,
+    fin_parcela_receber pr,
+    fin_documento_origem doc,
+    pessoa p,
+    cliente c,
+    fin_status_parcela s,
+    banco_conta_caixa cc
+
 where
-  PR.ID_FIN_LANCAMENTO_RECEBER = LR.ID
-and
-  PR.ID_FIN_STATUS_PARCELA = S.ID
-and
-  LR.ID_FIN_DOCUMENTO_ORIGEM = DOC.ID
-and
-  LR.ID_CLIENTE = C.ID
-and
-  C.ID_PESSOA = P.ID
-and
-  LR.ID_BANCO_CONTA_CAIXA = CC.ID
-;
+    pr.id_fin_lancamento_receber = lr.id
+    and pr.id_fin_status_parcela = s.id
+    and lr.id_fin_documento_origem = doc.id
+    and lr.id_cliente = c.id
+    and c.id_pessoa = p.id
+    and lr.id_banco_conta_caixa = cc.id;

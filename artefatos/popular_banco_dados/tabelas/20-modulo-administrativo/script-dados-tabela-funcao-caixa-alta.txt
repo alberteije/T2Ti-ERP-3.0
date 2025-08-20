@@ -1,0 +1,657 @@
+#===========================================================
+# Módulo Gerenciamento de Auditoria
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('AUDITORIA', 'Módulo Gerenciamento de Auditoria - Auditoria');
+
+
+#===========================================================
+# Módulo Administrativo
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ADM_MODULO', 'Módulo Administrativo - Módulos do Sistema');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ADM_PARAMETRO', 'Módulo Administrativo - Parâmetros do Sistema');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FUNCAO', 'Módulo Administrativo - Função Genérica');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PAPEL', 'Módulo Administrativo - Papel');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PAPEL_FUNCAO', 'Módulo Administrativo - Papel/Função');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('USUARIO_TOKEN', 'Módulo Administrativo - Token de Usuário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('USUARIO', 'Módulo Administrativo - Usuário');
+
+
+#===========================================================
+# Módulo Agenda Corporativa
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('AGENDA_CATEGORIA_COMPROMISSO', 'Módulo Agenda Corporativa - Categoria de Compromisso');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('AGENDA_COMPROMISSO', 'Módulo Agenda Corporativa - Compromisso');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('AGENDA_COMPROMISSO_CONVIDADO', 'Módulo Agenda Corporativa - Compromisso Convidado');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('AGENDA_NOTIFICACAO', 'Módulo Agenda Corporativa - Notificação');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('RECADO_DESTINATARIO', 'Módulo Agenda Corporativa - Recados - Destinatário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('RECADO_REMETENTE', 'Módulo Agenda Corporativa - Recados - Remetente');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('REUNIAO_SALA', 'Módulo Agenda Corporativa -Reunião - Sala');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('REUNIAO_SALA_EVENTO', 'Módulo Agenda Corporativa -Reunião - Sala Evento');
+
+
+#===========================================================
+# Módulo Cadastros
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ALMOXARIFADO', 'Módulo Cadastros - Almoxarifado');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('BANCO', 'Módulo Cadastros - Banco');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('BANCO_AGENCIA', 'Módulo Cadastros - Agência Bancária');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('BANCO_CONTA_CAIXA', 'Módulo Cadastros - Conta Caixa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CARGO', 'Módulo Cadastros - Cargo');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CBO', 'Módulo Cadastros - CBO');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CEP', 'Módulo Cadastros - CEP');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CFOP', 'Módulo Cadastros - CFOP');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CLIENTE', 'Módulo Cadastros - Cliente');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CNAE', 'Módulo Cadastros - CNAE');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('COLABORADOR', 'Módulo Cadastros - Colaborador');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('COLABORADOR_RELACIONAMENTO', 'Módulo Cadastros - Relacionamento de Colaborador');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('COLABORADOR_SITUACAO', 'Módulo Cadastros - Situação de Colaborador');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('COLABORADOR_TIPO', 'Módulo Cadastros - Tipo de Colaborador');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('COD_APURACAO_RECEITA_DACON', 'Módulo Cadastros - Código de Apuração de Receita DACON');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CODIGO_GPS', 'Módulo Cadastros - Código GPS');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTADOR', 'Módulo Cadastros - Contador');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTRIB_SIND_PATRONAL_CAB', 'Módulo Cadastros - Contribuição Sindical Patronal (Cabeçalho)');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTRIB_SIND_PATRONAL_DET', 'Módulo Cadastros - Contribuição Sindical Patronal (Detalhe)');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CSOSN', 'Módulo Cadastros - Código de Situação da Operação no Simples Nacional');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CST_COFINS', 'Módulo Cadastros - Código de Situação Tributária do COFINS');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CST_ICMS', 'Módulo Cadastros - Código de Situação Tributária do ICMS');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CST_IPI', 'Módulo Cadastros - Código de Situação Tributária do IPI');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CST_PIS', 'Módulo Cadastros - Código de Situação Tributária do PIS');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('DIA_PARCELA', 'Módulo Cadastros - Dias de Parcela');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('EFD_TABELA_4310', 'Módulo Cadastros - EFD Tabela 4310');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('EFD_TABELA_4313', 'Módulo Cadastros - EFD Tabela 4313');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('EFD_TABELA_4314', 'Módulo Cadastros - EFD Tabela 4314');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('EFD_TABELA_4315', 'Módulo Cadastros - EFD Tabela 4315');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('EFD_TABELA_4316', 'Módulo Cadastros - EFD Tabela 4316');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('EFD_TABELA_435', 'Módulo Cadastros - EFD Tabela 435');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('EFD_TABELA_436', 'Módulo Cadastros - EFD Tabela 436');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('EFD_TABELA_437', 'Módulo Cadastros - EFD Tabela 437');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('EFD_TABELA_439', 'Módulo Cadastros - EFD Tabela 439');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('EMPRESA', 'Módulo Cadastros - Empresa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('EMPRESA_CNAE', 'Módulo Cadastros - CNAE da Empresa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('EMPRESA_CONTATO', 'Módulo Cadastros - Contato da Empresa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('EMPRESA_ENDERECO', 'Módulo Cadastros - Endereço da Empresa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('EMPRESA_TELEFONE', 'Módulo Cadastros - Telefone da Empresa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ESTADO_CIVIL', 'Módulo Cadastros - Estado Civil');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FERIADOS', 'Módulo Cadastros - Feriados');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FORNECEDOR', 'Módulo Cadastros - Fornecedor');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FORNECEDOR_PRODUTO', 'Módulo Cadastros - Produto de Fornecedor');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('IBPT', 'Módulo Cadastros - IBPT');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('INSS', 'Módulo Cadastros - INSS');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('INSS_DETALHE', 'Módulo Cadastros - Detalhe do INSS');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('IRRF', 'Módulo Cadastros - IRRF');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('IRRF_DETALHE', 'Módulo Cadastros - Detalhe do IRRF');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('MUNICIPIO', 'Módulo Cadastros - Município');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NCM', 'Módulo Cadastros - NCM');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NIVEL_FORMACAO', 'Módulo Cadastros - Nível de Formação');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('OPERADORA_CARTAO', 'Módulo Cadastros - Cartão');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('OPERADORA_PLANO_SAUDE', 'Módulo Cadastros - Plano de Saúde');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PAIS', 'Módulo Cadastros - País');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PESSOA', 'Módulo Cadastros - Pessoa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PESSOA_ALTERACAO', 'Módulo Cadastros - Alteração de Pessoa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PESSOA_CONTATO', 'Módulo Cadastros - Contato de Pessoa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PESSOA_ENDERECO', 'Módulo Cadastros - Endereço de Pessoa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PESSOA_FISICA', 'Módulo Cadastros - Pessoa Física');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PESSOA_JURIDICA', 'Módulo Cadastros - Pessoa Jurídica');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PESSOA_TELEFONE', 'Módulo Cadastros - Telefone de Pessoa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PRODUTO', 'Módulo Cadastros - Produto');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PRODUTO_ALTERACAO_ITEM', 'Módulo Cadastros - Alteração de Item de Produto');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PRODUTO_CODIGO_ADICIONAL', 'Módulo Cadastros - Código Adicional de Produto');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PRODUTO_FICHA_TECNICA', 'Módulo Cadastros - Ficha Técnica de Produto');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PRODUTO_GRUPO', 'Módulo Cadastros - Grupo de Produto');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PRODUTO_MARCA', 'Módulo Cadastros - Marca de Produto');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PRODUTO_PROMOCAO', 'Módulo Cadastros - Promoção de Produto');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PRODUTO_SUBGRUPO', 'Módulo Cadastros - Subgrupo de Produto');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PRODUTO_UNIDADE', 'Módulo Cadastros - Unidade de Produto');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('QUADRO_SOCIETARIO', 'Módulo Cadastros - Quadro Societário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('SALARIO_FAMILIA', 'Módulo Cadastros- Salário Família');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('SALARIO_MINIMO', 'Módulo Cadastros - Salário Mínimo');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('SEFIP_CATEGORIA_TRABALHO', 'Módulo Cadastros - SEFIP - Categoria de Trabalho');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('SEFIP_CODIGO_MOVIMENTACAO', 'Módulo Cadastros - SEFIP - Código de Movimentação');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('SEFIP_CODIGO_RECOLHIMENTO', 'Módulo Cadastros - SEFIP - Código de Recolhimento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('SETOR', 'Módulo Cadastros - Setor');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('SINDICATO', 'Módulo Cadastros - Sindicato');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TABELA_PRECO', 'Módulo Cadastros - Tabela de Preço');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TABELA_PRECO_PRODUTO', 'Módulo Cadastros - Tabela de Preço Produto');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TIPO_ADMISSAO', 'Módulo Cadastros - Tipo de Admissão');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TIPO_ITEM_SPED', 'Módulo Cadastros - SPED - Tipo de Item');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TIPO_RECEITA_DACON', 'Módulo Cadastros - Tipo de Receita DACON');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TIPO_RECEITA_DIPI', 'Módulo Cadastros - Tipo de Receita DIPI');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TIPO_RELACIONAMENTO', 'Módulo Cadastros - Tipo de Relacionamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TRANSPORTADORA', 'Módulo Cadastros - Transportadora');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('UF', 'Módulo Cadastros - Unidade Federativa (UF)');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('VENDEDOR', 'Módulo Cadastros - Vendedor');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('VENDEDOR_META', 'Módulo Cadastros - Meta do Vendedor');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('VENDEDOR_ROTA', 'Módulo Cadastros - Rota do Vendedor');
+
+
+#===========================================================
+# Módulo BPe
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('BPE_AGENCIA', 'Módulo BPe - Agência');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('BPE_CABECALHO', 'Módulo BPe - Cabeçalho');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('BPE_COMPRADOR', 'Módulo BPe - Comprador');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('BPE_EMITENTE', 'Módulo BPe - Emitente');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('BPE_PASSAGEIRO', 'Módulo BPe - Passageiro');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('BPE_PASSAGEM', 'Módulo BPe - Passagem');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('BPE_VIAGEM', 'Módulo BPe - Viagem');
+
+
+#===========================================================
+# Bloco Financeiro
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CHEQUE', 'Bloco Financeiro - Cheque');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FIN_CHEQUE_EMITIDO', 'Bloco Financeiro - Cheque Emitido');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FIN_CHEQUE_RECEBIDO', 'Bloco Financeiro - Cheque Recebido');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FIN_CONFIGURACAO_BOLETO', 'Bloco Financeiro - Configuração de Boleto');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FIN_DOCUMENTO_ORIGEM', 'Bloco Financeiro - Documento de Origem');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FIN_EXTRATO_CONTA_BANCO', 'Bloco Financeiro - Extrato de Conta Bancária');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FIN_FECHAMENTO_CAIXA_BANCO', 'Bloco Financeiro - Fechamento de Caixa Banco');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FIN_LANCAMENTO_PAGAR', 'Bloco Financeiro - Lançamento de Pagamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FIN_LANCAMENTO_RECEBER', 'Bloco Financeiro - Lançamento de Recebimento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FIN_NATUREZA_FINANCEIRA', 'Bloco Financeiro - Natureza Financeira');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FIN_PARCELA_PAGAR', 'Bloco Financeiro - Parcela de Pagamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FIN_PARCELA_RECEBER', 'Bloco Financeiro - Parcela de Recebimento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FIN_STATUS_PARCELA', 'Bloco Financeiro - Status da Parcela');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FIN_TIPO_PAGAMENTO', 'Bloco Financeiro - Tipo de Pagamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FIN_TIPO_RECEBIMENTO', 'Bloco Financeiro - Tipo de Recebimento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TALONARIO_CHEQUE', 'Bloco Financeiro - Talonário de Cheque');
+
+
+#===========================================================
+# Módulo Gestão de Comissões
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('COMISSAO_OBJETIVO', 'Módulo Gestão de Comissões - Objetivo de Comissão');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('COMISSAO_PERFIL', 'Módulo Gestão de Comissões - Perfil de Comissão');
+
+
+#===========================================================
+# Módulo Gestão de Compras
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('COMPRA_COTACAO', 'Módulo Gestão de Compras - Cotação de Compras');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('COMPRA_COTACAO_DETALHE', 'Módulo Gestão de Compras - Detalhe de Cotação');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('COMPRA_FORNECEDOR_COTACAO', 'Módulo Gestão de Compras - Fornecedor de Cotação');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('COMPRA_PEDIDO', 'Módulo Gestão de Compras - Pedido de Compras');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('COMPRA_PEDIDO_DETALHE', 'Módulo Gestão de Compras - Detalhe do Pedido de Compras');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('COMPRA_REQUISICAO', 'Módulo Gestão de Compras - Requisição de Compras');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('COMPRA_REQUISICAO_DETALHE', 'Módulo Gestão de Compras - Detalhe da Requisição de Compras');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('COMPRA_TIPO_PEDIDO', 'Módulo Gestão de Compras - Tipo de Pedido');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('COMPRA_TIPO_REQUISICAO', 'Módulo Gestão de Compras - Tipo de Requisição');
+
+
+#===========================================================
+# Módulo Contabilidade
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('AIDF_AIMDF', 'Módulo Contabilidade - AIDF/AIMDF');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CENTRO_RESULTADO', 'Módulo Contabilidade - Centro de Resultado');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTABIL_CONTA', 'Módulo Contabilidade - Conta Contábil');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTABIL_CONTA_RATEIO', 'Módulo Contabilidade - Rateio de Conta Contábil');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTABIL_DRE_CABECALHO', 'Módulo Contabilidade - Cabeçalho DRE');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTABIL_DRE_DETALHE', 'Módulo Contabilidade - Detalhe DRE');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTABIL_ENCERRAMENTO_EXE_CAB', 'Módulo Contabilidade - Encerramento do Exercício (Cabeçalho)');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTABIL_ENCERRAMENTO_EXE_DET', 'Módulo Contabilidade - Encerramento do Exercício (Detalhe)');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTABIL_FECHAMENTO', 'Módulo Contabilidade - Fechamento Contábil');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTABIL_HISTORICO', 'Módulo Contabilidade - Histórico Contábil');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTABIL_INDICE', 'Módulo Contabilidade - Índice Contábil');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTABIL_INDICE_VALOR', 'Módulo Contabilidade - Valor do Índice Contábil');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTABIL_LANCAMENTO_CABECALHO', 'Módulo Contabilidade - Lançamento (Cabeçalho)');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTABIL_LANCAMENTO_DETALHE', 'Módulo Contabilidade - Lançamento (Detalhe)');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTABIL_LANCAMENTO_ORCADO', 'Módulo Contabilidade - Lançamento Orçado');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTABIL_LANCAMENTO_PADRAO', 'Módulo Contabilidade - Lançamento Padrão');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTABIL_LIVRO', 'Módulo Contabilidade - Livro Contábil');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTABIL_LOTE', 'Módulo Contabilidade - Lote Contábil');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTABIL_PARAMETRO', 'Módulo Contabilidade - Parâmetro Contábil');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTABIL_TERMO', 'Módulo Contabilidade - Termo Contábil');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CT_RESULTADO_NT_FINANCEIRA', 'Módulo Contabilidade - Resultado Não Tributável Financeiro');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ENCERRA_CENTRO_RESULTADO', 'Módulo Contabilidade - Encerra Centro de Resultado');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FAP', 'Módulo Contabilidade - FAP (Fator Acidentário de Prevenção)');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('LANCA_CENTRO_RESULTADO', 'Módulo Contabilidade - Lançamento de Centro de Resultado');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PLANO_CENTRO_RESULTADO', 'Módulo Contabilidade - Centro de Resultado');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PLANO_CONTA', 'Módulo Contabilidade - Plano de Contas');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PLANO_CONTA_REF_SPED', 'Módulo Contabilidade - Plano de Contas Referenciado SPED');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('RATEIO_CENTRO_RESULTADO_CAB', 'Módulo Contabilidade - Rateio - Centro de Resultado - Cabeçalho');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('RATEIO_CENTRO_RESULTADO_DET', 'Módulo Contabilidade - Rateio - Centro de Resultado - Detalhe');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('REGISTRO_CARTORIO', 'Módulo Contabilidade - Registro Cartório');
+
+
+#===========================================================
+# Módulo Gestão de Contratos
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTRATO', 'Módulo Gestão de Contratos - Contrato');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTRATO_HIST_FATURAMENTO', 'Módulo Gestão de Contratos - Histórico de Faturamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTRATO_HISTORICO_REAJUSTE', 'Módulo Gestão de Contratos - Histórico de Reajuste');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTRATO_PREV_FATURAMENTO', 'Módulo Gestão de Contratos - Previsão de Faturamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTRATO_SOLICITACAO_SERVICO', 'Módulo Gestão de Contratos - Solicitação de Serviço');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTRATO_TEMPLATE', 'Módulo Gestão de Contratos - Template de Contrato');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CONTRATO_TIPO_SERVICO', 'Módulo Gestão de Contratos - Tipo de Serviço');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TIPO_CONTRATO', 'Módulo Gestão de Contratos - Tipo de Contrato');
+
+
+#===========================================================
+# Módulo CRM
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CRM_BUSCAS_CLIENTE', 'Módulo CRM - Buscas de Cliente');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CRM_CARTEIRA_CLIENTE', 'Módulo CRM - Carteira de Cliente');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CRM_CARTEIRA_CLIENTE_PERFIL', 'Módulo CRM - Perfil de Carteira de Cliente');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CRM_SAC_CABECALHO', 'Módulo CRM - SAC (Cabeçalho)');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CRM_SAC_DETALHE', 'Módulo CRM - SAC (Detalhe)');
+
+
+#===========================================================
+# Módulo CT-e
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_AEREO', 'Módulo CT-e - Transporte Aéreo');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_AQUAVIARIO', 'Módulo CT-e - Transporte Aquaviário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_AQUAVIARIO_BALSA', 'Módulo CT-e - Transporte Aquaviário (Balsa)');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_CABECALHO', 'Módulo CT-e - Cabeçalho do Conhecimento de Transporte');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_CARGA', 'Módulo CT-e - Carga');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_COMPONENTE', 'Módulo CT-e - Componentes do Transporte');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_DESTINATARIO', 'Módulo CT-e - Destinatário do Transporte');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_DOCUMENTO_ANTERIOR', 'Módulo CT-e - Documento Anterior');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_DOCUMENTO_ANTERIOR_ID', 'Módulo CT-e - Documento Anterior ID');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_DUPLICATA', 'Módulo CT-e - Duplicata');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_DUTOVIARIO', 'Módulo CT-e - Documento de Transporte Dutoviário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_EMITENTE', 'Módulo CT-e - Emitente do Conhecimento de Transporte');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_EXPEDIDOR', 'Módulo CT-e - Expedidor do Conhecimento de Transporte');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_FATURA', 'Módulo CT-e - Fatura');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_FERROVIARIO', 'Módulo CT-e - Transporte Ferroviário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_FERROVIARIO_FERROVIA', 'Módulo CT-e - Ferrovia no Transporte Ferroviário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_FERROVIARIO_VAGAO', 'Módulo CT-e - Vagão no Transporte Ferroviário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_INF_NF_CARGA_LACRE', 'Módulo CT-e - Informação NF Carga Lacre');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_INF_NF_TRANSPORTE_LACRE', 'Módulo CT-e - Informação NF Transporte Lacre');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_INFORMACAO_NF_CARGA', 'Módulo CT-e - Informação NF Carga');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_INFORMACAO_NF_OUTROS', 'Módulo CT-e - Informação NF Outros');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_INFORMACAO_NF_TRANSPORTE', 'Módulo CT-e - Informação NF Transporte');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_LOCAL_COLETA', 'Módulo CT-e - Local de Coleta');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_LOCAL_ENTREGA', 'Módulo CT-e - Local de Entrega');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_MULTIMODAL', 'Módulo CT-e - Multimodal');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_PASSAGEM', 'Módulo CT-e - Passagem');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_PERIGOSO', 'Módulo CT-e - Carga Perigosa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_RECEBEDOR', 'Módulo CT-e - Recebedor');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_REMETENTE', 'Módulo CT-e - Remetente');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_RODOVIARIO', 'Módulo CT-e - Transporte Rodoviário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_RODOVIARIO_LACRE', 'Módulo CT-e - Transporte Rodoviário Lacre');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_RODOVIARIO_MOTORISTA', 'Módulo CT-e - Motorista Rodoviário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_RODOVIARIO_OCC', 'Módulo CT-e - OCC Rodoviário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_RODOVIARIO_PEDAGIO', 'Módulo CT-e - Pedágio Rodoviário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_RODOVIARIO_VEICULO', 'Módulo CT-e - Veículo Rodoviário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_SEGURO', 'Módulo CT-e - Seguro');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_TOMADOR', 'Módulo CT-e - Tomador');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('CTE_VEICULO_NOVO', 'Módulo CT-e - Veículo Novo');
+
+
+#===========================================================
+# Módulo PAF-ECF - ****DESCONTINUADO****
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('DAV_CABECALHO', 'Módulo PAF-ECF - DAV Cabeçalho');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('DAV_DETALHE', 'Módulo PAF-ECF - DAV Detalhe');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('DAV_DETALHE_ALTERACAO', 'Módulo PAF-ECF - DAV Detalhe Alteração');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ECF_ALIQUOTAS', 'Módulo PAF-ECF - ECF Aliquotas');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ECF_DOCUMENTOS_EMITIDOS', 'Módulo PAF-ECF - ECF Documentos Emitidos');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ECF_E3', 'Módulo PAF-ECF - ECF E3');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ECF_IMPRESSORA', 'Módulo PAF-ECF - ECF Impressora');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ECF_R02', 'Módulo PAF-ECF - ECF R02');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ECF_R03', 'Módulo PAF-ECF - ECF R03');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ECF_R06', 'Módulo PAF-ECF - ECF R06');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ECF_R07', 'Módulo PAF-ECF - ECF R07');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ECF_RECEBIMENTO_NAO_FISCAL', 'Módulo PAF-ECF - ECF Recebimento Não Fiscal');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ECF_SINTEGRA_60A', 'Módulo PAF-ECF - ECF Sintegra 60A');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ECF_SINTEGRA_60M', 'Módulo PAF-ECF - ECF Sintegra 60M');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('INTEGRACAO_PDV', 'Módulo PAF-ECF - Integração PDV');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('LOG_EXPORTACAO', 'Módulo PAF-ECF - Exportação de Logs');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('LOG_IMPORTACAO', 'Módulo PAF-ECF - Importação de Logs');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PRE_VENDA_CABECALHO', 'Módulo PAF-ECF - Pré-Venda - Cabeçalho');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PRE_VENDA_DETALHE', 'Módulo PAF-ECF - Pré-Venda - Detalhe');
+
+
+#===========================================================
+# Módulo eSocial
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ESOCIAL_CLASSIFICACAO_TRIBUT', 'Módulo eSocial - Classificação Tributária');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ESOCIAL_MOTIVO_DESLIGAMENTO', 'Módulo eSocial - Motivo de Desligamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ESOCIAL_NATUREZA_JURIDICA', 'Módulo eSocial - Natureza Jurídica');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ESOCIAL_RUBRICA', 'Módulo eSocial - Rubrica');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ESOCIAL_TIPO_AFASTAMENTO', 'Módulo eSocial - Tipo de Afastamento');
+
+
+#===========================================================
+# Módulo Contole de Estoque
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ESTOQUE_COR', 'Módulo Contole de Estoque - Cor do Estoque');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ESTOQUE_GRADE', 'Módulo Contole de Estoque - Grade do Estoque');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ESTOQUE_MARCA', 'Módulo Contole de Estoque - Marca do Estoque');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ESTOQUE_REAJUSTE_CABECALHO', 'Módulo Contole de Estoque - Reajuste de Estoque (Cabeçalho)');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ESTOQUE_REAJUSTE_DETALHE', 'Módulo Contole de Estoque - Reajuste de Estoque (Detalhe)');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ESTOQUE_SABOR', 'Módulo Contole de Estoque - Sabor do Estoque');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ESTOQUE_TAMANHO', 'Módulo Contole de Estoque - Tamanho do Estoque');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('REQUISICAO_INTERNA_CABECALHO', 'Módulo Controle de Estoque - Requisição Interna - Cabeçalho');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('REQUISICAO_INTERNA_DETALHE', 'Módulo Controle de Estoque - Requisição Interna - Detalhe');
+
+
+#===========================================================
+# Módulo Gerador de Etiquetas
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ETIQUETA_FORMATO_PAPEL', 'Módulo Gerador de Etiquetas - Formato de Papel para Etiqueta');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ETIQUETA_LAYOUT', 'Módulo Gerador de Etiquetas - Layout da Etiqueta');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ETIQUETA_TEMPLATE', 'Módulo Gerador de Etiquetas - Template de Etiqueta');
+
+
+#===========================================================
+# Módulo Folha de Pagamento
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('EMPRESA_TRANSPORTE', 'Módulo Folha de Pagamento - Transporte da Empresa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('EMPRESA_TRANSPORTE_ITINERARIO', 'Módulo Folha de Pagamento - Itinerário de Transporte da Empresa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FERIAS_PERIODO_AQUISITIVO', 'Módulo Folha de Pagamento - Período Aquisitivo de Férias');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_AFASTAMENTO', 'Módulo Folha de Pagamento - Afastamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_EVENTO', 'Módulo Folha de Pagamento - Evento de Folha');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_FECHAMENTO', 'Módulo Folha de Pagamento - Fechamento de Folha');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_FERIAS_COLETIVAS', 'Módulo Folha de Pagamento - Férias Coletivas');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_HISTORICO_SALARIAL', 'Módulo Folha de Pagamento - Histórico Salarial');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_INSS', 'Módulo Folha de Pagamento - INSS');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_INSS_RETENCAO', 'Módulo Folha de Pagamento - Retenção INSS');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_INSS_SERVICO', 'Módulo Folha de Pagamento - INSS Serviço');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_LANCAMENTO_CABECALHO', 'Módulo Folha de Pagamento - Lançamento (Cabeçalho)');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_LANCAMENTO_COMISSAO', 'Módulo Folha de Pagamento - Lançamento de Comissão');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_LANCAMENTO_DETALHE', 'Módulo Folha de Pagamento - Lançamento (Detalhe)');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_PARAMETRO', 'Módulo Folha de Pagamento - Parâmetros');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_PLANO_SAUDE', 'Módulo Folha de Pagamento - Plano de Saúde');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_PPP', 'Módulo Folha de Pagamento - PPP');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_PPP_ATIVIDADE', 'Módulo Folha de Pagamento - Atividade no PPP');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_PPP_CAT', 'Módulo Folha de Pagamento - CAT no PPP');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_PPP_EXAME_MEDICO', 'Módulo Folha de Pagamento - Exame Médico no PPP');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_PPP_FATOR_RISCO', 'Módulo Folha de Pagamento - Fator de Risco no PPP');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_REScisao', 'Módulo Folha de Pagamento - Rescisão');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_TIPO_AFASTAMENTO', 'Módulo Folha de Pagamento - Tipo de Afastamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FOLHA_VALE_TRANSPORTE', 'Módulo Folha de Pagamento - Vale Transporte');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FPAS', 'Módulo Folha de Pagamento - FPAS');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('GUIAS_ACUMULADAS', 'Módulo Folha de Pagamento - Guias Acumuladas');
+
+
+#===========================================================
+# Módulo Escrita Fiscal
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FISCAL_APURACAO_ICMS', 'Módulo Escrita Fiscal - Apuração de ICMS');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FISCAL_ESTADUAL_PORTE', 'Módulo Escrita Fiscal - Regime e Porte Estadual');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FISCAL_ESTADUAL_REGIME', 'Módulo Escrita Fiscal - Regime de Apuração Estadual');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FISCAL_INSCRICOES_SUBSTITUTAS', 'Módulo Escrita Fiscal - Inscrições Substitutas');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FISCAL_LIVRO', 'Módulo Escrita Fiscal - Livro Fiscal');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FISCAL_MUNICIPAL_REGIME', 'Módulo Escrita Fiscal - Regime Municipal');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FISCAL_NOTA_FISCAL_ENTRADA', 'Módulo Escrita Fiscal - Nota Fiscal de Entrada');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FISCAL_NOTA_FISCAL_SAIDA', 'Módulo Escrita Fiscal - Nota Fiscal de Saída');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FISCAL_PARAMETRO', 'Módulo Escrita Fiscal - Parâmetros Fiscais');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FISCAL_TERMO', 'Módulo Escrita Fiscal - Termos Fiscais');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('SIMPLES_NACIONAL_CABECALHO', 'Módulo Escrita Fiscal - Simples Nacional - Cabeçalho');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('SIMPLES_NACIONAL_DETALHE', 'Módulo Escrita Fiscal - Simples Nacional - Detalhe');
+
+
+#===========================================================
+# Módulo Controle de Frotas
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FROTA_COMBUSTIVEL_CONTROLE', 'Módulo Controle de Frotas - Controle de Combustível');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FROTA_COMBUSTIVEL_TIPO', 'Módulo Controle de Frotas - Tipos de Combustível');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FROTA_DPVAT_CONTROLE', 'Módulo Controle de Frotas - Controle DPVAT');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FROTA_IPVA_CONTROLE', 'Módulo Controle de Frotas - Controle IPVA');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FROTA_MOTORISTA', 'Módulo Controle de Frotas - Motoristas');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FROTA_MULTA_CONTROLE', 'Módulo Controle de Frotas - Controle de Multas');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FROTA_VEICULO', 'Módulo Controle de Frotas - Veículos');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FROTA_VEICULO_MANUTENCAO', 'Módulo Controle de Frotas - Manutenção de Veículos');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FROTA_VEICULO_MOVIMENTACAO', 'Módulo Controle de Frotas - Movimentação de Veículos');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FROTA_VEICULO_PNEU', 'Módulo Controle de Frotas - Controle de Pneus de Veículos');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FROTA_VEICULO_SINISTRO', 'Módulo Controle de Frotas - Sinistros de Veículos');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('FROTA_VEICULO_TIPO', 'Módulo Controle de Frotas - Tipos de Veículos');
+
+
+#===========================================================
+# Módulo GED
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('GED_DOCUMENTO_CABECALHO', 'Módulo GED - Cabeçalho do Documento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('GED_DOCUMENTO_DETALHE', 'Módulo GED - Detalhe do Documento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('GED_TIPO_DOCUMENTO', 'Módulo GED - Tipo de Documento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('GED_VERSAO_DOCUMENTO', 'Módulo GED - Versão do Documento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('MALOTE_DIGITAL_ACESSO', 'Módulo GED - Malote Digital - Acesso');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('MALOTE_DIGITAL_DESTINATARIO', 'Módulo GED - Malote Digital - Destinatário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('MALOTE_DIGITAL_DOCUMENTO', 'Módulo GED - Malote Digital - Documento');
+
+
+#===========================================================
+# Módulo Precificação em Gôndolas
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('GONDOLA_ARMAZENAMENTO', 'Módulo Precificação em Gôndolas - Armazenamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('GONDOLA_CAIXA', 'Módulo Precificação em Gôndolas - Caixas');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('GONDOLA_ESTANTE', 'Módulo Precificação em Gôndolas - Estantes');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('GONDOLA_RUA', 'Módulo Precificação em Gôndolas - Rua');
+
+
+#===========================================================
+# Módulo Inventário
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('INVENTARIO_CONTAGEM_CAB', 'Módulo Inventário - Cabeçalho de Contagem');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('INVENTARIO_CONTAGEM_DET', 'Módulo Inventário - Detalhe de Contagem');
+
+
+#===========================================================
+# Módulo MDF-e
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('MDFe_CABECALHO', 'Módulo MDF-e - Cabeçalho');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('MDFe_EMITENTE', 'Módulo MDF-e - Emitente');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('MDFe_INFORMACAO_CTE', 'Módulo MDF-e - Informações do CTe');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('MDFe_INFORMACAO_NFE', 'Módulo MDF-e - Informações da NF-e');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('MDFe_INFORMACAO_SEGURo', 'Módulo MDF-e - Informações de Seguro');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('MDFe_LACRE', 'Módulo MDF-e - Lacre');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('MDFe_MUNICIPIO_CARREGAMENTO', 'Módulo MDF-e - Município de Carregamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('MDFe_MUNICIPIO_DESCARREGA', 'Módulo MDF-e - Município de Descarregamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('MDFe_PERCURSO', 'Módulo MDF-e - Percurso');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('MDFe_RODOVIARIO', 'Módulo MDF-e - Rodoviário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('MDFe_RODOVIARIO_CIOT', 'Módulo MDF-e - Rodoviário CIOT');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('MDFe_RODOVIARIO_MOTORISTA', 'Módulo MDF-e - Rodoviário Motorista');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('MDFe_RODOVIARIO_PEDAGIO', 'Módulo MDF-e - Rodoviário Pedágio');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('MDFe_RODOVIARIO_VEICULO', 'Módulo MDF-e - Rodoviário Veículo');
+
+
+#===========================================================
+# Módulo NFCe
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFCE_CAIXA', 'Módulo NFCe - Caixa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFCE_FECHAMENTO', 'Módulo NFCe - Fechamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFCE_MOVIMENTO', 'Módulo NFCe - Movimento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFCE_OPERADOR', 'Módulo NFCe - Operador');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFCE_SANGRIA', 'Módulo NFCe - Sangria');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFCE_SUPRIMENTO', 'Módulo NFCe - Suprimento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFCE_TIPO_PAGAMENTO', 'Módulo NFCe - Tipo de Pagamento');
+
+
+#===========================================================
+# Módulo NFe
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_ACESSO_XML', 'Módulo NFe - Acesso XML');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_CABECALHO', 'Módulo NFe - Cabeçalho');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_CANA', 'Módulo NFe - Cana');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_CANA_DEDUCOES_SAFRA', 'Módulo NFe - Dedução de Cana por Safra');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_CANA_FORNECIMENTO_DIARIO', 'Módulo NFe - Fornecimento Diário de Cana');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_CONFIGURACAO', 'Módulo NFe - Configuração');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_CTE_REFERENCIADO', 'Módulo NFe - CTe Referenciado');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_CUPOM_FISCAL_REFERENCIADO', 'Módulo NFe - Cupom Fiscal Referenciado');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_DECLARACAO_IMPORTACAO', 'Módulo NFe - Declaração de Importação');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_DESTINATARIO', 'Módulo NFe - Destinatário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_DET_ESPECIFICO_ARMAMENTO', 'Módulo NFe - Detalhamento Específico de Armamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_DET_ESPECIFICO_COMBUSTIVEL', 'Módulo NFe - Detalhamento Específico de Combustível');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_DET_ESPECIFICO_MEDICAMENTO', 'Módulo NFe - Detalhamento Específico de Medicamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_DET_ESPECIFICO_VEICULO', 'Módulo NFe - Detalhamento Específico de Veículo');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_DETALHE', 'Módulo NFe - Detalhe');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_DETALHE_IMPOSTO_COFINS', 'Módulo NFe - Detalhe de Imposto COFINS');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_DETALHE_IMPOSTO_COFINS_ST', 'Módulo NFe - Detalhe de Imposto COFINS Substituição Tributária');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_DETALHE_IMPOSTO_ICMS', 'Módulo NFe - Detalhe de Imposto ICMS');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_DETALHE_IMPOSTO_ICMS_UFDEST', 'Módulo NFe - Detalhe de Imposto ICMS UF Destino');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_DETALHE_IMPOSTO_II', 'Módulo NFe - Detalhe de Imposto II');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_DETALHE_IMPOSTO_IPI', 'Módulo NFe - Detalhe de Imposto IPI');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_DETALHE_IMPOSTO_ISSQN', 'Módulo NFe - Detalhe de Imposto ISSQN');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_DETALHE_IMPOSTO_PIS', 'Módulo NFe - Detalhe de Imposto PIS');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_DETALHE_IMPOSTO_PIS_ST', 'Módulo NFe - Detalhe de Imposto PIS Substituição Tributária');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_DUPLICATA', 'Módulo NFe - Duplicata');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_EMITENTE', 'Módulo NFe - Emitente');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_EXPORTACAO', 'Módulo NFe - Exportação');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_FATURA', 'Módulo NFe - Fatura');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_IMPORTACAO_DETALHE', 'Módulo NFe - Detalhe de Importação');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_INFORMACAO_PAGAMENTO', 'Módulo NFe - Informação de Pagamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_ITEM_RASTREADO', 'Módulo NFe - Item Rastreado');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_LOCAL_ENTREGA', 'Módulo NFe - Local de Entrega');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_LOCAL_RETIRADA', 'Módulo NFe - Local de Retirada');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_NF_REFERENCIADA', 'Módulo NFe - Nota Fiscal Referenciada');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_NUMERO', 'Módulo NFe - Número da Nota Fiscal');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_NUMERO_INUTILIZADO', 'Módulo NFe - Número Inutilizado');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_PROCESSO_REFERENCIADO', 'Módulo NFe - Processo Referenciado');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_PROD_RURAL_REFERENCIADA', 'Módulo NFe - Produto Rural Referenciado');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_REFERENCIADA', 'Módulo NFe - Nota Fiscal Referenciada');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_RESPONSAVEL_TECNICO', 'Módulo NFe - Responsável Técnico');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_TRANSPORTE', 'Módulo NFe - Transporte');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_TRANSPORTE_REBOQUE', 'Módulo NFe - Transporte Reboque');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_TRANSPORTE_VOLUME', 'Módulo NFe - Transporte Volume');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFE_TRANSPORTE_VOLUME_LACRE', 'Módulo NFe - Lacre de Transporte Volume');
+
+
+#===========================================================
+# Módulo NFSe
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFSE_CABECALHO', 'Módulo NFSe - Cabeçalho');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFSE_DETALHE', 'Módulo NFSe - Detalhe');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFSE_INTERMEDIARIO', 'Módulo NFSe - Intermediário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NFSE_LISTA_SERVICO', 'Módulo NFSe - Lista de Serviço');
+
+
+#===========================================================
+# Módulo OS (Ordem de Serviço)
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('OS_ABERTURA', 'Módulo OS (Ordem de Serviço) - Abertura');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('OS_ABERTURA_EQUIPAMENTO', 'Módulo OS (Ordem de Serviço) - Abertura de Equipamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('OS_EQUIPAMENTO', 'Módulo OS (Ordem de Serviço) - Equipamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('OS_EVOLUCAO', 'Módulo OS (Ordem de Serviço) - Evolução');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('OS_PRODUTO_SERVICO', 'Módulo OS (Ordem de Serviço) - Produto/Serviço');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('OS_STATUS', 'Módulo OS (Ordem de Serviço) - Status');
+
+
+#===========================================================
+# Módulo Patrimônio
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PATRIM_APOLICE_SEGURO', 'Módulo Patrimônio - Apólice de Seguro');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PATRIM_BEM', 'Módulo Patrimônio - Bem');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PATRIM_DEPRECIACAO_BEM', 'Módulo Patrimônio - Depreciação de Bem');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PATRIM_DOCUMENTO_BEM', 'Módulo Patrimônio - Documento de Bem');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PATRIM_ESTADO_CONSERVACAO', 'Módulo Patrimônio - Estado de Conservação');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PATRIM_GRUPO_BEM', 'Módulo Patrimônio - Grupo de Bem');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PATRIM_INDICE_ATUALIZACAO', 'Módulo Patrimônio - Índice de Atualização');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PATRIM_MOVIMENTACAO_BEM', 'Módulo Patrimônio - Movimentação de Bem');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PATRIM_TAXA_DEPRECIACAO', 'Módulo Patrimônio - Taxa de Depreciação');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PATRIM_TIPO_AQUISICAO_BEM', 'Módulo Patrimônio - Tipo de Aquisição de Bem');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PATRIM_TIPO_MOVIMENTACAO', 'Módulo Patrimônio - Tipo de Movimentação');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('SEGURADORA', 'Módulo Patrimônio - Seguradora');
+
+
+#===========================================================
+# Módulo PCP
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PCP_INSTRUCAO', 'Módulo PCP - Instrução');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PCP_INSTRUCAO_OP', 'Módulo PCP - Instrução de Ordem de Produção');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PCP_OP_CABECALHO', 'Módulo PCP - Ordem de Produção - Cabeçalho');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PCP_OP_DETALHE', 'Módulo PCP - Ordem de Produção - Detalhe');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PCP_SERVICO', 'Módulo PCP - Serviço');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PCP_SERVICO_COLABORADOR', 'Módulo PCP - Serviço - Colaborador');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PCP_SERVICO_EQUIPAMENTO', 'Módulo PCP - Serviço - Equipamento');
+
+
+#===========================================================
+# Módulo PDV
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PDV_CAIXA', 'Módulo PDV - Caixa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PDV_CONFIGURACAO', 'Módulo PDV - Configuração');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PDV_FECHAMENTO', 'Módulo PDV - Fechamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PDV_MOVIMENTO', 'Módulo PDV - Movimento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PDV_SANGRIA', 'Módulo PDV - Sangria');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PDV_SUPRIMENTO', 'Módulo PDV - Suprimento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PDV_TIPO_PAGAMENTO', 'Módulo PDV - Tipo de Pagamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PDV_TOTAL_TIPO_PAGAMENTO', 'Módulo PDV - Total por Tipo de Pagamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PDV_VENDA_CABECALHO', 'Módulo PDV - Venda - Cabeçalho');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PDV_VENDA_DETALHE', 'Módulo PDV - Venda - Detalhe');
+
+
+#===========================================================
+# Módulo Ponto Eletrônico
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PONTO_ABONO', 'Módulo Ponto Eletrônico - Abono');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PONTO_ABONO_UTILIZACAO', 'Módulo Ponto Eletrônico - Utilização de Abono');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PONTO_BANCO_HORAS', 'Módulo Ponto Eletrônico - Banco de Horas');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PONTO_BANCO_HORAS_UTILIZACAO', 'Módulo Ponto Eletrônico - Utilização do Banco de Horas');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PONTO_CLASSIFICACAO_JORNADA', 'Módulo Ponto Eletrônico - Classificação de Jornada');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PONTO_ESCALA', 'Módulo Ponto Eletrônico - Escala');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PONTO_FECHAMENTO_JORNADA', 'Módulo Ponto Eletrônico - Fechamento de Jornada');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PONTO_HORARIO', 'Módulo Ponto Eletrônico - Horário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PONTO_HORARIO_AUTORIZADO', 'Módulo Ponto Eletrônico - Horário Autorizado');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PONTO_MARCACAO', 'Módulo Ponto Eletrônico - Marcação');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PONTO_PARAMETRO', 'Módulo Ponto Eletrônico - Parâmetro');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PONTO_RELOGIO', 'Módulo Ponto Eletrônico - Relógio');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PONTO_TURMA', 'Módulo Ponto Eletrônico - Turma');
+
+
+#===========================================================
+# Módulo Gerenciamento de Projetos
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PROJETO_CRONOGRAMA', 'Módulo Gerenciamento de Projetos - Cronograma');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PROJETO_CUSTO', 'Módulo Gerenciamento de Projetos - Custo');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PROJETO_PRINCIPAL', 'Módulo Gerenciamento de Projetos - Principal');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PROJETO_RISCO', 'Módulo Gerenciamento de Projetos - Risco');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('PROJETO_STAKEHOLDERS', 'Módulo Gerenciamento de Projetos - Stakeholders');
+
+
+#===========================================================
+# Módulo Tributação
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TRIBUT_COFINS', 'Módulo Tributação - COFINS');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TRIBUT_CONFIGURA_OF_GT', 'Módulo Tributação - Configuração de Of GT');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TRIBUT_GRUPO_TRIBUTARIO', 'Módulo Tributação - Grupo Tributário');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TRIBUT_ICMS_CUSTOM_CAB', 'Módulo Tributação - ICMS Customizado Cabeçalho');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TRIBUT_ICMS_CUSTOM_DET', 'Módulo Tributação - ICMS Customizado Detalhe');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TRIBUT_ICMS_UF', 'Módulo Tributação - ICMS por UF');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TRIBUT_IPI', 'Módulo Tributação - IPI');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TRIBUT_ISS', 'Módulo Tributação - ISS');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TRIBUT_OPERACAO_FISCAL', 'Módulo Tributação - Operação Fiscal');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('TRIBUT_PIS', 'Módulo Tributação - PIS');
+
+
+#===========================================================
+# Módulo Vendas
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NOTA_FISCAL_MODELO', 'Módulo Vendas - Modelo de Nota Fiscal');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('NOTA_FISCAL_TIPO', 'Módulo Vendas - Tipo de Nota Fiscal');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('VENDA_CABECALHO', 'Módulo Vendas - Cabeçalho de Venda');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('VENDA_COMISSAO', 'Módulo Vendas - Comissão');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('VENDA_CONDICOES_PAGAMENTO', 'Módulo Vendas - Condições de Pagamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('VENDA_CONDICOES_PARCELAS', 'Módulo Vendas - Condições de Parcelas');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('VENDA_DETALHE', 'Módulo Vendas - Detalhe de Venda');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('VENDA_FRETE', 'Módulo Vendas - Frete');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('VENDA_ORCAMENTO_CABECALHO', 'Módulo Vendas - Cabeçalho de Orçamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('VENDA_ORCAMENTO_DETALHE', 'Módulo Vendas - Detalhe de Orçamento');
+
+
+#===========================================================
+# Módulo Controle de Orçamentos
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ORCAMENTO_DETALHE', 'Módulo Controle de Orçamentos - Detalhe');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ORCAMENTO_EMPRESARIAL', 'Módulo Controle de Orçamentos - Empresarial');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ORCAMENTO_FLUXO_CAIXA', 'Módulo Controle de Orçamentos - Fluxo de Caixa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ORCAMENTO_FLUXO_CAIXA_DETALHE', 'Módulo Controle de Orçamentos - Detalhe Fluxo de Caixa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ORCAMENTO_FLUXO_CAIXA_PERIODO', 'Módulo Controle de Orçamentos - Período Fluxo de Caixa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('ORCAMENTO_PERIODO', 'Módulo Controle de Orçamentos - Período');
+
+
+#===========================================================
+# Módulo WMS
+#===========================================================
+INSERT INTO FUNCAO (nome, descricao) VALUES ('WMS_AGENDAMENTO', 'Módulo WMS - Agendamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('WMS_ARMAZENAMENTO', 'Módulo WMS - Armazenamento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('WMS_CAIXA', 'Módulo WMS - Caixa');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('WMS_ESTANTE', 'Módulo WMS - Estante');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('WMS_EXPEDICAO', 'Módulo WMS - Expedição');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('WMS_ORDEM_SEPARACAO_CAB', 'Módulo WMS - Cabeçalho de Ordem de Separação');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('WMS_ORDEM_SEPARACAO_DET', 'Módulo WMS - Detalhe de Ordem de Separação');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('WMS_PARAMETRO', 'Módulo WMS - Parâmetros');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('WMS_RECEBIMENTO_CABECALHO', 'Módulo WMS - Cabeçalho de Recebimento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('WMS_RECEBIMENTO_DETALHE', 'Módulo WMS - Detalhe de Recebimento');
+INSERT INTO FUNCAO (nome, descricao) VALUES ('WMS_RUA', 'Módulo WMS - Rua');

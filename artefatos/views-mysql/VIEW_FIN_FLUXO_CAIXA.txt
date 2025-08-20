@@ -1,51 +1,62 @@
-CREATE VIEW VIEW_FIN_FLUXO_CAIXA(
-	ID,
-    ID_CONTA_CAIXA,
-    NOME_CONTA_CAIXA,
-    NOME_PESSOA,
-	DATA_LANCAMENTO,
-    DATA_VENCIMENTO,
-    VALOR,
-    CODIGO_SITUACAO,
-	DESCRICAO_SITUACAO,
-    OPERACAO)
-AS
+create view view_fin_fluxo_caixa (
+    id,
+    id_banco_conta_caixa,
+    nome_conta_caixa,
+    nome_pessoa,
+    data_lancamento,
+    data_vencimento,
+    valor,
+    codigo_situacao,
+    descricao_situacao,
+    operacao
+) as
 
 select
-  CAST( CONCAT(LP.ID,PP.ID) as UNSIGNED) as ID, 
-  CC.ID AS ID_CONTA_CAIXA, CC.NOME AS NOME_CONTA_CAIXA, P.NOME,
-  LP.DATA_LANCAMENTO, PP.DATA_VENCIMENTO, 
-  PP.VALOR, SP.SITUACAO, SP.DESCRICAO, 'S' AS OPERACAO
- 
-from 
-  FIN_PARCELA_PAGAR PP 
-	inner join FIN_LANCAMENTO_PAGAR LP on (PP.ID_FIN_LANCAMENTO_PAGAR = LP.ID)
-	inner join BANCO_CONTA_CAIXA CC on (LP.ID_BANCO_CONTA_CAIXA = CC.ID)
-	inner join FORNECEDOR F on (LP.ID_FORNECEDOR = F.ID) 
-	inner join PESSOA P on (F.ID_PESSOA = P.ID)
-	inner join FIN_STATUS_PARCELA SP on (PP.ID_FIN_STATUS_PARCELA = SP.ID)
+    cast(concat(lp.id, pp.id) as unsigned) as id,
+    cc.id as id_banco_conta_caixa,
+    cc.nome as nome_conta_caixa,
+    p.nome as nome_pessoa,
+    lp.data_lancamento,
+    pp.data_vencimento,
+    pp.valor,
+    sp.situacao as codigo_situacao,
+    sp.descricao as descricao_situacao,
+    'S' as operacao
+
+from
+    fin_parcela_pagar pp
+    inner join fin_lancamento_pagar lp on pp.id_fin_lancamento_pagar = lp.id
+    inner join banco_conta_caixa cc on lp.id_banco_conta_caixa = cc.id
+    inner join fornecedor f on lp.id_fornecedor = f.id
+    inner join pessoa p on f.id_pessoa = p.id
+    inner join fin_status_parcela sp on pp.id_fin_status_parcela = sp.id
 
 where
-  SP.SITUACAO = '01' or SP.SITUACAO = '04'
+    sp.situacao = '01' or sp.situacao = '04'
 
 union
 
 select
-  CAST( CONCAT(LR.ID,PR.ID) as UNSIGNED) as ID, 
-  CC.ID AS ID_CONTA_CAIXA, CC.NOME AS NOME_CONTA_CAIXA, P.NOME,
-  LR.DATA_LANCAMENTO, PR.DATA_VENCIMENTO, 
-  PR.VALOR, SP.SITUACAO, SP.DESCRICAO, 'E' AS OPERACAO
- 
-from 
-  FIN_PARCELA_RECEBER PR 
-	inner join FIN_LANCAMENTO_RECEBER LR on (PR.ID_FIN_LANCAMENTO_RECEBER = LR.ID)
-	inner join BANCO_CONTA_CAIXA CC on (LR.ID_BANCO_CONTA_CAIXA = CC.ID)
-	inner join CLIENTE C on (LR.ID_CLIENTE = C.ID) 
-	inner join PESSOA P on (C.ID_PESSOA = P.ID)
-	inner join FIN_STATUS_PARCELA SP on (PR.ID_FIN_STATUS_PARCELA = SP.ID)
+    cast(concat(lr.id, pr.id) as unsigned) as id,
+    cc.id as id_banco_conta_caixa,
+    cc.nome as nome_conta_caixa,
+    p.nome as nome_pessoa,
+    lr.data_lancamento,
+    pr.data_vencimento,
+    pr.valor,
+    sp.situacao as codigo_situacao,
+    sp.descricao as descricao_situacao,
+    'E' as operacao
+
+from
+    fin_parcela_receber pr
+    inner join fin_lancamento_receber lr on pr.id_fin_lancamento_receber = lr.id
+    inner join banco_conta_caixa cc on lr.id_banco_conta_caixa = cc.id
+    inner join cliente c on lr.id_cliente = c.id
+    inner join pessoa p on c.id_pessoa = p.id
+    inner join fin_status_parcela sp on pr.id_fin_status_parcela = sp.id
 
 where
-  SP.SITUACAO = '01' or SP.SITUACAO = '04'
+    sp.situacao = '01' or sp.situacao = '04'
 
-ORDER BY 1
-;
+order by 1;

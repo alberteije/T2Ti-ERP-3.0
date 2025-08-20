@@ -1,0 +1,161 @@
+-- 1. Tabelas Básicas
+
+-- Status de Parcela
+INSERT INTO `fin_status_parcela` (`situacao`, `descricao`, `procedimento`) VALUES
+('AB', 'Aberto', 'Parcela em aberto, aguardando pagamento'),
+('PG', 'Pago', 'Parcela paga dentro do prazo'),
+('AT', 'Atrasado', 'Parcela vencida e não paga'),
+('CN', 'Cancelado', 'Parcela cancelada'),
+('PR', 'Protestado', 'Parcela protestada');
+
+-- Tipos de Pagamento
+INSERT INTO `fin_tipo_pagamento` (`codigo`, `descricao`) VALUES
+('CH', 'Cheque'),
+('TR', 'Transferência Bancária'),
+('DP', 'Depósito'),
+('CD', 'Cartão de Débito'),
+('CC', 'Cartão de Crédito'),
+('BO', 'Boleto Bancário'),
+('DI', 'Dinheiro');
+
+-- Tipos de Recebimento
+INSERT INTO `fin_tipo_recebimento` (`codigo`, `descricao`) VALUES
+('CH', 'Cheque'),
+('TR', 'Transferência Bancária'),
+('DP', 'Depósito'),
+('CD', 'Cartão de Débito'),
+('CC', 'Cartão de Crédito'),
+('BO', 'Boleto Bancário'),
+('DI', 'Dinheiro'),
+('PX', 'Pix');
+
+-- Documentos de Origem
+INSERT INTO `fin_documento_origem` (`codigo`, `sigla`, `descricao`) VALUES
+('NF', 'NF', 'Nota Fiscal'),
+('CT', 'CTE', 'Contrato'),
+('DV', 'DV', 'Duplicata Mercantil'),
+('FR', 'FAT', 'Fatura'),
+('PR', 'PR', 'Prestação de Serviço'),
+('ND', 'ND', 'Nota de Débito'),
+('NC', 'NC', 'Nota de Crédito'),
+('BL', 'BL', 'Boleto Bancário'),
+('CH', 'CH', 'Cheque'),
+('RE', 'REC', 'Recibo');
+
+
+-- 2. Cheques
+
+-- Cheques Emitidos
+INSERT INTO `fin_cheque_emitido` (`id_cheque`, `data_emissao`, `bom_para`, `data_compensacao`, `valor`, `nominal_a`) VALUES
+(1, '2023-01-10', '2023-01-17', '2023-01-17', 1250.500000, 'Fornecedor ABC Ltda'),
+(2, '2023-02-15', '2023-02-22', '2023-02-22', 890.750000, 'Distribuidora XYZ S/A'),
+(3, '2023-03-20', '2023-03-27', NULL, 3200.000000, 'Tecnologia Informática ME'),
+(4, '2023-04-05', '2023-04-12', '2023-04-12', 450.250000, 'Serviços Gerais EIRELI'),
+(5, '2023-05-12', '2023-05-19', NULL, 1780.900000, 'Comércio de Materiais Ltda');
+
+-- Cheques Recebidos
+INSERT INTO `fin_cheque_recebido` (
+  `id_pessoa`, `cpf`, `cnpj`, `nome`, `codigo_banco`, `codigo_agencia`, `conta`, `numero`, 
+  `data_emissao`, `bom_para`, `data_compensacao`, `valor`, `custodia_data`, `custodia_tarifa`, 
+  `custodia_comissao`, `desconto_data`, `desconto_tarifa`, `desconto_comissao`, `valor_recebido`
+) VALUES
+(1, NULL, '12345678000195', 'Cliente A Ltda', '001', '1234', '56789-0', 1001, '2023-01-05', '2023-01-12', '2023-01-12', 2500.000000, NULL, NULL, NULL, '2023-01-05', 15.000000, 25.000000, 2460.000000),
+(2, '12345678901', NULL, 'Cliente B', '237', '4567', '12345-6', 2002, '2023-02-10', '2023-02-17', '2023-02-17', 1800.500000, NULL, NULL, NULL, '2023-02-10', 12.000000, 18.000000, 1770.500000),
+(3, NULL, '98765432000187', 'Cliente C S/A', '341', '7890', '54321-1', 3003, '2023-03-15', '2023-03-22', NULL, 3200.750000, '2023-03-15', 20.000000, 32.000000, NULL, NULL, NULL, NULL),
+(4, '98765432109', NULL, 'Cliente D', '104', '3210', '98765-4', 4004, '2023-04-20', '2023-04-27', '2023-04-27', 950.250000, NULL, NULL, NULL, '2023-04-20', 10.000000, 9.500000, 930.750000),
+(5, NULL, '45678912000134', 'Cliente E ME', '033', '6543', '13579-2', 5005, '2023-05-25', '2023-06-01', NULL, 1500.000000, '2023-05-25', 15.000000, 15.000000, NULL, NULL, NULL, NULL);
+
+
+-- 3. Configuração de Boleto
+
+INSERT INTO `fin_configuracao_boleto` (
+  `id_banco_conta_caixa`, `instrucao01`, `instrucao02`, `caminho_arquivo_remessa`, `caminho_arquivo_retorno`, 
+  `caminho_arquivo_logotipo`, `caminho_arquivo_pdf`, `mensagem`, `local_pagamento`, `layout_remessa`, 
+  `aceite`, `especie`, `carteira`, `codigo_convenio`, `codigo_cedente`, `taxa_multa`, `taxa_juro`, `dias_protesto`, `nosso_numero_anterior`
+) VALUES
+(1, 'Não receber após o vencimento', 'Multa de 2% após o vencimento', '/boletos/remessas/', '/boletos/retornos/', 
+ '/img/logo_empresa.jpg', '/boletos/pdf/', 'Pagar preferencialmente até a data do vencimento', 'Pagável em qualquer banco até o vencimento', '400', 
+ 'N', 'M', '109', '123456', '7654321', 2.000000, 1.000000, 0, '0000000001'),
+(2, 'Após vencimento, pagar somente neste banco', 'Juros de 1% ao mês', '/boletos/remessas/', '/boletos/retornos/', 
+ '/img/logo_empresa.jpg', '/boletos/pdf/', 'Em caso de dúvidas entre em contato conosco', 'Pagável somente nas agências do Banco X', '500', 
+ 'S', 'D', '175', '654321', '1234567', 1.500000, 0.500000, 5, '0000000002');
+ 
+ 
+-- 4. Extrato e Fechamento
+
+-- Extrato Conta Banco
+INSERT INTO `fin_extrato_conta_banco` (
+  `id_banco_conta_caixa`, `mes_ano`, `mes`, `ano`, `data_movimento`, `data_balancete`, 
+  `historico`, `documento`, `valor`, `conciliado`, `observacao`
+) VALUES
+(1, '01-2023', '01', '2023', '2023-01-05', '2023-01-31', 'Depósito Cliente A', 'DEP001', 2500.000000, 'S', 'Pagamento NF 123'),
+(1, '01-2023', '01', '2023', '2023-01-10', '2023-01-31', 'Pagamento Fornecedor B', 'CHQ001', -1250.500000, 'S', 'Cheque 1001'),
+(1, '02-2023', '02', '2023', '2023-02-15', '2023-02-28', 'Depósito Cliente C', 'DEP002', 1800.500000, 'S', 'Pagamento FAT 456'),
+(1, '02-2023', '02', '2023', '2023-02-20', '2023-02-28', 'Tarifa Bancária', 'TAR001', -25.000000, 'S', 'Tarifa mensal'),
+(1, '03-2023', '03', '2023', '2023-03-10', '2023-03-31', 'Transferência Recebida', 'TED001', 3200.750000, 'N', 'Cliente D');
+
+-- Fechamento Caixa Banco
+INSERT INTO `fin_fechamento_caixa_banco` (
+  `id_banco_conta_caixa`, `data_fechamento`, `mes_ano`, `mes`, `ano`, `saldo_anterior`, 
+  `recebimentos`, `pagamentos`, `saldo_conta`, `cheque_nao_compensado`, `saldo_disponivel`
+) VALUES
+(1, '2023-01-31', '01-2023', '01', '2023', 5000.000000, 12500.500000, 8750.250000, 8750.250000, 3200.000000, 5550.250000),
+(1, '2023-02-28', '02-2023', '02', '2023', 8750.250000, 9800.750000, 5200.500000, 13350.500000, 1780.900000, 11569.600000),
+(1, '2023-03-31', '03-2023', '03', '2023', 13350.500000, 15200.250000, 8750.750000, 19800.000000, 0.000000, 19800.000000),
+(1, '2023-04-30', '04-2023', '04', '2023', 19800.000000, 11250.500000, 9850.250000, 21200.250000, 1500.000000, 19700.250000),
+(1, '2023-05-31', '05-2023', '05', '2023', 21200.250000, 14300.750000, 10200.500000, 25300.500000, 0.000000, 25300.500000);
+
+
+-- 5. Lançamentos e Parcelas
+
+-- Lançamentos a Pagar
+INSERT INTO `fin_lancamento_pagar` (
+  `id_fin_documento_origem`, `id_fin_natureza_financeira`, `id_fornecedor`, `id_banco_conta_caixa`, 
+  `quantidade_parcela`, `valor_a_pagar`, `data_lancamento`, `numero_documento`, `imagem_documento`, 
+  `primeiro_vencimento`, `intervalo_entre_parcelas`, `dia_fixo`
+) VALUES
+(1, 1, 1, 1, 3, 3750.000000, '2023-01-05', 'NF12345', NULL, '2023-02-10', 30, '10'),
+(2, 2, 2, 1, 1, 890.750000, '2023-02-15', 'CT67890', NULL, '2023-03-20', 0, NULL),
+(3, 3, 3, 1, 6, 19200.000000, '2023-03-10', 'DV54321', NULL, '2023-04-15', 30, '15'),
+(4, 4, 4, 1, 2, 1800.000000, '2023-04-20', 'FR98765', NULL, '2023-05-25', 30, NULL),
+(5, 5, 5, 1, 1, 5340.000000, '2023-05-25', 'PR12345', NULL, '2023-06-30', 0, NULL);
+
+-- Lançamentos a Receber
+INSERT INTO `fin_lancamento_receber` (
+  `id_fin_documento_origem`, `id_fin_natureza_financeira`, `id_cliente`, `id_banco_conta_caixa`, 
+  `quantidade_parcela`, `valor_a_receber`, `data_lancamento`, `numero_documento`, 
+  `primeiro_vencimento`, `taxa_comissao`, `valor_comissao`, `intervalo_entre_parcelas`, `dia_fixo`
+) VALUES
+(1, 6, 1, 1, 2, 5000.000000, '2023-01-10', 'NF54321', '2023-02-15', 2.000000, 100.000000, 30, '15'),
+(2, 7, 2, 1, 1, 1800.500000, '2023-02-15', 'CT98765', '2023-03-20', 1.500000, 27.007500, 0, NULL),
+(3, 8, 3, 1, 3, 9600.000000, '2023-03-20', 'DV12345', '2023-04-25', 3.000000, 288.000000, 30, '25'),
+(4, 9, 4, 1, 4, 3800.000000, '2023-04-25', 'FR54321', '2023-05-30', 2.500000, 95.000000, 30, NULL),
+(5, 1, 5, 1, 1, 5340.000000, '2023-05-30', 'PR98765', '2023-07-05', 2.000000, 106.800000, 0, NULL);
+
+-- Parcelas a Pagar
+INSERT INTO `fin_parcela_pagar` (
+  `id_fin_lancamento_pagar`, `id_fin_status_parcela`, `id_fin_tipo_pagamento`, `id_fin_cheque_emitido`, 
+  `numero_parcela`, `data_emissao`, `data_vencimento`, `data_pagamento`, `desconto_ate`, 
+  `valor`, `taxa_juro`, `taxa_multa`, `taxa_desconto`, `valor_juro`, `valor_multa`, `valor_desconto`, `valor_pago`, `historico`
+) VALUES
+(1, 2, 1, 1, 1, '2023-01-05', '2023-02-10', '2023-02-10', '2023-02-05', 1250.000000, 0.000000, 2.000000, 5.000000, 0.000000, 0.000000, 62.500000, 1187.500000, 'Pago com desconto'),
+(1, 2, 2, NULL, 2, '2023-01-05', '2023-03-10', '2023-03-10', '2023-03-05', 1250.000000, 0.000000, 2.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1250.000000, 'Pago via transferência'),
+(1, 1, NULL, NULL, 3, '2023-01-05', '2023-04-10', NULL, '2023-04-05', 1250.000000, 1.000000, 2.000000, 0.000000, 0.000000, 0.000000, 0.000000, NULL, 'Aberto'),
+(2, 2, 1, 2, 1, '2023-02-15', '2023-03-20', '2023-03-20', '2023-03-15', 890.750000, 0.000000, 2.000000, 3.000000, 0.000000, 0.000000, 26.722500, 864.027500, 'Pago com cheque'),
+(3, 1, NULL, NULL, 1, '2023-03-10', '2023-04-15', NULL, '2023-04-10', 3200.000000, 1.000000, 2.000000, 5.000000, 0.000000, 0.000000, 0.000000, NULL, 'Aguardando pagamento');
+
+-- Parcelas a Receber
+INSERT INTO `fin_parcela_receber` (
+  `id_fin_lancamento_receber`, `id_fin_status_parcela`, `id_fin_tipo_recebimento`, `id_fin_cheque_recebido`, 
+  `numero_parcela`, `data_emissao`, `data_vencimento`, `data_recebimento`, `desconto_ate`, 
+  `valor`, `taxa_juro`, `taxa_multa`, `taxa_desconto`, `valor_juro`, `valor_multa`, `valor_desconto`, 
+  `emitiu_boleto`, `boleto_nosso_numero`, `valor_recebido`, `historico`
+) VALUES
+(1, 2, 1, 1, 1, '2023-01-10', '2023-02-15', '2023-02-15', '2023-02-10', 2500.000000, 1.000000, 2.000000, 5.000000, 0.000000, 0.000000, 125.000000, 'S', '0000000001', 2375.000000, 'Recebido com desconto'),
+(1, 2, 2, 2, 2, '2023-01-10', '2023-03-15', '2023-03-15', '2023-03-10', 2500.000000, 1.000000, 2.000000, 0.000000, 0.000000, 0.000000, 0.000000, 'S', '0000000002', 2500.000000, 'Recebido via transferência'),
+(2, 2, 1, 3, 1, '2023-02-15', '2023-03-20', '2023-03-20', '2023-03-15', 1800.500000, 1.000000, 2.000000, 3.000000, 0.000000, 0.000000, 54.015000, 'N', NULL, 1746.485000, 'Recebido com cheque'),
+(3, 1, NULL, NULL, 1, '2023-03-20', '2023-04-25', NULL, '2023-04-20', 3200.000000, 1.000000, 2.000000, 5.000000, 0.000000, 0.000000, 0.000000, 'S', '0000000003', NULL, 'Aguardando pagamento'),
+(4, 3, NULL, NULL, 1, '2023-04-25', '2023-05-30', NULL, '2023-05-25', 950.000000, 1.000000, 2.000000, 0.000000, 9.500000, 19.000000, 0.000000, 'S', '0000000004', NULL, 'Parcela em atraso');
+
+
+-- 

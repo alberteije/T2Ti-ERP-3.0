@@ -1,0 +1,116 @@
+-- 1. Tabela crm_carteira_cliente_perfil
+-- Inserindo perfis de carteira de clientes
+INSERT INTO `crm_carteira_cliente_perfil` (`id`, `codigo`, `nome`) 
+VALUES
+(1, 'A', 'Clientes Premium - Alto Valor'),
+(2, 'B', 'Clientes Médio Porte'),
+(3, 'C', 'Clientes Pequeno Porte'),
+(4, 'D', 'Clientes Inativos'),
+(5, 'E', 'Clientes Potenciais'),
+(6, 'F', 'Clientes Especiais');
+
+-- 2. Tabela crm_carteira_cliente
+-- Inserindo clientes nas carteiras
+INSERT INTO `crm_carteira_cliente` (`id`, `id_crm_carteira_cliente_perfil`, `id_cliente`) 
+VALUES
+-- Clientes Premium (ID 12, 14, 16)
+(1, 1, 12),
+(2, 1, 14),
+(3, 1, 16),
+
+-- Clientes Médio Porte (ID 13, 15)
+(4, 2, 13),
+(5, 2, 15),
+
+-- Clientes Pequeno Porte (ID 17, 18, 19, 20)
+(6, 3, 17),
+(7, 3, 18),
+(8, 3, 19),
+(9, 3, 20),
+
+-- Clientes Potenciais (ID 2 - pessoa jurídica teste)
+(10, 5, 2);
+
+-- 3. Tabela crm_buscas_cliente
+-- Inserindo buscas de clientes
+INSERT INTO `crm_buscas_cliente` (`id`, `data_busca`, `hora_busca`, `detalhes`, `id_cliente`) 
+VALUES
+-- Buscas do cliente 12 (Office Brasil)
+(1, '2023-01-05', '09:15:23', 'Buscou informações sobre novos produtos de escritório', 12),
+(2, '2023-01-12', '14:30:45', 'Consulta sobre condições de pagamento', 12),
+(3, '2023-02-03', '11:20:10', 'Interesse em serviço de consultoria', 12),
+
+-- Buscas do cliente 14 (CleanHouse)
+(4, '2023-01-10', '10:45:33', 'Solicitou orçamento para grandes quantidades', 14),
+(5, '2023-02-18', '16:20:15', 'Reclamação sobre entrega atrasada', 14),
+
+-- Buscas do cliente 16 (Insumos Industriais)
+(6, '2023-02-01', '08:30:00', 'Cotação para compra mensal', 16),
+(7, '2023-02-15', '13:15:22', 'Negociação de preço para compra anual', 16),
+
+-- Buscas do cliente 2 (TESTE PJ)
+(8, '2023-03-01', '09:00:00', 'Primeiro contato - cliente potencial', 2);
+
+-- 4. Tabela crm_sac_cabecalho
+-- Inserindo registros de SAC
+INSERT INTO `crm_sac_cabecalho` (
+  `id`, `data_abertura`, `hora_abertura`, `numero_protocolo`, `nivel_reclamacao`, `id_cliente`
+) VALUES
+-- Cliente 12 (baixa prioridade)
+(1, '2023-01-15', '10:30:00', 'SAC2023/001', '3', 12),
+
+-- Cliente 14 (alta prioridade)
+(2, '2023-01-20', '15:45:00', 'SAC2023/002', '1', 14),
+
+-- Cliente 16 (média prioridade)
+(3, '2023-02-05', '09:15:00', 'SAC2023/003', '2', 16),
+
+-- Cliente 18 (baixa prioridade)
+(4, '2023-02-10', '14:00:00', 'SAC2023/004', '3', 18),
+
+-- Cliente 20 (média prioridade)
+(5, '2023-03-01', '11:30:00', 'SAC2023/005', '2', 20);
+
+-- 5. Tabela crm_sac_detalhe
+-- Inserindo detalhes dos atendimentos SAC
+INSERT INTO `crm_sac_detalhe` (
+  `id`, `id_crm_sac_cabecalho`, `data_registro`, `hora_registro`, `historico`
+) VALUES
+-- Detalhes para protocolo 1
+(1, 1, '2023-01-15', '10:30:00', 'Cliente entrou em contato reclamando de atraso na entrega.'),
+(2, 1, '2023-01-15', '11:00:00', 'Verificado com logística - entrega reagendada para amanhã.'),
+(3, 1, '2023-01-16', '09:15:00', 'Confirmado com cliente que entrega foi realizada.'),
+
+-- Detalhes para protocolo 2
+(4, 2, '2023-01-20', '15:45:00', 'Cliente reportou produto com defeito.'),
+(5, 2, '2023-01-20', '16:30:00', 'Solicitada análise técnica do produto.'),
+(6, 2, '2023-01-21', '10:00:00', 'Autorizada troca do produto.'),
+(7, 2, '2023-01-23', '14:15:00', 'Novo produto enviado ao cliente.'),
+
+-- Detalhes para protocolo 3
+(8, 3, '2023-02-05', '09:15:00', 'Cliente solicitou ajuste na nota fiscal.'),
+(9, 3, '2023-02-05', '10:00:00', 'Nota fiscal reemitida e enviada por email.'),
+
+-- Detalhes para protocolo 4
+(10, 4, '2023-02-10', '14:00:00', 'Dúvida sobre uso do produto.'),
+(11, 4, '2023-02-10', '14:30:00', 'Instruções enviadas por email.'),
+
+-- Detalhes para protocolo 5
+(12, 5, '2023-03-01', '11:30:00', 'Reclamação sobre atendimento comercial.'),
+(13, 5, '2023-03-01', '12:00:00', 'Gerente entrou em contato para pedir desculpas.'),
+(14, 5, '2023-03-02', '09:00:00', 'Cliente confirmou satisfação com resolução.');
+
+-- 6. Dados Adicionais para Análise
+-- Atualizando alguns clientes para inativos
+INSERT INTO `crm_carteira_cliente` (`id_crm_carteira_cliente_perfil`, `id_cliente`) 
+VALUES
+(4, 13),  -- Marcando cliente 13 como inativo
+(4, 19);  -- Marcando cliente 19 como inativo
+
+-- Adicionando mais buscas para análise de comportamento
+INSERT INTO `crm_buscas_cliente` (`data_busca`, `hora_busca`, `detalhes`, `id_cliente`) 
+VALUES
+('2023-03-05', '16:45:00', 'Consulta sobre novos lançamentos', 12),
+('2023-03-10', '09:30:00', 'Interesse em promoções', 14),
+('2023-03-15', '11:20:00', 'Solicitou contato de vendedor', 16),
+('2023-03-20', '14:10:00', 'Dúvidas sobre garantia', 18);

@@ -1,0 +1,2321 @@
+-- ------------------------------------------------------------
+-- Armazena os possíveis estados civis. De acordo com as leis brasileiras, os possíveis estados civis são:
+-- 
+--     * Solteiro(a) - quem nunca se casou, ou que teve o casamento anulado
+--     * Casado(a) - quem contraiu matrimônio, independente do regime de bens adotado
+--     * Separado(a) judicialmente - quem não vive mais com o cônjuge (vive em separação física dele), mas que ainda não obteve o divórcio, todavia obteve sentença que deliberou por decretar a separação judicial dos cônjuges, cessando, assim, os deveres oriundos da sociedade conjugal.
+--     * Divorciado(a) - após a homologação do divórcio pela justiça
+--     * Viúvo(a) - pessoa cujo cônjuge faleceu.
+-- ------------------------------------------------------------
+
+CREATE TABLE ESTADO_CIVIL (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  NOME VARCHAR(50)  NULL  ,
+  DESCRICAO TEXT  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Armazena os possíveis estados civis. De acordo com as leis brasileiras, os possíveis estados civis são:        * Solteiro(a) - quem nunca se casou, ou que teve o casamento anulado      * Casado(a) - quem contraiu matrimônio, independente do regime de bens adotado      * Separado(a) judicialmente - quem não vive mais com o cônjuge (vive em separação física dele), mas que ainda não obteve o divórcio, todavia obteve sentença que deliberou por decretar a separação judicial dos cônjuges, cessando, assim, os deveres oriundos da sociedade conjugal.      * Divorciado(a) - após a homologação do divórcio pela justiça      * Viúvo(a) - pessoa cujo cônjuge faleceu.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tabela de países.
+-- ------------------------------------------------------------
+
+CREATE TABLE PAIS (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  CODIGO INTEGER UNSIGNED  NULL  ,
+  NOME_EN VARCHAR(100)  NULL  ,
+  NOME_PTBR VARCHAR(100)  NULL  ,
+  SIGLA2 CHAR(2)  NULL  ,
+  SIGLA3 CHAR(3)  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Tabela de países.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tabela com a Nomeclatura Comum do Mercosul (NCM)
+-- ------------------------------------------------------------
+
+CREATE TABLE NCM (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  CODIGO VARCHAR(8)  NULL   COMMENT 'Código NCM completo' ,
+  DESCRICAO TEXT  NULL  ,
+  OBSERVACAO TEXT  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Tabela com a Nomeclatura Comum do Mercosul (NCM)' ;
+
+
+
+
+-- ------------------------------------------------------------
+-- Armazena o cabeçalho de uma contagem de produtos.
+-- ------------------------------------------------------------
+
+CREATE TABLE ESTOQUE_CONTAGEM_CABECALHO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  DATA_CONTAGEM DATE  NULL   COMMENT 'Data da contagem dos itens no estoque' ,
+  ESTOQUE_ATUALIZADO CHAR(1)  NULL   COMMENT 'S=Sim | N=Não (se o estoque for atualizado a partir da contagem, marca como S)'   ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Armazena o cabeçalho de uma contagem de produtos.' ;
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela que define os papéis do sistema.
+-- ------------------------------------------------------------
+
+CREATE TABLE PAPEL (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  NOME VARCHAR(20)  NULL  ,
+  DESCRICAO TEXT  NULL  ,
+  ACESSO_COMPLETO CHAR(1)  NULL   COMMENT 'S=Sim | N=Não [Se marcado como S o usuário vinculado ao papel terá acesso completo e não precisará ter todas as funções cadastradas no banco de dados]'   ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Tabela que define os papéis do sistema.' ;
+
+
+
+
+-- ------------------------------------------------------------
+-- Armazena os tipos de requisição:
+-- 
+-- 01=INTERNA = requisição onde os itens são utilizados pela própria empresa
+-- 02=EXTERNA = requisição onde os itens são utilizados para venda ao consumidor
+-- ------------------------------------------------------------
+
+CREATE TABLE COMPRA_TIPO_REQUISICAO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  CODIGO CHAR(2)  NULL   COMMENT '01=Interna | 02=Externa' ,
+  NOME VARCHAR(30)  NULL  ,
+  DESCRICAO TEXT  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Armazena os tipos de requisição:    01=INTERNA = requisição onde os itens são utilizados pela própria empresa  02=EXTERNA = requisição onde os itens são utilizados para venda ao consumidor' ;
+
+
+
+
+-- ------------------------------------------------------------
+-- Pedido Normal: Quando nao existe nenhuma programacao de entrega ou seja, a entrega do material é feita de uma unica vez.
+-- 
+-- Pedido Planejado: O comprador negocia um determinado material mas não quer armazenar o consumo do ano em seu estoque, neste caso o comprador poderia fazer o pedido para o ano todo porém as entregas seriam mensais já que o comprador sabe o consumo mensal. 
+-- 
+-- Pedido Aberto: O Comprador negocia um determinado material mas não sabe o consumo mensal durante o ano, neste caso ele gera liberacoes conforme necessidade.
+-- ------------------------------------------------------------
+
+CREATE TABLE COMPRA_TIPO_PEDIDO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  CODIGO CHAR(2)  NULL   COMMENT '01-Normal | 02-Planejado | 03-Aberto' ,
+  NOME VARCHAR(30)  NULL  ,
+  DESCRICAO TEXT  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Pedido Normal: Quando nao existe nenhuma programacao de entrega ou seja, a entrega do material é feita de uma unica vez.    Pedido Planejado: O comprador negocia um determinado material mas não quer armazenar o consumo do ano em seu estoque, neste caso o comprador poderia fazer o pedido para o ano todo porém as entregas seriam mensais já que o comprador sabe o consumo mensal.     Pedido Aberto: O Comprador negocia um determinado material mas não sabe o consumo mensal durante o ano, neste caso ele gera liberacoes conforme necessidade.' ;
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela que armazena os dados da PESSOA. Demais tabelas devem especializar esta tabela com seus próprios dados: FORNECEDOR, TRANSPORTADORA, CLIENTE, etc.
+-- ------------------------------------------------------------
+
+CREATE TABLE PESSOA (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  NOME VARCHAR(150)  NOT NULL  ,
+  TIPO CHAR(1)  NOT NULL   COMMENT 'F=Física | J=Jurídica' ,
+  EMAIL VARCHAR(250)  NULL  ,
+  SITE VARCHAR(250)  NULL  ,
+  CLIENTE CHAR(1)  NULL   COMMENT 'S=Sim | N=Não' ,
+  FORNECEDOR CHAR(1)  NULL   COMMENT 'S=Sim | N=Não' ,
+  COLABORADOR CHAR(1)  NULL   COMMENT 'S=Sim | N=Não' ,
+  TRANSPORTADORA CHAR(1)  NULL   COMMENT 'S=Sim | N=Não'   ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Tabela que armazena os dados da PESSOA. Demais tabelas devem especializar esta tabela com seus próprios dados: FORNECEDOR, TRANSPORTADORA, CLIENTE, etc.' ;
+
+
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Armazena os dados do contador da empresa. 
+-- ------------------------------------------------------------
+
+CREATE TABLE CONTADOR (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  INSCRICAO_CRC VARCHAR(15)  NULL  ,
+  UF_CRC CHAR(2)  NULL  ,
+  FONE VARCHAR(14)  NULL  ,
+  FAX VARCHAR(14)  NULL  ,
+  LOGRADOURO VARCHAR(100)  NULL  ,
+  NUMERO VARCHAR(10)  NULL  ,
+  COMPLEMENTO VARCHAR(100)  NULL  ,
+  BAIRRO VARCHAR(60)  NULL  ,
+  CIDADE VARCHAR(60)  NULL  ,
+  CEP VARCHAR(8)  NULL  ,
+  MUNICIPIO_IBGE INTEGER UNSIGNED  NULL  ,
+  UF CHAR(2)  NULL  ,
+  EMAIL VARCHAR(250)  NULL  ,
+  NOME VARCHAR(100)  NULL  ,
+  CPF VARCHAR(11)  NULL  ,
+  CNPJ VARCHAR(14)  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Armazena os dados do contador da empresa.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tabela com as unidades de produto.
+-- ------------------------------------------------------------
+
+CREATE TABLE UNIDADE_PRODUTO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  SIGLA VARCHAR(10)  NULL  ,
+  DESCRICAO TEXT  NULL  ,
+  PODE_FRACIONAR CHAR(1)  NULL   COMMENT 'S=Sim | N=Não'   ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Tabela com as unidades de produto.' ;
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela que armazena as possíveis situações de uma parcela: PAGO, BAIXA PARCIAL, EM ABERTO,  RETENCAO, etc.
+-- Status padrões:
+-- 01 = Aberto | 02 = Quitado | 03 = Quitado Parcial | 04 = Vencido
+-- ------------------------------------------------------------
+
+CREATE TABLE FIN_STATUS_PARCELA (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  SITUACAO CHAR(2)  NOT NULL   COMMENT '01 = Aberto | 02 = Quitado | 03 = Quitado Parcial | 04 = Vencido' ,
+  DESCRICAO VARCHAR(30)  NULL   COMMENT 'PAGO | BAIXA PARCIAL | EM ABERTO | ETC' ,
+  PROCEDIMENTO TEXT  NULL   COMMENT 'Procedimento a ser adotado para o status em questão'   ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Tabela que armazena as possíveis situações de uma parcela: PAGO, BAIXA PARCIAL, EM ABERTO,  RETENCAO, etc.  Status padrões:  01 = Aberto | 02 = Quitado | 03 = Quitado Parcial | 04 = Vencido' ;
+
+
+
+
+
+
+CREATE TABLE FIN_NATUREZA_FINANCEIRA (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  CODIGO CHAR(4)  NULL   COMMENT '1001 - 2001' ,
+  DESCRICAO VARCHAR(100)  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB;
+
+
+
+
+-- ------------------------------------------------------------
+-- Armazena as condições de pagamento.
+-- ------------------------------------------------------------
+
+CREATE TABLE VENDA_CONDICOES_PAGAMENTO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  NOME VARCHAR(50)  NULL   COMMENT 'Exemplo: BOLETO 20/40/60' ,
+  DESCRICAO TEXT  NULL   COMMENT 'Texto descritivo da condição de pagamento' ,
+  FATURAMENTO_MINIMO DECIMAL(18,6)  NULL   COMMENT 'Valor mínimo para determinado tipo de pagamento. Exemplo: boleto: delimitar o menor valor de uma venda.' ,
+  FATURAMENTO_MAXIMO DECIMAL(18,6)  NULL   COMMENT 'Valor máximo para determinado tipo de pagamento. Exemplo: boleto: delimitar o maior valor de uma venda.' ,
+  INDICE_CORRECAO DECIMAL(18,6)  NULL   COMMENT 'Índice para acréscimo nas vendas a prazo sobre o preço de tabela no formato 1 + %/ 100. Exemplo: acréscimo de 5% = 1,05. Padrão 1(=100%)' ,
+  DIAS_TOLERANCIA INTEGER UNSIGNED  NULL   COMMENT 'Quantidade de dias de flexibilidade das datas de vencimento dos boletos que podem ser ajustados pelo vendedor para antes ou depois da data definida. Exemplo: a 1ª parcela vence em 20 dias; se houver uma tolerância de 10 dias, o vendedor pode gerar um boleto para 10 até 30 dias.' ,
+  VALOR_TOLERANCIA DECIMAL(18,6)  NULL   COMMENT 'Permite o ajuste no valor das parcelas de acordo com a tolerância.' ,
+  PRAZO_MEDIO INTEGER UNSIGNED  NULL   COMMENT 'Calculado pelo sistema de acordo com os prazos definidos para cada parcela.'   ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Armazena as condições de pagamento.' ;
+
+
+
+
+
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela que armazena os tipos de pagamento: DINHEIRO, CARTÃO, CHEQUE, etc.
+-- Tipos padões já cadastrados pelo sistema:
+-- 01 = Dinheiro | 02 = Cheque | 03 = Cartao
+-- ------------------------------------------------------------
+
+CREATE TABLE FIN_TIPO_PAGAMENTO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  TIPO CHAR(2)  NULL   COMMENT '01 = Dinheiro | 02 = Cheque | 03 = Cartao' ,
+  DESCRICAO VARCHAR(30)  NULL   COMMENT 'DINHEIRO | CHEQUE | CARTAO | BANCO | ETC'   ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Tabela que armazena os tipos de pagamento: DINHEIRO, CARTÃO, CHEQUE, etc.  Tipos padões já cadastrados pelo sistema:  01 = Dinheiro | 02 = Cheque | 03 = Cartao' ;
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela com as funções do sistema.
+-- ------------------------------------------------------------
+
+CREATE TABLE FUNCAO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  DESCRICAO_MENU VARCHAR(30)  NULL  ,
+  IMAGEM_MENU VARCHAR(30)  NULL  ,
+  METODO VARCHAR(30)  NULL  ,
+  NOME VARCHAR(100)  NULL  ,
+  FORMULARIO VARCHAR(100)  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Tabela com as funções do sistema.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Contém os modelos definidos no Ato Cotepe 46/10.
+-- ------------------------------------------------------------
+
+CREATE TABLE MODELO_NOTA_FISCAL (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  CODIGO CHAR(2)  NULL  ,
+  DESCRICAO VARCHAR(100)  NULL  ,
+  MODELO VARCHAR(10)  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Contém os modelos definidos no Ato Cotepe 46/10.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tabela para cadastro dos tipo de documentos que podem gerar contas a pagar/receber: nota fiscal, boleto, recibo, etc.
+-- ------------------------------------------------------------
+
+CREATE TABLE FIN_DOCUMENTO_ORIGEM (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  CODIGO CHAR(3)  NULL  ,
+  SIGLA_DOCUMENTO CHAR(10)  NULL   COMMENT 'NF, CHQ, NFe, DP, NP, CTe, CT, CF, CFe' ,
+  DESCRICAO TEXT  NULL   COMMENT 'NOTA FISCAL | BOLETO | RECIBO | ETC.'   ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Tabela para cadastro dos tipo de documentos que podem gerar contas a pagar/receber: nota fiscal, boleto, recibo, etc.' ;
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela que armazena os tipos de pagamento: DINHEIRO, CARTÃO, CHEQUE, etc. 
+-- Tipos padões já cadastrados pelo sistema: 
+-- 01 = Dinheiro | 02 = Cheque | 03 = Cartao
+-- ------------------------------------------------------------
+
+CREATE TABLE FIN_TIPO_RECEBIMENTO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  TIPO CHAR(2)  NULL   COMMENT 'DINHEIRO | CHEQUE | CARTAO | BANCO | ETC' ,
+  DESCRICAO VARCHAR(100)  NULL   COMMENT '01 = Dinheiro | 02 = Cheque | 03 = Cartao'   ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Tabela que armazena os tipos de pagamento: DINHEIRO, CARTÃO, CHEQUE, etc.   Tipos padões já cadastrados pelo sistema:   01 = Dinheiro | 02 = Cheque | 03 = Cartao' ;
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Armazena as cotações de compra
+-- ------------------------------------------------------------
+
+CREATE TABLE COMPRA_COTACAO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  DATA_COTACAO DATE  NULL  ,
+  DESCRICAO VARCHAR(100)  NULL  ,
+  SITUACAO CHAR(1)  NULL   COMMENT 'A=Aberta | C=Confirmada | F=Fechada'   ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Armazena as cotações de compra' ;
+
+
+
+
+-- ------------------------------------------------------------
+-- Identifica a situação (ativo, inativo, bloqueado, desbloqueado...)
+-- ------------------------------------------------------------
+
+CREATE TABLE SITUACAO_FOR_CLI (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  NOME VARCHAR(20)  NULL  ,
+  DESCRICAO TEXT  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Identifica a situação (ativo, inativo, bloqueado, desbloqueado...)' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tabela com a relação de CEPs do Brasil.
+-- ------------------------------------------------------------
+
+CREATE TABLE CEP (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  CEP VARCHAR(8)  NULL  ,
+  LOGRADOURO VARCHAR(60)  NULL  ,
+  COMPLEMENTO VARCHAR(60)  NULL  ,
+  BAIRRO VARCHAR(60)  NULL  ,
+  MUNICIPIO VARCHAR(60)  NULL  ,
+  UF CHAR(2)  NULL  ,
+  CODIGO_IBGE_MUNICIPIO INTEGER UNSIGNED  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Tabela com a relação de CEPs do Brasil.' ;
+
+
+
+-- ------------------------------------------------------------
+-- CÓDIGO FISCAL DE OPERAÇÕES E PRESTAÇÕES - CFOP
+-- ------------------------------------------------------------
+
+CREATE TABLE CFOP (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  CFOP INTEGER UNSIGNED  NULL  ,
+  DESCRICAO TEXT  NULL  ,
+  APLICACAO TEXT  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'CÓDIGO FISCAL DE OPERAÇÕES E PRESTAÇÕES - CFOP' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tipos de colaboradores
+-- ------------------------------------------------------------
+
+CREATE TABLE TIPO_COLABORADOR (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  NOME VARCHAR(20)  NULL  ,
+  DESCRICAO TEXT  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Tipos de colaboradores' ;
+
+
+
+-- ------------------------------------------------------------
+-- A CNAE - Classificação Nacional de Atividades Econômicas é o instrumento de padronização nacional dos códigos de atividade econômica e dos critérios de enquadramento utilizados pelos diversos órgãos da Administração Tributária do país.
+-- 
+-- EX.:
+--    Seção:  A  AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA
+--    Divisão:  01  AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS
+--    Grupo:  011  PRODUÇÃO DE LAVOURAS TEMPORÁRIAS
+--    Classe:  0111-3  CULTIVO DE CEREAIS
+--    Subclasse  0111-3/01  CULTIVO DE ARROZ
+-- ------------------------------------------------------------
+
+CREATE TABLE CNAE (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  CODIGO VARCHAR(7)  NULL  ,
+  DENOMINACAO TEXT  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'A CNAE - Classificação Nacional de Atividades Econômicas é o instrumento de padronização nacional dos códigos de atividade econômica e dos critérios de enquadramento utilizados pelos diversos órgãos da Administração Tributária do país.    EX.:     Seção:  A  AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA     Divisão:  01  AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS     Grupo:  011  PRODUÇÃO DE LAVOURAS TEMPORÁRIAS     Classe:  0111-3  CULTIVO DE CEREAIS     Subclasse  0111-3/01  CULTIVO DE ARROZ' ;
+
+
+
+-- ------------------------------------------------------------
+-- Armazena a informação do tipo de item que é gerado para o arquivo do SPED: Registro 200 - Campo 7.
+-- Tipos:
+-- 
+-- 00-Mercadoria para Revenda;
+-- 01-Matéria-Prima;
+-- 02-Embalagem;
+-- 03-Produto em Processo;
+-- 04-Produto Acabado;
+-- 05-Subproduto;
+-- 06-Produto Intermediário;
+-- 07-Material de Uso e Consumo;
+-- 08-Ativo Imobilizado;
+-- 09-Serviços;
+-- 10-Outros insumos;
+-- 99-Outras
+-- ------------------------------------------------------------
+
+CREATE TABLE TIPO_ITEM_SPED (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  CODIGO CHAR(2)  NULL  ,
+  DESCRICAO VARCHAR(50)  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Armazena a informação do tipo de item que é gerado para o arquivo do SPED: Registro 200 - Campo 7.  Tipos:    00-Mercadoria para Revenda;  01-Matéria-Prima;  02-Embalagem;  03-Produto em Processo;  04-Produto Acabado;  05-Subproduto;  06-Produto Intermediário;  07-Material de Uso e Consumo;  08-Ativo Imobilizado;  09-Serviços;  10-Outros insumos;  99-Outras' ;
+
+
+
+CREATE TABLE SITUACAO_DOCUMENTO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  CODIGO VARCHAR(2)  NULL  ,
+  DESCRICAO VARCHAR(100)  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB;
+
+
+
+-- ------------------------------------------------------------
+-- Armazena as marcas dos produtos.
+-- ------------------------------------------------------------
+
+CREATE TABLE PRODUTO_MARCA (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  NOME VARCHAR(50)  NULL  ,
+  DESCRICAO TEXT  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Armazena as marcas dos produtos.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tabela com os grupos de produtos
+-- ------------------------------------------------------------
+
+CREATE TABLE PRODUTO_GRUPO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  NOME VARCHAR(100)  NULL  ,
+  DESCRICAO TEXT  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Tabela com os grupos de produtos' ;
+
+
+
+-- ------------------------------------------------------------
+-- Armazena os tipos de NF. Define alguns parâmetros para emissão de notas fiscais.
+-- 
+-- Modelos padrões já cadastrados pelo sistema:
+-- 
+-- Nota Fiscal, modelos 1 e 1A;
+-- Nota Fiscal de Venda a Consumidor, Modelo 2;
+-- NF-e (Nota Fiscal Eletrônica), modelo 55
+-- ------------------------------------------------------------
+
+CREATE TABLE TIPO_NOTA_FISCAL (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  MODELO CHAR(2)  NULL   COMMENT 'Modelo da nota fiscal' ,
+  SERIE CHAR(3)  NULL   COMMENT 'Serie da NF' ,
+  NOME VARCHAR(50)  NULL   COMMENT 'O nome do tipo de nota fiscal' ,
+  DESCRICAO TEXT  NULL   COMMENT 'Descrição do tipo da nota fiscal (texto descritivo)' ,
+  TEMPLATE TEXT  NULL   COMMENT 'Caminho de um arquivo de template, caso exista' ,
+  NUMERO_ITENS INTEGER UNSIGNED  NULL   COMMENT 'Quantidade de itens da nota' ,
+  ULTIMO_IMPRESSO INTEGER UNSIGNED  NULL   COMMENT 'Sistema controla o número do último documento impresso.'   ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Armazena os tipos de NF. Define alguns parâmetros para emissão de notas fiscais.    Modelos padrões já cadastrados pelo sistema:    Nota Fiscal, modelos 1 e 1A;  Nota Fiscal de Venda a Consumidor, Modelo 2;  NF-e (Nota Fiscal Eletrônica), modelo 55' ;
+
+
+
+
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Permite agrupar clientes e fornecedores por segmentos e ramos de atividades.
+-- ------------------------------------------------------------
+
+CREATE TABLE ATIVIDADE_FOR_CLI (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  NOME VARCHAR(50)  NULL  ,
+  DESCRICAO TEXT  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Permite agrupar clientes e fornecedores por segmentos e ramos de atividades.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tabela de setores/departamentos.
+-- ------------------------------------------------------------
+
+CREATE TABLE SETOR (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  NOME VARCHAR(50)  NULL  ,
+  DESCRICAO TEXT  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Tabela de setores/departamentos.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tabela de cargos.
+-- ------------------------------------------------------------
+
+CREATE TABLE CARGO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  NOME VARCHAR(50)  NULL  ,
+  DESCRICAO TEXT  NULL  ,
+  SALARIO DECIMAL(18,6)  NULL  ,
+  CBO_1994 VARCHAR(10)  NULL   COMMENT 'Classificação Brasileira de Ocupações' ,
+  CBO_2002 VARCHAR(10)  NULL   COMMENT 'Classificação Brasileira de Ocupações'   ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Tabela de cargos.' ;
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela com a relação de bancos.
+-- ------------------------------------------------------------
+
+CREATE TABLE BANCO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  CODIGO VARCHAR(10)  NULL  ,
+  NOME VARCHAR(100)  NULL  ,
+  URL VARCHAR(250)  NULL    ,
+PRIMARY KEY(ID))
+ENGINE=InnoDB
+COMMENT = 'Tabela com a relação de bancos.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tabela com os Estados de determinado Pais.
+-- ------------------------------------------------------------
+
+CREATE TABLE UF (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_PAIS INTEGER UNSIGNED  NOT NULL  ,
+  SIGLA CHAR(2)  NULL  ,
+  NOME VARCHAR(50)  NULL  ,
+  CODIGO_IBGE INTEGER UNSIGNED  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_PAIS_UF(ID_PAIS),
+  FOREIGN KEY(ID_PAIS)
+    REFERENCES PAIS(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela com os Estados de determinado Pais.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Armazena os dados específicos de pessoa jurídica.
+-- ------------------------------------------------------------
+
+CREATE TABLE PESSOA_JURIDICA (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_PESSOA INTEGER UNSIGNED  NOT NULL  ,
+  CNPJ VARCHAR(14)  NULL  ,
+  FANTASIA VARCHAR(150)  NULL  ,
+  INSCRICAO_MUNICIPAL VARCHAR(30)  NULL  ,
+  INSCRICAO_ESTADUAL VARCHAR(30)  NULL  ,
+  DATA_CONSTITUICAO DATE  NULL  ,
+  TIPO_REGIME CHAR(1)  NULL   COMMENT '1-Lucro REAL;2-Lucro presumido;3-Simples nacional;' ,
+  CRT CHAR(1)  NULL   COMMENT 'Código Regime Tributário [1=Simples Nacional | 2=Simples Nacional - excesso de sublimite da receita bruta  | 3=Regime Normal' ,
+  SUFRAMA VARCHAR(9)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_PESSOA_JURIDICA(ID_PESSOA),
+  FOREIGN KEY(ID_PESSOA)
+    REFERENCES PESSOA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Armazena os dados específicos de pessoa jurídica.' ;
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela com os sub-grupos dos produtos.
+-- ------------------------------------------------------------
+
+CREATE TABLE PRODUTO_SUB_GRUPO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_GRUPO INTEGER UNSIGNED  NOT NULL  ,
+  NOME VARCHAR(100)  NULL  ,
+  DESCRICAO TEXT  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_SUB_GRUPO_GRUPO(ID_GRUPO),
+  FOREIGN KEY(ID_GRUPO)
+    REFERENCES PRODUTO_GRUPO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela com os sub-grupos dos produtos.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tabela de transportadoras
+-- ------------------------------------------------------------
+
+CREATE TABLE TRANSPORTADORA (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_PESSOA INTEGER UNSIGNED  NOT NULL  ,
+  DATA_CADASTRO DATE  NULL  ,
+  OBSERVACAO TEXT  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_PESSOA_TRANSPORTADORA(ID_PESSOA),
+  FOREIGN KEY(ID_PESSOA)
+    REFERENCES PESSOA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela de transportadoras' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tabela com as cidades de determinado Estado.
+-- ------------------------------------------------------------
+
+CREATE TABLE MUNICIPIO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_UF INTEGER UNSIGNED  NOT NULL  ,
+  NOME VARCHAR(100)  NULL  ,
+  CODIGO_IBGE INTEGER UNSIGNED  NULL  ,
+  CODIGO_RECEITA_FEDERAL INTEGER UNSIGNED  NULL  ,
+  CODIGO_ESTADUAL INTEGER UNSIGNED  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_UF_MUNICIPIO(ID_UF),
+  FOREIGN KEY(ID_UF)
+    REFERENCES UF(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela com as cidades de determinado Estado.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Armazenar os dados dos cheques recebidos identicando a pessoa que emitiu o cheque, estando cadastrada no BD ou não.
+-- ------------------------------------------------------------
+
+CREATE TABLE FIN_CHEQUE_RECEBIDO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_PESSOA INTEGER UNSIGNED  NULL  ,
+  CPF_CNPJ VARCHAR(14)  NULL  ,
+  NOME VARCHAR(100)  NULL  ,
+  CODIGO_BANCO VARCHAR(10)  NULL  ,
+  CODIGO_AGENCIA VARCHAR(10)  NULL  ,
+  CONTA VARCHAR(20)  NULL  ,
+  NUMERO INTEGER UNSIGNED  NULL  ,
+  DATA_EMISSAO DATE  NULL  ,
+  BOM_PARA DATE  NULL  ,
+  DATA_COMPENSACAO DATE  NULL  ,
+  VALOR DECIMAL(18,6)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_PESSOA_EMIT_CHEQUE(ID_PESSOA),
+  FOREIGN KEY(ID_PESSOA)
+    REFERENCES PESSOA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Armazenar os dados dos cheques recebidos identicando a pessoa que emitiu o cheque, estando cadastrada no BD ou não.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tabela com as empresas que utilizam o sistema. 
+-- ------------------------------------------------------------
+
+CREATE TABLE EMPRESA (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_EMPRESA INTEGER UNSIGNED  NULL  ,
+  ID_CONTADOR INTEGER UNSIGNED  NULL  ,
+  RAZAO_SOCIAL VARCHAR(150)  NULL  ,
+  NOME_FANTASIA VARCHAR(150)  NULL  ,
+  CNPJ VARCHAR(14)  NULL  ,
+  INSCRICAO_ESTADUAL VARCHAR(30)  NULL  ,
+  INSCRICAO_ESTADUAL_ST VARCHAR(30)  NULL  ,
+  INSCRICAO_MUNICIPAL VARCHAR(30) BINARY  NULL  ,
+  INSCRICAO_JUNTA_COMERCIAL VARCHAR(30)  NULL  ,
+  DATA_INSC_JUNTA_COMERCIAL DATE  NULL  ,
+  TIPO CHAR(1)  NULL   COMMENT 'Valores possíveis: M-Matriz | F-Filial' ,
+  DATA_CADASTRO DATE  NULL  ,
+  DATA_INICIO_ATIVIDADES DATE  NULL  ,
+  SUFRAMA VARCHAR(9)  NULL  ,
+  EMAIL VARCHAR(250) BINARY  NULL  ,
+  IMAGEM_LOGOTIPO TEXT  NULL  ,
+  CRT CHAR(1)  NULL   COMMENT 'Código Regime Tributário [1=Simples Nacional | 2=Simples Nacional - excesso de sublimite da receita bruta  | 3=Regime Normal' ,
+  TIPO_REGIME CHAR(1)  NULL   COMMENT '1-Lucro REAL;2-Lucro presumido;3-Simples nacional;' ,
+  CODIGO_IBGE_CIDADE INTEGER UNSIGNED  NULL  ,
+  CODIGO_IBGE_UF INTEGER UNSIGNED  NULL  ,
+  CEI VARCHAR(12)  NULL   COMMENT 'Número de inscrição do estabelecimento no Cadastro Específico do INSS' ,
+  CODIGO_CNAE_PRINCIPAL VARCHAR(7)  NULL   COMMENT 'Demais códigos da empresa devem ser informados na tabela EMPRESA_CNAE'   ,
+PRIMARY KEY(ID)  ,
+INDEX FK_CONTADOR_EMPRESA(ID_CONTADOR)  ,
+INDEX FK_AUTO_REL_EMPRESA(ID_EMPRESA),
+  FOREIGN KEY(ID_CONTADOR)
+    REFERENCES CONTADOR(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_EMPRESA)
+    REFERENCES EMPRESA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela com as empresas que utilizam o sistema.' ;
+
+
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela para armazenar as agências bancárias.
+-- ------------------------------------------------------------
+
+CREATE TABLE AGENCIA_BANCO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_BANCO INTEGER UNSIGNED  NOT NULL  ,
+  CODIGO VARCHAR(10)  NULL  ,
+  DIGITO CHAR(1)  NULL  ,
+  NOME VARCHAR(100)  NULL  ,
+  LOGRADOURO VARCHAR(100)  NULL  ,
+  NUMERO VARCHAR(10)  NULL  ,
+  CEP VARCHAR(8)  NULL  ,
+  BAIRRO VARCHAR(60)  NULL  ,
+  MUNICIPIO VARCHAR(60)  NULL  ,
+  UF CHAR(2)  NULL  ,
+  TELEFONE VARCHAR(14)  NULL  ,
+  GERENTE VARCHAR(30)  NULL  ,
+  CONTATO VARCHAR(30)  NULL  ,
+  OBSERVACAO TEXT  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_BANCO_AGENCIA(ID_BANCO),
+  FOREIGN KEY(ID_BANCO)
+    REFERENCES BANCO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela para armazenar as agências bancárias.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tabela matriz para geração de parcelas.
+-- ------------------------------------------------------------
+
+CREATE TABLE VENDA_CONDICOES_PARCELAS (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_VENDA_CONDICOES_PAGAMENTO INTEGER UNSIGNED  NOT NULL  ,
+  PARCELA INTEGER UNSIGNED  NULL   COMMENT 'Número da parcela' ,
+  DIAS INTEGER UNSIGNED  NULL   COMMENT 'Quantidade de dias a partir da data da venda' ,
+  TAXA DECIMAL(18,6)  NULL   COMMENT 'Taxa percentual referente à parcela'   ,
+PRIMARY KEY(ID)  ,
+INDEX FK_CONDICOES_PARCELAS(ID_VENDA_CONDICOES_PAGAMENTO),
+  FOREIGN KEY(ID_VENDA_CONDICOES_PAGAMENTO)
+    REFERENCES VENDA_CONDICOES_PAGAMENTO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela matriz para geração de parcelas.' ;
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela de endereços.
+-- ------------------------------------------------------------
+
+CREATE TABLE ENDERECO (
+  ID INTEGER  NOT NULL   AUTO_INCREMENT,
+  ID_EMPRESA INTEGER UNSIGNED  NULL  ,
+  ID_PESSOA INTEGER UNSIGNED  NULL  ,
+  LOGRADOURO VARCHAR(60)  NULL  ,
+  NUMERO VARCHAR(10)  NULL  ,
+  COMPLEMENTO VARCHAR(60)  NULL  ,
+  BAIRRO VARCHAR(60)  NULL  ,
+  CIDADE VARCHAR(60)  NULL  ,
+  CEP VARCHAR(8)  NULL  ,
+  MUNICIPIO_IBGE INTEGER UNSIGNED  NULL  ,
+  UF CHAR(2)  NULL  ,
+  FONE VARCHAR(14)  NULL  ,
+  FAX VARCHAR(14)  NULL  ,
+  PRINCIPAL CHAR(1)  NULL   COMMENT 'S=Sim | N=Não [Apenas um endereço por PESSOA pode ser marcado como principal]' ,
+  ENTREGA CHAR(1)  NULL   COMMENT 'S=Sim | N=Não' ,
+  COBRANCA CHAR(1)  NULL   COMMENT 'S=Sim | N=Não' ,
+  CORRESPONDENCIA CHAR(1)  NULL   COMMENT 'S=Sim | N=Não'   ,
+PRIMARY KEY(ID)  ,
+INDEX FK_PESSOA_ENDERECO(ID_PESSOA)  ,
+INDEX FK_EMPRESA_ENDERECO(ID_EMPRESA),
+  FOREIGN KEY(ID_PESSOA)
+    REFERENCES PESSOA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_EMPRESA)
+    REFERENCES EMPRESA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela de endereços.' ;
+
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela de contatos.
+-- ------------------------------------------------------------
+
+CREATE TABLE CONTATO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_PESSOA INTEGER UNSIGNED  NULL  ,
+  ID_EMPRESA INTEGER UNSIGNED  NULL  ,
+  NOME VARCHAR(100)  NULL  ,
+  EMAIL VARCHAR(250) BINARY  NULL  ,
+  FONE_COMERCIAL VARCHAR(14)  NULL  ,
+  FONE_RESIDENCIAL VARCHAR(14) BINARY  NULL  ,
+  FONE_CELULAR VARCHAR(14)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_EMPRESA_CONTATO(ID_EMPRESA)  ,
+INDEX FK_PESSOA_CONTATO(ID_PESSOA),
+  FOREIGN KEY(ID_EMPRESA)
+    REFERENCES EMPRESA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_PESSOA)
+    REFERENCES PESSOA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela de contatos.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Armazena os dados específicos de pessoa física.
+-- ------------------------------------------------------------
+
+CREATE TABLE PESSOA_FISICA (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_PESSOA INTEGER UNSIGNED  NOT NULL  ,
+  ID_ESTADO_CIVIL INTEGER UNSIGNED  NOT NULL  ,
+  CPF VARCHAR(11)  NULL  ,
+  RG VARCHAR(20)  NULL  ,
+  ORGAO_RG VARCHAR(20)  NULL  ,
+  DATA_EMISSAO_RG DATE  NULL  ,
+  DATA_NASCIMENTO DATE  NULL  ,
+  SEXO CHAR(1)  NULL   COMMENT 'M=Masculino | F=Feminino' ,
+  NATURALIDADE VARCHAR(100)  NULL  ,
+  NACIONALIDADE VARCHAR(100)  NULL  ,
+  RACA CHAR(1)  NULL   COMMENT 'B=Branco | N=Negro | P=Pardo | I=Indio' ,
+  TIPO_SANGUE CHAR(3)  NULL   COMMENT 'Exemplos: A+ | AB+ | O-' ,
+  CNH_NUMERO VARCHAR(20)  NULL  ,
+  CNH_CATEGORIA CHAR(2)  NULL   COMMENT 'A | B | C | D | E' ,
+  CNH_VENCIMENTO DATE  NULL  ,
+  TITULO_ELEITORAL_NUMERO VARCHAR(20)  NULL  ,
+  TITULO_ELEITORAL_ZONA INTEGER UNSIGNED  NULL  ,
+  TITULO_ELEITORAL_SECAO INTEGER UNSIGNED  NULL  ,
+  RESERVISTA_NUMERO VARCHAR(20)  NULL  ,
+  RESERVISTA_CATEGORIA INTEGER UNSIGNED  NULL  ,
+  NOME_MAE VARCHAR(100)  NULL  ,
+  NOME_PAI VARCHAR(100)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_ESTADO_CIVIL_PF(ID_ESTADO_CIVIL)  ,
+INDEX FK_PESSOA_FISICA(ID_PESSOA),
+  FOREIGN KEY(ID_ESTADO_CIVIL)
+    REFERENCES ESTADO_CIVIL(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_PESSOA)
+    REFERENCES PESSOA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Armazena os dados específicos de pessoa física.' ;
+
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Vínculo entre Empresa e Cnae informando ainda o Cnae principal da empresa.
+-- ------------------------------------------------------------
+
+CREATE TABLE EMPRESA_CNAE (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_CNAE INTEGER UNSIGNED  NOT NULL  ,
+  ID_EMPRESA INTEGER UNSIGNED  NOT NULL  ,
+  PRINCIPAL CHAR(1)  NULL   COMMENT 'S=Sim | N=Não [apenas um registro para uma mesma empresa pode ser marcado como ''S'']' ,
+  RAMO_ATIVIDADE VARCHAR(50)  NULL  ,
+  OBJETO_SOCIAL TEXT  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_EMPRESA_CNAE(ID_EMPRESA)  ,
+INDEX FK_CNAE_EMPRESA(ID_CNAE),
+  FOREIGN KEY(ID_EMPRESA)
+    REFERENCES EMPRESA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_CNAE)
+    REFERENCES CNAE(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Vínculo entre Empresa e Cnae informando ainda o Cnae principal da empresa.' ;
+
+
+
+
+-- ------------------------------------------------------------
+-- Vinculo entre PAPEL e FUNCAO pare definir os níveis de acesso do sistema.
+-- ------------------------------------------------------------
+
+CREATE TABLE PAPEL_FUNCAO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_PAPEL INTEGER UNSIGNED  NOT NULL  ,
+  ID_FUNCAO INTEGER UNSIGNED  NOT NULL  ,
+  PODE_CONSULTAR CHAR(1)  NULL   COMMENT 'Valores possíveis: S-Sim | N-Não' ,
+  PODE_INSERIR CHAR(1)  NULL   COMMENT 'Valores possíveis: S-Sim | N-Não' ,
+  PODE_ALTERAR CHAR(1)  NULL   COMMENT 'Valores possíveis: S-Sim | N-Não' ,
+  PODE_EXCLUIR CHAR(1)  NULL   COMMENT 'Valores possíveis: S-Sim | N-Não' ,
+  HABILITADO CHAR(1)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_PAPEL_FUNCAO(ID_PAPEL)  ,
+INDEX FK_FUNCAO_PAPEL(ID_FUNCAO),
+  FOREIGN KEY(ID_PAPEL)
+    REFERENCES PAPEL(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_FUNCAO)
+    REFERENCES FUNCAO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Vinculo entre PAPEL e FUNCAO pare definir os níveis de acesso do sistema.' ;
+
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela com a relação dos clientes.
+-- ------------------------------------------------------------
+
+CREATE TABLE CLIENTE (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_PESSOA INTEGER UNSIGNED  NOT NULL  ,
+  ID_ATIVIDADE_FOR_CLI INTEGER UNSIGNED  NOT NULL  ,
+  ID_SITUACAO_FOR_CLI INTEGER UNSIGNED  NOT NULL  ,
+  DESDE DATE  NULL  ,
+  DATA_CADASTRO DATE  NULL  ,
+  OBSERVACAO TEXT  NULL  ,
+  PORCENTO_DESCONTO DECIMAL(18,6)  NULL  ,
+  LIMITE_CREDITO DECIMAL(18,6)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_SITUACAO_CLIENTE(ID_SITUACAO_FOR_CLI)  ,
+INDEX FK_ATIVIDADE_CLIENTE(ID_ATIVIDADE_FOR_CLI)  ,
+INDEX FK_PESSOA_CLIENTE(ID_PESSOA),
+  FOREIGN KEY(ID_SITUACAO_FOR_CLI)
+    REFERENCES SITUACAO_FOR_CLI(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_ATIVIDADE_FOR_CLI)
+    REFERENCES ATIVIDADE_FOR_CLI(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_PESSOA)
+    REFERENCES PESSOA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela com a relação dos clientes.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tabela com a relaçao de fornecedores das empresas.
+-- ------------------------------------------------------------
+
+CREATE TABLE FORNECEDOR (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_PESSOA INTEGER UNSIGNED  NOT NULL  ,
+  ID_ATIVIDADE_FOR_CLI INTEGER UNSIGNED  NOT NULL  ,
+  ID_SITUACAO_FOR_CLI INTEGER UNSIGNED  NOT NULL  ,
+  DESDE DATE  NULL  ,
+  OPTANTE_SIMPLES_NACIONAL CHAR(1)  NULL   COMMENT 'Indica se é optante do simples nacional' ,
+  LOCALIZACAO CHAR(1)  NULL   COMMENT 'N = Nacional, E = Exterior' ,
+  DATA_CADASTRO DATE  NULL  ,
+  SOFRE_RETENCAO CHAR(1)  NULL   COMMENT 'Valores possíveis: S-Sim | N-Não - Informa se o fornecedor sofre retenção de pagamentos caso ocorra algum tipo de problema.' ,
+  CHEQUE_NOMINAL_A VARCHAR(100)  NULL  ,
+  OBSERVACAO TEXT  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_SITUACAO_FORNECEDOR(ID_SITUACAO_FOR_CLI)  ,
+INDEX FK_ATIVIDADE_FORNECEDOR(ID_ATIVIDADE_FOR_CLI)  ,
+INDEX FK_PESSOA_FORNECEDOR(ID_PESSOA),
+  FOREIGN KEY(ID_SITUACAO_FOR_CLI)
+    REFERENCES SITUACAO_FOR_CLI(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_ATIVIDADE_FOR_CLI)
+    REFERENCES ATIVIDADE_FOR_CLI(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_PESSOA)
+    REFERENCES PESSOA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela com a relaçao de fornecedores das empresas.' ;
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela de produtos.
+-- ------------------------------------------------------------
+
+CREATE TABLE PRODUTO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_UNIDADE_PRODUTO INTEGER UNSIGNED  NOT NULL  ,
+  ID_MARCA_PRODUTO INTEGER UNSIGNED  NULL  ,
+  ID_SUB_GRUPO INTEGER UNSIGNED  NOT NULL  ,
+  GTIN CHAR(14) BINARY  NULL   COMMENT 'Código GTIN do produto com até 14 caracteres' ,
+  CODIGO_INTERNO VARCHAR(60)  NULL  ,
+  NCM VARCHAR(8)  NULL   COMMENT 'Nomenclatura Comum do Mercosul' ,
+  NOME VARCHAR(100)  NULL  ,
+  DESCRICAO TEXT  NULL  ,
+  DESCRICAO_PDV VARCHAR(30)  NULL  ,
+  VALOR_COMPRA DECIMAL(18,6)  NULL  ,
+  VALOR_VENDA DECIMAL(18,6)  NULL  ,
+  PRECO_VENDA_MINIMO DECIMAL(18,6)  NULL  ,
+  PRECO_LUCRO_ZERO DECIMAL(18,6)  NULL  ,
+  PRECO_LUCRO_MINIMO DECIMAL(18,6)  NULL  ,
+  PRECO_LUCRO_MAXIMO DECIMAL(18,6)  NULL  ,
+  QUANTIDADE_ESTOQUE DECIMAL(18,6)  NULL  ,
+  QUANTIDADE_ESTOQUE_ANTERIOR DECIMAL(18,6)  NULL  ,
+  ESTOQUE_MINIMO DECIMAL(18,6)  NULL  ,
+  ESTOQUE_MAXIMO DECIMAL(18,6)  NULL  ,
+  ESTOQUE_IDEAL DECIMAL(18,6)  NULL   COMMENT 'Quatidade Ideal do estoque a ser mantido, neste caso a sugestao de compra deve ser a diferença entre o EST. ATUAL e EST. IDEAL' ,
+  EXCLUIDO CHAR(1)  NULL   COMMENT 'Valores possíveis: S-Sim | N-Não' ,
+  INATIVO CHAR(1)  NULL   COMMENT 'Valores possíveis: S-Sim | N-Não' ,
+  DATA_CADASTRO DATE  NULL  ,
+  FOTO_PRODUTO TEXT  NULL   COMMENT 'Caminho para a imagem do produto' ,
+  IAT CHAR(1)  NULL   COMMENT 'A=ARREDONDAMENTO | T=TRUNCAMENTO' ,
+  IPPT CHAR(1)  NULL   COMMENT 'P=PROPRIO | T=TERCEIRO' ,
+  TIPO_ITEM_SPED CHAR(2)  NULL   COMMENT 'Tipo do item – Atividades Industriais, Comerciais e  Serviços:  00 – Mercadoria para Revenda;  01 – Matéria-Prima;  02 – Embalagem;  03 – Produto em Processo;  04 – Produto Acabado;  05 – Subproduto;  06 – Produto Intermediário;  07 – Material de Uso e Consumo;  08 – Ativo Imobilizado;  09 – Serviços;  10 – Outros insumos;  99 – Outras' ,
+  TOTALIZADOR_PARCIAL VARCHAR(10)  NULL   COMMENT 'Ex: 04T0700 (alíquota de ICMS na quarta posição dos totalizadores do ECF com taxa de 7%) | I1 (isento) | F1 (substituição tributária) | N1 (não tributado)' ,
+  CODIGO_BALANCA INTEGER UNSIGNED  NULL   COMMENT 'Código da balança'   ,
+PRIMARY KEY(ID)  ,
+INDEX FK_PRODUTO_UNIDADE(ID_UNIDADE_PRODUTO)  ,
+INDEX FK_PRODUTO_SUBGRUPO(ID_SUB_GRUPO)  ,
+INDEX FK_MARCA_PRODUTO(ID_MARCA_PRODUTO),
+  FOREIGN KEY(ID_UNIDADE_PRODUTO)
+    REFERENCES UNIDADE_PRODUTO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_SUB_GRUPO)
+    REFERENCES PRODUTO_SUB_GRUPO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_MARCA_PRODUTO)
+    REFERENCES PRODUTO_MARCA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela de produtos.' ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela com os colaboradores da empresa.
+-- ------------------------------------------------------------
+
+CREATE TABLE COLABORADOR (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_PESSOA INTEGER UNSIGNED  NOT NULL  ,
+  ID_TIPO_COLABORADOR INTEGER UNSIGNED  NOT NULL  ,
+  ID_CARGO INTEGER UNSIGNED  NOT NULL  ,
+  ID_SETOR INTEGER UNSIGNED  NOT NULL  ,
+  MATRICULA VARCHAR(10)  NULL  ,
+  FOTO_34 TEXT  NULL   COMMENT 'Caminho onde a foto está armazenada' ,
+  DATA_CADASTRO DATE  NULL  ,
+  DATA_ADMISSAO DATE  NULL  ,
+  PAGAMENTO_FORMA CHAR(1)  NULL   COMMENT '1=Dinheiro | 2=Cheque | 3=Conta' ,
+  PAGAMENTO_BANCO VARCHAR(10)  NULL   COMMENT 'Código do banco para pagamento' ,
+  PAGAMENTO_AGENCIA VARCHAR(10)  NULL   COMMENT 'Código da agencia para pagamento' ,
+  PAGAMENTO_AGENCIA_DIGITO CHAR(1)  NULL  ,
+  PAGAMENTO_CONTA VARCHAR(10)  NULL   COMMENT 'Código da conta para pagamento' ,
+  PAGAMENTO_CONTA_DIGITO CHAR(1)  NULL  ,
+  CTPS_NUMERO VARCHAR(10)  NULL  ,
+  CTPS_SERIE VARCHAR(10)  NULL  ,
+  CTPS_DATA_EXPEDICAO DATE  NULL  ,
+  CTPS_UF CHAR(2)  NULL  ,
+  OBSERVACAO TEXT  NULL  ,
+  DATA_DEMISSAO DATE  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_COLABORADOR_SETOR(ID_SETOR)  ,
+INDEX FK_CARGO_COLABORADOR(ID_CARGO)  ,
+INDEX FK_TIPO_COLABORADOR(ID_TIPO_COLABORADOR)  ,
+INDEX FK_PESSOA_COLABORADOR(ID_PESSOA),
+  FOREIGN KEY(ID_SETOR)
+    REFERENCES SETOR(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_CARGO)
+    REFERENCES CARGO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_TIPO_COLABORADOR)
+    REFERENCES TIPO_COLABORADOR(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_PESSOA)
+    REFERENCES PESSOA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela com os colaboradores da empresa.' ;
+
+
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela para armazenar os dados das requisições internas de produto.
+-- ------------------------------------------------------------
+
+CREATE TABLE REQUISICAO_INTERNA_CABECALHO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_COLABORADOR INTEGER UNSIGNED  NOT NULL  ,
+  DATA_REQUISICAO DATE  NOT NULL  ,
+  SITUACAO CHAR(1)  NULL   COMMENT 'A=Aberta | D=Deferida | I=Indeferida'   ,
+PRIMARY KEY(ID)  ,
+INDEX FK_COLAB_REQ_INTERNA(ID_COLABORADOR),
+  FOREIGN KEY(ID_COLABORADOR)
+    REFERENCES COLABORADOR(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela para armazenar os dados das requisições internas de produto.' ;
+
+
+
+
+-- ------------------------------------------------------------
+-- Armazenas as contas de banco e de caixa interno da empresa.
+-- ------------------------------------------------------------
+
+CREATE TABLE CONTA_CAIXA (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_AGENCIA_BANCO INTEGER UNSIGNED  NULL  ,
+  CODIGO VARCHAR(20)  NULL  ,
+  DIGITO CHAR(1)  NULL   COMMENT 'Digito da conta' ,
+  NOME VARCHAR(50)  NULL  ,
+  DESCRICAO TEXT  NULL  ,
+  TIPO CHAR(1)  NULL   COMMENT 'C=Corrente | P=Poupança | I=Investimento | X=Caixa Interno'   ,
+PRIMARY KEY(ID)  ,
+INDEX FK_AGENCIA_CONTA(ID_AGENCIA_BANCO),
+  FOREIGN KEY(ID_AGENCIA_BANCO)
+    REFERENCES AGENCIA_BANCO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Armazenas as contas de banco e de caixa interno da empresa.' ;
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela para armazenar o histórico de reajustes realizados.
+-- ------------------------------------------------------------
+
+CREATE TABLE ESTOQUE_REAJUSTE_CABECALHO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_COLABORADOR INTEGER UNSIGNED  NOT NULL  ,
+  DATA_REAJUSTE DATE  NULL  ,
+  PORCENTAGEM DECIMAL(18,6)  NULL  ,
+  TIPO_REAJUSTE CHAR(1)  NULL   COMMENT 'A = Aumentar, D = Diminuir'   ,
+PRIMARY KEY(ID)  ,
+INDEX FK_COLAB_HIST_REAJUSTE(ID_COLABORADOR),
+  FOREIGN KEY(ID_COLABORADOR)
+    REFERENCES COLABORADOR(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela para armazenar o histórico de reajustes realizados.' ;
+
+
+
+
+-- ------------------------------------------------------------
+-- Armazena os dados de um fechamento mensal.
+-- ------------------------------------------------------------
+
+CREATE TABLE FIN_FECHAMENTO_CAIXA_BANCO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_CONTA_CAIXA INTEGER UNSIGNED  NOT NULL  ,
+  DATA_FECHAMENTO DATE  NULL  ,
+  MES_ANO VARCHAR(7)  NULL   COMMENT 'Formato MM/AAAA para facilitar algumas consultas' ,
+  MES CHAR(2)  NULL  ,
+  ANO CHAR(4)  NULL  ,
+  SALDO_ANTERIOR DECIMAL(18,6)  NULL  ,
+  RECEBIMENTOS DECIMAL(18,6)  NULL  ,
+  PAGAMENTOS DECIMAL(18,6)  NULL  ,
+  SALDO_CONTA DECIMAL(18,6)  NULL  ,
+  CHEQUE_NAO_COMPENSADO DECIMAL(18,6)  NULL  ,
+  SALDO_DISPONIVEL DECIMAL(18,6)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_CONTA_CX_FECHAMENTO(ID_CONTA_CAIXA),
+  FOREIGN KEY(ID_CONTA_CAIXA)
+    REFERENCES CONTA_CAIXA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Armazena os dados de um fechamento mensal.' ;
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela que armazena  os dados dos colaboradores que são vendedores.
+-- ------------------------------------------------------------
+
+CREATE TABLE VENDEDOR (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_COLABORADOR INTEGER UNSIGNED  NULL  ,
+  COMISSAO DECIMAL(18,6)  NULL  ,
+  META_VENDAS DECIMAL(18,6)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_COLABORADOR_VENDEDOR(ID_COLABORADOR),
+  FOREIGN KEY(ID_COLABORADOR)
+    REFERENCES COLABORADOR(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela que armazena  os dados dos colaboradores que são vendedores.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Armazena os dados do extrato bancário.
+-- ------------------------------------------------------------
+
+CREATE TABLE FIN_EXTRATO_CONTA_BANCO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_CONTA_CAIXA INTEGER UNSIGNED  NOT NULL  ,
+  MES_ANO VARCHAR(7)  NULL   COMMENT 'Formato MM/AAAA para facilitar algumas consultas' ,
+  MES CHAR(2)  NULL  ,
+  ANO CHAR(4)  NULL  ,
+  DATA_MOVIMENTO DATE  NULL  ,
+  DATA_BALANCETE DATE  NULL  ,
+  HISTORICO VARCHAR(250)  NULL  ,
+  DOCUMENTO VARCHAR(50)  NULL  ,
+  VALOR DECIMAL(18,6)  NULL  ,
+  CONCILIADO CHAR(1)  NULL   COMMENT 'S=SIM | N=NÃO' ,
+  OBSERVACAO TEXT  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_CONTA_CX_EXTRATO(ID_CONTA_CAIXA),
+  FOREIGN KEY(ID_CONTA_CAIXA)
+    REFERENCES CONTA_CAIXA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Armazena os dados do extrato bancário.' ;
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela que armazena os pedidos de compra.
+-- ------------------------------------------------------------
+
+CREATE TABLE COMPRA_PEDIDO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_COMPRA_TIPO_PEDIDO INTEGER UNSIGNED  NOT NULL  ,
+  ID_FORNECEDOR INTEGER UNSIGNED  NOT NULL  ,
+  DATA_PEDIDO DATE  NULL  ,
+  DATA_PREVISTA_ENTREGA DATE  NULL  ,
+  DATA_PREVISAO_PAGAMENTO DATE  NULL  ,
+  LOCAL_ENTREGA VARCHAR(100)  NULL  ,
+  LOCAL_COBRANCA VARCHAR(100)  NULL  ,
+  CONTATO VARCHAR(30)  NULL  ,
+  VALOR_SUBTOTAL DECIMAL(18,6)  NULL  ,
+  TAXA_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_TOTAL_PEDIDO DECIMAL(18,6)  NULL  ,
+  TIPO_FRETE CHAR(1)  NULL   COMMENT 'C=CIF | F=FOB' ,
+  FORMA_PAGAMENTO CHAR(1)  NULL   COMMENT '0=pagamento à vista | 1=pagamento à prazo | 2=outros. (Campo indPag da NF-e)' ,
+  QUANTIDADE_PARCELAS INTEGER UNSIGNED  NULL   COMMENT 'Quantidade de parcelas para pagamento do pedido' ,
+  DIAS_PRIMEIRO_VENCIMENTO INTEGER UNSIGNED  NULL   COMMENT 'Quantidade de dias até o primeiro vencimento' ,
+  DIAS_INTERVALO INTEGER UNSIGNED  NULL   COMMENT 'Quantidade de dias de intervalo entre as parcelas'   ,
+PRIMARY KEY(ID)  ,
+INDEX FK_TIPO_PEDIDO_COMPRA(ID_COMPRA_TIPO_PEDIDO)  ,
+INDEX FK_FORNECEDOR_PEDIDO_COMPRA(ID_FORNECEDOR),
+  FOREIGN KEY(ID_COMPRA_TIPO_PEDIDO)
+    REFERENCES COMPRA_TIPO_PEDIDO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_FORNECEDOR)
+    REFERENCES FORNECEDOR(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela que armazena os pedidos de compra.' ;
+
+
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Armazena as requisições de compra.
+-- ------------------------------------------------------------
+
+CREATE TABLE COMPRA_REQUISICAO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_COMPRA_TIPO_REQUISICAO INTEGER UNSIGNED  NOT NULL  ,
+  ID_COLABORADOR INTEGER UNSIGNED  NOT NULL  ,
+  DATA_REQUISICAO DATE  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_TIPO_REQ_COMPRA(ID_COMPRA_TIPO_REQUISICAO)  ,
+INDEX FK_COL_REQ_COMPRA(ID_COLABORADOR),
+  FOREIGN KEY(ID_COMPRA_TIPO_REQUISICAO)
+    REFERENCES COMPRA_TIPO_REQUISICAO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_COLABORADOR)
+    REFERENCES COLABORADOR(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Armazena as requisições de compra.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tabela que armazena os itens do pedido. Uma cotação poderá gerar vários pedidos e um pedido pode ser gerado a partir de várias cotações.
+-- ------------------------------------------------------------
+
+CREATE TABLE COMPRA_PEDIDO_DETALHE (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_COMPRA_PEDIDO INTEGER UNSIGNED  NOT NULL  ,
+  ID_PRODUTO INTEGER UNSIGNED  NOT NULL  ,
+  QUANTIDADE DECIMAL(18,6)  NULL  ,
+  VALOR_UNITARIO DECIMAL(18,6)  NULL  ,
+  VALOR_SUBTOTAL DECIMAL(18,6)  NULL  ,
+  TAXA_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_TOTAL DECIMAL(18,6)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_PEDIDO_COMPRA_DETALHE(ID_COMPRA_PEDIDO)  ,
+INDEX FK_PROD_PEDIDO_DETALHE(ID_PRODUTO),
+  FOREIGN KEY(ID_COMPRA_PEDIDO)
+    REFERENCES COMPRA_PEDIDO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_PRODUTO)
+    REFERENCES PRODUTO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela que armazena os itens do pedido. Uma cotação poderá gerar vários pedidos e um pedido pode ser gerado a partir de várias cotações.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tabela para armazenar os itens das requisições internas de produtos.
+-- ------------------------------------------------------------
+
+CREATE TABLE REQUISICAO_INTERNA_DETALHE (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_REQ_INTERNA_CABECALHO INTEGER UNSIGNED  NOT NULL  ,
+  ID_PRODUTO INTEGER UNSIGNED  NOT NULL  ,
+  QUANTIDADE DECIMAL(18,6)  NOT NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_REQ_INTERNA_CAB_DET(ID_REQ_INTERNA_CABECALHO)  ,
+INDEX FK_PRODUTO_REQ_INTERNA(ID_PRODUTO),
+  FOREIGN KEY(ID_REQ_INTERNA_CABECALHO)
+    REFERENCES REQUISICAO_INTERNA_CABECALHO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_PRODUTO)
+    REFERENCES PRODUTO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela para armazenar os itens das requisições internas de produtos.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Uma cotação pode ter vários fornecedores e um fornecedor pode fazer parte de várias cotações.
+-- ------------------------------------------------------------
+
+CREATE TABLE COMPRA_FORNECEDOR_COTACAO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_COMPRA_COTACAO INTEGER UNSIGNED  NOT NULL  ,
+  ID_FORNECEDOR INTEGER UNSIGNED  NOT NULL  ,
+  PRAZO_ENTREGA VARCHAR(30)  NULL  ,
+  VENDA_CONDICOES_PAGAMENTO VARCHAR(30)  NULL  ,
+  VALOR_SUBTOTAL DECIMAL(18,6)  NULL  ,
+  TAXA_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_DESCONTO DECIMAL(18,6)  NULL  ,
+  TOTAL DECIMAL(18,6)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_COTACAO_FORNECEDOR(ID_COMPRA_COTACAO)  ,
+INDEX FK_FORNECEDOR_COTACAO(ID_FORNECEDOR),
+  FOREIGN KEY(ID_COMPRA_COTACAO)
+    REFERENCES COMPRA_COTACAO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_FORNECEDOR)
+    REFERENCES FORNECEDOR(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Uma cotação pode ter vários fornecedores e um fornecedor pode fazer parte de várias cotações.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tabela com os detalhes da requisição de compra
+-- ------------------------------------------------------------
+
+CREATE TABLE COMPRA_REQUISICAO_DETALHE (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_COMPRA_REQUISICAO INTEGER UNSIGNED  NOT NULL  ,
+  ID_PRODUTO INTEGER UNSIGNED  NOT NULL  ,
+  QUANTIDADE DECIMAL(18,6)  NULL  ,
+  QUANTIDADE_COTADA DECIMAL(18,6)  NULL   COMMENT 'Vai incrementando a quantidade cotada até atingir o valor do campo QUANTIDADE' ,
+  ITEM_COTADO CHAR(1)  NULL   COMMENT 'Quando a quantidade for utilizada de forma completa deve-se marcar S para Sim, do contrário, N para não.'   ,
+PRIMARY KEY(ID)  ,
+INDEX FK_REQUISICAO_COMPRA_DETALHE(ID_COMPRA_REQUISICAO)  ,
+INDEX FK_PRODUTO_REQ_COMPRA_DET(ID_PRODUTO),
+  FOREIGN KEY(ID_COMPRA_REQUISICAO)
+    REFERENCES COMPRA_REQUISICAO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_PRODUTO)
+    REFERENCES PRODUTO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela com os detalhes da requisição de compra' ;
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela para armazenar os produtos que sofreram reajuste.
+-- ------------------------------------------------------------
+
+CREATE TABLE ESTOQUE_REAJUSTE_DETALHE (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_ESTOQUE_REAJUSTE_CABECALHO INTEGER UNSIGNED  NOT NULL  ,
+  ID_PRODUTO INTEGER UNSIGNED  NOT NULL  ,
+  VALOR_ORIGINAL DECIMAL(18,6)  NULL  ,
+  VALOR_REAJUSTE DECIMAL(18,6)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_ESTOQUE_REAJUSTE_CAB_DET(ID_ESTOQUE_REAJUSTE_CABECALHO)  ,
+INDEX FK_PRODUTO_REAJUSTE(ID_PRODUTO),
+  FOREIGN KEY(ID_ESTOQUE_REAJUSTE_CABECALHO)
+    REFERENCES ESTOQUE_REAJUSTE_CABECALHO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_PRODUTO)
+    REFERENCES PRODUTO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela para armazenar os produtos que sofreram reajuste.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Armazena os detalhes de uma contagem de produtos e já faz os calculos de acuracidade e divergência.
+-- ------------------------------------------------------------
+
+CREATE TABLE ESTOQUE_CONTAGEM_DETALHE (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_ESTOQUE_CONTAGEM_CABECALHO INTEGER UNSIGNED  NOT NULL  ,
+  ID_PRODUTO INTEGER UNSIGNED  NOT NULL  ,
+  QUANTIDADE_CONTADA DECIMAL(18,6)  NULL   COMMENT 'Quantidade contada' ,
+  QUANTIDADE_SISTEMA DECIMAL(18,6)  NULL   COMMENT 'Quantidade do sistema - informação automática' ,
+  ACURACIDADE DECIMAL(18,6)  NULL   COMMENT 'indicador da qualidade e confiabilidade da  informação existente nos sistemas de controle' ,
+  DIVERGENCIA DECIMAL(18,6)  NULL   COMMENT 'identifica se os erros  de estoque têm grande relevância em relação aos saldos controlados  pelo sistema ou se as diferenças são residuais, tipicamente resultantes  de pequenos erros de contagem.'   ,
+PRIMARY KEY(ID)  ,
+INDEX FK_CONTAGEM_ESTOQUE_CAB_DET(ID_ESTOQUE_CONTAGEM_CABECALHO)  ,
+INDEX FK_PRODUTO_CONTAGEM_ESTOQUE(ID_PRODUTO),
+  FOREIGN KEY(ID_ESTOQUE_CONTAGEM_CABECALHO)
+    REFERENCES ESTOQUE_CONTAGEM_CABECALHO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_PRODUTO)
+    REFERENCES PRODUTO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Armazena os detalhes de uma contagem de produtos e já faz os calculos de acuracidade e divergência.' ;
+
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela com os usuarios do sistema
+-- ------------------------------------------------------------
+
+CREATE TABLE USUARIO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_COLABORADOR INTEGER UNSIGNED  NOT NULL  ,
+  ID_PAPEL INTEGER UNSIGNED  NOT NULL  ,
+  LOGIN VARCHAR(20)  NULL  ,
+  SENHA VARCHAR(40)  NULL  ,
+  DATA_CADASTRO DATE  NULL  ,
+  ADMINISTRADOR CHAR(1)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_COLABORADOR_USUARIO(ID_COLABORADOR)  ,
+INDEX FK_PAPEL_USUARIO(ID_PAPEL),
+  FOREIGN KEY(ID_COLABORADOR)
+    REFERENCES COLABORADOR(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_PAPEL)
+    REFERENCES PAPEL(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela com os usuarios do sistema' ;
+
+
+
+-- ------------------------------------------------------------
+-- Faz o controle de quantidade de itens que saem da requisição e entram na cotação
+-- ------------------------------------------------------------
+
+CREATE TABLE COMPRA_REQ_COTACAO_DETALHE (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_COMPRA_COTACAO INTEGER UNSIGNED  NOT NULL  ,
+  ID_COMPRA_REQUISICAO_DETALHE INTEGER UNSIGNED  NOT NULL  ,
+  QUANTIDADE_COTADA DECIMAL(18,6)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_REQUISICAO_COTACAO_DETALHE(ID_COMPRA_REQUISICAO_DETALHE)  ,
+INDEX FK_COTACAO_REQ_DETALHE(ID_COMPRA_COTACAO),
+  FOREIGN KEY(ID_COMPRA_REQUISICAO_DETALHE)
+    REFERENCES COMPRA_REQUISICAO_DETALHE(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_COMPRA_COTACAO)
+    REFERENCES COMPRA_COTACAO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Faz o controle de quantidade de itens que saem da requisição e entram na cotação' ;
+
+
+
+-- ------------------------------------------------------------
+-- Tabela de lançamentos das contas a receber.
+-- ------------------------------------------------------------
+
+CREATE TABLE FIN_LANCAMENTO_RECEBER (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_FIN_NATUREZA_FINANCEIRA INTEGER UNSIGNED  NOT NULL  ,
+  ID_FIN_DOCUMENTO_ORIGEM INTEGER UNSIGNED  NOT NULL  ,
+  ID_CLIENTE INTEGER UNSIGNED  NOT NULL  ,
+  QUANTIDADE_PARCELA INTEGER UNSIGNED  NULL  ,
+  VALOR_TOTAL DECIMAL(18,6)  NULL  ,
+  VALOR_A_RECEBER DECIMAL(18,6)  NULL  ,
+  DATA_LANCAMENTO DATE  NULL  ,
+  NUMERO_DOCUMENTO VARCHAR(50)  NULL  ,
+  PRIMEIRO_VENCIMENTO DATE  NULL  ,
+  TAXA_COMISSAO DECIMAL(18,6)  NULL   COMMENT 'Informar a percentagem da comissão' ,
+  VALOR_COMISSAO DECIMAL(18,6)  NULL   COMMENT 'Informar o valor da comissão' ,
+  INTERVALO_ENTRE_PARCELAS INTEGER  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_DOC_ORI_LANC_RECEBER(ID_FIN_DOCUMENTO_ORIGEM)  ,
+INDEX FK_CLIENTE_LCTO_RECEBER(ID_CLIENTE)  ,
+INDEX FK_NAT_FIN_RECEBER(ID_FIN_NATUREZA_FINANCEIRA),
+  FOREIGN KEY(ID_FIN_DOCUMENTO_ORIGEM)
+    REFERENCES FIN_DOCUMENTO_ORIGEM(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_CLIENTE)
+    REFERENCES CLIENTE(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_FIN_NATUREZA_FINANCEIRA)
+    REFERENCES FIN_NATUREZA_FINANCEIRA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela de lançamentos das contas a receber.' ;
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela de lançamentos das contas a pagar.
+-- ------------------------------------------------------------
+
+CREATE TABLE FIN_LANCAMENTO_PAGAR (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_FIN_NATUREZA_FINANCEIRA INTEGER UNSIGNED  NOT NULL  ,
+  ID_FIN_DOCUMENTO_ORIGEM INTEGER UNSIGNED  NOT NULL  ,
+  ID_FORNECEDOR INTEGER UNSIGNED  NOT NULL  ,
+  QUANTIDADE_PARCELA INTEGER UNSIGNED  NULL  ,
+  VALOR_TOTAL DECIMAL(18,6)  NULL  ,
+  VALOR_A_PAGAR DECIMAL(18,6)  NULL  ,
+  DATA_LANCAMENTO DATE  NULL  ,
+  NUMERO_DOCUMENTO VARCHAR(50)  NULL   COMMENT 'Número do documento que deu origem ao lançamento' ,
+  IMAGEM_DOCUMENTO TEXT  NULL   COMMENT 'Armazena o caminho da imagem do documento, caso seja scaneado.' ,
+  PRIMEIRO_VENCIMENTO DATE  NULL  ,
+  INTERVALO_ENTRE_PARCELAS INTEGER UNSIGNED  NULL   COMMENT 'Para calcular o intervalo entre as parcelas'   ,
+PRIMARY KEY(ID)  ,
+INDEX FK_DOC_ORIG_LCTO_PAGAR(ID_FIN_DOCUMENTO_ORIGEM)  ,
+INDEX FK_FORNECEDOR_LCTO_PAGAR(ID_FORNECEDOR)  ,
+INDEX FK_NAT_FIN_PAGAR(ID_FIN_NATUREZA_FINANCEIRA),
+  FOREIGN KEY(ID_FIN_DOCUMENTO_ORIGEM)
+    REFERENCES FIN_DOCUMENTO_ORIGEM(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_FORNECEDOR)
+    REFERENCES FORNECEDOR(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_FIN_NATUREZA_FINANCEIRA)
+    REFERENCES FIN_NATUREZA_FINANCEIRA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela de lançamentos das contas a pagar.' ;
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela que garda as parcelas para recebimento. Caso o recebimento seja efetuado de uma vez, a tabela LANCAMENTO_RECEBER gerará uma parcela para ser recebida e a mesma será armazenada nesta tabela.
+-- ------------------------------------------------------------
+
+CREATE TABLE FIN_PARCELA_RECEBER (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_CONTA_CAIXA INTEGER UNSIGNED  NOT NULL   COMMENT 'Informa a conta/caixa prevista para o recebimento da parcela' ,
+  ID_FIN_LANCAMENTO_RECEBER INTEGER UNSIGNED  NOT NULL  ,
+  ID_FIN_STATUS_PARCELA INTEGER UNSIGNED  NOT NULL  ,
+  NUMERO_PARCELA INTEGER UNSIGNED  NULL  ,
+  DATA_EMISSAO DATE  NULL  ,
+  DATA_VENCIMENTO DATE  NULL  ,
+  DESCONTO_ATE DATE  NULL   COMMENT 'Conceder desconto até a data especificada' ,
+  VALOR DECIMAL(18,6)  NULL  ,
+  EMITIU_BOLETO CHAR(1)  NULL   COMMENT 'S=Sim | N=Não' ,
+  BOLETO_NOSSO_NUMERO VARCHAR(50)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_LANCAMENTO_PARCELA_RECEBER(ID_FIN_LANCAMENTO_RECEBER)  ,
+INDEX FK_STATUS_PARCELA_RECEBER(ID_FIN_STATUS_PARCELA)  ,
+INDEX FK_CTA_CX_PAR_REC(ID_CONTA_CAIXA),
+  FOREIGN KEY(ID_FIN_LANCAMENTO_RECEBER)
+    REFERENCES FIN_LANCAMENTO_RECEBER(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_FIN_STATUS_PARCELA)
+    REFERENCES FIN_STATUS_PARCELA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_CONTA_CAIXA)
+    REFERENCES CONTA_CAIXA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela que garda as parcelas para recebimento. Caso o recebimento seja efetuado de uma vez, a tabela LANCAMENTO_RECEBER gerará uma parcela para ser recebida e a mesma será armazenada nesta tabela.' ;
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Armazena o cabeçalho do orçamento/pedido de venda.
+-- 
+-- O usuário informa aqui as condições de pagamentos, mas não gera neste momento as parcelas. As mesmas só serão geradas no momento da confirmação da venda.
+-- ------------------------------------------------------------
+
+CREATE TABLE VENDA_ORCAMENTO_CABECALHO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_VENDA_CONDICOES_PAGAMENTO INTEGER UNSIGNED  NOT NULL  ,
+  ID_VENDEDOR INTEGER UNSIGNED  NOT NULL  ,
+  ID_TRANSPORTADORA INTEGER UNSIGNED  NULL  ,
+  ID_CLIENTE INTEGER UNSIGNED  NOT NULL  ,
+  TIPO CHAR(1)  NULL   COMMENT 'O=Orçamento | P=Pedido' ,
+  CODIGO VARCHAR(20)  NULL   COMMENT 'Código atribuído pelo usuário' ,
+  DATA_CADASTRO DATE  NULL  ,
+  VALIDADE DATE  NULL  ,
+  TIPO_FRETE CHAR(1)  NULL   COMMENT 'C=CIF | F=FOB' ,
+  VALOR_SUBTOTAL DECIMAL(18,6)  NULL  ,
+  VALOR_FRETE DECIMAL(18,6)  NULL  ,
+  TAXA_COMISSAO DECIMAL(18,6)  NULL  ,
+  VALOR_COMISSAO DECIMAL(18,6)  NULL  ,
+  TAXA_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_TOTAL DECIMAL(18,6)  NULL  ,
+  OBSERVACAO TEXT  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_COND_PGTO_ORC_PED_VENDA(ID_VENDA_CONDICOES_PAGAMENTO)  ,
+INDEX FK_TRANSP_ORC_PED_VENDA(ID_TRANSPORTADORA)  ,
+INDEX FK_CLIENTE_ORC_PED_VENDA(ID_CLIENTE)  ,
+INDEX FK_VENDEDOR_ORC_PED_VENDA(ID_VENDEDOR),
+  FOREIGN KEY(ID_VENDA_CONDICOES_PAGAMENTO)
+    REFERENCES VENDA_CONDICOES_PAGAMENTO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_TRANSPORTADORA)
+    REFERENCES TRANSPORTADORA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_CLIENTE)
+    REFERENCES CLIENTE(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_VENDEDOR)
+    REFERENCES VENDEDOR(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Armazena o cabeçalho do orçamento/pedido de venda.    O usuário informa aqui as condições de pagamentos, mas não gera neste momento as parcelas. As mesmas só serão geradas no momento da confirmação da venda.' ;
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela que controla o recebimento das parcelas.
+-- ------------------------------------------------------------
+
+CREATE TABLE FIN_PARCELA_RECEBIMENTO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_FIN_PARCELA_RECEBER INTEGER UNSIGNED  NOT NULL  ,
+  ID_FIN_TIPO_RECEBIMENTO INTEGER UNSIGNED  NOT NULL  ,
+  ID_FIN_CHEQUE_RECEBIDO INTEGER UNSIGNED  NULL  ,
+  ID_CONTA_CAIXA INTEGER UNSIGNED  NOT NULL   COMMENT 'Informa a conta/caixa onde efetivamente a parcela foi recebida' ,
+  DATA_RECEBIMENTO DATE  NULL  ,
+  TAXA_JURO DECIMAL(18,6)  NULL  ,
+  TAXA_MULTA DECIMAL(18,6)  NULL  ,
+  TAXA_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_JURO DECIMAL(18,6)  NULL  ,
+  VALOR_MULTA DECIMAL(18,6)  NULL  ,
+  VALOR_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_RECEBIDO DECIMAL(18,6)  NULL  ,
+  HISTORICO VARCHAR(250)  NULL   COMMENT 'Histórico do pagamento'   ,
+PRIMARY KEY(ID)  ,
+INDEX FK_PARCELA_RECEB(ID_FIN_PARCELA_RECEBER)  ,
+INDEX FK_TIPO_PARC_RECEBIMENTO(ID_FIN_TIPO_RECEBIMENTO)  ,
+INDEX FK_CONTA_CAIXA_PARC_REC(ID_CONTA_CAIXA)  ,
+INDEX FK_CHEQUE_RECEBIMENTO(ID_FIN_CHEQUE_RECEBIDO),
+  FOREIGN KEY(ID_FIN_PARCELA_RECEBER)
+    REFERENCES FIN_PARCELA_RECEBER(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_FIN_TIPO_RECEBIMENTO)
+    REFERENCES FIN_TIPO_RECEBIMENTO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_CONTA_CAIXA)
+    REFERENCES CONTA_CAIXA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_FIN_CHEQUE_RECEBIDO)
+    REFERENCES FIN_CHEQUE_RECEBIDO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela que controla o recebimento das parcelas.' ;
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela que armazena o cabeçalho das vendas do sistema.
+-- ------------------------------------------------------------
+
+CREATE TABLE VENDA_CABECALHO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_VENDA_ORCAMENTO_CABECALHO INTEGER UNSIGNED  NULL  ,
+  ID_VENDA_CONDICOES_PAGAMENTO INTEGER UNSIGNED  NOT NULL  ,
+  ID_TRANSPORTADORA INTEGER UNSIGNED  NULL  ,
+  ID_TIPO_NOTA_FISCAL INTEGER UNSIGNED  NOT NULL  ,
+  ID_CLIENTE INTEGER UNSIGNED  NOT NULL  ,
+  ID_VENDEDOR INTEGER UNSIGNED  NOT NULL  ,
+  DATA_VENDA DATE  NULL  ,
+  DATA_SAIDA DATE  NULL   COMMENT 'Data e hora da saída da mercadoria' ,
+  HORA_SAIDA VARCHAR(8)  NULL  ,
+  NUMERO_FATURA INTEGER UNSIGNED  NULL  ,
+  LOCAL_ENTREGA VARCHAR(100)  NULL  ,
+  LOCAL_COBRANCA VARCHAR(100)  NULL  ,
+  VALOR_SUBTOTAL DECIMAL(18,6)  NULL  ,
+  TAXA_COMISSAO DECIMAL(18,6)  NULL  ,
+  VALOR_COMISSAO DECIMAL(18,6)  NULL  ,
+  TAXA_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_TOTAL DECIMAL(18,6)  NULL  ,
+  TIPO_FRETE CHAR(1)  NULL   COMMENT 'C=CIF | F=FOB' ,
+  FORMA_PAGAMENTO CHAR(1)  NULL   COMMENT '0=pagamento à vista | 1=pagamento à prazo | 2=outros. (Campo indPag da NF-e)' ,
+  VALOR_FRETE DECIMAL(18,6)  NULL  ,
+  VALOR_SEGURO DECIMAL(18,6)  NULL  ,
+  OBSERVACAO TEXT  NULL  ,
+  SITUACAO CHAR(1)  NULL   COMMENT 'D=Digitacao | P=Producao | X=Expedicao | F=Faturado | E=Entregue'   ,
+PRIMARY KEY(ID)  ,
+INDEX FK_ORCAMENTO_VENDA(ID_VENDA_ORCAMENTO_CABECALHO)  ,
+INDEX FK_VENDA_CAB_CONDICOES(ID_VENDA_CONDICOES_PAGAMENTO)  ,
+INDEX FK_CLIENTE_VENDA_CAB(ID_CLIENTE)  ,
+INDEX FK_VENDEDOR_VENDA_CAB(ID_VENDEDOR)  ,
+INDEX FK_TIPO_NF_VENDA_CAB(ID_TIPO_NOTA_FISCAL)  ,
+INDEX FK_TRANSP_VENDA_CAB(ID_TRANSPORTADORA),
+  FOREIGN KEY(ID_VENDA_ORCAMENTO_CABECALHO)
+    REFERENCES VENDA_ORCAMENTO_CABECALHO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_VENDA_CONDICOES_PAGAMENTO)
+    REFERENCES VENDA_CONDICOES_PAGAMENTO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_CLIENTE)
+    REFERENCES CLIENTE(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_VENDEDOR)
+    REFERENCES VENDEDOR(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_TIPO_NOTA_FISCAL)
+    REFERENCES TIPO_NOTA_FISCAL(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_TRANSPORTADORA)
+    REFERENCES TRANSPORTADORA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela que armazena o cabeçalho das vendas do sistema.' ;
+
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela que armazena os talonario de cheque de determinada empresa.
+-- ------------------------------------------------------------
+
+CREATE TABLE TALONARIO_CHEQUE (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_CONTA_CAIXA INTEGER UNSIGNED  NOT NULL  ,
+  TALAO VARCHAR(10)  NULL  ,
+  NUMERO INTEGER UNSIGNED  NULL  ,
+  STATUS_TALAO CHAR(1)  NULL   COMMENT 'N=Normal | C=Cancelado | E=Extraviado | U=Utilizado'   ,
+PRIMARY KEY(ID)  ,
+INDEX FK_CONTA_TALONARIO(ID_CONTA_CAIXA),
+  FOREIGN KEY(ID_CONTA_CAIXA)
+    REFERENCES CONTA_CAIXA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela que armazena os talonario de cheque de determinada empresa.' ;
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela das operadoras de cartão.
+-- ------------------------------------------------------------
+
+CREATE TABLE OPERADORA_CARTAO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_CONTA_CAIXA INTEGER UNSIGNED  NOT NULL  ,
+  BANDEIRA VARCHAR(30)  NULL  ,
+  NOME VARCHAR(50)  NULL  ,
+  TAXA_ADM DECIMAL(18,6)  NULL  ,
+  TAXA_ADM_DEBITO DECIMAL(18,6)  NULL  ,
+  VALOR_ALUGUEL_POS_PIN DECIMAL(18,6)  NULL  ,
+  VENCIMENTO_ALUGUEL INTEGER UNSIGNED  NULL  ,
+  FONE1 VARCHAR(14)  NULL  ,
+  FONE2 VARCHAR(14)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_CONTA_OP_CARTAO(ID_CONTA_CAIXA),
+  FOREIGN KEY(ID_CONTA_CAIXA)
+    REFERENCES CONTA_CAIXA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela das operadoras de cartão.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Armazena as configurações dos boletos.
+-- ------------------------------------------------------------
+
+CREATE TABLE FIN_CONFIGURACAO_BOLETO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_CONTA_CAIXA INTEGER UNSIGNED  NOT NULL  ,
+  INSTRUCAO01 VARCHAR(100)  NULL   COMMENT 'Instrução 01 do boleto' ,
+  INSTRUCAO02 VARCHAR(100)  NULL   COMMENT 'Instrução 02 do boleto' ,
+  CAMINHO_ARQUIVO_REMESSA VARCHAR(250)  NULL   COMMENT 'Caminho onde o arquivo de remessa deve ser gerado' ,
+  CAMINHO_ARQUIVO_RETORNO VARCHAR(250)  NULL   COMMENT 'Caminho onde o arquivo de retorno deve ser lido' ,
+  CAMINHO_ARQUIVO_LOGOTIPO VARCHAR(250)  NULL   COMMENT 'Caminho onde se encontra o logotipo do banco que é impresso no boleto' ,
+  CAMINHO_ARQUIVO_PDF VARCHAR(250)  NULL   COMMENT 'Caminho onde o arquivo PDF do boleto deve ser gerado, se for o caso' ,
+  MENSAGEM VARCHAR(250)  NULL  ,
+  LOCAL_PAGAMENTO VARCHAR(100)  NULL  ,
+  LAYOUT_REMESSA CHAR(3)  NULL   COMMENT 'Layout da remessa: 240 ou 400' ,
+  ACEITE CHAR(1)  NULL   COMMENT 'S=Sim | N=Não' ,
+  ESPECIE CHAR(2)  NULL   COMMENT 'DM-Duplicata Mercantil | DS-Duplicata de Serviços | RC-Recibo | NP-Nota Promissória' ,
+  CARTEIRA CHAR(3)  NULL  ,
+  CODIGO_CONVENIO VARCHAR(20)  NULL  ,
+  CODIGO_CEDENTE VARCHAR(20)  NULL  ,
+  TAXA_MULTA DECIMAL(18,6)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_CTA_CX_CONF_BOLETO(ID_CONTA_CAIXA),
+  FOREIGN KEY(ID_CONTA_CAIXA)
+    REFERENCES CONTA_CAIXA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Armazena as configurações dos boletos.' ;
+
+
+
+
+
+
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela com a relação dos cheques vinculados a determinado talão.
+-- ------------------------------------------------------------
+
+CREATE TABLE CHEQUE (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_TALONARIO_CHEQUE INTEGER UNSIGNED  NOT NULL  ,
+  NUMERO INTEGER UNSIGNED  NULL  ,
+  STATUS_CHEQUE CHAR(1)  NULL   COMMENT 'E=Em Ser | B=Baixado | U=Utilizado | C=Compensado | N=Cancelado' ,
+  DATA_STATUS DATE  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_TALONARIO_CHEQUE(ID_TALONARIO_CHEQUE),
+  FOREIGN KEY(ID_TALONARIO_CHEQUE)
+    REFERENCES TALONARIO_CHEQUE(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela com a relação dos cheques vinculados a determinado talão.' ;
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela que armazena os itens da cotação. Uma cotação pode ser gerada a partir de várias requisições e uma requisição pode gerar várias cotações.
+-- ------------------------------------------------------------
+
+CREATE TABLE COMPRA_COTACAO_DETALHE (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_COMPRA_FORNECEDOR_COTACAO INTEGER UNSIGNED  NOT NULL  ,
+  ID_PRODUTO INTEGER UNSIGNED  NOT NULL  ,
+  QUANTIDADE DECIMAL(18,6)  NULL  ,
+  QUANTIDADE_PEDIDA DECIMAL(18,6)  NULL   COMMENT 'Vai incrementando a quantidade pedida até atingir o valor do campo QUANTIDADE' ,
+  VALOR_UNITARIO DECIMAL(18,6)  NULL  ,
+  VALOR_SUBTOTAL DECIMAL(18,6)  NULL  ,
+  TAXA_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_TOTAL DECIMAL(18,6)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_FORNECEDOR_COTACAO_DETALHE(ID_COMPRA_FORNECEDOR_COTACAO)  ,
+INDEX FK_PRODUTO_COTACAO_DETALHE(ID_PRODUTO),
+  FOREIGN KEY(ID_COMPRA_FORNECEDOR_COTACAO)
+    REFERENCES COMPRA_FORNECEDOR_COTACAO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_PRODUTO)
+    REFERENCES PRODUTO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela que armazena os itens da cotação. Uma cotação pode ser gerada a partir de várias requisições e uma requisição pode gerar várias cotações.' ;
+
+
+
+
+-- ------------------------------------------------------------
+-- Armazena os itens do orçamento de venda
+-- ------------------------------------------------------------
+
+CREATE TABLE VENDA_ORCAMENTO_DETALHE (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_VENDA_ORCAMENTO_CABECALHO INTEGER UNSIGNED  NOT NULL  ,
+  ID_PRODUTO INTEGER UNSIGNED  NOT NULL  ,
+  QUANTIDADE DECIMAL(18,6)  NULL  ,
+  VALOR_UNITARIO DECIMAL(18,6)  NULL  ,
+  VALOR_SUBTOTAL DECIMAL(18,6)  NULL  ,
+  TAXA_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_TOTAL DECIMAL(18,6)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_VENDA_ORCAMENTO_CAB_DET(ID_VENDA_ORCAMENTO_CABECALHO)  ,
+INDEX FK_PRODUTO_ORC_VENDA_DET(ID_PRODUTO),
+  FOREIGN KEY(ID_VENDA_ORCAMENTO_CABECALHO)
+    REFERENCES VENDA_ORCAMENTO_CABECALHO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_PRODUTO)
+    REFERENCES PRODUTO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Armazena os itens do orçamento de venda' ;
+
+
+
+-- ------------------------------------------------------------
+-- Faz o controle de quantidade de itens que saem da cotação e entram no pedido
+-- ------------------------------------------------------------
+
+CREATE TABLE COMPRA_COTACAO_PEDIDO_DETALHE (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_COMPRA_PEDIDO INTEGER UNSIGNED  NOT NULL  ,
+  ID_COMPRA_COTACAO_DETALHE INTEGER UNSIGNED  NOT NULL  ,
+  QUANTIDADE_PEDIDA DECIMAL(18,6)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_COT_PEDIDO_DET(ID_COMPRA_COTACAO_DETALHE)  ,
+INDEX FK_PEDIDO_COTACAO_DETALHE(ID_COMPRA_PEDIDO),
+  FOREIGN KEY(ID_COMPRA_COTACAO_DETALHE)
+    REFERENCES COMPRA_COTACAO_DETALHE(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_COMPRA_PEDIDO)
+    REFERENCES COMPRA_PEDIDO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Faz o controle de quantidade de itens que saem da cotação e entram no pedido' ;
+
+
+
+-- ------------------------------------------------------------
+-- Armazena os itens da venda.
+-- ------------------------------------------------------------
+
+CREATE TABLE VENDA_DETALHE (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_PRODUTO INTEGER UNSIGNED  NOT NULL  ,
+  ID_VENDA_CABECALHO INTEGER UNSIGNED  NOT NULL  ,
+  QUANTIDADE DECIMAL(18,6)  NULL  ,
+  VALOR_UNITARIO DECIMAL(18,6)  NULL  ,
+  VALOR_SUBTOTAL DECIMAL(18,6)  NULL  ,
+  TAXA_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_TOTAL DECIMAL(18,6)  NULL  ,
+  TAXA_COMISSAO DECIMAL(18,6)  NULL  ,
+  VALOR_COMISSAO DECIMAL(18,6)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_VENDA_CAB_DET(ID_VENDA_CABECALHO)  ,
+INDEX FK_PRODUTO_VENDA_DET(ID_PRODUTO),
+  FOREIGN KEY(ID_VENDA_CABECALHO)
+    REFERENCES VENDA_CABECALHO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_PRODUTO)
+    REFERENCES PRODUTO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Armazena os itens da venda.' ;
+
+
+
+-- ------------------------------------------------------------
+-- Esta tabela deve armazenar as comissões calculadas em cada venda. Desta forma toda vez que houver uma venda com indicaçao de comissao este valor será lançado nesta tabela, com indicaçao do VALOR_VENDA, VALOR_COMISSAO, TIPO (liquidez ou faturamento), e indicador se o lançamento é a debito ou a credito, pois se houver uma devoluaçao desta venda deve haver o debito (estorno da comissao) mediante um lançamento de saldo DEVEDOR para aquele vendedor.
+-- ------------------------------------------------------------
+
+CREATE TABLE VENDA_COMISSAO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_VENDEDOR INTEGER UNSIGNED  NOT NULL  ,
+  ID_VENDA_CABECALHO INTEGER UNSIGNED  NOT NULL  ,
+  VALOR_VENDA DECIMAL(18,6)  NULL  ,
+  TIPO_CONTABIL CHAR(1)  NULL   COMMENT 'Indicar se este lanlçamento é a DEBITO ou a CREDITO. Ex. se houver uma devolucao de venda haverá um lançamento a DEBITO' ,
+  VALOR_COMISSAO DECIMAL(18,6) ZEROFILL  NULL  ,
+  SITUACAO CHAR(1)  NULL   COMMENT 'Q=QUITADA quando a comisão foi efetivamente paga ao vendedor | A= ABERTO, a comissão ainda não foi paga ao vendedor' ,
+  DATA_LANCAMENTO DATE  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_VENDA_COMISSAO(ID_VENDA_CABECALHO)  ,
+INDEX FK_VENDEDOR_COMISSAO(ID_VENDEDOR),
+  FOREIGN KEY(ID_VENDA_CABECALHO)
+    REFERENCES VENDA_CABECALHO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_VENDEDOR)
+    REFERENCES VENDEDOR(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Esta tabela deve armazenar as comissões calculadas em cada venda. Desta forma toda vez que houver uma venda com indicaçao de comissao este valor será lançado nesta tabela, com indicaçao do VALOR_VENDA, VALOR_COMISSAO, TIPO (liquidez ou faturamento), e indicador se o lançamento é a debito ou a credito, pois se houver uma devoluaçao desta venda deve haver o debito (estorno da comissao) mediante um lançamento de saldo DEVEDOR para aquele vendedor.' ;
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela que garda as parcelas para pagamento. Caso o pagamento seja efetuado de uma vez, a tabela LANCAMENTO_PAGAR gerará uma parcela para ser paga e a mesma será armazenada nesta tabela.
+-- ------------------------------------------------------------
+
+CREATE TABLE FIN_PARCELA_PAGAR (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_CONTA_CAIXA INTEGER UNSIGNED  NOT NULL   COMMENT 'Informa a conta/caixa prevista para o recebimento da parcela' ,
+  ID_FIN_LANCAMENTO_PAGAR INTEGER UNSIGNED  NOT NULL  ,
+  ID_FIN_STATUS_PARCELA INTEGER UNSIGNED  NOT NULL  ,
+  NUMERO_PARCELA INTEGER UNSIGNED  NULL  ,
+  DATA_EMISSAO DATE  NULL  ,
+  DATA_VENCIMENTO DATE  NULL  ,
+  DESCONTO_ATE DATE  NULL   COMMENT 'Conceder desconto até a data especificada' ,
+  VALOR DECIMAL(18,6)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_STATUS_PARCELA_PAGAR(ID_FIN_STATUS_PARCELA)  ,
+INDEX FK_LANCAMENTO_PARCELA(ID_FIN_LANCAMENTO_PAGAR)  ,
+INDEX FK_CTA_CX_PAR_PAG(ID_CONTA_CAIXA),
+  FOREIGN KEY(ID_FIN_STATUS_PARCELA)
+    REFERENCES FIN_STATUS_PARCELA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_FIN_LANCAMENTO_PAGAR)
+    REFERENCES FIN_LANCAMENTO_PAGAR(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_CONTA_CAIXA)
+    REFERENCES CONTA_CAIXA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela que garda as parcelas para pagamento. Caso o pagamento seja efetuado de uma vez, a tabela LANCAMENTO_PAGAR gerará uma parcela para ser paga e a mesma será armazenada nesta tabela.' ;
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela que faz o controle dos cheque emitidos.
+-- ------------------------------------------------------------
+
+CREATE TABLE FIN_CHEQUE_EMITIDO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_CHEQUE INTEGER UNSIGNED  NOT NULL  ,
+  DATA_EMISSAO DATE  NULL   COMMENT 'Dia em que o cheque foi emitido' ,
+  BOM_PARA DATE  NULL   COMMENT 'Dia previsto para a compensação do cheque' ,
+  DATA_COMPENSACAO DATE  NULL   COMMENT 'Dia em que o cheque foi compensado' ,
+  VALOR DECIMAL(18,6)  NULL  ,
+  NOMINAL_A VARCHAR(100)  NULL    ,
+PRIMARY KEY(ID)  ,
+INDEX FK_CHEQUE_EMITIDO(ID_CHEQUE),
+  FOREIGN KEY(ID_CHEQUE)
+    REFERENCES CHEQUE(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela que faz o controle dos cheque emitidos.' ;
+
+
+
+
+
+
+-- ------------------------------------------------------------
+-- Tabela que controla o recebimento das parcelas. Não se aproveita a tabela PARCELA_PAGAR porque podem existir pagamentos parciais de parcela, neste caso o controle deve ser feito em tabelas separadas. No caso de uma parcela que é paga de forma integral, a mesma será replicada da tabela PARCELA_PAGAR para a tabela PARCELA_PAGAMENTO e os dados dos campos adicionais serão informados.
+-- ------------------------------------------------------------
+
+CREATE TABLE FIN_PARCELA_PAGAMENTO (
+  ID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  ID_FIN_PARCELA_PAGAR INTEGER UNSIGNED  NOT NULL  ,
+  ID_FIN_CHEQUE_EMITIDO INTEGER UNSIGNED  NULL  ,
+  ID_FIN_TIPO_PAGAMENTO INTEGER UNSIGNED  NOT NULL  ,
+  ID_CONTA_CAIXA INTEGER UNSIGNED  NOT NULL  ,
+  DATA_PAGAMENTO DATE  NULL  ,
+  TAXA_JURO DECIMAL(18,6)  NULL  ,
+  TAXA_MULTA DECIMAL(18,6)  NULL  ,
+  TAXA_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_JURO DECIMAL(18,6)  NULL  ,
+  VALOR_MULTA DECIMAL(18,6)  NULL  ,
+  VALOR_DESCONTO DECIMAL(18,6)  NULL  ,
+  VALOR_PAGO DECIMAL(18,6)  NULL  ,
+  HISTORICO VARCHAR(250)  NULL   COMMENT 'Histórico do pagamento'   ,
+PRIMARY KEY(ID)  ,
+INDEX FK_PARCELA_PAGAMENTO(ID_FIN_PARCELA_PAGAR)  ,
+INDEX FK_CHEQUE_PARCELA(ID_FIN_CHEQUE_EMITIDO)  ,
+INDEX FK_TIPO_PAGAMENTO_PARCELA(ID_FIN_TIPO_PAGAMENTO)  ,
+INDEX FK_CONTA_CX_PARC_PGTO(ID_CONTA_CAIXA),
+  FOREIGN KEY(ID_FIN_PARCELA_PAGAR)
+    REFERENCES FIN_PARCELA_PAGAR(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_FIN_CHEQUE_EMITIDO)
+    REFERENCES FIN_CHEQUE_EMITIDO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_FIN_TIPO_PAGAMENTO)
+    REFERENCES FIN_TIPO_PAGAMENTO(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(ID_CONTA_CAIXA)
+    REFERENCES CONTA_CAIXA(ID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION)
+ENGINE=InnoDB
+COMMENT = 'Tabela que controla o recebimento das parcelas. Não se aproveita a tabela PARCELA_PAGAR porque podem existir pagamentos parciais de parcela, neste caso o controle deve ser feito em tabelas separadas. No caso de uma parcela que é paga de forma integral, a mesma será replicada da tabela PARCELA_PAGAR para a tabela PARCELA_PAGAMENTO e os dados dos campos adicionais serão informados.' ;
+
+
+
+

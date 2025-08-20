@@ -1,0 +1,197 @@
+-- Inserindo dados na tabela agenda_categoria_compromisso
+INSERT INTO agenda_categoria_compromisso (nome, cor) VALUES ('Reunião', '#FF0000');
+INSERT INTO agenda_categoria_compromisso (nome, cor) VALUES ('Encontro de Equipe', '#00FF00');
+INSERT INTO agenda_categoria_compromisso (nome, cor) VALUES ('Apresentação', '#0000FF');
+INSERT INTO agenda_categoria_compromisso (nome, cor) VALUES ('Workshop', '#FFFF00');
+INSERT INTO agenda_categoria_compromisso (nome, cor) VALUES ('Treinamento', '#FF00FF');
+INSERT INTO agenda_categoria_compromisso (nome, cor) VALUES ('Palestra', '#00FFFF');
+INSERT INTO agenda_categoria_compromisso (nome, cor) VALUES ('Reunião de Diretoria', '#FFA500');
+INSERT INTO agenda_categoria_compromisso (nome, cor) VALUES ('Conferência', '#A52A2A');
+INSERT INTO agenda_categoria_compromisso (nome, cor) VALUES ('Discussão de Projeto', '#8A2BE2');
+INSERT INTO agenda_categoria_compromisso (nome, cor) VALUES ('Alinhamento de Tarefas', '#5F9EA0');
+
+-- Inserindo dados na tabela reuniao_sala
+INSERT INTO reuniao_sala (predio, nome, andar, numero) VALUES
+('Prédio A', 'Sala de Reunião 1', '1', '101'),
+('Prédio A', 'Sala de Reunião 2', '1', '102'),
+('Prédio B', 'Sala de Conferência', '2', '201'),
+('Prédio B', 'Sala de Reunião 3', '2', '202'),
+('Prédio C', 'Sala de Treinamento', '3', '301'),
+('Prédio C', 'Sala de Reunião 4', '3', '302'),
+('Prédio D', 'Auditório', 'Térreo', '001'),
+('Prédio D', 'Sala de Reunião 5', '4', '401'),
+('Prédio E', 'Sala de Entrevistas', '5', '501'),
+('Prédio E', 'Sala de Apresentação', '6', '601');
+
+-- Inserindo dados na tabela agenda_compromisso (3 para cada categoria)
+-- Categoria 1: Reunião
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (1, 1, '2024-10-05', '09:00', 60, 'P', 'Sala A', 'Reunião geral da equipe');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (1, 2, '2024-10-06', '10:00', 45, 'G', 'Sala B', 'Reunião sobre planejamento');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (1, 1, '2024-10-07', '11:00', 30, 'P', 'Sala C', 'Reunião semanal de performance');
+
+-- Categoria 2: Encontro de Equipe
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (2, 2, '2024-10-08', '09:00', 120, 'P', 'Sala D', 'Encontro para discutir novas ideias');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (2, 1, '2024-10-09', '11:00', 90, 'G', 'Sala E', 'Sessão de brainstorming');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (2, 2, '2024-10-10', '13:00', 60, 'P', 'Sala F', 'Alinhamento de equipe para projeto');
+
+-- Categoria 3: Apresentação
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (3, 1, '2024-10-11', '14:00', 90, 'P', 'Sala G', 'Apresentação de resultados financeiros');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (3, 2, '2024-10-12', '15:00', 60, 'G', 'Sala H', 'Apresentação do novo projeto');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (3, 1, '2024-10-13', '16:00', 120, 'P', 'Sala I', 'Apresentação para novos clientes');
+
+-- Categoria 4: Workshop
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (4, 2, '2024-10-14', '09:00', 180, 'P', 'Sala J', 'Workshop sobre inovação');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (4, 1, '2024-10-15', '10:00', 150, 'G', 'Sala K', 'Workshop de liderança');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (4, 2, '2024-10-16', '11:00', 120, 'P', 'Sala L', 'Workshop sobre comunicação');
+
+-- Categoria 5: Treinamento
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (5, 1, '2024-10-17', '09:00', 240, 'P', 'Sala M', 'Treinamento de novos colaboradores');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (5, 2, '2024-10-18', '10:00', 210, 'G', 'Sala N', 'Treinamento sobre ferramentas digitais');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (5, 1, '2024-10-19', '11:00', 180, 'P', 'Sala O', 'Treinamento para novos líderes');
+
+-- Categoria 6: Palestra
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (6, 2, '2024-10-20', '14:00', 60, 'P', 'Sala P', 'Palestra sobre sustentabilidade');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (6, 1, '2024-10-21', '15:00', 75, 'G', 'Sala Q', 'Palestra motivacional para equipe');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (6, 2, '2024-10-22', '16:00', 90, 'P', 'Sala R', 'Palestra sobre gestão de tempo');
+
+-- Categoria 7: Reunião de Diretoria
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (7, 1, '2024-10-23', '09:00', 120, 'P', 'Sala S', 'Reunião de diretoria para balanço semestral');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (7, 2, '2024-10-24', '10:00', 90, 'G', 'Sala T', 'Discussão sobre novas estratégias');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (7, 1, '2024-10-25', '11:00', 180, 'P', 'Sala U', 'Reunião de diretoria com parceiros');
+
+-- Categoria 8: Conferência
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (8, 2, '2024-10-26', '14:00', 240, 'P', 'Sala V', 'Conferência anual de tecnologia');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (8, 1, '2024-10-27', '15:00', 300, 'G', 'Sala W', 'Conferência sobre tendências de mercado');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (8, 2, '2024-10-28', '16:00', 180, 'P', 'Sala X', 'Conferência para inovação em negócios');
+
+-- Categoria 9: Discussão de Projeto
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (9, 1, '2024-10-29', '09:00', 180, 'P', 'Sala Y', 'Discussão de projeto para nova plataforma');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (9, 2, '2024-10-30', '10:00', 150, 'G', 'Sala Z', 'Discussão de viabilidade técnica do projeto');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (9, 1, '2024-10-31', '11:00', 120, 'P', 'Sala AA', 'Discussão sobre orçamento do projeto');
+
+-- Categoria 10: Alinhamento de Tarefas
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (10, 2, '2024-11-01', '09:00', 60, 'P', 'Sala BB', 'Alinhamento de tarefas do projeto A');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (10, 1, '2024-11-02', '10:00', 90, 'G', 'Sala CC', 'Alinhamento de tarefas da equipe de TI');
+INSERT INTO agenda_compromisso (id_agenda_categoria_compromisso, id_colaborador, data_compromisso, hora, duracao, tipo, onde, descricao)
+VALUES (10, 2, '2024-11-03', '11:00', 120, 'P', 'Sala DD', 'Alinhamento de metas e objetivos');
+
+-- Inserindo dados na tabela recado_remetente
+INSERT INTO recado_remetente (id_colaborador, data_envio, hora_envio, assunto, texto) 
+VALUES (1, '2024-10-01', '08:00', 'Reunião de Alinhamento', 'Por favor, alinhar as atividades do projeto.');
+INSERT INTO recado_remetente (id_colaborador, data_envio, hora_envio, assunto, texto) 
+VALUES (2, '2024-10-01', '09:00', 'Relatório Mensal', 'Encaminhar o relatório mensal até o fim do dia.');
+INSERT INTO recado_remetente (id_colaborador, data_envio, hora_envio, assunto, texto) 
+VALUES (1, '2024-10-02', '10:00', 'Reunião de Feedback', 'Agendar reunião para discutir feedback do cliente.');
+INSERT INTO recado_remetente (id_colaborador, data_envio, hora_envio, assunto, texto) 
+VALUES (2, '2024-10-02', '11:00', 'Reunião de Status', 'Discutir o status do projeto em reunião semanal.');
+INSERT INTO recado_remetente (id_colaborador, data_envio, hora_envio, assunto, texto) 
+VALUES (1, '2024-10-03', '14:00', 'Relatório Financeiro', 'Atualizar o relatório financeiro do projeto.');
+INSERT INTO recado_remetente (id_colaborador, data_envio, hora_envio, assunto, texto) 
+VALUES (2, '2024-10-03', '15:00', 'Reunião com Cliente', 'Agendar reunião para apresentação de resultados.');
+INSERT INTO recado_remetente (id_colaborador, data_envio, hora_envio, assunto, texto) 
+VALUES (1, '2024-10-04', '16:00', 'Planejamento de Sprint', 'Discutir o planejamento da próxima sprint.');
+INSERT INTO recado_remetente (id_colaborador, data_envio, hora_envio, assunto, texto) 
+VALUES (2, '2024-10-04', '17:00', 'Treinamento', 'Organizar o treinamento para os novos colaboradores.');
+INSERT INTO recado_remetente (id_colaborador, data_envio, hora_envio, assunto, texto) 
+VALUES (1, '2024-10-05', '18:00', 'Documentação do Projeto', 'Atualizar a documentação do projeto.');
+INSERT INTO recado_remetente (id_colaborador, data_envio, hora_envio, assunto, texto) 
+VALUES (2, '2024-10-05', '19:00', 'Fechamento de Sprint', 'Encaminhar o relatório de fechamento da sprint.');
+
+-- Inserindo dados na tabela recado_destinatario
+-- Para cada recado_remetente, adicionamos 3 destinatários com id_colaborador 1 ou 2
+INSERT INTO recado_destinatario (id_recado_remetente, id_colaborador) VALUES (1, 1);
+INSERT INTO recado_destinatario (id_recado_remetente, id_colaborador) VALUES (1, 2);
+INSERT INTO recado_destinatario (id_recado_remetente, id_colaborador) VALUES (1, 1);
+
+INSERT INTO recado_destinatario (id_recado_remetente, id_colaborador) VALUES (2, 1);
+INSERT INTO recado_destinatario (id_recado_remetente, id_colaborador) VALUES (2, 2);
+INSERT INTO recado_destinatario (id_recado_remetente, id_colaborador) VALUES (2, 1);
+
+INSERT INTO recado_destinatario (id_recado_remetente, id_colaborador) VALUES (3, 2);
+INSERT INTO recado_destinatario (id_recado_remetente, id_colaborador) VALUES (3, 1);
+INSERT INTO recado_destinatario (id_recado_remetente, id_colaborador) VALUES (3, 2);
+
+INSERT INTO recado_destinatario (id_recado_remetente, id_colaborador) VALUES (4, 1);
+INSERT INTO recado_destinatario (id_recado_remetente, id_colaborador) VALUES (4, 2);
+INSERT INTO recado_destinatario (id_recado_remetente, id_colaborador) VALUES (4, 1);
+
+INSERT INTO recado_destinatario (id_recado_remetente, id_colaborador) VALUES (5, 1);
+INSERT INTO recado_destinatario (id_recado_remetente, id_colaborador) VALUES (5, 2);
+INSERT INTO recado_destinatario (id_recado_remetente, id_colaborador) VALUES (5, 1);
+
+-- Inserindo dados na tabela agenda_notificacao
+-- Notificação para cada compromisso criado (exemplo com id_agenda_compromisso já preenchido)
+INSERT INTO agenda_notificacao (id_agenda_compromisso, data_notificacao, hora, tipo) 
+VALUES (1, '2024-10-01', '08:00', 1);
+INSERT INTO agenda_notificacao (id_agenda_compromisso, data_notificacao, hora, tipo) 
+VALUES (1, '2024-10-01', '09:00', 2);
+INSERT INTO agenda_notificacao (id_agenda_compromisso, data_notificacao, hora, tipo) 
+VALUES (1, '2024-10-01', '10:00', 3);
+
+INSERT INTO agenda_notificacao (id_agenda_compromisso, data_notificacao, hora, tipo) 
+VALUES (2, '2024-10-02', '08:00', 1);
+INSERT INTO agenda_notificacao (id_agenda_compromisso, data_notificacao, hora, tipo) 
+VALUES (2, '2024-10-02', '09:00', 2);
+INSERT INTO agenda_notificacao (id_agenda_compromisso, data_notificacao, hora, tipo) 
+VALUES (2, '2024-10-02', '10:00', 3);
+
+-- Inserindo dados na tabela agenda_compromisso_convidado
+-- Convidados para cada compromisso (exemplo com id_agenda_compromisso já preenchido)
+INSERT INTO agenda_compromisso_convidado (id_agenda_compromisso, id_colaborador) 
+VALUES (1, 1);
+INSERT INTO agenda_compromisso_convidado (id_agenda_compromisso, id_colaborador) 
+VALUES (1, 2);
+INSERT INTO agenda_compromisso_convidado (id_agenda_compromisso, id_colaborador) 
+VALUES (1, 1);
+
+INSERT INTO agenda_compromisso_convidado (id_agenda_compromisso, id_colaborador) 
+VALUES (2, 2);
+INSERT INTO agenda_compromisso_convidado (id_agenda_compromisso, id_colaborador) 
+VALUES (2, 1);
+INSERT INTO agenda_compromisso_convidado (id_agenda_compromisso, id_colaborador) 
+VALUES (2, 2);
+
+-- Inserindo dados na tabela reuniao_sala_evento
+-- Reuniões agendadas para cada sala e compromisso
+INSERT INTO reuniao_sala_evento (id_agenda_compromisso, id_reuniao_sala, data_reserva) 
+VALUES (1, 1, '2024-10-01');
+INSERT INTO reuniao_sala_evento (id_agenda_compromisso, id_reuniao_sala, data_reserva) 
+VALUES (1, 2, '2024-10-01');
+INSERT INTO reuniao_sala_evento (id_agenda_compromisso, id_reuniao_sala, data_reserva) 
+VALUES (1, 3, '2024-10-01');
+
+INSERT INTO reuniao_sala_evento (id_agenda_compromisso, id_reuniao_sala, data_reserva) 
+VALUES (2, 2, '2024-10-02');
+INSERT INTO reuniao_sala_evento (id_agenda_compromisso, id_reuniao_sala, data_reserva) 
+VALUES (2, 4, '2024-10-02');
+INSERT INTO reuniao_sala_evento (id_agenda_compromisso, id_reuniao_sala, data_reserva) 
+VALUES (2, 5, '2024-10-02');

@@ -1,63 +1,61 @@
-CREATE
-VIEW VIEW_PESSOA_VENDEDOR
-AS
+create view view_pessoa_vendedor as
 
-SELECT 
-	C.ID,
-	P.NOME, P.TIPO, P.EMAIL, P.SITE, 
-	PF.CPF AS "CPF_CNPJ", 
-	PF.RG AS "RG_IE",
-	C.MATRICULA,
-	C.DATA_CADASTRO,
-	C.DATA_ADMISSAO,
-	C.DATA_DEMISSAO,
-	C.CTPS_NUMERO,
-	C.CTPS_SERIE,
-	C.CTPS_DATA_EXPEDICAO,
-	C.CTPS_UF,
-	C.OBSERVACAO,
-	E.LOGRADOURO, E.NUMERO, E.COMPLEMENTO, E.BAIRRO, E.CIDADE, E.CEP, E.MUNICIPIO_IBGE, E.UF,
-	P.ID AS "ID_PESSOA",
-	C.ID_CARGO,
-	C.ID_SETOR,
-	V.COMISSAO,
-	V.META_VENDA
-FROM
-	PESSOA P 
-	INNER JOIN PESSOA_FISICA PF ON (PF.ID_PESSOA = P.ID)
-	INNER JOIN COLABORADOR C ON (C.ID_PESSOA = P.ID)
-	INNER JOIN PESSOA_ENDERECO E ON (E.ID_PESSOA = P.ID)
-	INNER JOIN VENDEDOR V ON (V.ID_COLABORADOR = C.ID)
-WHERE 
-	P.EH_COLABORADOR = "S" AND E.PRINCIPAL = "S"
+select 
+    c.id,
+    p.nome, p.tipo, p.email, p.site, 
+    pf.cpf as cpf_cnpj, 
+    pf.rg as rg_ie,
+    c.matricula,
+    c.data_cadastro,
+    c.data_admissao,
+    c.data_demissao,
+    c.ctps_numero,
+    c.ctps_serie,
+    c.ctps_data_expedicao,
+    c.ctps_uf,
+    c.observacao,
+    e.logradouro, e.numero, e.complemento, e.bairro, e.cidade, e.cep, e.municipio_ibge, e.uf,
+    p.id as id_pessoa,
+    c.id_cargo,
+    c.id_setor,
+    v.comissao,
+    v.meta_venda
+from
+    pessoa p 
+    inner join pessoa_fisica pf on (pf.id_pessoa = p.id)
+    inner join colaborador c on (c.id_pessoa = p.id)
+    left join pessoa_endereco e on (e.id_pessoa = p.id)
+    inner join vendedor v on (v.id_colaborador = c.id)
+where 
+    p.eh_colaborador = 'S'
 
-UNION
+union
 
-SELECT 
-	C.ID,
-	P.NOME, P.TIPO, P.EMAIL, P.SITE, 
-	PJ.CNPJ AS "CPF_CNPJ", 
-	PJ.INSCRICAO_ESTADUAL AS "RG_IE",
-	C.MATRICULA,
-	C.DATA_CADASTRO,
-	C.DATA_ADMISSAO,
-	C.DATA_DEMISSAO,
-	C.CTPS_NUMERO,
-	C.CTPS_SERIE,
-	C.CTPS_DATA_EXPEDICAO,
-	C.CTPS_UF,
-	C.OBSERVACAO,
-	E.LOGRADOURO, E.NUMERO, E.COMPLEMENTO, E.BAIRRO, E.CIDADE, E.CEP, E.MUNICIPIO_IBGE, E.UF,
-	P.ID AS "ID_PESSOA",
-	C.ID_CARGO,
-	C.ID_SETOR,
-	V.COMISSAO,
-	V.META_VENDA
-FROM
-	PESSOA P 
-	INNER JOIN PESSOA_JURIDICA PJ ON (PJ.ID_PESSOA = P.ID)
-	INNER JOIN COLABORADOR C ON (C.ID_PESSOA = P.ID)
-	INNER JOIN PESSOA_ENDERECO E ON (E.ID_PESSOA = P.ID)
-	INNER JOIN VENDEDOR V ON (V.ID_COLABORADOR = C.ID)
-WHERE 
-	P.EH_COLABORADOR = "S" AND E.PRINCIPAL = "S"
+select 
+    c.id,
+    p.nome, p.tipo, p.email, p.site, 
+    pj.cnpj as cpf_cnpj, 
+    pj.inscricao_estadual as rg_ie,
+    c.matricula,
+    c.data_cadastro,
+    c.data_admissao,
+    c.data_demissao,
+    c.ctps_numero,
+    c.ctps_serie,
+    c.ctps_data_expedicao,
+    c.ctps_uf,
+    c.observacao,
+    e.logradouro, e.numero, e.complemento, e.bairro, e.cidade, e.cep, e.municipio_ibge, e.uf,
+    p.id as id_pessoa,
+    c.id_cargo,
+    c.id_setor,
+    v.comissao,
+    v.meta_venda
+from
+    pessoa p 
+    inner join pessoa_juridica pj on (pj.id_pessoa = p.id)
+    inner join colaborador c on (c.id_pessoa = p.id)
+    left join pessoa_endereco e on (e.id_pessoa = p.id)
+    inner join vendedor v on (v.id_colaborador = c.id)
+where 
+    p.eh_colaborador = 'S';

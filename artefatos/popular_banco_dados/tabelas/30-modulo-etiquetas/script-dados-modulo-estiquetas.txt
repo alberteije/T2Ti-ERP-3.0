@@ -1,0 +1,100 @@
+-- 1. Tabela etiqueta_formato_papel
+
+INSERT INTO `etiqueta_formato_papel` (`nome`, `altura`, `largura`) VALUES
+('A4 (210x297 mm)', 297, 210),
+('A5 (148x210 mm)', 210, 148),
+('Carta (216x279 mm)', 279, 216),
+('Ofício (216x330 mm)', 330, 216),
+('Rolo 50x30 mm', 30, 50),
+('Rolo 70x40 mm', 40, 70),
+('Rolo 100x50 mm', 50, 100),
+('Termica 80x50 mm', 50, 80),
+('Termica 100x70 mm', 70, 100),
+('Personalizado 90x60 mm', 60, 90);
+
+
+-- 2. Tabela etiqueta_layout
+
+INSERT INTO `etiqueta_layout` (
+  `id_formato_papel`, `codigo_fabricante`, `quantidade`, 
+  `quantidade_horizontal`, `quantidade_vertical`, 
+  `margem_superior`, `margem_inferior`, `margem_esquerda`, `margem_direita`, 
+  `espacamento_horizontal`, `espacamento_vertical`
+) VALUES
+-- Layout para A4 com 21 etiquetas (7x3)
+(1, 'A4-21ETQ', 21, 7, 3, 10, 10, 10, 10, 5, 5),
+
+-- Layout para A4 com 24 etiquetas (6x4)
+(1, 'A4-24ETQ', 24, 6, 4, 8, 8, 8, 8, 6, 6),
+
+-- Layout para etiquetas pequenas (50x30 mm)
+(5, 'ROLL-50x30', 500, 1, 500, 0, 0, 0, 0, 0, 2),
+
+-- Layout para termica 80x50 mm (2 colunas)
+(8, 'TERM-80x50', 20, 2, 10, 5, 5, 5, 5, 5, 5),
+
+-- Layout personalizado para produtos grandes
+(10, 'CUSTOM-90x60', 10, 2, 5, 10, 10, 15, 15, 10, 10),
+
+-- Layout para etiquetas de código de barras
+(6, 'BAR-70x40', 30, 3, 10, 5, 5, 5, 5, 5, 5),
+
+-- Layout econômico A4
+(1, 'A4-ECON', 40, 8, 5, 5, 5, 5, 5, 3, 3),
+
+-- Layout para etiquetas de endereço
+(2, 'A5-ADDR', 8, 2, 4, 10, 10, 15, 15, 10, 10),
+
+-- Layout para etiquetas de preço
+(7, 'PRICE-100x50', 50, 1, 50, 0, 0, 0, 0, 0, 2),
+
+-- Layout para etiquetas de expedição
+(4, 'SHIP-OFICIO', 15, 3, 5, 10, 10, 15, 15, 10, 10);
+
+
+-- 3. Tabela etiqueta_template
+
+INSERT INTO `etiqueta_template` (
+  `id_etiqueta_layout`, `tabela`, `campo`, `formato`, `quantidade_repeticoes`, `filtro`
+) VALUES
+-- Template para produtos
+(1, 'produto', 'codigo_barras', 1, 1, 'ativo = "S"'),
+(1, 'produto', 'nome', 2, 1, NULL),
+(1, 'produto', 'preco_venda', 3, 1, NULL),
+
+-- Template para endereçamento
+(8, 'colaborador', 'matricula', 1, 1, 'status = "ATIVO"'),
+(8, 'colaborador', 'nome', 2, 1, NULL),
+(8, 'colaborador', 'departamento', 2, 1, NULL),
+
+-- Template para expedição
+(10, 'pedido_venda', 'numero', 1, 2, 'status = "FATURADO"'),
+(10, 'cliente', 'nome', 2, 1, NULL),
+(10, 'cliente', 'endereco', 2, 1, NULL),
+
+-- Template para código de barras simples
+(6, 'produto', 'codigo_barras', 4, 1, 'estoque > 0'),
+
+-- Template para etiquetas de preço promocional
+(9, 'produto', 'codigo_barras', 4, 1, 'promocao = "S"'),
+(9, 'produto', 'nome', 2, 1, NULL),
+(9, 'produto', 'preco_promocional', 3, 2, NULL),
+
+-- Template para ativos fixos
+(5, 'ativo_fixo', 'patrimonio', 1, 1, 'status = "ATIVO"'),
+(5, 'ativo_fixo', 'descricao', 2, 1, NULL),
+(5, 'ativo_fixo', 'localizacao', 2, 1, NULL),
+
+-- Template para etiquetas de estoque mínimo
+(3, 'produto', 'codigo', 1, 1, 'estoque < estoque_minimo'),
+(3, 'produto', 'nome', 2, 1, NULL),
+(3, 'produto', 'estoque', 1, 1, NULL),
+
+-- Template para etiquetas de identificação de equipamentos
+(7, 'equipamento', 'serial', 1, 1, 'status = "OPERACIONAL"'),
+(7, 'equipamento', 'modelo', 2, 1, NULL),
+(7, 'equipamento', 'setor', 2, 1, NULL),
+
+-- Template para etiquetas de localização de estoque
+(2, 'produto', 'codigo', 1, 1, NULL),
+(2, 'produto', 'localizacao_estoque', 2, 1, NULL);

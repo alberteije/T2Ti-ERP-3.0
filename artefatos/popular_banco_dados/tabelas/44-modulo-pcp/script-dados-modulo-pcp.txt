@@ -1,0 +1,175 @@
+==============
+ZERA TUDO
+==============
+
+-- Desativar verificação de chaves estrangeiras temporariamente
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- 1. Apagar dados das tabelas mais dependentes primeiro
+TRUNCATE TABLE pcp_servico_equipamento;
+ALTER TABLE pcp_servico_equipamento AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE pcp_servico_colaborador;
+ALTER TABLE pcp_servico_colaborador AUTO_INCREMENT = 1;
+
+-- 2. Apagar dados das tabelas de serviços
+TRUNCATE TABLE pcp_servico;
+ALTER TABLE pcp_servico AUTO_INCREMENT = 1;
+
+-- 3. Apagar dados das tabelas de instruções de OP
+TRUNCATE TABLE pcp_instrucao_op;
+ALTER TABLE pcp_instrucao_op AUTO_INCREMENT = 1;
+
+-- 4. Apagar dados dos detalhes das OPs
+TRUNCATE TABLE pcp_op_detalhe;
+ALTER TABLE pcp_op_detalhe AUTO_INCREMENT = 1;
+
+-- 5. Apagar dados dos cabeçalhos das OPs
+TRUNCATE TABLE pcp_op_cabecalho;
+ALTER TABLE pcp_op_cabecalho AUTO_INCREMENT = 1;
+
+-- 6. Apagar dados das instruções (tabela independente)
+TRUNCATE TABLE pcp_instrucao;
+ALTER TABLE pcp_instrucao AUTO_INCREMENT = 1;
+
+-- Reativar verificação de chaves estrangeiras
+SET FOREIGN_KEY_CHECKS = 1;
+
+=====================================================================================
+
+-- 1. Tabelas Básicas (Popule primeiro)
+-- INSTRUÇÕES DE PRODUÇÃO (pcp_instrucao)
+INSERT INTO pcp_instrucao (codigo, descricao) VALUES
+('001', 'Preparação de matéria-prima'),
+('002', 'Montagem de componentes'),
+('003', 'Controle de qualidade'),
+('004', 'Embalagem primária'),
+('005', 'Embalagem secundária'),
+('006', 'Armazenamento final'),
+('007', 'Limpeza de equipamentos'),
+('008', 'Calibração de máquinas');
+
+-- 2. Ordens de Produção
+-- CABEÇALHO DAS OPs (pcp_op_cabecalho)
+INSERT INTO pcp_op_cabecalho (
+  inicio, 
+  previsao_entrega, 
+  termino, 
+  custo_total_previsto, 
+  custo_total_realizado, 
+  porcento_venda, 
+  porcento_estoque
+) VALUES
+-- OP 1 (Concluída)
+('2023-06-01', '2023-06-10', '2023-06-08', 5000.000000, 4800.000000, 100.000000, 0.000000),
+
+-- OP 2 (Em andamento)
+('2023-06-15', '2023-06-25', NULL, 7500.000000, 3200.000000, 60.000000, 40.000000),
+
+-- OP 3 (Planejada)
+('2023-07-01', '2023-07-15', NULL, 12000.000000, NULL, 30.000000, 70.000000),
+
+-- OP 4 (Concluída com atraso)
+('2023-05-10', '2023-05-20', '2023-05-25', 8000.000000, 8500.000000, 80.000000, 20.000000),
+
+-- OP 5 (Cancelada)
+('2023-06-05', '2023-06-15', NULL, 3000.000000, 500.000000, 0.000000, 100.000000);
+
+
+-- 3. Detalhes das Ordens de Produção
+-- DETALHES DAS OPs (pcp_op_detalhe) - IDs de produto de 1 a 10
+INSERT INTO pcp_op_detalhe (
+  id_pcp_op_cabecalho, 
+  id_produto, 
+  quantidade_produzir, 
+  quantidade_produzida, 
+  quantidade_entregue, 
+  custo_previsto, 
+  custo_realizado
+) VALUES
+-- Itens para OP 1
+(1, 1, 100.000000, 100.000000, 100.000000, 2000.000000, 1900.000000),
+(1, 2, 50.000000, 50.000000, 50.000000, 3000.000000, 2900.000000),
+
+-- Itens para OP 2
+(2, 3, 200.000000, 80.000000, 0.000000, 5000.000000, 2200.000000),
+(2, 4, 100.000000, 40.000000, 0.000000, 2500.000000, 1000.000000),
+
+-- Itens para OP 3
+(3, 5, 300.000000, NULL, NULL, 7000.000000, NULL),
+(3, 1, 150.000000, NULL, NULL, 5000.000000, NULL),
+
+-- Itens para OP 4
+(4, 2, 80.000000, 80.000000, 80.000000, 5000.000000, 5200.000000),
+(4, 3, 40.000000, 40.000000, 40.000000, 3000.000000, 3300.000000),
+
+-- Itens para OP 5
+(5, 4, 60.000000, 10.000000, 0.000000, 2000.000000, 400.000000),
+(5, 5, 30.000000, 5.000000, 0.000000, 1000.000000, 100.000000);
+
+
+-- 4. Serviços de Produção
+-- SERVIÇOS DE PRODUÇÃO (pcp_servico)
+INSERT INTO pcp_servico (
+  id_pcp_op_detalhe,
+  inicio_previsto,
+  termino_previsto,
+  horas_previsto,
+  minutos_previsto,
+  segundos_previsto,
+  custo_previsto,
+  inicio_realizado,
+  termino_realizado,
+  horas_realizado,
+  minutos_realizado,
+  segundos_realizado,
+  custo_realizado
+) VALUES
+-- Serviços para OP 1 (Item 1)
+(1, '2023-06-01', '2023-06-03', 16, 0, 0, 800.000000, '2023-06-01', '2023-06-02', 14, 30, 0, 750.000000),
+(1, '2023-06-03', '2023-06-05', 8, 0, 0, 400.000000, '2023-06-03', '2023-06-04', 7, 0, 0, 350.000000),
+
+-- Serviços para OP 1 (Item 2)
+(2, '2023-06-05', '2023-06-08', 24, 0, 0, 1200.000000, '2023-06-05', '2023-06-07', 20, 0, 0, 1100.000000),
+
+-- Serviços para OP 2 (Item 3)
+(3, '2023-06-15', '2023-06-18', 20, 0, 0, 1500.000000, '2023-06-15', '2023-06-17', 18, 0, 0, 1400.000000),
+
+-- Serviços para OP 2 (Item 4)
+(4, '2023-06-18', '2023-06-22', 16, 0, 0, 1000.000000, '2023-06-18', NULL, 8, 0, 0, 500.000000),
+
+-- Serviços para OP 4 (Item 7)
+(7, '2023-05-10', '2023-05-15', 40, 0, 0, 2500.000000, '2023-05-10', '2023-05-17', 45, 0, 0, 2800.000000),
+
+-- Serviços para OP 5 (Item 9)
+(9, '2023-06-05', '2023-06-08', 12, 0, 0, 600.000000, '2023-06-05', '2023-06-05', 4, 0, 0, 200.000000);
+
+
+-- 5. Alocação de Recursos
+-- INSTRUÇÕES VINCULADAS ÀS OPs (pcp_instrucao_op)
+INSERT INTO pcp_instrucao_op (id_pcp_instrucao, id_pcp_op_cabecalho) VALUES
+(1, 1), (2, 1), (3, 1), (4, 1),  -- OP 1 com 4 instruções
+(1, 2), (2, 2), (5, 2),          -- OP 2 com 3 instruções
+(1, 3), (2, 3), (6, 3),          -- OP 3 com 3 instruções
+(1, 4), (3, 4), (7, 4),          -- OP 4 com 3 instruções
+(1, 5);                          -- OP 5 com 1 instrução
+
+-- COLABORADORES ALOCADOS AOS SERVIÇOS (pcp_servico_colaborador) - IDs de colaborador de 1 a 10
+INSERT INTO pcp_servico_colaborador (id_pcp_servico, id_colaborador) VALUES
+(1, 1), (1, 2),  -- Serviço 1 com 2 colaboradores
+(2, 3),          -- Serviço 2 com 1 colaborador
+(3, 4), (3, 5),  -- Serviço 3 com 2 colaboradores
+(4, 2), (4, 6),  -- Serviço 4 com 2 colaboradores
+(5, 7),          -- Serviço 5 com 1 colaborador
+(6, 8), (6, 9),  -- Serviço 6 com 2 colaboradores
+(7, 10);         -- Serviço 7 com 1 colaborador
+
+-- EQUIPAMENTOS UTILIZADOS NOS SERVIÇOS (pcp_servico_equipamento) - IDs de patrim_bem de 1 a 5
+INSERT INTO pcp_servico_equipamento (id_patrim_bem, id_pcp_servico) VALUES
+(3, 1),  -- Máquina CNC no serviço 1
+(1, 3),  -- Veículo no serviço 3
+(2, 2),  -- Notebook no serviço 2
+(3, 4),  -- Máquina CNC no serviço 4
+(4, 5),  -- Móvel no serviço 5
+(3, 6),  -- Máquina CNC no serviço 6
+(5, 7);  -- Imóvel no serviço 7

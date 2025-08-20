@@ -1,0 +1,199 @@
+-- 1. Tabela empresa (Matriz e Filiais)
+
+-- Inserindo a empresa matriz
+INSERT INTO `empresa` (
+  `id`, `razao_social`, `nome_fantasia`, `cnpj`, `inscricao_estadual`, 
+  `inscricao_municipal`, `tipo_regime`, `crt`, `email`, `site`, 
+  `contato`, `data_constituicao`, `tipo`, `inscricao_junta_comercial`, 
+  `data_insc_junta_comercial`, `codigo_ibge_cidade`, `codigo_ibge_uf`, 
+  `cei`, `codigo_cnae_principal`, `imagem_logotipo`
+) VALUES (
+  1, 'Sistema ERP Ltda', 'ERP Solutions', '12345678000101', '123456789', 
+  '987654321', '1', '1', 'contato@erpsolutions.com.br', 'www.erpsolutions.com.br', 
+  'Carlos Silva', '2020-01-01', 'M', '1234567', 
+  '2020-01-15', 3550308, 35, 
+  '123456789012', '6202300', NULL
+);
+
+-- Inserindo a filial 1
+INSERT INTO `empresa` (
+  `id`, `razao_social`, `nome_fantasia`, `cnpj`, `inscricao_estadual`, 
+  `inscricao_municipal`, `tipo_regime`, `crt`, `email`, `site`, 
+  `contato`, `data_constituicao`, `tipo`, `inscricao_junta_comercial`, 
+  `data_insc_junta_comercial`, `codigo_ibge_cidade`, `codigo_ibge_uf`, 
+  `cei`, `codigo_cnae_principal`, `imagem_logotipo`
+) VALUES (
+  2, 'ERP Solutions Filial Rio Ltda', 'ERP Rio', '12345678000102', '987654321', 
+  '123456789', '1', '1', 'riodejaneiro@erpsolutions.com.br', 'www.erpsolutions.com.br/rio', 
+  'Ana Oliveira', '2021-03-01', 'F', '7654321', 
+  '2021-03-20', 3304557, 33, 
+  '987654321098', '6202300', NULL
+);
+
+-- Inserindo a filial 2
+INSERT INTO `empresa` (
+  `id`, `razao_social`, `nome_fantasia`, `cnpj`, `inscricao_estadual`, 
+  `inscricao_municipal`, `tipo_regime`, `crt`, `email`, `site`, 
+  `contato`, `data_constituicao`, `tipo`, `inscricao_junta_comercial`, 
+  `data_insc_junta_comercial`, `codigo_ibge_cidade`, `codigo_ibge_uf`, 
+  `cei`, `codigo_cnae_principal`, `imagem_logotipo`
+) VALUES (
+  3, 'ERP Solutions Filial BH Ltda', 'ERP BH', '12345678000103', '456789123', 
+  '321654987', '1', '1', 'belohorizonte@erpsolutions.com.br', 'www.erpsolutions.com.br/bh', 
+  'Pedro Santos', '2022-05-01', 'F', '5678912', 
+  '2022-05-10', 3106200, 31, 
+  '456789123456', '6202300', NULL
+);
+
+
+-- 2. Tabela empresa_endereco
+
+-- Endereço da matriz
+INSERT INTO `empresa_endereco` (
+  `id_empresa`, `logradouro`, `numero`, `bairro`, `cidade`, `uf`, 
+  `cep`, `municipio_ibge`, `complemento`, `principal`, `entrega`, 
+  `cobranca`, `correspondencia`
+) VALUES (
+  1, 'Avenida Paulista', '1000', 'Bela Vista', 'São Paulo', 'SP', 
+  '01310000', 3550308, '10º andar', 'S', 'S', 
+  'S', 'S'
+);
+
+-- Endereço filial Rio
+INSERT INTO `empresa_endereco` (
+  `id_empresa`, `logradouro`, `numero`, `bairro`, `cidade`, `uf`, 
+  `cep`, `municipio_ibge`, `complemento`, `principal`, `entrega`, 
+  `cobranca`, `correspondencia`
+) VALUES (
+  2, 'Avenida Rio Branco', '200', 'Centro', 'Rio de Janeiro', 'RJ', 
+  '20040030', 3304557, '5º andar', 'S', 'S', 
+  'S', 'S'
+);
+
+-- Endereço filial BH
+INSERT INTO `empresa_endereco` (
+  `id_empresa`, `logradouro`, `numero`, `bairro`, `cidade`, `uf`, 
+  `cep`, `municipio_ibge`, `complemento`, `principal`, `entrega`, 
+  `cobranca`, `correspondencia`
+) VALUES (
+  3, 'Avenida Afonso Pena', '1500', 'Funcionários', 'Belo Horizonte', 'MG', 
+  '30130007', 3106200, 'Sala 302', 'S', 'S', 
+  'S', 'S'
+);
+
+
+-- 3. Tabela empresa_telefone
+-- Telefones matriz
+INSERT INTO `empresa_telefone` (`id_empresa`, `tipo`, `numero`) 
+VALUES
+(1, 'F', '11299998888'),
+(1, 'C', '11999998888'),
+(1, 'F', '11299997777');
+
+-- Telefones filial Rio
+INSERT INTO `empresa_telefone` (`id_empresa`, `tipo`, `numero`) 
+VALUES
+(2, 'F', '21288887777'),
+(2, 'C', '2188887777');
+
+-- Telefones filial BH
+INSERT INTO `empresa_telefone` (`id_empresa`, `tipo`, `numero`) 
+VALUES
+(3, 'F', '31377776666'),
+(3, 'C', '3177776666');
+
+
+-- 4. Tabela empresa_contato
+-- Contatos matriz
+INSERT INTO `empresa_contato` (`id_empresa`, `nome`, `email`, `observacao`) 
+VALUES
+(1, 'Joana Pereira', 'joana@erpsolutions.com.br', 'Gerente Comercial'),
+(1, 'Marcos Oliveira', 'marcos@erpsolutions.com.br', 'Gerente Financeiro');
+
+-- Contatos filial Rio
+INSERT INTO `empresa_contato` (`id_empresa`, `nome`, `email`, `observacao`) 
+VALUES
+(2, 'Fernanda Costa', 'fernanda@erpsolutions.com.br', 'Coordenadora Comercial'),
+(2, 'Ricardo Almeida', 'ricardo@erpsolutions.com.br', 'Supervisor de TI');
+
+-- Contatos filial BH
+INSERT INTO `empresa_contato` (`id_empresa`, `nome`, `email`, `observacao`) 
+VALUES
+(3, 'Juliana Mendes', 'juliana@erpsolutions.com.br', 'Gerente Regional'),
+(3, 'Gustavo Lima', 'gustavo@erpsolutions.com.br', 'Analista Financeiro');
+
+-- 5. Tabela empresa_cnae
+-- 
+
+INSERT INTO `cnae` (`codigo`, `denominacao`) VALUES
+('6202300', 'Desenvolvimento de programas de computador sob encomenda'),
+('6201500', 'Desenvolvimento de programas de computador sob encomenda'),
+('6204000', 'Consultoria em tecnologia da informação'),
+('6209100', 'Suporte técnico, manutenção e outros serviços em tecnologia da informação'),
+('8599604', 'Treinamento em informática'),
+('5821200', 'Desenvolvimento e licenciamento de programas de computador customizáveis'),
+('5822100', 'Desenvolvimento e licenciamento de programas de computador não-customizáveis'),
+('6311900', 'Tratamento de dados, provedores de serviços de aplicação e serviços de hospedagem na internet'),
+('6319400', 'Portais, provedores de conteúdo e outros serviços de informação na internet'),
+('6203100', 'Desenvolvimento e licenciamento de programas de computador customizáveis'),
+('4751201', 'Comércio varejista especializado de equipamentos e suprimentos de informática'),
+('4651600', 'Comércio atacadista de equipamentos de informática'),
+('4322300', 'Instalação e manutenção de equipamentos para informática'),
+('6611800', 'Administração de cartões de crédito e débito'),
+('6619301', 'Gestão de ativos intangíveis não-financeiros'),
+('7020400', 'Consultoria em gestão empresarial'),
+('6911701', 'Serviços advocatícios'),
+('7810800', 'Seleção e agenciamento de mão-de-obra'),
+('8230001', 'Promoção de vendas'),
+('8593700', 'Ensino de idiomas');
+
+
+INSERT INTO `empresa_cnae` (`id_empresa`, `id_cnae`, `principal`, `ramo_atividade`, `objeto_social`) 
+VALUES
+-- Matriz (CNAE Principal: 62.02-3-00 - Desenvolvimento de programas de computador sob encomenda)
+(1, 1, 'S', 'Tecnologia', 'Desenvolvimento e comercialização de sistemas ERP'),
+(1, 2, 'N', 'Consultoria', 'Consultoria em tecnologia da informação'),
+
+-- Filial Rio
+(2, 1, 'S', 'Tecnologia', 'Desenvolvimento e comercialização de sistemas ERP'),
+(2, 3, 'N', 'Suporte', 'Suporte técnico em informática'),
+
+-- Filial BH
+(3, 1, 'S', 'Tecnologia', 'Desenvolvimento e comercialização de sistemas ERP'),
+(3, 4, 'N', 'Treinamento', 'Treinamento em sistemas de gestão');
+
+
+-- 6. Tabelas de Empresas de Transporte
+-- Inserindo empresas de transporte
+INSERT INTO `empresa_transporte` (`id`, `uf`, `nome`, `classificacao_contabil_conta`) 
+VALUES
+(1, 'SP', 'Viação Expresso', '6.3.1.01'),
+(2, 'SP', 'Transporte Rápido', '6.3.1.02'),
+(3, 'SP', 'Ônibus Municipal', '6.3.1.03'),
+(4, 'RJ', 'Transporte Fluminense', '6.3.1.04'),
+(5, 'MG', 'Viação Minas', '6.3.1.05');
+
+-- Inserindo itinerários
+INSERT INTO `empresa_transporte_itinerario` (`id_empresa_transporte`, `nome`, `tarifa`, `trajeto`) 
+VALUES
+-- Viação Expresso
+(1, 'Centro - Zona Norte', 5.50, 'Terminal Central -> Av. Principal -> Shopping Norte'),
+(1, 'Zona Norte - Centro', 5.50, 'Shopping Norte -> Av. Principal -> Terminal Central'),
+(1, 'Circular Centro', 4.00, 'Terminal Central -> Praça da Sé -> Av. Paulista -> Terminal Central'),
+
+-- Transporte Rápido
+(2, 'Terminal Leste - Aeroporto', 7.00, 'Terminal Leste -> Marginal -> Aeroporto Internacional'),
+(2, 'Aeroporto - Terminal Leste', 7.00, 'Aeroporto Internacional -> Marginal -> Terminal Leste'),
+
+-- Ônibus Municipal
+(3, 'Linha 100 - Circular', 4.50, 'Terminal Central -> Zona Sul -> Zona Oeste -> Terminal Central'),
+(3, 'Linha 200 - Norte/Sul', 4.50, 'Terminal Norte -> Centro -> Terminal Sul'),
+
+-- Transporte Fluminense
+(4, 'Rodoviária - Barra', 6.00, 'Rodoviária -> Túnel -> Barra da Tijuca'),
+(4, 'Barra - Rodoviária', 6.00, 'Barra da Tijuca -> Túnel -> Rodoviária'),
+
+-- Viação Minas
+(5, 'Central - Pampulha', 5.00, 'Terminal Central -> Av. Antônio Carlos -> Pampulha'),
+(5, 'Pampulha - Central', 5.00, 'Pampulha -> Av. Antônio Carlos -> Terminal Central');
+

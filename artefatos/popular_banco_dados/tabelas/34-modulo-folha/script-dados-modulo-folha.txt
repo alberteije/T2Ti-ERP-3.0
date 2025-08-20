@@ -1,0 +1,127 @@
+-- 1. TIPOS DE AFASTAMENTO (folha_tipo_afastamento)
+INSERT INTO folha_tipo_afastamento (codigo, nome, descricao, codigo_esocial) VALUES
+('001', 'Licença Médica', 'Afastamento por motivo de saúde', '01'),
+('002', 'Férias', 'Gozo de férias remuneradas', '03'),
+('003', 'Licença Maternidade', 'Afastamento por gestação', '04'),
+('004', 'Licença Paternidade', 'Afastamento por paternidade', '05'),
+('005', 'Acidente de Trabalho', 'Afastamento por CAT', '08');
+
+-- 2. EVENTOS DE FOLHA (folha_evento)
+INSERT INTO folha_evento (codigo, nome, descricao, tipo, unidade, base_calculo, taxa, rubrica_esocial, cod_incidencia_previdencia, cod_incidencia_irrf, cod_incidencia_fgts, cod_incidencia_sindicato, repercute_dsr, repercute_13, repercute_ferias, repercute_aviso) VALUES
+('001', 'Salário Base', 'Remuneração básica', 'P', 'M', 'SB', 0.000000, '0001', '11', '01', '01', '00', 'S', 'S', 'S', 'S'),
+('002', 'Hora Extra 50%', 'Horas extras com 50% de acréscimo', 'P', 'H', 'HE', 50.000000, '0201', '11', '01', '01', '00', 'S', 'S', 'S', 'S'),
+('003', 'Vale Transporte', 'Desconto de vale transporte', 'D', 'M', 'VT', 6.000000, '2201', '00', '00', '00', '00', 'N', 'N', 'N', 'N'),
+('004', 'INSS', 'Contribuição previdenciária', 'D', 'M', 'IN', 11.000000, '9210', '00', '00', '00', '00', 'N', 'N', 'N', 'N'),
+('005', 'Plano de Saúde', 'Desconto plano de saúde', 'D', 'M', 'PS', 0.000000, '9205', '00', '00', '00', '00', 'N', 'N', 'N', 'N');
+
+-- 3. AFASTAMENTOS (folha_afastamento) - Assumindo IDs de colaboradores existentes
+INSERT INTO folha_afastamento (id_folha_tipo_afastamento, id_colaborador, data_inicio, data_fim, dias_afastado) VALUES
+(1, 1, '2023-05-10', '2023-05-20', 10),
+(3, 2, '2023-06-01', '2023-09-30', 120),
+(2, 3, '2023-07-15', '2023-08-15', 30);
+
+-- 4. FÉRIAS COLETIVAS (folha_ferias_coletivas)
+INSERT INTO folha_ferias_coletivas (data_inicio, data_fim, dias_gozo, abono_pecuniario_inicio, abono_pecuniario_fim, dias_abono, data_pagamento) VALUES
+('2023-12-01', '2023-12-30', 30, NULL, NULL, 0, '2023-11-25'),
+('2024-01-05', '2024-02-05', 30, '2024-01-05', '2024-01-15', 10, '2023-12-20');
+
+-- 5. HISTÓRICO SALARIAL (folha_historico_salarial)
+INSERT INTO folha_historico_salarial (id_colaborador, competencia, salario_atual, percentual_aumento, salario_novo, valido_a_partir, motivo) VALUES
+(1, '2023-01', 3000.000000, 10.000000, 3300.000000, '2023-02', 'Reajuste anual'),
+(2, '2023-03', 4500.000000, 5.000000, 4725.000000, '2023-04', 'Promoção');
+
+-- 6. PARÂMETROS DE FOLHA (folha_parametro)
+INSERT INTO folha_parametro (competencia, contribui_pis, aliquota_pis, discriminar_dsr, dia_pagamento, calculo_proporcionalidade, descontar_faltas_13, pagar_adicionais_13, pagar_estagiarios_13, mes_adiantamento_13, percentual_adiantam_13, ferias_descontar_faltas, ferias_pagar_adicionais, ferias_adiantar_13, ferias_pagar_estagiarios, ferias_calc_justa_causa, ferias_movimento_mensal) VALUES
+('2023-01', 'S', 0.650000, 'S', '05', 'S', 'S', 'S', 'N', '11', 50.000000, 'S', 'S', 'N', 'N', 'S', 'N');
+
+-- 7. RESCISÕES (folha_rescisao)
+INSERT INTO folha_rescisao (id_colaborador, data_demissao, data_pagamento, motivo, motivo_esocial, data_aviso_previo, dias_aviso_previo, comprovou_novo_emprego, dispensou_empregado, pensao_alimenticia, pensao_alimenticia_fgts, fgts_valor_rescisao, fgts_saldo_banco, fgts_complemento_saldo, fgts_codigo_afastamento, fgts_codigo_saque) VALUES
+(1, '2023-06-15', '2023-06-20', 'Demissão sem justa causa', '01', '2023-05-15', 30, 'N', 'S', 500.000000, 0.000000, 2000.000000, 5000.000000, 0.000000, '10', '03');
+
+-- 8. PPP (folha_ppp)
+INSERT INTO folha_ppp (id_colaborador, observacao) VALUES
+(1, 'PPP para análise de riscos ocupacionais');
+
+-- 9. PPP - EXAMES MÉDICOS (folha_ppp_exame_medico)
+INSERT INTO folha_ppp_exame_medico (id_folha_ppp, data_ultimo, tipo, natureza, exame, indicacao_resultados) VALUES
+(1, '2023-01-10', 'A', 'Admissional', 'S', 'Apto');
+
+-- 10. VALE TRANSPORTE (folha_vale_transporte) - Assumindo ID de empresa_transporte_itinerario existente
+INSERT INTO folha_vale_transporte (id_empresa_transp_itin, id_colaborador, quantidade) VALUES
+(1, 1, 44),
+(1, 2, 22);
+
+-- 11. FECHAMENTO DE FOLHA (folha_fechamento)
+INSERT INTO folha_fechamento (fechamento_atual, proximo_fechamento) VALUES
+('2023-01', '2023-02'),
+('2023-02', '2023-03'),
+('2023-03', '2023-04');
+
+-- 12. INSS (folha_inss)
+INSERT INTO folha_inss (competencia) VALUES
+('2023-01'),
+('2023-02'),
+('2023-03');
+
+-- 13. SERVIÇOS DO INSS (folha_inss_servico)
+INSERT INTO folha_inss_servico (codigo, nome) VALUES
+('101', 'INSS - Serviços Gerais'),
+('102', 'INSS - Seguro Acidente'),
+('103', 'INSS - Rat Reajuste');
+
+-- 14. RETENÇÕES DO INSS (folha_inss_retencao) - Assumindo IDs de folha_inss e folha_inss_servico existentes
+INSERT INTO folha_inss_retencao (id_folha_inss, id_folha_inss_servico, valor_mensal, valor_13) VALUES
+(1, 1, 5000.000000, 1000.000000),
+(1, 2, 200.000000, 50.000000),
+(2, 1, 5200.000000, 1100.000000);
+
+-- 15. LANÇAMENTO CABEÇALHO (folha_lancamento_cabecalho) - ID colaborador = 1, 2, 3
+INSERT INTO folha_lancamento_cabecalho (id_colaborador, competencia, tipo) VALUES
+(1, '2023-01', 'M'),
+(2, '2023-01', 'M'),
+(3, '2023-02', 'M');
+
+-- 16. LANÇAMENTO COMISSÃO (folha_lancamento_comissao) - ID vendedor = 1, 2, 3
+INSERT INTO folha_lancamento_comissao (id_vendedor, competencia, vencimento, base_calculo, valor_comissao) VALUES
+(1, '2023-01', '2023-02-05', 10000.000000, 500.000000),
+(2, '2023-01', '2023-02-05', 8000.000000, 400.000000),
+(3, '2023-02', '2023-03-05', 12000.000000, 600.000000);
+
+-- 17. LANÇAMENTO DETALHE (folha_lancamento_detalhe) - Assumindo IDs de folha_evento e folha_lancamento_cabecalho existentes
+INSERT INTO folha_lancamento_detalhe (id_folha_evento, id_folha_lancamento_cabecalho, origem, provento, desconto) VALUES
+(1, 1, 3000.000000, 3000.000000, 0.000000),
+(2, 1, 200.000000, 300.000000, 0.000000),
+(3, 2, 0.000000, 0.000000, 150.000000);
+
+-- OPERADORAS DE PLANO DE SAÚDE (operadora_plano_saude)
+INSERT INTO operadora_plano_saude (registro_ans, nome, classificacao_contabil_conta) VALUES
+('12345', 'Amil Assistência Médica', '3.01.01.001'),
+('23456', 'Unimed Nacional', '3.01.01.002'),
+('34567', 'SulAmérica Saúde', '3.01.01.003'),
+('45678', 'Bradesco Saúde', '3.01.01.004'),
+('56789', 'Hapvida', '3.01.01.005'),
+('67890', 'NotreDame Intermédica', '3.01.01.006'),
+('78901', 'Prevent Senior', '3.01.01.007'),
+('89012', 'Porto Seguro Saúde', '3.01.01.008'),
+('90123', 'Golden Cross', '3.01.01.009'),
+('01234', 'GNDI (Grupo NotreDame)', '3.01.01.010');
+
+-- 18. PLANO DE SAÚDE (folha_plano_saude) - ID colaborador = 1, 2, 3 | ID operadora = 1, 2
+INSERT INTO folha_plano_saude (id_colaborador, id_operadora_plano_saude, data_inicio, beneficiario) VALUES
+(1, 1, '2023-01-01', 'T'),
+(2, 2, '2023-01-15', 'F'),
+(3, 1, '2023-02-01', 'T');
+
+-- 19. PPP ATIVIDADE (folha_ppp_atividade) - Assumindo ID de folha_ppp existente
+INSERT INTO folha_ppp_atividade (id_folha_ppp, data_inicio, data_fim, descricao) VALUES
+(1, '2023-01-01', '2023-12-31', 'Operação de máquinas pesadas'),
+(1, '2023-01-01', NULL, 'Exposição a ruído constante');
+
+-- 20. PPP CAT (folha_ppp_cat) - Assumindo ID de folha_ppp existente
+INSERT INTO folha_ppp_cat (id_folha_ppp, numero_cat, data_afastamento, data_registro) VALUES
+(1, 12345, '2023-03-10', '2023-03-11');
+
+-- 21. PPP FATOR RISCO (folha_ppp_fator_risco) - Assumindo ID de folha_ppp existente
+INSERT INTO folha_ppp_fator_risco (id_folha_ppp, data_inicio, data_fim, tipo, fator_risco, intensidade, tecnica_utilizada, epc_eficaz, epi_eficaz, ca_epi, atendimento_nr06_1, atendimento_nr06_2, atendimento_nr06_3, atendimento_nr06_4, atendimento_nr06_5) VALUES
+(1, '2023-01-01', NULL, 'F', 'Ruído acima de 85dB', 'Alta', 'Avaliação audiométrica', 'S', 'S', 101, 'S', 'S', 'S', 'S', 'S'),
+(1, '2023-01-01', NULL, 'Q', 'Produtos químicos', 'Média', 'Ventilação forçada', 'S', 'S', 102, 'S', 'S', 'S', 'N', 'N');

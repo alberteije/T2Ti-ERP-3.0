@@ -1,0 +1,214 @@
+INSERT INTO vendedor (id_colaborador, id_comissao_perfil, comissao, meta_venda)
+VALUES 
+  (1, 1, 0.050000, 100000.00), -- João Silva, vendedor pleno
+  (2, 2, 0.035000, 75000.00),  -- Maria Oliveira, vendedora júnior
+  (3, 1, 0.060000, 200000.00), -- Carlos Souza, vendedor sênior
+  (4, 2, 0.030000, 50000.00);  -- Ana Costa, vendedora iniciante
+
+
+-- Inserção na tabela nfe_cabecalho (3 notas fiscais)
+INSERT INTO `nfe_cabecalho` (
+  `id_vendedor`, `uf_emitente`, `codigo_numerico`, `natureza_operacao`, `codigo_modelo`, 
+  `serie`, `numero`, `data_hora_emissao`, `data_hora_entrada_saida`, `tipo_operacao`, 
+  `local_destino`, `codigo_municipio`, `formato_impressao_danfe`, `tipo_emissao`, 
+  `chave_acesso`, `digito_chave_acesso`, `ambiente`, `finalidade_emissao`, 
+  `consumidor_operacao`, `consumidor_presenca`, `processo_emissao`, 
+  `versao_processo_emissao`, `base_calculo_icms`, `valor_icms`, `valor_icms_desonerado`, 
+  `total_icms_fcp_uf_destino`, `total_icms_interestadual_uf_destino`, 
+  `total_icms_interestadual_uf_remetente`, `valor_total_fcp`, `base_calculo_icms_st`, 
+  `valor_icms_st`, `valor_total_fcp_st`, `valor_total_fcp_st_retido`, `valor_total_produtos`, 
+  `valor_frete`, `valor_seguro`, `valor_desconto`, `valor_imposto_importacao`, 
+  `valor_ipi`, `valor_ipi_devolvido`, `valor_pis`, `valor_cofins`, `valor_despesas_acessorias`, 
+  `valor_total`, `valor_total_tributos`, `valor_servicos`, `base_calculo_issqn`, 
+  `valor_issqn`, `valor_pis_issqn`, `valor_cofins_issqn`, `regime_especial_tributacao`, 
+  `valor_retido_pis`, `valor_retido_cofins`, `valor_retido_csll`, `base_calculo_irrf`, 
+  `valor_retido_irrf`, `base_calculo_previdencia`, `valor_retido_previdencia`, 
+  `status_nota`, `id_fornecedor`, `id_cliente`
+) VALUES
+-- Nota Fiscal 1 - Venda para consumidor final
+(1, 35, '12345678', 'VENDA', '55', '1', '1001', '2024-03-01 10:30:00', '2024-03-01 10:30:00', 
+'1', '1', 3550308, '1', '1', '35190312345678000115550010000001001001000123', '1', '1', 
+'1', '1', '2', '0', '3.00', 1000.00, 180.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 
+0.00, 1000.00, 50.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 1050.00, 250.00, 
+0.00, 0.00, 0.00, 0.00, 0.00, NULL, NULL, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 
+'1', NULL, 1),
+
+-- Nota Fiscal 2 - Venda para outra UF
+(2, 35, '87654321', 'VENDA', '55', '1', '1002', '2024-03-02 14:15:00', '2024-03-02 14:15:00', 
+'1', '1', 3550308, '1', '1', '35190387654321000115550010000002002002000123', '2', '1', 
+'1', '0', '0', '0', '3.00', 2500.00, 450.00, 125.00, 175.00, 75.00, 12.50, 2750.00, 
+125.00, 0.00, 0.00, 2500.00, 150.00, 100.00, 50.00, 0.00, 125.00, 0.00, 12.50, 15.00, 
+10.00, 2850.00, 350.00, 0.00, 0.00, 0.00, 0.00, 0.00, NULL, NULL, 0.00, 0.00, 0.00, 
+0.00, 0.00, 0.00, 0.00, '1', NULL, 2),
+
+-- Nota Fiscal 3 - Compra de fornecedor
+(3, 35, '11223344', 'COMPRA', '55', '1', '1003', '2024-03-03 09:45:00', '2024-03-03 09:45:00', 
+'0', '1', 3550308, '1', '1', '35190311223344000115550010000003003003000123', '3', '1', 
+'4', '0', '0', '0', '3.00', 1800.00, 324.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 
+0.00, 1800.00, 0.00, 0.00, 0.00, 90.00, 36.00, 0.00, 18.00, 9.00, 0.00, 1800.00, 432.00, 
+0.00, 0.00, 0.00, 0.00, 0.00, NULL, NULL, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 
+'1', 1, NULL);
+
+-- Inserção na tabela nfe_emitente (dados do emissor)
+INSERT INTO `nfe_emitente` (
+  `id_nfe_cabecalho`, `cnpj`, `nome`, `fantasia`, `logradouro`, `numero`, 
+  `complemento`, `bairro`, `codigo_municipio`, `nome_municipio`, `uf`, 
+  `cep`, `telefone`, `inscricao_estadual`, `cnae`, `crt`
+) VALUES
+(1, '12345678000115', 'EMPRESA COMERCIAL LTDA', 'COMERCIAL LTDA', 'RUA DAS FLORES', '100', 
+'SALA 101', 'CENTRO', 3550308, 'SÃO PAULO', 'SP', 
+'01001000', '1122223333', '12345678901234', '4712102', '1'),
+(2, '12345678000115', 'EMPRESA COMERCIAL LTDA', 'COMERCIAL LTDA', 'RUA DAS FLORES', '100', 
+'SALA 101', 'CENTRO', 3550308, 'SÃO PAULO', 'SP', 
+'01001000', '1122223333', '12345678901234', '4712102', '1'),
+(3, '12345678000115', 'EMPRESA COMERCIAL LTDA', 'COMERCIAL LTDA', 'RUA DAS FLORES', '100', 
+'SALA 101', 'CENTRO', 3550308, 'SÃO PAULO', 'SP', 
+'01001000', '1122223333', '12345678901234', '4712102', '1');
+
+-- Inserção na tabela nfe_destinatario
+INSERT INTO `nfe_destinatario` (
+  `id_nfe_cabecalho`, `cnpj`, `nome`, `logradouro`, `numero`, `complemento`, 
+  `bairro`, `codigo_municipio`, `nome_municipio`, `uf`, `cep`, `telefone`, 
+  `indicador_ie`, `inscricao_estadual`, `email`
+) VALUES
+-- Destinatário NF 1 (consumidor final)
+(1, NULL, 'CONSUMIDOR FINAL', 'AV. BRASIL', '500', 'APTO 101', 
+'JARDIM AMÉRICA', 3550308, 'SÃO PAULO', 'SP', '01414000', '11988887777', 
+'9', NULL, 'cliente1@email.com'),
+
+-- Destinatário NF 2 (empresa de outra UF)
+(2, '98765432000198', 'INDUSTRIA ABC LTDA', 'RUA DAS INDUSTRIAS', '1000', 'GALPAO 5', 
+'DISTRITO INDUSTRIAL', 4106902, 'CURITIBA', 'PR', '81200100', '4133334444', 
+'1', '98765432109876', 'industria@abc.com'),
+
+-- Destinatário NF 3 (fornecedor - nota de entrada)
+(3, '11222333000144', 'DISTRIBUIDORA XYZ S.A.', 'AV. DAS NACOES', '2000', 'BLOCO B', 
+'CENTRO', 3550308, 'SÃO PAULO', 'SP', '01002000', '1122225555', 
+'1', '11222333456789', 'vendas@xyz.com.br');
+
+-- Inserção na tabela nfe_detalhe (itens das notas)
+INSERT INTO `nfe_detalhe` (
+  `id_nfe_cabecalho`, `id_produto`, `numero_item`, `codigo_produto`, `nome_produto`, 
+  `ncm`, `cest`, `cfop`, `unidade_comercial`, `quantidade_comercial`, 
+  `valor_unitario_comercial`, `valor_bruto_produto`, `unidade_tributavel`, 
+  `quantidade_tributavel`, `valor_unitario_tributavel`, `valor_frete`, 
+  `valor_seguro`, `valor_desconto`, `valor_outras_despesas`, `entra_total`, 
+  `valor_total_tributos`, `valor_subtotal`, `valor_total`
+) VALUES
+-- Itens NF 1 (2 produtos)
+(1, 1, 1, 'PROD001', 'NOTEBOOK I7', '84713000', '1709600', 5102, 'UN', 1.000000, 
+3500.000000, 3500.000000, 'UN', 1.000000, 3500.000000, 0.000000, 
+0.000000, 0.000000, 0.000000, 'S', 1050.000000, 3500.000000, 3500.000000),
+(1, 2, 2, 'PROD002', 'MOUSE SEM FIO', '84716060', '1709700', 5102, 'UN', 2.000000, 
+50.000000, 100.000000, 'UN', 2.000000, 50.000000, 0.000000, 
+0.000000, 0.000000, 0.000000, 'S', 30.000000, 100.000000, 100.000000),
+
+-- Itens NF 2 (1 produto)
+(2, 3, 1, 'PROD003', 'IMPRESSORA LASER', '84433121', '1709800', 6102, 'UN', 1.000000, 
+2500.000000, 2500.000000, 'UN', 1.000000, 2500.000000, 150.000000, 
+100.000000, 50.000000, 0.000000, 'S', 750.000000, 2500.000000, 2500.000000),
+
+-- Itens NF 3 (3 produtos)
+(3, 4, 1, 'PROD004', 'MATERIAL DE ESCRITORIO', '39261000', NULL, 1403, 'UN', 10.000000, 
+5.000000, 50.000000, 'UN', 10.000000, 5.000000, 0.000000, 
+0.000000, 0.000000, 0.000000, 'S', 15.000000, 50.000000, 50.000000),
+(3, 5, 2, 'PROD005', 'TONER IMPRESSORA', '37031000', NULL, 1403, 'UN', 5.000000, 
+100.000000, 500.000000, 'UN', 5.000000, 100.000000, 0.000000, 
+0.000000, 0.000000, 0.000000, 'S', 150.000000, 500.000000, 500.000000),
+(3, 6, 3, 'PROD006', 'PAPEL A4', '48025690', NULL, 1403, 'CX', 2.000000, 
+25.000000, 50.000000, 'CX', 2.000000, 25.000000, 0.000000, 
+0.000000, 0.000000, 0.000000, 'S', 15.000000, 50.000000, 50.000000);
+
+-- Inserção na tabela nfe_detalhe_imposto_icms (impostos dos itens)
+INSERT INTO `nfe_detalhe_imposto_icms` (
+  `id_nfe_detalhe`, `origem_mercadoria`, `cst_icms`, `modalidade_bc_icms`, 
+  `valor_bc_icms`, `aliquota_icms`, `valor_icms`, `modalidade_bc_icms_st`, 
+  `valor_base_calculo_icms_st`, `aliquota_icms_st`, `valor_icms_st`
+) VALUES
+-- ICMS para itens NF 1
+(1, '0', '00', '0', 3500.000000, 18.000000, 630.000000, '4', 0.000000, 18.000000, 0.000000),
+(2, '0', '00', '0', 100.000000, 18.000000, 18.000000, '4', 0.000000, 18.000000, 0.000000),
+
+-- ICMS para item NF 2 (com ST)
+(3, '0', '00', '0', 2500.000000, 18.000000, 450.000000, '4', 2750.000000, 18.000000, 125.000000),
+
+-- ICMS para itens NF 3
+(4, '0', '00', '0', 50.000000, 18.000000, 9.000000, '4', 0.000000, 18.000000, 0.000000),
+(5, '0', '00', '0', 500.000000, 18.000000, 90.000000, '4', 0.000000, 18.000000, 0.000000),
+(6, '0', '00', '0', 50.000000, 18.000000, 9.000000, '4', 0.000000, 18.000000, 0.000000);
+
+-- Inserção na tabela nfe_detalhe_imposto_ipi
+INSERT INTO `nfe_detalhe_imposto_ipi` (
+  `id_nfe_detalhe`, `cst_ipi`, `valor_ipi`
+) VALUES
+(1, '50', 0.000000),
+(2, '50', 0.000000),
+(3, '50', 125.000000),
+(4, '50', 0.000000),
+(5, '50', 36.000000),
+(6, '50', 0.000000);
+
+-- Inserção na tabela nfe_detalhe_imposto_pis
+INSERT INTO `nfe_detalhe_imposto_pis` (
+  `id_nfe_detalhe`, `cst_pis`, `valor_base_calculo_pis`, `aliquota_pis_percentual`, `valor_pis`
+) VALUES
+(1, '01', 3500.000000, 1.650000, 57.750000),
+(2, '01', 100.000000, 1.650000, 1.650000),
+(3, '01', 2500.000000, 1.650000, 41.250000),
+(4, '01', 50.000000, 1.650000, 0.825000),
+(5, '01', 500.000000, 1.650000, 8.250000),
+(6, '01', 50.000000, 1.650000, 0.825000);
+
+-- Inserção na tabela nfe_detalhe_imposto_cofins
+INSERT INTO `nfe_detalhe_imposto_cofins` (
+  `id_nfe_detalhe`, `cst_cofins`, `base_calculo_cofins`, `aliquota_cofins_percentual`, `valor_cofins`
+) VALUES
+(1, '01', 3500.000000, 7.600000, 266.000000),
+(2, '01', 100.000000, 7.600000, 7.600000),
+(3, '01', 2500.000000, 7.600000, 190.000000),
+(4, '01', 50.000000, 7.600000, 3.800000),
+(5, '01', 500.000000, 7.600000, 38.000000),
+(6, '01', 50.000000, 7.600000, 3.800000);
+
+-- Inserção na tabela nfe_transporte
+INSERT INTO `nfe_transporte` (
+  `id_nfe_cabecalho`, `modalidade_frete`, `cnpj`, `nome`, 
+  `inscricao_estadual`, `endereco`, `nome_municipio`, `uf`, 
+  `valor_servico`, `placa_veiculo`, `uf_veiculo`
+) VALUES
+(1, '1', '99888777000166', 'TRANSPORTADORA RAPIDA LTDA', 
+'99888777654321', 'RUA DOS TRANSPORTES, 500', 'SÃO PAULO', 'SP', 
+50.000000, 'ABC1234', 'SP'),
+
+(2, '0', NULL, NULL, 
+NULL, NULL, NULL, NULL, 
+0.000000, NULL, NULL),
+
+(3, '2', '11222333000144', 'DISTRIBUIDORA XYZ S.A.', 
+'11222333456789', 'AV. DAS NACOES, 2000', 'SÃO PAULO', 'SP', 
+0.000000, 'XYZ9876', 'SP');
+
+-- Inserção na tabela nfe_fatura
+INSERT INTO `nfe_fatura` (
+  `id_nfe_cabecalho`, `numero`, `valor_original`, `valor_desconto`, `valor_liquido`
+) VALUES
+(1, 'FAT001', 1050.000000, 0.000000, 1050.000000),
+(2, 'FAT002', 2850.000000, 0.000000, 2850.000000),
+(3, 'FAT003', 1800.000000, 0.000000, 1800.000000);
+
+-- Inserção na tabela nfe_duplicata (parcelas)
+INSERT INTO `nfe_duplicata` (
+  `id_nfe_fatura`, `numero`, `data_vencimento`, `valor`
+) VALUES
+(1, 'DUP001', '2024-04-01', 1050.000000),
+(2, 'DUP002', '2024-04-02', 1425.000000),
+(2, 'DUP003', '2024-05-02', 1425.000000),
+(3, 'DUP004', '2024-04-10', 1800.000000);
+
+-- Inserção na tabela nfe_informacao_pagamento
+INSERT INTO `nfe_informacao_pagamento` (
+  `id_nfe_cabecalho`, `indicador_pagamento`, `meio_pagamento`, `valor`, `tipo_integracao`
+) VALUES
+(1, '0', '01', 1050.000000, '1'),
+(2, '0', '01', 2850.000000, '1'),
+(3, '0', '01', 1800.000000, '1');

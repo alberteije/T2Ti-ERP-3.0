@@ -1,47 +1,59 @@
-CREATE VIEW VIEW_FIN_MOVIMENTO_CAIXA_BANCO(
-    ID,
-    ID_CONTA_CAIXA,
-    NOME_CONTA_CAIXA,
-    NOME_PESSOA,
-	DATA_LANCAMENTO,
-    DATA_PAGO_RECEBIDO,
-	MES_ANO,
-    HISTORICO,
-    VALOR,
-    DESCRICAO_DOCUMENTO_ORIGEM,
-    OPERACAO)
-AS
+create view view_fin_movimento_caixa_banco (
+    id,
+    id_banco_conta_caixa,
+    nome_conta_caixa,
+    nome_pessoa,
+    data_lancamento,
+    data_pago_recebido,
+    mes_ano,
+    historico,
+    valor,
+    descricao_documento_origem,
+    operacao
+) as
+
 select
-  CAST( CONCAT(CC.ID,LP.ID,PP.ID) as UNSIGNED) as ID,
-  CC.ID AS ID_CONTA_CAIXA, CC.NOME AS NOME_CONTA_CAIXA, P.NOME,
-  LP.DATA_LANCAMENTO, PP.DATA_PAGAMENTO AS DATA_PAGO_RECEBIDO, 
-  DATE_FORMAT(PP.DATA_PAGAMENTO,'%m/%Y') as MES_ANO,
-  PP.HISTORICO, PP.VALOR_PAGO, DOC.DESCRICAO, 'S' AS OPERACAO
- 
+    cast(concat(cc.id, lp.id, pp.id) as unsigned) as id,
+    cc.id as id_banco_conta_caixa,
+    cc.nome as nome_conta_caixa,
+    p.nome as nome_pessoa,
+    lp.data_lancamento,
+    pp.data_pagamento as data_pago_recebido,
+    date_format(pp.data_pagamento, '%m/%Y') as mes_ano,
+    pp.historico,
+    pp.valor_pago as valor,
+    doc.descricao as descricao_documento_origem,
+    'S' as operacao
+
 from 
-  FIN_PARCELA_PAGAR PP 
-	inner join FIN_LANCAMENTO_PAGAR LP on (PP.ID_FIN_LANCAMENTO_PAGAR = LP.ID)
-	inner join BANCO_CONTA_CAIXA CC on (LP.ID_BANCO_CONTA_CAIXA = CC.ID)
-	inner join FORNECEDOR F on (LP.ID_FORNECEDOR = F.ID) 
-	inner join PESSOA P on (F.ID_PESSOA = P.ID)
-	inner join FIN_DOCUMENTO_ORIGEM DOC on (LP.ID_FIN_DOCUMENTO_ORIGEM = DOC.ID)
-  
+    fin_parcela_pagar pp
+    inner join fin_lancamento_pagar lp on (pp.id_fin_lancamento_pagar = lp.id)
+    inner join banco_conta_caixa cc on (lp.id_banco_conta_caixa = cc.id)
+    inner join fornecedor f on (lp.id_fornecedor = f.id)
+    inner join pessoa p on (f.id_pessoa = p.id)
+    inner join fin_documento_origem doc on (lp.id_fin_documento_origem = doc.id)
+
 union
- 
+
 select
-  CAST( CONCAT(CC.ID,LR.ID,PR.ID) as UNSIGNED) as ID,
-  CC.ID AS ID_CONTA_CAIXA, CC.NOME AS NOME_CONTA_CAIXA, P.NOME,
-  LR.DATA_LANCAMENTO, PR.DATA_RECEBIMENTO AS DATA_PAGO_RECEBIDO, 
-  DATE_FORMAT(PR.DATA_RECEBIMENTO,'%m/%Y') as MES_ANO,
-  PR.HISTORICO, PR.VALOR_RECEBIDO, DOC.DESCRICAO, 'E' AS OPERACAO
- 
+    cast(concat(cc.id, lr.id, pr.id) as unsigned) as id,
+    cc.id as id_banco_conta_caixa,
+    cc.nome as nome_conta_caixa,
+    p.nome as nome_pessoa,
+    lr.data_lancamento,
+    pr.data_recebimento as data_pago_recebido,
+    date_format(pr.data_recebimento, '%m/%Y') as mes_ano,
+    pr.historico,
+    pr.valor_recebido as valor,
+    doc.descricao as descricao_documento_origem,
+    'E' as operacao
+
 from 
-  FIN_PARCELA_RECEBER PR
-	inner join FIN_LANCAMENTO_RECEBER LR on (PR.ID_FIN_LANCAMENTO_RECEBER = LR.ID)
-	inner join BANCO_CONTA_CAIXA CC on (LR.ID_BANCO_CONTA_CAIXA = CC.ID)
-	inner join CLIENTE C on (LR.ID_CLIENTE = C.ID) 
-	inner join PESSOA P on (C.ID_PESSOA = P.ID)
-	inner join FIN_DOCUMENTO_ORIGEM DOC on (LR.ID_FIN_DOCUMENTO_ORIGEM = DOC.ID)
- 
-ORDER BY 2, 5
-;
+    fin_parcela_receber pr
+    inner join fin_lancamento_receber lr on (pr.id_fin_lancamento_receber = lr.id)
+    inner join banco_conta_caixa cc on (lr.id_banco_conta_caixa = cc.id)
+    inner join cliente c on (lr.id_cliente = c.id)
+    inner join pessoa p on (c.id_pessoa = p.id)
+    inner join fin_documento_origem doc on (lr.id_fin_documento_origem = doc.id)
+
+order by id_banco_conta_caixa, data_lancamento;

@@ -1,0 +1,109 @@
+-- Inserção na tabela fiscal_estadual_porte
+INSERT INTO `fiscal_estadual_porte` (`uf`, `codigo`, `nome`) VALUES
+('SP', '01', 'Microempresa'),
+('SP', '02', 'Empresa de Pequeno Porte'),
+('SP', '03', 'Demais Empresas'),
+('RJ', '01', 'Microempresa'),
+('RJ', '02', 'Empresa de Pequeno Porte'),
+('MG', '01', 'Microempresa'),
+('MG', '02', 'Empresa de Pequeno Porte'),
+('RS', '01', 'Microempresa'),
+('RS', '02', 'Empresa de Pequeno Porte');
+
+-- Inserção na tabela fiscal_estadual_regime
+INSERT INTO `fiscal_estadual_regime` (`uf`, `codigo`, `nome`) VALUES
+('SP', '1', 'Simples Nacional'),
+('SP', '2', 'Lucro Presumido'),
+('SP', '3', 'Lucro Real'),
+('RJ', '1', 'Simples Nacional'),
+('RJ', '2', 'Lucro Presumido'),
+('MG', '1', 'Simples Nacional'),
+('MG', '2', 'Lucro Presumido'),
+('RS', '1', 'Simples Nacional'),
+('RS', '2', 'Lucro Presumido');
+
+-- Inserção na tabela fiscal_municipal_regime
+INSERT INTO `fiscal_municipal_regime` (`uf`, `codigo`, `nome`) VALUES
+('SP', '1', 'Simples Nacional'),
+('SP', '2', 'Estimativa'),
+('SP', '3', 'Lucro Arbitrado'),
+('RJ', '1', 'Simples Nacional'),
+('RJ', '2', 'Estimativa'),
+('MG', '1', 'Simples Nacional'),
+('MG', '2', 'Estimativa'),
+('RS', '1', 'Simples Nacional'),
+('RS', '2', 'Estimativa');
+
+-- Inserção na tabela fiscal_livro
+INSERT INTO `fiscal_livro` (`descricao`) VALUES
+('Livro de Entradas'),
+('Livro de Saídas'),
+('Livro de Inventário'),
+('Livro de Apuração do ICMS'),
+('Livro de Apuração do IPI');
+
+-- Inserção na tabela fiscal_parametro
+INSERT INTO `fiscal_parametro` (
+  `id_fiscal_estadual_porte`, `id_fiscal_estadual_regime`, `id_fiscal_municipal_regime`, 
+  `vigencia`, `descricao_vigencia`, `criterio_lancamento`, `apuracao`, 
+  `microempree_individual`, `calc_pis_cofins_efd`, `simples_codigo_acesso`, 
+  `simples_tabela`, `simples_atividade`, `perfil_sped`, `apuracao_consolidada`, 
+  `substituicao_tributaria`, `forma_calculo_iss`
+) VALUES
+(1, 1, 1, '2024-01', 'Vigência a partir de Janeiro/2024', '1', 'M', 'S', '01', 'SN123456789', 'A', '01', 'A', 'N', 'S', '01'),
+(2, 2, 2, '2024-01', 'Vigência a partir de Janeiro/2024', '2', 'T', 'N', '02', NULL, 'B', '02', 'B', 'S', 'N', '02'),
+(3, 3, 3, '2024-01', 'Vigência a partir de Janeiro/2024', '1', 'M', 'N', '03', NULL, 'C', '03', 'C', 'N', 'S', '03');
+
+-- Inserção na tabela fiscal_inscricoes_substitutas
+INSERT INTO `fiscal_inscricoes_substitutas` (
+  `id_fiscal_parametros`, `uf`, `inscricao_estadual`, `pmpf`
+) VALUES
+(1, 'SP', '123.456.789.111', 'S'),
+(1, 'RJ', '987.654.321.000', 'N'),
+(2, 'MG', '555.444.333.222', 'N'),
+(3, 'RS', '111.222.333.444', 'S');
+
+-- Inserção na tabela fiscal_apuracao_icms
+INSERT INTO `fiscal_apuracao_icms` (
+  `competencia`, `valor_total_debito`, `valor_ajuste_debito`, `valor_total_ajuste_debito`, 
+  `valor_estorno_credito`, `valor_total_credito`, `valor_ajuste_credito`, 
+  `valor_total_ajuste_credito`, `valor_estorno_debito`, `valor_saldo_credor_anterior`, 
+  `valor_saldo_apurado`, `valor_total_deducao`, `valor_icms_recolher`, 
+  `valor_saldo_credor_transp`, `valor_debito_especial`
+) VALUES
+('2024-01', 15000.00, 500.00, 15500.00, 200.00, 12000.00, 300.00, 12300.00, 100.00, 2000.00, 3200.00, 500.00, 2700.00, 0.00, 0.00),
+('2024-02', 18000.00, 800.00, 18800.00, 250.00, 15000.00, 400.00, 15400.00, 150.00, 3200.00, 3400.00, 600.00, 2800.00, 0.00, 0.00),
+('2024-03', 20000.00, 1000.00, 21000.00, 300.00, 18000.00, 500.00, 18500.00, 200.00, 3400.00, 2500.00, 700.00, 1800.00, 0.00, 0.00);
+
+-- Inserção na tabela fiscal_termo
+INSERT INTO `fiscal_termo` (
+  `id_fiscal_livro`, `abertura_encerramento`, `numero`, `pagina_inicial`, 
+  `pagina_final`, `registrado`, `numero_registro`, `data_despacho`, 
+  `data_abertura`, `data_encerramento`, `escrituracao_inicio`, 
+  `escrituracao_fim`, `texto`
+) VALUES
+(1, 'A', 1, 1, 100, 'Cartório Central de SP', 'REG12345', '2024-01-10', '2024-01-01', '2024-12-31', '2024-01-01', '2024-12-31', 'Termo de abertura do livro de entradas para o exercício de 2024'),
+(2, 'A', 1, 1, 100, 'Cartório Central de SP', 'REG12346', '2024-01-10', '2024-01-01', '2024-12-31', '2024-01-01', '2024-12-31', 'Termo de abertura do livro de saídas para o exercício de 2024'),
+(4, 'A', 1, 1, 50, 'Cartório Central de SP', 'REG12347', '2024-01-10', '2024-01-01', '2024-12-31', '2024-01-01', '2024-12-31', 'Termo de abertura do livro de apuração do ICMS para o exercício de 2024');
+
+-- Inserção na tabela fiscal_nota_fiscal_entrada (dados simplificados)
+INSERT INTO `fiscal_nota_fiscal_entrada` (
+  `id_nfe_cabecalho`, `competencia`, `cfop_entrada`, `valor_rateio_frete`, 
+  `valor_custo_medio`, `valor_icms_antecipado`, `valor_bc_icms_antecipado`, 
+  `valor_bc_icms_creditado`, `valor_bc_pis_creditado`, `valor_bc_cofins_creditado`, 
+  `valor_bc_ipi_creditado`, `cst_credito_icms`, `cst_credito_pis`, 
+  `cst_credito_cofins`, `cst_credito_ipi`, `valor_icms_creditado`, 
+  `valor_pis_creditado`, `valor_cofins_creditado`, `valor_ipi_creditado`, 
+  `qtde_parcela_credito_pis`, `qtde_parcela_credito_cofins`, 
+  `qtde_parcela_credito_icms`, `qtde_parcela_credito_ipi`, 
+  `aliquota_credito_icms`, `aliquota_credito_pis`, `aliquota_credito_cofins`, 
+  `aliquota_credito_ipi`
+) VALUES
+(1, '2024-01', 5102, 150.00, 1000.00, 120.00, 1000.00, 1000.00, 1000.00, 1000.00, 1000.00, '000', '01', '01', '50', 180.00, 6.50, 30.00, 50.00, 1, 1, 1, 1, 18.00, 0.65, 3.00, 5.00),
+(2, '2024-01', 5101, 200.00, 1500.00, 180.00, 1500.00, 1500.00, 1500.00, 1500.00, 1500.00, '000', '01', '01', '50', 270.00, 9.75, 45.00, 75.00, 1, 1, 1, 1, 18.00, 0.65, 3.00, 5.00);
+
+-- Inserção na tabela fiscal_nota_fiscal_saida (dados simplificados)
+INSERT INTO `fiscal_nota_fiscal_saida` (`id_nfe_cabecalho`, `competencia`) VALUES
+(1, '2024-01'),
+(2, '2024-01'),
+(3, '2024-02');

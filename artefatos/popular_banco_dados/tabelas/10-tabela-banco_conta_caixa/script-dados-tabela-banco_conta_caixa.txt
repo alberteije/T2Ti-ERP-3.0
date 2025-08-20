@@ -1,0 +1,7 @@
+INSERT INTO banco_conta_caixa (id_banco_agencia, numero, digito, nome, tipo, descricao) VALUES
+(1, '12345678', '1', 'Conta Corrente Agência 1', 'C', 'Conta Corrente da Agência 1'),
+(2, '87654321', '2', 'Conta Poupança Agência 2', 'P', 'Conta Poupança da Agência 2'),
+(3, '11223344', '3', 'Conta Investimento Agência 3', 'I', 'Conta Investimento da Agência 3'),
+(4, '44332211', '4', 'Conta Corrente Agência 4', 'C', 'Conta Corrente da Agência 4'),
+(5, '55667788', '5', 'Conta Corrente Agência 5', 'C', 'Conta Corrente da Agência 5'),
+(6, '99887766', '6', 'Conta Corrente Agência 6', 'C', 'Conta Corrente da Agência 6');

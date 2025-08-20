@@ -1,0 +1,7 @@
+INSERT INTO tabela_preco (nome, principal, coeficiente)
+VALUES 
+('Tabela Padrão', 'S', 1.00),
+('Tabela Promoção', 'N', 0.90),
+('Tabela Premium', 'N', 1.20),
+('Tabela Atacado', 'N', 0.85),
+('Tabela Varejo', 'N', 1.10);

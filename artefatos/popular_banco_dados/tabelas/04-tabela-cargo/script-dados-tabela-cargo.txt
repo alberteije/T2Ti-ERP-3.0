@@ -1,0 +1,22 @@
+-- Inserindo dados na tabela cargo
+INSERT INTO cargo (nome, descricao, salario, cbo_1994, cbo_2002) VALUES
+('Analista de Sistemas', 'Responsável por analisar, projetar, implementar e gerenciar sistemas computacionais.', 7000.00, '212405', '212415'),
+('Desenvolvedor de Software', 'Cria, testa e mantém programas de computador para diversos tipos de dispositivos.', 6500.00, '317205', '317210'),
+('Gerente de Projetos', 'Planeja, organiza e gerencia recursos para a execução de projetos.', 12000.00, '142305', '142310'),
+('Engenheiro de Software', 'Desenvolve soluções de software complexas e gerencia a arquitetura de sistemas.', 15000.00, '214405', '214415'),
+('Administrador de Redes', 'Instala, configura e mantém redes de computadores em ambientes corporativos.', 5500.00, '212215', '212310'),
+('Cientista de Dados', 'Analisa grandes volumes de dados para gerar insights estratégicos.', 13000.00, '212405', '212405'),
+('Designer Gráfico', 'Cria materiais visuais para comunicação em mídias digitais e impressas.', 4500.00, '262405', '262415'),
+('Analista de Marketing', 'Desenvolve estratégias de marketing digital e offline para promover produtos e serviços.', 6000.00, '252105', '252205'),
+('Auditor Financeiro', 'Realiza auditorias financeiras para garantir a conformidade com leis e regulamentos.', 9000.00, '241105', '241205'),
+('Contador', 'Gerencia as finanças da empresa, incluindo a preparação de balanços e declarações fiscais.', 7000.00, '252305', '252305'),
+('Gerente de Recursos Humanos', 'Responsável pela gestão de pessoas, incluindo recrutamento, seleção e desenvolvimento.', 11000.00, '141505', '141510'),
+('Advogado Corporativo', 'Fornece consultoria jurídica em questões comerciais e contratuais.', 12000.00, '241005', '241010'),
+('Engenheiro Civil', 'Planeja e supervisiona a construção de obras de infraestrutura.', 14000.00, '214205', '214210'),
+('Eletricista', 'Instala e faz manutenção de sistemas elétricos em instalações comerciais e residenciais.', 3000.00, '715605', '715610'),
+('Mecânico Industrial', 'Faz manutenção e reparos em máquinas e equipamentos industriais.', 5000.00, '914405', '914410'),
+('Assistente Administrativo', 'Auxilia em tarefas administrativas, como organização de documentos e atendimento.', 2500.00, '411005', '411010'),
+('Técnico de Segurança do Trabalho', 'Implementa medidas de segurança para garantir a saúde e integridade dos trabalhadores.', 4000.00, '351605', '351610'),
+('Operador de Máquinas', 'Opera máquinas em linhas de produção industrial.', 3200.00, '721205', '721210'),
+('Motorista de Caminhão', 'Transporta mercadorias em longas distâncias.', 3500.00, '782505', '782510'),
+('Enfermeiro', 'Presta cuidados de saúde a pacientes em hospitais e clínicas.', 4500.00, '223505', '223510');

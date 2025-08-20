@@ -1,0 +1,188 @@
+-- Inserções para compra_tipo_requisicao
+INSERT INTO `compra_tipo_requisicao` (`id`, `codigo`, `nome`, `descricao`) 
+VALUES
+(1, '01', 'Normal', 'Requisição de compra padrão para suprimentos comuns'),
+(2, '02', 'Urgente', 'Requisição de compra prioritária para itens urgentes'),
+(3, '03', 'Manutenção', 'Requisição para compra de peças e materiais de manutenção');
+
+-- Inserções para compra_tipo_pedido
+INSERT INTO `compra_tipo_pedido` (`id`, `codigo`, `nome`, `descricao`) 
+VALUES
+(1, '01', 'Normal', 'Pedido de compra padrão'),
+(2, '02', 'Direto', 'Pedido de compra direta sem cotação'),
+(3, '03', 'Emergencial', 'Pedido de compra emergencial');
+
+-- Inserções para compra_requisicao
+INSERT INTO `compra_requisicao` (`id`, `id_compra_tipo_requisicao`, `id_colaborador`, `descricao`, `data_requisicao`, `observacao`) 
+VALUES
+(1, 1, 1, 'Requisição de materiais de escritório', '2023-01-10', 'Material para abastecer estoque do setor administrativo'),
+(2, 2, 2, 'Requisição urgente de peças', '2023-02-15', 'Máquina parada na linha de produção'),
+(3, 3, 3, 'Requisição de materiais de limpeza', '2023-03-20', 'Reposição mensal de produtos de limpeza'),
+(4, 1, 4, 'Requisição de uniformes', '2023-04-05', 'Renovação de uniformes para equipe'),
+(5, 2, 5, 'Requisição urgente de insumos', '2023-05-12', 'Falta de matéria-prima para produção');
+
+-- Inserções para compra_requisicao_detalhe
+-- Assumindo que existem produtos com IDs de 1 a 10
+INSERT INTO `compra_requisicao_detalhe` (`id_compra_requisicao`, `id_produto`, `quantidade`) 
+VALUES
+-- Requisição 1
+(1, 1, 10.000000), -- Caneta
+(1, 2, 5.000000),  -- Bloco de notas
+(1, 3, 2.000000),  -- Grampeador
+-- Requisição 2
+(2, 4, 1.000000),  -- Peça mecânica A
+(2, 5, 3.000000),  -- Peça mecânica B
+-- Requisição 3
+(3, 6, 5.000000),  -- Detergente
+(3, 7, 10.000000), -- Desinfetante
+(3, 8, 2.000000),  -- Rodo
+-- Requisição 4
+(4, 9, 20.000000), -- Camisa uniforme
+(4, 10, 20.000000),-- Calça uniforme
+-- Requisição 5
+(5, 1, 50.000000),-- Insumo A
+(5, 2, 30.000000);-- Insumo B
+
+-- Inserções para compra_cotacao
+INSERT INTO `compra_cotacao` (`id_compra_requisicao`, `data_cotacao`, `descricao`) 
+VALUES
+(1, '2023-01-12', 'Cotação para materiais de escritório'),
+(2, '2023-02-16', 'Cotação urgente para peças mecânicas'),
+(3, '2023-03-22', 'Cotação para materiais de limpeza'),
+(4, '2023-04-07', 'Cotação para uniformes'),
+(5, '2023-05-14', 'Cotação urgente para insumos');
+
+-- Inserções para compra_fornecedor_cotacao
+-- Assumindo que os fornecedores são as pessoas jurídicas com IDs 12-20
+INSERT INTO `compra_fornecedor_cotacao` (`id_compra_cotacao`, `id_fornecedor`, `codigo`, `prazo_entrega`, `venda_condicoes_pagamento`, `valor_subtotal`, `taxa_desconto`, `valor_desconto`, `valor_total`) 
+VALUES
+-- Cotação 1 (3 fornecedores)
+(1, 1, 'COT-001-01', '5 dias úteis', '30/60/90 dias', 250.000000, 5.000000, 12.500000, 237.500000),
+(1, 2, 'COT-001-02', '3 dias úteis', 'À vista', 280.000000, 3.000000, 8.400000, 271.600000),
+(1, 3, 'COT-001-03', '7 dias úteis', '15/45 dias', 230.000000, 0.000000, 0.000000, 230.000000),
+-- Cotação 2 (2 fornecedores)
+(2, 4, 'COT-002-01', '2 dias úteis', 'À vista', 1200.000000, 10.000000, 120.000000, 1080.000000),
+(2, 5, 'COT-002-02', '1 dia útil', '30 dias', 1500.000000, 5.000000, 75.000000, 1425.000000),
+-- Cotação 3 (2 fornecedores)
+(3, 6, 'COT-003-01', '3 dias úteis', 'À vista', 350.000000, 0.000000, 0.000000, 350.000000),
+(3, 7, 'COT-003-02', '5 dias úteis', '15/30/45 dias', 320.000000, 2.500000, 8.000000, 312.000000),
+-- Cotação 4 (3 fornecedores)
+(4, 8, 'COT-004-01', '10 dias úteis', '30/60 dias', 1800.000000, 7.000000, 126.000000, 1674.000000),
+(4, 9, 'COT-004-02', '15 dias úteis', 'À vista', 1750.000000, 10.000000, 175.000000, 1575.000000),
+(4, 10, 'COT-004-03', '7 dias úteis', '15/30/45 dias', 1850.000000, 5.000000, 92.500000, 1757.500000),
+-- Cotação 5 (2 fornecedores)
+(5, 10, 'COT-005-01', '2 dias úteis', 'À vista', 4200.000000, 8.000000, 336.000000, 3864.000000),
+(5, 10, 'COT-005-02', '3 dias úteis', '15 dias', 4500.000000, 5.000000, 225.000000, 4275.000000);
+
+-- Inserções para compra_cotacao_detalhe
+INSERT INTO `compra_cotacao_detalhe` (`id_compra_fornecedor_cotacao`, `id_produto`, `quantidade`, `valor_unitario`, `valor_subtotal`, `taxa_desconto`, `valor_desconto`, `valor_total`) 
+VALUES
+-- Fornecedor 1 - Cotação 1
+(1, 1, 10.000000, 5.000000, 50.000000, 5.000000, 2.500000, 47.500000),
+(1, 2, 5.000000, 15.000000, 75.000000, 5.000000, 3.750000, 71.250000),
+(1, 3, 2.000000, 62.500000, 125.000000, 5.000000, 6.250000, 118.750000),
+-- Fornecedor 2 - Cotação 1
+(2, 1, 10.000000, 6.000000, 60.000000, 3.000000, 1.800000, 58.200000),
+(2, 2, 5.000000, 18.000000, 90.000000, 3.000000, 2.700000, 87.300000),
+(2, 3, 2.000000, 65.000000, 130.000000, 3.000000, 3.900000, 126.100000),
+-- Fornecedor 3 - Cotação 1
+(3, 1, 10.000000, 4.500000, 45.000000, 0.000000, 0.000000, 45.000000),
+(3, 2, 5.000000, 14.000000, 70.000000, 0.000000, 0.000000, 70.000000),
+(3, 3, 2.000000, 57.500000, 115.000000, 0.000000, 0.000000, 115.000000),
+-- Fornecedor 4 - Cotação 2
+(4, 4, 1.000000, 800.000000, 800.000000, 10.000000, 80.000000, 720.000000),
+(4, 5, 3.000000, 160.000000, 480.000000, 10.000000, 48.000000, 432.000000),
+-- Fornecedor 5 - Cotação 2
+(5, 4, 1.000000, 900.000000, 900.000000, 5.000000, 45.000000, 855.000000),
+(5, 5, 3.000000, 200.000000, 600.000000, 5.000000, 30.000000, 570.000000),
+-- Fornecedor 6 - Cotação 3
+(6, 6, 5.000000, 25.000000, 125.000000, 0.000000, 0.000000, 125.000000),
+(6, 7, 10.000000, 15.000000, 150.000000, 0.000000, 0.000000, 150.000000),
+(6, 8, 2.000000, 37.500000, 75.000000, 0.000000, 0.000000, 75.000000),
+-- Fornecedor 7 - Cotação 3
+(7, 6, 5.000000, 22.000000, 110.000000, 2.500000, 2.750000, 107.250000),
+(7, 7, 10.000000, 14.000000, 140.000000, 2.500000, 3.500000, 136.500000),
+(7, 8, 2.000000, 35.000000, 70.000000, 2.500000, 1.750000, 68.250000),
+-- Fornecedor 8 - Cotação 4
+(8, 9, 20.000000, 45.000000, 900.000000, 7.000000, 63.000000, 837.000000),
+(8, 10, 20.000000, 45.000000, 900.000000, 7.000000, 63.000000, 837.000000),
+-- Fornecedor 9 - Cotação 4
+(9, 9, 20.000000, 43.750000, 875.000000, 10.000000, 87.500000, 787.500000),
+(9, 10, 20.000000, 43.750000, 875.000000, 10.000000, 87.500000, 787.500000),
+-- Fornecedor 10 - Cotação 4
+(10, 9, 20.000000, 47.500000, 950.000000, 5.000000, 47.500000, 902.500000),
+(10, 10, 20.000000, 45.000000, 900.000000, 5.000000, 45.000000, 855.000000),
+-- Fornecedor 11 - Cotação 5
+(11, 1, 50.000000, 60.000000, 3000.000000, 8.000000, 240.000000, 2760.000000),
+(11, 2, 30.000000, 40.000000, 1200.000000, 8.000000, 96.000000, 1104.000000),
+-- Fornecedor 12 - Cotação 5
+(12, 1, 50.000000, 65.000000, 3250.000000, 5.000000, 162.500000, 3087.500000),
+(12, 2, 30.000000, 42.500000, 1275.000000, 5.000000, 63.750000, 1211.250000);
+
+-- Inserções para compra_pedido
+-- Assumindo que os pedidos são gerados a partir das cotações mais vantajosas
+INSERT INTO `compra_pedido` (
+  `id_compra_tipo_pedido`, `id_fornecedor`, `id_colaborador`, `data_pedido`, 
+  `data_prevista_entrega`, `data_previsao_pagamento`, `local_entrega`, `local_cobranca`, 
+  `contato`, `valor_subtotal`, `taxa_desconto`, `valor_desconto`, `valor_total`, 
+  `tipo_frete`, `forma_pagamento`, `base_calculo_icms`, `valor_icms`, `base_calculo_icms_st`, 
+  `valor_icms_st`, `valor_total_produtos`, `valor_frete`, `valor_seguro`, `valor_outras_despesas`, 
+  `valor_ipi`, `valor_total_nf`, `quantidade_parcelas`, `dia_primeiro_vencimento`, 
+  `intervalo_entre_parcelas`, `dia_fixo_parcela`, `codigo_cotacao`
+) 
+VALUES
+-- Pedido 1 (a partir da cotação do fornecedor 14 - ID 3)
+(1, 1, 1, '2023-01-13', '2023-01-20', '2023-02-13', 'Rua das Flores, 100, Centro', 'Rua das Flores, 100, Centro', 
+ 'João Silva', 230.000000, 0.000000, 0.000000, 230.000000, 'C', '2', 230.000000, 41.400000, 
+ 0.000000, 0.000000, 230.000000, 15.000000, 0.000000, 5.000000, 0.000000, 250.000000, 
+ 3, '15', 30, NULL, 'COT-001-03'),
+ 
+-- Pedido 2 (a partir da cotação do fornecedor 15 - ID 4)
+(2, 2, 2, '2023-02-17', '2023-02-19', '2023-02-17', 'Av. Paulista, 2000, Bela Vista', 'Av. Paulista, 2000, Bela Vista', 
+ 'Maria Oliveira', 1200.000000, 10.000000, 120.000000, 1080.000000, 'F', '1', 1080.000000, 194.400000, 
+ 0.000000, 0.000000, 1080.000000, 0.000000, 50.000000, 0.000000, 0.000000, 1130.000000, 
+ 1, '17', NULL, NULL, 'COT-002-01'),
+ 
+-- Pedido 3 (a partir da cotação do fornecedor 18 - ID 7)
+(1, 3, 3, '2023-03-23', '2023-03-28', '2023-04-23', 'Rua do Ouvidor, 50, Centro', 'Rua do Ouvidor, 50, Centro', 
+ 'Carlos Santos', 320.000000, 2.500000, 8.000000, 312.000000, 'C', '2', 312.000000, 56.160000, 
+ 0.000000, 0.000000, 312.000000, 20.000000, 0.000000, 0.000000, 0.000000, 332.000000, 
+ 2, '23', 30, NULL, 'COT-003-02'),
+ 
+-- Pedido 4 (a partir da cotação do fornecedor 20 - ID 9)
+(1, 4, 4, '2023-04-08', '2023-04-23', '2023-04-08', 'Av. Afonso Pena, 1500, Funcionários', 'Av. Afonso Pena, 1500, Funcionários', 
+ 'Ana Pereira', 1750.000000, 10.000000, 175.000000, 1575.000000, 'F', '1', 1575.000000, 283.500000, 
+ 0.000000, 0.000000, 1575.000000, 0.000000, 75.000000, 0.000000, 0.000000, 1650.000000, 
+ 1, '08', NULL, NULL, 'COT-004-02'),
+ 
+-- Pedido 5 (a partir da cotação do fornecedor 13 - ID 11)
+(2, 5, 5, '2023-05-15', '2023-05-17', '2023-05-15', 'Rua da Praia, 300, Praia de Belas', 'Rua da Praia, 300, Praia de Belas', 
+ 'Pedro Costa', 4200.000000, 8.000000, 336.000000, 3864.000000, 'F', '1', 3864.000000, 695.520000, 
+ 0.000000, 0.000000, 3864.000000, 0.000000, 150.000000, 0.000000, 0.000000, 4014.000000, 
+ 1, '15', NULL, NULL, 'COT-005-01');
+
+-- Inserções para compra_pedido_detalhe
+INSERT INTO `compra_pedido_detalhe` (
+  `id_compra_pedido`, `id_produto`, `quantidade`, `valor_unitario`, `valor_subtotal`, 
+  `taxa_desconto`, `valor_desconto`, `valor_total`, `cst`, `csosn`, `cfop`, 
+  `base_calculo_icms`, `valor_icms`, `valor_ipi`, `aliquota_icms`, `aliquota_ipi`
+) 
+VALUES
+-- Pedido 1
+(1, 1, 10.000000, 4.500000, 45.000000, 0.000000, 0.000000, 45.000000, '00', '102', 5102, 45.000000, 8.100000, 0.000000, 18.000000, 0.000000),
+(1, 2, 5.000000, 14.000000, 70.000000, 0.000000, 0.000000, 70.000000, '00', '102', 5102, 70.000000, 12.600000, 0.000000, 18.000000, 0.000000),
+(1, 3, 2.000000, 57.500000, 115.000000, 0.000000, 0.000000, 115.000000, '00', '102', 5102, 115.000000, 20.700000, 0.000000, 18.000000, 0.000000),
+-- Pedido 2
+(2, 4, 1.000000, 800.000000, 800.000000, 10.000000, 80.000000, 720.000000, '00', '102', 5102, 720.000000, 129.600000, 0.000000, 18.000000, 0.000000),
+(2, 5, 3.000000, 160.000000, 480.000000, 10.000000, 48.000000, 432.000000, '00', '102', 5102, 432.000000, 77.760000, 0.000000, 18.000000, 0.000000),
+-- Pedido 3
+(3, 6, 5.000000, 22.000000, 110.000000, 2.500000, 2.750000, 107.250000, '00', '102', 5102, 107.250000, 19.305000, 0.000000, 18.000000, 0.000000),
+(3, 7, 10.000000, 14.000000, 140.000000, 2.500000, 3.500000, 136.500000, '00', '102', 5102, 136.500000, 24.570000, 0.000000, 18.000000, 0.000000),
+(3, 8, 2.000000, 35.000000, 70.000000, 2.500000, 1.750000, 68.250000, '00', '102', 5102, 68.250000, 12.285000, 0.000000, 18.000000, 0.000000),
+-- Pedido 4
+(4, 9, 20.000000, 43.750000, 875.000000, 10.000000, 87.500000, 787.500000, '00', '102', 5102, 787.500000, 141.750000, 0.000000, 18.000000, 0.000000),
+(4, 10, 20.000000, 43.750000, 875.000000, 10.000000, 87.500000, 787.500000, '00', '102', 5102, 787.500000, 141.750000, 0.000000, 18.000000, 0.000000),
+-- Pedido 5
+(5, 1, 50.000000, 60.000000, 3000.000000, 8.000000, 240.000000, 2760.000000, '00', '102', 5102, 2760.000000, 496.800000, 0.000000, 18.000000, 0.000000),
+(5, 2, 30.000000, 40.000000, 1200.000000, 8.000000, 96.000000, 1104.000000, '00', '102', 5102, 1104.000000, 198.720000, 0.000000, 18.000000, 0.000000);
+

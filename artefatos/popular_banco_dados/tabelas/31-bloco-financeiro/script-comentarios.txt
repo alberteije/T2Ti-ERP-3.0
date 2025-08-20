@@ -1,0 +1,477 @@
+-- 1. Tabelas Básicas
+
+-- Tabela que armazena os status possíveis para parcelas financeiras
+ALTER TABLE `fin_status_parcela` COMMENT = 'Tabela de status das parcelas financeiras, define a situação atual de cada parcela (aberta, paga, atrasada, etc.)';
+
+-- Campo que identifica a situação da parcela (código)
+ALTER TABLE `fin_status_parcela` MODIFY `situacao` varchar(2) COMMENT 'Código que identifica a situação da parcela (AB=Aberto, PG=Pago, etc.)';
+
+-- Descrição do status da parcela
+ALTER TABLE `fin_status_parcela` MODIFY `descricao` varchar(255) COMMENT 'Descrição textual do status da parcela';
+
+-- Procedimento recomendado para cada status
+ALTER TABLE `fin_status_parcela` MODIFY `procedimento` varchar(255) COMMENT 'Ação ou procedimento recomendado para parcelas com este status';
+
+
+-- Tabela de tipos de pagamento disponíveis no sistema
+ALTER TABLE `fin_tipo_pagamento` COMMENT = 'Tipos de pagamento aceitos pelo sistema (cheque, transferência, etc.)';
+
+-- Código do tipo de pagamento
+ALTER TABLE `fin_tipo_pagamento` MODIFY `codigo` varchar(2) COMMENT 'Código identificador do tipo de pagamento';
+
+-- Descrição do tipo de pagamento
+ALTER TABLE `fin_tipo_pagamento` MODIFY `descricao` varchar(255) COMMENT 'Descrição do tipo de pagamento (ex: Cheque, Transferência)';
+
+
+-- Tabela de tipos de recebimento disponíveis no sistema
+ALTER TABLE `fin_tipo_recebimento` COMMENT = 'Tipos de recebimento aceitos pelo sistema (cheque, PIX, boleto, etc.)';
+
+-- Código do tipo de recebimento
+ALTER TABLE `fin_tipo_recebimento` MODIFY `codigo` varchar(2) COMMENT 'Código identificador do tipo de recebimento';
+
+-- Descrição do tipo de recebimento
+ALTER TABLE `fin_tipo_recebimento` MODIFY `descricao` varchar(255) COMMENT 'Descrição do tipo de recebimento (ex: PIX, Boleto)';
+
+
+-- Tabela de documentos de origem para lançamentos financeiros
+ALTER TABLE `fin_documento_origem` COMMENT = 'Documentos que podem originar lançamentos financeiros (notas fiscais, contratos, etc.)';
+
+-- Código do documento de origem
+ALTER TABLE `fin_documento_origem` MODIFY `codigo` varchar(2) COMMENT 'Código identificador do tipo de documento de origem';
+
+-- Sigla do documento
+ALTER TABLE `fin_documento_origem` MODIFY `sigla` varchar(3) COMMENT 'Sigla abreviada do documento (ex: NF para Nota Fiscal)';
+
+-- Descrição do documento
+ALTER TABLE `fin_documento_origem` MODIFY `descricao` varchar(255) COMMENT 'Descrição completa do tipo de documento';
+
+
+-- 2. Cheques
+
+-- Tabela de cheques emitidos pela empresa
+ALTER TABLE `fin_cheque_emitido` COMMENT = 'Registro de cheques emitidos pela empresa para pagamento a fornecedores ou outros';
+
+-- Identificador único do cheque emitido
+ALTER TABLE `fin_cheque_emitido` MODIFY `id_cheque` int COMMENT 'ID único do cheque emitido';
+
+-- Data de emissão do cheque
+ALTER TABLE `fin_cheque_emitido` MODIFY `data_emissao` date COMMENT 'Data em que o cheque foi emitido (preenchido)';
+
+-- Data de validade do cheque (bom para)
+ALTER TABLE `fin_cheque_emitido` MODIFY `bom_para` date COMMENT 'Data até quando o cheque é válido para compensação';
+
+-- Data em que o cheque foi compensado
+ALTER TABLE `fin_cheque_emitido` MODIFY `data_compensacao` date COMMENT 'Data em que o cheque foi compensado no banco (quando houve)';
+
+-- Valor do cheque
+ALTER TABLE `fin_cheque_emitido` MODIFY `valor` decimal(18,6) COMMENT 'Valor monetário do cheque';
+
+-- Nome do favorecido do cheque
+ALTER TABLE `fin_cheque_emitido` MODIFY `nominal_a` varchar(255) COMMENT 'Nome do favorecido/beneficiário do cheque';
+
+
+-- Tabela de cheques recebidos pela empresa
+ALTER TABLE `fin_cheque_recebido` COMMENT = 'Registro de cheques recebidos pela empresa de clientes ou outros';
+
+-- ID da pessoa (cliente/fornecedor) que emitiu o cheque
+ALTER TABLE `fin_cheque_recebido` MODIFY `id_pessoa` int COMMENT 'ID da pessoa (cliente/fornecedor) que emitiu o cheque';
+
+-- CPF do emitente (se pessoa física)
+ALTER TABLE `fin_cheque_recebido` MODIFY `cpf` varchar(11) COMMENT 'CPF do emitente do cheque (para pessoa física)';
+
+-- CNPJ do emitente (se pessoa jurídica)
+ALTER TABLE `fin_cheque_recebido` MODIFY `cnpj` varchar(14) COMMENT 'CNPJ do emitente do cheque (para pessoa jurídica)';
+
+-- Nome do emitente do cheque
+ALTER TABLE `fin_cheque_recebido` MODIFY `nome` varchar(255) COMMENT 'Nome do emitente do cheque';
+
+-- Código do banco do cheque
+ALTER TABLE `fin_cheque_recebido` MODIFY `codigo_banco` varchar(3) COMMENT 'Código do banco onde o cheque foi emitido';
+
+-- Código da agência do cheque
+ALTER TABLE `fin_cheque_recebido` MODIFY `codigo_agencia` varchar(4) COMMENT 'Código da agência bancária do cheque';
+
+-- Número da conta do cheque
+ALTER TABLE `fin_cheque_recebido` MODIFY `conta` varchar(10) COMMENT 'Número da conta bancária do cheque';
+
+-- Número do cheque
+ALTER TABLE `fin_cheque_recebido` MODIFY `numero` int COMMENT 'Número sequencial do cheque';
+
+-- Data de emissão do cheque
+ALTER TABLE `fin_cheque_recebido` MODIFY `data_emissao` date COMMENT 'Data em que o cheque foi emitido';
+
+-- Data de validade do cheque (bom para)
+ALTER TABLE `fin_cheque_recebido` MODIFY `bom_para` date COMMENT 'Data até quando o cheque é válido para compensação';
+
+-- Data de compensação do cheque
+ALTER TABLE `fin_cheque_recebido` MODIFY `data_compensacao` date COMMENT 'Data em que o cheque foi compensado no banco';
+
+-- Valor nominal do cheque
+ALTER TABLE `fin_cheque_recebido` MODIFY `valor` decimal(18,6) COMMENT 'Valor monetário do cheque';
+
+-- Data em que o cheque foi colocado em custódia
+ALTER TABLE `fin_cheque_recebido` MODIFY `custodia_data` date COMMENT 'Data em que o cheque foi enviado para custódia bancária';
+
+-- Tarifa cobrada pela custódia do cheque
+ALTER TABLE `fin_cheque_recebido` MODIFY `custodia_tarifa` decimal(18,6) COMMENT 'Valor da tarifa cobrada pelo serviço de custódia';
+
+-- Comissão cobrada pela custódia do cheque
+ALTER TABLE `fin_cheque_recebido` MODIFY `custodia_comissao` decimal(18,6) COMMENT 'Valor da comissão cobrada pelo serviço de custódia';
+
+-- Data em que o cheque foi enviado para desconto
+ALTER TABLE `fin_cheque_recebido` MODIFY `desconto_data` date COMMENT 'Data em que o cheque foi enviado para desconto bancário';
+
+-- Tarifa cobrada pelo desconto do cheque
+ALTER TABLE `fin_cheque_recebido` MODIFY `desconto_tarifa` decimal(18,6) COMMENT 'Valor da tarifa cobrada pelo serviço de desconto';
+
+-- Comissão cobrada pelo desconto do cheque
+ALTER TABLE `fin_cheque_recebido` MODIFY `desconto_comissao` decimal(18,6) COMMENT 'Valor da comissão cobrada pelo serviço de desconto';
+
+-- Valor líquido recebido após descontos
+ALTER TABLE `fin_cheque_recebido` MODIFY `valor_recebido` decimal(18,6) COMMENT 'Valor líquido recebido após dedução de tarifas e comissões';
+
+
+-- 3. Configuração de Boleto
+
+-- Tabela de configuração para emissão de boletos bancários
+ALTER TABLE `fin_configuracao_boleto` COMMENT = 'Configurações para emissão de boletos bancários por conta/caixa';
+
+-- ID da conta bancária/caixa relacionada
+ALTER TABLE `fin_configuracao_boleto` MODIFY `id_banco_conta_caixa` int COMMENT 'ID da conta bancária/caixa à qual esta configuração se aplica';
+
+-- Primeira instrução do boleto
+ALTER TABLE `fin_configuracao_boleto` MODIFY `instrucao01` varchar(255) COMMENT 'Primeira instrução que aparece no boleto (ex: Não receber após vencimento)';
+
+-- Segunda instrução do boleto
+ALTER TABLE `fin_configuracao_boleto` MODIFY `instrucao02` varchar(255) COMMENT 'Segunda instrução que aparece no boleto (ex: Multa após vencimento)';
+
+-- Caminho para arquivos de remessa
+ALTER TABLE `fin_configuracao_boleto` MODIFY `caminho_arquivo_remessa` varchar(255) COMMENT 'Caminho no sistema de arquivos para gravar remessas bancárias';
+
+-- Caminho para arquivos de retorno
+ALTER TABLE `fin_configuracao_boleto` MODIFY `caminho_arquivo_retorno` varchar(255) COMMENT 'Caminho no sistema de arquivos para ler retornos bancários';
+
+-- Caminho para o logotipo usado no boleto
+ALTER TABLE `fin_configuracao_boleto` MODIFY `caminho_arquivo_logotipo` varchar(255) COMMENT 'Caminho para o arquivo de logotipo exibido no boleto';
+
+-- Caminho para PDFs gerados
+ALTER TABLE `fin_configuracao_boleto` MODIFY `caminho_arquivo_pdf` varchar(255) COMMENT 'Caminho para salvar os boletos gerados em PDF';
+
+-- Mensagem livre no boleto
+ALTER TABLE `fin_configuracao_boleto` MODIFY `mensagem` varchar(255) COMMENT 'Mensagem livre que aparece no boleto (ex: Pagar preferencialmente até...)';
+
+-- Local de pagamento do boleto
+ALTER TABLE `fin_configuracao_boleto` MODIFY `local_pagamento` varchar(255) COMMENT 'Local onde o boleto pode ser pago (ex: Pagável em qualquer banco)';
+
+-- Layout de remessa bancária
+ALTER TABLE `fin_configuracao_boleto` MODIFY `layout_remessa` varchar(3) COMMENT 'Código do layout de remessa bancária (ex: 400, 500)';
+
+-- Aceite do boleto (S/N)
+ALTER TABLE `fin_configuracao_boleto` MODIFY `aceite` varchar(1) COMMENT 'Indica se o boleto tem aceite (S) ou não (N)';
+
+-- Espécie do documento
+ALTER TABLE `fin_configuracao_boleto` MODIFY `especie` varchar(1) COMMENT 'Espécie do documento (ex: DM-Duplicata Mercantil)';
+
+-- Carteira bancária
+ALTER TABLE `fin_configuracao_boleto` MODIFY `carteira` varchar(3) COMMENT 'Código da carteira bancária usada para cobrança';
+
+-- Código do convênio com o banco
+ALTER TABLE `fin_configuracao_boleto` MODIFY `codigo_convenio` varchar(6) COMMENT 'Código do convênio de cobrança com o banco';
+
+-- Código do cedente (beneficiário)
+ALTER TABLE `fin_configuracao_boleto` MODIFY `codigo_cedente` varchar(7) COMMENT 'Código do cedente (beneficiário) no banco';
+
+-- Taxa de multa por atraso (%)
+ALTER TABLE `fin_configuracao_boleto` MODIFY `taxa_multa` decimal(18,6) COMMENT 'Percentual de multa aplicado após o vencimento';
+
+-- Taxa de juros ao mês (%)
+ALTER TABLE `fin_configuracao_boleto` MODIFY `taxa_juro` decimal(18,6) COMMENT 'Percentual de juros ao mês aplicado após vencimento';
+
+-- Dias para protesto (se aplicável)
+ALTER TABLE `fin_configuracao_boleto` MODIFY `dias_protesto` int COMMENT 'Número de dias após vencimento para protesto (0=não protestar)';
+
+-- Último nosso número usado
+ALTER TABLE `fin_configuracao_boleto` MODIFY `nosso_numero_anterior` varchar(10) COMMENT 'Último nosso número utilizado na emissão de boletos';
+
+
+-- 4. Extrato e Fechamento
+
+-- Tabela de extrato bancário por conta
+ALTER TABLE `fin_extrato_conta_banco` COMMENT = 'Lançamentos do extrato bancário por conta/caixa';
+
+-- ID da conta bancária/caixa
+ALTER TABLE `fin_extrato_conta_banco` MODIFY `id_banco_conta_caixa` int COMMENT 'ID da conta bancária/caixa a que pertence este lançamento';
+
+-- Mês e ano no formato MM-AAAA
+ALTER TABLE `fin_extrato_conta_banco` MODIFY `mes_ano` varchar(7) COMMENT 'Mês e ano do lançamento no formato MM-AAAA';
+
+-- Mês numérico (1-12)
+ALTER TABLE `fin_extrato_conta_banco` MODIFY `mes` varchar(2) COMMENT 'Mês numérico do lançamento (1 a 12)';
+
+-- Ano com 4 dígitos
+ALTER TABLE `fin_extrato_conta_banco` MODIFY `ano` varchar(4) COMMENT 'Ano do lançamento com 4 dígitos';
+
+-- Data do movimento bancário
+ALTER TABLE `fin_extrato_conta_banco` MODIFY `data_movimento` date COMMENT 'Data em que o movimento ocorreu no banco';
+
+-- Data de registro no balancete
+ALTER TABLE `fin_extrato_conta_banco` MODIFY `data_balancete` date COMMENT 'Data em que o movimento foi registrado no balancete';
+
+-- Histórico do lançamento
+ALTER TABLE `fin_extrato_conta_banco` MODIFY `historico` varchar(255) COMMENT 'Descrição/histórico do lançamento bancário';
+
+-- Documento associado ao lançamento
+ALTER TABLE `fin_extrato_conta_banco` MODIFY `documento` varchar(10) COMMENT 'Número do documento associado ao lançamento';
+
+-- Valor do lançamento (positivo para crédito, negativo para débito)
+ALTER TABLE `fin_extrato_conta_banco` MODIFY `valor` decimal(18,6) COMMENT 'Valor do lançamento (positivo=crédito, negativo=débito)';
+
+-- Indica se o lançamento foi conciliado (S/N)
+ALTER TABLE `fin_extrato_conta_banco` MODIFY `conciliado` varchar(1) COMMENT 'Indica se o lançamento foi conciliado (S=Sim, N=Não)';
+
+-- Observações adicionais sobre o lançamento
+ALTER TABLE `fin_extrato_conta_banco` MODIFY `observacao` varchar(255) COMMENT 'Observações adicionais sobre o lançamento';
+
+
+-- Tabela de fechamento mensal de caixa/banco
+ALTER TABLE `fin_fechamento_caixa_banco` COMMENT = 'Fechamento mensal do saldo de contas bancárias/caixas';
+
+-- ID da conta bancária/caixa
+ALTER TABLE `fin_fechamento_caixa_banco` MODIFY `id_banco_conta_caixa` int COMMENT 'ID da conta bancária/caixa que está sendo fechada';
+
+-- Data do fechamento
+ALTER TABLE `fin_fechamento_caixa_banco` MODIFY `data_fechamento` date COMMENT 'Data em que foi realizado o fechamento';
+
+-- Mês e ano no formato MM-AAAA
+ALTER TABLE `fin_fechamento_caixa_banco` MODIFY `mes_ano` varchar(7) COMMENT 'Mês e ano do fechamento no formato MM-AAAA';
+
+-- Mês numérico (1-12)
+ALTER TABLE `fin_fechamento_caixa_banco` MODIFY `mes` varchar(2) COMMENT 'Mês numérico do fechamento (1 a 12)';
+
+-- Ano com 4 dígitos
+ALTER TABLE `fin_fechamento_caixa_banco` MODIFY `ano` varchar(4) COMMENT 'Ano do fechamento com 4 dígitos';
+
+-- Saldo anterior (do mês anterior)
+ALTER TABLE `fin_fechamento_caixa_banco` MODIFY `saldo_anterior` decimal(18,6) COMMENT 'Saldo da conta no final do mês anterior';
+
+-- Total de recebimentos no mês
+ALTER TABLE `fin_fechamento_caixa_banco` MODIFY `recebimentos` decimal(18,6) COMMENT 'Total de recebimentos (créditos) no mês';
+
+-- Total de pagamentos no mês
+ALTER TABLE `fin_fechamento_caixa_banco` MODIFY `pagamentos` decimal(18,6) COMMENT 'Total de pagamentos (débitos) no mês';
+
+-- Saldo atual da conta
+ALTER TABLE `fin_fechamento_caixa_banco` MODIFY `saldo_conta` decimal(18,6) COMMENT 'Saldo atual da conta (saldo anterior + recebimentos - pagamentos)';
+
+-- Valor de cheques não compensados
+ALTER TABLE `fin_fechamento_caixa_banco` MODIFY `cheque_nao_compensado` decimal(18,6) COMMENT 'Valor total de cheques emitidos mas ainda não compensados';
+
+-- Saldo disponível (saldo - cheques não compensados)
+ALTER TABLE `fin_fechamento_caixa_banco` MODIFY `saldo_disponivel` decimal(18,6) COMMENT 'Saldo disponível (saldo conta - cheques não compensados)';
+
+
+-- 5. Lançamentos e Parcelas
+
+-- Tabela de lançamentos a pagar (contas a pagar)
+ALTER TABLE `fin_lancamento_pagar` COMMENT = 'Lançamentos de contas a pagar (obrigações financeiras da empresa)';
+
+-- ID do documento de origem (NF, contrato, etc.)
+ALTER TABLE `fin_lancamento_pagar` MODIFY `id_fin_documento_origem` int COMMENT 'ID do documento que originou este lançamento (NF, contrato, etc.)';
+
+-- ID da natureza financeira (classificação contábil)
+ALTER TABLE `fin_lancamento_pagar` MODIFY `id_fin_natureza_financeira` int COMMENT 'ID da natureza financeira (classificação contábil)';
+
+-- ID do fornecedor a quem será pago
+ALTER TABLE `fin_lancamento_pagar` MODIFY `id_fornecedor` int COMMENT 'ID do fornecedor/credor a quem será feito o pagamento';
+
+-- ID da conta bancária/caixa para pagamento
+ALTER TABLE `fin_lancamento_pagar` MODIFY `id_banco_conta_caixa` int COMMENT 'ID da conta bancária/caixa de onde sairá o pagamento';
+
+-- Quantidade de parcelas do lançamento
+ALTER TABLE `fin_lancamento_pagar` MODIFY `quantidade_parcela` int COMMENT 'Número total de parcelas deste lançamento';
+
+-- Valor total a pagar
+ALTER TABLE `fin_lancamento_pagar` MODIFY `valor_a_pagar` decimal(18,6) COMMENT 'Valor total a ser pago neste lançamento';
+
+-- Data do lançamento no sistema
+ALTER TABLE `fin_lancamento_pagar` MODIFY `data_lancamento` date COMMENT 'Data em que o lançamento foi registrado no sistema';
+
+-- Número do documento (NF, contrato, etc.)
+ALTER TABLE `fin_lancamento_pagar` MODIFY `numero_documento` varchar(20) COMMENT 'Número do documento que originou este lançamento';
+
+-- Imagem digitalizada do documento (caminho)
+ALTER TABLE `fin_lancamento_pagar` MODIFY `imagem_documento` varchar(255) COMMENT 'Caminho para imagem digitalizada do documento (se houver)';
+
+-- Data do primeiro vencimento
+ALTER TABLE `fin_lancamento_pagar` MODIFY `primeiro_vencimento` date COMMENT 'Data de vencimento da primeira parcela';
+
+-- Intervalo em dias entre parcelas
+ALTER TABLE `fin_lancamento_pagar` MODIFY `intervalo_entre_parcelas` int COMMENT 'Número de dias entre o vencimento de cada parcela';
+
+-- Dia fixo para vencimento (se aplicável)
+ALTER TABLE `fin_lancamento_pagar` MODIFY `dia_fixo` varchar(2) COMMENT 'Dia fixo do mês para vencimento (se aplicável)';
+
+
+-- Tabela de lançamentos a receber (contas a receber)
+ALTER TABLE `fin_lancamento_receber` COMMENT = 'Lançamentos de contas a receber (direitos financeiros da empresa)';
+
+-- ID do documento de origem (NF, contrato, etc.)
+ALTER TABLE `fin_lancamento_receber` MODIFY `id_fin_documento_origem` int COMMENT 'ID do documento que originou este lançamento (NF, contrato, etc.)';
+
+-- ID da natureza financeira (classificação contábil)
+ALTER TABLE `fin_lancamento_receber` MODIFY `id_fin_natureza_financeira` int COMMENT 'ID da natureza financeira (classificação contábil)';
+
+-- ID do cliente/devedor
+ALTER TABLE `fin_lancamento_receber` MODIFY `id_cliente` int COMMENT 'ID do cliente/devedor que deve pagar este lançamento';
+
+-- ID da conta bancária/caixa para recebimento
+ALTER TABLE `fin_lancamento_receber` MODIFY `id_banco_conta_caixa` int COMMENT 'ID da conta bancária/caixa onde será recebido o valor';
+
+-- Quantidade de parcelas do lançamento
+ALTER TABLE `fin_lancamento_receber` MODIFY `quantidade_parcela` int COMMENT 'Número total de parcelas deste lançamento';
+
+-- Valor total a receber
+ALTER TABLE `fin_lancamento_receber` MODIFY `valor_a_receber` decimal(18,6) COMMENT 'Valor total a ser recebido neste lançamento';
+
+-- Data do lançamento no sistema
+ALTER TABLE `fin_lancamento_receber` MODIFY `data_lancamento` date COMMENT 'Data em que o lançamento foi registrado no sistema';
+
+-- Número do documento (NF, contrato, etc.)
+ALTER TABLE `fin_lancamento_receber` MODIFY `numero_documento` varchar(20) COMMENT 'Número do documento que originou este lançamento';
+
+-- Data do primeiro vencimento
+ALTER TABLE `fin_lancamento_receber` MODIFY `primeiro_vencimento` date COMMENT 'Data de vencimento da primeira parcela';
+
+-- Taxa de comissão (%)
+ALTER TABLE `fin_lancamento_receber` MODIFY `taxa_comissao` decimal(18,6) COMMENT 'Percentual de comissão sobre o valor (se aplicável)';
+
+-- Valor da comissão
+ALTER TABLE `fin_lancamento_receber` MODIFY `valor_comissao` decimal(18,6) COMMENT 'Valor calculado da comissão (taxa_comissao * valor_a_receber)';
+
+-- Intervalo em dias entre parcelas
+ALTER TABLE `fin_lancamento_receber` MODIFY `intervalo_entre_parcelas` int COMMENT 'Número de dias entre o vencimento de cada parcela';
+
+-- Dia fixo para vencimento (se aplicável)
+ALTER TABLE `fin_lancamento_receber` MODIFY `dia_fixo` varchar(2) COMMENT 'Dia fixo do mês para vencimento (se aplicável)';
+
+
+-- Tabela de parcelas a pagar
+ALTER TABLE `fin_parcela_pagar` COMMENT = 'Parcelas individuais dos lançamentos a pagar';
+
+-- ID do lançamento a pagar pai
+ALTER TABLE `fin_parcela_pagar` MODIFY `id_fin_lancamento_pagar` int COMMENT 'ID do lançamento a pagar ao qual esta parcela pertence';
+
+-- ID do status atual da parcela
+ALTER TABLE `fin_parcela_pagar` MODIFY `id_fin_status_parcela` int COMMENT 'ID do status atual da parcela (aberta, paga, etc.)';
+
+-- ID do tipo de pagamento usado (se já pago)
+ALTER TABLE `fin_parcela_pagar` MODIFY `id_fin_tipo_pagamento` int COMMENT 'ID do tipo de pagamento usado (se a parcela já foi paga)';
+
+-- ID do cheque emitido (se pagamento foi com cheque)
+ALTER TABLE `fin_parcela_pagar` MODIFY `id_fin_cheque_emitido` int COMMENT 'ID do cheque emitido (se o pagamento foi feito com cheque)';
+
+-- Número sequencial da parcela
+ALTER TABLE `fin_parcela_pagar` MODIFY `numero_parcela` int COMMENT 'Número sequencial da parcela (1, 2, 3...)';
+
+-- Data de emissão da parcela
+ALTER TABLE `fin_parcela_pagar` MODIFY `data_emissao` date COMMENT 'Data em que a parcela foi emitida/gerada';
+
+-- Data de vencimento da parcela
+ALTER TABLE `fin_parcela_pagar` MODIFY `data_vencimento` date COMMENT 'Data em que a parcela vence';
+
+-- Data em que a parcela foi paga (se já paga)
+ALTER TABLE `fin_parcela_pagar` MODIFY `data_pagamento` date COMMENT 'Data em que a parcela foi efetivamente paga (se já paga)';
+
+-- Data limite para desconto
+ALTER TABLE `fin_parcela_pagar` MODIFY `desconto_ate` date COMMENT 'Data limite para pagamento com desconto';
+
+-- Valor nominal da parcela
+ALTER TABLE `fin_parcela_pagar` MODIFY `valor` decimal(18,6) COMMENT 'Valor nominal original da parcela';
+
+-- Taxa de juros (% ao dia/mês)
+ALTER TABLE `fin_parcela_pagar` MODIFY `taxa_juro` decimal(18,6) COMMENT 'Percentual de juros aplicável em caso de atraso';
+
+-- Taxa de multa (%)
+ALTER TABLE `fin_parcela_pagar` MODIFY `taxa_multa` decimal(18,6) COMMENT 'Percentual de multa aplicável em caso de atraso';
+
+-- Taxa de desconto (%)
+ALTER TABLE `fin_parcela_pagar` MODIFY `taxa_desconto` decimal(18,6) COMMENT 'Percentual de desconto para pagamento antecipado';
+
+-- Valor calculado de juros
+ALTER TABLE `fin_parcela_pagar` MODIFY `valor_juro` decimal(18,6) COMMENT 'Valor calculado de juros (se aplicável)';
+
+-- Valor calculado de multa
+ALTER TABLE `fin_parcela_pagar` MODIFY `valor_multa` decimal(18,6) COMMENT 'Valor calculado de multa (se aplicável)';
+
+-- Valor calculado de desconto
+ALTER TABLE `fin_parcela_pagar` MODIFY `valor_desconto` decimal(18,6) COMMENT 'Valor calculado de desconto (se aplicável)';
+
+-- Valor efetivamente pago
+ALTER TABLE `fin_parcela_pagar` MODIFY `valor_pago` decimal(18,6) COMMENT 'Valor efetivamente pago (valor - desconto + juros/multa)';
+
+-- Histórico/observações da parcela
+ALTER TABLE `fin_parcela_pagar` MODIFY `historico` varchar(255) COMMENT 'Histórico ou observações sobre esta parcela';
+
+
+-- Tabela de parcelas a receber
+ALTER TABLE `fin_parcela_receber` COMMENT = 'Parcelas individuais dos lançamentos a receber';
+
+-- ID do lançamento a receber pai
+ALTER TABLE `fin_parcela_receber` MODIFY `id_fin_lancamento_receber` int COMMENT 'ID do lançamento a receber ao qual esta parcela pertence';
+
+-- ID do status atual da parcela
+ALTER TABLE `fin_parcela_receber` MODIFY `id_fin_status_parcela` int COMMENT 'ID do status atual da parcela (aberta, paga, etc.)';
+
+-- ID do tipo de recebimento usado (se já recebido)
+ALTER TABLE `fin_parcela_receber` MODIFY `id_fin_tipo_recebimento` int COMMENT 'ID do tipo de recebimento usado (se a parcela já foi recebida)';
+
+-- ID do cheque recebido (se recebimento foi com cheque)
+ALTER TABLE `fin_parcela_receber` MODIFY `id_fin_cheque_recebido` int COMMENT 'ID do cheque recebido (se o recebimento foi feito com cheque)';
+
+-- Número sequencial da parcela
+ALTER TABLE `fin_parcela_receber` MODIFY `numero_parcela` int COMMENT 'Número sequencial da parcela (1, 2, 3...)';
+
+-- Data de emissão da parcela
+ALTER TABLE `fin_parcela_receber` MODIFY `data_emissao` date COMMENT 'Data em que a parcela foi emitida/gerada';
+
+-- Data de vencimento da parcela
+ALTER TABLE `fin_parcela_receber` MODIFY `data_vencimento` date COMMENT 'Data em que a parcela vence';
+
+-- Data em que a parcela foi recebida (se já recebida)
+ALTER TABLE `fin_parcela_receber` MODIFY `data_recebimento` date COMMENT 'Data em que a parcela foi efetivamente recebida (se já recebida)';
+
+-- Data limite para desconto
+ALTER TABLE `fin_parcela_receber` MODIFY `desconto_ate` date COMMENT 'Data limite para recebimento com desconto';
+
+-- Valor nominal da parcela
+ALTER TABLE `fin_parcela_receber` MODIFY `valor` decimal(18,6) COMMENT 'Valor nominal original da parcela';
+
+-- Taxa de juros (% ao dia/mês)
+ALTER TABLE `fin_parcela_receber` MODIFY `taxa_juro` decimal(18,6) COMMENT 'Percentual de juros aplicável em caso de atraso';
+
+-- Taxa de multa (%)
+ALTER TABLE `fin_parcela_receber` MODIFY `taxa_multa` decimal(18,6) COMMENT 'Percentual de multa aplicável em caso de atraso';
+
+-- Taxa de desconto (%)
+ALTER TABLE `fin_parcela_receber` MODIFY `taxa_desconto` decimal(18,6) COMMENT 'Percentual de desconto para recebimento antecipado';
+
+-- Valor calculado de juros
+ALTER TABLE `fin_parcela_receber` MODIFY `valor_juro` decimal(18,6) COMMENT 'Valor calculado de juros (se aplicável)';
+
+-- Valor calculado de multa
+ALTER TABLE `fin_parcela_receber` MODIFY `valor_multa` decimal(18,6) COMMENT 'Valor calculado de multa (se aplicável)';
+
+-- Valor calculado de desconto
+ALTER TABLE `fin_parcela_receber` MODIFY `valor_desconto` decimal(18,6) COMMENT 'Valor calculado de desconto (se aplicável)';
+
+-- Indica se foi emitido boleto (S/N)
+ALTER TABLE `fin_parcela_receber` MODIFY `emitiu_boleto` varchar(1) COMMENT 'Indica se foi emitido boleto para esta parcela (S=Sim, N=Não)';
+
+-- Nosso número do boleto (se emitido)
+ALTER TABLE `fin_parcela_receber` MODIFY `boleto_nosso_numero` varchar(10) COMMENT 'Nosso número do boleto (se foi emitido)';
+
+-- Valor efetivamente recebido
+ALTER TABLE `fin_parcela_receber` MODIFY `valor_recebido` decimal(18,6) COMMENT 'Valor efetivamente recebido (valor - desconto + juros/multa)';
+
+-- Histórico/observações da parcela
+ALTER TABLE `fin_parcela_receber` MODIFY `historico` varchar(255) COMMENT 'Histórico ou observações sobre esta parcela';

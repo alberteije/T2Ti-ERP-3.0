@@ -1,0 +1,58 @@
+-- Inserção de projetos principais
+INSERT INTO `projeto_principal` (`nome`, `data_inicio`, `data_previsao_fim`, `data_fim`, `link_quadro_trello`, `valor_orcamento`, `observacao`) VALUES
+('Implementação ERP Corporativo', '2023-01-15', '2023-06-30', NULL, 'https://trello.com/b/erpcorp', 250000.000000, 'Projeto de implementação do novo sistema ERP em todas as unidades'),
+('Migração para Cloud', '2023-03-01', '2023-09-15', NULL, 'https://trello.com/b/cloudmig', 180000.000000, 'Migração da infraestrutura local para nuvem AWS'),
+('Portal do Cliente', '2023-02-10', '2023-05-20', '2023-05-15', 'https://trello.com/b/portalcli', 120000.000000, 'Desenvolvimento do novo portal de autoatendimento para clientes'),
+('Automação de Marketing', '2023-04-05', '2023-08-10', NULL, 'https://trello.com/b/automkt', 75000.000000, 'Implementação de ferramentas de automação de marketing'),
+('Treinamento de Segurança', '2023-01-30', '2023-03-15', '2023-03-10', 'https://trello.com/b/segtrein', 30000.000000, 'Programa de treinamento em segurança da informação para todos os colaboradores');
+
+-- Inserção de cronogramas para os projetos
+INSERT INTO `projeto_cronograma` (`id_projeto_principal`, `tarefa`, `data_tarefa`, `descricao`) VALUES
+(1, 'Levantamento de requisitos', '2023-01-20', 'Reuniões com todas as áreas para mapear processos e necessidades'),
+(1, 'Configuração do sistema', '2023-02-15', 'Parametrização inicial do ERP conforme requisitos'),
+(1, 'Treinamento dos usuários', '2023-05-10', 'Capacitação das equipes para uso do novo sistema'),
+(1, 'Migração de dados', '2023-05-25', 'Transferência dos dados do sistema legado para o novo ERP'),
+(1, 'Go-live', '2023-06-20', 'Ativação do sistema em produção para todas as unidades'),
+(2, 'Análise de arquitetura', '2023-03-10', 'Definição da arquitetura cloud ideal para a empresa'),
+(2, 'Migração de bancos de dados', '2023-05-01', 'Transferência dos bancos de dados SQL para a nuvem'),
+(2, 'Configuração de rede', '2023-06-15', 'Ajustes de rede e conectividade para ambiente cloud'),
+(3, 'Wireframes e protótipos', '2023-02-20', 'Criação dos protótipos navegáveis para validação'),
+(3, 'Desenvolvimento front-end', '2023-03-15', 'Implementação da interface do usuário'),
+(3, 'Integração com API', '2023-04-10', 'Conexão do portal com os sistemas back-end'),
+(4, 'Seleção de ferramenta', '2023-04-15', 'Avaliação e escolha da plataforma de automação'),
+(4, 'Integração com CRM', '2023-06-01', 'Conectar ferramenta de marketing com o sistema de CRM'),
+(5, 'Elaboração do material', '2023-02-01', 'Criação do conteúdo para os treinamentos'),
+(5, 'Agendamento das turmas', '2023-02-20', 'Organização do calendário de treinamentos por departamento');
+
+-- Inserção de custos dos projetos
+INSERT INTO `projeto_custo` (`id_projeto_principal`, `id_fin_natureza_financeira`, `nome`, `justificativa`, `valor_mensal`, `valor_total`) VALUES
+(1, 5, 'Licenças de software', 'Aquisição das licenças do ERP para 300 usuários', 25000.000000, 150000.000000),
+(1, 7, 'Consultoria especializada', 'Contratação de consultores para apoio na implementação', 20000.000000, 80000.000000),
+(1, 3, 'Treinamentos', 'Custos com instrutores e material didático', 5000.000000, 20000.000000),
+(2, 5, 'Serviços AWS', 'Custos mensais com infraestrutura cloud', 15000.000000, 105000.000000),
+(2, 7, 'Migração de dados', 'Serviços profissionais para transferência segura dos dados', 10000.000000, 60000.000000),
+(3, 4, 'Desenvolvimento', 'Custos com equipe de desenvolvimento full-stack', 20000.000000, 80000.000000),
+(3, 6, 'Design UX/UI', 'Contratação de designer especializado para a interface', 8000.000000, 32000.000000),
+(4, 5, 'Licença HubSpot', 'Plataforma de automação de marketing', 5000.000000, 40000.000000),
+(4, 7, 'Configuração inicial', 'Serviços de implantação da ferramenta', 5000.000000, 20000.000000),
+(5, 3, 'Instrutor externo', 'Contratação de especialista em segurança', 10000.000000, 20000.000000),
+(5, 2, 'Material impresso', 'Produção de manuais e certificados', 2000.000000, 4000.000000);
+
+-- Inserção de riscos dos projetos
+INSERT INTO `projeto_risco` (`id_projeto_principal`, `nome`, `descricao`, `probabilidade`, `impacto`) VALUES
+(1, 'Resistência à mudança', 'Usuários podem resistir à adoção do novo sistema, impactando os prazos', 60, 70),
+(1, 'Problemas na migração', 'Dados corrompidos ou incompletos durante a migração do sistema legado', 30, 90),
+(2, 'Aumento de custos', 'Custos cloud podem exceder o previsto após a migração', 50, 80),
+(2, 'Problemas de desempenho', 'Latência na rede pode afetar aplicações críticas', 40, 65),
+(3, 'Mudança de escopo', 'Novas demandas dos clientes podem expandir o escopo inicial', 70, 50),
+(3, 'Problemas de segurança', 'Vulnerabilidades no portal podem expor dados de clientes', 20, 95),
+(4, 'Baixa adoção', 'Equipe de marketing pode não utilizar plenamente as ferramentas', 60, 40),
+(5, 'Baixa participação', 'Colaboradores podem não priorizar os treinamentos', 50, 30);
+
+-- Inserção de stakeholders (assumindo IDs de colaboradores existentes)
+INSERT INTO `projeto_stakeholders` (`id_projeto_dados`, `id_colaborador`) VALUES
+(1, 5), (1, 8), (1, 11), -- ERP Corporativo
+(2, 3), (2, 7), (2, 1), -- Migração Cloud
+(3, 4), (3, 9), (3, 10), -- Portal Cliente
+(4, 6), (4, 2),         -- Automação Marketing
+(5, 1), (5, 2), (5, 9);  -- Treinamento Segurança

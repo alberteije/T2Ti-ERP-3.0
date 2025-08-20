@@ -1,0 +1,199 @@
+--------------
+-- ZERA TUDO
+--------------
+
+-- Desativa verificação de chaves estrangeiras para evitar erros
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- Zera as tabelas na ordem inversa de dependência
+
+-- 1. Tabelas de operações/detalhes
+TRUNCATE TABLE `wms_expedicao`;
+ALTER TABLE `wms_expedicao` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `wms_armazenamento`;
+ALTER TABLE `wms_armazenamento` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `wms_ordem_separacao_det`;
+ALTER TABLE `wms_ordem_separacao_det` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `wms_recebimento_detalhe`;
+ALTER TABLE `wms_recebimento_detalhe` AUTO_INCREMENT = 1;
+
+-- 2. Tabelas de cabeçalhos/agendamentos
+TRUNCATE TABLE `wms_ordem_separacao_cab`;
+ALTER TABLE `wms_ordem_separacao_cab` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `wms_recebimento_cabecalho`;
+ALTER TABLE `wms_recebimento_cabecalho` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `wms_agendamento`;
+ALTER TABLE `wms_agendamento` AUTO_INCREMENT = 1;
+
+-- 3. Tabelas de estrutura do armazém
+TRUNCATE TABLE `wms_caixa`;
+ALTER TABLE `wms_caixa` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `wms_estante`;
+ALTER TABLE `wms_estante` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `wms_rua`;
+ALTER TABLE `wms_rua` AUTO_INCREMENT = 1;
+
+-- 4. Tabela de parâmetros (deve ser a última a ser zerada)
+TRUNCATE TABLE `wms_parametro`;
+ALTER TABLE `wms_parametro` AUTO_INCREMENT = 1;
+
+-- Reativa verificação de chaves estrangeiras
+SET FOREIGN_KEY_CHECKS = 1;
+
+-- Mensagem de conclusão
+SELECT 'Todas as tabelas do módulo WMS foram zeradas e os autoincrements resetados' AS Resultado;
+
+
+-------------------------------------
+
+
+-- 1. Inserção de parâmetros do WMS (deve ser a primeira tabela a ser populada)
+INSERT INTO `wms_parametro` (
+  `hora_por_volume`, `pessoa_por_volume`, 
+  `hora_por_peso`, `pessoa_por_peso`, 
+  `item_diferente_caixa`
+) VALUES
+(2, 1, 3, 1, 'N'),
+(1, 1, 2, 1, 'S');
+
+-- 2. Inserção de ruas do armazém
+INSERT INTO `wms_rua` (`codigo`, `nome`, `quantidade_estante`) VALUES
+('R01', 'Rua Principal', 10),
+('R02', 'Rua dos Eletrônicos', 8),
+('R03', 'Rua dos Alimentos', 12),
+('R04', 'Rua dos Móveis', 6),
+('R05', 'Rua de Acesso Rápido', 5);
+
+-- 3. Inserção de estantes
+INSERT INTO `wms_estante` (`id_wms_rua`, `codigo`, `quantidade_caixa`) VALUES
+-- Estantes para Rua Principal (R01)
+(1, 'A', 20),
+(1, 'B', 20),
+(1, 'C', 20),
+-- Estantes para Rua dos Eletrônicos (R02)
+(2, 'A', 15),
+(2, 'B', 15),
+-- Estantes para Rua dos Alimentos (R03)
+(3, 'A', 25),
+(3, 'B', 25),
+(3, 'C', 25),
+-- Estantes para Rua de Acesso Rápido (R05)
+(5, 'A', 10),
+(5, 'B', 10);
+
+-- 4. Inserção de caixas
+INSERT INTO `wms_caixa` (`id_wms_estante`, `codigo`, `altura`, `largura`, `profundidade`) VALUES
+-- Caixas para Estante A da Rua Principal
+(1, '001', 100, 80, 60),
+(1, '002', 100, 80, 60),
+(1, '003', 120, 100, 80),
+-- Caixas para Estante B da Rua Principal
+(2, '001', 100, 80, 60),
+(2, '002', 100, 80, 60),
+-- Caixas para Estante A da Rua dos Eletrônicos
+(4, '001', 60, 50, 40),
+(4, '002', 60, 50, 40),
+-- Caixas para Estante A da Rua de Acesso Rápido
+(8, '001', 80, 60, 50),
+(8, '002', 80, 60, 50);
+
+-- 5. Inserção de agendamentos
+INSERT INTO `wms_agendamento` (
+  `data_operacao`, `hora_operacao`, `local_operacao`, 
+  `quantidade_volume`, `peso_total_volume`, 
+  `quantidade_pessoa`, `quantidade_hora`
+) VALUES
+('2023-05-10', '08:00:00', 'Doca 1', 50, 500.000000, 3, 4),
+('2023-05-11', '09:30:00', 'Doca 2', 30, 300.000000, 2, 3),
+('2023-05-12', '14:00:00', 'Doca 3', 20, 200.000000, 2, 2);
+
+-- 6. Inserção de recebimentos (cabecalho)
+INSERT INTO `wms_recebimento_cabecalho` (
+  `id_wms_agendamento`, `data_recebimento`, 
+  `hora_inicio`, `hora_fim`, 
+  `volume_recebido`, `peso_recebido`, 
+  `inconsistencia`, `observacao`
+) VALUES
+(1, '2023-05-10', '08:05:00', '10:30:00', 48, 480.000000, 'N', 'Recebimento completo com 2 volumes faltantes'),
+(2, '2023-05-11', '09:35:00', '12:00:00', 30, 300.000000, 'N', 'Recebimento conforme agendado'),
+(3, '2023-05-12', '14:05:00', '15:30:00', 18, 190.000000, 'S', '2 volumes com avarias');
+
+-- 7. Inserção de recebimentos (detalhe) - assumindo que existem produtos com IDs 1 a 10
+INSERT INTO `wms_recebimento_detalhe` (
+  `id_wms_recebimento_cabecalho`, `id_produto`, 
+  `quantidade_volume`, `quantidade_item_por_volume`, 
+  `quantidade_recebida`, `destino`
+) VALUES
+-- Itens para o primeiro recebimento
+(1, 1, 10, 5, 50, 'A'),
+(1, 2, 8, 10, 80, 'A'),
+(1, 3, 30, 2, 60, 'B'),
+-- Itens para o segundo recebimento
+(2, 4, 15, 4, 60, 'A'),
+(2, 5, 15, 6, 90, 'B'),
+-- Itens para o terceiro recebimento
+(3, 1, 10, 3, 30, 'A'),
+(3, 2, 8, 5, 40, 'B');
+
+-- 8. Inserção de armazenamentos
+INSERT INTO `wms_armazenamento` (
+  `id_wms_caixa`, `id_wms_recebimento_detalhe`, 
+  `quantidade`
+) VALUES
+-- Armazenamento dos itens do primeiro recebimento
+(1, 1, 25),  -- 25 unidades do produto 1 na caixa 1
+(2, 1, 25),  -- 25 unidades do produto 1 na caixa 2
+(3, 2, 80),  -- 80 unidades do produto 2 na caixa 3
+(4, 3, 60),  -- 60 unidades do produto 3 na caixa 4
+-- Armazenamento dos itens do segundo recebimento
+(5, 4, 30),  -- 30 unidades do produto 4 na caixa 5
+(6, 4, 30),  -- 30 unidades do produto 4 na caixa 6
+(7, 5, 90),  -- 90 unidades do produto 5 na caixa 7
+-- Armazenamento dos itens do terceiro recebimento
+(8, 6, 30),  -- 30 unidades do produto 6 na caixa 8
+(9, 7, 40);  -- 40 unidades do produto 7 na caixa 9
+
+-- 9. Inserção de ordens de separação (cabecalho)
+INSERT INTO `wms_ordem_separacao_cab` (
+  `origem`, `data_solicitacao`, `data_limite`
+) VALUES
+('V', '2023-05-15', '2023-05-15'),  -- Venda
+('T', '2023-05-16', '2023-05-16'),  -- Transferência
+('V', '2023-05-17', '2023-05-17');  -- Venda
+
+-- 10. Inserção de ordens de separação (detalhe)
+INSERT INTO `wms_ordem_separacao_det` (
+  `id_wms_ordem_separacao_cab`, `id_produto`, 
+  `quantidade`
+) VALUES
+-- Itens para a primeira ordem de separação
+(1, 1, 10),
+(1, 2, 20),
+-- Itens para a segunda ordem de separação
+(2, 3, 15),
+(2, 4, 25),
+-- Itens para a terceira ordem de separação
+(3, 5, 30),
+(3, 1, 10);
+
+-- 11. Inserção de expedições
+INSERT INTO `wms_expedicao` (
+  `id_wms_ordem_separacao_det`, `id_wms_armazenamento`, 
+  `quantidade`, `data_saida`
+) VALUES
+-- Expedição para os itens da primeira ordem
+(1, 1, 10, '2023-05-15'),  -- 10 unidades do armazenamento 1 (produto 1)
+(2, 3, 20, '2023-05-15'),  -- 20 unidades do armazenamento 3 (produto 2)
+-- Expedição para os itens da segunda ordem
+(3, 4, 15, '2023-05-16'),  -- 15 unidades do armazenamento 4 (produto 3)
+(4, 5, 25, '2023-05-16'),  -- 25 unidades do armazenamento 5 (produto 4)
+-- Expedição para os itens da terceira ordem
+(5, 7, 30, '2023-05-17'),  -- 30 unidades do armazenamento 7 (produto 5)
+(6, 8, 10, '2023-05-17');  -- 10 unidades do armazenamento 8 (produto 6)

@@ -1,0 +1,100 @@
+-- RUAS DE GÔNDOLAS (gondola_rua)
+INSERT INTO gondola_rua (codigo, nome, quantidade_estante) VALUES
+('R01', 'Rua dos Alimentos', 5),
+('R02', 'Rua de Bebidas', 4),
+('R03', 'Rua de Limpeza', 3),
+('R04', 'Rua de Hortifruti', 6);
+
+-- ESTANTES (gondola_estante) - Relacionadas às ruas
+INSERT INTO gondola_estante (id_gondola_rua, codigo, quantidade_caixa) VALUES
+-- Estantes para Rua 1 (Alimentos)
+(1, 'E01', 10),
+(1, 'E02', 10),
+(1, 'E03', 10),
+(1, 'E04', 10),
+(1, 'E05', 10),
+
+-- Estantes para Rua 2 (Bebidas)
+(2, 'E01', 8),
+(2, 'E02', 8),
+(2, 'E03', 8),
+(2, 'E04', 8),
+
+-- Estantes para Rua 3 (Limpeza)
+(3, 'E01', 6),
+(3, 'E02', 6),
+(3, 'E03', 6),
+
+-- Estantes para Rua 4 (Hortifruti)
+(4, 'E01', 12),
+(4, 'E02', 12),
+(4, 'E03', 12),
+(4, 'E04', 12),
+(4, 'E05', 12),
+(4, 'E06', 12);
+
+-- CAIXAS (gondola_caixa) - Relacionadas às estantes
+INSERT INTO gondola_caixa (id_gondola_estante, codigo, altura, largura, profundidade) VALUES
+-- Caixas para Estante 1 (Rua 1 - Alimentos)
+(1, 'C01', 30, 40, 50),
+(1, 'C02', 30, 40, 50),
+(1, 'C03', 30, 40, 50),
+(1, 'C04', 30, 40, 50),
+(1, 'C05', 30, 40, 50),
+(1, 'C06', 30, 40, 50),
+(1, 'C07', 30, 40, 50),
+(1, 'C08', 30, 40, 50),
+(1, 'C09', 30, 40, 50),
+(1, 'C10', 30, 40, 50),
+
+-- Caixas para Estante 2 (Rua 1 - Alimentos)
+(2, 'C01', 30, 40, 50),
+(2, 'C02', 30, 40, 50),
+(2, 'C03', 30, 40, 50),
+(2, 'C04', 30, 40, 50),
+(2, 'C05', 30, 40, 50),
+(2, 'C06', 30, 40, 50),
+(2, 'C07', 30, 40, 50),
+(2, 'C08', 30, 40, 50),
+(2, 'C09', 30, 40, 50),
+(2, 'C10', 30, 40, 50),
+
+-- Caixas para Estante 6 (Rua 2 - Bebidas)
+(6, 'C01', 35, 45, 55),
+(6, 'C02', 35, 45, 55),
+(6, 'C03', 35, 45, 55),
+(6, 'C04', 35, 45, 55),
+(6, 'C05', 35, 45, 55),
+(6, 'C06', 35, 45, 55),
+(6, 'C07', 35, 45, 55),
+(6, 'C08', 35, 45, 55),
+
+-- Caixas para Estante 12 (Rua 4 - Hortifruti)
+(12, 'C01', 25, 35, 40),
+(12, 'C02', 25, 35, 40),
+(12, 'C03', 25, 35, 40),
+(12, 'C04', 25, 35, 40),
+(12, 'C05', 25, 35, 40),
+(12, 'C06', 25, 35, 40),
+(12, 'C07', 25, 35, 40),
+(12, 'C08', 25, 35, 40),
+(12, 'C09', 25, 35, 40),
+(12, 'C10', 25, 35, 40),
+(12, 'C11', 25, 35, 40),
+(12, 'C12', 25, 35, 40);
+
+-- ARMAZENAMENTO (gondola_armazenamento) - Assumindo IDs de produtos existentes (1-20)
+INSERT INTO gondola_armazenamento (id_gondola_caixa, id_produto, quantidade) VALUES
+-- Produtos na Rua 1 (Alimentos)
+(1, 1, 50),   -- Arroz na caixa 1
+(1, 2, 30),   -- Feijão na caixa 1
+(2, 3, 40),   -- Macarrão na caixa 2
+(3, 4, 25),   -- Óleo na caixa 3
+(4, 5, 60),   -- Açúcar na caixa 4
+(5, 6, 35),   -- Café na caixa 5
+
+-- Produtos na Rua 2 (Bebidas)
+(21, 7, 24),  -- Refrigerante na caixa 21
+(22, 8, 36),  -- Água mineral na caixa 22
+(23, 9, 18),  -- Suco na caixa 23
+(24, 10, 12); -- Cerveja na caixa 24

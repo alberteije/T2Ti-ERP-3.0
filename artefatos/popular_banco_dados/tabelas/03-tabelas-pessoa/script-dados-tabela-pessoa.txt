@@ -1,0 +1,299 @@
+insert into `pessoa` (`id`, `nome`, `tipo`, `site`, `email`, `eh_cliente`, `eh_fornecedor`, `eh_transportadora`, `eh_colaborador`, `eh_contador`) values('1','TESTE PESSOA FISICA','F',NULL,'pf@gmail.com','S','S','S','S',NULL);
+insert into `pessoa` (`id`, `nome`, `tipo`, `site`, `email`, `eh_cliente`, `eh_fornecedor`, `eh_transportadora`, `eh_colaborador`, `eh_contador`) values('2','TESTE PESSOA JURIDICA','J',NULL,'pj@gmail.com','S','S','S','S',NULL);
+insert into `pessoa` (`id`, `nome`, `tipo`, `site`, `email`, `eh_cliente`, `eh_fornecedor`, `eh_transportadora`, `eh_colaborador`, `eh_contador`) values('3','OUTRA PESSOA FISICA','F',NULL,'pf2@gmail.com','S','S','S','S',NULL);
+insert into `pessoa` (`id`, `nome`, `tipo`, `site`, `email`, `eh_cliente`, `eh_fornecedor`, `eh_transportadora`, `eh_colaborador`, `eh_contador`) values('4','MAIS UMA PESSOA FISICA','F',NULL,'pf3@gmail.com','S',NULL,NULL,NULL,NULL);
+
+-- Inserção de mais 7 pessoas físicas
+INSERT INTO `pessoa` (`id`, `nome`, `tipo`, `site`, `email`, `eh_cliente`, `eh_fornecedor`, `eh_transportadora`, `eh_colaborador`, `eh_contador`) 
+VALUES
+(5, 'PESSOA FISICA 1', 'F', NULL, 'pf4@gmail.com', 'S', NULL, NULL, NULL, NULL),
+(6, 'PESSOA FISICA 2', 'F', NULL, 'pf5@gmail.com', 'S', 'S', NULL, NULL, NULL),
+(7, 'PESSOA FISICA 3', 'F', NULL, 'pf6@gmail.com', 'S', 'S', 'S', NULL, NULL),
+(8, 'PESSOA FISICA 4', 'F', NULL, 'pf7@gmail.com', 'S', NULL, NULL, 'S', NULL),
+(9, 'PESSOA FISICA 5', 'F', NULL, 'pf8@gmail.com', 'S', 'S', NULL, NULL, NULL),
+(10, 'PESSOA FISICA 6', 'F', NULL, 'pf9@gmail.com', 'S', NULL, NULL, NULL, 'S'),
+(11, 'PESSOA FISICA 7', 'F', NULL, 'pf10@gmail.com', 'S', NULL, 'S', 'S', NULL);
+
+-- Inserção de mais 9 pessoas jurídicas
+INSERT INTO `pessoa` (`id`, `nome`, `tipo`, `site`, `email`, `eh_cliente`, `eh_fornecedor`, `eh_transportadora`, `eh_colaborador`, `eh_contador`) 
+VALUES
+(12, 'EMPRESA JURIDICA 1', 'J', 'https://empresa1.com', 'pj2@gmail.com', 'S', 'S', NULL, 'S', 'S'),
+(13, 'EMPRESA JURIDICA 2', 'J', 'https://empresa2.com', 'pj3@gmail.com', 'S', NULL, NULL, NULL, NULL),
+(14, 'EMPRESA JURIDICA 3', 'J', 'https://empresa3.com', 'pj4@gmail.com', 'S', 'S', 'S', 'S', NULL),
+(15, 'EMPRESA JURIDICA 4', 'J', 'https://empresa4.com', 'pj5@gmail.com', 'S', 'S', 'S', NULL, 'S'),
+(16, 'EMPRESA JURIDICA 5', 'J', 'https://empresa5.com', 'pj6@gmail.com', 'S', 'S', NULL, NULL, NULL),
+(17, 'EMPRESA JURIDICA 6', 'J', 'https://empresa6.com', 'pj7@gmail.com', 'S', NULL, 'S', 'S', 'S'),
+(18, 'EMPRESA JURIDICA 7', 'J', 'https://empresa7.com', 'pj8@gmail.com', 'S', 'S', NULL, NULL, 'S'),
+(19, 'EMPRESA JURIDICA 8', 'J', 'https://empresa8.com', 'pj9@gmail.com', 'S', NULL, NULL, 'S', NULL),
+(20, 'EMPRESA JURIDICA 9', 'J', 'https://empresa9.com', 'pj10@gmail.com', 'S', 'S', NULL, NULL, NULL);
+
+/*
+  ESTADO_CIVIL
+  ------------
+*/
+INSERT INTO ESTADO_CIVIL (ID, NOME, DESCRICAO) VALUES (1, 'SOLTEIRO', 'SOLTEIRO');
+INSERT INTO ESTADO_CIVIL (ID, NOME, DESCRICAO) VALUES (2, 'CASADO', 'CASADO');
+INSERT INTO ESTADO_CIVIL (ID, NOME, DESCRICAO) VALUES (3, 'VIUVO', 'VIUVO');
+INSERT INTO ESTADO_CIVIL (ID, NOME, DESCRICAO) VALUES (4, 'SEPARADO JUDICIALMENTE', 'SEPARADO JUDICIALMENTE');
+INSERT INTO ESTADO_CIVIL (ID, NOME, DESCRICAO) VALUES (5, 'DIVORCIADO', 'DIVORCIADO');
+
+/*
+  NIVEL_FORMACAO
+  --------------
+*/
+insert into NIVEL_FORMACAO (ID, NOME, DESCRICAO) values('1','Analfabeto','Grau de instrução 1');
+insert into NIVEL_FORMACAO (ID, NOME, DESCRICAO) values('2','Até 5º Ano Incompleto','Grau de instrução 2');
+insert into NIVEL_FORMACAO (ID, NOME, DESCRICAO) values('3','5º Ano Completo','Grau de instrução 3');
+insert into NIVEL_FORMACAO (ID, NOME, DESCRICAO) values('4','6º ao 9º Ano do Fundamental','Grau de instrução 4');
+insert into NIVEL_FORMACAO (ID, NOME, DESCRICAO) values('5','Fundamental Completo','Grau de instrução 5');
+insert into NIVEL_FORMACAO (ID, NOME, DESCRICAO) values('6','Médio Incompleto','Grau de instrução 6');
+insert into NIVEL_FORMACAO (ID, NOME, DESCRICAO) values('7','Médio Completo','Grau de instrução 7');
+insert into NIVEL_FORMACAO (ID, NOME, DESCRICAO) values('8','Superior Incompleto','Grau de instrução 8');
+insert into NIVEL_FORMACAO (ID, NOME, DESCRICAO) values('9','Superior Completo','Grau de instrução 9');
+insert into NIVEL_FORMACAO (ID, NOME, DESCRICAO) values('10','Mestrado','Grau de instrução 10');
+insert into NIVEL_FORMACAO (ID, NOME, DESCRICAO) values('11','Doutorado','Grau de instrução 11');
+insert into NIVEL_FORMACAO (ID, NOME, DESCRICAO) values('12','Pós-Doutorado','');
+
+-- Inserções para pessoa_fisica
+INSERT INTO `pessoa_fisica` (`id_pessoa`, `id_nivel_formacao`, `id_estado_civil`, `cpf`, `rg`, `orgao_rg`, `data_emissao_rg`, `data_nascimento`, `sexo`, `raca`, `nacionalidade`, `naturalidade`, `nome_pai`, `nome_mae`) 
+VALUES
+-- Pessoa 1
+(1, 3, 2, '12345678901', '1234567', 'SSP/SP', '2010-05-15', '1985-03-20', 'M', 'B', 'Brasileira', 'São Paulo', 'João da Silva', 'Maria da Silva'),
+-- Pessoa 3
+(3, 4, 1, '23456789012', '2345678', 'SSP/RJ', '2011-06-20', '1990-07-12', 'F', 'P', 'Brasileira', 'Rio de Janeiro', 'Carlos Oliveira', 'Ana Oliveira'),
+-- Pessoa 4
+(4, 2, 3, '34567890123', '3456789', 'SSP/MG', '2012-07-25', '1988-11-05', 'M', 'A', 'Brasileira', 'Belo Horizonte', 'Pedro Santos', 'Clara Santos'),
+-- Pessoa 5
+(5, 1, 4, '45678901234', '4567890', 'SSP/RS', '2013-08-30', '1992-04-18', 'F', 'C', 'Brasileira', 'Porto Alegre', 'Antônio Pereira', 'Beatriz Pereira'),
+-- Pessoa 6
+(6, 5, 2, '56789012345', '5678901', 'SSP/PR', '2014-09-10', '1987-09-22', 'M', 'D', 'Brasileira', 'Curitiba', 'Luiz Costa', 'Fernanda Costa'),
+-- Pessoa 7
+(7, 3, 1, '67890123456', '6789012', 'SSP/SC', '2015-10-15', '1991-12-30', 'F', 'E', 'Brasileira', 'Florianópolis', 'Marcos Alves', 'Patrícia Alves'),
+-- Pessoa 8
+(8, 4, 5, '78901234567', '7890123', 'SSP/BA', '2016-11-20', '1989-02-14', 'M', 'B', 'Brasileira', 'Salvador', 'Ricardo Lima', 'Sandra Lima'),
+-- Pessoa 9
+(9, 2, 3, '89012345678', '8901234', 'SSP/PE', '2017-12-25', '1993-06-08', 'F', 'P', 'Brasileira', 'Recife', 'Eduardo Rocha', 'Tatiane Rocha'),
+-- Pessoa 10
+(10, 5, 4, '90123456789', '9012345', 'SSP/CE', '2018-01-30', '1990-08-15', 'M', 'A', 'Brasileira', 'Fortaleza', 'Fábio Nunes', 'Vanessa Nunes'),
+-- Pessoa 11
+(11, 3, 2, '01234567890', '0123456', 'SSP/DF', '2019-02-28', '1986-10-10', 'F', 'C', 'Brasileira', 'Brasília', 'Gustavo Mendes', 'Juliana Mendes');
+
+-- Inserções para pessoa_juridica
+INSERT INTO `pessoa_juridica` (`id_pessoa`, `cnpj`, `nome_fantasia`, `inscricao_estadual`, `inscricao_municipal`, `data_constituicao`, `tipo_regime`, `crt`) 
+VALUES
+-- Pessoa 2
+(2, '12345678000101', 'TESTE PJ LTDA', '123456789', '987654321', '2000-01-15', '1', '1'),
+-- Pessoa 12
+(12, '23456789000102', 'EMPRESA 1 LTDA', '234567890', '876543210', '2005-03-20', '1', '2'),
+-- Pessoa 13
+(13, '34567890000103', 'EMPRESA 2 SA', '345678901', '765432109', '2006-05-25', '2', '3'),
+-- Pessoa 14
+(14, '45678901000104', 'EMPRESA 3 EIRELI', '456789012', '654321098', '2007-07-30', '1', '1'),
+-- Pessoa 15
+(15, '56789012000105', 'EMPRESA 4 ME', '567890123', '543210987', '2008-09-10', '3', '2'),
+-- Pessoa 16
+(16, '67890123000106', 'EMPRESA 5 LTDA', '678901234', '432109876', '2009-11-15', '1', '3'),
+-- Pessoa 17
+(17, '78901234000107', 'EMPRESA 6 SA', '789012345', '321098765', '2010-12-20', '2', '1'),
+-- Pessoa 18
+(18, '89012345000108', 'EMPRESA 7 EPP', '890123456', '210987654', '2011-02-25', '3', '2'),
+-- Pessoa 19
+(19, '90123456000109', 'EMPRESA 8 MEI', '901234567', '109876543', '2012-04-30', '3', '3'),
+-- Pessoa 20
+(20, '01234567000110', 'EMPRESA 9 LTDA', '012345678', '098765432', '2013-06-05', '1', '1');
+
+-- Inserções para pessoa_endereco
+INSERT INTO `pessoa_endereco` (`id_pessoa`, `logradouro`, `numero`, `bairro`, `municipio_ibge`, `uf`, `cep`, `cidade`, `complemento`, `principal`, `entrega`, `cobranca`, `correspondencia`) 
+VALUES
+-- Pessoa 1
+(1, 'Rua das Flores', '100', 'Centro', 3550308, 'SP', '01001000', 'São Paulo', 'Apto 101', 'S', 'S', 'S', 'S'),
+-- Pessoa 2
+(2, 'Avenida Paulista', '2000', 'Bela Vista', 3550308, 'SP', '01310000', 'São Paulo', '10º andar', 'S', 'S', 'S', 'S'),
+-- Pessoa 3
+(3, 'Rua do Ouvidor', '50', 'Centro', 3304557, 'RJ', '20040030', 'Rio de Janeiro', NULL, 'S', 'S', 'S', 'S'),
+-- Pessoa 4
+(4, 'Avenida Afonso Pena', '1500', 'Funcionários', 3106200, 'MG', '30130007', 'Belo Horizonte', 'Sala 302', 'S', 'S', 'S', 'S'),
+-- Pessoa 5
+(5, 'Rua da Praia', '300', 'Praia de Belas', 4314902, 'RS', '90110000', 'Porto Alegre', NULL, 'S', 'S', 'S', 'S'),
+-- Pessoa 6
+(6, 'Rua XV de Novembro', '500', 'Centro', 4106902, 'PR', '80020010', 'Curitiba', 'Loja 12', 'S', 'S', 'S', 'S'),
+-- Pessoa 7
+(7, 'Rua Felipe Schmidt', '200', 'Centro', 4205407, 'SC', '88010000', 'Florianópolis', NULL, 'S', 'S', 'S', 'S'),
+-- Pessoa 8
+(8, 'Avenida Sete de Setembro', '400', 'Dois de Julho', 2927408, 'BA', '40060001', 'Salvador', 'Bloco B', 'S', 'S', 'S', 'S'),
+-- Pessoa 9
+(9, 'Rua do Bom Jesus', '100', 'Recife Antigo', 2611606, 'PE', '50030000', 'Recife', NULL, 'S', 'S', 'S', 'S'),
+-- Pessoa 10
+(10, 'Rua Barão do Rio Branco', '800', 'Centro', 2304400, 'CE', '60010000', 'Fortaleza', 'Sala 501', 'S', 'S', 'S', 'S'),
+-- Pessoa 11
+(11, 'Quadra SQS 105', '10', 'Asa Sul', 5300108, 'DF', '70330000', 'Brasília', 'Bloco C', 'S', 'S', 'S', 'S'),
+-- Pessoa 12
+(12, 'Avenida Brigadeiro Faria Lima', '1500', 'Itaim Bibi', 3550308, 'SP', '01451000', 'São Paulo', '15º andar', 'S', 'S', 'S', 'S'),
+-- Pessoa 13
+(13, 'Rua da Quitanda', '200', 'Centro', 3304557, 'RJ', '20091000', 'Rio de Janeiro', NULL, 'S', 'S', 'S', 'S'),
+-- Pessoa 14
+(14, 'Rua da Bahia', '1000', 'Lourdes', 3106200, 'MG', '30160000', 'Belo Horizonte', 'Sala 1001', 'S', 'S', 'S', 'S'),
+-- Pessoa 15
+(15, 'Avenida Borges de Medeiros', '500', 'Centro Histórico', 4314902, 'RS', '90020000', 'Porto Alegre', NULL, 'S', 'S', 'S', 'S'),
+-- Pessoa 16
+(16, 'Rua Marechal Deodoro', '600', 'Centro', 4106902, 'PR', '80010000', 'Curitiba', 'Conjunto 201', 'S', 'S', 'S', 'S'),
+-- Pessoa 17
+(17, 'Avenida Hercílio Luz', '300', 'Centro', 4205407, 'SC', '88010000', 'Florianópolis', NULL, 'S', 'S', 'S', 'S'),
+-- Pessoa 18
+(18, 'Avenida Tancredo Neves', '1500', 'Caminho das Árvores', 2927408, 'BA', '41820000', 'Salvador', 'Torre Norte', 'S', 'S', 'S', 'S'),
+-- Pessoa 19
+(19, 'Rua do Riachuelo', '100', 'Boa Vista', 2611606, 'PE', '50050000', 'Recife', NULL, 'S', 'S', 'S', 'S'),
+-- Pessoa 20
+(20, 'Avenida Santos Dumont', '2000', 'Aldeota', 2304400, 'CE', '60150000', 'Fortaleza', 'Sala 1200', 'S', 'S', 'S', 'S');
+
+-- Inserções para pessoa_telefone
+INSERT INTO `pessoa_telefone` (`id_pessoa`, `tipo`, `numero`) 
+VALUES
+-- Cada pessoa terá pelo menos 2 telefones (celular e fixo)
+(1, 'C', '11999999999'),
+(1, 'F', '1133333333'),
+(2, 'C', '11988888888'),
+(2, 'F', '1144444444'),
+(3, 'C', '21977777777'),
+(3, 'F', '2155555555'),
+(4, 'C', '31966666666'),
+(4, 'F', '3166666666'),
+(5, 'C', '51955555555'),
+(5, 'F', '5177777777'),
+(6, 'C', '41944444444'),
+(6, 'F', '4188888888'),
+(7, 'C', '47933333333'),
+(7, 'F', '4799999999'),
+(8, 'C', '71922222222'),
+(8, 'F', '7111111111'),
+(9, 'C', '81911111111'),
+(9, 'F', '8122222222'),
+(10, 'C', '85900000000'),
+(10, 'F', '8533333333'),
+(11, 'C', '61999999999'),
+(11, 'F', '6144444444'),
+(12, 'C', '11988888888'),
+(12, 'F', '1155555555'),
+(13, 'C', '21977777777'),
+(13, 'F', '2166666666'),
+(14, 'C', '31966666666'),
+(14, 'F', '3177777777'),
+(15, 'C', '51955555555'),
+(15, 'F', '5188888888'),
+(16, 'C', '41944444444'),
+(16, 'F', '4199999999'),
+(17, 'C', '47933333333'),
+(17, 'F', '4711111111'),
+(18, 'C', '71922222222'),
+(18, 'F', '7122222222'),
+(19, 'C', '81911111111'),
+(19, 'F', '8133333333'),
+(20, 'C', '85900000000'),
+(20, 'F', '8544444444');
+
+-- Inserções para pessoa_contato
+INSERT INTO `pessoa_contato` (`id_pessoa`, `nome`, `email`, `observacao`, `data_contato`) 
+VALUES
+-- Pessoa 1
+(1, 'Contato Principal', 'contato1@gmail.com', 'Gerente de Vendas', '2023-01-10'),
+(1, 'Contato Secundário', 'contato2@gmail.com', 'Financeiro', '2023-01-15'),
+-- Pessoa 2
+(2, 'Diretor Comercial', 'comercial@empresa.com', 'Responsável por negociações', '2023-02-05'),
+(2, 'Gerente Financeiro', 'financeiro@empresa.com', 'Pagamentos e cobranças', '2023-02-10'),
+-- Pessoa 3
+(3, 'Contato Único', 'contato3@gmail.com', 'Atendimento geral', '2023-03-15'),
+-- Pessoa 12
+(12, 'CEO', 'ceo@empresa1.com', 'Diretor Executivo', '2023-04-20'),
+(12, 'CTO', 'cto@empresa1.com', 'Diretor de Tecnologia', '2023-04-25'),
+-- Pessoa 14
+(14, 'Gerente de Projetos', 'projetos@empresa3.com', 'Coordenação de projetos', '2023-05-10'),
+-- Pessoa 17
+(17, 'RH', 'rh@empresa6.com', 'Departamento Pessoal', '2023-06-15'),
+(17, 'Compras', 'compras@empresa6.com', 'Suprimentos', '2023-06-20'),
+-- Pessoa 20
+(20, 'Atendimento', 'atendimento@empresa9.com', 'SAC', '2023-07-05');
+
+-- Inserções para pessoa_alteracao
+INSERT INTO `pessoa_alteracao` (`id_pessoa`, `data_alteracao`, `objeto_antigo`, `objeto_novo`) 
+VALUES
+-- Pessoa 1
+(1, '2023-01-05', '{"nome": "TESTE PESSOA ANTIGA", "email": "antigo@gmail.com"}', '{"nome": "TESTE PESSOA FISICA", "email": "pf@gmail.com"}'),
+-- Pessoa 2
+(2, '2023-02-01', '{"nome": "EMPRESA ANTIGA", "email": "antiga@empresa.com"}', '{"nome": "TESTE PESSOA JURIDICA", "email": "pj@gmail.com"}'),
+-- Pessoa 3
+(3, '2023-03-10', '{"nome": "PESSOA ANTIGA", "email": "antiga@email.com"}', '{"nome": "OUTRA PESSOA FISICA", "email": "pf2@gmail.com"}'),
+-- Pessoa 12
+(12, '2023-04-15', '{"nome": "EMPRESA JURIDICA ANTIGA", "site": "https://antigo.com"}', '{"nome": "EMPRESA JURIDICA 1", "site": "https://empresa1.com"}'),
+-- Pessoa 15
+(15, '2023-05-20', '{"nome": "EMPRESA 4 ANTIGA", "eh_fornecedor": null}', '{"nome": "EMPRESA JURIDICA 4", "eh_fornecedor": "S"}'),
+-- Pessoa 18
+(18, '2023-06-25', '{"eh_contador": null}', '{"eh_contador": "S"}');
+
+-- Atualizando pessoas físicas (IDs 1, 3-11)
+UPDATE `pessoa` SET 
+  `nome` = CASE `id`
+    WHEN 1 THEN 'João da Silva Santos'
+    WHEN 3 THEN 'Maria Oliveira Pereira'
+    WHEN 4 THEN 'Carlos Eduardo Almeida'
+    WHEN 5 THEN 'Ana Carolina Souza'
+    WHEN 6 THEN 'Pedro Henrique Costa'
+    WHEN 7 THEN 'Juliana Martins Rodrigues'
+    WHEN 8 THEN 'Ricardo Augusto Fernandes'
+    WHEN 9 THEN 'Fernanda Lima Castro'
+    WHEN 10 THEN 'Gustavo Nunes Barbosa'
+    WHEN 11 THEN 'Patrícia Mendes Teixeira'
+  END,
+  `email` = CASE `id`
+    WHEN 1 THEN 'joao.silva@email.com'
+    WHEN 3 THEN 'maria.oliveira@email.com'
+    WHEN 4 THEN 'carlos.almeida@email.com'
+    WHEN 5 THEN 'ana.souza@email.com'
+    WHEN 6 THEN 'pedro.costa@email.com'
+    WHEN 7 THEN 'juliana.rodrigues@email.com'
+    WHEN 8 THEN 'ricardo.fernandes@email.com'
+    WHEN 9 THEN 'fernanda.castro@email.com'
+    WHEN 10 THEN 'gustavo.barbosa@email.com'
+    WHEN 11 THEN 'patricia.teixeira@email.com'
+  END,
+  `site` = NULL
+WHERE `id` IN (1, 3, 4, 5, 6, 7, 8, 9, 10, 11) AND `tipo` = 'F';
+
+-- Atualizando pessoas jurídicas (IDs 2, 12-20)
+UPDATE `pessoa` SET 
+  `nome` = CASE `id`
+    WHEN 2 THEN 'Comércio e Indústria Ltda'
+    WHEN 12 THEN 'Office Brasil Materiais de Escritório S.A.'
+    WHEN 13 THEN 'Mecânica Industrial Componentes Ltda'
+    WHEN 14 THEN 'CleanHouse Produtos de Limpeza'
+    WHEN 15 THEN 'UniForme Confecções e EPIs'
+    WHEN 16 THEN 'Insumos Industriais do Brasil'
+    WHEN 17 THEN 'SafetyTech Equipamentos de Segurança'
+    WHEN 18 THEN 'EletroParts Componentes Elétricos'
+    WHEN 19 THEN 'Ferramentas Gerais Ltda'
+    WHEN 20 THEN 'Eletrônica Digital Componentes'
+  END,
+  `email` = CASE `id`
+    WHEN 2 THEN 'contato@comercioindustria.com.br'
+    WHEN 12 THEN 'vendas@officebrasil.com.br'
+    WHEN 13 THEN 'comercial@mecanicaindustrial.com.br'
+    WHEN 14 THEN 'atendimento@cleanhouse.com.br'
+    WHEN 15 THEN 'sac@uniformeepis.com.br'
+    WHEN 16 THEN 'contato@insumosindustriais.com.br'
+    WHEN 17 THEN 'vendas@safetytech.com.br'
+    WHEN 18 THEN 'comercial@eletroparts.com.br'
+    WHEN 19 THEN 'contato@ferramentasgerais.com.br'
+    WHEN 20 THEN 'vendas@eletronicadigital.com.br'
+  END,
+  `site` = CASE `id`
+    WHEN 2 THEN 'https://www.comercioindustria.com.br'
+    WHEN 12 THEN 'https://www.officebrasil.com.br'
+    WHEN 13 THEN 'https://www.mecanicaindustrial.com.br'
+    WHEN 14 THEN 'https://www.cleanhouse.com.br'
+    WHEN 15 THEN 'https://www.uniformeepis.com.br'
+    WHEN 16 THEN 'https://www.insumosindustriais.com.br'
+    WHEN 17 THEN 'https://www.safetytech.com.br'
+    WHEN 18 THEN 'https://www.eletroparts.com.br'
+    WHEN 19 THEN 'https://www.ferramentasgerais.com.br'
+    WHEN 20 THEN 'https://www.eletronicadigital.com.br'
+  END
+WHERE `id` IN (2, 12, 13, 14, 15, 16, 17, 18, 19, 20) AND `tipo` = 'J';

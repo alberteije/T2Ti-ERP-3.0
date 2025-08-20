@@ -1,0 +1,75 @@
+-- 1. TIPOS DE DOCUMENTO (ged_tipo_documento)
+INSERT INTO ged_tipo_documento (nome, tamanho_maximo) VALUES
+('Contrato', 10.000000),
+('Nota Fiscal', 5.000000),
+('Relatório Financeiro', 15.000000),
+('Documento RH', 8.000000),
+('Proposta Comercial', 12.000000),
+('Laudo Técnico', 20.000000);
+
+-- 2. CABEÇALHOS DE DOCUMENTOS (ged_documento_cabecalho)
+INSERT INTO ged_documento_cabecalho (nome, descricao, data_inclusao) VALUES
+('Contratos 2023', 'Contratos firmados no ano de 2023', '2023-01-10'),
+('Documentos Fiscais', 'Notas fiscais e documentos contábeis', '2023-01-15'),
+('RH - Admissões', 'Documentação de processos de admissão', '2023-02-01'),
+('Projetos Comerciais', 'Propostas e documentos de vendas', '2023-02-10'),
+('Manutenções Técnicas', 'Laudos e relatórios técnicos', '2023-03-05');
+
+-- 3. DETALHES DE DOCUMENTOS (ged_documento_detalhe)
+INSERT INTO ged_documento_detalhe (
+  id_ged_documento_cabecalho, 
+  id_ged_tipo_documento, 
+  nome, 
+  descricao, 
+  palavras_chave, 
+  pode_excluir, 
+  pode_alterar, 
+  assinado, 
+  data_fim_vigencia, 
+  data_exclusao
+) VALUES
+-- Documentos do cabeçalho 1 (Contratos)
+(1, 1, 'Contrato Cliente A', 'Contrato de prestação de serviços com cliente A', 'contrato,serviços,cliente', 'N', 'N', 'S', '2025-12-31', NULL),
+(1, 1, 'Contrato Fornecedor X', 'Contrato de fornecimento de materiais', 'contrato,fornecedor,compra', 'N', 'N', 'S', '2024-06-30', NULL),
+
+-- Documentos do cabeçalho 2 (Fiscais)
+(2, 2, 'NF 12345', 'Nota fiscal de venda produto Y', 'nota,fiscal,venda', 'N', 'N', 'N', NULL, NULL),
+(2, 2, 'NF 67890', 'Nota fiscal de compra material Z', 'nota,fiscal,compra', 'N', 'N', 'N', NULL, NULL),
+
+-- Documentos do cabeçalho 3 (RH)
+(3, 4, 'Contrato João Silva', 'Contrato de trabalho do colaborador João', 'rh,contrato,admissão', 'S', 'N', 'S', NULL, NULL),
+(3, 4, 'Exame Médico Maria', 'Exame admissional da colaboradora', 'rh,exame,saúde', 'N', 'N', 'N', NULL, NULL),
+
+-- Documentos do cabeçalho 4 (Comercial)
+(4, 5, 'Proposta Cliente B', 'Proposta comercial para projeto X', 'proposta,comercial,venda', 'S', 'S', 'N', '2023-06-30', NULL),
+
+-- Documentos do cabeçalho 5 (Técnico)
+(5, 6, 'Laudo Manutenção Equip. 42', 'Laudo técnico de manutenção preventiva', 'laudo,manutenção,técnico', 'N', 'N', 'S', NULL, NULL);
+
+-- 4. VERSÕES DE DOCUMENTOS (ged_versao_documento) - Assumindo id_colaborador existentes (1,2,3)
+INSERT INTO ged_versao_documento (
+  id_ged_documento_detalhe, 
+  id_colaborador, 
+  versao, 
+  data_versao, 
+  hora_versao, 
+  hash_arquivo, 
+  caminho, 
+  acao
+) VALUES
+-- Versões para o Contrato Cliente A (ID 1)
+(1, 1, 1, '2023-01-10', '10:30:00', 'a1b2c3d4e5f6', '/ged/contratos/2023/cliente_a_v1.pdf', 'C'),
+(1, 2, 2, '2023-01-12', '14:15:00', 'g7h8i9j0k1l2', '/ged/contratos/2023/cliente_a_v2.pdf', 'A'),
+
+-- Versões para a NF 12345 (ID 3)
+(3, 3, 1, '2023-01-20', '09:00:00', 'm3n4o5p6q7r8', '/ged/fiscal/nf_12345_v1.pdf', 'C'),
+
+-- Versões para o Contrato João Silva (ID 5)
+(5, 2, 1, '2023-02-05', '11:20:00', 's9t0u1v2w3x4', '/ged/rh/contratos/joao_silva_v1.pdf', 'C'),
+(5, 2, 2, '2023-02-06', '16:45:00', 'y5z6a7b8c9d0', '/ged/rh/contratos/joao_silva_v2.pdf', 'A'),
+
+-- Versões para a Proposta Cliente B (ID 8)
+(8, 1, 1, '2023-02-15', '13:10:00', 'e1f2g3h4i5j6', '/ged/comercial/propostas/cliente_b_v1.pdf', 'C'),
+(8, 3, 2, '2023-02-16', '10:30:00', 'k7l8m9n0o1p2', '/ged/comercial/propostas/cliente_b_v2.pdf', 'A'),
+(8, 3, 3, '2023-02-18', '15:20:00', 'q3r4s5t6u7v8', '/ged/comercial/propostas/cliente_b_v3.pdf', 'A');
+

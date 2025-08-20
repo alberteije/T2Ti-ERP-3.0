@@ -1,0 +1,41 @@
+-- CABEÇALHO DA CONTAGEM (inventario_contagem_cab)
+INSERT INTO inventario_contagem_cab (data_contagem, estoque_atualizado, tipo) VALUES
+('2023-06-01', 'N', 'C'),  -- Contagem cíclica
+('2023-06-15', 'S', 'G'),   -- Inventário geral (já atualizado)
+('2023-12-05', 'N', 'C'),   -- Contagem cíclica
+('2023-12-15', 'S', 'G');   -- Inventário geral anual
+
+-- DETALHES DA CONTAGEM (inventario_contagem_det) - Assumindo IDs de produtos existentes (1-50)
+INSERT INTO inventario_contagem_det (
+  id_inventario_contagem_cab, 
+  id_produto, 
+  contagem01, 
+  contagem02, 
+  contagem03, 
+  fechado_contagem, 
+  quantidade_sistema, 
+  acuracidade, 
+  divergencia
+) VALUES
+-- Itens para a primeira contagem (ID 1)
+(1, 1, 25.000000, 25.000000, NULL, '01', 24.000000, 96.000000, -1.000000),
+(1, 2, 50.000000, 49.000000, 50.000000, '02', 50.000000, 100.000000, 0.000000),
+(1, 3, 12.000000, 12.000000, NULL, '01', 12.000000, 100.000000, 0.000000),
+
+-- Itens para o inventário geral (ID 2)
+(2, 1, 30.000000, NULL, NULL, '01', 29.000000, 96.670000, -1.000000),
+(2, 2, 45.000000, NULL, NULL, '01', 45.000000, 100.000000, 0.000000),
+(2, 4, 100.000000, 100.000000, 100.000000, '03', 98.000000, 98.000000, -2.000000),
+(2, 5, 75.000000, 75.000000, NULL, '02', 75.000000, 100.000000, 0.000000),
+
+-- Itens para a contagem cíclica de dezembro (ID 3)
+(3, 10, 15.000000, 15.000000, NULL, '01', 15.000000, 100.000000, 0.000000),
+(3, 6, 22.000000, 21.000000, 22.000000, '02', 20.000000, 90.910000, -2.000000),
+(3, 7, 8.000000, NULL, NULL, '01', 8.000000, 100.000000, 0.000000),
+
+-- Itens para o inventário anual (ID 4)
+(4, 1, 28.000000, 28.000000, NULL, '01', 28.000000, 100.000000, 0.000000),
+(4, 2, 60.000000, NULL, NULL, '01', 60.000000, 100.000000, 0.000000),
+(4, 3, 15.000000, 15.000000, 15.000000, '03', 15.000000, 100.000000, 0.000000),
+(4, 5, 80.000000, 80.000000, NULL, '02', 80.000000, 100.000000, 0.000000),
+(4, 7, 50.000000, NULL, NULL, '01', 50.000000, 100.000000, 0.000000);

@@ -1,0 +1,75 @@
+-- PERÍODOS DE ORÇAMENTO (orcamento_periodo)
+INSERT INTO orcamento_periodo (periodo, nome) VALUES
+('01', 'Mensal'),
+('02', 'Bimestral'),
+('03', 'Trimestral'),
+('06', 'Semestral'),
+('12', 'Anual');
+
+-- ORÇAMENTOS EMPRESARIAIS (orcamento_empresarial)
+INSERT INTO orcamento_empresarial (id_orcamento_periodo, nome, descricao, data_inicial, numero_periodos, data_base) VALUES
+(5, 'Orçamento 2023', 'Orçamento anual para 2023', '2023-01-01', 12, '2022-11-15'),
+(1, 'Orçamento Jul-23', 'Orçamento mensal de julho', '2023-07-01', 1, '2023-06-20'),
+(3, 'Orçamento T3-2023', 'Orçamento trimestral Q3 2023', '2023-07-01', 3, '2023-06-25');
+
+-- DETALHES DO ORÇAMENTO EMPRESARIAL (orcamento_detalhe)
+INSERT INTO orcamento_detalhe (
+  id_orcamento_empresarial, 
+  id_fin_natureza_financeira, 
+  periodo, 
+  valor_orcado, 
+  valor_realizado, 
+  taxa_variacao, 
+  valor_variacao
+) VALUES
+-- Detalhes para Orçamento Anual (ID 1)
+(1, 1, '2023-01', 50000.000000, 52000.000000, 4.000000, 2000.000000),
+(1, 1, '2023-02', 48000.000000, 47000.000000, -2.083333, -1000.000000),
+(1, 3, '2023-01', 25000.000000, 25500.000000, 2.000000, 500.000000),
+(1, 4, '2023-01', 5000.000000, 5000.000000, 0.000000, 0.000000),
+
+-- Detalhes para Orçamento Mensal (ID 2)
+(2, 2, '2023-07', 30000.000000, NULL, NULL, NULL),
+(2, 5, '2023-07', 2000.000000, NULL, NULL, NULL),
+(2, 6, '2023-07', 800.000000, NULL, NULL, NULL),
+
+-- Detalhes para Orçamento Trimestral (ID 3)
+(3, 1, '2023-Q3', 150000.000000, NULL, NULL, NULL),
+(3, 7, '2023-Q3', 5000.000000, NULL, NULL, NULL),
+(3, 8, '2023-Q3', 20000.000000, NULL, NULL, NULL);
+
+
+-- PERÍODOS DE FLUXO DE CAIXA (orcamento_fluxo_caixa_periodo) - Assumindo IDs de conta caixa existentes (1-5)
+INSERT INTO orcamento_fluxo_caixa_periodo (id_banco_conta_caixa, periodo, nome) VALUES
+(1, '01', 'Mensal - Conta Principal'),
+(2, '01', 'Mensal - Conta Secundária'),
+(1, '03', 'Trimestral - Conta Principal'),
+(3, '12', 'Anual - Investimentos');
+
+-- FLUXOS DE CAIXA (orcamento_fluxo_caixa)
+INSERT INTO orcamento_fluxo_caixa (id_orc_fluxo_caixa_periodo, nome, descricao, data_inicial, numero_periodos, data_base) VALUES
+(1, 'Fluxo Mensal Jul', 'Fluxo de caixa mensal de julho', '2023-07-01', 1, '2023-06-28'),
+(3, 'Fluxo Tri 2023', 'Fluxo de caixa trimestral 2023', '2023-01-01', 4, '2022-12-15');
+
+-- DETALHES DO FLUXO DE CAIXA (orcamento_fluxo_caixa_detalhe)
+INSERT INTO orcamento_fluxo_caixa_detalhe (
+  id_orcamento_fluxo_caixa, 
+  id_fin_natureza_financeira, 
+  periodo, 
+  valor_orcado, 
+  valor_realizado, 
+  taxa_variacao, 
+  valor_variacao
+) VALUES
+-- Detalhes para Fluxo Mensal (ID 1)
+(1, 1, '07', 50000.000000, NULL, NULL, NULL),
+(1, 2, '07', 20000.000000, NULL, NULL, NULL),
+(1, 3, '07', 25000.000000, NULL, NULL, NULL),
+(1, 5, '07', 1500.000000, NULL, NULL, NULL),
+
+-- Detalhes para Fluxo Trimestral (ID 2)
+(2, 1, 'Q1', 140000.000000, 145000.000000, 3.571429, 5000.000000),
+(2, 1, 'Q2', 150000.000000, 148000.000000, -1.333333, -2000.000000),
+(2, 3, 'Q1', 75000.000000, 73000.000000, -2.666667, -2000.000000),
+(2, 9, 'Q1', 10000.000000, 12000.000000, 20.000000, 2000.000000);
+

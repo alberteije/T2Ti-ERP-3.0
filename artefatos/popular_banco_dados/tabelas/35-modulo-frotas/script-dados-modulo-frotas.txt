@@ -1,0 +1,142 @@
+-- 1. TIPOS DE COMBUSTÍVEL (frota_combustivel_tipo)
+INSERT INTO frota_combustivel_tipo (codigo, nome) VALUES
+('01', 'Gasolina Comum'),
+('02', 'Gasolina Aditivada'),
+('03', 'Etanol'),
+('04', 'Diesel S10'),
+('05', 'Diesel S500'),
+('06', 'GNV');
+
+-- 2. TIPOS DE VEÍCULO (frota_veiculo_tipo)
+INSERT INTO frota_veiculo_tipo (codigo, nome) VALUES
+('01', 'Automóvel'),
+('02', 'Caminhonete'),
+('03', 'Caminhão'),
+('04', 'Motocicleta'),
+('05', 'Ônibus'),
+('06', 'Van');
+
+-- 3. MOTORISTAS (frota_motorista) - Assumindo id_pessoa_fisica existentes (1,2,3)
+INSERT INTO frota_motorista (id_pessoa_fisica, numero_cnh, cnh_categoria) VALUES
+(1, '12345678901', 'AB'),
+(2, '98765432109', 'B'),
+(3, '45612378905', 'D');
+
+-- 4. VEÍCULOS (frota_veiculo)
+INSERT INTO frota_veiculo (
+  id_frota_veiculo_tipo, 
+  id_frota_combustivel_tipo, 
+  renavam, 
+  ipva_mes_vencimento, 
+  dpvat_mes_vencimento, 
+  placa, 
+  marca, 
+  modelo, 
+  modelo_ano, 
+  codigo_fipe
+) VALUES
+-- Carro a gasolina
+(1, 1, '12345678901', '03', '03', 'ABC1D23', 'Volkswagen', 'Gol', '2020', '0012345'),
+-- Caminhão a diesel
+(3, 4, '98765432109', '04', '04', 'EFG4H56', 'Volvo', 'FH 540', '2019', '0054321'),
+-- Moto
+(4, 1, '45612378905', '05', '05', 'IJK7L89', 'Honda', 'CG 160 Titan', '2021', '0032146'),
+-- Van flex
+(6, 3, '32165498701', '06', '06', 'MNO1P23', 'Fiat', 'Ducato', '2018', '0045678');
+
+-- 5. CONTROLE DE COMBUSTÍVEL (frota_combustivel_controle)
+INSERT INTO frota_combustivel_controle (
+  id_frota_veiculo, 
+  data_abastecimento, 
+  hora_abastecimento, 
+  valor_abastecimento
+) VALUES
+(1, '2023-01-15', '08:30:00', 250.000000),
+(1, '2023-01-28', '14:15:00', 180.000000),
+(2, '2023-01-10', '10:00:00', 500.000000),
+(3, '2023-01-05', '16:45:00', 80.000000);
+
+-- 6. IPVA (frota_ipva_controle)
+INSERT INTO frota_ipva_controle (
+  id_frota_veiculo, 
+  parcela, 
+  data_vencimento, 
+  data_pagamento, 
+  valor
+) VALUES
+(1, '01', '2023-03-10', '2023-03-05', 1200.000000),
+(2, '01', '2023-04-15', '2023-04-10', 3500.000000),
+(3, '01', '2023-05-20', NULL, 800.000000);
+
+-- 7. DPVAT (frota_dpvat_controle)
+INSERT INTO frota_dpvat_controle (
+  id_frota_veiculo, 
+  parcela, 
+  data_vencimento, 
+  data_pagamento, 
+  valor
+) VALUES
+(1, '01', '2023-03-15', '2023-03-01', 120.000000),
+(2, '01', '2023-04-20', '2023-04-15', 180.000000),
+(4, '01', '2023-06-25', NULL, 150.000000);
+
+-- 8. MULTAS (frota_multa_controle)
+INSERT INTO frota_multa_controle (
+  id_frota_veiculo, 
+  data_multa, 
+  pontos, 
+  valor, 
+  observacao
+) VALUES
+(1, '2023-01-20', 5, 195.230000, 'Excesso de velocidade - Radar'),
+(3, '2023-01-15', 7, 293.470000, 'Avancar sinal vermelho'),
+(2, '2023-02-01', 4, 130.160000, 'Estacionamento proibido');
+
+-- 9. MANUTENÇÕES (frota_veiculo_manutencao)
+INSERT INTO frota_veiculo_manutencao (
+  id_frota_veiculo, 
+  tipo, 
+  data_manutencao, 
+  valor_manutencao, 
+  observacao
+) VALUES
+(1, 'P', '2023-01-10', 350.000000, 'Preventiva - Troca de óleo e filtros'),
+(2, 'C', '2023-01-05', 1200.000000, 'Corretiva - Reparo no sistema de freios'),
+(3, 'P', '2023-01-15', 280.000000, 'Preventiva - Revisão geral');
+
+-- 10. PNEUS (frota_veiculo_pneu)
+INSERT INTO frota_veiculo_pneu (
+  data_troca, 
+  valor_troca, 
+  posicao_pneu, 
+  marca_pneu, 
+  id_frota_veiculo
+) VALUES
+('2023-01-10', 400.000000, 'Dianteiro Direito', 'Pirelli', 1),
+('2023-01-10', 400.000000, 'Dianteiro Esquerdo', 'Pirelli', 1),
+('2023-01-15', 600.000000, 'Traseiro Direito', 'Michelin', 2),
+('2023-01-15', 600.000000, 'Traseiro Esquerdo', 'Michelin', 2);
+
+-- 11. SINISTROS (frota_veiculo_sinistro)
+INSERT INTO frota_veiculo_sinistro (
+  id_frota_veiculo, 
+  data_sinistro, 
+  observacao
+) VALUES
+(1, '2023-01-25', 'Colisão lateral - batida em poste'),
+(3, '2023-02-01', 'Queda com motocicleta - sem ferimentos');
+
+-- 12. MOVIMENTAÇÕES (frota_veiculo_movimentacao)
+INSERT INTO frota_veiculo_movimentacao (
+  id_frota_motorista, 
+  id_frota_veiculo, 
+  data_saida, 
+  hora_saida, 
+  data_entrada, 
+  hora_entrada, 
+  observacao
+) VALUES
+(1, 1, '2023-01-15', '08:00:00', '2023-01-15', '17:30:00', 'Viagem a cliente - São Paulo'),
+(2, 2, '2023-01-10', '06:00:00', '2023-01-12', '18:00:00', 'Transporte de carga - Curitiba'),
+(3, 3, '2023-01-20', '09:00:00', '2023-01-20', '16:00:00', 'Entrega rápida - Zona Sul');
+

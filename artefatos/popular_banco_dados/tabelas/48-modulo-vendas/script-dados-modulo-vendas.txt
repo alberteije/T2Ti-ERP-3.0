@@ -1,0 +1,252 @@
+--------------------
+-- ZERAR TUDO
+--------------------
+
+-- Desativa verificação de chaves estrangeiras para evitar erros
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- Zera as tabelas na ordem inversa de dependência
+
+-- 1. Tabelas de detalhes/dependentes
+TRUNCATE TABLE `venda_comissao`;
+ALTER TABLE `venda_comissao` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `venda_detalhe`;
+ALTER TABLE `venda_detalhe` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `venda_frete`;
+ALTER TABLE `venda_frete` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `venda_orcamento_detalhe`;
+ALTER TABLE `venda_orcamento_detalhe` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `vendedor_meta`;
+ALTER TABLE `vendedor_meta` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `vendedor_rota`;
+ALTER TABLE `vendedor_rota` AUTO_INCREMENT = 1;
+
+-- 2. Tabelas de cabeçalho
+TRUNCATE TABLE `venda_cabecalho`;
+ALTER TABLE `venda_cabecalho` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `venda_orcamento_cabecalho`;
+ALTER TABLE `venda_orcamento_cabecalho` AUTO_INCREMENT = 1;
+
+-- 3. Tabelas de condições de pagamento
+TRUNCATE TABLE `venda_condicoes_parcelas`;
+ALTER TABLE `venda_condicoes_parcelas` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `venda_condicoes_pagamento`;
+ALTER TABLE `venda_condicoes_pagamento` AUTO_INCREMENT = 1;
+
+-- 4. Tabelas de cadastro
+TRUNCATE TABLE `vendedor`;
+ALTER TABLE `vendedor` AUTO_INCREMENT = 1;
+
+-- Reativa verificação de chaves estrangeiras
+SET FOREIGN_KEY_CHECKS = 1;
+
+-- Mensagem de conclusão
+SELECT 'Todas as tabelas do módulo de Vendas foram zeradas e os autoincrements resetados' AS Resultado;
+
+
+--------------------------------------------------------
+
+/*
+  NOTA_FISCAL_MODELO
+  -------
+*/
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('1','01','Nota Fiscal','1/1A');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('2','1B','Nota Fiscal Avulsa','-');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('3','02','Nota Fiscal de Venda a Consumidor','2');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('4','2D','Cupom Fiscal','-');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('5','2E','Cupom Fiscal Bilhete de Passagem','-');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('6','04','Nota Fiscal de Produtor','4');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('7','06','Nota Fiscal/Conta de Energia Elétrica','6');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('8','07','Nota Fiscal de Serviço de Transporte','7');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('9','08','Conhecimento de Transporte Rodoviário de Cargas','8');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('10','8B','Conhecimento de Transporte de Cargas Avulso','-');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('11','09','Conhecimento de Transporte Aquaviário de Cargas','9');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('12','10','Conhecimento Aéreo','10');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('13','11','Conhecimento de Transporte Ferroviário de Cargas','11');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('14','13','Bilhete de Passagem Rodoviário','13');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('15','14','Bilhete de Passagem Aquaviário','14');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('16','15','Bilhete de Passagem e Nota de Bagagem','15');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('17','17','Despacho de Transporte','17');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('18','16','Bilhete de Passagem Ferroviário','16');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('19','18','Resumo de Movimento Diário','18');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('20','20','Ordem de Coleta de Cargas','20');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('21','21','Nota Fiscal de Serviço de Comunicação','21');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('22','22','Nota Fiscal de Serviço de Telecomunicação','22');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('23','23','GNRE','23');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('24','24','Autorização de Carregamento e Transporte','24');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('25','25','Manifesto de Carga','25');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('26','26','Conhecimento de Transporte Multimodal de Cargas','26');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('27','27','Nota Fiscal De Transporte Ferroviário De Carga','-');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('28','28','Nota Fiscal/Conta de Fornecimento de Gás Canalizado','-');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('29','29','Nota Fiscal/Conta De Fornecimento DAgua Canalizada','-');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('30','55','Nota Fiscal Eletronica',' ');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('31','57','Conhecimento de Transporte Eletronico - CT-e','-');
+insert into NOTA_FISCAL_MODELO (ID, CODIGO, DESCRICAO, MODELO) values('32','59','Cupom Fiscal Eletronico - CF-e','-');
+
+
+-- Tipos de Nota Fiscal Eletrônica (NFe)
+INSERT INTO `nota_fiscal_tipo` (`id_nota_fiscal_modelo`, `nome`, `descricao`, `serie`, `serie_scan`, `ultimo_numero`) VALUES
+(30, 'NFe Saída', 'Nota Fiscal Eletrônica para vendas', '1', '1', 1000),
+(30, 'NFe Entrada', 'Nota Fiscal Eletrônica para compras', '2', '2', 500),
+(30, 'NFe Devolução', 'Nota Fiscal Eletrônica para devoluções', '3', '3', 50);
+
+-- Tipos de Nota Fiscal de Consumidor (NFCe)
+INSERT INTO `nota_fiscal_tipo` (`id_nota_fiscal_modelo`, `nome`, `descricao`, `serie`, `serie_scan`, `ultimo_numero`) VALUES
+(3, 'NFCe Normal', 'Nota Fiscal ao Consumidor Eletrônica', '1', '1', 2500),
+(3, 'NFCe Contingência', 'NFCe em modo de contingência', '9', '9', 100);
+
+-- Tipos para CT-e (Conhecimento de Transporte)
+INSERT INTO `nota_fiscal_tipo` (`id_nota_fiscal_modelo`, `nome`, `descricao`, `serie`, `serie_scan`, `ultimo_numero`) VALUES
+(31, 'CT-e Normal', 'Conhecimento de Transporte Eletrônico', '1', '1', 300),
+(31, 'CT-e Complementar', 'CT-e para valores complementares', '2', '2', 20),
+(31, 'CT-e Anulação', 'CT-e para anulação de valores', '3', '3', 5);
+
+-- Tipos para Nota Fiscal de Serviços
+INSERT INTO `nota_fiscal_tipo` (`id_nota_fiscal_modelo`, `nome`, `descricao`, `serie`, `serie_scan`, `ultimo_numero`) VALUES
+(8, 'NFS-e Local', 'Nota Fiscal de Serviço Eletrônica Municipal', '1', '1', 1500),
+(21, 'NFS Comunicação', 'Nota Fiscal de Serviço de Comunicação', '1', '1', 200),
+(22, 'NFS Telecom', 'Nota Fiscal de Serviço de Telecomunicação', '1', '1', 180);
+
+-- Tipos para Cupons Fiscais
+INSERT INTO `nota_fiscal_tipo` (`id_nota_fiscal_modelo`, `nome`, `descricao`, `serie`, `serie_scan`, `ultimo_numero`) VALUES
+(4, 'Cupom SAT', 'Cupom Fiscal Eletrônico (SAT)', '1', '1', 5000),
+(32, 'CF-e NFC-e', 'Cupom Fiscal Eletrônico (NFC-e)', '1', '1', 3500);
+
+-- Tipos para Notas Fiscais de Produtor
+INSERT INTO `nota_fiscal_tipo` (`id_nota_fiscal_modelo`, `nome`, `descricao`, `serie`, `serie_scan`, `ultimo_numero`) VALUES
+(6, 'NFP Avulsa', 'Nota Fiscal de Produtor Avulsa', '1', '1', 120),
+(6, 'NFP Eletrônica', 'Nota Fiscal do Produtor Eletrônica', '1', '1', 80);
+
+-- Tipos para Documentos de Transporte
+INSERT INTO `nota_fiscal_tipo` (`id_nota_fiscal_modelo`, `nome`, `descricao`, `serie`, `serie_scan`, `ultimo_numero`) VALUES
+(9, 'CTRC Normal', 'Conhecimento de Transporte Rodoviário', '1', '1', 400),
+(12, 'CTA Normal', 'Conhecimento de Transporte Aéreo', '1', '1', 75),
+(13, 'CTF Normal', 'Conhecimento de Transporte Ferroviário', '1', '1', 60);
+
+-- Tipos para Notas de Energia/Água/Gás
+INSERT INTO `nota_fiscal_tipo` (`id_nota_fiscal_modelo`, `nome`, `descricao`, `serie`, `serie_scan`, `ultimo_numero`) VALUES
+(7, 'NF Energia', 'Nota Fiscal de Energia Elétrica', '1', '1', 240),
+(28, 'NF Gás', 'Nota Fiscal de Gás Canalizado', '1', '1', 180),
+(29, 'NF Água', 'Nota Fiscal de Água Canalizada', '1', '1', 200);
+
+
+
+-- 1. Inserção de condições de pagamento
+INSERT INTO `venda_condicoes_pagamento` (`nome`, `descricao`, `vista_prazo`, `prazo_medio`, `dias_tolerancia`, `valor_tolerancia`) VALUES
+('À Vista', 'Pagamento integral no ato da compra', 'V', 0, 0, 0.000000),
+('7 Dias', 'Pagamento em 7 dias', 'P', 7, 2, 50.000000),
+('14 Dias', 'Pagamento em 14 dias', 'P', 14, 3, 50.000000),
+('21/28/35', 'Pagamento em 3 parcelas (21, 28 e 35 dias)', 'P', 28, 5, 100.000000),
+('30/60/90', 'Pagamento em 3 parcelas (30, 60 e 90 dias)', 'P', 60, 7, 150.000000);
+
+-- 2. Inserção de parcelas para cada condição de pagamento
+INSERT INTO `venda_condicoes_parcelas` (`id_venda_condicoes_pagamento`, `parcela`, `dias`, `taxa`) VALUES
+-- À Vista (sem parcelas)
+(2, 1, 7, 0.000000), -- 7 Dias
+(3, 1, 14, 0.000000), -- 14 Dias
+(4, 1, 21, 0.000000), -- 21/28/35
+(4, 2, 28, 0.000000),
+(4, 3, 35, 0.000000),
+(5, 1, 30, 0.000000), -- 30/60/90
+(5, 2, 60, 0.000000),
+(5, 3, 90, 0.000000);
+
+-- 3. Inserção de vendedores (assumindo que existam colaboradores com IDs 1 a 5)
+INSERT INTO `vendedor` (`id_colaborador`, `comissao`, `meta_venda`) VALUES
+(1, 5.000000, 50000.000000), -- Vendedor sênior
+(2, 3.500000, 30000.000000), -- Vendedor pleno
+(3, 2.500000, 20000.000000); -- Vendedor júnior
+
+-- 4. Inserção de orçamentos
+INSERT INTO `venda_orcamento_cabecalho` (
+  `id_venda_condicoes_pagamento`, `id_vendedor`, `id_cliente`, 
+  `codigo`, `data_cadastro`, `validade`, 
+  `valor_subtotal`, `taxa_desconto`, `valor_desconto`, `valor_total`
+) VALUES
+(1, 1, 1, 'ORC-2023-001', '2023-01-10', '2023-02-10', 1500.000000, 10.000000, 150.000000, 1350.000000),
+(2, 2, 2, 'ORC-2023-002', '2023-01-15', '2023-02-15', 3200.000000, 5.000000, 160.000000, 3040.000000),
+(4, 1, 3, 'ORC-2023-003', '2023-02-01', '2023-03-01', 7850.000000, 7.500000, 588.750000, 7261.250000);
+
+-- 5. Inserção de itens de orçamento
+INSERT INTO `venda_orcamento_detalhe` (
+  `id_venda_orcamento_cabecalho`, `id_produto`, `quantidade`, 
+  `valor_unitario`, `valor_subtotal`, `valor_total`
+) VALUES
+-- Itens para ORC-2023-001
+(1, 1, 2.000000, 500.000000, 1000.000000, 900.000000),
+(1, 2, 1.000000, 500.000000, 500.000000, 450.000000),
+-- Itens para ORC-2023-002
+(2, 3, 5.000000, 400.000000, 2000.000000, 1900.000000),
+(2, 4, 3.000000, 400.000000, 1200.000000, 1140.000000),
+-- Itens para ORC-2023-003
+(3, 5, 10.000000, 500.000000, 5000.000000, 4625.000000),
+(3, 1, 5.000000, 570.000000, 2850.000000, 2636.250000);
+
+-- 6. Inserção de vendas
+INSERT INTO `venda_cabecalho` (
+  `id_venda_orcamento_cabecalho`, `id_venda_condicoes_pagamento`, `id_nota_fiscal_tipo`, 
+  `id_cliente`, `id_vendedor`, `data_venda`, `data_saida`, 
+  `valor_subtotal`, `valor_desconto`, `valor_total`, `situacao`
+) VALUES
+-- Venda à vista (convertida do orçamento 1)
+(1, 1, 1, 1, 1, '2023-01-12', '2023-01-12', 1350.000000, 150.000000, 1350.000000, 'F'),
+-- Venda a prazo (convertida do orçamento 2)
+(2, 2, 1, 2, 2, '2023-01-18', '2023-01-18', 3040.000000, 160.000000, 3040.000000, 'F'),
+-- Venda a prazo (sem orçamento)
+(NULL, 4, 1, 4, 1, '2023-02-05', '2023-02-06', 7261.250000, 588.750000, 7261.250000, 'F');
+
+-- 7. Inserção de itens de venda
+INSERT INTO `venda_detalhe` (
+  `id_venda_cabecalho`, `id_produto`, `quantidade`, 
+  `valor_unitario`, `valor_subtotal`, `valor_total`
+) VALUES
+-- Itens para venda 1
+(1, 1, 2.000000, 500.000000, 1000.000000, 900.000000),
+(1, 2, 1.000000, 500.000000, 500.000000, 450.000000),
+-- Itens para venda 2
+(2, 3, 5.000000, 400.000000, 2000.000000, 1900.000000),
+(2, 4, 3.000000, 400.000000, 1200.000000, 1140.000000),
+-- Itens para venda 3
+(3, 5, 10.000000, 500.000000, 5000.000000, 4625.000000),
+(3, 1, 5.000000, 570.000000, 2850.000000, 2636.250000);
+
+-- 8. Inserção de fretes
+INSERT INTO `venda_frete` (
+  `id_venda_cabecalho`, `id_transportadora`, `responsavel`, 
+  `placa`, `uf_placa`, `peso_bruto`, `peso_liquido`
+) VALUES
+(1, 1, 'E', 'ABC1234', 'SP', 15.500000, 14.000000),
+(3, 2, 'D', 'XYZ9876', 'MG', 45.000000, 42.500000);
+
+-- 9. Inserção de comissões
+INSERT INTO `venda_comissao` (
+  `id_venda_cabecalho`, `id_vendedor`, `valor_venda`, 
+  `valor_comissao`, `situacao`, `data_lancamento`
+) VALUES
+(1, 1, 1350.000000, 67.500000, 'P', '2023-01-12'),
+(2, 2, 3040.000000, 106.400000, 'P', '2023-01-18'),
+(3, 1, 7261.250000, 363.062500, 'A', '2023-02-05');
+
+-- 10. Inserção de metas de vendedores
+INSERT INTO `vendedor_meta` (
+  `id_vendedor`, `id_cliente`, `periodo_meta`, 
+  `meta_orcada`, `data_inicio`, `data_fim`
+) VALUES
+(1, 1, 'M', 10000.000000, '2023-01-01', '2023-01-31'),
+(1, 3, 'M', 15000.000000, '2023-01-01', '2023-01-31'),
+(2, 2, 'M', 8000.000000, '2023-01-01', '2023-01-31');
+
+-- 11. Inserção de rotas de vendedores
+INSERT INTO `vendedor_rota` (`id_vendedor`, `id_cliente`, `posicao`) VALUES
+(1, 1, 1),
+(1, 3, 2),
+(1, 4, 3),
+(2, 2, 1),
+(2, 5, 2);

@@ -1,0 +1,109 @@
+DELETE FROM `produto_promocao`;
+DELETE FROM `produto_ficha_tecnica`;
+DELETE FROM `produto_codigo_adicional`;
+DELETE FROM `produto_alteracao_item`;
+DELETE FROM `produto`;
+DELETE FROM `produto_subgrupo`;
+DELETE FROM `produto_marca`;
+DELETE FROM `produto_unidade`;
+DELETE FROM `produto_grupo`;
+
+-- Inserindo grupos de produtos
+INSERT INTO `produto_grupo` (`id`, `nome`, `descricao`) VALUES
+(1, 'Eletrônicos', 'Produtos eletrônicos e tecnológicos'),
+(2, 'Móveis', 'Móveis para escritório e residenciais'),
+(3, 'Materiais de Escritório', 'Materiais básicos para escritório'),
+(4, 'Informática', 'Produtos de informática e computadores'),
+(5, 'Limpeza', 'Produtos de limpeza e conservação');
+
+-- Inserindo subgrupos de produtos
+INSERT INTO `produto_subgrupo` (`id`, `id_produto_grupo`, `nome`, `descricao`) VALUES
+(1, 1, 'Telefonia', 'Celulares e smartphones'),
+(2, 1, 'Áudio', 'Fones de ouvido e caixas de som'),
+(3, 2, 'Escritório', 'Móveis para ambiente de trabalho'),
+(4, 2, 'Residencial', 'Móveis para casa'),
+(5, 3, 'Papelaria', 'Papéis e materiais de escrita'),
+(6, 4, 'Computadores', 'Desktops e notebooks'),
+(7, 4, 'Periféricos', 'Acessórios para computador'),
+(8, 5, 'Produtos Químicos', 'Produtos de limpeza profissional');
+
+-- Inserindo marcas de produtos
+INSERT INTO `produto_marca` (`id`, `nome`, `descricao`) VALUES
+(1, 'TechPlus', 'Marca premium de eletrônicos'),
+(2, 'HomeStyle', 'Marca de móveis residenciais'),
+(3, 'OfficePro', 'Soluções profissionais para escritório'),
+(4, 'CompTech', 'Tecnologia em computadores'),
+(5, 'CleanMax', 'Produtos de limpeza profissional');
+
+-- Inserindo unidades de medida
+INSERT INTO `produto_unidade` (`id`, `sigla`, `descricao`, `pode_fracionar`) VALUES
+(1, 'UN', 'Unidade', 'n'),
+(2, 'PC', 'Peça', 'n'),
+(3, 'CX', 'Caixa', 's'),
+(4, 'KG', 'Quilograma', 's'),
+(5, 'L', 'Litro', 's'),
+(6, 'M', 'Metro', 's'),
+(7, 'M²', 'Metro quadrado', 's'),
+(8, 'PAR', 'Par', 'n');
+
+-- Inserindo produtos principais
+INSERT INTO `produto` (`id`, `id_produto_subgrupo`, `id_produto_marca`, `id_produto_unidade`, `id_tribut_icms_custom_cab`, `id_tribut_grupo_tributario`, `nome`, `descricao`, `gtin`, `codigo_interno`, `valor_compra`, `valor_venda`, `codigo_ncm`, `estoque_minimo`, `estoque_maximo`, `quantidade_estoque`, `data_cadastro`) VALUES
+-- Eletrônicos
+(1, 1, 1, 1, NULL, NULL, 'Smartphone X200', 'Smartphone top de linha com câmera tripla', '7891234567890', 'ELET001', 1800.00, 2999.90, '85171200', 5.00, 50.00, 25.00, '2023-01-15'),
+(2, 2, 1, 1, NULL, NULL, 'Fone Bluetooth Pro', 'Fone sem fio com cancelamento de ruído', '7891234567891', 'ELET002', 350.00, 699.90, '85183090', 10.00, 100.00, 42.00, '2023-02-10'),
+
+-- Móveis
+(3, 3, 2, 1, NULL, NULL, 'Cadeira Executiva', 'Cadeira giratória com ajuste de altura', '7891234567892', 'MOV001', 450.00, 899.90, '94013000', 3.00, 30.00, 12.00, '2023-03-05'),
+(4, 4, 2, 1, NULL, NULL, 'Sofá 3 Lugares', 'Sofá retrátil em couro sintético', '7891234567893', 'MOV002', 1200.00, 2499.90, '94014000', 2.00, 15.00, 5.00, '2023-03-20'),
+
+-- Material de Escritório
+(5, 5, 3, 1, NULL, NULL, 'Caneta Esferográfica', 'Pacote com 12 canetas azuis', '7891234567894', 'ESC001', 8.50, 19.90, '96081000', 20.00, 200.00, 85.00, '2023-04-01'),
+(6, 5, 3, 3, NULL, NULL, 'Resma Papel A4', 'Pacote com 500 folhas de papel A4 75g', '7891234567895', 'ESC002', 25.00, 49.90, '48025610', 10.00, 100.00, 35.00, '2023-04-01'),
+
+-- Informática
+(7, 6, 4, 1, NULL, NULL, 'Notebook Ultra', 'Notebook i7 16GB SSD 512GB', '7891234567896', 'INF001', 3200.00, 4999.90, '84713090', 3.00, 25.00, 8.00, '2023-05-10'),
+(8, 7, 4, 1, NULL, NULL, 'Teclado Mecânico', 'Teclado gamer com LED RGB', '7891234567897', 'INF002', 120.00, 249.90, '84716090', 5.00, 50.00, 18.00, '2023-05-15'),
+
+-- Limpeza
+(9, 8, 5, 5, NULL, NULL, 'Desinfetante', 'Desinfetante concentrado 5L', '7891234567898', 'LIM001', 15.00, 29.90, '34022000', 8.00, 80.00, 30.00, '2023-06-01'),
+(10, 8, 5, 4, NULL, NULL, 'Sabão em Pó', 'Sabão em pó profissional 5kg', '7891234567899', 'LIM002', 18.00, 39.90, '34022000', 6.00, 60.00, 22.00, '2023-06-05');
+
+-- Códigos adicionais para produtos
+INSERT INTO `produto_codigo_adicional` (`id`, `id_produto`, `codigo`) VALUES
+(1, 1, '7891234567844'),
+(2, 1, '7891234567822'),
+(3, 3, '7891234567811'),
+(4, 7, '7891234567833'),
+(5, 9, '7891234567866');
+
+-- Alterações de itens de produto
+INSERT INTO `produto_alteracao_item` (`id`, `id_produto`, `codigo`, `nome`, `data_inicial`, `data_final`) VALUES
+(1, 1, 'X200-OLD', 'Smartphone X200 (Modelo Antigo)', '2022-01-01', '2022-12-31'),
+(2, 3, 'CE-2022', 'Cadeira Executiva (Modelo 2022)', '2022-03-15', '2023-02-28'),
+(3, 7, 'ULTRA-2022', 'Notebook Ultra (Geração Anterior)', '2022-07-01', '2023-04-30');
+
+-- Fichas técnicas (composição de produtos)
+INSERT INTO `produto_ficha_tecnica` (`id`, `id_produto`, `descricao`, `id_produto_filho`, `quantidade`, `sequencia_producao`) VALUES
+-- Componentes do Notebook Ultra
+(1, 7, 'Processador i7', NULL, 1.00, 1),
+(2, 7, 'Memória RAM 16GB', NULL, 2.00, 2),
+(3, 7, 'SSD 512GB', NULL, 1.00, 3),
+(4, 7, 'Tela 15.6" Full HD', NULL, 1.00, 4),
+
+-- Componentes do Sofá
+(5, 4, 'Estrutura em madeira', NULL, 1.00, 1),
+(6, 4, 'Espuma D28', NULL, 3.00, 2),
+(7, 4, 'Couro sintético', NULL, 5.00, 3);
+
+-- Promoções de produtos
+INSERT INTO `produto_promocao` (`id`, `id_produto`, `data_inicio`, `data_fim`, `quantidade_em_promocao`, `quantidade_maxima_cliente`, `valor`) VALUES
+-- Promoção de smartphone
+(1, 1, '2023-11-20', '2023-11-30', 100.00, 2.00, 2599.90),
+
+-- Promoção de material de escritório
+(2, 5, '2023-11-15', '2023-12-15', 500.00, 10.00, 15.90),
+(3, 6, '2023-11-15', '2023-12-15', 300.00, 5.00, 39.90),
+
+-- Promoção Black Friday
+(4, 2, '2023-11-24', '2023-11-27', 200.00, 1.00, 599.90),
+(5, 7, '2023-11-24', '2023-11-27', 50.00, 1.00, 4499.90);

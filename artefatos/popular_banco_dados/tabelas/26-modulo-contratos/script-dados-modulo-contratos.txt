@@ -1,0 +1,190 @@
+-- 1. Tabelas Básicas (Tipos e Templates)
+-- Inserindo tipos de contrato
+INSERT INTO `tipo_contrato` (`id`, `nome`, `descricao`) 
+VALUES
+(1, 'Prestação de Serviços', 'Contratos de prestação de serviços contínuos'),
+(2, 'Fornecimento', 'Contratos de fornecimento de materiais ou produtos'),
+(3, 'Locação', 'Contratos de locação de equipamentos ou imóveis'),
+(4, 'Manutenção', 'Contratos de manutenção preventiva e corretiva'),
+(5, 'Tecnologia', 'Contratos de serviços de tecnologia e TI');
+
+-- Inserindo tipos de serviço
+INSERT INTO `contrato_tipo_servico` (`id`, `nome`, `descricao`) 
+VALUES
+(1, 'Consultoria', 'Serviços de consultoria especializada'),
+(2, 'Suporte Técnico', 'Serviços de suporte e assistência técnica'),
+(3, 'Limpeza', 'Serviços de limpeza e conservação'),
+(4, 'Segurança', 'Serviços de vigilância e segurança patrimonial'),
+(5, 'Desenvolvimento', 'Serviços de desenvolvimento de software');
+
+-- Inserindo templates de contrato
+INSERT INTO `contrato_template` (`id`, `nome`, `descricao`) 
+VALUES
+(1, 'Modelo Básico PS', 'Modelo padrão para prestação de serviços'),
+(2, 'Modelo Fornecimento', 'Modelo para contratos de fornecimento'),
+(3, 'Modelo Locação', 'Modelo para contratos de locação'),
+(4, 'Modelo T.I.', 'Modelo específico para serviços de tecnologia');
+
+-- 2. Solicitações de Serviço
+-- Inserindo solicitações de serviço
+INSERT INTO `contrato_solicitacao_servico` (
+  `id`, `id_contrato_tipo_servico`, `id_setor`, `id_colaborador`, `id_cliente`, `id_fornecedor`, 
+  `data_solicitacao`, `data_desejada_inicio`, `urgente`, `status_solicitacao`, `descricao`
+) VALUES
+-- Solicitação 1 (cliente externo)
+(1, 1, 3, 5, 12, NULL, '2023-01-10', '2023-02-01', 'N', 'A', 'Consultoria em gestão empresarial'),
+
+-- Solicitação 2 (fornecedor externo)
+(2, 2, 2, 3, NULL, 10, '2023-02-15', '2023-03-01', 'S', 'A', 'Suporte técnico mensal'),
+
+-- Solicitação 3 (cliente externo)
+(3, 5, 4, 7, 16, NULL, '2023-03-20', '2023-04-01', 'N', 'A', 'Desenvolvimento de sistema'),
+
+-- Solicitação 4 (fornecedor externo)
+(4, 3, 1, 2, NULL, 8, '2023-04-05', '2023-05-01', 'N', 'A', 'Serviços de limpeza'),
+
+-- Solicitação 5 (cliente externo)
+(5, 4, 5, 4, 19, NULL, '2023-05-12', '2023-06-01', 'S', 'A', 'Serviços de segurança');
+
+-- 3. Contratos Principais
+-- Inserindo contratos
+INSERT INTO `contrato` (
+  `id`, `id_solicitacao_servico`, `id_tipo_contrato`, `numero`, `nome`, `descricao`, 
+  `data_cadastro`, `data_inicio_vigencia`, `data_fim_vigencia`, `dia_faturamento`, 
+  `valor`, `quantidade_parcelas`, `intervalo_entre_parcelas`, `observacao`, `classificacao_contabil_conta`
+) VALUES
+-- Contrato 1 (Consultoria)
+(1, 1, 1, 'CT2023/001', 'Consultoria Gestão', 'Consultoria em gestão empresarial para Office Brasil',
+ '2023-01-15', '2023-02-01', '2024-01-31', '05', 120000.000000, 12, 1, 
+ 'Reuniões mensais de acompanhamento', '4.1.2'),
+
+-- Contrato 2 (Suporte Técnico)
+(2, 2, 1, 'CT2023/002', 'Suporte Técnico', 'Suporte técnico mensal para CleanHouse',
+ '2023-02-20', '2023-03-01', '2024-02-28', '10', 60000.000000, 12, 1,
+ 'Plantão 24h para emergências', '4.1.3'),
+
+-- Contrato 3 (Desenvolvimento)
+(3, 3, 5, 'CT2023/003', 'Sistema Gestão', 'Desenvolvimento sistema de gestão para Insumos Industriais',
+ '2023-03-25', '2023-04-01', '2023-12-31', '15', 80000.000000, 1, 0,
+ 'Entregas parciais a cada 2 meses', '4.1.1'),
+
+-- Contrato 4 (Limpeza)
+(4, 4, 1, 'CT2023/004', 'Serviços de Limpeza', 'Limpeza diária das instalações',
+ '2023-04-10', '2023-05-01', '2024-04-30', '01', 36000.000000, 12, 1,
+ 'Inclui material de limpeza básico', '6.1.2'),
+
+-- Contrato 5 (Segurança)
+(5, 5, 1, 'CT2023/005', 'Vigilância Patrimonial', 'Serviço de segurança 24h para Empresa Jurídica 8',
+ '2023-05-20', '2023-06-01', '2024-05-31', '20', 144000.000000, 12, 1,
+ '4 vigilantes em escala 12x36', '6.1.3');
+ 
+-- 4. Previsões de Faturamento
+-- Inserindo previsões de faturamento
+-- Contrato 1 (12 parcelas)
+INSERT INTO `contrato_prev_faturamento` (`id_contrato`, `data_prevista`, `valor`)
+VALUES 
+(1, '2023-02-05', 10000.000000),
+(1, '2023-03-05', 10000.000000),
+(1, '2023-04-05', 10000.000000),
+(1, '2023-05-05', 10000.000000),
+(1, '2023-06-05', 10000.000000),
+(1, '2023-07-05', 10000.000000),
+(1, '2023-08-05', 10000.000000),
+(1, '2023-09-05', 10000.000000),
+(1, '2023-10-05', 10000.000000),
+(1, '2023-11-05', 10000.000000),
+(1, '2023-12-05', 10000.000000),
+(1, '2024-01-05', 10000.000000);
+
+-- Contrato 2 (12 parcelas)
+INSERT INTO `contrato_prev_faturamento` (`id_contrato`, `data_prevista`, `valor`)
+VALUES 
+(2, '2023-03-10', 5000.000000),
+(2, '2023-04-10', 5000.000000),
+(2, '2023-05-10', 5000.000000),
+(2, '2023-06-10', 5000.000000),
+(2, '2023-07-10', 5000.000000),
+(2, '2023-08-10', 5000.000000),
+(2, '2023-09-10', 5000.000000),
+(2, '2023-10-10', 5000.000000),
+(2, '2023-11-10', 5000.000000),
+(2, '2023-12-10', 5000.000000),
+(2, '2024-01-10', 5000.000000),
+(2, '2024-02-10', 5000.000000);
+
+-- Contrato 3 (pagamento único)
+INSERT INTO `contrato_prev_faturamento` (`id_contrato`, `data_prevista`, `valor`)
+VALUES 
+(3, '2023-04-15', 80000.000000);
+
+-- Contrato 4 (12 parcelas)
+INSERT INTO `contrato_prev_faturamento` (`id_contrato`, `data_prevista`, `valor`)
+VALUES 
+(4, '2023-05-01', 3000.000000),
+(4, '2023-06-01', 3000.000000),
+(4, '2023-07-01', 3000.000000),
+(4, '2023-08-01', 3000.000000),
+(4, '2023-09-01', 3000.000000),
+(4, '2023-10-01', 3000.000000),
+(4, '2023-11-01', 3000.000000),
+(4, '2023-12-01', 3000.000000),
+(4, '2024-01-01', 3000.000000),
+(4, '2024-02-01', 3000.000000),
+(4, '2024-03-01', 3000.000000),
+(4, '2024-04-01', 3000.000000);
+
+-- Contrato 5 (12 parcelas)
+INSERT INTO `contrato_prev_faturamento` (`id_contrato`, `data_prevista`, `valor`)
+VALUES 
+(5, '2023-06-20', 12000.000000),
+(5, '2023-07-20', 12000.000000),
+(5, '2023-08-20', 12000.000000),
+(5, '2023-09-20', 12000.000000),
+(5, '2023-10-20', 12000.000000),
+(5, '2023-11-20', 12000.000000),
+(5, '2023-12-20', 12000.000000),
+(5, '2024-01-20', 12000.000000),
+(5, '2024-02-20', 12000.000000),
+(5, '2024-03-20', 12000.000000),
+(5, '2024-04-20', 12000.000000),
+(5, '2024-05-20', 12000.000000);
+
+-- 5. Histórico de Faturamento
+-- Inserindo histórico de faturamento real
+-- Contrato 1 (3 faturas realizadas)
+INSERT INTO `contrato_hist_faturamento` (`id_contrato`, `data_fatura`, `valor`)
+VALUES 
+(1, '2023-02-05', 10000.000000),
+(1, '2023-03-07', 10000.000000), -- Pagamento com 2 dias de atraso
+(1, '2023-04-05', 10000.000000);
+
+-- Contrato 2 (2 faturas realizadas)
+INSERT INTO `contrato_hist_faturamento` (`id_contrato`, `data_fatura`, `valor`)
+VALUES 
+(2, '2023-03-10', 5000.000000),
+(2, '2023-04-12', 5000.000000); -- Pagamento com 2 dias de atraso
+
+-- Contrato 3 (pagamento único realizado)
+INSERT INTO `contrato_hist_faturamento` (`id_contrato`, `data_fatura`, `valor`)
+VALUES 
+(3, '2023-04-18', 80000.000000); -- Pagamento com 3 dias de atraso
+
+-- Contrato 4 (1 fatura realizada)
+INSERT INTO `contrato_hist_faturamento` (`id_contrato`, `data_fatura`, `valor`)
+VALUES 
+(4, '2023-05-01', 3000.000000);
+
+-- 6. Histórico de Reajustes
+-- Inserindo históricos de reajuste
+-- Contrato 1 (reajuste anual)
+INSERT INTO `contrato_historico_reajuste` (
+  `id_contrato`, `indice`, `valor_anterior`, `valor_atual`, `data_reajuste`, `observacao`
+) VALUES
+(1, 6.730000, 120000.000000, 128076.000000, '2024-01-01', 'Reajuste anual pelo INPC');
+
+-- Contrato 4 (reajuste semestral)
+INSERT INTO `contrato_historico_reajuste` (
+  `id_contrato`, `indice`, `valor_anterior`, `valor_atual`, `data_reajuste`, `observacao`
+) VALUES
+(4, 3.450000, 36000.000000, 37242.000000, '2023-11-01', 'Reajuste semestral contratual');
+

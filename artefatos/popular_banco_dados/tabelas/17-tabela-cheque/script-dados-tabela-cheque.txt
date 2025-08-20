@@ -1,0 +1,68 @@
+-- Inserindo 20 cheques para o talonário de ID 4
+INSERT INTO cheque (id_talonario_cheque, numero, status_cheque, data_status) VALUES
+(1, 1001, 0, '2024-01-01'),  -- Em Ser
+(1, 1002, 1, '2024-01-02'),  -- Utilizado
+(1, 1003, 2, '2024-01-03'),  -- Baixado
+(1, 1004, 3, '2024-01-04'),  -- Compensado
+(1, 1005, 4, '2024-01-05'),  -- Cancelado
+(1, 1006, 5, '2024-01-06'),  -- Sustado
+(1, 1007, 0, '2024-01-07'),  -- Em Ser
+(1, 1008, 1, '2024-01-08'),  -- Utilizado
+(1, 1009, 2, '2024-01-09'),  -- Baixado
+(1, 1010, 3, '2024-01-10'),  -- Compensado
+(1, 1011, 4, '2024-01-11'),  -- Cancelado
+(1, 1012, 5, '2024-01-12'),  -- Sustado
+(1, 1013, 0, '2024-01-13'),  -- Em Ser
+(1, 1014, 1, '2024-01-14'),  -- Utilizado
+(1, 1015, 2, '2024-01-15'),  -- Baixado
+(1, 1016, 3, '2024-01-16'),  -- Compensado
+(1, 1017, 4, '2024-01-17'),  -- Cancelado
+(1, 1018, 5, '2024-01-18'),  -- Sustado
+(1, 1019, 0, '2024-01-19'),  -- Em Ser
+(1, 1020, 1, '2024-01-20');  -- Utilizado
+
+-- Inserindo 20 cheques para o talonário de ID 5
+INSERT INTO cheque (id_talonario_cheque, numero, status_cheque, data_status) VALUES
+(2, 2001, 0, '2024-01-01'),  -- Em Ser
+(2, 2002, 1, '2024-01-02'),  -- Utilizado
+(2, 2003, 2, '2024-01-03'),  -- Baixado
+(2, 2004, 3, '2024-01-04'),  -- Compensado
+(2, 2005, 4, '2024-01-05'),  -- Cancelado
+(2, 2006, 5, '2024-01-06'),  -- Sustado
+(2, 2007, 0, '2024-01-07'),  -- Em Ser
+(2, 2008, 1, '2024-01-08'),  -- Utilizado
+(2, 2009, 2, '2024-01-09'),  -- Baixado
+(2, 2010, 3, '2024-01-10'),  -- Compensado
+(2, 2011, 4, '2024-01-11'),  -- Cancelado
+(2, 2012, 5, '2024-01-12'),  -- Sustado
+(2, 2013, 0, '2024-01-13'),  -- Em Ser
+(2, 2014, 1, '2024-01-14'),  -- Utilizado
+(2, 2015, 2, '2024-01-15'),  -- Baixado
+(2, 2016, 3, '2024-01-16'),  -- Compensado
+(2, 2017, 4, '2024-01-17'),  -- Cancelado
+(2, 2018, 5, '2024-01-18'),  -- Sustado
+(2, 2019, 0, '2024-01-19'),  -- Em Ser
+(2, 2020, 1, '2024-01-20');  -- Utilizado
+
+-- Inserindo 20 cheques para o talonário de ID 6
+INSERT INTO cheque (id_talonario_cheque, numero, status_cheque, data_status) VALUES
+(3, 3001, 0, '2024-01-01'),  -- Em Ser
+(3, 3002, 1, '2024-01-02'),  -- Utilizado
+(3, 3003, 2, '2024-01-03'),  -- Baixado
+(3, 3004, 3, '2024-01-04'),  -- Compensado
+(3, 3005, 4, '2024-01-05'),  -- Cancelado
+(3, 3006, 5, '2024-01-06'),  -- Sustado
+(3, 3007, 0, '2024-01-07'),  -- Em Ser
+(3, 3008, 1, '2024-01-08'),  -- Utilizado
+(3, 3009, 2, '2024-01-09'),  -- Baixado
+(3, 3010, 3, '2024-01-10'),  -- Compensado
+(3, 3011, 4, '2024-01-11'),  -- Cancelado
+(3, 3012, 5, '2024-01-12'),  -- Sustado
+(3, 3013, 0, '2024-01-13'),  -- Em Ser
+(3, 3014, 1, '2024-01-14'),  -- Utilizado
+(3, 3015, 2, '2024-01-15'),  -- Baixado
+(3, 3016, 3, '2024-01-16'),  -- Compensado
+(3, 3017, 4, '2024-01-17'),  -- Cancelado
+(3, 3018, 5, '2024-01-18'),  -- Sustado
+(3, 3019, 0, '2024-01-19'),  -- Em Ser
+(3, 3020, 1, '2024-01-20');  -- Utilizado

@@ -1,0 +1,65 @@
+-- Inserindo tipos de colaboradores
+INSERT INTO `colaborador_tipo` (`id`, `nome`, `descricao`) VALUES
+(1, 'CLT', 'Colaborador com contrato CLT'),
+(2, 'PJ', 'Colaborador com contrato PJ'),
+(3, 'Estagiário', 'Estagiário contratado'),
+(4, 'Temporário', 'Colaborador temporário');
+
+-- Inserindo situações de colaborador
+INSERT INTO `colaborador_situacao` (`id`, `codigo`, `nome`, `descricao`) VALUES
+(1, '100', 'Ativo', 'Colaborador ativo na empresa'),
+(2, '101', 'Afastado', 'Colaborador afastado temporariamente'),
+(3, '102', 'Férias', 'Colaborador em período de férias'),
+(4, '200', 'Desligado', 'Colaborador desligado da empresa');
+
+-- Inserindo tipos de admissão
+INSERT INTO `tipo_admissao` (`id`, `codigo`, `nome`, `descricao`) VALUES
+(1, '100', 'Admissão Normal', 'Contratação padrão'),
+(2, '200', 'Transferência', 'Transferência de outra unidade/filial'),
+(3, '300', 'Reintegração', 'Retorno após desligamento anterior'),
+(4, '400', 'Conversão', 'Conversão de estágio/temporário para CLT');
+
+-- Inserindo setores departamentais básicos
+INSERT INTO `setor` (`id`, `nome`, `descricao`) VALUES
+(1, 'Administrativo', 'Setor responsável pelas atividades administrativas e gerenciais da empresa'),
+(2, 'Financeiro', 'Departamento que cuida das finanças, contabilidade e controle orçamentário'),
+(3, 'Recursos Humanos', 'Setor responsável pela gestão de pessoas, recrutamento e benefícios'),
+(4, 'Comercial', 'Área de vendas e relacionamento com clientes'),
+(5, 'Marketing', 'Setor responsável por estratégias de marketing e publicidade'),
+(6, 'TI - Tecnologia da Informação', 'Departamento de infraestrutura tecnológica e suporte aos sistemas'),
+(7, 'Produção', 'Área responsável pela fabricação dos produtos da empresa'),
+(8, 'Logística', 'Setor que gerencia estoques, distribuição e transporte'),
+(9, 'Compras', 'Departamento responsável pelas aquisições de materiais e serviços'),
+(10, 'Jurídico', 'Área que cuida dos aspectos legais e contratos da empresa'),
+(11, 'Qualidade', 'Setor responsável pelo controle de qualidade dos produtos/serviços'),
+(12, 'Pesquisa e Desenvolvimento', 'Área de inovação e desenvolvimento de novos produtos'),
+(13, 'Atendimento ao Cliente', 'Setor de suporte pós-venda e relacionamento com clientes'),
+(14, 'Manutenção', 'Departamento responsável pela manutenção de equipamentos e instalações'),
+(15, 'Limpeza e Conservação', 'Setor responsável pela higiene e organização dos ambientes');
+
+INSERT INTO `colaborador` (`id`, `id_pessoa`, `id_cargo`, `id_setor`, `id_colaborador_situacao`, `id_tipo_admissao`, `id_colaborador_tipo`, `id_sindicato`, `matricula`, `data_cadastro`, `data_admissao`, `data_demissao`, `ctps_numero`, `ctps_serie`, `ctps_data_expedicao`, `ctps_uf`, `observacao`) VALUES
+(1, 1, 1, 3, 1, 1, 1, NULL, '2023001', '2023-01-15', '2023-01-15', NULL, '12345678', '1234', '2015-05-20', 'SP', 'Colaborador exemplar'),
+(2, 3, 5, 2, 1, 1, 1, NULL, '2023002', '2023-02-10', '2023-02-10', NULL, '87654321', '4321', '2018-11-15', 'RJ', 'Necessita treinamento avançado'),
+(3, 4, 8, 1, 3, 1, 1, NULL, '2022003', '2022-08-22', '2022-08-22', NULL, '11223344', '5566', '2010-03-10', 'MG', 'Em férias até 15/12/2023'),
+(4, 5, 12, 4, 1, 4, 3, NULL, '2023010', '2023-06-05', '2023-06-05', NULL, '99887766', '7788', '2022-01-30', 'SP', 'Ex-estagiário promovido'),
+(5, 6, 3, 5, 2, 1, 1, NULL, '2021005', '2021-11-03', '2021-11-03', NULL, '55443322', '9900', '2019-07-18', 'RS', 'Afastado por licença médica'),
+(6, 7, 7, 2, 1, 2, 1, NULL, '2023007', '2023-04-18', '2023-04-18', NULL, '33445566', '1122', '2017-09-22', 'PR', 'Transferido da filial de Curitiba'),
+(7, 8, 10, 3, 1, 1, 2, NULL, '2023012', '2023-07-25', '2023-07-25', NULL, NULL, NULL, NULL, NULL, 'Contratado como PJ'),
+(8, 9, 15, 1, 4, 1, 1, NULL, '2020008', '2020-09-14', '2020-09-14', '2023-05-30', '66778899', '3344', '2016-04-05', 'SP', 'Desligamento voluntário');
+
+-- Inserindo tipos de relacionamento
+INSERT INTO `tipo_relacionamento` (`id`, `codigo`, `nome`, `descricao`) VALUES
+(1, '100', 'Cônjuge', 'Cônjuge ou companheiro(a)'),
+(2, '200', 'Filho(a)', 'Filho(a) do colaborador'),
+(3, '300', 'Pai/Mãe', 'Pai ou mãe do colaborador'),
+(4, '400', 'Outro Dependente', 'Outro tipo de dependente');
+
+-- Inserindo relacionamentos de colaboradores
+INSERT INTO `colaborador_relacionamento` (`id`, `id_tipo_relacionamento`, `id_colaborador`, `nome`, `data_nascimento`, `cpf`, `registro_matricula`, `registro_cartorio`, `registro_cartorio_numero`, `registro_numero_livro`, `registro_numero_folha`, `data_entrega_documento`, `salario_familia`, `salario_familia_idade_limite`, `salario_familia_data_fim`, `imposto_renda_idade_limite`, `imposto_renda_data_fim`) VALUES
+(1, 1, 1, 'Maria Silva Oliveira', '1990-08-12', '98765432100', NULL, NULL, NULL, NULL, NULL, '2023-01-20', 'n', NULL, NULL, NULL, NULL),
+(2, 2, 1, 'Pedro Oliveira Silva', '2015-03-25', NULL, '123456', '1º Cartório de SP', '9876', '45', '123', '2023-01-20', 's', 14, '2029-03-25', 21, 2036),
+(3, 2, 1, 'Ana Oliveira Silva', '2018-11-10', NULL, '654321', '1º Cartório de SP', '9876', '45', '124', '2023-01-20', 's', 14, '2032-11-10', 21, 2039),
+(4, 3, 2, 'José Carlos Souza', '1965-07-30', '12345678901', NULL, NULL, NULL, NULL, NULL, '2023-02-15', 'n', NULL, NULL, NULL, NULL),
+(5, 1, 3, 'Carlos Alberto Mendes', '1988-02-14', '45678912300', NULL, NULL, NULL, NULL, NULL, '2022-09-01', 'n', NULL, NULL, NULL, NULL),
+(6, 2, 5, 'Juliana Pereira Costa', '2010-09-05', NULL, '789012', '3º Cartório de POA', '5432', '12', '87', '2021-11-10', 's', 14, '2024-09-05', 21, 2031),
+(7, 4, 5, 'Roberto Costa', '1942-04-20', '78945612300', NULL, NULL, NULL, NULL, NULL, '2021-11-10', 'n', NULL, NULL, NULL, NULL);

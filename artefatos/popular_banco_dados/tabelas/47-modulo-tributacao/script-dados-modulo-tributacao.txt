@@ -1,0 +1,158 @@
+------------------
+-- ZERAR TUDO
+------------------
+
+-- Desativa verificação de chaves estrangeiras para evitar erros
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- Zera as tabelas na ordem inversa de dependência
+
+-- Tabelas de detalhes/dependentes
+TRUNCATE TABLE `tribut_icms_custom_det`;
+ALTER TABLE `tribut_icms_custom_det` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `tribut_icms_uf`;
+ALTER TABLE `tribut_icms_uf` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `tribut_pis`;
+ALTER TABLE `tribut_pis` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `tribut_cofins`;
+ALTER TABLE `tribut_cofins` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `tribut_ipi`;
+ALTER TABLE `tribut_ipi` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `tribut_iss`;
+ALTER TABLE `tribut_iss` AUTO_INCREMENT = 1;
+
+-- Tabelas de cabeçalho/configuração
+TRUNCATE TABLE `tribut_icms_custom_cab`;
+ALTER TABLE `tribut_icms_custom_cab` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `tribut_configura_of_gt`;
+ALTER TABLE `tribut_configura_of_gt` AUTO_INCREMENT = 1;
+
+-- Tabelas principais
+TRUNCATE TABLE `tribut_operacao_fiscal`;
+ALTER TABLE `tribut_operacao_fiscal` AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE `tribut_grupo_tributario`;
+ALTER TABLE `tribut_grupo_tributario` AUTO_INCREMENT = 1;
+
+-- Tabela auxiliar (se não for compartilhada com outros módulos)
+TRUNCATE TABLE `uf`;
+ALTER TABLE `uf` AUTO_INCREMENT = 1;
+
+-- Reativa verificação de chaves estrangeiras
+SET FOREIGN_KEY_CHECKS = 1;
+
+-- Mensagem de conclusão
+SELECT 'Todas as tabelas do módulo tributário foram zeradas e os autoincrements resetados' AS Resultado;
+
+----------------------------------------------------------------------------------------
+
+
+-- Inserção de grupos tributários
+INSERT INTO `tribut_grupo_tributario` (`descricao`, `origem_mercadoria`, `observacao`) VALUES
+('Produtos Industrializados - Nacional', '0', 'Produtos fabricados no Brasil'),
+('Produtos Industrializados - Importado', '1', 'Produtos importados diretamente'),
+('Produtos Básicos - Nacional', '0', 'Produtos agrícolas e minerais nacionais'),
+('Serviços de TI', '2', 'Serviços de tecnologia da informação'),
+('Serviços Profissionais', '2', 'Serviços de profissionais liberais'),
+('Revenda Mercadorias', '0', 'Comércio de mercadorias em geral'),
+('Produtos Isentos', '0', 'Produtos com isenção de impostos'),
+('Produtos ST', '0', 'Produtos com substituição tributária');
+
+-- Inserção de operações fiscais
+INSERT INTO `tribut_operacao_fiscal` (`descricao`, `descricao_na_nf`, `cfop`, `observacao`) VALUES
+('Venda Mercadoria', 'Venda de Mercadoria', 5102, 'Venda para consumidor final dentro do estado'),
+('Venda Interestadual', 'Venda Interestadual', 6102, 'Venda para consumidor final outro estado'),
+('Venda Exportação', 'Exportação', 7101, 'Venda para o exterior'),
+('Prestação Serviço', 'Prestação de Serviço', NULL, 'Serviços em geral'),
+('Devolução Venda', 'Devolução de Venda', 5201, 'Devolução de mercadoria vendida'),
+('Remessa Industrialização', 'Remessa p/ Industrialização', 5901, 'Remessa para industrialização'),
+('Bonificação', 'Bonificação', 5915, 'Mercadoria dada como brinde'),
+('Serviço Isento', 'Serviço Isento', NULL, 'Serviços com isenção de ISS'),
+('Venda ST', 'Venda c/ Substituição', 5405, 'Venda com substituição tributária');
+
+-- Inserção de configurações OF/GT (Operação Fiscal / Grupo Tributário)
+INSERT INTO `tribut_configura_of_gt` (`id_tribut_grupo_tributario`, `id_tribut_operacao_fiscal`) VALUES
+(1, 1), -- Produtos Nacional / Venda Mercadoria
+(1, 2), -- Produtos Nacional / Venda Interestadual
+(2, 1), -- Produtos Importado / Venda Mercadoria
+(3, 1), -- Produtos Básicos / Venda Mercadoria
+(6, 1), -- Revenda / Venda Mercadoria
+(8, 9), -- Produtos ST / Venda ST
+(4, 4), -- Serviços TI / Prestação Serviço
+(5, 4), -- Serviços Profissionais / Prestação Serviço
+(7, 1), -- Produtos Isentos / Venda Mercadoria
+(4, 8); -- Serviços TI / Serviço Isento
+
+-- Inserção de ICMS por UF
+INSERT INTO `tribut_icms_uf` (`id_tribut_configura_of_gt`, `uf_destino`, `cfop`, `csosn`, `cst`, `modalidade_bc`, `aliquota`, `porcento_bc`, `modalidade_bc_st`, `aliquota_icms_st`, `mva`) VALUES
+-- Configurações para vendas dentro do estado (MG)
+(1, 'MG', 5102, '102', '00', '3', 18.000000, 100.000000, '4', 18.000000, 40.000000),
+-- Configurações para vendas interestaduais
+(1, 'SP', 6102, '102', '00', '3', 12.000000, 100.000000, '4', 18.000000, 40.000000),
+(1, 'RJ', 6102, '102', '00', '3', 12.000000, 100.000000, '4', 20.000000, 45.000000),
+(1, 'RS', 6102, '102', '00', '3', 12.000000, 100.000000, '4', 17.000000, 35.000000),
+-- Configurações para produtos com ST
+(6, 'MG', 5405, '500', '60', NULL, NULL, NULL, '4', 18.000000, 50.000000),
+(6, 'SP', 5405, '500', '60', NULL, NULL, NULL, '4', 18.000000, 50.000000),
+-- Configurações para produtos isentos
+(7, 'MG', 5102, '300', '40', NULL, 0.000000, NULL, NULL, NULL, NULL),
+(7, 'SP', 6102, '300', '40', NULL, 0.000000, NULL, NULL, NULL, NULL);
+
+-- Inserção de PIS
+INSERT INTO `tribut_pis` (`id_tribut_configura_of_gt`, `cst_pis`, `efd_tabela_435`, `modalidade_base_calculo`, `porcento_base_calculo`, `aliquota_porcento`) VALUES
+(1, '01', '01', '3', 100.000000, 1.650000),
+(2, '01', '01', '3', 100.000000, 1.650000),
+(3, '02', '02', NULL, NULL, 0.000000),
+(6, '01', '01', '3', 100.000000, 1.650000),
+(7, '04', '04', NULL, NULL, 0.000000);
+
+-- Inserção de COFINS
+INSERT INTO `tribut_cofins` (`id_tribut_configura_of_gt`, `cst_cofins`, `efd_tabela_435`, `modalidade_base_calculo`, `porcento_base_calculo`, `aliquota_porcento`) VALUES
+(1, '01', '01', '3', 100.000000, 7.600000),
+(2, '01', '01', '3', 100.000000, 7.600000),
+(3, '02', '02', NULL, NULL, 0.000000),
+(6, '01', '01', '3', 100.000000, 7.600000),
+(7, '04', '04', NULL, NULL, 0.000000);
+
+-- Inserção de IPI
+INSERT INTO `tribut_ipi` (`id_tribut_configura_of_gt`, `cst_ipi`, `modalidade_base_calculo`, `porcento_base_calculo`, `aliquota_porcento`) VALUES
+(1, '50', '3', 100.000000, 10.000000),
+(2, '50', '3', 100.000000, 10.000000),
+(3, '53', NULL, NULL, 0.000000),
+(6, '50', '3', 100.000000, 5.000000),
+(7, '53', NULL, NULL, 0.000000);
+
+-- Inserção de ISS
+INSERT INTO `tribut_iss` (`id_tribut_operacao_fiscal`, `modalidade_base_calculo`, `porcento_base_calculo`, `aliquota_porcento`, `item_lista_servico`, `codigo_tributacao`) VALUES
+(4, '3', 100.000000, 5.000000, 702, 'N'),
+(8, '3', 100.000000, 0.000000, 702, 'I'),
+(4, '3', 100.000000, 2.000000, 1501, 'N'),
+(4, '3', 100.000000, 2.500000, 703, 'N');
+
+-- Inserção de configurações customizadas de ICMS
+INSERT INTO `tribut_icms_custom_cab` (`descricao`, `origem_mercadoria`) VALUES
+('ICMS Simples Nacional', '0'),
+('ICMS Diferimento', '0'),
+('ICMS Antecipado', '0'),
+('ICMS ST Especial', '0');
+
+-- Inserção de detalhes das configurações customizadas de ICMS
+INSERT INTO `tribut_icms_custom_det` (`id_tribut_icms_custom_cab`, `uf_destino`, `cfop`, `csosn`, `cst`, `modalidade_bc`, `aliquota`, `mva`, `modalidade_bc_st`, `aliquota_icms_st`) VALUES
+-- Simples Nacional
+(1, 'MG', 5102, '101', NULL, '3', 7.000000, 30.000000, '4', 7.000000),
+(1, 'SP', 6102, '101', NULL, '3', 7.000000, 30.000000, '4', 7.000000),
+(1, 'RJ', 6102, '101', NULL, '3', 7.000000, 30.000000, '4', 7.000000),
+-- Diferimento
+(2, 'MG', 5102, NULL, '51', '3', 18.000000, NULL, NULL, NULL),
+(2, 'SP', 6102, NULL, '51', '3', 18.000000, NULL, NULL, NULL),
+-- Antecipado
+(3, 'MG', 5102, NULL, '10', '3', 18.000000, NULL, '4', 18.000000),
+-- ST Especial
+(4, 'MG', 5405, NULL, '60', NULL, NULL, 80.000000, '4', 18.000000),
+(4, 'SP', 5405, NULL, '60', NULL, NULL, 80.000000, '4', 18.000000);

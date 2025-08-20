@@ -1,0 +1,220 @@
+==============
+ZERA TUDO
+==============
+
+-- Desativar verificação de chaves estrangeiras temporariamente
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- 1. Apagar dados das tabelas dependentes primeiro
+TRUNCATE TABLE patrim_depreciacao_bem;
+ALTER TABLE patrim_depreciacao_bem AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE patrim_documento_bem;
+ALTER TABLE patrim_documento_bem AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE patrim_movimentacao_bem;
+ALTER TABLE patrim_movimentacao_bem AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE patrim_apolice_seguro;
+ALTER TABLE patrim_apolice_seguro AUTO_INCREMENT = 1;
+
+-- 2. Apagar dados da tabela principal
+TRUNCATE TABLE patrim_bem;
+ALTER TABLE patrim_bem AUTO_INCREMENT = 1;
+
+-- 3. Apagar dados das tabelas de configuração
+TRUNCATE TABLE patrim_taxa_depreciacao;
+ALTER TABLE patrim_taxa_depreciacao AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE patrim_indice_atualizacao;
+ALTER TABLE patrim_indice_atualizacao AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE patrim_tipo_movimentacao;
+ALTER TABLE patrim_tipo_movimentacao AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE patrim_tipo_aquisicao_bem;
+ALTER TABLE patrim_tipo_aquisicao_bem AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE patrim_grupo_bem;
+ALTER TABLE patrim_grupo_bem AUTO_INCREMENT = 1;
+
+TRUNCATE TABLE patrim_estado_conservacao;
+ALTER TABLE patrim_estado_conservacao AUTO_INCREMENT = 1;
+
+-- Reativar verificação de chaves estrangeiras
+SET FOREIGN_KEY_CHECKS = 1;
+
+
+=====================================================================================
+
+-- 1. Tabelas Básicas (Popule primeiro)
+
+-- ESTADOS DE CONSERVAÇÃO (patrim_estado_conservacao)
+INSERT INTO patrim_estado_conservacao (codigo, nome, descricao) VALUES
+('01', 'Novo', 'Item em perfeito estado, sem uso'),
+('02', 'Bom', 'Pequenos sinais de uso, plenamente funcional'),
+('03', 'Regular', 'Necessita de pequenos reparos'),
+('04', 'Ruim', 'Necessita de manutenção urgente'),
+('05', 'Péssimo', 'Inutilizável, deve ser baixado');
+
+-- GRUPOS DE BENS (patrim_grupo_bem)
+INSERT INTO patrim_grupo_bem (codigo, nome, descricao, conta_ativo_imobilizado, conta_depreciacao_acumulada, conta_despesa_depreciacao, codigo_historico) VALUES
+('001', 'Máquinas e Equipamentos', 'Máquinas industriais e equipamentos de produção', '2.1.01.001', '2.1.02.001', '6.1.01.001', 101),
+('002', 'Veículos', 'Automóveis, caminhões e veículos em geral', '2.1.01.002', '2.1.02.002', '6.1.01.002', 102),
+('003', 'Móveis e Utensílios', 'Mobiliário em geral', '2.1.01.003', '2.1.02.003', '6.1.01.003', 103),
+('004', 'Computadores', 'Equipamentos de informática', '2.1.01.004', '2.1.02.004', '6.1.01.004', 104),
+('005', 'Imóveis', 'Edificações e benfeitorias', '2.1.01.005', '2.1.02.005', '6.1.01.005', 105);
+
+-- TIPOS DE AQUISIÇÃO (patrim_tipo_aquisicao_bem)
+INSERT INTO patrim_tipo_aquisicao_bem (tipo, nome, descricao) VALUES
+('CP', 'Compra', 'Aquisição por compra direta'),
+('DO', 'Doação', 'Recebido como doação'),
+('HE', 'Herança', 'Recebido por herança'),
+('LE', 'Leilão', 'Adquirido em leilão'),
+('TR', 'Transferência', 'Transferência de outra unidade');
+
+-- TIPOS DE MOVIMENTAÇÃO (patrim_tipo_movimentacao)
+INSERT INTO patrim_tipo_movimentacao (tipo, nome, descricao) VALUES
+('TR', 'Transferência', 'Transferência entre setores'),
+('MA', 'Manutenção', 'Envio para manutenção'),
+('BA', 'Baixa', 'Baixa do patrimônio'),
+('RE', 'Reforma', 'Envio para reforma'),
+('IN', 'Inventário', 'Movimentação por inventário');
+
+-- TAXAS DE DEPRECIAÇÃO (patrim_taxa_depreciacao)
+INSERT INTO patrim_taxa_depreciacao (ncm, bem, vida, taxa) VALUES
+('84289090', 'Máquinas industriais', 10.000000, 10.000000),
+('87032210', 'Automóveis de passageiros', 5.000000, 20.000000),
+('94033000', 'Móveis para escritório', 10.000000, 10.000000),
+('84713000', 'Computadores', 5.000000, 20.000000),
+('70140000', 'Imóveis', 25.000000, 4.000000);
+
+-- ÍNDICES DE ATUALIZAÇÃO (patrim_indice_atualizacao)
+INSERT INTO patrim_indice_atualizacao (data_indice, nome, valor, valor_alternativo) VALUES
+('2023-01-01', 'IGPM', 0.500000, 0.480000),
+('2023-02-01', 'IGPM', 0.450000, 0.430000),
+('2023-03-01', 'IGPM', 0.400000, 0.380000),
+('2023-04-01', 'IGPM', 0.350000, 0.330000),
+('2023-05-01', 'IGPM', 0.300000, 0.280000);
+
+-- SEGURADORAS (seguradora) - Tabela necessária para apólices
+INSERT INTO seguradora (id, nome, contato) VALUES
+(1, 'Porto Seguro', 'João'),
+(2, 'SulAmérica', 'Pedro'),
+(3, 'Bradesco Seguros', 'Carlos'),
+(4, 'Allianz', 'Maria'),
+(5, 'Tokio Marine', 'Ana');
+
+-- 2. Bens Patrimoniais
+-- BENS PATRIMONIAIS (patrim_bem) - IDs de referência de 1 a 10
+INSERT INTO patrim_bem (
+  id_centro_resultado, 
+  id_patrim_tipo_aquisicao_bem, 
+  id_patrim_estado_conservacao, 
+  id_patrim_grupo_bem, 
+  id_fornecedor, 
+  id_colaborador, 
+  id_setor, 
+  numero_nb, 
+  nome, 
+  descricao, 
+  numero_serie, 
+  data_aquisicao, 
+  data_aceite, 
+  data_cadastro, 
+  data_contabilizado, 
+  valor_original, 
+  valor_compra, 
+  valor_atualizado, 
+  deprecia, 
+  metodo_depreciacao, 
+  inicio_depreciacao, 
+  tipo_depreciacao, 
+  taxa_anual_depreciacao, 
+  taxa_mensal_depreciacao,
+  funcao
+) VALUES
+-- Bem 1 (Veículo)
+(1, 1, 2, 2, 1, 3, 5, 'NB2023001', 'Toyota Corolla', 'Veículo para diretoria', 'TYT123456789', '2022-01-15', '2022-01-20', '2022-01-18', '2022-01-25', 120000.000000, 115000.000000, 110000.000000, 'S', 'L', '2022-02-01', 'N', 20.000000, 1.666667, 'Transporte executivo'),
+
+-- Bem 2 (Computador)
+(2, 1, 1, 4, 4, 5, 3, 'NB2023002', 'Notebook Dell', 'Notebook i7 16GB RAM', 'DL987654321', '2023-03-10', '2023-03-10', '2023-03-10', '2023-03-15', 6500.000000, 6000.000000, 6500.000000, 'S', 'L', '2023-04-01', 'N', 20.000000, 1.666667, 'Trabalho administrativo'),
+
+-- Bem 3 (Máquina Industrial)
+(3, 1, 3, 1, 1, 2, 7, 'NB2022001', 'Máquina CNC', 'Máquina de corte CNC 3 eixos', 'CNC2022XYZ', '2021-11-05', '2021-11-20', '2021-11-15', '2021-11-30', 250000.000000, 240000.000000, 220000.000000, 'S', 'L', '2021-12-01', 'N', 10.000000, 0.833333, 'Produção industrial'),
+
+-- Bem 4 (Móvel)
+(4, 1, 2, 3, 4, 4, 2, 'NB2023003', 'Mesa Executiva', 'Mesa de reunião em madeira', 'MESA2023ABC', '2023-01-20', '2023-01-22', '2023-01-21', '2023-01-25', 3500.000000, 3200.000000, 3500.000000, 'S', 'L', '2023-02-01', 'N', 10.000000, 0.833333, 'Mobiliário executivo'),
+
+-- Bem 5 (Imóvel)
+(5, 1, 1, 5, 1, 1, 1, 'NB2020001', 'Sede Administrativa', 'Prédio sede da empresa', NULL, '2020-05-10', '2020-05-15', '2020-05-12', '2020-05-20', 1500000.000000, 1450000.000000, 1600000.000000, 'S', 'L', '2020-06-01', 'N', 4.000000, 0.333333, 'Sede da empresa');
+
+
+-- 3. Depreciações
+-- DEPRECIAÇÕES (patrim_depreciacao_bem)
+INSERT INTO patrim_depreciacao_bem (
+  id_patrim_bem, 
+  data_depreciacao, 
+  dias, 
+  taxa, 
+  indice, 
+  valor, 
+  depreciacao_acumulada
+) VALUES
+-- Depreciações para o veículo (ID 1)
+(1, '2022-12-31', 334, 20.000000, 1.000000, 22000.000000, 22000.000000),
+(1, '2023-12-31', 365, 20.000000, 1.000000, 22000.000000, 44000.000000),
+
+-- Depreciações para o notebook (ID 2)
+(2, '2023-12-31', 275, 20.000000, 1.000000, 1300.000000, 1300.000000),
+
+-- Depreciações para a máquina (ID 3)
+(3, '2022-12-31', 365, 10.000000, 1.000000, 25000.000000, 50000.000000),
+(3, '2023-12-31', 365, 10.000000, 1.000000, 25000.000000, 75000.000000),
+
+-- Depreciações para o móvel (ID 4)
+(4, '2023-12-31', 334, 10.000000, 1.000000, 350.000000, 350.000000),
+
+-- Depreciações para o imóvel (ID 5)
+(5, '2022-12-31', 365, 4.000000, 1.000000, 60000.000000, 120000.000000),
+(5, '2023-12-31', 365, 4.000000, 1.000000, 60000.000000, 180000.000000);
+
+-- 4. Apólices de Seguro
+-- APÓLICES DE SEGURO (patrim_apolice_seguro)
+INSERT INTO patrim_apolice_seguro (
+  id_patrim_bem, 
+  id_seguradora, 
+  numero, 
+  data_contratacao, 
+  data_vencimento, 
+  valor_premio, 
+  valor_segurado, 
+  observacao
+) VALUES
+(1, 1, 'AP2023001', '2023-01-10', '2024-01-09', 3000.000000, 100000.000000, 'Cobertura total + vidros'),
+(3, 3, 'AP2023002', '2023-01-15', '2024-01-14', 5000.000000, 200000.000000, 'Cobertura para danos e roubo'),
+(5, 5, 'AP2023003', '2023-01-20', '2024-01-19', 10000.000000, 1500000.000000, 'Cobertura incêndio e desastres naturais');
+
+-- 5. Documentos e Movimentações
+-- DOCUMENTOS (patrim_documento_bem)
+INSERT INTO patrim_documento_bem (
+  id_patrim_bem, 
+  nome, 
+  descricao
+) VALUES
+(1, 'Nota Fiscal Veículo', 'Nota fiscal de compra do veículo'),
+(2, 'Termo de Garantia Notebook', 'Garantia extendida por 3 anos'),
+(3, 'Manual Máquina CNC', 'Manual de operação em português');
+
+-- MOVIMENTAÇÕES (patrim_movimentacao_bem)
+INSERT INTO patrim_movimentacao_bem (
+  id_patrim_bem, 
+  id_patrim_tipo_movimentacao, 
+  data_movimentacao, 
+  responsavel
+) VALUES
+(2, 1, '2023-04-01', 'João Silva - TI'),
+(3, 2, '2023-02-15', 'Carlos Oliveira - Manutenção'),
+(4, 1, '2023-03-10', 'Maria Santos - RH');
+
+-- 

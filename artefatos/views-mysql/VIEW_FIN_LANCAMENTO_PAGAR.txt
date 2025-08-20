@@ -1,67 +1,69 @@
-CREATE VIEW VIEW_FIN_LANCAMENTO_PAGAR(
-	ID,
-    ID_FIN_LANCAMENTO_PAGAR,
-    QUANTIDADE_PARCELA,
-    VALOR_LANCAMENTO,
-    DATA_LANCAMENTO,
-	NUMERO_DOCUMENTO,
-    ID_FIN_PARCELA_PAGAR,
-    NUMERO_PARCELA,
-    DATA_VENCIMENTO,
-    DATA_PAGAMENTO,
-    VALOR_PARCELA,
-	TAXA_JURO,
-	VALOR_JURO,
-	TAXA_MULTA,
-	VALOR_MULTA,
-	TAXA_DESCONTO,
-	VALOR_DESCONTO,
-    SIGLA_DOCUMENTO,
-    NOME_FORNECEDOR,
-	ID_FIN_STATUS_PARCELA,
-    SITUACAO_PARCELA,
-	DESCRICAO_SITUACAO_PARCELA,
-	ID_BANCO_CONTA_CAIXA,
-	NOME_CONTA_CAIXA)
-AS
+create view view_fin_lancamento_pagar (
+    id,
+    id_fin_lancamento_pagar,
+    quantidade_parcela,
+    valor_lancamento,
+    data_lancamento,
+    numero_documento,
+    id_fin_parcela_pagar,
+    numero_parcela,
+    data_vencimento,
+    data_pagamento,
+    valor_parcela,
+    taxa_juro,
+    valor_juro,
+    taxa_multa,
+    valor_multa,
+    taxa_desconto,
+    valor_desconto,
+    sigla_documento,
+    nome_fornecedor,
+    id_fin_status_parcela,
+    situacao_parcela,
+    descricao_situacao_parcela,
+    id_banco_conta_caixa,
+    nome_conta_caixa
+) as
+
 select
-  CAST( CONCAT(LP.ID,PP.ID) as UNSIGNED) as ID, 
-  LP.ID as ID_FIN_LANCAMENTO_PAGAR, 
-  LP.QUANTIDADE_PARCELA, 
-  LP.VALOR_A_PAGAR AS VALOR_LANCAMENTO, 
-  LP.DATA_LANCAMENTO, 
-  LP.NUMERO_DOCUMENTO,
-  PP.ID as ID_FIN_PARCELA_PAGAR, 
-  PP.NUMERO_PARCELA, 
-  PP.DATA_VENCIMENTO, 
-  PP.DATA_PAGAMENTO, 
-  PP.VALOR AS VALOR_PARCELA, 
-  PP.TAXA_JURO, 
-  PP.VALOR_JURO, 
-  PP.TAXA_MULTA, 
-  PP.VALOR_MULTA, 
-  PP.TAXA_DESCONTO, 
-  PP.VALOR_DESCONTO,
-  DOC.SIGLA,
-  P.NOME as NOME_FORNECEDOR,
-  S.ID as ID_FIN_STATUS_PARCELA, 
-  S.SITUACAO as SITUACAO_PARCELA, 
-  S.DESCRICAO as DESCRICAO_SITUACAO_PARCELA,
-  CC.ID AS ID_BANCO_CONTA_CAIXA, 
-  CC.NOME AS NOME_CONTA_CAIXA
+    cast(concat(lp.id, pp.id) as unsigned) as id,
+    lp.id as id_fin_lancamento_pagar,
+    lp.quantidade_parcela,
+    lp.valor_a_pagar as valor_lancamento,
+    lp.data_lancamento,
+    lp.numero_documento,
+    pp.id as id_fin_parcela_pagar,
+    pp.numero_parcela,
+    pp.data_vencimento,
+    pp.data_pagamento,
+    pp.valor as valor_parcela,
+    pp.taxa_juro,
+    pp.valor_juro,
+    pp.taxa_multa,
+    pp.valor_multa,
+    pp.taxa_desconto,
+    pp.valor_desconto,
+    doc.sigla as sigla_documento,
+    p.nome as nome_fornecedor,
+    s.id as id_fin_status_parcela,
+    s.situacao as situacao_parcela,
+    s.descricao as descricao_situacao_parcela,
+    cc.id as id_banco_conta_caixa,
+    cc.nome as nome_conta_caixa
+
 from
-  FIN_LANCAMENTO_PAGAR LP, FIN_PARCELA_PAGAR PP, FIN_DOCUMENTO_ORIGEM DOC,
-  PESSOA P, FORNECEDOR F, FIN_STATUS_PARCELA S, BANCO_CONTA_CAIXA CC
+    fin_lancamento_pagar lp,
+    fin_parcela_pagar pp,
+    fin_documento_origem doc,
+    pessoa p,
+    fornecedor f,
+    fin_status_parcela s,
+    banco_conta_caixa cc
+
 where
-  PP.ID_FIN_LANCAMENTO_PAGAR = LP.ID
-and
-  PP.ID_FIN_STATUS_PARCELA = S.ID
-and
-  LP.ID_FIN_DOCUMENTO_ORIGEM = DOC.ID
-and
-  LP.ID_FORNECEDOR = F.ID
-and
-  F.ID_PESSOA = P.ID
-and
-  LP.ID_BANCO_CONTA_CAIXA = CC.ID
-;
+    pp.id_fin_lancamento_pagar = lp.id
+    and pp.id_fin_status_parcela = s.id
+    and lp.id_fin_documento_origem = doc.id
+    and lp.id_fornecedor = f.id
+    and f.id_pessoa = p.id
+    and lp.id_banco_conta_caixa = cc.id;

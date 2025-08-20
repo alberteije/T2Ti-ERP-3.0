@@ -1,0 +1,130 @@
+-- 1. Tabelas de Classificação (Cores, Marcas, Sabores, Tamanhos)
+-- Cores
+INSERT INTO `estoque_cor` (`codigo`, `nome`) VALUES
+('0001', 'Branco'),
+('0002', 'Preto'),
+('0003', 'Vermelho'),
+('0004', 'Azul'),
+('0005', 'Verde'),
+('0006', 'Amarelo'),
+('0007', 'Cinza'),
+('0008', 'Prata'),
+('0009', 'Dourado'),
+('0010', 'Rosa');
+
+-- Marcas
+INSERT INTO `estoque_marca` (`codigo`, `nome`) VALUES
+('M001', 'Dell'),
+('M002', 'HP'),
+('M003', 'Lenovo'),
+('M004', 'Samsung'),
+('M005', 'Apple'),
+('M006', 'Logitech'),
+('M007', 'Microsoft'),
+('M008', 'Intel'),
+('M009', 'AMD'),
+('M010', 'Asus');
+
+-- Sabores (útil para produtos alimentícios)
+INSERT INTO `estoque_sabor` (`codigo`, `nome`) VALUES
+('S001', 'Natural'),
+('S002', 'Morango'),
+('S003', 'Chocolate'),
+('S004', 'Baunilha'),
+('S005', 'Limão'),
+('S006', 'Uva'),
+('S007', 'Café'),
+('S008', 'Canela'),
+('S009', 'Menta'),
+('S010', 'Caramelo');
+
+-- Tamanhos
+INSERT INTO `estoque_tamanho` (`codigo`, `nome`, `altura`, `comprimento`, `largura`) VALUES
+('T001', 'Pequeno', 10.000000, 15.000000, 8.000000),
+('T002', 'Médio', 20.000000, 30.000000, 15.000000),
+('T003', 'Grande', 30.000000, 45.000000, 25.000000),
+('T004', 'Extra Grande', 40.000000, 60.000000, 35.000000),
+('T005', 'Único', 5.000000, 5.000000, 5.000000),
+('T006', 'A4', 29.700000, 21.000000, 0.100000),
+('T007', 'A5', 21.000000, 14.800000, 0.100000),
+('T008', 'Notebook 14"', 2.000000, 33.000000, 23.000000),
+('T009', 'Notebook 15.6"', 2.300000, 36.000000, 25.000000),
+('T010', 'Desktop', 45.000000, 20.000000, 45.000000);
+
+
+-- 2. Tabelas de Requisição Interna
+-- Cabeçalho de Requisições Internas
+INSERT INTO `requisicao_interna_cabecalho` (`id_colaborador`, `data_requisicao`, `situacao`) VALUES
+(1, '2023-01-10', 'A'), -- Aprovada
+(2, '2023-01-15', 'P'), -- Pendente
+(3, '2023-01-20', 'C'), -- Cancelada
+(4, '2023-02-05', 'A'),
+(5, '2023-02-10', 'P'),
+(1, '2023-02-15', 'A'),
+(2, '2023-03-01', 'C'),
+(3, '2023-03-10', 'A'),
+(4, '2023-03-15', 'P'),
+(5, '2023-03-20', 'A');
+
+-- Detalhes das Requisições
+INSERT INTO `requisicao_interna_detalhe` (`id_requisicao_interna_cabecalho`, `id_produto`, `quantidade`) VALUES
+(1, 1, 2.000000), -- Notebook para TI
+(1, 5, 5.000000), -- Mouse
+(2, 3, 1.000000), -- Monitor
+(3, 7, 10.000000), -- Cabos
+(4, 2, 3.000000), -- Desktop
+(4, 6, 2.000000), -- Teclado
+(5, 4, 1.000000), -- Impressora
+(6, 8, 20.000000), -- Papel A4
+(7, 9, 5.000000), -- Toner
+(8, 10, 3.000000), -- Headset
+(9, 1, 1.000000),
+(10, 5, 4.000000);
+
+
+-- 3. Tabelas de Reajuste de Preços
+-- Cabeçalho de Reajustes
+INSERT INTO `estoque_reajuste_cabecalho` (`id_colaborador`, `data_reajuste`, `taxa`, `tipo_reajuste`, `justificativa`) VALUES
+(1, '2023-01-05', 5.000000, 'P', 'Reajuste anual de preços'),
+(2, '2023-02-10', -3.000000, 'P', 'Promoção de fim de estoque'),
+(3, '2023-03-15', 7.500000, 'P', 'Ajuste por aumento de custos'),
+(4, '2023-04-20', 2.000000, 'P', 'Reajuste mensal'),
+(1, '2023-05-25', -10.000000, 'P', 'Black Friday antecipada'),
+(2, '2023-06-30', 4.000000, 'P', 'Ajuste cambial'),
+(3, '2023-07-05', 3.500000, 'P', 'Reajuste de fornecedor'),
+(4, '2023-08-10', 6.000000, 'P', 'Aumento de demanda'),
+(1, '2023-09-15', -5.000000, 'P', 'Promoção de primavera'),
+(2, '2023-10-20', 8.000000, 'P', 'Ajuste de inflação');
+
+-- Detalhes dos Reajustes
+INSERT INTO `estoque_reajuste_detalhe` (`id_estoque_reajuste_cabecalho`, `id_produto`, `valor_original`, `valor_reajuste`) VALUES
+(1, 1, 3500.000000, 3675.000000),
+(1, 2, 2800.000000, 2940.000000),
+(2, 3, 1200.000000, 1164.000000),
+(2, 4, 800.000000, 776.000000),
+(3, 5, 150.000000, 161.250000),
+(3, 6, 200.000000, 215.000000),
+(4, 7, 50.000000, 51.000000),
+(4, 8, 30.000000, 30.600000),
+(5, 9, 300.000000, 270.000000),
+(5, 10, 250.000000, 225.000000),
+(6, 1, 3675.000000, 3822.000000),
+(7, 2, 2940.000000, 3042.900000),
+(8, 3, 1164.000000, 1233.840000),
+(9, 4, 776.000000, 737.200000),
+(10, 5, 161.250000, 174.150000);
+
+
+-- 4. Tabela de Grade (combinação de características)
+-- Grades de Produtos
+INSERT INTO `estoque_grade` (`id_estoque_marca`, `id_estoque_sabor`, `id_estoque_tamanho`, `id_estoque_cor`, `id_produto`, `codigo`, `quantidade`) VALUES
+(1, NULL, 8, 2, 1, 'DLL-NB14-BK', 5.000000), -- Dell Notebook 14" Preto
+(2, NULL, 9, 7, 2, 'HP-NB156-GY', 3.000000), -- HP Notebook 15.6" Cinza
+(5, NULL, 8, 2, 3, 'APP-NB14-BK', 2.000000), -- Apple Notebook 14" Preto
+(3, NULL, 9, 4, 4, 'LNV-NB156-BL', 4.000000), -- Lenovo Notebook 15.6" Azul
+(6, NULL, 5, 2, 5, 'LOG-MOU-BK', 12.000000), -- Logitech Mouse Preto
+(6, NULL, 5, 1, 6, 'LOG-KBW-WH', 8.000000), -- Logitech Teclado Branco
+(4, NULL, 1, 3, 7, 'SMS-CAB-RD', 25.000000), -- Samsung Cabo Vermelho
+(7, NULL, 6, 1, 8, 'MCS-PAP-WH', 50.000000), -- Microsoft Papel Branco
+(2, NULL, 5, 9, 9, 'HP-TNR-GD', 6.000000), -- HP Toner Dourado
+(6, NULL, 5, 2, 10, 'LOG-HDS-BK', 4.000000); -- Logitech Headset Preto

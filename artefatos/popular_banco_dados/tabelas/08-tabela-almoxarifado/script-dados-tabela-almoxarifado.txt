@@ -1,0 +1,6 @@
+INSERT INTO almoxarifado (nome) VALUES
+('Almoxarifado Central'),
+('Almoxarifado Setor A'),
+('Almoxarifado Setor B'),
+('Almoxarifado de Manutenção'),
+('Almoxarifado de TI');

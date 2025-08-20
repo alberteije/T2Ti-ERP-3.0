@@ -1,0 +1,660 @@
+-- 00. Inserindo Naturezas Financeiras
+-- Inserindo naturezas financeiras básicas
+INSERT INTO `fin_natureza_financeira` (`id`, `codigo`, `descricao`, `tipo`, `aplicacao`) 
+VALUES
+(1, '0101', 'Venda de Mercadorias', 'R', 'Receita principal da empresa'),
+(2, '0102', 'Prestação de Serviços', 'R', 'Receita de serviços prestados'),
+(3, '0201', 'Receita Financeira', 'R', 'Juros e rendimentos financeiros'),
+(4, '1101', 'Custo de Mercadorias Vendidas', 'D', 'Custo direto das vendas'),
+(5, '2101', 'Despesa com Pessoal', 'D', 'Salários, encargos e benefícios'),
+(6, '2102', 'Despesa Administrativa', 'D', 'Despesas gerais de administração'),
+(7, '2103', 'Despesa Comercial', 'D', 'Despesas com vendas e marketing'),
+(8, '3101', 'Investimento em Ativos', 'I', 'Aquisição de bens do ativo imobilizado'),
+(9, '4101', 'Financiamento Bancário', 'F', 'Captação de recursos financeiros');
+
+-- 1. Plano de Contas e Estruturas Básicas
+
+-- Inserir plano de contas principal
+INSERT INTO `plano_conta` (`id`, `nome`, `data_inclusao`, `mascara`, `niveis`) 
+VALUES 
+(1, 'Plano de Contas Padrão', '2023-01-01', '1.1.1.1', 4);
+
+
+-- Inserir contas SPED (para referência)
+INSERT INTO `plano_conta_ref_sped` (`id`, `cod_cta_ref`, `descricao`, `orientacoes`, `inicio_validade`, `fim_validade`, `tipo`) 
+VALUES
+(1, '01', 'Ativo Circulante', 'Contas do ativo circulante', '2023-01-01', NULL, 'A'),
+(2, '02', 'Ativo Não Circulante', 'Contas do ativo não circulante', '2023-01-01', NULL, 'A'),
+(3, '03', 'Passivo Circulante', 'Contas do passivo circulante', '2023-01-01', NULL, 'P'),
+(4, '04', 'Passivo Não Circulante', 'Contas do passivo não circulante', '2023-01-01', NULL, 'P'),
+(5, '05', 'Patrimônio Líquido', 'Contas do patrimônio líquido', '2023-01-01', NULL, 'P'),
+(6, '06', 'Receitas', 'Contas de receitas', '2023-01-01', NULL, 'R'),
+(7, '07', 'Custos', 'Contas de custos', '2023-01-01', NULL, 'C'),
+(8, '08', 'Despesas', 'Contas de despesas', '2023-01-01', NULL, 'D');
+
+
+-- 2. Contas Contábeis
+
+-- Inserir contas contábeis (estrutura básica)
+INSERT INTO `contabil_conta` (
+  `id`, `id_plano_conta`, `id_contabil_conta`, `id_plano_conta_ref_sped`, 
+  `classificacao`, `tipo`, `descricao`, `data_inclusao`, `situacao`, 
+  `natureza`, `patrimonio_resultado`, `livro_caixa`, `dfc`, `ordem`, 
+  `codigo_reduzido`, `codigo_efd`
+) VALUES
+-- Ativo (1. nível)
+(1, 1, NULL, 1, '1', 'A', 'ATIVO', '2023-01-01', 'A', 'D', 'P', 'N', 'N', '1', '1', '01'),
+  -- Ativo Circulante (2. nível)
+  (2, 1, 1, 1, '1.1', 'A', 'ATIVO CIRCULANTE', '2023-01-01', 'A', 'D', 'P', 'S', 'S', '1.1', '11', '01'),
+    -- Disponibilidades (3. nível)
+    (3, 1, 2, 1, '1.1.1', 'A', 'DISPONIBILIDADES', '2023-01-01', 'A', 'D', 'P', 'S', 'S', '1.1.1', '111', '01'),
+      (4, 1, 3, 1, '1.1.1.1', 'A', 'CAIXA', '2023-01-01', 'A', 'D', 'P', 'S', 'S', '1.1.1.1', '1111', '01'),
+      (5, 1, 3, 1, '1.1.1.2', 'A', 'BANCOS CONTA MOVIMENTO', '2023-01-01', 'A', 'D', 'P', 'S', 'S', '1.1.1.2', '1112', '01'),
+    -- Contas a Receber (3. nível)
+    (6, 1, 2, 1, '1.1.2', 'A', 'CONTAS A RECEBER', '2023-01-01', 'A', 'D', 'P', 'N', 'S', '1.1.2', '112', '01'),
+      (7, 1, 6, 1, '1.1.2.1', 'A', 'CLIENTES', '2023-01-01', 'A', 'D', 'P', 'N', 'S', '1.1.2.1', '1121', '01'),
+  
+-- Passivo (1. nível)
+(8, 1, NULL, 3, '2', 'P', 'PASSIVO', '2023-01-01', 'A', 'C', 'P', 'N', 'N', '2', '2', '03'),
+  -- Passivo Circulante (2. nível)
+  (9, 1, 8, 3, '2.1', 'P', 'PASSIVO CIRCULANTE', '2023-01-01', 'A', 'C', 'P', 'N', 'S', '2.1', '21', '03'),
+    -- Fornecedores (3. nível)
+    (10, 1, 9, 3, '2.1.1', 'P', 'FORNECEDORES', '2023-01-01', 'A', 'C', 'P', 'N', 'S', '2.1.1', '211', '03'),
+    -- Obrigações Fiscais (3. nível)
+    (11, 1, 9, 3, '2.1.2', 'P', 'OBRIGAÇÕES FISCAIS', '2023-01-01', 'A', 'C', 'P', 'N', 'S', '2.1.2', '212', '03'),
+      (12, 1, 11, 3, '2.1.2.1', 'P', 'ICMS A RECOLHER', '2023-01-01', 'A', 'C', 'P', 'N', 'S', '2.1.2.1', '2121', '03'),
+
+-- Patrimônio Líquido (1. nível)
+(13, 1, NULL, 5, '3', 'P', 'PATRIMÔNIO LÍQUIDO', '2023-01-01', 'A', 'C', 'P', 'N', 'N', '3', '3', '05'),
+  -- Capital Social (2. nível)
+  (14, 1, 13, 5, '3.1', 'P', 'CAPITAL SOCIAL', '2023-01-01', 'A', 'C', 'P', 'N', 'N', '3.1', '31', '05'),
+    (15, 1, 14, 5, '3.1.1', 'P', 'CAPITAL SUBSCRITO', '2023-01-01', 'A', 'C', 'P', 'N', 'N', '3.1.1', '311', '05'),
+
+-- Receitas (1. nível)
+(16, 1, NULL, 6, '4', 'R', 'RECEITAS', '2023-01-01', 'A', 'C', 'R', 'N', 'S', '4', '4', '06'),
+  -- Receita de Vendas (2. nível)
+  (17, 1, 16, 6, '4.1', 'R', 'RECEITA DE VENDAS', '2023-01-01', 'A', 'C', 'R', 'N', 'S', '4.1', '41', '06'),
+    (18, 1, 17, 6, '4.1.1', 'R', 'VENDA DE PRODUTOS', '2023-01-01', 'A', 'C', 'R', 'N', 'S', '4.1.1', '411', '06'),
+
+-- Custos (1. nível)
+(19, 1, NULL, 7, '5', 'C', 'CUSTOS', '2023-01-01', 'A', 'D', 'R', 'N', 'S', '5', '5', '07'),
+  -- CMV (2. nível)
+  (20, 1, 19, 7, '5.1', 'C', 'CUSTO DAS MERCADORIAS VENDIDAS', '2023-01-01', 'A', 'D', 'R', 'N', 'S', '5.1', '51', '07'),
+
+-- Despesas (1. nível)
+(21, 1, NULL, 8, '6', 'D', 'DESPESAS', '2023-01-01', 'A', 'D', 'R', 'N', 'S', '6', '6', '08'),
+  -- Despesas Operacionais (2. nível)
+  (22, 1, 21, 8, '6.1', 'D', 'DESPESAS OPERACIONAIS', '2023-01-01', 'A', 'D', 'R', 'N', 'S', '6.1', '61', '08'),
+    -- Despesas com Pessoal (3. nível)
+    (23, 1, 22, 8, '6.1.1', 'D', 'DESPESAS COM PESSOAL', '2023-01-01', 'A', 'D', 'R', 'N', 'S', '6.1.1', '611', '08'),
+    -- Despesas Administrativas (3. nível)
+    (24, 1, 22, 8, '6.1.2', 'D', 'DESPESAS ADMINISTRATIVAS', '2023-01-01', 'A', 'D', 'R', 'N', 'S', '6.1.2', '612', '08');
+		
+		
+-- 3. Centros de Resultado
+
+-- Rateio de contas para centros de resultado
+INSERT INTO `contabil_conta_rateio` (`id_centro_resultado`, `id_contabil_conta`, `porcento_rateio`) 
+VALUES
+-- Despesas administrativas rateadas para o centro administrativo
+(1, 24, 100.000000),
+-- Despesas com pessoal rateadas por centro
+(1, 23, 40.000000),
+(2, 23, 30.000000),
+(3, 23, 30.000000);
+
+
+-- 4. Históricos Padrão
+-- Inserir históricos contábeis
+INSERT INTO `contabil_historico` (`id`, `descricao`, `historico`, `pede_complemento`) 
+VALUES
+(1, 'Venda de mercadorias', 'Venda de mercadorias conforme NF nº {complemento}', 'S'),
+(2, 'Compra de mercadorias', 'Compra de mercadorias conforme NF nº {complemento}', 'S'),
+(3, 'Pagamento a fornecedor', 'Pagamento a fornecedor conforme documento {complemento}', 'S'),
+(4, 'Recebimento de cliente', 'Recebimento de cliente conforme documento {complemento}', 'S'),
+(5, 'Lançamento de folha de pagamento', 'Lançamento de folha de pagamento mês {complemento}', 'S'),
+(6, 'Apropriação de despesas', 'Apropriação de despesas {complemento}', 'S'),
+(7, 'Transferência entre contas', 'Transferência entre contas {complemento}', 'S');
+
+
+-- 5. Parâmetros Contábeis
+-- Inserir parâmetros contábeis
+INSERT INTO `contabil_parametro` (
+  `mascara`, `niveis`, `informar_conta_por`, `compartilha_plano_conta`, 
+  `compartilha_historicos`, `altera_lancamento_outro`, `historico_obrigatorio`, 
+  `permite_lancamento_zerado`, `gera_informativo_sped`, `sped_forma_escrit_diario`, 
+  `sped_nome_livro_diario`, `conta_ativo`, `conta_passivo`, `conta_patrimonio_liquido`,
+  `conta_depreciacao_acumulada`, `conta_capital_social`, `conta_resultado_exercicio`,
+  `conta_prejuizo_acumulado`, `conta_lucro_acumulado`, `conta_titulo_pagar`,
+  `conta_titulo_receber`, `conta_juros_passivo`, `conta_juros_ativo`,
+  `conta_desconto_obtido`, `conta_desconto_concedido`, `conta_cmv`,
+  `conta_venda`, `conta_venda_servico`, `conta_estoque`, `conta_apura_resultado`,
+  `conta_juros_apropriar`
+) VALUES (
+  '1.1.1.1', 4, 'C', 'S', 'S', 'N', 'S', 'N', 'S', 'DE',
+  'Livro Diário Contábil', '1', '2', '3', '2.2.1', '3.1.1', '3.2', 
+  '3.3', '3.4', '2.1.1', '1.1.2.1', '2.1.3', '1.1.3', '2.1.4', 
+  '1.1.4', '5.1', '4.1.1', '4.1.2', '1.1.5', '6.9', '1.1.6'
+);
+
+
+-- 6. Lançamentos Contábeis (Exemplo)
+-- Criar um lote contábil
+INSERT INTO `contabil_lote` (`id`, `descricao`, `liberado`, `data_inclusao`, `programado`, `valor`) 
+VALUES 
+(1, 'Lote de abertura', 'S', '2023-01-01', 'N', 100000.000000);
+
+-- Lançamento de abertura (cabecalho)
+INSERT INTO `contabil_lancamento_cabecalho` (
+  `id`, `id_contabil_lote`, `data_lancamento`, `data_inclusao`, `tipo`, `liberado`, `valor`
+) VALUES 
+(1, 1, '2023-01-01', '2023-01-01', 'ABE', 'S', 100000.000000);
+
+-- Lançamentos de abertura (detalhes)
+INSERT INTO `contabil_lancamento_detalhe` (
+  `id_contabil_conta`, `id_contabil_historico`, `id_contabil_lancamento_cab`, `historico`, `valor`, `tipo`
+) VALUES
+-- Débito em caixa
+(4, NULL, 1, 'Lançamento de abertura do exercício', 50000.000000, 'D'),
+-- Débito em bancos
+(5, NULL, 1, 'Lançamento de abertura do exercício', 50000.000000, 'D'),
+-- Crédito em capital social
+(15, NULL, 1, 'Lançamento de abertura do exercício', 100000.000000, 'C');
+
+
+-- 7. DRE (Demonstrativo de Resultados)
+-- Cabeçalho do DRE
+INSERT INTO `contabil_dre_cabecalho` (`id`, `descricao`, `padrao`, `periodo_inicial`, `periodo_final`) 
+VALUES 
+(1, 'DRE Anual 2023', 'S', '2023-01', '2023-12');
+
+-- Detalhes do DRE
+INSERT INTO `contabil_dre_detalhe` (
+  `id_contabil_dre_cabecalho`, `classificacao`, `descricao`, `forma_calculo`, `sinal`, `natureza`, `valor`
+) VALUES
+(1, '1', 'RECEITA BRUTA DE VENDAS', 'M', 'P', 'C', 500000.000000),
+(1, '1.1', '(-) Deduções da Receita', 'M', 'N', 'D', 50000.000000),
+(1, '2', 'RECEITA LÍQUIDA', 'C', 'P', 'C', 450000.000000),
+(1, '3', 'CUSTO DAS MERCADORIAS VENDIDAS', 'M', 'N', 'D', 250000.000000),
+(1, '4', 'LUCRO BRUTO', 'C', 'P', 'C', 200000.000000),
+(1, '5', 'DESPESAS OPERACIONAIS', 'M', 'N', 'D', 100000.000000),
+(1, '6', 'LUCRO OPERACIONAL', 'C', 'P', 'C', 100000.000000);
+
+-- 8. Contador
+-- Inserir contador (usando uma pessoa que tem eh_contador = 'S')
+INSERT INTO `contador` (`id_pessoa`, `crc_inscricao`, `crc_uf`) 
+VALUES 
+(10, '123456', 'SP');  -- ID 10 é Gustavo Nunes Barbosa que marcamos como contador
+
+-- 9. Correlacionando Centros de Resultado com Naturezas Financeiras
+-- Criando a relação entre centros de resultado e naturezas financeiras
+INSERT INTO `ct_resultado_nt_financeira` (`id_centro_resultado`, `id_fin_natureza_financeira`, `percentual_rateio`) 
+VALUES
+-- Centro ADMINISTRATIVO
+(1, 5, 100.000000),  -- 100% das despesas com pessoal
+(1, 6, 100.000000),  -- 100% das despesas administrativas
+
+-- Centro VENDAS
+(2, 1, 100.000000),  -- 100% das vendas de mercadorias
+(2, 7, 100.000000),  -- 100% das despesas comerciais
+
+-- Centro PRODUÇÃO
+(3, 4, 100.000000),  -- 100% do custo de mercadorias
+(3, 5, 60.000000),   -- 60% das despesas com pessoal (operacional)
+
+-- Centro FINANCEIRO
+(4, 3, 100.000000),  -- 100% da receita financeira
+(4, 9, 100.000000);  -- 100% dos financiamentos
+
+
+-- 10. Dados Adicionais para Rateio entre Centros
+
+-- Cabeçalho de rateio entre centros
+INSERT INTO `rateio_centro_resultado_cab` (`id_centro_resultado`, `descricao`) 
+VALUES
+(1, 'Rateio de custos administrativos'),
+(2, 'Rateio de despesas comerciais'),
+(3, 'Rateio de custos de produção');
+
+-- Detalhes do rateio
+INSERT INTO `rateio_centro_resultado_det` (`id_centro_resultado_destino`, `id_rateio_centro_resul_cab`, `porcento_rateio`) 
+VALUES
+-- Rateio administrativo para outros centros
+(2, 1, 30.000000),  -- 30% para Vendas
+(3, 1, 40.000000),  -- 40% para Produção
+(4, 1, 30.000000),  -- 30% para Financeiro
+
+-- Rateio comercial para produção
+(3, 2, 100.000000), -- 100% para Produção
+
+-- Rateio de produção para vendas
+(2, 3, 100.000000); -- 100% para Vendas
+
+
+-- 11. Exemplo Completo de Lançamento Integrado
+-- Inserir um lançamento que utilize todas essas relações
+INSERT INTO `contabil_lancamento_cabecalho` (`id`, `id_contabil_lote`, `data_lancamento`, `data_inclusao`, `tipo`, `liberado`, `valor`) 
+VALUES (2, 1, '2023-01-15', '2023-01-15', 'NOR', 'S', 10000.000000);
+
+-- Lançamento detalhado com natureza financeira e centro de resultado
+INSERT INTO `contabil_lancamento_detalhe` (
+  `id_contabil_conta`, `id_contabil_historico`, `id_contabil_lancamento_cab`, 
+  `historico`, `valor`, `tipo`
+) VALUES
+-- Débito em despesas administrativas (centro administrativo)
+(24, 6, 2, 'Despesas administrativas jan/23', 10000.000000, 'D'),
+
+-- Crédito em bancos
+(5, NULL, 2, 'Pagamento de despesas', 10000.000000, 'C');
+
+-- Relacionando com natureza financeira e centro de resultado
+INSERT INTO `lanca_centro_resultado` (
+  `id_centro_resultado`, `valor`, `historico`, 
+  `data_lancamento`, `data_inclusao`, `origem_de_rateio`
+) VALUES
+(1, 10000.000000, 'Despesas administrativas', '2023-01-15', '2023-01-15', 'N');
+
+-- Relacionando com natureza financeira (opcional - depende da estrutura do seu sistema)
+-- (Esta parte pode ser implementada via trigger ou na aplicação)
+
+
+===============
+
+-- 1. Inserindo Mais Lotes Contábeis
+
+-- Inserindo mais lotes contábeis
+INSERT INTO `contabil_lote` (`id`, `descricao`, `liberado`, `data_inclusao`, `programado`, `valor`) 
+VALUES
+(2, 'Lote de fechamento jan/2023', 'S', '2023-01-31', 'N', 185000.000000),
+(3, 'Lote de folha de pagamento jan/2023', 'S', '2023-01-05', 'S', 45000.000000),
+(4, 'Lote de vendas jan/2023', 'S', '2023-02-01', 'N', 275000.000000),
+(5, 'Lote de compras jan/2023', 'S', '2023-01-31', 'N', 120000.000000),
+(6, 'Lote de ajustes jan/2023', 'S', '2023-02-02', 'N', 5000.000000),
+(7, 'Lote de fechamento fev/2023', 'S', '2023-02-28', 'N', 210000.000000),
+(8, 'Lote programado - folha mensal', 'N', '2023-02-01', 'S', 48000.000000);
+
+
+-- 2. Inserindo Cabeçalhos de Lançamentos
+
+-- Inserindo cabeçalhos de lançamentos contábeis
+INSERT INTO `contabil_lancamento_cabecalho` (
+  `id`, `id_contabil_lote`, `data_lancamento`, `data_inclusao`, `tipo`, `liberado`, `valor`
+) VALUES
+-- Lote 2 - Fechamento jan/2023
+(16, 2, '2023-01-31', '2023-01-31', 'FEC', 'S', 50000.000000),  -- ICMS
+(3, 2, '2023-01-31', '2023-01-31', 'FEC', 'S', 35000.000000),  -- Folha
+(4, 2, '2023-01-31', '2023-01-31', 'FEC', 'S', 100000.000000), -- CMV
+
+-- Lote 3 - Folha de pagamento
+(5, 3, '2023-01-05', '2023-01-05', 'FOL', 'S', 45000.000000),
+
+-- Lote 4 - Vendas
+(6, 4, '2023-01-10', '2023-01-10', 'VEN', 'S', 100000.000000), -- Venda 001
+(7, 4, '2023-01-15', '2023-01-15', 'VEN', 'S', 75000.000000),  -- Venda 002
+(8, 4, '2023-01-22', '2023-01-22', 'VEN', 'S', 100000.000000), -- Venda 003
+
+-- Lote 5 - Compras
+(9, 5, '2023-01-08', '2023-01-08', 'COM', 'S', 50000.000000),  -- Compra 001
+(10, 5, '2023-01-18', '2023-01-18', 'COM', 'S', 70000.000000), -- Compra 002
+
+-- Lote 6 - Ajustes
+(11, 6, '2023-01-31', '2023-01-31', 'AJU', 'S', 2000.000000),  -- Juros
+(12, 6, '2023-01-31', '2023-01-31', 'AJU', 'S', 3000.000000),  -- Descontos
+
+-- Lote 7 - Fechamento fev/2023
+(13, 7, '2023-02-28', '2023-02-28', 'FEC', 'S', 55000.000000), -- ICMS
+(14, 7, '2023-02-28', '2023-02-28', 'FEC', 'S', 40000.000000), -- Folha
+(15, 7, '2023-02-28', '2023-02-28', 'FEC', 'S', 115000.000000); -- CMV
+
+
+-- 3. Inserindo Detalhes dos Lançamentos
+
+-- Inserindo detalhes dos lançamentos contábeis
+INSERT INTO `contabil_lancamento_detalhe` (
+  `id_contabil_conta`, `id_contabil_historico`, `id_contabil_lancamento_cab`, 
+  `historico`, `valor`, `tipo`
+) VALUES
+-- Lançamento 2 - ICMS a recolher
+(12, NULL, 16, 'ICMS jan/2023', 50000.000000, 'D'),  -- Débito em despesa
+(5, NULL, 16, 'ICMS jan/2023', 50000.000000, 'C'),  -- Crédito em ICMS a recolher
+
+-- Lançamento 3 - Folha de pagamento
+(23, 5, 3, 'Folha jan/2023', 35000.000000, 'D'),    -- Débito em despesa pessoal
+(5, NULL, 3, 'Folha jan/2023', 35000.000000, 'C'),  -- Crédito em bancos
+
+-- Lançamento 4 - CMV
+(20, NULL, 4, 'CMV jan/2023', 100000.000000, 'D'),  -- Débito em CMV
+(7, NULL, 4, 'CMV jan/2023', 100000.000000, 'C'),   -- Crédito em estoque
+
+-- Lançamento 5 - Folha de pagamento
+(23, 5, 5, 'Folha jan/2023', 45000.000000, 'D'),    -- Débito em despesa pessoal
+(5, NULL, 5, 'Folha jan/2023', 45000.000000, 'C'),  -- Crédito em bancos
+
+-- Lançamento 6 - Venda 001
+(5, 1, 6, 'Venda NF 001', 100000.000000, 'D'),       -- Débito em bancos
+(18, NULL, 6, 'Venda NF 001', 100000.000000, 'C'),   -- Crédito em receita
+
+-- Lançamento 7 - Venda 002
+(7, 1, 7, 'Venda NF 002', 75000.000000, 'D'),        -- Débito em clientes
+(18, NULL, 7, 'Venda NF 002', 75000.000000, 'C'),    -- Crédito em receita
+
+-- Lançamento 8 - Venda 003
+(7, 1, 8, 'Venda NF 003', 100000.000000, 'D'),       -- Débito em clientes
+(18, NULL, 8, 'Venda NF 003', 100000.000000, 'C'),   -- Crédito em receita
+
+-- Lançamento 9 - Compra 001
+(10, 2, 9, 'Compra NF 1001', 50000.000000, 'D'),    -- Débito em fornecedores
+(5, NULL, 9, 'Compra NF 1001', 50000.000000, 'C'),  -- Crédito em bancos
+
+-- Lançamento 10 - Compra 002
+(10, 2, 10, 'Compra NF 1002', 70000.000000, 'D'),   -- Débito em fornecedores
+(5, NULL, 10, 'Compra NF 1002', 70000.000000, 'C'), -- Crédito em bancos
+
+-- Lançamento 11 - Juros
+(24, NULL, 11, 'Juros jan/2023', 2000.000000, 'D'),              -- Débito em despesa adm
+(5, NULL, 11, 'Juros jan/2023', 2000.000000, 'C'),               -- Crédito em bancos
+
+-- Lançamento 12 - Descontos
+(5, NULL, 12, 'Descontos jan/2023', 3000.000000, 'D'),           -- Débito em bancos
+(18, NULL, 12, 'Descontos jan/2023', 3000.000000, 'C'),          -- Crédito em receita
+
+-- Lançamento 13 - ICMS fev/2023
+(12, NULL, 13, 'ICMS fev/2023', 55000.000000, 'D'),              -- Débito em despesa
+(5, NULL, 13, 'ICMS fev/2023', 55000.000000, 'C'),               -- Crédito em ICMS a recolher
+
+-- Lançamento 14 - Folha fev/2023
+(23, 5, 14, 'Folha fev/2023', 40000.000000, 'D'),                -- Débito em despesa pessoal
+(5, NULL, 14, 'Folha fev/2023', 40000.000000, 'C'),              -- Crédito em bancos
+
+-- Lançamento 15 - CMV fev/2023
+(20, NULL, 15, 'CMV fev/2023', 115000.000000, 'D'),              -- Débito em CMV
+(7, NULL, 15, 'CMV fev/2023', 115000.000000, 'C');               -- Crédito em estoque
+
+
+-- 4. Relacionando com Centros de Resultado
+
+-- Inserindo lançamentos nos centros de resultado
+INSERT INTO `lanca_centro_resultado` (
+  `id_centro_resultado`, `valor`, `historico`, `data_lancamento`, `data_inclusao`, `origem_de_rateio`
+) VALUES
+-- Vendas
+(2, 100000.000000, 'Venda NF 001', '2023-01-10', '2023-01-10', 'N'),
+(2, 75000.000000, 'Venda NF 002', '2023-01-15', '2023-01-15', 'N'),
+(2, 100000.000000, 'Venda NF 003', '2023-01-22', '2023-01-22', 'N'),
+
+-- Administrativo
+(1, 35000.000000, 'Folha jan/2023', '2023-01-31', '2023-01-31', 'N'),
+(1, 45000.000000, 'Folha jan/2023', '2023-01-05', '2023-01-05', 'N'),
+(1, 50000.000000, 'ICMS jan/2023', '2023-01-31', '2023-01-31', 'N'),
+(1, 2000.000000, 'Juros jan/2023', '2023-01-31', '2023-01-31', 'N'),
+
+-- Produção
+(3, 100000.000000, 'CMV jan/2023', '2023-01-31', '2023-01-31', 'N'),
+(3, 50000.000000, 'Compra NF 1001', '2023-01-08', '2023-01-08', 'N'),
+(3, 70000.000000, 'Compra NF 1002', '2023-01-18', '2023-01-18', 'N'),
+
+-- Financeiro
+(4, 3000.000000, 'Descontos jan/2023', '2023-01-31', '2023-01-31', 'N');
+
+-- 5. Atualizando Valores dos Lotes (caso necessário)
+
+-- Atualizando valores totais dos lotes (opcional)
+UPDATE `contabil_lote` SET `valor` = 185000.000000 WHERE `id` = 2;
+UPDATE `contabil_lote` SET `valor` = 275000.000000 WHERE `id` = 4;
+UPDATE `contabil_lote` SET `valor` = 120000.000000 WHERE `id` = 5;
+UPDATE `contabil_lote` SET `valor` = 210000.000000 WHERE `id` = 7;
+
+--==================================
+--Encerramento do Exercício
+--==================================
+
+
+-- 1. Cabeçalho do Encerramento do Exercício
+
+-- Inserindo cabeçalhos de encerramento de exercício
+INSERT INTO `contabil_encerramento_exe_cab` (`id`, `data_inicio`, `data_fim`, `data_inclusao`, `motivo`) 
+VALUES
+(1, '2023-01-01', '2023-12-31', '2023-12-31', 'Encerramento normal do exercício 2023'),
+(2, '2022-01-01', '2022-12-31', '2022-12-31', 'Encerramento normal do exercício 2022'),
+(3, '2021-01-01', '2021-12-31', '2021-12-31', 'Encerramento normal do exercício 2021');
+
+-- 2. Detalhes do Encerramento do Exercício
+
+-- Inserindo detalhes do encerramento para 2023
+INSERT INTO `contabil_encerramento_exe_det` (
+  `id_contabil_conta`, `id_contabil_encerramento_exe`, 
+  `saldo_anterior`, `valor_debito`, `valor_credito`, `saldo`
+) VALUES
+-- Ativo
+(4, 1, 50000.00, 152000.00, 102000.00, 100000.00),  -- Caixa
+(5, 1, 50000.00, 275000.00, 225000.00, 100000.00),  -- Bancos
+(7, 1, 0.00, 275000.00, 215000.00, 60000.00),       -- Clientes
+
+-- Passivo
+(10, 1, 0.00, 120000.00, 120000.00, 0.00),          -- Fornecedores
+(12, 1, 0.00, 105000.00, 105000.00, 0.00),          -- ICMS a Recolher
+
+-- Patrimônio Líquido
+(15, 1, 100000.00, 0.00, 200000.00, 300000.00),      -- Capital Social
+
+-- Receitas
+(18, 1, 0.00, 272000.00, 275000.00, 3000.00),        -- Venda de Produtos
+
+-- Custos
+(20, 1, 0.00, 215000.00, 215000.00, 0.00),           -- CMV
+
+-- Despesas
+(23, 1, 0.00, 120000.00, 120000.00, 0.00),           -- Despesas com Pessoal
+(24, 1, 0.00, 57000.00, 57000.00, 0.00);             -- Despesas Administrativas
+
+
+-- 3. Lançamentos de Encerramento (Exemplo Completo)
+
+-- Criando lote específico para encerramento
+INSERT INTO `contabil_lote` (`id`, `descricao`, `liberado`, `data_inclusao`, `programado`, `valor`) 
+VALUES 
+(9, 'Lote de encerramento 2023', 'S', '2023-12-31', 'N', 0.000000);
+
+-- Cabeçalho do lançamento de encerramento
+INSERT INTO `contabil_lancamento_cabecalho` (
+  `id`, `id_contabil_lote`, `data_lancamento`, `data_inclusao`, `tipo`, `liberado`, `valor`
+) VALUES 
+(17, 9, '2023-12-31', '2023-12-31', 'ENC', 'S', 3000.000000);
+
+-- Detalhes do lançamento de encerramento (apuração do resultado)
+INSERT INTO `contabil_lancamento_detalhe` (
+  `id_contabil_conta`, `id_contabil_historico`, `id_contabil_lancamento_cab`, 
+  `historico`, `valor`, `tipo`
+) VALUES
+-- Encerramento das receitas
+(18, NULL, 17, 'Encerramento receitas 2023', 272000.000000, 'D'),
+(16, NULL, 17, 'Encerramento receitas 2023', 272000.000000, 'C'),
+
+-- Encerramento dos custos
+(20, NULL, 17, 'Encerramento custos 2023', 215000.000000, 'C'),
+(16, NULL, 17, 'Encerramento custos 2023', 215000.000000, 'D'),
+
+-- Encerramento das despesas
+(23, NULL, 17, 'Encerramento despesas 2023', 120000.000000, 'C'),
+(24, NULL, 17, 'Encerramento despesas 2023', 57000.000000, 'C'),
+(16, NULL, 17, 'Encerramento despesas 2023', 177000.000000, 'D'),
+
+-- Apuração do lucro
+(16, NULL, 17, 'Apuração do resultado 2023', 3000.000000, 'D'),
+(15, NULL, 17, 'Apuração do resultado 2023', 3000.000000, 'C');
+
+
+-- 4. Atualizando o Encerramento com os Resultados
+
+-- Atualizando os detalhes do encerramento com o resultado apurado
+UPDATE `contabil_encerramento_exe_det` 
+SET `saldo` = 3000.00 
+WHERE `id_contabil_conta` = 18 AND `id_contabil_encerramento_exe` = 1;
+
+-- Inserindo conta de resultado do exercício
+INSERT INTO `contabil_encerramento_exe_det` (
+  `id_contabil_conta`, `id_contabil_encerramento_exe`, 
+  `saldo_anterior`, `valor_debito`, `valor_credito`, `saldo`
+) VALUES
+(16, 1, 0.00, 272000.00, 272000.00, 0.00),         -- Receitas (total)
+(16, 1, 0.00, 392000.00, 392000.00, 0.00),          -- Custos e Despesas (total)
+(15, 1, 100000.00, 0.00, 3000.00, 103000.00);       -- Resultado no PL
+
+
+--==================================
+--Demais tabelas
+--==================================
+
+-- 1. Tabela contabil_fechamento
+-- Inserindo fechamentos contábeis mensais
+INSERT INTO `contabil_fechamento` (`id`, `data_inicio`, `data_fim`, `criterio_lancamento`) 
+VALUES
+(1, '2023-01-01', '2023-01-31', 'C'),  -- Competência
+(2, '2023-02-01', '2023-02-28', 'C'),
+(3, '2023-03-01', '2023-03-31', 'C'),
+(4, '2023-04-01', '2023-04-30', 'C'),
+(5, '2023-05-01', '2023-05-31', 'C'),
+(6, '2023-06-01', '2023-06-30', 'C'),
+(7, '2023-07-01', '2023-07-31', 'C'),
+(8, '2023-08-01', '2023-08-31', 'C'),
+(9, '2023-09-01', '2023-09-30', 'C'),
+(10, '2023-10-01', '2023-10-31', 'C'),
+(11, '2023-11-01', '2023-11-30', 'C'),
+(12, '2023-12-01', '2023-12-31', 'C');
+
+-- 2. Tabelas contabil_indice e contabil_indice_valor
+-- Inserindo índices econômicos
+INSERT INTO `contabil_indice` (`id`, `indice`, `periodicidade`, `diario_a_partir_de`, `mensal_mes_ano`) 
+VALUES
+(1, 'IPCA', 'M', NULL, '2023-01'),  -- Índice de Preços
+(2, 'SELIC', 'D', '2023-01-01', NULL),  -- Taxa básica de juros
+(3, 'CDI', 'D', '2023-01-01', NULL),  -- Certificado de Depósito Interbancário
+(4, 'IGPM', 'M', NULL, '2023-01'),  -- Índice Geral de Preços do Mercado
+(5, 'TR', 'D', '2023-01-01', NULL);  -- Taxa Referencial
+
+-- Valores do IPCA (exemplo)
+INSERT INTO `contabil_indice_valor` (`id_contabil_indice`, `data_indice`, `valor`) 
+VALUES
+(1, '2023-01-31', 0.530000),
+(1, '2023-02-28', 0.840000),
+(1, '2023-03-31', 0.710000),
+(1, '2023-04-30', 0.610000),
+(1, '2023-05-31', 0.230000),
+(1, '2023-06-30', 0.040000);
+
+-- Valores da SELIC (exemplo diário)
+INSERT INTO `contabil_indice_valor` (`id_contabil_indice`, `data_indice`, `valor`) 
+VALUES
+(2, '2023-01-02', 13.750000),
+(2, '2023-01-03', 13.750000),
+(2, '2023-01-04', 13.750000),
+(2, '2023-01-05', 13.750000),
+(2, '2023-01-06', 13.750000),
+(2, '2023-01-09', 13.750000),
+(2, '2023-01-10', 13.750000);
+
+-- 3. Tabela contabil_lancamento_orcado
+-- Inserindo lançamentos orçados para 2023
+INSERT INTO `contabil_lancamento_orcado` (
+  `id_contabil_conta`, `ano`, `janeiro`, `fevereiro`, `marco`, `abril`, `maio`, `junho`,
+  `julho`, `agosto`, `setembro`, `outubro`, `novembro`, `dezembro`
+) VALUES
+-- Receitas
+(18, '2023', 80000.00, 85000.00, 90000.00, 95000.00, 100000.00, 105000.00,
+ 110000.00, 115000.00, 120000.00, 125000.00, 130000.00, 135000.00),
+
+-- Despesas com Pessoal
+(23, '2023', 40000.00, 40000.00, 40000.00, 40000.00, 40000.00, 40000.00,
+ 40000.00, 40000.00, 40000.00, 40000.00, 40000.00, 40000.00),
+
+-- Despesas Administrativas
+(24, '2023', 15000.00, 15000.00, 15000.00, 15000.00, 15000.00, 15000.00,
+ 15000.00, 15000.00, 15000.00, 15000.00, 15000.00, 15000.00),
+
+-- CMV
+(20, '2023', 45000.00, 47500.00, 50000.00, 52500.00, 55000.00, 57500.00,
+ 60000.00, 62500.00, 65000.00, 67500.00, 70000.00, 72500.00);
+ 
+-- 4. Tabela contabil_lancamento_padrao
+-- Inserindo lançamentos padrão
+INSERT INTO `contabil_lancamento_padrao` (
+  `id`, `descricao`, `historico`, `id_conta_debito`, `id_conta_credito`
+) VALUES
+(1, 'Pagamento de fornecedor', 'Pagamento a fornecedor conforme NF {nf}', 10, 5),
+(2, 'Recebimento de cliente', 'Recebimento de cliente {cliente}', 5, 7),
+(3, 'Pagamento de salários', 'Folha de pagamento {mes}/{ano}', 23, 5),
+(4, 'Apropriação de ICMS', 'ICMS sobre vendas NF {nf}', 12, 18),
+(5, 'Compra de mercadorias', 'Compra de mercadorias NF {nf}', 20, 10),
+(6, 'Venda de mercadorias', 'Venda de mercadorias NF {nf}', 5, 18),
+(7, 'Ajuste de caixa', 'Ajuste de caixa {motivo}', 4, 5);
+
+-- 5. Tabelas contabil_livro e contabil_termo
+-- Inserindo livros contábeis
+INSERT INTO `contabil_livro` (
+  `id`, `descricao`, `competencia`, `forma_escrituracao`
+) VALUES
+(1, 'Livro Diário', '2023-01', 'R'),
+(2, 'Livro Razão', '2023-01', 'Z'),
+(3, 'Livro Caixa', '2023-01', 'B'),
+(4, 'Livro de Apuração do Lucro Real', '2023-01', 'G'),
+(5, 'Livro de Inventário', '2023-01', 'I');
+
+-- Termos de abertura/encerramento dos livros
+INSERT INTO `contabil_termo` (
+  `id_contabil_livro`, `abertura_encerramento`, `numero`, `pagina_inicial`, `pagina_final`,
+  `registrado`, `numero_registro`, `data_despacho`, `data_abertura`, `data_encerramento`,
+  `escrituracao_inicio`, `escrituracao_fim`, `texto`
+) VALUES
+-- Termo de abertura do Livro Diário 2023
+(1, 'A', 1, 1, NULL, 'Cartório XYZ', '12345', '2023-01-15', '2023-01-01', NULL,
+ '2023-01-01', NULL, 'Abertura do Livro Diário do exercício de 2023'),
+
+-- Termo de encerramento do Livro Diário 2022
+(1, 'E', 2, 1, 120, 'Cartório XYZ', '12344', '2023-01-10', '2022-01-01', '2022-12-31',
+ '2022-01-01', '2022-12-31', 'Encerramento do Livro Diário do exercício de 2022'),
+
+-- Termo de abertura do Livro Razão 2023
+(2, 'A', 1, 1, NULL, 'Cartório XYZ', '12346', '2023-01-15', '2023-01-01', NULL,
+ '2023-01-01', NULL, 'Abertura do Livro Razão do exercício de 2023');
+ 
+-- 6. Dados Adicionais para Integração
+-- Atualizando parâmetros contábeis com históricos padrão
+UPDATE `contabil_parametro` SET
+  `id_hist_padrao_resultado` = 00000000006,
+  `id_hist_padrao_lucro` = 00000000006,
+  `id_hist_padrao_prejuizo` = 00000000006;
+
+-- Criando índices para rateio de despesas financeiras
+INSERT INTO `ct_resultado_nt_financeira` (`id_centro_resultado`, `id_fin_natureza_financeira`, `percentual_rateio`)
+VALUES
+(4, 3, 100.000000),  -- Receita Financeira no centro FINANCEIRO
+(4, 9, 100.000000);  -- Financiamentos no centro FINANCEIRO
+
+-- 7. Exemplo de Fechamento Mensal Completo
+-- Fechamento de janeiro/2023 (exemplo)
+INSERT INTO `contabil_lancamento_cabecalho` (
+  `id`, `id_contabil_lote`, `data_lancamento`, `data_inclusao`, `tipo`, `liberado`, `valor`
+) VALUES 
+(18, 2, '2023-01-31', '2023-01-31', 'FEC', 'S', 0.000000);
+
+-- Lançamentos de fechamento
+INSERT INTO `contabil_lancamento_detalhe` (
+  `id_contabil_conta`, `id_contabil_historico`, `id_contabil_lancamento_cab`, 
+  `historico`, `valor`, `tipo`
+) VALUES
+-- Encerramento de receitas
+(18, 6, 18, 'Encerramento receitas jan/23', 275000.000000, 'D'),
+(16, NULL, 18, 'Encerramento receitas jan/23', 275000.000000, 'C'),
+
+-- Encerramento de custos
+(20, 6, 18, 'Encerramento CMV jan/23', 100000.000000, 'C'),
+(16, NULL, 18, 'Encerramento CMV jan/23', 100000.000000, 'D'),
+
+-- Encerramento de despesas
+(23, 6, 18, 'Encerramento despesas jan/23', 80000.000000, 'C'),
+(24, 6, 18, 'Encerramento despesas jan/23', 20000.000000, 'C'),
+(16, NULL, 18, 'Encerramento despesas jan/23', 100000.000000, 'D'),
+
+-- Apuração do resultado
+(16, NULL, 18, 'Resultado jan/23', 75000.000000, 'D'),
+(15, NULL, 18, 'Resultado jan/23', 75000.000000, 'C');

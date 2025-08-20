@@ -1,0 +1,7 @@
+INSERT INTO banco_agencia (id_banco, nome, numero, digito, telefone, contato, gerente, observacao) VALUES
+(1, 'Agência Centro', '1234', '1', '1111-1111', 'João Silva', 'Carlos Oliveira', 'Agência principal do centro'),
+(2, 'Agência Sul', '5678', '2', '2222-2222', 'Maria Costa', 'Fernanda Souza', 'Agência na zona sul'),
+(3, 'Agência Norte', '9101', '3', '3333-3333', 'Paulo Lima', 'Ricardo Mendes', 'Agência da zona norte'),
+(4, 'Agência Oeste', '2345', '4', '4444-4444', 'Ana Fernandes', 'Juliana Alves', 'Agência da zona oeste'),
+(5, 'Agência Leste', '6789', '5', '5555-5555', 'Roberto Gomes', 'Mariana Ferreira', 'Agência da zona leste'),
+(6, 'Agência Vila Nova', '4321', '6', '6666-6666', 'Cláudia Ramos', 'Eduardo Lima', 'Agência na Vila Nova');

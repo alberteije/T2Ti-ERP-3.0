@@ -1,0 +1,149 @@
+-- 1. Tabelas Básicas (Popule primeiro)
+-- CLASSIFICAÇÃO DE JORNADA (ponto_classificacao_jornada)
+INSERT INTO ponto_classificacao_jornada (codigo, nome, descricao, padrao, descontar_horas) VALUES
+('NOR', 'Normal', 'Jornada padrão sem horas extras', 'S', 'N'),
+('HE5', 'Hora Extra 50%', 'Jornada com horas extras a 50%', 'N', 'N'),
+('HE1', 'Hora Extra 100%', 'Jornada com horas extras a 100%', 'N', 'N'),
+('FAL', 'Falta', 'Dia com falta registrada', 'N', 'S'),
+('ATR', 'Atraso', 'Dia com atraso registrado', 'N', 'S');
+
+-- HORÁRIOS (ponto_horario)
+INSERT INTO ponto_horario (tipo, codigo, nome, tipo_trabalho, carga_horaria, entrada01, saida01, entrada02, saida02, hora_inicio_jornada, hora_fim_jornada) VALUES
+('N', 'H001', 'Horário Comercial', 'D', '08:00', '08:00', '12:00', '13:00', '17:00', '08:00', '17:00'),
+('N', 'H002', 'Horário Integral', 'D', '09:00', '08:00', '18:00', NULL, NULL, '08:00', '18:00'),
+('E', 'H003', 'Escala 6x1', 'D', '08:00', '09:00', '12:00', '13:00', '18:00', '09:00', '18:00'),
+('N', 'H004', 'Noturno', 'N', '07:00', '22:00', '05:00', NULL, NULL, '22:00', '05:00');
+
+-- ESCALAS (ponto_escala)
+INSERT INTO ponto_escala (nome, desconto_hora_dia, desconto_dsr, codigo_horario_domingo, codigo_horario_segunda, codigo_horario_terca, codigo_horario_quarta, codigo_horario_quinta, codigo_horario_sexta, codigo_horario_sabado) VALUES
+('Comercial 5x2', '00:30', '00:00', NULL, 'H001', 'H001', 'H001', 'H001', 'H001', NULL),
+('Integral 6x1', '00:30', '00:30', 'H002', 'H002', 'H002', 'H002', 'H002', 'H002', 'H002'),
+('Noturno 5x2', '00:30', '00:00', NULL, 'H004', 'H004', 'H004', 'H004', 'H004', NULL);
+
+-- TURMAS (ponto_turma)
+INSERT INTO ponto_turma (id_ponto_escala, codigo, nome) VALUES
+(1, 'T001', 'Administrativo'),
+(2, 'T002', 'Produção'),
+(3, 'T003', 'Vigia Noturno');
+
+-- RELÓGIOS DE PONTO (ponto_relogio)
+INSERT INTO ponto_relogio (localizacao, marca, fabricante, numero_serie, utilizacao) VALUES
+('Recepção', 'Dimep', 'Dimep', 'DP2023001', 'S'),
+('Portaria', 'Dimep', 'Dimep', 'DP2023002', 'S'),
+('Almoxarifado', 'Henry', 'Henry', 'HY2023001', 'N');
+
+-- PARÂMETROS (ponto_parametro)
+INSERT INTO ponto_parametro (mes_ano, dia_inicial_apuracao, hora_noturna_inicio, hora_noturna_fim, periodo_minimo_interjornada, percentual_he_diurna, percentual_he_noturna, duracao_hora_noturna, tratamento_hora_mais, tratamento_hora_menos) VALUES
+('2023-06', 1, '22:00', '05:00', '11:00', 50.000000, 100.000000, '52:30', 'C', 'D');
+
+-- 2. Abonos e Banco de Horas
+-- ABONOS (ponto_abono) - IDs de colaborador de 1 a 10
+INSERT INTO ponto_abono (id_colaborador, quantidade, utilizado, saldo, data_cadastro, inicio_utilizacao, observacao) VALUES
+(1, 5, 2, 3, '2023-01-15', '2023-02-01', 'Abono anual'),
+(2, 3, 1, 2, '2023-01-15', '2023-02-01', 'Abono anual'),
+(3, 4, 0, 4, '2023-01-15', '2023-02-01', 'Abono anual'),
+(5, 2, 2, 0, '2023-01-15', '2023-02-01', 'Abono anual - esgotado');
+
+-- UTILIZAÇÃO DE ABONOS (ponto_abono_utilizacao)
+INSERT INTO ponto_abono_utilizacao (id_ponto_abono, data_utilizacao, observacao) VALUES
+(1, '2023-03-10', 'Consulta médica'),
+(1, '2023-05-15', 'Problemas pessoais'),
+(2, '2023-04-22', 'Assuntos familiares'),
+(4, '2023-02-15', 'Doença'),
+(4, '2023-03-20', 'Acompanhamento médico');
+
+-- BANCO DE HORAS (ponto_banco_horas) - IDs de colaborador de 1 a 10
+INSERT INTO ponto_banco_horas (id_colaborador, data_trabalho, quantidade, situacao) VALUES
+(1, '2023-06-05', '02:30', 'P'),
+(2, '2023-06-12', '01:45', 'P'),
+(3, '2023-06-15', '03:00', 'P'),
+(1, '2023-05-20', '-01:00', 'U'),
+(2, '2023-05-22', '-00:30', 'U');
+
+-- UTILIZAÇÃO DE BANCO DE HORAS (ponto_banco_horas_utilizacao)
+INSERT INTO ponto_banco_horas_utilizacao (id_ponto_banco_horas, data_utilizacao, quantidade_utilizada, observacao) VALUES
+(4, '2023-05-25', '01:00', 'Saída antecipada'),
+(5, '2023-05-30', '00:30', 'Chegada tardia');
+
+-- 3. Horários Autorizados
+-- HORÁRIOS AUTORIZADOS (ponto_horario_autorizado) - IDs de colaborador de 1 a 10
+INSERT INTO ponto_horario_autorizado (
+  id_colaborador, 
+  data_horario, 
+  tipo, 
+  carga_horaria, 
+  entrada01, 
+  saida01, 
+  entrada02, 
+  saida02,
+  hora_fechamento_dia
+) VALUES
+(1, '2023-06-20', 'E', '08:00', '08:00', '12:00', '13:00', '17:00', '17:00'),
+(2, '2023-06-21', 'F', '04:00', '08:00', '12:00', NULL, NULL, '12:00'),
+(3, '2023-06-22', 'H', '10:00', '07:00', '12:00', '13:00', '18:00', '18:00'),
+(4, '2023-06-23', 'N', '07:00', '22:00', '05:00', NULL, NULL, '05:00');
+
+-- 4. Marcações de Ponto
+-- MARCAÇÕES DE PONTO (ponto_marcacao) - IDs de colaborador de 1 a 10 e relógio de 1 a 3
+INSERT INTO ponto_marcacao (
+  id_ponto_relogio, 
+  id_colaborador, 
+  nsr, 
+  data_marcacao, 
+  hora_marcacao, 
+  tipo_marcacao, 
+  tipo_registro, 
+  par_entrada_saida, 
+  justificativa
+) VALUES
+-- Colaborador 1 - Dia normal
+(1, 1, 1001, '2023-06-01', '07:58', 'E', 'O', 'E1', NULL),
+(1, 1, 1002, '2023-06-01', '12:01', 'S', 'O', 'S1', NULL),
+(1, 1, 1003, '2023-06-01', '12:59', 'E', 'O', 'E2', NULL),
+(1, 1, 1004, '2023-06-01', '17:03', 'S', 'O', 'S2', NULL),
+
+-- Colaborador 2 - Com atraso
+(1, 2, 1005, '2023-06-01', '08:15', 'E', 'O', 'E1', 'Problemas no trânsito'),
+(1, 2, 1006, '2023-06-01', '12:05', 'S', 'O', 'S1', NULL),
+(1, 2, 1007, '2023-06-01', '13:02', 'E', 'O', 'E2', NULL),
+(1, 2, 1008, '2023-06-01', '17:10', 'S', 'O', 'S2', NULL),
+
+-- Colaborador 3 - Horário noturno
+(2, 3, 1009, '2023-06-01', '21:58', 'E', 'O', 'E1', NULL),
+(2, 3, 1010, '2023-06-02', '05:02', 'S', 'O', 'S1', NULL);
+
+-- 5. Fechamento de Jornada
+-- FECHAMENTO DE JORNADA (ponto_fechamento_jornada)
+INSERT INTO ponto_fechamento_jornada (
+  id_ponto_classificacao_jornada, 
+  id_colaborador, 
+  data_fechamento, 
+  dia_semana, 
+  codigo_horario, 
+  carga_horaria_esperada, 
+  carga_horaria_diurna, 
+  carga_horaria_noturna, 
+  carga_horaria_total, 
+  entrada01, 
+  saida01, 
+  entrada02, 
+  saida02, 
+  hora_inicio_jornada, 
+  hora_fim_jornada, 
+  hora_extra01, 
+  percentual_hora_extra01, 
+  modalidade_hora_extra01, 
+  falta_atraso, 
+  compensar, 
+  banco_horas, 
+  observacao
+) VALUES
+-- Jornada normal (colaborador 1)
+(1, 1, '2023-06-01', 'quinta', 'H001', '08:00', '08:00', '00:00', '08:03', '07:58', '12:01', '12:59', '17:03', '08:00', '17:00', '00:03', 50.000000, 'D', '00:00', 'N', '00:03', 'Jornada normal com 3min extras'),
+
+-- Jornada com atraso (colaborador 2)
+(5, 2, '2023-06-01', 'quinta', 'H001', '08:00', '07:40', '00:00', '07:40', '08:15', '12:05', '13:02', '17:10', '08:00', '17:00', NULL, NULL, NULL, '00:20', 'S', '-00:20', 'Atraso de 20min'),
+
+-- Jornada noturna (colaborador 3)
+(1, 3, '2023-06-01', 'quinta', 'H004', '07:00', '00:00', '07:02', '07:02', '21:58', '05:02', NULL, NULL, '22:00', '05:00', '00:02', 100.000000, 'N', '00:00', 'N', '00:02', 'Jornada noturna completa');
+
