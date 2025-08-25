@@ -107,3 +107,40 @@ INSERT INTO `fiscal_nota_fiscal_saida` (`id_nfe_cabecalho`, `competencia`) VALUE
 (1, '2024-01'),
 (2, '2024-01'),
 (3, '2024-02');
+
+
+INSERT INTO simples_nacional_cabecalho (
+    vigencia_inicial,
+    vigencia_final,
+    anexo,
+    tabela
+) VALUES
+    ('2025-01-01', '2025-12-31', 'Anexo I', 'Tabela 1'),
+    ('2025-01-01', '2025-12-31', 'Anexo II', 'Tabela 2'),
+    ('2025-01-01', '2025-12-31', 'Anexo III', 'Tabela 3');
+
+
+INSERT INTO simples_nacional_detalhe (
+    id_simples_nacional_cabecalho,
+    faixa,
+    valor_inicial,
+    valor_final,
+    aliquota,
+    irpj,
+    csll,
+    cofins,
+    pis_pasep,
+    cpp,
+    icms,
+    ipi,
+    iss
+) VALUES
+    -- Detalhes para Anexo I (id = 1)
+    (1, 1, 0.00, 180000.00, 4.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00),
+    (1, 2, 180000.01, 360000.00, 7.30, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00),
+    -- Detalhes para Anexo II (id = 2)
+    (2, 1, 0.00, 180000.00, 4.50, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00),
+    (2, 2, 180000.01, 360000.00, 7.80, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00),
+    -- Detalhes para Anexo III (id = 3)
+    (3, 1, 0.00, 180000.00, 6.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00),
+    (3, 2, 180000.01, 360000.00, 11.20, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00);

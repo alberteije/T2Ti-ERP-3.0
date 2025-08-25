@@ -658,3 +658,31 @@ INSERT INTO `contabil_lancamento_detalhe` (
 -- Apuração do resultado
 (16, NULL, 18, 'Resultado jan/23', 75000.000000, 'D'),
 (15, NULL, 18, 'Resultado jan/23', 75000.000000, 'C');
+
+
+
+INSERT INTO registro_cartorio (
+    nome_cartorio,
+    data_registro,
+    numero,
+    folha,
+    livro,
+    nire
+) VALUES
+    ('Cartório Silva & Associados', '2025-01-15', 12345, 12, 3, '12345678901'),
+    ('Cartório Central de São Paulo', '2024-08-20', 67890, 45, 7, '98765432109'),
+    ('Cartório Souza Ltda', '2023-05-10', 11223, 22, 4, '45678912300');
+
+
+INSERT INTO encerra_centro_resultado (
+    id_centro_resultado,
+    competencia,
+    valor_total,
+    valor_sub_rateio
+) VALUES
+    (1, '2025-01', 15000.750000, 2500.000000),
+    (1, '2025-02', 18000.500000, 3000.000000),
+    (2, '2025-01', 22000.000000, 0.000000),
+    (2, '2025-02', 19800.350000, 1200.000000),
+    (3, '2025-01', 7500.250000, 500.000000),
+    (3, '2025-02', 8100.000000, 600.000000);
