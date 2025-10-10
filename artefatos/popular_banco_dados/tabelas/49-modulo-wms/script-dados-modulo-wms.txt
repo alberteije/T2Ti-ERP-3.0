@@ -1,6 +1,6 @@
---------------
+-- ------------
 -- ZERA TUDO
---------------
+-- ------------
 
 -- Desativa verificação de chaves estrangeiras para evitar erros
 SET FOREIGN_KEY_CHECKS = 0;
@@ -51,7 +51,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 SELECT 'Todas as tabelas do módulo WMS foram zeradas e os autoincrements resetados' AS Resultado;
 
 
--------------------------------------
+-- -----------------------------------
 
 
 -- 1. Inserção de parâmetros do WMS (deve ser a primeira tabela a ser populada)
@@ -144,7 +144,7 @@ INSERT INTO `wms_recebimento_detalhe` (
 
 -- 8. Inserção de armazenamentos
 INSERT INTO `wms_armazenamento` (
-  `id_wms_caixa`, `id_wms_recebimento_detalhe`, 
+  `id_wms_caixa`, `id_wms_recebimento_cabecalho`, 
   `quantidade`
 ) VALUES
 -- Armazenamento dos itens do primeiro recebimento
@@ -185,15 +185,15 @@ INSERT INTO `wms_ordem_separacao_det` (
 
 -- 11. Inserção de expedições
 INSERT INTO `wms_expedicao` (
-  `id_wms_ordem_separacao_det`, `id_wms_armazenamento`, 
+  `id_produto`, 
   `quantidade`, `data_saida`
 ) VALUES
 -- Expedição para os itens da primeira ordem
-(1, 1, 10, '2023-05-15'),  -- 10 unidades do armazenamento 1 (produto 1)
-(2, 3, 20, '2023-05-15'),  -- 20 unidades do armazenamento 3 (produto 2)
+(1, '2023-05-15'),  -- 10 unidades do armazenamento 1 (produto 1)
+(2, '2023-05-15'),  -- 20 unidades do armazenamento 3 (produto 2)
 -- Expedição para os itens da segunda ordem
-(3, 4, 15, '2023-05-16'),  -- 15 unidades do armazenamento 4 (produto 3)
-(4, 5, 25, '2023-05-16'),  -- 25 unidades do armazenamento 5 (produto 4)
+(3, '2023-05-16'),  -- 15 unidades do armazenamento 4 (produto 3)
+(4, '2023-05-16'),  -- 25 unidades do armazenamento 5 (produto 4)
 -- Expedição para os itens da terceira ordem
-(5, 7, 30, '2023-05-17'),  -- 30 unidades do armazenamento 7 (produto 5)
-(6, 8, 10, '2023-05-17');  -- 10 unidades do armazenamento 8 (produto 6)
+(5, '2023-05-17'),  -- 30 unidades do armazenamento 7 (produto 5)
+(6, '2023-05-17');  -- 10 unidades do armazenamento 8 (produto 6)

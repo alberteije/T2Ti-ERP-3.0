@@ -1,7 +1,3 @@
-==============
-ZERA TUDO
-==============
-
 -- Desativar verificação de chaves estrangeiras temporariamente
 SET FOREIGN_KEY_CHECKS = 0;
 
@@ -45,17 +41,15 @@ ALTER TABLE patrim_estado_conservacao AUTO_INCREMENT = 1;
 SET FOREIGN_KEY_CHECKS = 1;
 
 
-=====================================================================================
-
 -- 1. Tabelas Básicas (Popule primeiro)
 
 -- ESTADOS DE CONSERVAÇÃO (patrim_estado_conservacao)
 INSERT INTO patrim_estado_conservacao (codigo, nome, descricao) VALUES
-('01', 'Novo', 'Item em perfeito estado, sem uso'),
-('02', 'Bom', 'Pequenos sinais de uso, plenamente funcional'),
-('03', 'Regular', 'Necessita de pequenos reparos'),
-('04', 'Ruim', 'Necessita de manutenção urgente'),
-('05', 'Péssimo', 'Inutilizável, deve ser baixado');
+('1', 'Novo', 'Item em perfeito estado, sem uso'),
+('2', 'Bom', 'Pequenos sinais de uso, plenamente funcional'),
+('3', 'Regular', 'Necessita de pequenos reparos'),
+('4', 'Ruim', 'Necessita de manutenção urgente'),
+('5', 'Péssimo', 'Inutilizável, deve ser baixado');
 
 -- GRUPOS DE BENS (patrim_grupo_bem)
 INSERT INTO patrim_grupo_bem (codigo, nome, descricao, conta_ativo_imobilizado, conta_depreciacao_acumulada, conta_despesa_depreciacao, codigo_historico) VALUES
@@ -67,19 +61,19 @@ INSERT INTO patrim_grupo_bem (codigo, nome, descricao, conta_ativo_imobilizado, 
 
 -- TIPOS DE AQUISIÇÃO (patrim_tipo_aquisicao_bem)
 INSERT INTO patrim_tipo_aquisicao_bem (tipo, nome, descricao) VALUES
-('CP', 'Compra', 'Aquisição por compra direta'),
-('DO', 'Doação', 'Recebido como doação'),
-('HE', 'Herança', 'Recebido por herança'),
-('LE', 'Leilão', 'Adquirido em leilão'),
-('TR', 'Transferência', 'Transferência de outra unidade');
+('1', 'Compra', 'Aquisição por compra direta'),
+('2', 'Doação', 'Recebido como doação'),
+('3', 'Herança', 'Recebido por herança'),
+('4', 'Leilão', 'Adquirido em leilão'),
+('5', 'Transferência', 'Transferência de outra unidade');
 
 -- TIPOS DE MOVIMENTAÇÃO (patrim_tipo_movimentacao)
 INSERT INTO patrim_tipo_movimentacao (tipo, nome, descricao) VALUES
-('TR', 'Transferência', 'Transferência entre setores'),
-('MA', 'Manutenção', 'Envio para manutenção'),
-('BA', 'Baixa', 'Baixa do patrimônio'),
-('RE', 'Reforma', 'Envio para reforma'),
-('IN', 'Inventário', 'Movimentação por inventário');
+('1', 'Transferência', 'Transferência entre setores'),
+('2', 'Manutenção', 'Envio para manutenção'),
+('3', 'Baixa', 'Baixa do patrimônio'),
+('4', 'Reforma', 'Envio para reforma'),
+('5', 'Inventário', 'Movimentação por inventário');
 
 -- TAXAS DE DEPRECIAÇÃO (patrim_taxa_depreciacao)
 INSERT INTO patrim_taxa_depreciacao (ncm, bem, vida, taxa) VALUES

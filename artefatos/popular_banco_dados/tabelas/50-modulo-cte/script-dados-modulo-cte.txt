@@ -1,0 +1,281 @@
+-- zera tudo
+-- Desativar verificações de chaves estrangeiras temporariamente
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- Deletar dados de todas as tabelas na ordem correta (das mais específicas para as mais gerais)
+DELETE FROM cte_inf_nf_carga_lacre;
+ALTER TABLE cte_inf_nf_carga_lacre AUTO_INCREMENT = 1;
+
+DELETE FROM cte_inf_nf_transporte_lacre;
+ALTER TABLE cte_inf_nf_transporte_lacre AUTO_INCREMENT = 1;
+
+DELETE FROM cte_ferroviario_vagao;
+ALTER TABLE cte_ferroviario_vagao AUTO_INCREMENT = 1;
+
+DELETE FROM cte_ferroviario_ferrovia;
+ALTER TABLE cte_ferroviario_ferrovia AUTO_INCREMENT = 1;
+
+DELETE FROM cte_aquaviario_balsa;
+ALTER TABLE cte_aquaviario_balsa AUTO_INCREMENT = 1;
+
+DELETE FROM cte_rodoviario_motorista;
+ALTER TABLE cte_rodoviario_motorista AUTO_INCREMENT = 1;
+
+DELETE FROM cte_rodoviario_lacre;
+ALTER TABLE cte_rodoviario_lacre AUTO_INCREMENT = 1;
+
+DELETE FROM cte_rodoviario_veiculo;
+ALTER TABLE cte_rodoviario_veiculo AUTO_INCREMENT = 1;
+
+DELETE FROM cte_rodoviario_pedagio;
+ALTER TABLE cte_rodoviario_pedagio AUTO_INCREMENT = 1;
+
+DELETE FROM cte_rodoviario_occ;
+ALTER TABLE cte_rodoviario_occ AUTO_INCREMENT = 1;
+
+DELETE FROM cte_informacao_nf_carga;
+ALTER TABLE cte_informacao_nf_carga AUTO_INCREMENT = 1;
+
+DELETE FROM cte_informacao_nf_transporte;
+ALTER TABLE cte_informacao_nf_transporte AUTO_INCREMENT = 1;
+
+DELETE FROM cte_multimodal;
+ALTER TABLE cte_multimodal AUTO_INCREMENT = 1;
+
+DELETE FROM cte_dutoviario;
+ALTER TABLE cte_dutoviario AUTO_INCREMENT = 1;
+
+DELETE FROM cte_ferroviario;
+ALTER TABLE cte_ferroviario AUTO_INCREMENT = 1;
+
+DELETE FROM cte_aquaviario;
+ALTER TABLE cte_aquaviario AUTO_INCREMENT = 1;
+
+DELETE FROM cte_aereo;
+ALTER TABLE cte_aereo AUTO_INCREMENT = 1;
+
+DELETE FROM cte_rodoviario;
+ALTER TABLE cte_rodoviario AUTO_INCREMENT = 1;
+
+DELETE FROM cte_duplicata;
+ALTER TABLE cte_duplicata AUTO_INCREMENT = 1;
+
+DELETE FROM cte_fatura;
+ALTER TABLE cte_fatura AUTO_INCREMENT = 1;
+
+DELETE FROM cte_veiculo_novo;
+ALTER TABLE cte_veiculo_novo AUTO_INCREMENT = 1;
+
+DELETE FROM cte_perigoso;
+ALTER TABLE cte_perigoso AUTO_INCREMENT = 1;
+
+DELETE FROM cte_seguro;
+ALTER TABLE cte_seguro AUTO_INCREMENT = 1;
+
+DELETE FROM cte_informacao_nf_outros;
+ALTER TABLE cte_informacao_nf_outros AUTO_INCREMENT = 1;
+
+DELETE FROM cte_carga;
+ALTER TABLE cte_carga AUTO_INCREMENT = 1;
+
+DELETE FROM cte_componente;
+ALTER TABLE cte_componente AUTO_INCREMENT = 1;
+
+DELETE FROM cte_local_entrega;
+ALTER TABLE cte_local_entrega AUTO_INCREMENT = 1;
+
+DELETE FROM cte_destinatario;
+ALTER TABLE cte_destinatario AUTO_INCREMENT = 1;
+
+DELETE FROM cte_recebedor;
+ALTER TABLE cte_recebedor AUTO_INCREMENT = 1;
+
+DELETE FROM cte_expedidor;
+ALTER TABLE cte_expedidor AUTO_INCREMENT = 1;
+
+DELETE FROM cte_remetente;
+ALTER TABLE cte_remetente AUTO_INCREMENT = 1;
+
+DELETE FROM cte_passagem;
+ALTER TABLE cte_passagem AUTO_INCREMENT = 1;
+
+DELETE FROM cte_tomador;
+ALTER TABLE cte_tomador AUTO_INCREMENT = 1;
+
+DELETE FROM cte_local_coleta;
+ALTER TABLE cte_local_coleta AUTO_INCREMENT = 1;
+
+DELETE FROM cte_emitente;
+ALTER TABLE cte_emitente AUTO_INCREMENT = 1;
+
+DELETE FROM cte_documento_anterior_id;
+ALTER TABLE cte_documento_anterior_id AUTO_INCREMENT = 1;
+
+DELETE FROM cte_cabecalho;
+ALTER TABLE cte_cabecalho AUTO_INCREMENT = 1;
+
+-- Reativar verificações de chaves estrangeiras
+SET FOREIGN_KEY_CHECKS = 1;
+
+-- Inserir dados na tabela principal cte_cabecalho
+INSERT INTO cte_cabecalho (
+    natureza_operacao, chave_acesso, digito_chave_acesso, codigo_numerico, serie, numero,
+    data_hora_emissao, uf_emitente, cfop, forma_pagamento, modelo, formato_impressao_dacte,
+    tipo_emissao, ambiente, tipo_cte, processo_emissao, versao_processo_emissao,
+    chave_referenciado, codigo_municipio_envio, nome_municipio_envio, uf_envio, modal,
+    tipo_servico, codigo_municipio_ini_prestacao, nome_municipio_ini_prestacao, uf_ini_prestacao,
+    codigo_municipio_fim_prestacao, nome_municipio_fim_prestacao, uf_fim_prestacao, retira,
+    retira_detalhe, tomador, data_entrada_contingencia, justificativa_contingencia,
+    carac_adicional_transporte, carac_adicional_servico, funcionario_emissor, fluxo_origem,
+    entrega_tipo_periodo, entrega_data_programada, entrega_data_inicial, entrega_data_final,
+    entrega_tipo_hora, entrega_hora_programada, entrega_hora_inicial, entrega_hora_final,
+    municipio_origem_calculo, municipio_destino_calculo, observacoes_gerais,
+    valor_total_servico, valor_receber, cst, base_calculo_icms, aliquota_icms, valor_icms,
+    percentual_reducao_bc_icms, valor_bc_icms_st_retido, valor_icms_st_retido,
+    aliquota_icms_st_retido, valor_credito_presumido_icms, percentual_bc_icms_outra_uf,
+    valor_bc_icms_outra_uf, aliquota_icms_outra_uf, valor_icms_outra_uf,
+    simples_nacional_indicador, simples_nacional_total, informacoes_add_fisco,
+    valor_total_carga, produto_predominante, carga_outras_caracteristicas,
+    modal_versao_layout, chave_cte_substituido
+) VALUES (
+    'PRESTACAO DE SERVICO DE TRANSPORTE', '43171207364617000135570000000012341000012345', '7', '12345678', '1', '123456789',
+    '2023-11-10 10:30:00', 'SP', 5353, '0', '57', '1',
+    '1', '1', '0', '0', '3.00', NULL,
+    3550308, 'Sao Paulo', 'SP', '1',
+    '0', 3550308, 'Sao Paulo', 'SP',
+    3304557, 'Rio de Janeiro', 'RJ', '0',
+    NULL, '1', NULL, NULL,
+    NULL, NULL, 'FUNCIONARIO_A', 'ORIGEM_A',
+    NULL, NULL, NULL, NULL,
+    NULL, NULL, NULL, NULL,
+    'Sao Paulo', 'Rio de Janeiro', 'Observacoes gerais sobre o transporte.',
+    1000.00, 1000.00, '00', 1000.00, 18.00, 180.00,
+    NULL, NULL, NULL,
+    NULL, NULL, NULL,
+    NULL, NULL, NULL,
+    'N', NULL, 'Informacoes adicionais ao fisco.',
+    5000.00, 'ELETRONICOS', 'FRAGIL',
+    3, NULL
+);
+
+-- Obter o ID do CT-e inserido
+SET @id_cte = LAST_INSERT_ID();
+
+-- Inserir emitente
+INSERT INTO cte_emitente (
+    id_cte_cabecalho, cnpj, ie, nome, fantasia, logradouro, numero, complemento,
+    bairro, codigo_municipio, nome_municipio, uf, cep, telefone
+) VALUES (
+    @id_cte, '07364617000135', '123456789', 'Transportadora Exemplo Ltda', 'TransExemplo',
+    'Rua das Flores', '123', 'Sala 1', 'Centro', 3550308, 'Sao Paulo', 'SP',
+    '01001000', '1123456789'
+);
+
+-- Inserir tomador
+INSERT INTO cte_tomador (
+    id_cte_cabecalho, cnpj, ie, nome, fantasia, telefone, logradouro, numero,
+    complemento, bairro, codigo_municipio, nome_municipio, uf, cep, codigo_pais,
+    nome_pais, email
+) VALUES (
+    @id_cte, '12345678000195', '987654321', 'Empresa Tomadora Ltda', 'TomadoraExemplo',
+    '1133334444', 'Av. Principal', '1000', 'Andar 10', 'Centro', 3550308, 'Sao Paulo',
+    'SP', '01002000', 1058, 'Brasil', 'contato@tomadoraexemplo.com.br'
+);
+
+-- Inserir remetente
+INSERT INTO cte_remetente (
+    id_cte_cabecalho, cnpj, ie, nome, fantasia, telefone, logradouro, numero,
+    complemento, bairro, codigo_municipio, nome_municipio, uf, cep, codigo_pais,
+    nome_pais, email
+) VALUES (
+    @id_cte, '98765432000154', '123456789', 'Remetente Exemplo Ltda', 'RemetenteExemplo',
+    '1144445555', 'Rua do Remetente', '500', NULL, 'Vila Remetente', 3550308, 'Sao Paulo',
+    'SP', '01003000', 1058, 'Brasil', 'contato@remetenteexemplo.com.br'
+);
+
+-- Inserir destinatario
+INSERT INTO cte_destinatario (
+    id_cte_cabecalho, cnpj, ie, nome, fantasia, telefone, logradouro, numero,
+    complemento, bairro, codigo_municipio, nome_municipio, uf, cep, codigo_pais,
+    nome_pais, email
+) VALUES (
+    @id_cte, '45678912000133', '654321987', 'Destinatario Exemplo Ltda', 'DestinatarioExemplo',
+    '2133334444', 'Rua do Destinatario', '200', NULL, 'Centro', 3304557, 'Rio de Janeiro',
+    'RJ', '20001000', 1058, 'Brasil', 'contato@destinatarioexemplo.com.br'
+);
+
+-- Inserir carga
+INSERT INTO cte_carga (
+    id_cte_cabecalho, codigo_unidade_medida, tipo_medida, quantidade
+) VALUES (
+    @id_cte, '1', 'PESO', 1000.000000
+);
+
+-- Inserir componentes (valores do frete)
+INSERT INTO cte_componente (
+    id_cte_cabecalho, nome, valor
+) VALUES 
+    (@id_cte, 'FRETE PESO', 800.000000),
+    (@id_cte, 'SEC_CAT', 100.000000),
+    (@id_cte, 'PEDAGIO', 100.000000);
+
+-- Inserir informações de NF (nota fiscal vinculada)
+INSERT INTO cte_informacao_nf_outros (
+    id_cte_cabecalho, chave_acesso_nfe, codigo_modelo, serie, numero, data_emissao,
+    uf_emitente, base_calculo_icms, valor_icms, base_calculo_icms_st, valor_icms_st,
+    valor_total_produtos, valor_total, cfop_predominante, peso_total_kg
+) VALUES (
+    @id_cte, '43171207364617000135570000000012341000012345', '55', '1', '12345', '2023-11-09',
+    35, 5000.00, 900.00, 0.00, 0.00, 5000.00, 5900.00, 5102, 1000.000000
+);
+
+-- Inserir dados no modal rodoviário (já que modal=1 no cabeçalho)
+INSERT INTO cte_rodoviario (
+    id_cte_cabecalho, rntrc, data_prevista_entrega, indicador_lotacao, ciot
+) VALUES (
+    @id_cte, '12345678', '2023-11-11', '0', NULL
+);
+
+-- Obter o ID do rodoviário inserido
+SET @id_rodoviario = LAST_INSERT_ID();
+
+-- Inserir veículo
+INSERT INTO cte_rodoviario_veiculo (
+    id_cte_rodoviario, codigo_interno, placa, uf, proprietario_cnpj, proprietario_nome
+) VALUES (
+    @id_rodoviario, 'VEI001', 'ABC1234', 'SP', '07364617000135', 'Transportadora Exemplo Ltda'
+);
+
+-- Inserir motorista
+INSERT INTO cte_rodoviario_motorista (
+    id_cte_rodoviario, nome, cpf
+) VALUES (
+    @id_rodoviario, 'João Silva Motorista', '12345678901'
+);
+
+-- Inserir lacres
+INSERT INTO cte_rodoviario_lacre (
+    id_cte_rodoviario, numero
+) VALUES 
+    (@id_rodoviario, 'L123456'),
+    (@id_rodoviario, 'L789012');
+
+-- Inserir documento anterior (por exemplo, um conhecimento anterior)
+INSERT INTO cte_documento_anterior_id (
+    tipo, serie, subserie, numero, data_emissao, chave_cte
+) VALUES (
+    '07', '1', NULL, '123456', '2023-11-01', NULL
+);
+
+-- Inserir dados de fatura e duplicata (caso tenha)
+INSERT INTO cte_fatura (
+    id_cte_cabecalho, numero, valor_original, valor_desconto, valor_liquido
+) VALUES (
+    @id_cte, 'FAT123', 1000.00, 0.00, 1000.00
+);
+
+INSERT INTO cte_duplicata (
+    id_cte_cabecalho, numero, data_vencimento, valor
+) VALUES (
+    @id_cte, 'DUP123', '2023-12-10', 1000.00
+);

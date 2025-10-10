@@ -12,7 +12,7 @@ VALUES
 (8, '3101', 'Investimento em Ativos', 'I', 'Aquisição de bens do ativo imobilizado'),
 (9, '4101', 'Financiamento Bancário', 'F', 'Captação de recursos financeiros');
 
--- 1. Plano de Contas e Estruturas Básicas
+-- Plano de Contas e Estruturas Básicas
 
 -- Inserir plano de contas principal
 INSERT INTO `plano_conta` (`id`, `nome`, `data_inclusao`, `mascara`, `niveis`) 
@@ -131,7 +131,7 @@ INSERT INTO `contabil_parametro` (
   `conta_venda`, `conta_venda_servico`, `conta_estoque`, `conta_apura_resultado`,
   `conta_juros_apropriar`
 ) VALUES (
-  '1.1.1.1', 4, 'C', 'S', 'S', 'N', 'S', 'N', 'S', 'DE',
+  '1.1.1.1', 4, 'C', 'S', 'S', 'N', 'S', 'N', 'S', '0',
   'Livro Diário Contábil', '1', '2', '3', '2.2.1', '3.1.1', '3.2', 
   '3.3', '3.4', '2.1.1', '1.1.2.1', '2.1.3', '1.1.3', '2.1.4', 
   '1.1.4', '5.1', '4.1.1', '4.1.2', '1.1.5', '6.9', '1.1.6'
@@ -148,7 +148,7 @@ VALUES
 INSERT INTO `contabil_lancamento_cabecalho` (
   `id`, `id_contabil_lote`, `data_lancamento`, `data_inclusao`, `tipo`, `liberado`, `valor`
 ) VALUES 
-(1, 1, '2023-01-01', '2023-01-01', 'ABE', 'S', 100000.000000);
+(1, 1, '2023-01-01', '2023-01-01', '0', 'S', 100000.000000);
 
 -- Lançamentos de abertura (detalhes)
 INSERT INTO `contabil_lancamento_detalhe` (
@@ -234,7 +234,7 @@ VALUES
 -- 11. Exemplo Completo de Lançamento Integrado
 -- Inserir um lançamento que utilize todas essas relações
 INSERT INTO `contabil_lancamento_cabecalho` (`id`, `id_contabil_lote`, `data_lancamento`, `data_inclusao`, `tipo`, `liberado`, `valor`) 
-VALUES (2, 1, '2023-01-15', '2023-01-15', 'NOR', 'S', 10000.000000);
+VALUES (2, 1, '2023-01-15', '2023-01-15', '1', 'S', 10000.000000);
 
 -- Lançamento detalhado com natureza financeira e centro de resultado
 INSERT INTO `contabil_lancamento_detalhe` (
@@ -257,10 +257,7 @@ INSERT INTO `lanca_centro_resultado` (
 -- Relacionando com natureza financeira (opcional - depende da estrutura do seu sistema)
 -- (Esta parte pode ser implementada via trigger ou na aplicação)
 
-
-===============
-
--- 1. Inserindo Mais Lotes Contábeis
+-- Inserindo Mais Lotes Contábeis
 
 -- Inserindo mais lotes contábeis
 INSERT INTO `contabil_lote` (`id`, `descricao`, `liberado`, `data_inclusao`, `programado`, `valor`) 
@@ -281,30 +278,30 @@ INSERT INTO `contabil_lancamento_cabecalho` (
   `id`, `id_contabil_lote`, `data_lancamento`, `data_inclusao`, `tipo`, `liberado`, `valor`
 ) VALUES
 -- Lote 2 - Fechamento jan/2023
-(16, 2, '2023-01-31', '2023-01-31', 'FEC', 'S', 50000.000000),  -- ICMS
-(3, 2, '2023-01-31', '2023-01-31', 'FEC', 'S', 35000.000000),  -- Folha
-(4, 2, '2023-01-31', '2023-01-31', 'FEC', 'S', 100000.000000), -- CMV
+(16, 2, '2023-01-31', '2023-01-31', '0', 'S', 50000.000000),  -- ICMS
+(3, 2, '2023-01-31', '2023-01-31', '0', 'S', 35000.000000),  -- Folha
+(4, 2, '2023-01-31', '2023-01-31', '1', 'S', 100000.000000), -- CMV
 
 -- Lote 3 - Folha de pagamento
-(5, 3, '2023-01-05', '2023-01-05', 'FOL', 'S', 45000.000000),
+(5, 3, '2023-01-05', '2023-01-05', '2', 'S', 45000.000000),
 
 -- Lote 4 - Vendas
-(6, 4, '2023-01-10', '2023-01-10', 'VEN', 'S', 100000.000000), -- Venda 001
-(7, 4, '2023-01-15', '2023-01-15', 'VEN', 'S', 75000.000000),  -- Venda 002
-(8, 4, '2023-01-22', '2023-01-22', 'VEN', 'S', 100000.000000), -- Venda 003
+(6, 4, '2023-01-10', '2023-01-10', '0', 'S', 100000.000000), -- Venda 001
+(7, 4, '2023-01-15', '2023-01-15', '0', 'S', 75000.000000),  -- Venda 002
+(8, 4, '2023-01-22', '2023-01-22', '0', 'S', 100000.000000), -- Venda 003
 
 -- Lote 5 - Compras
-(9, 5, '2023-01-08', '2023-01-08', 'COM', 'S', 50000.000000),  -- Compra 001
-(10, 5, '2023-01-18', '2023-01-18', 'COM', 'S', 70000.000000), -- Compra 002
+(9, 5, '2023-01-08', '2023-01-08', '1', 'S', 50000.000000),  -- Compra 001
+(10, 5, '2023-01-18', '2023-01-18', '1', 'S', 70000.000000), -- Compra 002
 
 -- Lote 6 - Ajustes
-(11, 6, '2023-01-31', '2023-01-31', 'AJU', 'S', 2000.000000),  -- Juros
-(12, 6, '2023-01-31', '2023-01-31', 'AJU', 'S', 3000.000000),  -- Descontos
+(11, 6, '2023-01-31', '2023-01-31', '2', 'S', 2000.000000),  -- Juros
+(12, 6, '2023-01-31', '2023-01-31', '2', 'S', 3000.000000),  -- Descontos
 
 -- Lote 7 - Fechamento fev/2023
-(13, 7, '2023-02-28', '2023-02-28', 'FEC', 'S', 55000.000000), -- ICMS
-(14, 7, '2023-02-28', '2023-02-28', 'FEC', 'S', 40000.000000), -- Folha
-(15, 7, '2023-02-28', '2023-02-28', 'FEC', 'S', 115000.000000); -- CMV
+(13, 7, '2023-02-28', '2023-02-28', '3', 'S', 55000.000000), -- ICMS
+(14, 7, '2023-02-28', '2023-02-28', '3', 'S', 40000.000000), -- Folha
+(15, 7, '2023-02-28', '2023-02-28', '3', 'S', 115000.000000); -- CMV
 
 
 -- 3. Inserindo Detalhes dos Lançamentos
@@ -404,12 +401,12 @@ UPDATE `contabil_lote` SET `valor` = 275000.000000 WHERE `id` = 4;
 UPDATE `contabil_lote` SET `valor` = 120000.000000 WHERE `id` = 5;
 UPDATE `contabil_lote` SET `valor` = 210000.000000 WHERE `id` = 7;
 
---==================================
---Encerramento do Exercício
---==================================
+-- ==================================
+-- Encerramento do Exercício
+-- ==================================
 
 
--- 1. Cabeçalho do Encerramento do Exercício
+-- Cabeçalho do Encerramento do Exercício
 
 -- Inserindo cabeçalhos de encerramento de exercício
 INSERT INTO `contabil_encerramento_exe_cab` (`id`, `data_inicio`, `data_fim`, `data_inclusao`, `motivo`) 
@@ -459,7 +456,7 @@ VALUES
 INSERT INTO `contabil_lancamento_cabecalho` (
   `id`, `id_contabil_lote`, `data_lancamento`, `data_inclusao`, `tipo`, `liberado`, `valor`
 ) VALUES 
-(17, 9, '2023-12-31', '2023-12-31', 'ENC', 'S', 3000.000000);
+(17, 9, '2023-12-31', '2023-12-31', '0', 'S', 3000.000000);
 
 -- Detalhes do lançamento de encerramento (apuração do resultado)
 INSERT INTO `contabil_lancamento_detalhe` (
@@ -501,11 +498,11 @@ INSERT INTO `contabil_encerramento_exe_det` (
 (15, 1, 100000.00, 0.00, 3000.00, 103000.00);       -- Resultado no PL
 
 
---==================================
---Demais tabelas
---==================================
+-- ==================================
+-- Demais tabelas
+-- ==================================
 
--- 1. Tabela contabil_fechamento
+-- Tabela contabil_fechamento
 -- Inserindo fechamentos contábeis mensais
 INSERT INTO `contabil_fechamento` (`id`, `data_inicio`, `data_fim`, `criterio_lancamento`) 
 VALUES
@@ -635,7 +632,7 @@ VALUES
 INSERT INTO `contabil_lancamento_cabecalho` (
   `id`, `id_contabil_lote`, `data_lancamento`, `data_inclusao`, `tipo`, `liberado`, `valor`
 ) VALUES 
-(18, 2, '2023-01-31', '2023-01-31', 'FEC', 'S', 0.000000);
+(18, 2, '2023-01-31', '2023-01-31', '0', 'S', 0.000000);
 
 -- Lançamentos de fechamento
 INSERT INTO `contabil_lancamento_detalhe` (

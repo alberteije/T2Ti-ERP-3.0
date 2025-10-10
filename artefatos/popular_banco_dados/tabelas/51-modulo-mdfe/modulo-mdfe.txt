@@ -1,0 +1,131 @@
+-- Script de inserção para mdfe_cabecalho
+INSERT INTO `mdfe_cabecalho` (
+  `uf`, `tipo_ambiente`, `tipo_emitente`, `tipo_transportadora`, `modelo`, `serie`, 
+  `numero_mdfe`, `codigo_numerico`, `chave_acesso`, `digito_verificador`, `modal`, 
+  `data_hora_emissao`, `tipo_emissao`, `processo_emissao`, `versao_processo_emissao`, 
+  `uf_inicio`, `uf_fim`, `data_hora_previsao_viagem`, `quantidade_total_cte`, 
+  `quantidade_total_nfe`, `quantidade_total_mdfe`, `codigo_unidade_medida`, 
+  `peso_bruto_carga`, `valor_carga`, `numero_protocolo`
+) VALUES 
+
+-- MDF-e 1 - Transporte rodoviário interestadual
+('53', '1', '1', '1', '58', '1', '000000001', '12345678', 
+ '35150312345678901234567890123456789012345678', 8, '1',
+ '2024-03-15 14:30:00', '1', '0', '3.00', 'SP', 'MG',
+ '2024-03-16 08:00:00', 2, 3, 0, '01', 12500.500000, 45000.750000, '135180000000123'),
+
+-- MDF-e 2 - Transporte rodoviário estadual
+('12', '2', '1', '1', '58', '1', '000000002', '87654321',
+ '33150387654321098765432109876543210987654321', 5, '1',
+ '2024-03-16 10:15:00', '1', '0', '3.00', 'RJ', 'RJ',
+ '2024-03-17 09:00:00', 1, 2, 0, '01', 8500.250000, 28000.300000, NULL);
+ 
+ -- Lacres do MDF-e 1
+INSERT INTO `mdfe_lacre` (`id_mdfe_cabecalho`, `numero_lacre`) VALUES 
+(1, 'ABC123456789'),
+(1, 'DEF987654321'),
+(1, 'GHI123789456');
+
+-- Municípios de descarga do MDF-e 1
+INSERT INTO `mdfe_municipio_descarrega` (`id_mdfe_cabecalho`, `codigo_municipio`, `nome_municipio`) VALUES 
+(1, '3106200', 'Belo Horizonte'),
+(1, '3118601', 'Contagem'),
+(1, '3136702', 'Juiz de Fora');
+
+-- Emitente do MDF-e 1
+INSERT INTO `mdfe_emitente` (
+  `id_mdfe_cabecalho`, `nome`, `fantasia`, `cnpj`, `ie`, `logradouro`, `numero`, 
+  `complemento`, `bairro`, `codigo_municipio`, `nome_municipio`, `cep`, `uf`, `telefone`, `email`
+) VALUES 
+(1, 'Transportes Rápido Ltda', 'TransRápido', '12345678000195', 123456789, 
+ 'Rua das Flores', '100', 'Sala 101', 'Centro', '3550308', 'São Paulo', 
+ '01234000', 'SP', '1133334444', 'contato@transrapido.com.br');
+
+-- Percurso do MDF-e 1
+INSERT INTO `mdfe_percurso` (`id_mdfe_cabecalho`, `uf_percurso`, `data_inicio_viagem`) VALUES 
+(1, 'SP', '2024-03-16'),
+(1, 'MG', '2024-03-16');
+
+-- Municípios de carregamento do MDF-e 1
+INSERT INTO `mdfe_municipio_carregamento` (`id_mdfe_cabecalho`, `codigo_municipio`, `nome_municipio`) VALUES 
+(1, '3550308', 'São Paulo'),
+(1, '3509502', 'Campinas');
+
+-- Informações rodoviárias do MDF-e 1
+INSERT INTO `mdfe_rodoviario` (`id_mdfe_cabecalho`, `rntrc`, `codigo_agendamento`) VALUES 
+(1, '12345678', 'AG20240315001');
+
+-- Informações de seguro do MDF-e 1
+INSERT INTO `mdfe_informacao_seguro` (
+  `id_mdfe_cabecalho`, `responsavel`, `cnpj_cpf`, `seguradora`, `cnpj_seguradora`, `apolice`, `averbacao`
+) VALUES 
+(1, 4, '12345678000195', '12345678901', '98765432000199', 'APL20241234567', 'AVB20241234567');
+
+-- Motoristas do MDF-e 1
+INSERT INTO `mdfe_rodoviario_motorista` (`id_mdfe_rodoviario`, `nome`, `cpf`) VALUES 
+(1, 'Pedro Alves', '12345678901'),
+(1, 'Carlos Oliveira', '98765432100');
+
+-- Veículos do MDF-e 1
+INSERT INTO `mdfe_rodoviario_veiculo` (
+  `id_mdfe_rodoviario`, `codigo_interno`, `placa`, `renavam`, `tara`, `capacidade_kg`, 
+  `capacidade_m3`, `tipo_rodado`, `tipo_carroceria`, `uf_licenciamento`, 
+  `proprietario_cnpj`, `proprietario_nome`, `proprietario_ie`, `proprietario_tipo`
+) VALUES 
+(1, 'V001', 'ABC1D23', '12345678901', 8000, 15000, 50, '02', '00', 'SP',
+ '12345678000195', 'Transportes Rápido Ltda', '12', 1);
+
+-- Pedágios do MDF-e 1
+INSERT INTO `mdfe_rodoviario_pedagio` (
+  `id_mdfe_rodoviario`, `cnpj_fornecedor`, `cnpj_responsavel`, `numero_comprovante`, `valor`
+) VALUES 
+(1, '11222333000144', '12345678000195', 'PED20240316001', 150.750000),
+(1, '11222333000144', '12345678000195', 'PED20240316002', 89.500000);
+
+-- CIOT do MDF-e 1
+INSERT INTO `mdfe_rodoviario_ciot` (`id_mdfe_rodoviario`, `ciot`, `cnpj`) VALUES 
+(1, '123456789012', '12345678000195');
+
+-- CTEs vinculados ao primeiro município de descarga
+INSERT INTO `mdfe_informacao_cte` (`id_mdfe_municipio_descarrega`, `chave_cte`, `segundo_codigo_barra`, `indicador_reentrega`) VALUES 
+(1, '35150312345678901234567890123456789012345678', '123456789012345678901234567890123456', 0),
+(1, '35150312345678901234567890123456789012345679', '123456789012345678901234567890123457', 0);
+
+-- NFe vinculadas ao segundo município de descarga
+INSERT INTO `mdfe_informacao_nfe` (`id_mdfe_municipio_descarrega`, `chave_nfe`, `segundo_codigo_barra`, `indicador_reentrega`) VALUES 
+(2, '35150312345678901234567890123456789012345680', '123456789012345678901234567890123458', 0),
+(2, '35150312345678901234567890123456789012345681', '123456789012345678901234567890123459', 0),
+(2, '35150312345678901234567890123456789012345682', '123456789012345678901234567890123460', 1);
+
+-- Dados básicos do MDF-e 2
+INSERT INTO `mdfe_lacre` (`id_mdfe_cabecalho`, `numero_lacre`) VALUES 
+(2, 'JKL456123789'),
+(2, 'MNO789456123');
+
+INSERT INTO `mdfe_municipio_descarrega` (`id_mdfe_cabecalho`, `codigo_municipio`, `nome_municipio`) VALUES 
+(2, '3304557', 'Rio de Janeiro'),
+(2, '3305109', 'São Gonçalo');
+
+INSERT INTO `mdfe_emitente` (
+  `id_mdfe_cabecalho`, `nome`, `fantasia`, `cnpj`, `ie`, `logradouro`, `numero`, 
+  `complemento`, `bairro`, `codigo_municipio`, `nome_municipio`, `cep`, `uf`, `telefone`, `email`
+) VALUES 
+(2, 'Logística Expressa ME', 'LogExpress', '98765432000187', 987654321,
+ 'Avenida Brasil', '500', NULL, 'Centro', '3304557', 'Rio de Janeiro',
+ '20040000', 'RJ', '2133335555', 'vendas@logexpress.com.br');
+
+INSERT INTO `mdfe_rodoviario` (`id_mdfe_cabecalho`, `rntrc`, `codigo_agendamento`) VALUES 
+(2, '87654321', 'AG20240316001');
+
+-- Motorista do MDF-e 2
+INSERT INTO `mdfe_rodoviario_motorista` (`id_mdfe_rodoviario`, `nome`, `cpf`) VALUES 
+(2, 'Roberto Costa', '45678912300');
+
+-- Veículo do MDF-e 2
+INSERT INTO `mdfe_rodoviario_veiculo` (
+  `id_mdfe_rodoviario`, `codigo_interno`, `placa`, `renavam`, `tara`, `capacidade_kg`, 
+  `capacidade_m3`, `tipo_rodado`, `tipo_carroceria`, `uf_licenciamento`, 
+  `proprietario_cnpj`, `proprietario_nome`, `proprietario_ie`, `proprietario_tipo`
+) VALUES 
+(2, 'V002', 'XYZ9A87', '98765432109', 6000, 10000, 35, '01', '01', 'RJ',
+ '98765432000187', 'Logística Expressa ME', '23', 1);

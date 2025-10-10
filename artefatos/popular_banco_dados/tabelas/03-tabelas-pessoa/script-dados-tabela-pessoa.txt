@@ -192,26 +192,26 @@ VALUES
 (20, 'F', '8544444444');
 
 -- Inserções para pessoa_contato
-INSERT INTO `pessoa_contato` (`id_pessoa`, `nome`, `email`, `observacao`, `data_contato`) 
+INSERT INTO `pessoa_contato` (`id_pessoa`, `nome`, `email`, `observacao`) 
 VALUES
 -- Pessoa 1
-(1, 'Contato Principal', 'contato1@gmail.com', 'Gerente de Vendas', '2023-01-10'),
-(1, 'Contato Secundário', 'contato2@gmail.com', 'Financeiro', '2023-01-15'),
+(1, 'Contato Principal', 'contato1@gmail.com', 'Gerente de Vendas'),
+(1, 'Contato Secundário', 'contato2@gmail.com', 'Financeiro'),
 -- Pessoa 2
-(2, 'Diretor Comercial', 'comercial@empresa.com', 'Responsável por negociações', '2023-02-05'),
-(2, 'Gerente Financeiro', 'financeiro@empresa.com', 'Pagamentos e cobranças', '2023-02-10'),
+(2, 'Diretor Comercial', 'comercial@empresa.com', 'Responsável por negociações'),
+(2, 'Gerente Financeiro', 'financeiro@empresa.com', 'Pagamentos e cobranças'),
 -- Pessoa 3
-(3, 'Contato Único', 'contato3@gmail.com', 'Atendimento geral', '2023-03-15'),
+(3, 'Contato Único', 'contato3@gmail.com', 'Atendimento geral'),
 -- Pessoa 12
-(12, 'CEO', 'ceo@empresa1.com', 'Diretor Executivo', '2023-04-20'),
-(12, 'CTO', 'cto@empresa1.com', 'Diretor de Tecnologia', '2023-04-25'),
+(12, 'CEO', 'ceo@empresa1.com', 'Diretor Executivo'),
+(12, 'CTO', 'cto@empresa1.com', 'Diretor de Tecnologia'),
 -- Pessoa 14
-(14, 'Gerente de Projetos', 'projetos@empresa3.com', 'Coordenação de projetos', '2023-05-10'),
+(14, 'Gerente de Projetos', 'projetos@empresa3.com', 'Coordenação de projetos'),
 -- Pessoa 17
-(17, 'RH', 'rh@empresa6.com', 'Departamento Pessoal', '2023-06-15'),
-(17, 'Compras', 'compras@empresa6.com', 'Suprimentos', '2023-06-20'),
+(17, 'RH', 'rh@empresa6.com', 'Departamento Pessoal'),
+(17, 'Compras', 'compras@empresa6.com', 'Suprimentos'),
 -- Pessoa 20
-(20, 'Atendimento', 'atendimento@empresa9.com', 'SAC', '2023-07-05');
+(20, 'Atendimento', 'atendimento@empresa9.com', 'SAC');
 
 -- Inserções para pessoa_alteracao
 INSERT INTO `pessoa_alteracao` (`id_pessoa`, `data_alteracao`, `objeto_antigo`, `objeto_novo`) 

@@ -1,13 +1,12 @@
---------------------
--- ZERAR TUDO
---------------------
-
 -- Desativa verificação de chaves estrangeiras para evitar erros
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- Zera as tabelas na ordem inversa de dependência
 
 -- 1. Tabelas de detalhes/dependentes
+TRUNCATE TABLE `nota_fiscal_modelo`;
+ALTER TABLE `nota_fiscal_modelo` AUTO_INCREMENT = 1;
+
 TRUNCATE TABLE `venda_comissao`;
 ALTER TABLE `venda_comissao` AUTO_INCREMENT = 1;
 
@@ -46,12 +45,6 @@ ALTER TABLE `vendedor` AUTO_INCREMENT = 1;
 
 -- Reativa verificação de chaves estrangeiras
 SET FOREIGN_KEY_CHECKS = 1;
-
--- Mensagem de conclusão
-SELECT 'Todas as tabelas do módulo de Vendas foram zeradas e os autoincrements resetados' AS Resultado;
-
-
---------------------------------------------------------
 
 /*
   NOTA_FISCAL_MODELO
@@ -167,7 +160,7 @@ INSERT INTO `vendedor` (`id_colaborador`, `comissao`, `meta_venda`) VALUES
 -- 4. Inserção de orçamentos
 INSERT INTO `venda_orcamento_cabecalho` (
   `id_venda_condicoes_pagamento`, `id_vendedor`, `id_cliente`, 
-  `codigo`, `data_cadastro`, `validade`, 
+  `codigo`, `data_cadastro`, `data_validade`, 
   `valor_subtotal`, `taxa_desconto`, `valor_desconto`, `valor_total`
 ) VALUES
 (1, 1, 1, 'ORC-2023-001', '2023-01-10', '2023-02-10', 1500.000000, 10.000000, 150.000000, 1350.000000),
@@ -223,7 +216,7 @@ INSERT INTO `venda_frete` (
   `placa`, `uf_placa`, `peso_bruto`, `peso_liquido`
 ) VALUES
 (1, 1, 'E', 'ABC1234', 'SP', 15.500000, 14.000000),
-(3, 2, 'D', 'XYZ9876', 'MG', 45.000000, 42.500000);
+(3, 1, 'D', 'XYZ9876', 'MG', 45.000000, 42.500000);
 
 -- 9. Inserção de comissões
 INSERT INTO `venda_comissao` (

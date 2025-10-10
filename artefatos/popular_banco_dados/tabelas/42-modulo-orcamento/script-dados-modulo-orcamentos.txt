@@ -1,10 +1,10 @@
 -- PERÍODOS DE ORÇAMENTO (orcamento_periodo)
 INSERT INTO orcamento_periodo (periodo, nome) VALUES
-('01', 'Mensal'),
-('02', 'Bimestral'),
-('03', 'Trimestral'),
-('06', 'Semestral'),
-('12', 'Anual');
+('0', 'Mensal'),
+('1', 'Bimestral'),
+('2', 'Trimestral'),
+('3', 'Semestral'),
+('4', 'Anual');
 
 -- ORÇAMENTOS EMPRESARIAIS (orcamento_empresarial)
 INSERT INTO orcamento_empresarial (id_orcamento_periodo, nome, descricao, data_inicial, numero_periodos, data_base) VALUES
@@ -41,10 +41,10 @@ INSERT INTO orcamento_detalhe (
 
 -- PERÍODOS DE FLUXO DE CAIXA (orcamento_fluxo_caixa_periodo) - Assumindo IDs de conta caixa existentes (1-5)
 INSERT INTO orcamento_fluxo_caixa_periodo (id_banco_conta_caixa, periodo, nome) VALUES
-(1, '01', 'Mensal - Conta Principal'),
-(2, '01', 'Mensal - Conta Secundária'),
-(1, '03', 'Trimestral - Conta Principal'),
-(3, '12', 'Anual - Investimentos');
+(1, '1', 'Mensal - Conta Principal'),
+(2, '1', 'Mensal - Conta Secundária'),
+(1, '2', 'Trimestral - Conta Principal'),
+(3, '3', 'Anual - Investimentos');
 
 -- FLUXOS DE CAIXA (orcamento_fluxo_caixa)
 INSERT INTO orcamento_fluxo_caixa (id_orc_fluxo_caixa_periodo, nome, descricao, data_inicial, numero_periodos, data_base) VALUES

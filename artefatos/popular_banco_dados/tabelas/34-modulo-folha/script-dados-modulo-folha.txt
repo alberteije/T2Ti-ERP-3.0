@@ -82,7 +82,7 @@ INSERT INTO folha_lancamento_cabecalho (id_colaborador, competencia, tipo) VALUE
 (3, '2023-02', 'M');
 
 -- 16. LANÇAMENTO COMISSÃO (folha_lancamento_comissao) - ID vendedor = 1, 2, 3
-INSERT INTO folha_lancamento_comissao (id_vendedor, competencia, vencimento, base_calculo, valor_comissao) VALUES
+INSERT INTO folha_lancamento_comissao (id_colaborador, competencia, vencimento, base_calculo, valor_comissao) VALUES
 (1, '2023-01', '2023-02-05', 10000.000000, 500.000000),
 (2, '2023-01', '2023-02-05', 8000.000000, 400.000000),
 (3, '2023-02', '2023-03-05', 12000.000000, 600.000000);

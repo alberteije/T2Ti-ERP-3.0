@@ -1,5 +1,5 @@
 -- Inserção de projetos principais
-INSERT INTO `projeto_principal` (`nome`, `data_inicio`, `data_previsao_fim`, `data_fim`, `link_quadro_trello`, `valor_orcamento`, `observacao`) VALUES
+INSERT INTO `projeto_principal` (`nome`, `data_inicio`, `data_previsao_fim`, `data_fim`, `link_quadro_kanban`, `valor_orcamento`, `observacao`) VALUES
 ('Implementação ERP Corporativo', '2023-01-15', '2023-06-30', NULL, 'https://trello.com/b/erpcorp', 250000.000000, 'Projeto de implementação do novo sistema ERP em todas as unidades'),
 ('Migração para Cloud', '2023-03-01', '2023-09-15', NULL, 'https://trello.com/b/cloudmig', 180000.000000, 'Migração da infraestrutura local para nuvem AWS'),
 ('Portal do Cliente', '2023-02-10', '2023-05-20', '2023-05-15', 'https://trello.com/b/portalcli', 120000.000000, 'Desenvolvimento do novo portal de autoatendimento para clientes'),
@@ -50,9 +50,9 @@ INSERT INTO `projeto_risco` (`id_projeto_principal`, `nome`, `descricao`, `proba
 (5, 'Baixa participação', 'Colaboradores podem não priorizar os treinamentos', 50, 30);
 
 -- Inserção de stakeholders (assumindo IDs de colaboradores existentes)
-INSERT INTO `projeto_stakeholders` (`id_projeto_dados`, `id_colaborador`) VALUES
-(1, 5), (1, 8), (1, 11), -- ERP Corporativo
+INSERT INTO `projeto_stakeholders` (`id_projeto_principal`, `id_colaborador`) VALUES
+(1, 5), (1, 8), (1, 7), -- ERP Corporativo
 (2, 3), (2, 7), (2, 1), -- Migração Cloud
-(3, 4), (3, 9), (3, 10), -- Portal Cliente
+(3, 4), (3, 5), (3, 3), -- Portal Cliente
 (4, 6), (4, 2),         -- Automação Marketing
-(5, 1), (5, 2), (5, 9);  -- Treinamento Segurança
+(5, 1), (5, 2), (5, 8);
