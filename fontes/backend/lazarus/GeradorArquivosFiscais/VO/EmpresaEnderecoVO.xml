@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EmpresaEnderecoVO" table="empresa_endereco" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">empresa_endereco</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Logradouro" column="LOGRADOURO" caption="Logradouro" width="450" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="String" />
+    <property name="Complemento" column="COMPLEMENTO" caption="Complemento" width="450" type="String" />
+    <property name="Bairro" column="BAIRRO" caption="Bairro" width="450" type="String" />
+    <property name="Cidade" column="CIDADE" caption="Cidade" width="450" type="String" />
+    <property name="Cep" column="CEP" caption="Cep" width="64" type="String" />
+    <property name="Fone" column="FONE" caption="Fone" width="112" type="String" />
+    <property name="MunicipioIbge" column="MUNICIPIO_IBGE" caption="Municipio Ibge" width="80" type="Integer" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="Principal" column="PRINCIPAL" caption="Principal" width="8" type="String" />
+    <property name="Entrega" column="ENTREGA" caption="Entrega" width="8" type="String" />
+    <property name="Cobranca" column="COBRANCA" caption="Cobranca" width="8" type="String" />
+    <property name="Correspondencia" column="CORRESPONDENCIA" caption="Correspondencia" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EcfE3VO" table="ecf_e3" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ecf_e3</param>
+      </generator>
+    </id>
+
+    <property name="SerieEcf" column="SERIE_ECF" caption="Serie Ecf" width="160" type="String" />
+    <property name="MfAdicional" column="MF_ADICIONAL" caption="Mf Adicional" width="8" type="String" />
+    <property name="TipoEcf" column="TIPO_ECF" caption="Tipo Ecf" width="56" type="String" />
+    <property name="MarcaEcf" column="MARCA_ECF" caption="Marca Ecf" width="160" type="String" />
+    <property name="ModeloEcf" column="MODELO_ECF" caption="Modelo Ecf" width="160" type="String" />
+    <property name="DataEstoque" column="DATA_ESTOQUE" caption="Data Estoque" width="80" type="Date" />
+    <property name="HoraEstoque" column="HORA_ESTOQUE" caption="Hora Estoque" width="64" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

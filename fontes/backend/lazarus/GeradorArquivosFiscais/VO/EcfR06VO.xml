@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EcfR06VO" table="ecf_r06" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ecf_r06</param>
+      </generator>
+    </id>
+
+    <property name="NomeCaixa" column="NOME_CAIXA" caption="Nome Caixa" width="240" type="String" />
+    <property name="IdGeradoCaixa" column="ID_GERADO_CAIXA" caption="Id Gerado Caixa" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdOperador" column="ID_OPERADOR" caption="Id Operador" width="80" type="Integer" />
+    <property name="IdImpressora" column="ID_IMPRESSORA" caption="Id Impressora" width="80" type="Integer" />
+    <property name="IdEcfCaixa" column="ID_ECF_CAIXA" caption="Id Ecf Caixa" width="80" type="Integer" />
+    <property name="SerieEcf" column="SERIE_ECF" caption="Serie Ecf" width="160" type="String" />
+    <property name="Coo" column="COO" caption="Coo" width="80" type="Integer" />
+    <property name="Gnf" column="GNF" caption="Gnf" width="80" type="Integer" />
+    <property name="Grg" column="GRG" caption="Grg" width="80" type="Integer" />
+    <property name="Cdc" column="CDC" caption="Cdc" width="80" type="Integer" />
+    <property name="Denominacao" column="DENOMINACAO" caption="Denominacao" width="16" type="String" />
+    <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
+    <property name="HoraEmissao" column="HORA_EMISSAO" caption="Hora Emissao" width="64" type="String" />
+    <property name="Logss" column="LOGSS" caption="Logss" width="256" type="String" />
+    <property name="DataSincronizacao" column="DATA_SINCRONIZACAO" caption="Data Sincronizacao" width="80" type="Date" />
+    <property name="HoraSincronizacao" column="HORA_SINCRONIZACAO" caption="Hora Sincronizacao" width="64" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

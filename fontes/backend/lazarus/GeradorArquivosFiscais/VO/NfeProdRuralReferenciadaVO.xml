@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeProdRuralReferenciadaVO" table="nfe_prod_rural_referenciada" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_prod_rural_referenciada</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeCabecalho" column="ID_NFE_CABECALHO" caption="Id Nfe Cabecalho" width="80" type="Integer" />
+    <property name="CodigoUf" column="CODIGO_UF" caption="Codigo Uf" width="80" type="Integer" />
+    <property name="AnoMes" column="ANO_MES" caption="Ano Mes" width="32" type="String" />
+    <property name="Cnpj" column="CNPJ" caption="Cnpj" width="112" type="String" />
+    <property name="Cpf" column="CPF" caption="Cpf" width="88" type="String" />
+    <property name="InscricaoEstadual" column="INSCRICAO_ESTADUAL" caption="Inscricao Estadual" width="112" type="String" />
+    <property name="Modelo" column="MODELO" caption="Modelo" width="16" type="String" />
+    <property name="Serie" column="SERIE" caption="Serie" width="24" type="String" />
+    <property name="NumeroNf" column="NUMERO_NF" caption="Numero Nf" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EstoqueGradeVO" table="estoque_grade" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">estoque_grade</param>
+      </generator>
+    </id>
+
+    <property name="IdEstoqueMarca" column="ID_ESTOQUE_MARCA" caption="Id Estoque Marca" width="80" type="Integer" />
+    <property name="IdEstoqueSabor" column="ID_ESTOQUE_SABOR" caption="Id Estoque Sabor" width="80" type="Integer" />
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="IdEstoqueTamanho" column="ID_ESTOQUE_TAMANHO" caption="Id Estoque Tamanho" width="80" type="Integer" />
+    <property name="IdEstoqueCor" column="ID_ESTOQUE_COR" caption="Id Estoque Cor" width="80" type="Integer" />
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="400" type="String" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

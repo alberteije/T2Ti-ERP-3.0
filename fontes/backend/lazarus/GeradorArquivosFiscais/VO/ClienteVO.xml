@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ClienteVO" table="cliente" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cliente</param>
+      </generator>
+    </id>
+
+    <property name="IdOperacaoFiscal" column="ID_OPERACAO_FISCAL" caption="Id Operacao Fiscal" width="80" type="Integer" />
+    <property name="IdPessoa" column="ID_PESSOA" caption="Id Pessoa" width="80" type="Integer" />
+    <property name="IdAtividadeForCli" column="ID_ATIVIDADE_FOR_CLI" caption="Id Atividade For Cli" width="80" type="Integer" />
+    <property name="IdSituacaoForCli" column="ID_SITUACAO_FOR_CLI" caption="Id Situacao For Cli" width="80" type="Integer" />
+    <property name="Desde" column="DESDE" caption="Desde" width="80" type="Date" />
+    <property name="DataCadastro" column="DATA_CADASTRO" caption="Data Cadastro" width="80" type="Date" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+    <property name="ContaTomador" column="CONTA_TOMADOR" caption="Conta Tomador" width="240" type="String" />
+    <property name="GeraFinanceiro" column="GERA_FINANCEIRO" caption="Gera Financeiro" width="8" type="String" />
+    <property name="IndicadorPreco" column="INDICADOR_PRECO" caption="Indicador Preco" width="8" type="String" />
+    <property name="PorcentoDesconto" column="PORCENTO_DESCONTO" caption="Porcento Desconto" width="168" type="FMTBcdField" />
+    <property name="FormaDesconto" column="FORMA_DESCONTO" caption="Forma Desconto" width="8" type="String" />
+    <property name="LimiteCredito" column="LIMITE_CREDITO" caption="Limite Credito" width="168" type="FMTBcdField" />
+    <property name="TipoFrete" column="TIPO_FRETE" caption="Tipo Frete" width="8" type="String" />
+    <property name="ClassificacaoContabilConta" column="CLASSIFICACAO_CONTABIL_CONTA" caption="Classificacao Contabil Conta" width="240" type="String" />
+    <property name="IdConvenio" column="ID_CONVENIO" caption="Id Convenio" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

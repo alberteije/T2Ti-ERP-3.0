@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="SalarioFamiliaVO" table="salario_familia" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">salario_familia</param>
+      </generator>
+    </id>
+
+    <property name="IdInss" column="ID_INSS" caption="Id Inss" width="80" type="Integer" />
+    <property name="Faixa" column="FAIXA" caption="Faixa" width="80" type="Integer" />
+    <property name="De" column="DE" caption="De" width="168" type="FMTBcdField" />
+    <property name="Ate" column="ATE" caption="Ate" width="168" type="FMTBcdField" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

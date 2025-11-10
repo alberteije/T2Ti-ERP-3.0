@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="SalarioMinimoVO" table="salario_minimo" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">salario_minimo</param>
+      </generator>
+    </id>
+
+    <property name="Vigencia" column="VIGENCIA" caption="Vigencia" width="80" type="Date" />
+    <property name="ValorMensal" column="VALOR_MENSAL" caption="Valor Mensal" width="168" type="FMTBcdField" />
+    <property name="ValorDiario" column="VALOR_DIARIO" caption="Valor Diario" width="168" type="FMTBcdField" />
+    <property name="ValorHora" column="VALOR_HORA" caption="Valor Hora" width="168" type="FMTBcdField" />
+    <property name="NormaLegal" column="NORMA_LEGAL" caption="Norma Legal" width="450" type="String" />
+    <property name="Dou" column="DOU" caption="Dou" width="80" type="Date" />
+
+  </class>
+</t2ti-orm-mapping>

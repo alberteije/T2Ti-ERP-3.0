@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PatrimDocumentoBemVO" table="patrim_documento_bem" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">patrim_documento_bem</param>
+      </generator>
+    </id>
+
+    <property name="IdPatrimBem" column="ID_PATRIM_BEM" caption="Id Patrim Bem" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="400" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+    <property name="Imagem" column="IMAGEM" caption="Imagem" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

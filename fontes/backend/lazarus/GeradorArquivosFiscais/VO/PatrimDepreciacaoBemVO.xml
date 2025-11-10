@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PatrimDepreciacaoBemVO" table="patrim_depreciacao_bem" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">patrim_depreciacao_bem</param>
+      </generator>
+    </id>
+
+    <property name="IdPatrimBem" column="ID_PATRIM_BEM" caption="Id Patrim Bem" width="80" type="Integer" />
+    <property name="DataDepreciacao" column="DATA_DEPRECIACAO" caption="Data Depreciacao" width="80" type="Date" />
+    <property name="Dias" column="DIAS" caption="Dias" width="80" type="Integer" />
+    <property name="Taxa" column="TAXA" caption="Taxa" width="168" type="FMTBcdField" />
+    <property name="Indice" column="INDICE" caption="Indice" width="168" type="FMTBcdField" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+    <property name="DepreciacaoAcumulada" column="DEPRECIACAO_ACUMULADA" caption="Depreciacao Acumulada" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

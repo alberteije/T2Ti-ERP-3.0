@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="SocioDependenteVO" table="socio_dependente" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">socio_dependente</param>
+      </generator>
+    </id>
+
+    <property name="IdSocio" column="ID_SOCIO" caption="Id Socio" width="80" type="Integer" />
+    <property name="IdTipoRelacionamento" column="ID_TIPO_RELACIONAMENTO" caption="Id Tipo Relacionamento" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="DataNascimento" column="DATA_NASCIMENTO" caption="Data Nascimento" width="80" type="Date" />
+    <property name="DataInicioDepedencia" column="DATA_INICIO_DEPEDENCIA" caption="Data Inicio Depedencia" width="80" type="Date" />
+    <property name="DataFimDependencia" column="DATA_FIM_DEPENDENCIA" caption="Data Fim Dependencia" width="80" type="Date" />
+    <property name="Cpf" column="CPF" caption="Cpf" width="88" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

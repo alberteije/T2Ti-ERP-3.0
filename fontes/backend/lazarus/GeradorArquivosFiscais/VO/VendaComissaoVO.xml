@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="VendaComissaoVO" table="venda_comissao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">venda_comissao</param>
+      </generator>
+    </id>
+
+    <property name="IdVendedor" column="ID_VENDEDOR" caption="Id Vendedor" width="80" type="Integer" />
+    <property name="IdVendaCabecalho" column="ID_VENDA_CABECALHO" caption="Id Venda Cabecalho" width="80" type="Integer" />
+    <property name="ValorVenda" column="VALOR_VENDA" caption="Valor Venda" width="168" type="FMTBcdField" />
+    <property name="TipoContabil" column="TIPO_CONTABIL" caption="Tipo Contabil" width="8" type="String" />
+    <property name="ValorComissao" column="VALOR_COMISSAO" caption="Valor Comissao" width="160" type="FMTBcdField" />
+    <property name="Situacao" column="SITUACAO" caption="Situacao" width="8" type="String" />
+    <property name="DataLancamento" column="DATA_LANCAMENTO" caption="Data Lancamento" width="80" type="Date" />
+
+  </class>
+</t2ti-orm-mapping>

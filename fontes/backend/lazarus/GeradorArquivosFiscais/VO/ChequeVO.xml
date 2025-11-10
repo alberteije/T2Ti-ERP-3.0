@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ChequeVO" table="cheque" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cheque</param>
+      </generator>
+    </id>
+
+    <property name="IdTalonarioCheque" column="ID_TALONARIO_CHEQUE" caption="Id Talonario Cheque" width="80" type="Integer" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="Integer" />
+    <property name="StatusCheque" column="STATUS_CHEQUE" caption="Status Cheque" width="8" type="String" />
+    <property name="DataStatus" column="DATA_STATUS" caption="Data Status" width="80" type="Date" />
+
+  </class>
+</t2ti-orm-mapping>

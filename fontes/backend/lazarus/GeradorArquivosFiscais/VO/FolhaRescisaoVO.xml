@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FolhaRescisaoVO" table="folha_rescisao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">folha_rescisao</param>
+      </generator>
+    </id>
+
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="DataDemissao" column="DATA_DEMISSAO" caption="Data Demissao" width="80" type="Date" />
+    <property name="DataPagamento" column="DATA_PAGAMENTO" caption="Data Pagamento" width="80" type="Date" />
+    <property name="Motivo" column="MOTIVO" caption="Motivo" width="450" type="String" />
+    <property name="MotivoEsocial" column="MOTIVO_ESOCIAL" caption="Motivo Esocial" width="16" type="String" />
+    <property name="DataAvisoPrevio" column="DATA_AVISO_PREVIO" caption="Data Aviso Previo" width="80" type="Date" />
+    <property name="DiasAvisoPrevio" column="DIAS_AVISO_PREVIO" caption="Dias Aviso Previo" width="80" type="Integer" />
+    <property name="ComprovouNovoEmprego" column="COMPROVOU_NOVO_EMPREGO" caption="Comprovou Novo Emprego" width="8" type="String" />
+    <property name="DispensouEmpregado" column="DISPENSOU_EMPREGADO" caption="Dispensou Empregado" width="8" type="String" />
+    <property name="PensaoAlimenticia" column="PENSAO_ALIMENTICIA" caption="Pensao Alimenticia" width="168" type="FMTBcdField" />
+    <property name="PensaoAlimenticiaFgts" column="PENSAO_ALIMENTICIA_FGTS" caption="Pensao Alimenticia Fgts" width="168" type="FMTBcdField" />
+    <property name="FgtsValorRescisao" column="FGTS_VALOR_RESCISAO" caption="Fgts Valor Rescisao" width="168" type="FMTBcdField" />
+    <property name="FgtsSaldoBanco" column="FGTS_SALDO_BANCO" caption="Fgts Saldo Banco" width="168" type="FMTBcdField" />
+    <property name="FgtsComplementoSaldo" column="FGTS_COMPLEMENTO_SALDO" caption="Fgts Complemento Saldo" width="168" type="FMTBcdField" />
+    <property name="FgtsCodigoAfastamento" column="FGTS_CODIGO_AFASTAMENTO" caption="Fgts Codigo Afastamento" width="80" type="String" />
+    <property name="FgtsCodigoSaque" column="FGTS_CODIGO_SAQUE" caption="Fgts Codigo Saque" width="80" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

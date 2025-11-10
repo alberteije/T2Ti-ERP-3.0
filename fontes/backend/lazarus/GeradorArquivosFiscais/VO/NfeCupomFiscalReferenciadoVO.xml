@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeCupomFiscalReferenciadoVO" table="nfe_cupom_fiscal_referenciado" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_cupom_fiscal_referenciado</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeCabecalho" column="ID_NFE_CABECALHO" caption="Id Nfe Cabecalho" width="80" type="Integer" />
+    <property name="ModeloDocumentoFiscal" column="MODELO_DOCUMENTO_FISCAL" caption="Modelo Documento Fiscal" width="16" type="String" />
+    <property name="NumeroOrdemEcf" column="NUMERO_ORDEM_ECF" caption="Numero Ordem Ecf" width="80" type="Integer" />
+    <property name="Coo" column="COO" caption="Coo" width="80" type="Integer" />
+    <property name="DataEmissaoCupom" column="DATA_EMISSAO_CUPOM" caption="Data Emissao Cupom" width="80" type="Date" />
+    <property name="NumeroCaixa" column="NUMERO_CAIXA" caption="Numero Caixa" width="80" type="Integer" />
+    <property name="NumeroSerieEcf" column="NUMERO_SERIE_ECF" caption="Numero Serie Ecf" width="168" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

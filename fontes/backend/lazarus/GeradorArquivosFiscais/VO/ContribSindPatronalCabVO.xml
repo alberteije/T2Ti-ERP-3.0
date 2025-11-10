@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContribSindPatronalCabVO" table="contrib_sind_patronal_cab" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contrib_sind_patronal_cab</param>
+      </generator>
+    </id>
+
+    <property name="IdSindicato" column="ID_SINDICATO" caption="Id Sindicato" width="80" type="Integer" />
+    <property name="VigenciaAno" column="VIGENCIA_ANO" caption="Vigencia Ano" width="32" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

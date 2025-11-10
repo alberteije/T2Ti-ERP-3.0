@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="WmsRecebimentoDetalheVO" table="wms_recebimento_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">wms_recebimento_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="IdWmsRecebimentoCabecalho" column="ID_WMS_RECEBIMENTO_CABECALHO" caption="Id Wms Recebimento Cabecalho" width="80" type="Integer" />
+    <property name="QuantidadeVolume" column="QUANTIDADE_VOLUME" caption="Quantidade Volume" width="80" type="Integer" />
+    <property name="QuantidadeItemPorVolume" column="QUANTIDADE_ITEM_POR_VOLUME" caption="Quantidade Item Por Volume" width="80" type="Integer" />
+    <property name="QuantidadeRecebida" column="QUANTIDADE_RECEBIDA" caption="Quantidade Recebida" width="80" type="Integer" />
+    <property name="Destino" column="DESTINO" caption="Destino" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

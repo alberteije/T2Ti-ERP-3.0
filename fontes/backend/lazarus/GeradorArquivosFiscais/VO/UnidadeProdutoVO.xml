@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="UnidadeProdutoVO" table="unidade_produto" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">unidade_produto</param>
+      </generator>
+    </id>
+
+    <property name="Sigla" column="SIGLA" caption="Sigla" width="80" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+    <property name="PodeFracionar" column="PODE_FRACIONAR" caption="Pode Fracionar" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

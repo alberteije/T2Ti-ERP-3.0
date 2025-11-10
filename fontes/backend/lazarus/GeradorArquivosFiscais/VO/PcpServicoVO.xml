@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PcpServicoVO" table="pcp_servico" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">pcp_servico</param>
+      </generator>
+    </id>
+
+    <property name="IdPcpOpDetalhe" column="ID_PCP_OP_DETALHE" caption="Id Pcp Op Detalhe" width="80" type="Integer" />
+    <property name="InicioRealizado" column="INICIO_REALIZADO" caption="Inicio Realizado" width="80" type="Date" />
+    <property name="TerminoRealizado" column="TERMINO_REALIZADO" caption="Termino Realizado" width="80" type="Date" />
+    <property name="HorasRealizado" column="HORAS_REALIZADO" caption="Horas Realizado" width="80" type="Integer" />
+    <property name="MinutosRealizado" column="MINUTOS_REALIZADO" caption="Minutos Realizado" width="80" type="Integer" />
+    <property name="SegundosRealizado" column="SEGUNDOS_REALIZADO" caption="Segundos Realizado" width="80" type="Integer" />
+    <property name="CustoRealizado" column="CUSTO_REALIZADO" caption="Custo Realizado" width="168" type="FMTBcdField" />
+    <property name="InicioPrevisto" column="INICIO_PREVISTO" caption="Inicio Previsto" width="80" type="Date" />
+    <property name="TerminoPrevisto" column="TERMINO_PREVISTO" caption="Termino Previsto" width="80" type="Date" />
+    <property name="HorasPrevisto" column="HORAS_PREVISTO" caption="Horas Previsto" width="80" type="Integer" />
+    <property name="MinutosPrevisto" column="MINUTOS_PREVISTO" caption="Minutos Previsto" width="80" type="Integer" />
+    <property name="SegundosPrevisto" column="SEGUNDOS_PREVISTO" caption="Segundos Previsto" width="80" type="Integer" />
+    <property name="CustoPrevisto" column="CUSTO_PREVISTO" caption="Custo Previsto" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EcfSintegra60mVO" table="ecf_sintegra_60m" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ecf_sintegra_60m</param>
+      </generator>
+    </id>
+
+    <property name="NomeCaixa" column="NOME_CAIXA" caption="Nome Caixa" width="64" type="String" />
+    <property name="IdGeradoCaixa" column="ID_GERADO_CAIXA" caption="Id Gerado Caixa" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
+    <property name="NumeroSerieEcf" column="NUMERO_SERIE_ECF" caption="Numero Serie Ecf" width="160" type="String" />
+    <property name="NumeroEquipamento" column="NUMERO_EQUIPAMENTO" caption="Numero Equipamento" width="80" type="Integer" />
+    <property name="ModeloDocumentoFiscal" column="MODELO_DOCUMENTO_FISCAL" caption="Modelo Documento Fiscal" width="16" type="String" />
+    <property name="CooInicial" column="COO_INICIAL" caption="Coo Inicial" width="80" type="Integer" />
+    <property name="CooFinal" column="COO_FINAL" caption="Coo Final" width="80" type="Integer" />
+    <property name="Crz" column="CRZ" caption="Crz" width="80" type="Integer" />
+    <property name="Cro" column="CRO" caption="Cro" width="80" type="Integer" />
+    <property name="ValorVendaBruta" column="VALOR_VENDA_BRUTA" caption="Valor Venda Bruta" width="168" type="FMTBcdField" />
+    <property name="ValorGrandeTotal" column="VALOR_GRANDE_TOTAL" caption="Valor Grande Total" width="168" type="FMTBcdField" />
+    <property name="DataSincronizacao" column="DATA_SINCRONIZACAO" caption="Data Sincronizacao" width="80" type="Date" />
+    <property name="HoraSincronizacao" column="HORA_SINCRONIZACAO" caption="Hora Sincronizacao" width="64" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

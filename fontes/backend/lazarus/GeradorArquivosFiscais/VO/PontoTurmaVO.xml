@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PontoTurmaVO" table="ponto_turma" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ponto_turma</param>
+      </generator>
+    </id>
+
+    <property name="IdPontoEscala" column="ID_PONTO_ESCALA" caption="Id Ponto Escala" width="80" type="Integer" />
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="40" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="400" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

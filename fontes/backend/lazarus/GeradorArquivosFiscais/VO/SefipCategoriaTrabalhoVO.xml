@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="SefipCategoriaTrabalhoVO" table="sefip_categoria_trabalho" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">sefip_categoria_trabalho</param>
+      </generator>
+    </id>
+
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

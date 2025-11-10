@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeDetalheImpostoCofinsVO" table="nfe_detalhe_imposto_cofins" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_detalhe_imposto_cofins</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeDetalhe" column="ID_NFE_DETALHE" caption="Id Nfe Detalhe" width="80" type="Integer" />
+    <property name="CstCofins" column="CST_COFINS" caption="Cst Cofins" width="16" type="String" />
+    <property name="QuantidadeVendida" column="QUANTIDADE_VENDIDA" caption="Quantidade Vendida" width="168" type="FMTBcdField" />
+    <property name="BaseCalculoCofins" column="BASE_CALCULO_COFINS" caption="Base Calculo Cofins" width="168" type="FMTBcdField" />
+    <property name="AliquotaCofinsPercentual" column="ALIQUOTA_COFINS_PERCENTUAL" caption="Aliquota Cofins Percentual" width="168" type="FMTBcdField" />
+    <property name="AliquotaCofinsReais" column="ALIQUOTA_COFINS_REAIS" caption="Aliquota Cofins Reais" width="168" type="FMTBcdField" />
+    <property name="ValorCofins" column="VALOR_COFINS" caption="Valor Cofins" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

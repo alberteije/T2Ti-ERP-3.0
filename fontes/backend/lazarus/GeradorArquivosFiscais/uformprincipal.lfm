@@ -1,0 +1,14 @@
+object FormPrincipal: TFormPrincipal
+  Left = 764
+  Height = 331
+  Top = 229
+  Width = 593
+  Caption = 'T2Ti - Gerador de Arquivos'
+  DesignTimePPI = 144
+  Position = poScreenCenter
+  LCLVersion = '4.2.0.0'
+  object TrayIcon: TTrayIcon
+    Left = 186
+    Top = 122
+  end
+end

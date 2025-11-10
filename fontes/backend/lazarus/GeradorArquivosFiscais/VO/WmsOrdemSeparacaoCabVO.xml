@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="WmsOrdemSeparacaoCabVO" table="wms_ordem_separacao_cab" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">wms_ordem_separacao_cab</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Origem" column="ORIGEM" caption="Origem" width="8" type="String" />
+    <property name="DataSolicitacao" column="DATA_SOLICITACAO" caption="Data Solicitacao" width="80" type="Date" />
+    <property name="DataLimite" column="DATA_LIMITE" caption="Data Limite" width="80" type="Date" />
+
+  </class>
+</t2ti-orm-mapping>

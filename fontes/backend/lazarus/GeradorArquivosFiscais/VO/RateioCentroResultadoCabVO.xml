@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="RateioCentroResultadoCabVO" table="rateio_centro_resultado_cab" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">rateio_centro_resultado_cab</param>
+      </generator>
+    </id>
+
+    <property name="IdCentroResultado" column="ID_CENTRO_RESULTADO" caption="Id Centro Resultado" width="80" type="Integer" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

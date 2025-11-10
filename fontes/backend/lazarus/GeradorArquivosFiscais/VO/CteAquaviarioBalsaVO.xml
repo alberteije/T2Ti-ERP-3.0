@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteAquaviarioBalsaVO" table="cte_aquaviario_balsa" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_aquaviario_balsa</param>
+      </generator>
+    </id>
+
+    <property name="IdCteAquaviario" column="ID_CTE_AQUAVIARIO" caption="Id Cte Aquaviario" width="80" type="Integer" />
+    <property name="IdBalsa" column="ID_BALSA" caption="Id Balsa" width="450" type="String" />
+    <property name="NumeroViagem" column="NUMERO_VIAGEM" caption="Numero Viagem" width="80" type="Integer" />
+    <property name="Direcao" column="DIRECAO" caption="Direcao" width="8" type="String" />
+    <property name="PortoEmbarque" column="PORTO_EMBARQUE" caption="Porto Embarque" width="450" type="String" />
+    <property name="PortoTransbordo" column="PORTO_TRANSBORDO" caption="Porto Transbordo" width="450" type="String" />
+    <property name="PortoDestino" column="PORTO_DESTINO" caption="Porto Destino" width="450" type="String" />
+    <property name="TipoNavegacao" column="TIPO_NAVEGACAO" caption="Tipo Navegacao" width="80" type="Integer" />
+    <property name="Irin" column="IRIN" caption="Irin" width="80" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

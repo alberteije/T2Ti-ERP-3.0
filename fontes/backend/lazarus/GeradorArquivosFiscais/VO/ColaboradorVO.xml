@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ColaboradorVO" table="colaborador" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">colaborador</param>
+      </generator>
+    </id>
+
+    <property name="IdSindicato" column="ID_SINDICATO" caption="Id Sindicato" width="80" type="Integer" />
+    <property name="IdTipoAdmissao" column="ID_TIPO_ADMISSAO" caption="Id Tipo Admissao" width="80" type="Integer" />
+    <property name="IdSituacaoColaborador" column="ID_SITUACAO_COLABORADOR" caption="Id Situacao Colaborador" width="80" type="Integer" />
+    <property name="IdPessoa" column="ID_PESSOA" caption="Id Pessoa" width="80" type="Integer" />
+    <property name="IdTipoColaborador" column="ID_TIPO_COLABORADOR" caption="Id Tipo Colaborador" width="80" type="Integer" />
+    <property name="IdNivelFormacao" column="ID_NIVEL_FORMACAO" caption="Id Nivel Formacao" width="80" type="Integer" />
+    <property name="IdCargo" column="ID_CARGO" caption="Id Cargo" width="80" type="Integer" />
+    <property name="IdSetor" column="ID_SETOR" caption="Id Setor" width="80" type="Integer" />
+    <property name="Matricula" column="MATRICULA" caption="Matricula" width="80" type="String" />
+    <property name="Foto34" column="FOTO_34" caption="Foto 34" width="450" type="Memo" />
+    <property name="DataCadastro" column="DATA_CADASTRO" caption="Data Cadastro" width="80" type="Date" />
+    <property name="DataAdmissao" column="DATA_ADMISSAO" caption="Data Admissao" width="80" type="Date" />
+    <property name="VencimentoFerias" column="VENCIMENTO_FERIAS" caption="Vencimento Ferias" width="80" type="Date" />
+    <property name="DataTransferencia" column="DATA_TRANSFERENCIA" caption="Data Transferencia" width="80" type="Date" />
+    <property name="FgtsOptante" column="FGTS_OPTANTE" caption="Fgts Optante" width="8" type="String" />
+    <property name="FgtsDataOpcao" column="FGTS_DATA_OPCAO" caption="Fgts Data Opcao" width="80" type="Date" />
+    <property name="FgtsConta" column="FGTS_CONTA" caption="Fgts Conta" width="80" type="Integer" />
+    <property name="PagamentoForma" column="PAGAMENTO_FORMA" caption="Pagamento Forma" width="8" type="String" />
+    <property name="PagamentoBanco" column="PAGAMENTO_BANCO" caption="Pagamento Banco" width="80" type="String" />
+    <property name="PagamentoAgencia" column="PAGAMENTO_AGENCIA" caption="Pagamento Agencia" width="80" type="String" />
+    <property name="PagamentoAgenciaDigito" column="PAGAMENTO_AGENCIA_DIGITO" caption="Pagamento Agencia Digito" width="8" type="String" />
+    <property name="PagamentoConta" column="PAGAMENTO_CONTA" caption="Pagamento Conta" width="80" type="String" />
+    <property name="PagamentoContaDigito" column="PAGAMENTO_CONTA_DIGITO" caption="Pagamento Conta Digito" width="8" type="String" />
+    <property name="ExameMedicoUltimo" column="EXAME_MEDICO_ULTIMO" caption="Exame Medico Ultimo" width="80" type="Date" />
+    <property name="ExameMedicoVencimento" column="EXAME_MEDICO_VENCIMENTO" caption="Exame Medico Vencimento" width="80" type="Date" />
+    <property name="PisDataCadastro" column="PIS_DATA_CADASTRO" caption="Pis Data Cadastro" width="80" type="Date" />
+    <property name="PisNumero" column="PIS_NUMERO" caption="Pis Numero" width="96" type="String" />
+    <property name="PisBanco" column="PIS_BANCO" caption="Pis Banco" width="80" type="String" />
+    <property name="PisAgencia" column="PIS_AGENCIA" caption="Pis Agencia" width="80" type="String" />
+    <property name="PisAgenciaDigito" column="PIS_AGENCIA_DIGITO" caption="Pis Agencia Digito" width="8" type="String" />
+    <property name="CtpsNumero" column="CTPS_NUMERO" caption="Ctps Numero" width="80" type="String" />
+    <property name="CtpsSerie" column="CTPS_SERIE" caption="Ctps Serie" width="80" type="String" />
+    <property name="CtpsDataExpedicao" column="CTPS_DATA_EXPEDICAO" caption="Ctps Data Expedicao" width="80" type="Date" />
+    <property name="CtpsUf" column="CTPS_UF" caption="Ctps Uf" width="16" type="String" />
+    <property name="DescontoPlanoSaude" column="DESCONTO_PLANO_SAUDE" caption="Desconto Plano Saude" width="8" type="String" />
+    <property name="SaiNaRais" column="SAI_NA_RAIS" caption="Sai Na Rais" width="8" type="String" />
+    <property name="CategoriaSefip" column="CATEGORIA_SEFIP" caption="Categoria Sefip" width="16" type="String" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+    <property name="OcorrenciaSefip" column="OCORRENCIA_SEFIP" caption="Ocorrencia Sefip" width="80" type="Integer" />
+    <property name="CodigoAdmissaoCaged" column="CODIGO_ADMISSAO_CAGED" caption="Codigo Admissao Caged" width="80" type="Integer" />
+    <property name="CodigoDemissaoCaged" column="CODIGO_DEMISSAO_CAGED" caption="Codigo Demissao Caged" width="80" type="Integer" />
+    <property name="CodigoDemissaoSefip" column="CODIGO_DEMISSAO_SEFIP" caption="Codigo Demissao Sefip" width="80" type="Integer" />
+    <property name="DataDemissao" column="DATA_DEMISSAO" caption="Data Demissao" width="80" type="Date" />
+    <property name="CodigoTurmaPonto" column="CODIGO_TURMA_PONTO" caption="Codigo Turma Ponto" width="40" type="String" />
+    <property name="CagedAprendiz" column="CAGED_APRENDIZ" caption="Caged Aprendiz" width="8" type="String" />
+    <property name="CagedDeficiencia" column="CAGED_DEFICIENCIA" caption="Caged Deficiencia" width="8" type="String" />
+    <property name="ClassificacaoContabilConta" column="CLASSIFICACAO_CONTABIL_CONTA" caption="Classificacao Contabil Conta" width="240" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

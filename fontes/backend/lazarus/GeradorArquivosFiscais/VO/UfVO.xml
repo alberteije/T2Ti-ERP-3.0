@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="UfVO" table="uf" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">uf</param>
+      </generator>
+    </id>
+
+    <property name="IdPais" column="ID_PAIS" caption="Id Pais" width="80" type="Integer" />
+    <property name="Sigla" column="SIGLA" caption="Sigla" width="16" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="400" type="String" />
+    <property name="CodigoIbge" column="CODIGO_IBGE" caption="Codigo Ibge" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

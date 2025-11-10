@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FinStatusParcelaVO" table="fin_status_parcela" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fin_status_parcela</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Situacao" column="SITUACAO" caption="Situacao" width="16" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="240" type="String" />
+    <property name="Procedimento" column="PROCEDIMENTO" caption="Procedimento" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

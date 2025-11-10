@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EcfAliquotasVO" table="ecf_aliquotas" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ecf_aliquotas</param>
+      </generator>
+    </id>
+
+    <property name="TotalizadorParcial" column="TOTALIZADOR_PARCIAL" caption="Totalizador Parcial" width="80" type="String" />
+    <property name="EcfIcmsSt" column="ECF_ICMS_ST" caption="Ecf Icms St" width="32" type="String" />
+    <property name="PafPSt" column="PAF_P_ST" caption="Paf P St" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

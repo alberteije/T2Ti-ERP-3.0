@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PontoRelogioVO" table="ponto_relogio" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ponto_relogio</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Localizacao" column="LOCALIZACAO" caption="Localizacao" width="400" type="String" />
+    <property name="Marca" column="MARCA" caption="Marca" width="240" type="String" />
+    <property name="Fabricante" column="FABRICANTE" caption="Fabricante" width="240" type="String" />
+    <property name="NumeroSerie" column="NUMERO_SERIE" caption="Numero Serie" width="400" type="String" />
+    <property name="Utilizacao" column="UTILIZACAO" caption="Utilizacao" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

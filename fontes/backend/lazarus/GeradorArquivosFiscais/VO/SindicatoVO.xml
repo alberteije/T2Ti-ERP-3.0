@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="SindicatoVO" table="sindicato" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">sindicato</param>
+      </generator>
+    </id>
+
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="CodigoBanco" column="CODIGO_BANCO" caption="Codigo Banco" width="80" type="Integer" />
+    <property name="CodigoAgencia" column="CODIGO_AGENCIA" caption="Codigo Agencia" width="80" type="Integer" />
+    <property name="ContaBanco" column="CONTA_BANCO" caption="Conta Banco" width="160" type="String" />
+    <property name="CodigoCedente" column="CODIGO_CEDENTE" caption="Codigo Cedente" width="240" type="String" />
+    <property name="Logradouro" column="LOGRADOURO" caption="Logradouro" width="450" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="String" />
+    <property name="Bairro" column="BAIRRO" caption="Bairro" width="450" type="String" />
+    <property name="MunicipioIbge" column="MUNICIPIO_IBGE" caption="Municipio Ibge" width="80" type="Integer" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="Fone1" column="FONE1" caption="Fone1" width="112" type="String" />
+    <property name="Fone2" column="FONE2" caption="Fone2" width="112" type="String" />
+    <property name="Email" column="EMAIL" caption="Email" width="450" type="String" />
+    <property name="TipoSindicato" column="TIPO_SINDICATO" caption="Tipo Sindicato" width="8" type="String" />
+    <property name="DataBase" column="DATA_BASE" caption="Data Base" width="80" type="Date" />
+    <property name="PisoSalarial" column="PISO_SALARIAL" caption="Piso Salarial" width="168" type="FMTBcdField" />
+    <property name="Cnpj" column="CNPJ" caption="Cnpj" width="112" type="String" />
+    <property name="ClassificacaoContabilConta" column="CLASSIFICACAO_CONTABIL_CONTA" caption="Classificacao Contabil Conta" width="240" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

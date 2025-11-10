@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FolhaInssRetencaoVO" table="folha_inss_retencao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">folha_inss_retencao</param>
+      </generator>
+    </id>
+
+    <property name="IdFolhaInss" column="ID_FOLHA_INSS" caption="Id Folha Inss" width="80" type="Integer" />
+    <property name="IdFolhaInssServico" column="ID_FOLHA_INSS_SERVICO" caption="Id Folha Inss Servico" width="80" type="Integer" />
+    <property name="ValorMensal" column="VALOR_MENSAL" caption="Valor Mensal" width="168" type="FMTBcdField" />
+    <property name="Valor13" column="VALOR_13" caption="Valor 13" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

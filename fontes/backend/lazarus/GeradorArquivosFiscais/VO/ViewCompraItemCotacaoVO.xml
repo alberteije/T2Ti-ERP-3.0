@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewCompraItemCotacaoVO" table="view_compra_item_cotacao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_compra_item_cotacao</param>
+      </generator>
+    </id>
+
+    <property name="IdCotacao" column="ID_COTACAO" caption="Id Cotacao" width="80" type="Integer" />
+    <property name="IdCompraFornecedorCotacao" column="ID_COMPRA_FORNECEDOR_COTACAO" caption="Id Compra Fornecedor Cotacao" width="80" type="Integer" />
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="168" type="FMTBcdField" />
+    <property name="QuantidadePedida" column="QUANTIDADE_PEDIDA" caption="Quantidade Pedida" width="168" type="FMTBcdField" />
+    <property name="ValorUnitario" column="VALOR_UNITARIO" caption="Valor Unitario" width="168" type="FMTBcdField" />
+    <property name="ValorSubtotal" column="VALOR_SUBTOTAL" caption="Valor Subtotal" width="168" type="FMTBcdField" />
+    <property name="TaxaDesconto" column="TAXA_DESCONTO" caption="Taxa Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorDesconto" column="VALOR_DESCONTO" caption="Valor Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorTotal" column="VALOR_TOTAL" caption="Valor Total" width="168" type="FMTBcdField" />
+    <property name="Produto.nome" column="PRODUTO.NOME" caption="Produto.nome" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

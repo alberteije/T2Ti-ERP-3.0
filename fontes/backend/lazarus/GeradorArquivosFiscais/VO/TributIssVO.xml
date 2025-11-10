@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="TributIssVO" table="tribut_iss" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">tribut_iss</param>
+      </generator>
+    </id>
+
+    <property name="IdTributOperacaoFiscal" column="ID_TRIBUT_OPERACAO_FISCAL" caption="Id Tribut Operacao Fiscal" width="80" type="Integer" />
+    <property name="ModalidadeBaseCalculo" column="MODALIDADE_BASE_CALCULO" caption="Modalidade Base Calculo" width="8" type="String" />
+    <property name="PorcentoBaseCalculo" column="PORCENTO_BASE_CALCULO" caption="Porcento Base Calculo" width="168" type="FMTBcdField" />
+    <property name="AliquotaPorcento" column="ALIQUOTA_PORCENTO" caption="Aliquota Porcento" width="168" type="FMTBcdField" />
+    <property name="AliquotaUnidade" column="ALIQUOTA_UNIDADE" caption="Aliquota Unidade" width="168" type="FMTBcdField" />
+    <property name="ValorPrecoMaximo" column="VALOR_PRECO_MAXIMO" caption="Valor Preco Maximo" width="168" type="FMTBcdField" />
+    <property name="ValorPautaFiscal" column="VALOR_PAUTA_FISCAL" caption="Valor Pauta Fiscal" width="168" type="FMTBcdField" />
+    <property name="ItemListaServico" column="ITEM_LISTA_SERVICO" caption="Item Lista Servico" width="80" type="Integer" />
+    <property name="CodigoTributacao" column="CODIGO_TRIBUTACAO" caption="Codigo Tributacao" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="SocioParticipacaoSocietariaVO" table="socio_participacao_societaria" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">socio_participacao_societaria</param>
+      </generator>
+    </id>
+
+    <property name="IdSocio" column="ID_SOCIO" caption="Id Socio" width="80" type="Integer" />
+    <property name="Cnpj" column="CNPJ" caption="Cnpj" width="112" type="String" />
+    <property name="RazaoSocial" column="RAZAO_SOCIAL" caption="Razao Social" width="450" type="String" />
+    <property name="DataEntrada" column="DATA_ENTRADA" caption="Data Entrada" width="80" type="Date" />
+    <property name="DataSaida" column="DATA_SAIDA" caption="Data Saida" width="80" type="Date" />
+    <property name="Participacao" column="PARTICIPACAO" caption="Participacao" width="168" type="FMTBcdField" />
+    <property name="Dirigente" column="DIRIGENTE" caption="Dirigente" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EtiquetaFormatoPapelVO" table="etiqueta_formato_papel" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">etiqueta_formato_papel</param>
+      </generator>
+    </id>
+
+    <property name="Nome" column="NOME" caption="Nome" width="400" type="String" />
+    <property name="Altura" column="ALTURA" caption="Altura" width="80" type="Integer" />
+    <property name="Largura" column="LARGURA" caption="Largura" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

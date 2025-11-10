@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EncerraCentroResultadoVO" table="encerra_centro_resultado" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">encerra_centro_resultado</param>
+      </generator>
+    </id>
+
+    <property name="IdCentroResultado" column="ID_CENTRO_RESULTADO" caption="Id Centro Resultado" width="80" type="Integer" />
+    <property name="Competencia" column="COMPETENCIA" caption="Competencia" width="56" type="String" />
+    <property name="ValorTotal" column="VALOR_TOTAL" caption="Valor Total" width="168" type="FMTBcdField" />
+    <property name="ValorSubRateio" column="VALOR_SUB_RATEIO" caption="Valor Sub Rateio" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

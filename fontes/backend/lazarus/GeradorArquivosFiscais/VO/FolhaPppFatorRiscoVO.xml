@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FolhaPppFatorRiscoVO" table="folha_ppp_fator_risco" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">folha_ppp_fator_risco</param>
+      </generator>
+    </id>
+
+    <property name="IdFolhaPpp" column="ID_FOLHA_PPP" caption="Id Folha Ppp" width="80" type="Integer" />
+    <property name="DataInicio" column="DATA_INICIO" caption="Data Inicio" width="80" type="Date" />
+    <property name="DataFim" column="DATA_FIM" caption="Data Fim" width="80" type="Date" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="8" type="String" />
+    <property name="FatorRisco" column="FATOR_RISCO" caption="Fator Risco" width="320" type="String" />
+    <property name="Intensidade" column="INTENSIDADE" caption="Intensidade" width="120" type="String" />
+    <property name="TecnicaUtilizada" column="TECNICA_UTILIZADA" caption="Tecnica Utilizada" width="320" type="String" />
+    <property name="EpcEficaz" column="EPC_EFICAZ" caption="Epc Eficaz" width="8" type="String" />
+    <property name="EpiEficaz" column="EPI_EFICAZ" caption="Epi Eficaz" width="8" type="String" />
+    <property name="CaEpi" column="CA_EPI" caption="Ca Epi" width="80" type="Integer" />
+    <property name="AtendimentoNr061" column="ATENDIMENTO_NR06_1" caption="Atendimento Nr06 1" width="8" type="String" />
+    <property name="AtendimentoNr062" column="ATENDIMENTO_NR06_2" caption="Atendimento Nr06 2" width="8" type="String" />
+    <property name="AtendimentoNr063" column="ATENDIMENTO_NR06_3" caption="Atendimento Nr06 3" width="8" type="String" />
+    <property name="AtendimentoNr064" column="ATENDIMENTO_NR06_4" caption="Atendimento Nr06 4" width="8" type="String" />
+    <property name="AtendimentoNr065" column="ATENDIMENTO_NR06_5" caption="Atendimento Nr06 5" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

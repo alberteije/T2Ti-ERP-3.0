@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="SocioVO" table="socio" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">socio</param>
+      </generator>
+    </id>
+
+    <property name="IdQuadroSocietario" column="ID_QUADRO_SOCIETARIO" caption="Id Quadro Societario" width="80" type="Integer" />
+    <property name="Logradouro" column="LOGRADOURO" caption="Logradouro" width="450" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="Integer" />
+    <property name="Complemento" column="COMPLEMENTO" caption="Complemento" width="450" type="String" />
+    <property name="Bairro" column="BAIRRO" caption="Bairro" width="450" type="String" />
+    <property name="Municipio" column="MUNICIPIO" caption="Municipio" width="450" type="String" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="Cep" column="CEP" caption="Cep" width="64" type="String" />
+    <property name="Fone" column="FONE" caption="Fone" width="80" type="String" />
+    <property name="Celular" column="CELULAR" caption="Celular" width="80" type="String" />
+    <property name="Email" column="EMAIL" caption="Email" width="450" type="String" />
+    <property name="Participacao" column="PARTICIPACAO" caption="Participacao" width="168" type="FMTBcdField" />
+    <property name="Quotas" column="QUOTAS" caption="Quotas" width="80" type="Integer" />
+    <property name="Integralizar" column="INTEGRALIZAR" caption="Integralizar" width="168" type="FMTBcdField" />
+    <property name="DataIngresso" column="DATA_INGRESSO" caption="Data Ingresso" width="80" type="Date" />
+    <property name="DataSaida" column="DATA_SAIDA" caption="Data Saida" width="80" type="Date" />
+
+  </class>
+</t2ti-orm-mapping>

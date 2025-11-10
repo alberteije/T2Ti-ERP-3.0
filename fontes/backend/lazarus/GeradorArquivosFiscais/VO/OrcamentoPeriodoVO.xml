@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="OrcamentoPeriodoVO" table="orcamento_periodo" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">orcamento_periodo</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Periodo" column="PERIODO" caption="Periodo" width="16" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="240" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CargoVO" table="cargo" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cargo</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="400" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+    <property name="Salario" column="SALARIO" caption="Salario" width="168" type="FMTBcdField" />
+    <property name="Cbo1994" column="CBO_1994" caption="Cbo 1994" width="80" type="String" />
+    <property name="Cbo2002" column="CBO_2002" caption="Cbo 2002" width="80" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

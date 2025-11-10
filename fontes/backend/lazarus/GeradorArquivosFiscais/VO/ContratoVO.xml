@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContratoVO" table="contrato" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contrato</param>
+      </generator>
+    </id>
+
+    <property name="IdSolicitacaoServico" column="ID_SOLICITACAO_SERVICO" caption="Id Solicitacao Servico" width="80" type="Integer" />
+    <property name="IdTipoContrato" column="ID_TIPO_CONTRATO" caption="Id Tipo Contrato" width="80" type="Integer" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="400" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+    <property name="DataCadastro" column="DATA_CADASTRO" caption="Data Cadastro" width="80" type="Date" />
+    <property name="DataInicioVigencia" column="DATA_INICIO_VIGENCIA" caption="Data Inicio Vigencia" width="80" type="Date" />
+    <property name="DataFimVigencia" column="DATA_FIM_VIGENCIA" caption="Data Fim Vigencia" width="80" type="Date" />
+    <property name="DiaFaturamento" column="DIA_FATURAMENTO" caption="Dia Faturamento" width="16" type="String" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+    <property name="QuantidadeParcelas" column="QUANTIDADE_PARCELAS" caption="Quantidade Parcelas" width="80" type="Integer" />
+    <property name="IntervaloEntreParcelas" column="INTERVALO_ENTRE_PARCELAS" caption="Intervalo Entre Parcelas" width="80" type="Integer" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+    <property name="ClassificacaoContabilConta" column="CLASSIFICACAO_CONTABIL_CONTA" caption="Classificacao Contabil Conta" width="240" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

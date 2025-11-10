@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="TransportadoraMunicipioVO" table="transportadora_municipio" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">transportadora_municipio</param>
+      </generator>
+    </id>
+
+    <property name="IdMunicipio" column="ID_MUNICIPIO" caption="Id Municipio" width="80" type="Integer" />
+    <property name="IdTransportadora" column="ID_TRANSPORTADORA" caption="Id Transportadora" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

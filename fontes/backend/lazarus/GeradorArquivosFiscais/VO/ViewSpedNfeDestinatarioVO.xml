@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewSpedNfeDestinatarioVO" table="view_sped_nfe_destinatario" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_sped_nfe_destinatario</param>
+      </generator>
+    </id>
+
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="CpfCnpj" column="CPF_CNPJ" caption="Cpf Cnpj" width="112" type="String" />
+    <property name="InscricaoEstadual" column="INSCRICAO_ESTADUAL" caption="Inscricao Estadual" width="112" type="String" />
+    <property name="CodigoMunicipio" column="CODIGO_MUNICIPIO" caption="Codigo Municipio" width="80" type="Integer" />
+    <property name="Suframa" column="SUFRAMA" caption="Suframa" width="80" type="Integer" />
+    <property name="Logradouro" column="LOGRADOURO" caption="Logradouro" width="450" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="450" type="String" />
+    <property name="Complemento" column="COMPLEMENTO" caption="Complemento" width="450" type="String" />
+    <property name="Bairro" column="BAIRRO" caption="Bairro" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

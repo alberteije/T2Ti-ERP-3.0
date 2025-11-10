@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PatrimIndiceAtualizacaoVO" table="patrim_indice_atualizacao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">patrim_indice_atualizacao</param>
+      </generator>
+    </id>
+
+    <property name="DataIndice" column="DATA_INDICE" caption="Data Indice" width="80" type="Date" />
+    <property name="Nome" column="NOME" caption="Nome" width="80" type="String" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+    <property name="ValorAlternativo" column="VALOR_ALTERNATIVO" caption="Valor Alternativo" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

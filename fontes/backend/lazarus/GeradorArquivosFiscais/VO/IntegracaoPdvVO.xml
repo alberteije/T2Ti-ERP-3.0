@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="IntegracaoPdvVO" table="integracao_pdv" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">integracao_pdv</param>
+      </generator>
+    </id>
+
+    <property name="Identifica" column="IDENTIFICA" caption="Identifica" width="400" type="String" />
+    <property name="DataIntegracao" column="DATA_INTEGRACAO" caption="Data Integracao" width="80" type="Date" />
+    <property name="HoraIntegracao" column="HORA_INTEGRACAO" caption="Hora Integracao" width="64" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

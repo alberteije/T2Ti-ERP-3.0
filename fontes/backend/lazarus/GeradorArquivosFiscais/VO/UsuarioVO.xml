@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="UsuarioVO" table="usuario" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">usuario</param>
+      </generator>
+    </id>
+
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="IdPapel" column="ID_PAPEL" caption="Id Papel" width="80" type="Integer" />
+    <property name="Login" column="LOGIN" caption="Login" width="160" type="String" />
+    <property name="Senha" column="SENHA" caption="Senha" width="320" type="String" />
+    <property name="DataCadastro" column="DATA_CADASTRO" caption="Data Cadastro" width="80" type="Date" />
+    <property name="Administrador" column="ADMINISTRADOR" caption="Administrador" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

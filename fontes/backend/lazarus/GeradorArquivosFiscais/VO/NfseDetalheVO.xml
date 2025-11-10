@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfseDetalheVO" table="nfse_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfse_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdNfseListaServico" column="ID_NFSE_LISTA_SERVICO" caption="Id Nfse Lista Servico" width="80" type="Integer" />
+    <property name="IdNfseCabecalho" column="ID_NFSE_CABECALHO" caption="Id Nfse Cabecalho" width="80" type="Integer" />
+    <property name="ValorServicos" column="VALOR_SERVICOS" caption="Valor Servicos" width="168" type="FMTBcdField" />
+    <property name="ValorDeducoes" column="VALOR_DEDUCOES" caption="Valor Deducoes" width="168" type="FMTBcdField" />
+    <property name="ValorPis" column="VALOR_PIS" caption="Valor Pis" width="168" type="FMTBcdField" />
+    <property name="ValorCofins" column="VALOR_COFINS" caption="Valor Cofins" width="168" type="FMTBcdField" />
+    <property name="ValorInss" column="VALOR_INSS" caption="Valor Inss" width="168" type="FMTBcdField" />
+    <property name="ValorIr" column="VALOR_IR" caption="Valor Ir" width="168" type="FMTBcdField" />
+    <property name="ValorCsll" column="VALOR_CSLL" caption="Valor Csll" width="168" type="FMTBcdField" />
+    <property name="CodigoCnae" column="CODIGO_CNAE" caption="Codigo Cnae" width="56" type="String" />
+    <property name="CodigoTributacaoMunicipio" column="CODIGO_TRIBUTACAO_MUNICIPIO" caption="Codigo Tributacao Municipio" width="160" type="String" />
+    <property name="ValorBaseCalculo" column="VALOR_BASE_CALCULO" caption="Valor Base Calculo" width="168" type="FMTBcdField" />
+    <property name="Aliquota" column="ALIQUOTA" caption="Aliquota" width="168" type="FMTBcdField" />
+    <property name="ValorIss" column="VALOR_ISS" caption="Valor Iss" width="168" type="FMTBcdField" />
+    <property name="ValorLiquido" column="VALOR_LIQUIDO" caption="Valor Liquido" width="168" type="FMTBcdField" />
+    <property name="OutrasRetencoes" column="OUTRAS_RETENCOES" caption="Outras Retencoes" width="168" type="FMTBcdField" />
+    <property name="ValorCredito" column="VALOR_CREDITO" caption="Valor Credito" width="168" type="FMTBcdField" />
+    <property name="IssRetido" column="ISS_RETIDO" caption="Iss Retido" width="8" type="String" />
+    <property name="ValorIssRetido" column="VALOR_ISS_RETIDO" caption="Valor Iss Retido" width="168" type="FMTBcdField" />
+    <property name="ValorDescontoCondicionado" column="VALOR_DESCONTO_CONDICIONADO" caption="Valor Desconto Condicionado" width="168" type="FMTBcdField" />
+    <property name="ValorDescontoIncondicionado" column="VALOR_DESCONTO_INCONDICIONADO" caption="Valor Desconto Incondicionado" width="168" type="FMTBcdField" />
+    <property name="Discriminacao" column="DISCRIMINACAO" caption="Discriminacao" width="450" type="Memo" />
+    <property name="MunicipioPrestacao" column="MUNICIPIO_PRESTACAO" caption="Municipio Prestacao" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

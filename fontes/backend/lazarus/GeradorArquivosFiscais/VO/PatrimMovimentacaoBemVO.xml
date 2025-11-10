@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PatrimMovimentacaoBemVO" table="patrim_movimentacao_bem" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">patrim_movimentacao_bem</param>
+      </generator>
+    </id>
+
+    <property name="IdPatrimBem" column="ID_PATRIM_BEM" caption="Id Patrim Bem" width="80" type="Integer" />
+    <property name="IdPatrimTipoMovimentacao" column="ID_PATRIM_TIPO_MOVIMENTACAO" caption="Id Patrim Tipo Movimentacao" width="80" type="Integer" />
+    <property name="DataMovimentacao" column="DATA_MOVIMENTACAO" caption="Data Movimentacao" width="80" type="Date" />
+    <property name="Responsavel" column="RESPONSAVEL" caption="Responsavel" width="400" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

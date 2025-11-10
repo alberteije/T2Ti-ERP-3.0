@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EcfFechamentoVO" table="ecf_fechamento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ecf_fechamento</param>
+      </generator>
+    </id>
+
+    <property name="NomeCaixa" column="NOME_CAIXA" caption="Nome Caixa" width="240" type="String" />
+    <property name="IdGeradoCaixa" column="ID_GERADO_CAIXA" caption="Id Gerado Caixa" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdEcfMovimento" column="ID_ECF_MOVIMENTO" caption="Id Ecf Movimento" width="80" type="Integer" />
+    <property name="TipoPagamento" column="TIPO_PAGAMENTO" caption="Tipo Pagamento" width="160" type="String" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+    <property name="DataSincronizacao" column="DATA_SINCRONIZACAO" caption="Data Sincronizacao" width="80" type="Date" />
+    <property name="HoraSincronizacao" column="HORA_SINCRONIZACAO" caption="Hora Sincronizacao" width="64" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

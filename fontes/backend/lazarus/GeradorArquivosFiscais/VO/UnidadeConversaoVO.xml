@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="UnidadeConversaoVO" table="unidade_conversao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">unidade_conversao</param>
+      </generator>
+    </id>
+
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="IdUnidadeProduto" column="ID_UNIDADE_PRODUTO" caption="Id Unidade Produto" width="80" type="Integer" />
+    <property name="Sigla" column="SIGLA" caption="Sigla" width="80" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+    <property name="FatorConversao" column="FATOR_CONVERSAO" caption="Fator Conversao" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

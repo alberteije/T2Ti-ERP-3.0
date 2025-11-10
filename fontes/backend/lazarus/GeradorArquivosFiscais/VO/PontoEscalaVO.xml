@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PontoEscalaVO" table="ponto_escala" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ponto_escala</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="400" type="String" />
+    <property name="DescontoHoraDia" column="DESCONTO_HORA_DIA" caption="Desconto Hora Dia" width="64" type="String" />
+    <property name="DescontoDsr" column="DESCONTO_DSR" caption="Desconto Dsr" width="64" type="String" />
+    <property name="CodigoHorarioDomingo" column="CODIGO_HORARIO_DOMINGO" caption="Codigo Horario Domingo" width="32" type="String" />
+    <property name="CodigoHorarioSegunda" column="CODIGO_HORARIO_SEGUNDA" caption="Codigo Horario Segunda" width="32" type="String" />
+    <property name="CodigoHorarioTerca" column="CODIGO_HORARIO_TERCA" caption="Codigo Horario Terca" width="32" type="String" />
+    <property name="CodigoHorarioQuarta" column="CODIGO_HORARIO_QUARTA" caption="Codigo Horario Quarta" width="32" type="String" />
+    <property name="CodigoHorarioQuinta" column="CODIGO_HORARIO_QUINTA" caption="Codigo Horario Quinta" width="32" type="String" />
+    <property name="CodigoHorarioSexta" column="CODIGO_HORARIO_SEXTA" caption="Codigo Horario Sexta" width="32" type="String" />
+    <property name="CodigoHorarioSabado" column="CODIGO_HORARIO_SABADO" caption="Codigo Horario Sabado" width="32" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

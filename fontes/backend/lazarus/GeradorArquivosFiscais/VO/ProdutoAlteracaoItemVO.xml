@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ProdutoAlteracaoItemVO" table="produto_alteracao_item" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">produto_alteracao_item</param>
+      </generator>
+    </id>
+
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="112" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="DataInicial" column="DATA_INICIAL" caption="Data Inicial" width="80" type="Date" />
+    <property name="DataFinal" column="DATA_FINAL" caption="Data Final" width="80" type="Date" />
+
+  </class>
+</t2ti-orm-mapping>

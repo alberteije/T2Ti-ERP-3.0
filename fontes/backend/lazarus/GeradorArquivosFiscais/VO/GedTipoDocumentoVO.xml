@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="GedTipoDocumentoVO" table="ged_tipo_documento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ged_tipo_documento</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="TamanhoMaximo" column="TAMANHO_MAXIMO" caption="Tamanho Maximo" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

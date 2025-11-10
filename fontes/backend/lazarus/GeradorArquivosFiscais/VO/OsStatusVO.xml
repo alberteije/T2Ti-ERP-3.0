@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="OsStatusVO" table="os_status" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">os_status</param>
+      </generator>
+    </id>
+
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="16" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

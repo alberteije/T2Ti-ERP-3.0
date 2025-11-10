@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="AgendaNotificacaoVO" table="agenda_notificacao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">agenda_notificacao</param>
+      </generator>
+    </id>
+
+    <property name="IdAgendaCompromisso" column="ID_AGENDA_COMPROMISSO" caption="Id Agenda Compromisso" width="80" type="Integer" />
+    <property name="DataNotificacao" column="DATA_NOTIFICACAO" caption="Data Notificacao" width="80" type="Date" />
+    <property name="Hora" column="HORA" caption="Hora" width="64" type="String" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

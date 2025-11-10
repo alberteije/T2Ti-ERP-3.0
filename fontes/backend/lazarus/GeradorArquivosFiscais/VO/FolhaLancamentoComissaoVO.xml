@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FolhaLancamentoComissaoVO" table="folha_lancamento_comissao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">folha_lancamento_comissao</param>
+      </generator>
+    </id>
+
+    <property name="IdVendedor" column="ID_VENDEDOR" caption="Id Vendedor" width="80" type="Integer" />
+    <property name="Competencia" column="COMPETENCIA" caption="Competencia" width="56" type="String" />
+    <property name="Vencimento" column="VENCIMENTO" caption="Vencimento" width="80" type="Date" />
+    <property name="BaseCalculo" column="BASE_CALCULO" caption="Base Calculo" width="168" type="FMTBcdField" />
+    <property name="ValorComissao" column="VALOR_COMISSAO" caption="Valor Comissao" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfseCabecalhoVO" table="nfse_cabecalho" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfse_cabecalho</param>
+      </generator>
+    </id>
+
+    <property name="IdOsAbertura" column="ID_OS_ABERTURA" caption="Id Os Abertura" width="80" type="Integer" />
+    <property name="IdCliente" column="ID_CLIENTE" caption="Id Cliente" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="120" type="String" />
+    <property name="CodigoVerificacao" column="CODIGO_VERIFICACAO" caption="Codigo Verificacao" width="72" type="String" />
+    <property name="DataHoraEmissao" column="DATA_HORA_EMISSAO" caption="Data Hora Emissao" width="272" type="SQLTimeStamp" />
+    <property name="Competencia" column="COMPETENCIA" caption="Competencia" width="48" type="String" />
+    <property name="NumeroSubstituida" column="NUMERO_SUBSTITUIDA" caption="Numero Substituida" width="120" type="String" />
+    <property name="NaturezaOperacao" column="NATUREZA_OPERACAO" caption="Natureza Operacao" width="80" type="Integer" />
+    <property name="RegimeEspecialTributacao" column="REGIME_ESPECIAL_TRIBUTACAO" caption="Regime Especial Tributacao" width="80" type="Integer" />
+    <property name="OptanteSimplesNacional" column="OPTANTE_SIMPLES_NACIONAL" caption="Optante Simples Nacional" width="8" type="String" />
+    <property name="IncentivadorCultural" column="INCENTIVADOR_CULTURAL" caption="Incentivador Cultural" width="8" type="String" />
+    <property name="NumeroRps" column="NUMERO_RPS" caption="Numero Rps" width="120" type="String" />
+    <property name="SerieRps" column="SERIE_RPS" caption="Serie Rps" width="40" type="String" />
+    <property name="TipoRps" column="TIPO_RPS" caption="Tipo Rps" width="80" type="Integer" />
+    <property name="DataEmissaoRps" column="DATA_EMISSAO_RPS" caption="Data Emissao Rps" width="80" type="Date" />
+    <property name="OutrasInformacoes" column="OUTRAS_INFORMACOES" caption="Outras Informacoes" width="450" type="Memo" />
+    <property name="CodigoObra" column="CODIGO_OBRA" caption="Codigo Obra" width="120" type="String" />
+    <property name="NumeroArt" column="NUMERO_ART" caption="Numero Art" width="120" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

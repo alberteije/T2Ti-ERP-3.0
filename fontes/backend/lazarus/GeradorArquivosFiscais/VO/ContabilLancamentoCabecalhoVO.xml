@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContabilLancamentoCabecalhoVO" table="contabil_lancamento_cabecalho" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contabil_lancamento_cabecalho</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdContabilLote" column="ID_CONTABIL_LOTE" caption="Id Contabil Lote" width="80" type="Integer" />
+    <property name="DataLancamento" column="DATA_LANCAMENTO" caption="Data Lancamento" width="80" type="Date" />
+    <property name="DataInclusao" column="DATA_INCLUSAO" caption="Data Inclusao" width="80" type="Date" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="32" type="String" />
+    <property name="Liberado" column="LIBERADO" caption="Liberado" width="8" type="String" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

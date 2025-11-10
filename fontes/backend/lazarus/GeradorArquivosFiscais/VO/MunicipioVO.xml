@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="MunicipioVO" table="municipio" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">municipio</param>
+      </generator>
+    </id>
+
+    <property name="IdUf" column="ID_UF" caption="Id Uf" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="CodigoIbge" column="CODIGO_IBGE" caption="Codigo Ibge" width="80" type="Integer" />
+    <property name="CodigoReceitaFederal" column="CODIGO_RECEITA_FEDERAL" caption="Codigo Receita Federal" width="80" type="Integer" />
+    <property name="CodigoEstadual" column="CODIGO_ESTADUAL" caption="Codigo Estadual" width="80" type="Integer" />
+    <property name="UfSigla" column="UF_SIGLA" caption="Uf Sigla" width="16" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

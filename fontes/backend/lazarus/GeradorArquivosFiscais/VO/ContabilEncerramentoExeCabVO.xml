@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContabilEncerramentoExeCabVO" table="contabil_encerramento_exe_cab" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contabil_encerramento_exe_cab</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="DataInicio" column="DATA_INICIO" caption="Data Inicio" width="80" type="Date" />
+    <property name="DataFim" column="DATA_FIM" caption="Data Fim" width="80" type="Date" />
+    <property name="DataInclusao" column="DATA_INCLUSAO" caption="Data Inclusao" width="80" type="Date" />
+    <property name="Motivo" column="MOTIVO" caption="Motivo" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="AgenciaBancoVO" table="agencia_banco" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">agencia_banco</param>
+      </generator>
+    </id>
+
+    <property name="IdBanco" column="ID_BANCO" caption="Id Banco" width="80" type="Integer" />
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="80" type="String" />
+    <property name="Digito" column="DIGITO" caption="Digito" width="8" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Logradouro" column="LOGRADOURO" caption="Logradouro" width="450" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="String" />
+    <property name="Cep" column="CEP" caption="Cep" width="64" type="String" />
+    <property name="Bairro" column="BAIRRO" caption="Bairro" width="450" type="String" />
+    <property name="Municipio" column="MUNICIPIO" caption="Municipio" width="450" type="String" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="Telefone" column="TELEFONE" caption="Telefone" width="112" type="String" />
+    <property name="Gerente" column="GERENTE" caption="Gerente" width="240" type="String" />
+    <property name="Contato" column="CONTATO" caption="Contato" width="240" type="String" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

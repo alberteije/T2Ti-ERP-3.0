@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PatrimGrupoBemVO" table="patrim_grupo_bem" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">patrim_grupo_bem</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="24" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="400" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+    <property name="ContaAtivoImobilizado" column="CONTA_ATIVO_IMOBILIZADO" caption="Conta Ativo Imobilizado" width="240" type="String" />
+    <property name="ContaDepreciacaoAcumulada" column="CONTA_DEPRECIACAO_ACUMULADA" caption="Conta Depreciacao Acumulada" width="240" type="String" />
+    <property name="ContaDespesaDepreciacao" column="CONTA_DESPESA_DEPRECIACAO" caption="Conta Despesa Depreciacao" width="240" type="String" />
+    <property name="CodigoHistorico" column="CODIGO_HISTORICO" caption="Codigo Historico" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

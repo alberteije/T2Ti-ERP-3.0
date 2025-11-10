@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PreVendaCabecalhoVO" table="pre_venda_cabecalho" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">pre_venda_cabecalho</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdPessoa" column="ID_PESSOA" caption="Id Pessoa" width="80" type="Integer" />
+    <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
+    <property name="HoraEmissao" column="HORA_EMISSAO" caption="Hora Emissao" width="64" type="String" />
+    <property name="Situacao" column="SITUACAO" caption="Situacao" width="8" type="String" />
+    <property name="Ccf" column="CCF" caption="Ccf" width="80" type="Integer" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+    <property name="NomeDestinatario" column="NOME_DESTINATARIO" caption="Nome Destinatario" width="450" type="String" />
+    <property name="CpfCnpjDestinatario" column="CPF_CNPJ_DESTINATARIO" caption="Cpf Cnpj Destinatario" width="112" type="String" />
+    <property name="Subtotal" column="SUBTOTAL" caption="Subtotal" width="168" type="FMTBcdField" />
+    <property name="Desconto" column="DESCONTO" caption="Desconto" width="168" type="FMTBcdField" />
+    <property name="Acrescimo" column="ACRESCIMO" caption="Acrescimo" width="168" type="FMTBcdField" />
+    <property name="TaxaAcrescimo" column="TAXA_ACRESCIMO" caption="Taxa Acrescimo" width="168" type="FMTBcdField" />
+    <property name="TaxaDesconto" column="TAXA_DESCONTO" caption="Taxa Desconto" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

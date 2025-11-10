@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ReuniaoSalaVO" table="reuniao_sala" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">reuniao_sala</param>
+      </generator>
+    </id>
+
+    <property name="Predio" column="PREDIO" caption="Predio" width="450" type="String" />
+    <property name="Andar" column="ANDAR" caption="Andar" width="80" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

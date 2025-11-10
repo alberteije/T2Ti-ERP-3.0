@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="VendaCondicoesParcelasVO" table="venda_condicoes_parcelas" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">venda_condicoes_parcelas</param>
+      </generator>
+    </id>
+
+    <property name="IdVendaCondicoesPagamento" column="ID_VENDA_CONDICOES_PAGAMENTO" caption="Id Venda Condicoes Pagamento" width="80" type="Integer" />
+    <property name="Parcela" column="PARCELA" caption="Parcela" width="80" type="Integer" />
+    <property name="Dias" column="DIAS" caption="Dias" width="80" type="Integer" />
+    <property name="Taxa" column="TAXA" caption="Taxa" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

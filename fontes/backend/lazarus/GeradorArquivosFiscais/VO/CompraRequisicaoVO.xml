@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CompraRequisicaoVO" table="compra_requisicao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">compra_requisicao</param>
+      </generator>
+    </id>
+
+    <property name="IdCompraTipoRequisicao" column="ID_COMPRA_TIPO_REQUISICAO" caption="Id Compra Tipo Requisicao" width="80" type="Integer" />
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="DataRequisicao" column="DATA_REQUISICAO" caption="Data Requisicao" width="80" type="Date" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

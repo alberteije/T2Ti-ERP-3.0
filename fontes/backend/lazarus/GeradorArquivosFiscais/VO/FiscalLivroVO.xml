@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FiscalLivroVO" table="fiscal_livro" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fiscal_livro</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="400" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="OsAberturaEquipamentoVO" table="os_abertura_equipamento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">os_abertura_equipamento</param>
+      </generator>
+    </id>
+
+    <property name="IdOsEquipamento" column="ID_OS_EQUIPAMENTO" caption="Id Os Equipamento" width="80" type="Integer" />
+    <property name="IdOsAbertura" column="ID_OS_ABERTURA" caption="Id Os Abertura" width="80" type="Integer" />
+    <property name="NumeroSerie" column="NUMERO_SERIE" caption="Numero Serie" width="400" type="String" />
+    <property name="TipoCobertura" column="TIPO_COBERTURA" caption="Tipo Cobertura" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

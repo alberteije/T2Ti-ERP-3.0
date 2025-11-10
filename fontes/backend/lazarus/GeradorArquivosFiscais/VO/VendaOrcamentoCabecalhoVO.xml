@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="VendaOrcamentoCabecalhoVO" table="venda_orcamento_cabecalho" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">venda_orcamento_cabecalho</param>
+      </generator>
+    </id>
+
+    <property name="IdVendaCondicoesPagamento" column="ID_VENDA_CONDICOES_PAGAMENTO" caption="Id Venda Condicoes Pagamento" width="80" type="Integer" />
+    <property name="IdVendedor" column="ID_VENDEDOR" caption="Id Vendedor" width="80" type="Integer" />
+    <property name="IdTransportadora" column="ID_TRANSPORTADORA" caption="Id Transportadora" width="80" type="Integer" />
+    <property name="IdCliente" column="ID_CLIENTE" caption="Id Cliente" width="80" type="Integer" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="8" type="String" />
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="160" type="String" />
+    <property name="DataCadastro" column="DATA_CADASTRO" caption="Data Cadastro" width="80" type="Date" />
+    <property name="DataEntrega" column="DATA_ENTREGA" caption="Data Entrega" width="80" type="Date" />
+    <property name="Validade" column="VALIDADE" caption="Validade" width="80" type="Date" />
+    <property name="TipoFrete" column="TIPO_FRETE" caption="Tipo Frete" width="8" type="String" />
+    <property name="ValorSubtotal" column="VALOR_SUBTOTAL" caption="Valor Subtotal" width="168" type="FMTBcdField" />
+    <property name="ValorFrete" column="VALOR_FRETE" caption="Valor Frete" width="168" type="FMTBcdField" />
+    <property name="TaxaComissao" column="TAXA_COMISSAO" caption="Taxa Comissao" width="168" type="FMTBcdField" />
+    <property name="ValorComissao" column="VALOR_COMISSAO" caption="Valor Comissao" width="168" type="FMTBcdField" />
+    <property name="TaxaDesconto" column="TAXA_DESCONTO" caption="Taxa Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorDesconto" column="VALOR_DESCONTO" caption="Valor Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorTotal" column="VALOR_TOTAL" caption="Valor Total" width="168" type="FMTBcdField" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+    <property name="Situacao" column="SITUACAO" caption="Situacao" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

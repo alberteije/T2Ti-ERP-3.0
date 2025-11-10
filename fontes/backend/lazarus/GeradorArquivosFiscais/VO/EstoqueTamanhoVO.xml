@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EstoqueTamanhoVO" table="estoque_tamanho" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">estoque_tamanho</param>
+      </generator>
+    </id>
+
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="32" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="160" type="String" />
+    <property name="Altura" column="ALTURA" caption="Altura" width="168" type="FMTBcdField" />
+    <property name="Comprimento" column="COMPRIMENTO" caption="Comprimento" width="168" type="FMTBcdField" />
+    <property name="Largura" column="LARGURA" caption="Largura" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

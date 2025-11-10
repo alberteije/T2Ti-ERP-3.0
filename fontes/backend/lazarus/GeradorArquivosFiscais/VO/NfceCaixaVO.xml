@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfceCaixaVO" table="nfce_caixa" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfce_caixa</param>
+      </generator>
+    </id>
+
+    <property name="Nome" column="NOME" caption="Nome" width="240" type="String" />
+    <property name="DataCadastro" column="DATA_CADASTRO" caption="Data Cadastro" width="80" type="Date" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="SimplesNacionalCabecalhoVO" table="simples_nacional_cabecalho" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">simples_nacional_cabecalho</param>
+      </generator>
+    </id>
+
+    <property name="VigenciaInicial" column="VIGENCIA_INICIAL" caption="Vigencia Inicial" width="80" type="Date" />
+    <property name="VigenciaFinal" column="VIGENCIA_FINAL" caption="Vigencia Final" width="80" type="Date" />
+    <property name="Anexo" column="ANEXO" caption="Anexo" width="80" type="String" />
+    <property name="Tabela" column="TABELA" caption="Tabela" width="80" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

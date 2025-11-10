@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContabilLoteVO" table="contabil_lote" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contabil_lote</param>
+      </generator>
+    </id>
+
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+    <property name="Liberado" column="LIBERADO" caption="Liberado" width="8" type="String" />
+    <property name="DataInclusao" column="DATA_INCLUSAO" caption="Data Inclusao" width="80" type="Date" />
+    <property name="DataLiberacao" column="DATA_LIBERACAO" caption="Data Liberacao" width="80" type="Date" />
+    <property name="Programado" column="PROGRAMADO" caption="Programado" width="8" type="String" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

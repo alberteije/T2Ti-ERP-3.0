@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfceFechamentoVO" table="nfce_fechamento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfce_fechamento</param>
+      </generator>
+    </id>
+
+    <property name="IdNfceMovimento" column="ID_NFCE_MOVIMENTO" caption="Id Nfce Movimento" width="80" type="Integer" />
+    <property name="TipoPagamento" column="TIPO_PAGAMENTO" caption="Tipo Pagamento" width="160" type="String" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

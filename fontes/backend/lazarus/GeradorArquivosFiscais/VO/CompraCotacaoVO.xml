@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CompraCotacaoVO" table="compra_cotacao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">compra_cotacao</param>
+      </generator>
+    </id>
+
+    <property name="DataCotacao" column="DATA_COTACAO" caption="Data Cotacao" width="80" type="Date" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+    <property name="Situacao" column="SITUACAO" caption="Situacao" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

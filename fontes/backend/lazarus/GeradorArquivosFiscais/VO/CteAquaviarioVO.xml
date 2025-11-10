@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteAquaviarioVO" table="cte_aquaviario" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_aquaviario</param>
+      </generator>
+    </id>
+
+    <property name="IdCteCabecalho" column="ID_CTE_CABECALHO" caption="Id Cte Cabecalho" width="80" type="Integer" />
+    <property name="ValorPrestacao" column="VALOR_PRESTACAO" caption="Valor Prestacao" width="168" type="FMTBcdField" />
+    <property name="Afrmm" column="AFRMM" caption="Afrmm" width="168" type="FMTBcdField" />
+    <property name="NumeroBooking" column="NUMERO_BOOKING" caption="Numero Booking" width="80" type="String" />
+    <property name="NumeroControle" column="NUMERO_CONTROLE" caption="Numero Controle" width="80" type="String" />
+    <property name="IdNavio" column="ID_NAVIO" caption="Id Navio" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

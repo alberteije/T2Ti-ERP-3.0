@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewPessoaColaboradorVO" table="view_pessoa_colaborador" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_pessoa_colaborador</param>
+      </generator>
+    </id>
+
+    <property name="IdSindicato" column="ID_SINDICATO" caption="Id Sindicato" width="80" type="Integer" />
+    <property name="IdTipoAdmissao" column="ID_TIPO_ADMISSAO" caption="Id Tipo Admissao" width="80" type="Integer" />
+    <property name="IdSituacaoColaborador" column="ID_SITUACAO_COLABORADOR" caption="Id Situacao Colaborador" width="80" type="Integer" />
+    <property name="IdPessoa" column="ID_PESSOA" caption="Id Pessoa" width="80" type="Integer" />
+    <property name="IdTipoColaborador" column="ID_TIPO_COLABORADOR" caption="Id Tipo Colaborador" width="80" type="Integer" />
+    <property name="IdNivelFormacao" column="ID_NIVEL_FORMACAO" caption="Id Nivel Formacao" width="80" type="Integer" />
+    <property name="IdCargo" column="ID_CARGO" caption="Id Cargo" width="80" type="Integer" />
+    <property name="IdSetor" column="ID_SETOR" caption="Id Setor" width="80" type="Integer" />
+    <property name="Matricula" column="MATRICULA" caption="Matricula" width="80" type="String" />
+    <property name="DataCadastro" column="DATA_CADASTRO" caption="Data Cadastro" width="80" type="Date" />
+    <property name="DataAdmissao" column="DATA_ADMISSAO" caption="Data Admissao" width="80" type="Date" />
+    <property name="PisNumero" column="PIS_NUMERO" caption="Pis Numero" width="96" type="String" />
+    <property name="CodigoTurmaPonto" column="CODIGO_TURMA_PONTO" caption="Codigo Turma Ponto" width="40" type="String" />
+    <property name="Logradouro" column="LOGRADOURO" caption="Logradouro" width="450" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="String" />
+    <property name="Complemento" column="COMPLEMENTO" caption="Complemento" width="450" type="String" />
+    <property name="Bairro" column="BAIRRO" caption="Bairro" width="450" type="String" />
+    <property name="Cidade" column="CIDADE" caption="Cidade" width="450" type="String" />
+    <property name="Cep" column="CEP" caption="Cep" width="64" type="String" />
+    <property name="MunicipioIbge" column="MUNICIPIO_IBGE" caption="Municipio Ibge" width="80" type="Integer" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="Fone" column="FONE" caption="Fone" width="112" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="8" type="String" />
+    <property name="Email" column="EMAIL" caption="Email" width="450" type="String" />
+    <property name="Site" column="SITE" caption="Site" width="450" type="String" />
+    <property name="CpfCnpj" column="CPF_CNPJ" caption="Cpf Cnpj" width="112" type="String" />
+    <property name="RgIe" column="RG_IE" caption="Rg Ie" width="240" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

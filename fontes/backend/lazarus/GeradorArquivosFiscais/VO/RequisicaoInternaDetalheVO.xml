@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="RequisicaoInternaDetalheVO" table="requisicao_interna_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">requisicao_interna_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdReqInternaCabecalho" column="ID_REQ_INTERNA_CABECALHO" caption="Id Req Interna Cabecalho" width="80" type="Integer" />
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

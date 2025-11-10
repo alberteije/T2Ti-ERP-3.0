@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteMultimodalVO" table="cte_multimodal" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_multimodal</param>
+      </generator>
+    </id>
+
+    <property name="IdCteCabecalho" column="ID_CTE_CABECALHO" caption="Id Cte Cabecalho" width="80" type="Integer" />
+    <property name="Cotm" column="COTM" caption="Cotm" width="160" type="String" />
+    <property name="IndicadorNegociavel" column="INDICADOR_NEGOCIAVEL" caption="Indicador Negociavel" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

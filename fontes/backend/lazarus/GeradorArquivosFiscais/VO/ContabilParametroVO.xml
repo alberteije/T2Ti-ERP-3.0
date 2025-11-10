@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContabilParametroVO" table="contabil_parametro" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contabil_parametro</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Mascara" column="MASCARA" caption="Mascara" width="240" type="String" />
+    <property name="Niveis" column="NIVEIS" caption="Niveis" width="80" type="Integer" />
+    <property name="InformarContaPor" column="INFORMAR_CONTA_POR" caption="Informar Conta Por" width="8" type="String" />
+    <property name="CompartilhaPlanoConta" column="COMPARTILHA_PLANO_CONTA" caption="Compartilha Plano Conta" width="8" type="String" />
+    <property name="CompartilhaHistoricos" column="COMPARTILHA_HISTORICOS" caption="Compartilha Historicos" width="8" type="String" />
+    <property name="AlteraLancamentoOutro" column="ALTERA_LANCAMENTO_OUTRO" caption="Altera Lancamento Outro" width="8" type="String" />
+    <property name="HistoricoObrigatorio" column="HISTORICO_OBRIGATORIO" caption="Historico Obrigatorio" width="8" type="String" />
+    <property name="PermiteLancamentoZerado" column="PERMITE_LANCAMENTO_ZERADO" caption="Permite Lancamento Zerado" width="8" type="String" />
+    <property name="GeraInformativoSped" column="GERA_INFORMATIVO_SPED" caption="Gera Informativo Sped" width="8" type="String" />
+    <property name="SpedFormaEscritDiario" column="SPED_FORMA_ESCRIT_DIARIO" caption="Sped Forma Escrit Diario" width="24" type="String" />
+    <property name="SpedNomeLivroDiario" column="SPED_NOME_LIVRO_DIARIO" caption="Sped Nome Livro Diario" width="450" type="String" />
+    <property name="AssinaturaDireita" column="ASSINATURA_DIREITA" caption="Assinatura Direita" width="450" type="Memo" />
+    <property name="AssinaturaEsquerda" column="ASSINATURA_ESQUERDA" caption="Assinatura Esquerda" width="450" type="Memo" />
+    <property name="ContaAtivo" column="CONTA_ATIVO" caption="Conta Ativo" width="240" type="String" />
+    <property name="ContaPassivo" column="CONTA_PASSIVO" caption="Conta Passivo" width="240" type="String" />
+    <property name="ContaPatrimonioLiquido" column="CONTA_PATRIMONIO_LIQUIDO" caption="Conta Patrimonio Liquido" width="240" type="String" />
+    <property name="ContaDepreciacaoAcumulada" column="CONTA_DEPRECIACAO_ACUMULADA" caption="Conta Depreciacao Acumulada" width="240" type="String" />
+    <property name="ContaCapitalSocial" column="CONTA_CAPITAL_SOCIAL" caption="Conta Capital Social" width="240" type="String" />
+    <property name="ContaResultadoExercicio" column="CONTA_RESULTADO_EXERCICIO" caption="Conta Resultado Exercicio" width="240" type="String" />
+    <property name="ContaPrejuizoAcumulado" column="CONTA_PREJUIZO_ACUMULADO" caption="Conta Prejuizo Acumulado" width="240" type="String" />
+    <property name="ContaLucroAcumulado" column="CONTA_LUCRO_ACUMULADO" caption="Conta Lucro Acumulado" width="240" type="String" />
+    <property name="ContaTituloPagar" column="CONTA_TITULO_PAGAR" caption="Conta Titulo Pagar" width="240" type="String" />
+    <property name="ContaTituloReceber" column="CONTA_TITULO_RECEBER" caption="Conta Titulo Receber" width="240" type="String" />
+    <property name="ContaJurosPassivo" column="CONTA_JUROS_PASSIVO" caption="Conta Juros Passivo" width="240" type="String" />
+    <property name="ContaJurosAtivo" column="CONTA_JUROS_ATIVO" caption="Conta Juros Ativo" width="240" type="String" />
+    <property name="ContaDescontoObtido" column="CONTA_DESCONTO_OBTIDO" caption="Conta Desconto Obtido" width="240" type="String" />
+    <property name="ContaDescontoConcedido" column="CONTA_DESCONTO_CONCEDIDO" caption="Conta Desconto Concedido" width="240" type="String" />
+    <property name="ContaCmv" column="CONTA_CMV" caption="Conta Cmv" width="240" type="String" />
+    <property name="ContaVenda" column="CONTA_VENDA" caption="Conta Venda" width="240" type="String" />
+    <property name="ContaVendaServico" column="CONTA_VENDA_SERVICO" caption="Conta Venda Servico" width="240" type="String" />
+    <property name="ContaEstoque" column="CONTA_ESTOQUE" caption="Conta Estoque" width="240" type="String" />
+    <property name="ContaApuraResultado" column="CONTA_APURA_RESULTADO" caption="Conta Apura Resultado" width="240" type="String" />
+    <property name="ContaJurosApropriar" column="CONTA_JUROS_APROPRIAR" caption="Conta Juros Apropriar" width="240" type="String" />
+    <property name="IdHistPadraoResultado" column="ID_HIST_PADRAO_RESULTADO" caption="Id Hist Padrao Resultado" width="80" type="Integer" />
+    <property name="IdHistPadraoLucro" column="ID_HIST_PADRAO_LUCRO" caption="Id Hist Padrao Lucro" width="80" type="Integer" />
+    <property name="IdHistPadraoPrejuizo" column="ID_HIST_PADRAO_PREJUIZO" caption="Id Hist Padrao Prejuizo" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

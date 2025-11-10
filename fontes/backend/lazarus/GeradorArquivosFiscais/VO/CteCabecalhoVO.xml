@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteCabecalhoVO" table="cte_cabecalho" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_cabecalho</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="UfEmitente" column="UF_EMITENTE" caption="Uf Emitente" width="80" type="Integer" />
+    <property name="CodigoNumerico" column="CODIGO_NUMERICO" caption="Codigo Numerico" width="64" type="String" />
+    <property name="Cfop" column="CFOP" caption="Cfop" width="80" type="Integer" />
+    <property name="NaturezaOperacao" column="NATUREZA_OPERACAO" caption="Natureza Operacao" width="450" type="String" />
+    <property name="FormaPagamento" column="FORMA_PAGAMENTO" caption="Forma Pagamento" width="80" type="Integer" />
+    <property name="Modelo" column="MODELO" caption="Modelo" width="16" type="String" />
+    <property name="Serie" column="SERIE" caption="Serie" width="24" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="72" type="String" />
+    <property name="DataHoraEmissao" column="DATA_HORA_EMISSAO" caption="Data Hora Emissao" width="272" type="SQLTimeStamp" />
+    <property name="FormatoImpressaoDacte" column="FORMATO_IMPRESSAO_DACTE" caption="Formato Impressao Dacte" width="80" type="Integer" />
+    <property name="TipoEmissao" column="TIPO_EMISSAO" caption="Tipo Emissao" width="80" type="Integer" />
+    <property name="ChaveAcesso" column="CHAVE_ACESSO" caption="Chave Acesso" width="352" type="String" />
+    <property name="DigitoChaveAcesso" column="DIGITO_CHAVE_ACESSO" caption="Digito Chave Acesso" width="8" type="String" />
+    <property name="Ambiente" column="AMBIENTE" caption="Ambiente" width="80" type="Integer" />
+    <property name="TipoCte" column="TIPO_CTE" caption="Tipo Cte" width="80" type="Integer" />
+    <property name="ProcessoEmissao" column="PROCESSO_EMISSAO" caption="Processo Emissao" width="80" type="Integer" />
+    <property name="VersaoProcessoEmissao" column="VERSAO_PROCESSO_EMISSAO" caption="Versao Processo Emissao" width="160" type="String" />
+    <property name="ChaveReferenciado" column="CHAVE_REFERENCIADO" caption="Chave Referenciado" width="352" type="String" />
+    <property name="CodigoMunicipioEnvio" column="CODIGO_MUNICIPIO_ENVIO" caption="Codigo Municipio Envio" width="80" type="Integer" />
+    <property name="NomeMunicipioEnvio" column="NOME_MUNICIPIO_ENVIO" caption="Nome Municipio Envio" width="450" type="String" />
+    <property name="UfEnvio" column="UF_ENVIO" caption="Uf Envio" width="16" type="String" />
+    <property name="Modal" column="MODAL" caption="Modal" width="16" type="String" />
+    <property name="TipoServico" column="TIPO_SERVICO" caption="Tipo Servico" width="80" type="Integer" />
+    <property name="CodigoMunicipioIniPrestacao" column="CODIGO_MUNICIPIO_INI_PRESTACAO" caption="Codigo Municipio Ini Prestacao" width="80" type="Integer" />
+    <property name="NomeMunicipioIniPrestacao" column="NOME_MUNICIPIO_INI_PRESTACAO" caption="Nome Municipio Ini Prestacao" width="450" type="String" />
+    <property name="UfIniPrestacao" column="UF_INI_PRESTACAO" caption="Uf Ini Prestacao" width="16" type="String" />
+    <property name="CodigoMunicipioFimPrestacao" column="CODIGO_MUNICIPIO_FIM_PRESTACAO" caption="Codigo Municipio Fim Prestacao" width="80" type="Integer" />
+    <property name="NomeMunicipioFimPrestacao" column="NOME_MUNICIPIO_FIM_PRESTACAO" caption="Nome Municipio Fim Prestacao" width="450" type="String" />
+    <property name="UfFimPrestacao" column="UF_FIM_PRESTACAO" caption="Uf Fim Prestacao" width="16" type="String" />
+    <property name="Retira" column="RETIRA" caption="Retira" width="80" type="Integer" />
+    <property name="RetiraDetalhe" column="RETIRA_DETALHE" caption="Retira Detalhe" width="450" type="String" />
+    <property name="Tomador" column="TOMADOR" caption="Tomador" width="80" type="Integer" />
+    <property name="DataEntradaContingencia" column="DATA_ENTRADA_CONTINGENCIA" caption="Data Entrada Contingencia" width="272" type="SQLTimeStamp" />
+    <property name="JustificativaContingencia" column="JUSTIFICATIVA_CONTINGENCIA" caption="Justificativa Contingencia" width="450" type="String" />
+    <property name="CaracAdicionalTransporte" column="CARAC_ADICIONAL_TRANSPORTE" caption="Carac Adicional Transporte" width="120" type="String" />
+    <property name="CaracAdicionalServico" column="CARAC_ADICIONAL_SERVICO" caption="Carac Adicional Servico" width="240" type="String" />
+    <property name="FuncionarioEmissor" column="FUNCIONARIO_EMISSOR" caption="Funcionario Emissor" width="160" type="String" />
+    <property name="FluxoOrigem" column="FLUXO_ORIGEM" caption="Fluxo Origem" width="120" type="String" />
+    <property name="EntregaTipoPeriodo" column="ENTREGA_TIPO_PERIODO" caption="Entrega Tipo Periodo" width="80" type="Integer" />
+    <property name="EntregaDataProgramada" column="ENTREGA_DATA_PROGRAMADA" caption="Entrega Data Programada" width="80" type="Date" />
+    <property name="EntregaDataInicial" column="ENTREGA_DATA_INICIAL" caption="Entrega Data Inicial" width="80" type="Date" />
+    <property name="EntregaDataFinal" column="ENTREGA_DATA_FINAL" caption="Entrega Data Final" width="80" type="Date" />
+    <property name="EntregaTipoHora" column="ENTREGA_TIPO_HORA" caption="Entrega Tipo Hora" width="80" type="Integer" />
+    <property name="EntregaHoraProgramada" column="ENTREGA_HORA_PROGRAMADA" caption="Entrega Hora Programada" width="64" type="String" />
+    <property name="EntregaHoraInicial" column="ENTREGA_HORA_INICIAL" caption="Entrega Hora Inicial" width="64" type="String" />
+    <property name="EntregaHoraFinal" column="ENTREGA_HORA_FINAL" caption="Entrega Hora Final" width="64" type="String" />
+    <property name="MunicipioOrigemCalculo" column="MUNICIPIO_ORIGEM_CALCULO" caption="Municipio Origem Calculo" width="320" type="String" />
+    <property name="MunicipioDestinoCalculo" column="MUNICIPIO_DESTINO_CALCULO" caption="Municipio Destino Calculo" width="320" type="String" />
+    <property name="ObservacoesGerais" column="OBSERVACOES_GERAIS" caption="Observacoes Gerais" width="450" type="Memo" />
+    <property name="ValorTotalServico" column="VALOR_TOTAL_SERVICO" caption="Valor Total Servico" width="168" type="FMTBcdField" />
+    <property name="ValorReceber" column="VALOR_RECEBER" caption="Valor Receber" width="168" type="FMTBcdField" />
+    <property name="Cst" column="CST" caption="Cst" width="16" type="String" />
+    <property name="BaseCalculoIcms" column="BASE_CALCULO_ICMS" caption="Base Calculo Icms" width="168" type="FMTBcdField" />
+    <property name="AliquotaIcms" column="ALIQUOTA_ICMS" caption="Aliquota Icms" width="168" type="FMTBcdField" />
+    <property name="ValorIcms" column="VALOR_ICMS" caption="Valor Icms" width="168" type="FMTBcdField" />
+    <property name="PercentualReducaoBcIcms" column="PERCENTUAL_REDUCAO_BC_ICMS" caption="Percentual Reducao Bc Icms" width="168" type="FMTBcdField" />
+    <property name="ValorBcIcmsStRetido" column="VALOR_BC_ICMS_ST_RETIDO" caption="Valor Bc Icms St Retido" width="168" type="FMTBcdField" />
+    <property name="ValorIcmsStRetido" column="VALOR_ICMS_ST_RETIDO" caption="Valor Icms St Retido" width="168" type="FMTBcdField" />
+    <property name="AliquotaIcmsStRetido" column="ALIQUOTA_ICMS_ST_RETIDO" caption="Aliquota Icms St Retido" width="168" type="FMTBcdField" />
+    <property name="ValorCreditoPresumidoIcms" column="VALOR_CREDITO_PRESUMIDO_ICMS" caption="Valor Credito Presumido Icms" width="168" type="FMTBcdField" />
+    <property name="PercentualBcIcmsOutraUf" column="PERCENTUAL_BC_ICMS_OUTRA_UF" caption="Percentual Bc Icms Outra Uf" width="168" type="FMTBcdField" />
+    <property name="ValorBcIcmsOutraUf" column="VALOR_BC_ICMS_OUTRA_UF" caption="Valor Bc Icms Outra Uf" width="168" type="FMTBcdField" />
+    <property name="AliquotaIcmsOutraUf" column="ALIQUOTA_ICMS_OUTRA_UF" caption="Aliquota Icms Outra Uf" width="168" type="FMTBcdField" />
+    <property name="ValorIcmsOutraUf" column="VALOR_ICMS_OUTRA_UF" caption="Valor Icms Outra Uf" width="168" type="FMTBcdField" />
+    <property name="SimplesNacionalIndicador" column="SIMPLES_NACIONAL_INDICADOR" caption="Simples Nacional Indicador" width="80" type="Integer" />
+    <property name="SimplesNacionalTotal" column="SIMPLES_NACIONAL_TOTAL" caption="Simples Nacional Total" width="168" type="FMTBcdField" />
+    <property name="InformacoesAddFisco" column="INFORMACOES_ADD_FISCO" caption="Informacoes Add Fisco" width="450" type="Memo" />
+    <property name="ValorTotalCarga" column="VALOR_TOTAL_CARGA" caption="Valor Total Carga" width="168" type="FMTBcdField" />
+    <property name="ProdutoPredominante" column="PRODUTO_PREDOMINANTE" caption="Produto Predominante" width="450" type="String" />
+    <property name="CargaOutrasCaracteristicas" column="CARGA_OUTRAS_CARACTERISTICAS" caption="Carga Outras Caracteristicas" width="240" type="String" />
+    <property name="ModalVersaoLayout" column="MODAL_VERSAO_LAYOUT" caption="Modal Versao Layout" width="80" type="Integer" />
+    <property name="ChaveCteSubstituido" column="CHAVE_CTE_SUBSTITUIDO" caption="Chave Cte Substituido" width="352" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

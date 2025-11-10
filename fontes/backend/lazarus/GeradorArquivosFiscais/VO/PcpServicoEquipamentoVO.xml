@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PcpServicoEquipamentoVO" table="pcp_servico_equipamento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">pcp_servico_equipamento</param>
+      </generator>
+    </id>
+
+    <property name="IdPatrimBem" column="ID_PATRIM_BEM" caption="Id Patrim Bem" width="80" type="Integer" />
+    <property name="IdPcpServico" column="ID_PCP_SERVICO" caption="Id Pcp Servico" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

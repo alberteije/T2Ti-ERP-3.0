@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EcfVendaCabecalhoVO" table="ecf_venda_cabecalho" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ecf_venda_cabecalho</param>
+      </generator>
+    </id>
+
+    <property name="NomeCaixa" column="NOME_CAIXA" caption="Nome Caixa" width="240" type="String" />
+    <property name="IdGeradoCaixa" column="ID_GERADO_CAIXA" caption="Id Gerado Caixa" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdCliente" column="ID_CLIENTE" caption="Id Cliente" width="80" type="Integer" />
+    <property name="IdEcfFuncionario" column="ID_ECF_FUNCIONARIO" caption="Id Ecf Funcionario" width="80" type="Integer" />
+    <property name="IdEcfMovimento" column="ID_ECF_MOVIMENTO" caption="Id Ecf Movimento" width="80" type="Integer" />
+    <property name="IdEcfDav" column="ID_ECF_DAV" caption="Id Ecf Dav" width="80" type="Integer" />
+    <property name="IdEcfPreVendaCabecalho" column="ID_ECF_PRE_VENDA_CABECALHO" caption="Id Ecf Pre Venda Cabecalho" width="80" type="Integer" />
+    <property name="SerieEcf" column="SERIE_ECF" caption="Serie Ecf" width="160" type="String" />
+    <property name="Cfop" column="CFOP" caption="Cfop" width="80" type="Integer" />
+    <property name="Coo" column="COO" caption="Coo" width="80" type="Integer" />
+    <property name="Ccf" column="CCF" caption="Ccf" width="80" type="Integer" />
+    <property name="DataVenda" column="DATA_VENDA" caption="Data Venda" width="80" type="Date" />
+    <property name="HoraVenda" column="HORA_VENDA" caption="Hora Venda" width="64" type="String" />
+    <property name="ValorVenda" column="VALOR_VENDA" caption="Valor Venda" width="168" type="FMTBcdField" />
+    <property name="TaxaDesconto" column="TAXA_DESCONTO" caption="Taxa Desconto" width="168" type="FMTBcdField" />
+    <property name="Desconto" column="DESCONTO" caption="Desconto" width="168" type="FMTBcdField" />
+    <property name="TaxaAcrescimo" column="TAXA_ACRESCIMO" caption="Taxa Acrescimo" width="168" type="FMTBcdField" />
+    <property name="Acrescimo" column="ACRESCIMO" caption="Acrescimo" width="168" type="FMTBcdField" />
+    <property name="ValorFinal" column="VALOR_FINAL" caption="Valor Final" width="168" type="FMTBcdField" />
+    <property name="ValorRecebido" column="VALOR_RECEBIDO" caption="Valor Recebido" width="168" type="FMTBcdField" />
+    <property name="Troco" column="TROCO" caption="Troco" width="168" type="FMTBcdField" />
+    <property name="ValorCancelado" column="VALOR_CANCELADO" caption="Valor Cancelado" width="168" type="FMTBcdField" />
+    <property name="TotalProdutos" column="TOTAL_PRODUTOS" caption="Total Produtos" width="168" type="FMTBcdField" />
+    <property name="TotalDocumento" column="TOTAL_DOCUMENTO" caption="Total Documento" width="168" type="FMTBcdField" />
+    <property name="BaseIcms" column="BASE_ICMS" caption="Base Icms" width="168" type="FMTBcdField" />
+    <property name="Icms" column="ICMS" caption="Icms" width="168" type="FMTBcdField" />
+    <property name="IcmsOutras" column="ICMS_OUTRAS" caption="Icms Outras" width="168" type="FMTBcdField" />
+    <property name="Issqn" column="ISSQN" caption="Issqn" width="168" type="FMTBcdField" />
+    <property name="Pis" column="PIS" caption="Pis" width="168" type="FMTBcdField" />
+    <property name="Cofins" column="COFINS" caption="Cofins" width="168" type="FMTBcdField" />
+    <property name="AcrescimoItens" column="ACRESCIMO_ITENS" caption="Acrescimo Itens" width="168" type="FMTBcdField" />
+    <property name="DescontoItens" column="DESCONTO_ITENS" caption="Desconto Itens" width="168" type="FMTBcdField" />
+    <property name="StatusVenda" column="STATUS_VENDA" caption="Status Venda" width="8" type="String" />
+    <property name="NomeCliente" column="NOME_CLIENTE" caption="Nome Cliente" width="450" type="String" />
+    <property name="CpfCnpjCliente" column="CPF_CNPJ_CLIENTE" caption="Cpf Cnpj Cliente" width="112" type="String" />
+    <property name="CupomCancelado" column="CUPOM_CANCELADO" caption="Cupom Cancelado" width="8" type="String" />
+    <property name="Logss" column="LOGSS" caption="Logss" width="256" type="String" />
+    <property name="DataSincronizacao" column="DATA_SINCRONIZACAO" caption="Data Sincronizacao" width="80" type="Date" />
+    <property name="HoraSincronizacao" column="HORA_SINCRONIZACAO" caption="Hora Sincronizacao" width="64" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

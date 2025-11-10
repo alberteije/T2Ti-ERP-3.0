@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CompraPedidoDetalheVO" table="compra_pedido_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">compra_pedido_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdCompraPedido" column="ID_COMPRA_PEDIDO" caption="Id Compra Pedido" width="80" type="Integer" />
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="168" type="FMTBcdField" />
+    <property name="ValorUnitario" column="VALOR_UNITARIO" caption="Valor Unitario" width="168" type="FMTBcdField" />
+    <property name="ValorSubtotal" column="VALOR_SUBTOTAL" caption="Valor Subtotal" width="168" type="FMTBcdField" />
+    <property name="TaxaDesconto" column="TAXA_DESCONTO" caption="Taxa Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorDesconto" column="VALOR_DESCONTO" caption="Valor Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorTotal" column="VALOR_TOTAL" caption="Valor Total" width="168" type="FMTBcdField" />
+    <property name="CstCsosn" column="CST_CSOSN" caption="Cst Csosn" width="24" type="String" />
+    <property name="Cfop" column="CFOP" caption="Cfop" width="80" type="Integer" />
+    <property name="BaseCalculoIcms" column="BASE_CALCULO_ICMS" caption="Base Calculo Icms" width="168" type="FMTBcdField" />
+    <property name="ValorIcms" column="VALOR_ICMS" caption="Valor Icms" width="168" type="FMTBcdField" />
+    <property name="ValorIpi" column="VALOR_IPI" caption="Valor Ipi" width="168" type="FMTBcdField" />
+    <property name="AliquotaIcms" column="ALIQUOTA_ICMS" caption="Aliquota Icms" width="168" type="FMTBcdField" />
+    <property name="AliquotaIpi" column="ALIQUOTA_IPI" caption="Aliquota Ipi" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

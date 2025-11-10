@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EcfNotaFiscalDetalheVO" table="ecf_nota_fiscal_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ecf_nota_fiscal_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="NomeCaixa" column="NOME_CAIXA" caption="Nome Caixa" width="240" type="String" />
+    <property name="IdGeradoCaixa" column="ID_GERADO_CAIXA" caption="Id Gerado Caixa" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdNfCabecalho" column="ID_NF_CABECALHO" caption="Id Nf Cabecalho" width="80" type="Integer" />
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="Cfop" column="CFOP" caption="Cfop" width="80" type="Integer" />
+    <property name="Item" column="ITEM" caption="Item" width="80" type="Integer" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="168" type="FMTBcdField" />
+    <property name="ValorUnitario" column="VALOR_UNITARIO" caption="Valor Unitario" width="168" type="FMTBcdField" />
+    <property name="ValorTotal" column="VALOR_TOTAL" caption="Valor Total" width="168" type="FMTBcdField" />
+    <property name="BaseIcms" column="BASE_ICMS" caption="Base Icms" width="168" type="FMTBcdField" />
+    <property name="TaxaIcms" column="TAXA_ICMS" caption="Taxa Icms" width="168" type="FMTBcdField" />
+    <property name="Icms" column="ICMS" caption="Icms" width="168" type="FMTBcdField" />
+    <property name="IcmsOutras" column="ICMS_OUTRAS" caption="Icms Outras" width="168" type="FMTBcdField" />
+    <property name="IcmsIsento" column="ICMS_ISENTO" caption="Icms Isento" width="168" type="FMTBcdField" />
+    <property name="TaxaDesconto" column="TAXA_DESCONTO" caption="Taxa Desconto" width="168" type="FMTBcdField" />
+    <property name="Desconto" column="DESCONTO" caption="Desconto" width="168" type="FMTBcdField" />
+    <property name="TaxaIssqn" column="TAXA_ISSQN" caption="Taxa Issqn" width="168" type="FMTBcdField" />
+    <property name="Issqn" column="ISSQN" caption="Issqn" width="168" type="FMTBcdField" />
+    <property name="TaxaPis" column="TAXA_PIS" caption="Taxa Pis" width="168" type="FMTBcdField" />
+    <property name="Pis" column="PIS" caption="Pis" width="168" type="FMTBcdField" />
+    <property name="TaxaCofins" column="TAXA_COFINS" caption="Taxa Cofins" width="168" type="FMTBcdField" />
+    <property name="Cofins" column="COFINS" caption="Cofins" width="168" type="FMTBcdField" />
+    <property name="TaxaAcrescimo" column="TAXA_ACRESCIMO" caption="Taxa Acrescimo" width="168" type="FMTBcdField" />
+    <property name="Acrescimo" column="ACRESCIMO" caption="Acrescimo" width="168" type="FMTBcdField" />
+    <property name="TaxaIpi" column="TAXA_IPI" caption="Taxa Ipi" width="168" type="FMTBcdField" />
+    <property name="Ipi" column="IPI" caption="Ipi" width="168" type="FMTBcdField" />
+    <property name="Cancelado" column="CANCELADO" caption="Cancelado" width="8" type="String" />
+    <property name="Cst" column="CST" caption="Cst" width="24" type="String" />
+    <property name="MovimentaEstoque" column="MOVIMENTA_ESTOQUE" caption="Movimenta Estoque" width="8" type="String" />
+    <property name="EcfIcmsSt" column="ECF_ICMS_ST" caption="Ecf Icms St" width="32" type="String" />
+    <property name="DataSincronizacao" column="DATA_SINCRONIZACAO" caption="Data Sincronizacao" width="80" type="Date" />
+    <property name="HoraSincronizacao" column="HORA_SINCRONIZACAO" caption="Hora Sincronizacao" width="64" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

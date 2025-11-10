@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewSpedC370VO" table="view_sped_c370" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_sped_c370</param>
+      </generator>
+    </id>
+
+    <property name="IdNfCabecalho" column="ID_NF_CABECALHO" caption="Id Nf Cabecalho" width="80" type="Integer" />
+    <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="Item" column="ITEM" caption="Item" width="80" type="Integer" />
+    <property name="IdUnidadeProduto" column="ID_UNIDADE_PRODUTO" caption="Id Unidade Produto" width="80" type="Integer" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="168" type="FMTBcdField" />
+    <property name="ValorTotal" column="VALOR_TOTAL" caption="Valor Total" width="168" type="FMTBcdField" />
+    <property name="Cst" column="CST" caption="Cst" width="24" type="String" />
+    <property name="Desconto" column="DESCONTO" caption="Desconto" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

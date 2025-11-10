@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="GuiasAcumuladasVO" table="guias_acumuladas" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">guias_acumuladas</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="GpsTipo" column="GPS_TIPO" caption="Gps Tipo" width="8" type="String" />
+    <property name="GpsCompetencia" column="GPS_COMPETENCIA" caption="Gps Competencia" width="56" type="String" />
+    <property name="GpsValorInss" column="GPS_VALOR_INSS" caption="Gps Valor Inss" width="168" type="FMTBcdField" />
+    <property name="GpsValorOutrasEnt" column="GPS_VALOR_OUTRAS_ENT" caption="Gps Valor Outras Ent" width="168" type="FMTBcdField" />
+    <property name="GpsDataPagamento" column="GPS_DATA_PAGAMENTO" caption="Gps Data Pagamento" width="80" type="Date" />
+    <property name="IrrfCompetencia" column="IRRF_COMPETENCIA" caption="Irrf Competencia" width="56" type="String" />
+    <property name="IrrfCodigoRecolhimento" column="IRRF_CODIGO_RECOLHIMENTO" caption="Irrf Codigo Recolhimento" width="80" type="Integer" />
+    <property name="IrrfValorAcumulado" column="IRRF_VALOR_ACUMULADO" caption="Irrf Valor Acumulado" width="168" type="FMTBcdField" />
+    <property name="IrrfDataPagamento" column="IRRF_DATA_PAGAMENTO" caption="Irrf Data Pagamento" width="80" type="Date" />
+    <property name="PisCompetencia" column="PIS_COMPETENCIA" caption="Pis Competencia" width="56" type="String" />
+    <property name="PisValorAcumulado" column="PIS_VALOR_ACUMULADO" caption="Pis Valor Acumulado" width="168" type="FMTBcdField" />
+    <property name="PisDataPagamento" column="PIS_DATA_PAGAMENTO" caption="Pis Data Pagamento" width="80" type="Date" />
+
+  </class>
+</t2ti-orm-mapping>

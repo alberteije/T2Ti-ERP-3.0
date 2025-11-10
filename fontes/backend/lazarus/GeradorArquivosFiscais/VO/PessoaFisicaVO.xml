@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PessoaFisicaVO" table="pessoa_fisica" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">pessoa_fisica</param>
+      </generator>
+    </id>
+
+    <property name="IdPessoa" column="ID_PESSOA" caption="Id Pessoa" width="80" type="Integer" />
+    <property name="IdEstadoCivil" column="ID_ESTADO_CIVIL" caption="Id Estado Civil" width="80" type="Integer" />
+    <property name="Cpf" column="CPF" caption="Cpf" width="88" type="String" />
+    <property name="Rg" column="RG" caption="Rg" width="160" type="String" />
+    <property name="OrgaoRg" column="ORGAO_RG" caption="Orgao Rg" width="160" type="String" />
+    <property name="DataEmissaoRg" column="DATA_EMISSAO_RG" caption="Data Emissao Rg" width="80" type="Date" />
+    <property name="DataNascimento" column="DATA_NASCIMENTO" caption="Data Nascimento" width="80" type="Date" />
+    <property name="Sexo" column="SEXO" caption="Sexo" width="8" type="String" />
+    <property name="Naturalidade" column="NATURALIDADE" caption="Naturalidade" width="450" type="String" />
+    <property name="Nacionalidade" column="NACIONALIDADE" caption="Nacionalidade" width="450" type="String" />
+    <property name="Raca" column="RACA" caption="Raca" width="8" type="String" />
+    <property name="TipoSangue" column="TIPO_SANGUE" caption="Tipo Sangue" width="24" type="String" />
+    <property name="CnhNumero" column="CNH_NUMERO" caption="Cnh Numero" width="160" type="String" />
+    <property name="CnhCategoria" column="CNH_CATEGORIA" caption="Cnh Categoria" width="16" type="String" />
+    <property name="CnhVencimento" column="CNH_VENCIMENTO" caption="Cnh Vencimento" width="80" type="Date" />
+    <property name="TituloEleitoralNumero" column="TITULO_ELEITORAL_NUMERO" caption="Titulo Eleitoral Numero" width="160" type="String" />
+    <property name="TituloEleitoralZona" column="TITULO_ELEITORAL_ZONA" caption="Titulo Eleitoral Zona" width="80" type="Integer" />
+    <property name="TituloEleitoralSecao" column="TITULO_ELEITORAL_SECAO" caption="Titulo Eleitoral Secao" width="80" type="Integer" />
+    <property name="ReservistaNumero" column="RESERVISTA_NUMERO" caption="Reservista Numero" width="160" type="String" />
+    <property name="ReservistaCategoria" column="RESERVISTA_CATEGORIA" caption="Reservista Categoria" width="80" type="Integer" />
+    <property name="NomeMae" column="NOME_MAE" caption="Nome Mae" width="450" type="String" />
+    <property name="NomePai" column="NOME_PAI" caption="Nome Pai" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

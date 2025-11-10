@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteCargaVO" table="cte_carga" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_carga</param>
+      </generator>
+    </id>
+
+    <property name="IdCteCabecalho" column="ID_CTE_CABECALHO" caption="Id Cte Cabecalho" width="80" type="Integer" />
+    <property name="CodigoUnidadeMedida" column="CODIGO_UNIDADE_MEDIDA" caption="Codigo Unidade Medida" width="16" type="String" />
+    <property name="TipoMedida" column="TIPO_MEDIDA" caption="Tipo Medida" width="160" type="String" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

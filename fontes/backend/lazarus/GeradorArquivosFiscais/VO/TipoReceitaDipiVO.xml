@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="TipoReceitaDipiVO" table="tipo_receita_dipi" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">tipo_receita_dipi</param>
+      </generator>
+    </id>
+
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

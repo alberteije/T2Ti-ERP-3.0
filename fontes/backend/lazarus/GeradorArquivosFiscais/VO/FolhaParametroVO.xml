@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FolhaParametroVO" table="folha_parametro" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">folha_parametro</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Competencia" column="COMPETENCIA" caption="Competencia" width="56" type="String" />
+    <property name="ContribuiPis" column="CONTRIBUI_PIS" caption="Contribui Pis" width="8" type="String" />
+    <property name="AliquotaPis" column="ALIQUOTA_PIS" caption="Aliquota Pis" width="168" type="FMTBcdField" />
+    <property name="DiscriminarDsr" column="DISCRIMINAR_DSR" caption="Discriminar Dsr" width="8" type="String" />
+    <property name="DiaPagamento" column="DIA_PAGAMENTO" caption="Dia Pagamento" width="16" type="String" />
+    <property name="CalculoProporcionalidade" column="CALCULO_PROPORCIONALIDADE" caption="Calculo Proporcionalidade" width="8" type="String" />
+    <property name="DescontarFaltas13" column="DESCONTAR_FALTAS_13" caption="Descontar Faltas 13" width="8" type="String" />
+    <property name="PagarAdicionais13" column="PAGAR_ADICIONAIS_13" caption="Pagar Adicionais 13" width="8" type="String" />
+    <property name="PagarEstagiarios13" column="PAGAR_ESTAGIARIOS_13" caption="Pagar Estagiarios 13" width="8" type="String" />
+    <property name="MesAdiantamento13" column="MES_ADIANTAMENTO_13" caption="Mes Adiantamento 13" width="16" type="String" />
+    <property name="PercentualAdiantam13" column="PERCENTUAL_ADIANTAM_13" caption="Percentual Adiantam 13" width="168" type="FMTBcdField" />
+    <property name="FeriasDescontarFaltas" column="FERIAS_DESCONTAR_FALTAS" caption="Ferias Descontar Faltas" width="8" type="String" />
+    <property name="FeriasPagarAdicionais" column="FERIAS_PAGAR_ADICIONAIS" caption="Ferias Pagar Adicionais" width="8" type="String" />
+    <property name="FeriasAdiantar13" column="FERIAS_ADIANTAR_13" caption="Ferias Adiantar 13" width="8" type="String" />
+    <property name="FeriasPagarEstagiarios" column="FERIAS_PAGAR_ESTAGIARIOS" caption="Ferias Pagar Estagiarios" width="8" type="String" />
+    <property name="FeriasCalcJustaCausa" column="FERIAS_CALC_JUSTA_CAUSA" caption="Ferias Calc Justa Causa" width="8" type="String" />
+    <property name="FeriasMovimentoMensal" column="FERIAS_MOVIMENTO_MENSAL" caption="Ferias Movimento Mensal" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

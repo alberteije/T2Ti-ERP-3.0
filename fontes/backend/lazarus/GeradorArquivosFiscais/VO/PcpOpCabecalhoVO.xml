@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PcpOpCabecalhoVO" table="pcp_op_cabecalho" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">pcp_op_cabecalho</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Inicio" column="INICIO" caption="Inicio" width="80" type="Date" />
+    <property name="PrevisaoEntrega" column="PREVISAO_ENTREGA" caption="Previsao Entrega" width="80" type="Date" />
+    <property name="Termino" column="TERMINO" caption="Termino" width="80" type="Date" />
+    <property name="CustoTotalPrevisto" column="CUSTO_TOTAL_PREVISTO" caption="Custo Total Previsto" width="168" type="FMTBcdField" />
+    <property name="CustoTotalRealizado" column="CUSTO_TOTAL_REALIZADO" caption="Custo Total Realizado" width="168" type="FMTBcdField" />
+    <property name="PorcentoVenda" column="PORCENTO_VENDA" caption="Porcento Venda" width="168" type="FMTBcdField" />
+    <property name="PorcentoEstoque" column="PORCENTO_ESTOQUE" caption="Porcento Estoque" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

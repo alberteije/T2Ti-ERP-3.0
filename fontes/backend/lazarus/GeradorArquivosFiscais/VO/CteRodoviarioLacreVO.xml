@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteRodoviarioLacreVO" table="cte_rodoviario_lacre" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_rodoviario_lacre</param>
+      </generator>
+    </id>
+
+    <property name="IdCteRodoviario" column="ID_CTE_RODOVIARIO" caption="Id Cte Rodoviario" width="80" type="Integer" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="160" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

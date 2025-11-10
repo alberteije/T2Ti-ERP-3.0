@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="VendaOrcamentoDetalheVO" table="venda_orcamento_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">venda_orcamento_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdVendaOrcamentoCabecalho" column="ID_VENDA_ORCAMENTO_CABECALHO" caption="Id Venda Orcamento Cabecalho" width="80" type="Integer" />
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="168" type="FMTBcdField" />
+    <property name="ValorUnitario" column="VALOR_UNITARIO" caption="Valor Unitario" width="168" type="FMTBcdField" />
+    <property name="ValorSubtotal" column="VALOR_SUBTOTAL" caption="Valor Subtotal" width="168" type="FMTBcdField" />
+    <property name="TaxaDesconto" column="TAXA_DESCONTO" caption="Taxa Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorDesconto" column="VALOR_DESCONTO" caption="Valor Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorTotal" column="VALOR_TOTAL" caption="Valor Total" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

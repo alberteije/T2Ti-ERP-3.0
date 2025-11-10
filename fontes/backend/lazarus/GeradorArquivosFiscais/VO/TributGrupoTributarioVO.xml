@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="TributGrupoTributarioVO" table="tribut_grupo_tributario" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">tribut_grupo_tributario</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+    <property name="OrigemMercadoria" column="ORIGEM_MERCADORIA" caption="Origem Mercadoria" width="8" type="String" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

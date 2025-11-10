@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="DavDetalheVO" table="dav_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">dav_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="IdDavCabecalho" column="ID_DAV_CABECALHO" caption="Id Dav Cabecalho" width="80" type="Integer" />
+    <property name="NumeroDav" column="NUMERO_DAV" caption="Numero Dav" width="80" type="String" />
+    <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
+    <property name="Item" column="ITEM" caption="Item" width="80" type="Integer" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="168" type="FMTBcdField" />
+    <property name="ValorUnitario" column="VALOR_UNITARIO" caption="Valor Unitario" width="168" type="FMTBcdField" />
+    <property name="ValorTotal" column="VALOR_TOTAL" caption="Valor Total" width="168" type="FMTBcdField" />
+    <property name="Cancelado" column="CANCELADO" caption="Cancelado" width="8" type="String" />
+    <property name="MesclaProduto" column="MESCLA_PRODUTO" caption="Mescla Produto" width="8" type="String" />
+    <property name="GtinProduto" column="GTIN_PRODUTO" caption="Gtin Produto" width="112" type="String" />
+    <property name="NomeProduto" column="NOME_PRODUTO" caption="Nome Produto" width="450" type="String" />
+    <property name="UnidadeProduto" column="UNIDADE_PRODUTO" caption="Unidade Produto" width="80" type="String" />
+    <property name="TotalizadorParcial" column="TOTALIZADOR_PARCIAL" caption="Totalizador Parcial" width="80" type="String" />
+    <property name="Logss" column="LOGSS" caption="Logss" width="256" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

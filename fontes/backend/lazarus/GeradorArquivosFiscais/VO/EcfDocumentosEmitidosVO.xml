@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EcfDocumentosEmitidosVO" table="ecf_documentos_emitidos" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ecf_documentos_emitidos</param>
+      </generator>
+    </id>
+
+    <property name="NomeCaixa" column="NOME_CAIXA" caption="Nome Caixa" width="240" type="String" />
+    <property name="IdGeradoCaixa" column="ID_GERADO_CAIXA" caption="Id Gerado Caixa" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdEcfMovimento" column="ID_ECF_MOVIMENTO" caption="Id Ecf Movimento" width="80" type="Integer" />
+    <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
+    <property name="HoraEmissao" column="HORA_EMISSAO" caption="Hora Emissao" width="64" type="String" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="16" type="String" />
+    <property name="Coo" column="COO" caption="Coo" width="80" type="Integer" />
+    <property name="DataSincronizacao" column="DATA_SINCRONIZACAO" caption="Data Sincronizacao" width="80" type="Date" />
+    <property name="HoraSincronizacao" column="HORA_SINCRONIZACAO" caption="Hora Sincronizacao" width="64" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="GedVersaoDocumentoVO" table="ged_versao_documento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ged_versao_documento</param>
+      </generator>
+    </id>
+
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="IdGedDocumento" column="ID_GED_DOCUMENTO" caption="Id Ged Documento" width="80" type="Integer" />
+    <property name="Versao" column="VERSAO" caption="Versao" width="80" type="Integer" />
+    <property name="DataHora" column="DATA_HORA" caption="Data Hora" width="80" type="Date" />
+    <property name="HashArquivo" column="HASH_ARQUIVO" caption="Hash Arquivo" width="450" type="String" />
+    <property name="Caminho" column="CAMINHO" caption="Caminho" width="450" type="String" />
+    <property name="Acao" column="ACAO" caption="Acao" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

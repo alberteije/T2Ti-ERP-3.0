@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfseIntermediarioVO" table="nfse_intermediario" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfse_intermediario</param>
+      </generator>
+    </id>
+
+    <property name="IdNfseCabecalho" column="ID_NFSE_CABECALHO" caption="Id Nfse Cabecalho" width="80" type="Integer" />
+    <property name="Cnpj" column="CNPJ" caption="Cnpj" width="112" type="String" />
+    <property name="Razao" column="RAZAO" caption="Razao" width="450" type="String" />
+    <property name="InscricaoMunicipal" column="INSCRICAO_MUNICIPAL" caption="Inscricao Municipal" width="120" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

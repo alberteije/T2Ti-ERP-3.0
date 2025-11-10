@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FinCobrancaParcelaReceberVO" table="fin_cobranca_parcela_receber" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fin_cobranca_parcela_receber</param>
+      </generator>
+    </id>
+
+    <property name="IdFinCobranca" column="ID_FIN_COBRANCA" caption="Id Fin Cobranca" width="80" type="Integer" />
+    <property name="IdFinLancamentoReceber" column="ID_FIN_LANCAMENTO_RECEBER" caption="Id Fin Lancamento Receber" width="80" type="Integer" />
+    <property name="IdFinParcelaReceber" column="ID_FIN_PARCELA_RECEBER" caption="Id Fin Parcela Receber" width="80" type="Integer" />
+    <property name="DataVencimento" column="DATA_VENCIMENTO" caption="Data Vencimento" width="80" type="Date" />
+    <property name="ValorParcela" column="VALOR_PARCELA" caption="Valor Parcela" width="168" type="FMTBcdField" />
+    <property name="ValorJuroSimulado" column="VALOR_JURO_SIMULADO" caption="Valor Juro Simulado" width="168" type="FMTBcdField" />
+    <property name="ValorMultaSimulado" column="VALOR_MULTA_SIMULADO" caption="Valor Multa Simulado" width="168" type="FMTBcdField" />
+    <property name="ValorReceberSimulado" column="VALOR_RECEBER_SIMULADO" caption="Valor Receber Simulado" width="168" type="FMTBcdField" />
+    <property name="ValorJuroAcordo" column="VALOR_JURO_ACORDO" caption="Valor Juro Acordo" width="168" type="FMTBcdField" />
+    <property name="ValorMultaAcordo" column="VALOR_MULTA_ACORDO" caption="Valor Multa Acordo" width="168" type="FMTBcdField" />
+    <property name="ValorReceberAcordo" column="VALOR_RECEBER_ACORDO" caption="Valor Receber Acordo" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

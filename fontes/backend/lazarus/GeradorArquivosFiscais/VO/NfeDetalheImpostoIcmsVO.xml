@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeDetalheImpostoIcmsVO" table="nfe_detalhe_imposto_icms" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_detalhe_imposto_icms</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeDetalhe" column="ID_NFE_DETALHE" caption="Id Nfe Detalhe" width="80" type="Integer" />
+    <property name="OrigemMercadoria" column="ORIGEM_MERCADORIA" caption="Origem Mercadoria" width="80" type="Integer" />
+    <property name="CstIcms" column="CST_ICMS" caption="Cst Icms" width="16" type="String" />
+    <property name="Csosn" column="CSOSN" caption="Csosn" width="24" type="String" />
+    <property name="ModalidadeBcIcms" column="MODALIDADE_BC_ICMS" caption="Modalidade Bc Icms" width="80" type="Integer" />
+    <property name="TaxaReducaoBcIcms" column="TAXA_REDUCAO_BC_ICMS" caption="Taxa Reducao Bc Icms" width="168" type="FMTBcdField" />
+    <property name="BaseCalculoIcms" column="BASE_CALCULO_ICMS" caption="Base Calculo Icms" width="168" type="FMTBcdField" />
+    <property name="AliquotaIcms" column="ALIQUOTA_ICMS" caption="Aliquota Icms" width="168" type="FMTBcdField" />
+    <property name="ValorIcms" column="VALOR_ICMS" caption="Valor Icms" width="168" type="FMTBcdField" />
+    <property name="ValorIcmsOperacao" column="VALOR_ICMS_OPERACAO" caption="Valor Icms Operacao" width="168" type="FMTBcdField" />
+    <property name="PercentualDiferimento" column="PERCENTUAL_DIFERIMENTO" caption="Percentual Diferimento" width="168" type="FMTBcdField" />
+    <property name="ValorIcmsDiferido" column="VALOR_ICMS_DIFERIDO" caption="Valor Icms Diferido" width="168" type="FMTBcdField" />
+    <property name="MotivoDesoneracaoIcms" column="MOTIVO_DESONERACAO_ICMS" caption="Motivo Desoneracao Icms" width="80" type="Integer" />
+    <property name="ValorIcmsDesonerado" column="VALOR_ICMS_DESONERADO" caption="Valor Icms Desonerado" width="168" type="FMTBcdField" />
+    <property name="ModalidadeBcIcmsSt" column="MODALIDADE_BC_ICMS_ST" caption="Modalidade Bc Icms St" width="80" type="Integer" />
+    <property name="PercentualMvaIcmsSt" column="PERCENTUAL_MVA_ICMS_ST" caption="Percentual Mva Icms St" width="168" type="FMTBcdField" />
+    <property name="PercentualReducaoBcIcmsSt" column="PERCENTUAL_REDUCAO_BC_ICMS_ST" caption="Percentual Reducao Bc Icms St" width="168" type="FMTBcdField" />
+    <property name="ValorBaseCalculoIcmsSt" column="VALOR_BASE_CALCULO_ICMS_ST" caption="Valor Base Calculo Icms St" width="168" type="FMTBcdField" />
+    <property name="AliquotaIcmsSt" column="ALIQUOTA_ICMS_ST" caption="Aliquota Icms St" width="168" type="FMTBcdField" />
+    <property name="ValorIcmsSt" column="VALOR_ICMS_ST" caption="Valor Icms St" width="168" type="FMTBcdField" />
+    <property name="ValorBcIcmsStRetido" column="VALOR_BC_ICMS_ST_RETIDO" caption="Valor Bc Icms St Retido" width="168" type="FMTBcdField" />
+    <property name="ValorIcmsStRetido" column="VALOR_ICMS_ST_RETIDO" caption="Valor Icms St Retido" width="168" type="FMTBcdField" />
+    <property name="ValorBcIcmsStDestino" column="VALOR_BC_ICMS_ST_DESTINO" caption="Valor Bc Icms St Destino" width="168" type="FMTBcdField" />
+    <property name="ValorIcmsStDestino" column="VALOR_ICMS_ST_DESTINO" caption="Valor Icms St Destino" width="168" type="FMTBcdField" />
+    <property name="AliquotaCreditoIcmsSn" column="ALIQUOTA_CREDITO_ICMS_SN" caption="Aliquota Credito Icms Sn" width="168" type="FMTBcdField" />
+    <property name="ValorCreditoIcmsSn" column="VALOR_CREDITO_ICMS_SN" caption="Valor Credito Icms Sn" width="168" type="FMTBcdField" />
+    <property name="PercentualBcOperacaoPropria" column="PERCENTUAL_BC_OPERACAO_PROPRIA" caption="Percentual Bc Operacao Propria" width="168" type="FMTBcdField" />
+    <property name="UfSt" column="UF_ST" caption="Uf St" width="16" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

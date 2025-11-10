@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="VendaRomaneioEntregaVO" table="venda_romaneio_entrega" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">venda_romaneio_entrega</param>
+      </generator>
+    </id>
+
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+    <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
+    <property name="DataPrevista" column="DATA_PREVISTA" caption="Data Prevista" width="80" type="Date" />
+    <property name="DataSaida" column="DATA_SAIDA" caption="Data Saida" width="80" type="Date" />
+    <property name="Situacao" column="SITUACAO" caption="Situacao" width="8" type="String" />
+    <property name="DataEncerramento" column="DATA_ENCERRAMENTO" caption="Data Encerramento" width="80" type="Date" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

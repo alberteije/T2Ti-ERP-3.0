@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PcpInstrucaoVO" table="pcp_instrucao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">pcp_instrucao</param>
+      </generator>
+    </id>
+
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="24" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="TributConfiguraOfGtVO" table="tribut_configura_of_gt" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">tribut_configura_of_gt</param>
+      </generator>
+    </id>
+
+    <property name="IdTributGrupoTributario" column="ID_TRIBUT_GRUPO_TRIBUTARIO" caption="Id Tribut Grupo Tributario" width="80" type="Integer" />
+    <property name="IdTributOperacaoFiscal" column="ID_TRIBUT_OPERACAO_FISCAL" caption="Id Tribut Operacao Fiscal" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

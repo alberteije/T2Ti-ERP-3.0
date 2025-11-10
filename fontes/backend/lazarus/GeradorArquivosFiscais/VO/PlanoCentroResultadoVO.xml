@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PlanoCentroResultadoVO" table="plano_centro_resultado" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">plano_centro_resultado</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Mascara" column="MASCARA" caption="Mascara" width="400" type="String" />
+    <property name="Niveis" column="NIVEIS" caption="Niveis" width="80" type="Integer" />
+    <property name="DataInclusao" column="DATA_INCLUSAO" caption="Data Inclusao" width="80" type="Date" />
+
+  </class>
+</t2ti-orm-mapping>

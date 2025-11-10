@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CompraTipoPedidoVO" table="compra_tipo_pedido" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">compra_tipo_pedido</param>
+      </generator>
+    </id>
+
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="16" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="240" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

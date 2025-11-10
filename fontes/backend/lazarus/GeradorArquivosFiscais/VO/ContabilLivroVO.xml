@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContabilLivroVO" table="contabil_livro" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contabil_livro</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="400" type="String" />
+    <property name="Competencia" column="COMPETENCIA" caption="Competencia" width="56" type="String" />
+    <property name="FormaEscrituracao" column="FORMA_ESCRITURACAO" caption="Forma Escrituracao" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

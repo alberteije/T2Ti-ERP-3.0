@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="OsProdutoServicoVO" table="os_produto_servico" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">os_produto_servico</param>
+      </generator>
+    </id>
+
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="IdOsAbertura" column="ID_OS_ABERTURA" caption="Id Os Abertura" width="80" type="Integer" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="80" type="Integer" />
+    <property name="Complemento" column="COMPLEMENTO" caption="Complemento" width="450" type="Memo" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="168" type="FMTBcdField" />
+    <property name="ValorUnitario" column="VALOR_UNITARIO" caption="Valor Unitario" width="168" type="FMTBcdField" />
+    <property name="ValorSubtotal" column="VALOR_SUBTOTAL" caption="Valor Subtotal" width="168" type="FMTBcdField" />
+    <property name="TaxaDesconto" column="TAXA_DESCONTO" caption="Taxa Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorDesconto" column="VALOR_DESCONTO" caption="Valor Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorTotal" column="VALOR_TOTAL" caption="Valor Total" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

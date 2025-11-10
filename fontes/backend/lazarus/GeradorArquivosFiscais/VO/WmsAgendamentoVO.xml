@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="WmsAgendamentoVO" table="wms_agendamento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">wms_agendamento</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="DataOperacao" column="DATA_OPERACAO" caption="Data Operacao" width="80" type="Date" />
+    <property name="HoraOperacao" column="HORA_OPERACAO" caption="Hora Operacao" width="64" type="String" />
+    <property name="LocalOperacao" column="LOCAL_OPERACAO" caption="Local Operacao" width="450" type="String" />
+    <property name="QuantidadeVolume" column="QUANTIDADE_VOLUME" caption="Quantidade Volume" width="80" type="Integer" />
+    <property name="PesoTotalVolume" column="PESO_TOTAL_VOLUME" caption="Peso Total Volume" width="168" type="FMTBcdField" />
+    <property name="QuantidadePessoa" column="QUANTIDADE_PESSOA" caption="Quantidade Pessoa" width="80" type="Integer" />
+    <property name="QuantidadeHora" column="QUANTIDADE_HORA" caption="Quantidade Hora" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

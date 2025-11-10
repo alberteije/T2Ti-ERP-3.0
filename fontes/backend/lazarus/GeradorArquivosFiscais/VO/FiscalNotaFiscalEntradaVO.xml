@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FiscalNotaFiscalEntradaVO" table="fiscal_nota_fiscal_entrada" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fiscal_nota_fiscal_entrada</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeCabecalho" column="ID_NFE_CABECALHO" caption="Id Nfe Cabecalho" width="80" type="Integer" />
+    <property name="Competencia" column="COMPETENCIA" caption="Competencia" width="56" type="String" />
+    <property name="CfopEntrada" column="CFOP_ENTRADA" caption="Cfop Entrada" width="80" type="Integer" />
+    <property name="ValorRateioFrete" column="VALOR_RATEIO_FRETE" caption="Valor Rateio Frete" width="168" type="FMTBcdField" />
+    <property name="ValorCustoMedio" column="VALOR_CUSTO_MEDIO" caption="Valor Custo Medio" width="168" type="FMTBcdField" />
+    <property name="ValorIcmsAntecipado" column="VALOR_ICMS_ANTECIPADO" caption="Valor Icms Antecipado" width="168" type="FMTBcdField" />
+    <property name="ValorBcIcmsAntecipado" column="VALOR_BC_ICMS_ANTECIPADO" caption="Valor Bc Icms Antecipado" width="168" type="FMTBcdField" />
+    <property name="ValorBcIcmsCreditado" column="VALOR_BC_ICMS_CREDITADO" caption="Valor Bc Icms Creditado" width="168" type="FMTBcdField" />
+    <property name="ValorBcPisCreditado" column="VALOR_BC_PIS_CREDITADO" caption="Valor Bc Pis Creditado" width="168" type="FMTBcdField" />
+    <property name="ValorBcCofinsCreditado" column="VALOR_BC_COFINS_CREDITADO" caption="Valor Bc Cofins Creditado" width="168" type="FMTBcdField" />
+    <property name="ValorBcIpiCreditado" column="VALOR_BC_IPI_CREDITADO" caption="Valor Bc Ipi Creditado" width="168" type="FMTBcdField" />
+    <property name="CstCreditoIcms" column="CST_CREDITO_ICMS" caption="Cst Credito Icms" width="24" type="String" />
+    <property name="CstCreditoPis" column="CST_CREDITO_PIS" caption="Cst Credito Pis" width="16" type="String" />
+    <property name="CstCreditoCofins" column="CST_CREDITO_COFINS" caption="Cst Credito Cofins" width="16" type="String" />
+    <property name="CstCreditoIpi" column="CST_CREDITO_IPI" caption="Cst Credito Ipi" width="16" type="String" />
+    <property name="ValorIcmsCreditado" column="VALOR_ICMS_CREDITADO" caption="Valor Icms Creditado" width="168" type="FMTBcdField" />
+    <property name="ValorPisCreditado" column="VALOR_PIS_CREDITADO" caption="Valor Pis Creditado" width="168" type="FMTBcdField" />
+    <property name="ValorCofinsCreditado" column="VALOR_COFINS_CREDITADO" caption="Valor Cofins Creditado" width="168" type="FMTBcdField" />
+    <property name="ValorIpiCreditado" column="VALOR_IPI_CREDITADO" caption="Valor Ipi Creditado" width="168" type="FMTBcdField" />
+    <property name="QtdeParcelaCreditoPis" column="QTDE_PARCELA_CREDITO_PIS" caption="Qtde Parcela Credito Pis" width="80" type="Integer" />
+    <property name="QtdeParcelaCreditoCofins" column="QTDE_PARCELA_CREDITO_COFINS" caption="Qtde Parcela Credito Cofins" width="80" type="Integer" />
+    <property name="QtdeParcelaCreditoIcms" column="QTDE_PARCELA_CREDITO_ICMS" caption="Qtde Parcela Credito Icms" width="80" type="Integer" />
+    <property name="QtdeParcelaCreditoIpi" column="QTDE_PARCELA_CREDITO_IPI" caption="Qtde Parcela Credito Ipi" width="80" type="Integer" />
+    <property name="AliquotaCreditoIcms" column="ALIQUOTA_CREDITO_ICMS" caption="Aliquota Credito Icms" width="168" type="FMTBcdField" />
+    <property name="AliquotaCreditoPis" column="ALIQUOTA_CREDITO_PIS" caption="Aliquota Credito Pis" width="168" type="FMTBcdField" />
+    <property name="AliquotaCreditoCofins" column="ALIQUOTA_CREDITO_COFINS" caption="Aliquota Credito Cofins" width="168" type="FMTBcdField" />
+    <property name="AliquotaCreditoIpi" column="ALIQUOTA_CREDITO_IPI" caption="Aliquota Credito Ipi" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

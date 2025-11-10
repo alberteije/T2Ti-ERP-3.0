@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteFerroviarioVagaoVO" table="cte_ferroviario_vagao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_ferroviario_vagao</param>
+      </generator>
+    </id>
+
+    <property name="IdCteFerroviario" column="ID_CTE_FERROVIARIO" caption="Id Cte Ferroviario" width="80" type="Integer" />
+    <property name="NumeroVagao" column="NUMERO_VAGAO" caption="Numero Vagao" width="80" type="Integer" />
+    <property name="Capacidade" column="CAPACIDADE" caption="Capacidade" width="168" type="FMTBcdField" />
+    <property name="TipoVagao" column="TIPO_VAGAO" caption="Tipo Vagao" width="24" type="String" />
+    <property name="PesoReal" column="PESO_REAL" caption="Peso Real" width="168" type="FMTBcdField" />
+    <property name="PesoBc" column="PESO_BC" caption="Peso Bc" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

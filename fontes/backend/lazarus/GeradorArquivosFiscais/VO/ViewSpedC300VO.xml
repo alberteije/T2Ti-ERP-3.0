@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewSpedC300VO" table="view_sped_c300" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_sped_c300</param>
+      </generator>
+    </id>
+
+    <property name="Serie" column="SERIE" caption="Serie" width="16" type="String" />
+    <property name="Subserie" column="SUBSERIE" caption="Subserie" width="16" type="String" />
+    <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
+    <property name="SomaTotalNf" column="SOMA_TOTAL_NF" caption="Soma Total Nf" width="264" type="FMTBcdField" />
+    <property name="SomaPis" column="SOMA_PIS" caption="Soma Pis" width="264" type="FMTBcdField" />
+    <property name="SomaCofins" column="SOMA_COFINS" caption="Soma Cofins" width="264" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

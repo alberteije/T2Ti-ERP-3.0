@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="VendaFreteVO" table="venda_frete" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">venda_frete</param>
+      </generator>
+    </id>
+
+    <property name="IdTransportadora" column="ID_TRANSPORTADORA" caption="Id Transportadora" width="80" type="Integer" />
+    <property name="IdVendaCabecalho" column="ID_VENDA_CABECALHO" caption="Id Venda Cabecalho" width="80" type="Integer" />
+    <property name="Conhecimento" column="CONHECIMENTO" caption="Conhecimento" width="80" type="Integer" />
+    <property name="Responsavel" column="RESPONSAVEL" caption="Responsavel" width="8" type="String" />
+    <property name="Placa" column="PLACA" caption="Placa" width="56" type="String" />
+    <property name="UfPlaca" column="UF_PLACA" caption="Uf Placa" width="16" type="String" />
+    <property name="SeloFiscal" column="SELO_FISCAL" caption="Selo Fiscal" width="80" type="Integer" />
+    <property name="QuantidadeVolume" column="QUANTIDADE_VOLUME" caption="Quantidade Volume" width="168" type="FMTBcdField" />
+    <property name="MarcaVolume" column="MARCA_VOLUME" caption="Marca Volume" width="400" type="String" />
+    <property name="EspecieVolume" column="ESPECIE_VOLUME" caption="Especie Volume" width="160" type="String" />
+    <property name="PesoBruto" column="PESO_BRUTO" caption="Peso Bruto" width="168" type="FMTBcdField" />
+    <property name="PesoLiquido" column="PESO_LIQUIDO" caption="Peso Liquido" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

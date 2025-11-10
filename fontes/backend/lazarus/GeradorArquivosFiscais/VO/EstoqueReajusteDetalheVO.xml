@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EstoqueReajusteDetalheVO" table="estoque_reajuste_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">estoque_reajuste_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdEstoqueReajusteCabecalho" column="ID_ESTOQUE_REAJUSTE_CABECALHO" caption="Id Estoque Reajuste Cabecalho" width="80" type="Integer" />
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="ValorOriginal" column="VALOR_ORIGINAL" caption="Valor Original" width="168" type="FMTBcdField" />
+    <property name="ValorReajuste" column="VALOR_REAJUSTE" caption="Valor Reajuste" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

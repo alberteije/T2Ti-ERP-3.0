@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeDestinatarioVO" table="nfe_destinatario" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_destinatario</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeCabecalho" column="ID_NFE_CABECALHO" caption="Id Nfe Cabecalho" width="80" type="Integer" />
+    <property name="CpfCnpj" column="CPF_CNPJ" caption="Cpf Cnpj" width="112" type="String" />
+    <property name="EstrangeiroIdentificacao" column="ESTRANGEIRO_IDENTIFICACAO" caption="Estrangeiro Identificacao" width="160" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Logradouro" column="LOGRADOURO" caption="Logradouro" width="450" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="450" type="String" />
+    <property name="Complemento" column="COMPLEMENTO" caption="Complemento" width="450" type="String" />
+    <property name="Bairro" column="BAIRRO" caption="Bairro" width="450" type="String" />
+    <property name="CodigoMunicipio" column="CODIGO_MUNICIPIO" caption="Codigo Municipio" width="80" type="Integer" />
+    <property name="NomeMunicipio" column="NOME_MUNICIPIO" caption="Nome Municipio" width="450" type="String" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="Cep" column="CEP" caption="Cep" width="64" type="String" />
+    <property name="CodigoPais" column="CODIGO_PAIS" caption="Codigo Pais" width="80" type="Integer" />
+    <property name="NomePais" column="NOME_PAIS" caption="Nome Pais" width="450" type="String" />
+    <property name="Telefone" column="TELEFONE" caption="Telefone" width="112" type="String" />
+    <property name="IndicadorIe" column="INDICADOR_IE" caption="Indicador Ie" width="80" type="Integer" />
+    <property name="InscricaoEstadual" column="INSCRICAO_ESTADUAL" caption="Inscricao Estadual" width="112" type="String" />
+    <property name="InscricaoMunicipal" column="INSCRICAO_MUNICIPAL" caption="Inscricao Municipal" width="120" type="String" />
+    <property name="Suframa" column="SUFRAMA" caption="Suframa" width="80" type="Integer" />
+    <property name="Email" column="EMAIL" caption="Email" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

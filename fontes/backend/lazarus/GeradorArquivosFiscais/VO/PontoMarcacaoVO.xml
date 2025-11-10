@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PontoMarcacaoVO" table="ponto_marcacao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ponto_marcacao</param>
+      </generator>
+    </id>
+
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="IdPontoRelogio" column="ID_PONTO_RELOGIO" caption="Id Ponto Relogio" width="80" type="Integer" />
+    <property name="Nsr" column="NSR" caption="Nsr" width="80" type="Integer" />
+    <property name="DataMarcacao" column="DATA_MARCACAO" caption="Data Marcacao" width="80" type="Date" />
+    <property name="HoraMarcacao" column="HORA_MARCACAO" caption="Hora Marcacao" width="64" type="String" />
+    <property name="TipoMarcacao" column="TIPO_MARCACAO" caption="Tipo Marcacao" width="8" type="String" />
+    <property name="TipoRegistro" column="TIPO_REGISTRO" caption="Tipo Registro" width="8" type="String" />
+    <property name="ParEntradaSaida" column="PAR_ENTRADA_SAIDA" caption="Par Entrada Saida" width="16" type="String" />
+    <property name="Justificativa" column="JUSTIFICATIVA" caption="Justificativa" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

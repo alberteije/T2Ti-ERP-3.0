@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteDocumentoAnteriorIdVO" table="cte_documento_anterior_id" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_documento_anterior_id</param>
+      </generator>
+    </id>
+
+    <property name="IdCteDocumentoAnterior" column="ID_CTE_DOCUMENTO_ANTERIOR" caption="Id Cte Documento Anterior" width="80" type="Integer" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="16" type="String" />
+    <property name="Serie" column="SERIE" caption="Serie" width="24" type="String" />
+    <property name="Subserie" column="SUBSERIE" caption="Subserie" width="16" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="160" type="String" />
+    <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
+    <property name="ChaveCte" column="CHAVE_CTE" caption="Chave Cte" width="352" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

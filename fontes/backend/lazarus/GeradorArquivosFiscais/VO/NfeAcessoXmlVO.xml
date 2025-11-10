@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeAcessoXmlVO" table="nfe_acesso_xml" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_acesso_xml</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeCabecalho" column="ID_NFE_CABECALHO" caption="Id Nfe Cabecalho" width="80" type="Integer" />
+    <property name="Cnpj" column="CNPJ" caption="Cnpj" width="112" type="String" />
+    <property name="Cpf" column="CPF" caption="Cpf" width="88" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

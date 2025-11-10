@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContabilEncerramentoExeDetVO" table="contabil_encerramento_exe_det" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contabil_encerramento_exe_det</param>
+      </generator>
+    </id>
+
+    <property name="IdContabilConta" column="ID_CONTABIL_CONTA" caption="Id Contabil Conta" width="80" type="Integer" />
+    <property name="IdContabilEncerramentoExe" column="ID_CONTABIL_ENCERRAMENTO_EXE" caption="Id Contabil Encerramento Exe" width="80" type="Integer" />
+    <property name="SaldoAnterior" column="SALDO_ANTERIOR" caption="Saldo Anterior" width="168" type="FMTBcdField" />
+    <property name="ValorDebito" column="VALOR_DEBITO" caption="Valor Debito" width="168" type="FMTBcdField" />
+    <property name="ValorCredito" column="VALOR_CREDITO" caption="Valor Credito" width="168" type="FMTBcdField" />
+    <property name="Saldo" column="SALDO" caption="Saldo" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

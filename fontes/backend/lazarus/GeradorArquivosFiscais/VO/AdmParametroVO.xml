@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="AdmParametroVO" table="adm_parametro" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">adm_parametro</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="FinParcelaAberto" column="FIN_PARCELA_ABERTO" caption="Fin Parcela Aberto" width="80" type="Integer" />
+    <property name="FinParcelaQuitado" column="FIN_PARCELA_QUITADO" caption="Fin Parcela Quitado" width="80" type="Integer" />
+    <property name="FinParcelaQuitadoParcial" column="FIN_PARCELA_QUITADO_PARCIAL" caption="Fin Parcela Quitado Parcial" width="80" type="Integer" />
+    <property name="FinTipoRecebimentoEdi" column="FIN_TIPO_RECEBIMENTO_EDI" caption="Fin Tipo Recebimento Edi" width="80" type="Integer" />
+    <property name="CompraFinDocOrigem" column="COMPRA_FIN_DOC_ORIGEM" caption="Compra Fin Doc Origem" width="80" type="Integer" />
+    <property name="CompraContaCaixa" column="COMPRA_CONTA_CAIXA" caption="Compra Conta Caixa" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

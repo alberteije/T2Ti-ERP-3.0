@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeReferenciadaVO" table="nfe_referenciada" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_referenciada</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeCabecalho" column="ID_NFE_CABECALHO" caption="Id Nfe Cabecalho" width="80" type="Integer" />
+    <property name="ChaveAcesso" column="CHAVE_ACESSO" caption="Chave Acesso" width="352" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

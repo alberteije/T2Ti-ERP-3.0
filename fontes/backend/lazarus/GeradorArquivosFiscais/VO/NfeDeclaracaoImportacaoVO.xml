@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeDeclaracaoImportacaoVO" table="nfe_declaracao_importacao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_declaracao_importacao</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeDetalhe" column="ID_NFE_DETALHE" caption="Id Nfe Detalhe" width="80" type="Integer" />
+    <property name="NumeroDocumento" column="NUMERO_DOCUMENTO" caption="Numero Documento" width="96" type="String" />
+    <property name="DataRegistro" column="DATA_REGISTRO" caption="Data Registro" width="80" type="Date" />
+    <property name="LocalDesembaraco" column="LOCAL_DESEMBARACO" caption="Local Desembaraco" width="450" type="String" />
+    <property name="UfDesembaraco" column="UF_DESEMBARACO" caption="Uf Desembaraco" width="16" type="String" />
+    <property name="DataDesembaraco" column="DATA_DESEMBARACO" caption="Data Desembaraco" width="80" type="Date" />
+    <property name="CodigoExportador" column="CODIGO_EXPORTADOR" caption="Codigo Exportador" width="450" type="String" />
+    <property name="ViaTransporte" column="VIA_TRANSPORTE" caption="Via Transporte" width="80" type="Integer" />
+    <property name="ValorAfrmm" column="VALOR_AFRMM" caption="Valor Afrmm" width="168" type="FMTBcdField" />
+    <property name="FormaIntermediacao" column="FORMA_INTERMEDIACAO" caption="Forma Intermediacao" width="80" type="Integer" />
+    <property name="Cnpj" column="CNPJ" caption="Cnpj" width="112" type="String" />
+    <property name="UfTerceiro" column="UF_TERCEIRO" caption="Uf Terceiro" width="16" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

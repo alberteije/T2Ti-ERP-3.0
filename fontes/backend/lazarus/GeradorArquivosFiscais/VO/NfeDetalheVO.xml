@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeDetalheVO" table="nfe_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="IdNfeCabecalho" column="ID_NFE_CABECALHO" caption="Id Nfe Cabecalho" width="80" type="Integer" />
+    <property name="NumeroItem" column="NUMERO_ITEM" caption="Numero Item" width="80" type="Integer" />
+    <property name="CodigoProduto" column="CODIGO_PRODUTO" caption="Codigo Produto" width="450" type="String" />
+    <property name="Gtin" column="GTIN" caption="Gtin" width="112" type="String" />
+    <property name="NomeProduto" column="NOME_PRODUTO" caption="Nome Produto" width="450" type="String" />
+    <property name="Ncm" column="NCM" caption="Ncm" width="64" type="String" />
+    <property name="Nve" column="NVE" caption="Nve" width="48" type="String" />
+    <property name="ExTipi" column="EX_TIPI" caption="Ex Tipi" width="80" type="Integer" />
+    <property name="Cfop" column="CFOP" caption="Cfop" width="80" type="Integer" />
+    <property name="UnidadeComercial" column="UNIDADE_COMERCIAL" caption="Unidade Comercial" width="48" type="String" />
+    <property name="QuantidadeComercial" column="QUANTIDADE_COMERCIAL" caption="Quantidade Comercial" width="168" type="FMTBcdField" />
+    <property name="ValorUnitarioComercial" column="VALOR_UNITARIO_COMERCIAL" caption="Valor Unitario Comercial" width="168" type="FMTBcdField" />
+    <property name="ValorBrutoProduto" column="VALOR_BRUTO_PRODUTO" caption="Valor Bruto Produto" width="168" type="FMTBcdField" />
+    <property name="GtinUnidadeTributavel" column="GTIN_UNIDADE_TRIBUTAVEL" caption="Gtin Unidade Tributavel" width="112" type="String" />
+    <property name="UnidadeTributavel" column="UNIDADE_TRIBUTAVEL" caption="Unidade Tributavel" width="48" type="String" />
+    <property name="QuantidadeTributavel" column="QUANTIDADE_TRIBUTAVEL" caption="Quantidade Tributavel" width="168" type="FMTBcdField" />
+    <property name="ValorUnitarioTributavel" column="VALOR_UNITARIO_TRIBUTAVEL" caption="Valor Unitario Tributavel" width="168" type="FMTBcdField" />
+    <property name="ValorFrete" column="VALOR_FRETE" caption="Valor Frete" width="168" type="FMTBcdField" />
+    <property name="ValorSeguro" column="VALOR_SEGURO" caption="Valor Seguro" width="168" type="FMTBcdField" />
+    <property name="ValorDesconto" column="VALOR_DESCONTO" caption="Valor Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorOutrasDespesas" column="VALOR_OUTRAS_DESPESAS" caption="Valor Outras Despesas" width="168" type="FMTBcdField" />
+    <property name="EntraTotal" column="ENTRA_TOTAL" caption="Entra Total" width="80" type="Integer" />
+    <property name="ValorSubtotal" column="VALOR_SUBTOTAL" caption="Valor Subtotal" width="168" type="FMTBcdField" />
+    <property name="ValorTotal" column="VALOR_TOTAL" caption="Valor Total" width="168" type="FMTBcdField" />
+    <property name="NumeroPedidoCompra" column="NUMERO_PEDIDO_COMPRA" caption="Numero Pedido Compra" width="120" type="String" />
+    <property name="ItemPedidoCompra" column="ITEM_PEDIDO_COMPRA" caption="Item Pedido Compra" width="80" type="Integer" />
+    <property name="InformacoesAdicionais" column="INFORMACOES_ADICIONAIS" caption="Informacoes Adicionais" width="450" type="Memo" />
+    <property name="NumeroFci" column="NUMERO_FCI" caption="Numero Fci" width="288" type="String" />
+    <property name="NumeroRecopi" column="NUMERO_RECOPI" caption="Numero Recopi" width="160" type="String" />
+    <property name="ValorTotalTributos" column="VALOR_TOTAL_TRIBUTOS" caption="Valor Total Tributos" width="168" type="FMTBcdField" />
+    <property name="PercentualDevolvido" column="PERCENTUAL_DEVOLVIDO" caption="Percentual Devolvido" width="168" type="FMTBcdField" />
+    <property name="ValorIpiDevolvido" column="VALOR_IPI_DEVOLVIDO" caption="Valor Ipi Devolvido" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

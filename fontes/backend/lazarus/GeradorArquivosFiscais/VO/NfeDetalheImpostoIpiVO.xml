@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeDetalheImpostoIpiVO" table="nfe_detalhe_imposto_ipi" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_detalhe_imposto_ipi</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeDetalhe" column="ID_NFE_DETALHE" caption="Id Nfe Detalhe" width="80" type="Integer" />
+    <property name="EnquadramentoIpi" column="ENQUADRAMENTO_IPI" caption="Enquadramento Ipi" width="40" type="String" />
+    <property name="CnpjProdutor" column="CNPJ_PRODUTOR" caption="Cnpj Produtor" width="112" type="String" />
+    <property name="CodigoSeloIpi" column="CODIGO_SELO_IPI" caption="Codigo Selo Ipi" width="450" type="String" />
+    <property name="QuantidadeSeloIpi" column="QUANTIDADE_SELO_IPI" caption="Quantidade Selo Ipi" width="80" type="Integer" />
+    <property name="EnquadramentoLegalIpi" column="ENQUADRAMENTO_LEGAL_IPI" caption="Enquadramento Legal Ipi" width="24" type="String" />
+    <property name="CstIpi" column="CST_IPI" caption="Cst Ipi" width="16" type="String" />
+    <property name="ValorBaseCalculoIpi" column="VALOR_BASE_CALCULO_IPI" caption="Valor Base Calculo Ipi" width="168" type="FMTBcdField" />
+    <property name="AliquotaIpi" column="ALIQUOTA_IPI" caption="Aliquota Ipi" width="168" type="FMTBcdField" />
+    <property name="QuantidadeUnidadeTributavel" column="QUANTIDADE_UNIDADE_TRIBUTAVEL" caption="Quantidade Unidade Tributavel" width="168" type="FMTBcdField" />
+    <property name="ValorUnidadeTributavel" column="VALOR_UNIDADE_TRIBUTAVEL" caption="Valor Unidade Tributavel" width="168" type="FMTBcdField" />
+    <property name="ValorIpi" column="VALOR_IPI" caption="Valor Ipi" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

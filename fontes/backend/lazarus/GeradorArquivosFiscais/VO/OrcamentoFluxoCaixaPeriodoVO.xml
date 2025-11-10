@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="OrcamentoFluxoCaixaPeriodoVO" table="orcamento_fluxo_caixa_periodo" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">orcamento_fluxo_caixa_periodo</param>
+      </generator>
+    </id>
+
+    <property name="IdContaCaixa" column="ID_CONTA_CAIXA" caption="Id Conta Caixa" width="80" type="Integer" />
+    <property name="Periodo" column="PERIODO" caption="Periodo" width="16" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="240" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

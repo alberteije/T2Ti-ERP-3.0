@@ -1,0 +1,74 @@
+object FDataModule: TFDataModule
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 432
+  HorizontalOffset = 812
+  VerticalOffset = 322
+  Width = 653
+  PPI = 144
+  object ACBrSPEDFiscal: TACBrSPEDFiscal
+    Path = 'C:\lazarus\'
+    Delimitador = '|'
+    ReplaceDelimitador = False
+    TrimString = True
+    CurMascara = '#0.00'
+    Left = 137
+    Top = 140
+  end
+  object ACBrSPEDContabil: TACBrSPEDContabil
+    Path = 'C:\lazarus\'
+    Delimitador = '|'
+    ReplaceDelimitador = False
+    TrimString = True
+    CurMascara = '#0.00'
+    Left = 128
+    Top = 248
+  end
+  object ACBrSpedContribuicoes: TACBrSPEDPisCofins
+    Path = 'C:\lazarus\'
+    Delimitador = '|'
+    ReplaceDelimitador = False
+    TrimString = True
+    CurMascara = '#0.00'
+    Left = 320
+    Top = 144
+  end
+  object ACBrSintegra: TACBrSintegra
+    VersaoValidador = vv524
+    Informa88SME = False
+    Informa88SMS = False
+    Informa88EAN = False
+    Informa88C = False
+    InformaSapiMG = False
+    Left = 332
+    Top = 255
+  end
+  object ACBrReinf: TACBrReinf
+    Configuracoes.Geral.SSLLib = libNone
+    Configuracoes.Geral.SSLCryptLib = cryNone
+    Configuracoes.Geral.SSLHttpLib = httpNone
+    Configuracoes.Geral.SSLXmlSignLib = xsNone
+    Configuracoes.Geral.ExibirErroSchema = False
+    Configuracoes.Geral.FormatoAlerta = 'TAG:%TAGNIVEL% ID:%ID%/%TAG%(%DESCRICAO%) - %MSG%.'
+    Configuracoes.Arquivos.OrdenacaoPath = <>
+    Configuracoes.WebServices.UF = 'SP'
+    Configuracoes.WebServices.AguardarConsultaRet = 0
+    Configuracoes.WebServices.QuebradeLinha = '|'
+    Left = 489
+    Top = 112
+  end
+  object ACBreSocial: TACBreSocial
+    Configuracoes.Geral.SSLLib = libCustom
+    Configuracoes.Geral.SSLCryptLib = cryOpenSSL
+    Configuracoes.Geral.SSLHttpLib = httpNone
+    Configuracoes.Geral.SSLXmlSignLib = xsLibXml2
+    Configuracoes.Geral.FormatoAlerta = 'TAG:%TAGNIVEL% ID:%ID%/%TAG%(%DESCRICAO%) - %MSG%.'
+    Configuracoes.Geral.VersaoDF = veS01_02_00
+    Configuracoes.Arquivos.OrdenacaoPath = <>
+    Configuracoes.WebServices.UF = 'SP'
+    Configuracoes.WebServices.AguardarConsultaRet = 0
+    Configuracoes.WebServices.QuebradeLinha = '|'
+    Left = 505
+    Top = 261
+  end
+end

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ProdutoLacreEntradaVO" table="produto_lacre_entrada" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">produto_lacre_entrada</param>
+      </generator>
+    </id>
+
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="IdLacreProduto" column="ID_LACRE_PRODUTO" caption="Id Lacre Produto" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

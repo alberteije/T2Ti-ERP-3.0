@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewFinTotalRecebimentosDiaVO" table="view_fin_total_recebimentos_dia" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_fin_total_recebimentos_dia</param>
+      </generator>
+    </id>
+
+    <property name="IdContaCaixa" column="ID_CONTA_CAIXA" caption="Id Conta Caixa" width="80" type="Integer" />
+    <property name="DataRecebimento" column="DATA_RECEBIMENTO" caption="Data Recebimento" width="80" type="Date" />
+    <property name="Total" column="TOTAL" caption="Total" width="264" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

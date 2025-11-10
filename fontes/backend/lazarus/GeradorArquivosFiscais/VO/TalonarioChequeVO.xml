@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="TalonarioChequeVO" table="talonario_cheque" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">talonario_cheque</param>
+      </generator>
+    </id>
+
+    <property name="IdContaCaixa" column="ID_CONTA_CAIXA" caption="Id Conta Caixa" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Talao" column="TALAO" caption="Talao" width="80" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="Integer" />
+    <property name="StatusTalao" column="STATUS_TALAO" caption="Status Talao" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

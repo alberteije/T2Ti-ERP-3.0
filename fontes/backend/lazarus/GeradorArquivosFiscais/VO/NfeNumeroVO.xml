@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeNumeroVO" table="nfe_numero" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_numero</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Serie" column="SERIE" caption="Serie" width="24" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EmpresaProdutoVO" table="empresa_produto" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">empresa_produto</param>
+      </generator>
+    </id>
+
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="QuantidadeEstoque" column="QUANTIDADE_ESTOQUE" caption="Quantidade Estoque" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

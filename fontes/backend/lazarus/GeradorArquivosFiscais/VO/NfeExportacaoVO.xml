@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeExportacaoVO" table="nfe_exportacao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_exportacao</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeDetalhe" column="ID_NFE_DETALHE" caption="Id Nfe Detalhe" width="80" type="Integer" />
+    <property name="Drawback" column="DRAWBACK" caption="Drawback" width="80" type="Integer" />
+    <property name="NumeroRegistro" column="NUMERO_REGISTRO" caption="Numero Registro" width="80" type="Integer" />
+    <property name="ChaveAcesso" column="CHAVE_ACESSO" caption="Chave Acesso" width="352" type="String" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

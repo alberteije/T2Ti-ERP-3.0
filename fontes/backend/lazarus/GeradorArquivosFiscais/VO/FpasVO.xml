@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FpasVO" table="fpas" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fpas</param>
+      </generator>
+    </id>
+
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="80" type="Integer" />
+    <property name="Cnae" column="CNAE" caption="Cnae" width="112" type="String" />
+    <property name="AliquotaSat" column="ALIQUOTA_SAT" caption="Aliquota Sat" width="96" type="FMTBcdField" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+    <property name="PercentualInssPatronal" column="PERCENTUAL_INSS_PATRONAL" caption="Percentual Inss Patronal" width="168" type="FMTBcdField" />
+    <property name="CodigoTerceiro" column="CODIGO_TERCEIRO" caption="Codigo Terceiro" width="32" type="String" />
+    <property name="PercentualTerceiros" column="PERCENTUAL_TERCEIROS" caption="Percentual Terceiros" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

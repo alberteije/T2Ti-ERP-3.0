@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="LogssVO" table="logss" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">logss</param>
+      </generator>
+    </id>
+
+    <property name="Davc" column="DAVC" caption="Davc" width="80" type="Integer" />
+    <property name="Davd" column="DAVD" caption="Davd" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

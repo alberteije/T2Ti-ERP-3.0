@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FinLctoReceberNtFinanceiraVO" table="fin_lcto_receber_nt_financeira" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fin_lcto_receber_nt_financeira</param>
+      </generator>
+    </id>
+
+    <property name="IdFinLancamentoReceber" column="ID_FIN_LANCAMENTO_RECEBER" caption="Id Fin Lancamento Receber" width="80" type="Integer" />
+    <property name="IdContabilLancamentoDet" column="ID_CONTABIL_LANCAMENTO_DET" caption="Id Contabil Lancamento Det" width="80" type="Integer" />
+    <property name="IdNaturezaFinanceira" column="ID_NATUREZA_FINANCEIRA" caption="Id Natureza Financeira" width="80" type="Integer" />
+    <property name="DataInclusao" column="DATA_INCLUSAO" caption="Data Inclusao" width="80" type="Date" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+    <property name="Percentual" column="PERCENTUAL" caption="Percentual" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

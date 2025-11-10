@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FolhaPppAtividadeVO" table="folha_ppp_atividade" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">folha_ppp_atividade</param>
+      </generator>
+    </id>
+
+    <property name="IdFolhaPpp" column="ID_FOLHA_PPP" caption="Id Folha Ppp" width="80" type="Integer" />
+    <property name="DataInicio" column="DATA_INICIO" caption="Data Inicio" width="80" type="Date" />
+    <property name="DataFim" column="DATA_FIM" caption="Data Fim" width="80" type="Date" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

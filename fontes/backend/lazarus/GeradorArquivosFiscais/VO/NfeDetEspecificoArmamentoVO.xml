@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeDetEspecificoArmamentoVO" table="nfe_det_especifico_armamento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_det_especifico_armamento</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeDetalhe" column="ID_NFE_DETALHE" caption="Id Nfe Detalhe" width="80" type="Integer" />
+    <property name="TipoArma" column="TIPO_ARMA" caption="Tipo Arma" width="80" type="Integer" />
+    <property name="NumeroSerieArma" column="NUMERO_SERIE_ARMA" caption="Numero Serie Arma" width="120" type="String" />
+    <property name="NumeroSerieCano" column="NUMERO_SERIE_CANO" caption="Numero Serie Cano" width="120" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

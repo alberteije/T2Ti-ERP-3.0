@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ProdutoLoteVO" table="produto_lote" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">produto_lote</param>
+      </generator>
+    </id>
+
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="400" type="String" />
+    <property name="DataCadastro" column="DATA_CADASTRO" caption="Data Cadastro" width="80" type="Date" />
+    <property name="DataCompra" column="DATA_COMPRA" caption="Data Compra" width="80" type="Date" />
+    <property name="DataFabricacao" column="DATA_FABRICACAO" caption="Data Fabricacao" width="80" type="Date" />
+    <property name="DataValidade" column="DATA_VALIDADE" caption="Data Validade" width="80" type="Date" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="168" type="FMTBcdField" />
+    <property name="PrecoMaximoConsumidor" column="PRECO_MAXIMO_CONSUMIDOR" caption="Preco Maximo Consumidor" width="168" type="FMTBcdField" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

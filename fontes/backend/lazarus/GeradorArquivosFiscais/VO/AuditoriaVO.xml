@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="AuditoriaVO" table="auditoria" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">auditoria</param>
+      </generator>
+    </id>
+
+    <property name="IdUsuario" column="ID_USUARIO" caption="Id Usuario" width="80" type="Integer" />
+    <property name="DataRegistro" column="DATA_REGISTRO" caption="Data Registro" width="80" type="Date" />
+    <property name="HoraRegistro" column="HORA_REGISTRO" caption="Hora Registro" width="64" type="String" />
+    <property name="JanelaController" column="JANELA_CONTROLLER" caption="Janela Controller" width="400" type="String" />
+    <property name="Acao" column="ACAO" caption="Acao" width="400" type="String" />
+    <property name="Conteudo" column="CONTEUDO" caption="Conteudo" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

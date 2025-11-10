@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NaturezaFinanceiraVO" table="natureza_financeira" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">natureza_financeira</param>
+      </generator>
+    </id>
+
+    <property name="IdPlanoNaturezaFinanceira" column="ID_PLANO_NATUREZA_FINANCEIRA" caption="Id Plano Natureza Financeira" width="80" type="Integer" />
+    <property name="IdContabilConta" column="ID_CONTABIL_CONTA" caption="Id Contabil Conta" width="80" type="Integer" />
+    <property name="Classificacao" column="CLASSIFICACAO" caption="Classificacao" width="240" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="8" type="String" />
+    <property name="Aplicacao" column="APLICACAO" caption="Aplicacao" width="450" type="String" />
+    <property name="ApareceAPagar" column="APARECE_A_PAGAR" caption="Aparece A Pagar" width="8" type="String" />
+    <property name="ApareceAReceber" column="APARECE_A_RECEBER" caption="Aparece A Receber" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

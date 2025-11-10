@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContabilDreDetalheVO" table="contabil_dre_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contabil_dre_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdContabilDreCabecalho" column="ID_CONTABIL_DRE_CABECALHO" caption="Id Contabil Dre Cabecalho" width="80" type="Integer" />
+    <property name="Classificacao" column="CLASSIFICACAO" caption="Classificacao" width="240" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+    <property name="FormaCalculo" column="FORMA_CALCULO" caption="Forma Calculo" width="8" type="String" />
+    <property name="Sinal" column="SINAL" caption="Sinal" width="8" type="String" />
+    <property name="Natureza" column="NATUREZA" caption="Natureza" width="8" type="String" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

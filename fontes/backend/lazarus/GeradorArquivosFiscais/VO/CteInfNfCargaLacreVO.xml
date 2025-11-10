@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteInfNfCargaLacreVO" table="cte_inf_nf_carga_lacre" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_inf_nf_carga_lacre</param>
+      </generator>
+    </id>
+
+    <property name="IdCteInformacaoNfCarga" column="ID_CTE_INFORMACAO_NF_CARGA" caption="Id Cte Informacao Nf Carga" width="80" type="Integer" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="160" type="String" />
+    <property name="QuantidadeRateada" column="QUANTIDADE_RATEADA" caption="Quantidade Rateada" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

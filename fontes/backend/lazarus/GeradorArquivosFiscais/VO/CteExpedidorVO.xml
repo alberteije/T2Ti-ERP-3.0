@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteExpedidorVO" table="cte_expedidor" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_expedidor</param>
+      </generator>
+    </id>
+
+    <property name="IdCteCabecalho" column="ID_CTE_CABECALHO" caption="Id Cte Cabecalho" width="80" type="Integer" />
+    <property name="Cnpj" column="CNPJ" caption="Cnpj" width="112" type="String" />
+    <property name="Cpf" column="CPF" caption="Cpf" width="80" type="Integer" />
+    <property name="Ie" column="IE" caption="Ie" width="160" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Fantasia" column="FANTASIA" caption="Fantasia" width="450" type="String" />
+    <property name="Telefone" column="TELEFONE" caption="Telefone" width="112" type="String" />
+    <property name="Logradouro" column="LOGRADOURO" caption="Logradouro" width="450" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="450" type="String" />
+    <property name="Complemento" column="COMPLEMENTO" caption="Complemento" width="450" type="String" />
+    <property name="Bairro" column="BAIRRO" caption="Bairro" width="450" type="String" />
+    <property name="CodigoMunicipio" column="CODIGO_MUNICIPIO" caption="Codigo Municipio" width="80" type="Integer" />
+    <property name="NomeMunicipio" column="NOME_MUNICIPIO" caption="Nome Municipio" width="450" type="String" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="Cep" column="CEP" caption="Cep" width="64" type="String" />
+    <property name="CodigoPais" column="CODIGO_PAIS" caption="Codigo Pais" width="80" type="Integer" />
+    <property name="NomePais" column="NOME_PAIS" caption="Nome Pais" width="450" type="String" />
+    <property name="Email" column="EMAIL" caption="Email" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

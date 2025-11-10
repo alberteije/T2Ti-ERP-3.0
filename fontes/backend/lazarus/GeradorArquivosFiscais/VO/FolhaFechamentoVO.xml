@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FolhaFechamentoVO" table="folha_fechamento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">folha_fechamento</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="FechamentoAtual" column="FECHAMENTO_ATUAL" caption="Fechamento Atual" width="56" type="String" />
+    <property name="ProximoFechamento" column="PROXIMO_FECHAMENTO" caption="Proximo Fechamento" width="56" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

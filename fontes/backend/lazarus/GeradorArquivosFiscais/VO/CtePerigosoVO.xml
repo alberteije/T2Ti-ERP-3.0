@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CtePerigosoVO" table="cte_perigoso" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_perigoso</param>
+      </generator>
+    </id>
+
+    <property name="IdCteCabecalho" column="ID_CTE_CABECALHO" caption="Id Cte Cabecalho" width="80" type="Integer" />
+    <property name="NumeroOnu" column="NUMERO_ONU" caption="Numero Onu" width="32" type="String" />
+    <property name="NomeApropriado" column="NOME_APROPRIADO" caption="Nome Apropriado" width="450" type="String" />
+    <property name="ClasseRisco" column="CLASSE_RISCO" caption="Classe Risco" width="320" type="String" />
+    <property name="GrupoEmbalagem" column="GRUPO_EMBALAGEM" caption="Grupo Embalagem" width="48" type="String" />
+    <property name="QuantidadeTotalProduto" column="QUANTIDADE_TOTAL_PRODUTO" caption="Quantidade Total Produto" width="160" type="String" />
+    <property name="QuantidadeTipoVolume" column="QUANTIDADE_TIPO_VOLUME" caption="Quantidade Tipo Volume" width="450" type="String" />
+    <property name="PontoFulgor" column="PONTO_FULGOR" caption="Ponto Fulgor" width="48" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

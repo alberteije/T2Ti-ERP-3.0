@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfceTurnoVO" table="nfce_turno" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfce_turno</param>
+      </generator>
+    </id>
+
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="80" type="String" />
+    <property name="HoraInicio" column="HORA_INICIO" caption="Hora Inicio" width="64" type="String" />
+    <property name="HoraFim" column="HORA_FIM" caption="Hora Fim" width="64" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

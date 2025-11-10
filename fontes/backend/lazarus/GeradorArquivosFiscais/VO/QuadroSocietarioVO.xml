@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="QuadroSocietarioVO" table="quadro_societario" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">quadro_societario</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="DataRegistro" column="DATA_REGISTRO" caption="Data Registro" width="80" type="Date" />
+    <property name="CapitalSocial" column="CAPITAL_SOCIAL" caption="Capital Social" width="168" type="FMTBcdField" />
+    <property name="ValorQuota" column="VALOR_QUOTA" caption="Valor Quota" width="168" type="FMTBcdField" />
+    <property name="QuantidadeCotas" column="QUANTIDADE_COTAS" caption="Quantidade Cotas" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

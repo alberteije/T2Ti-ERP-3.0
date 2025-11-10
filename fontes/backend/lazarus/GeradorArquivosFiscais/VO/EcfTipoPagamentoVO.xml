@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EcfTipoPagamentoVO" table="ecf_tipo_pagamento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ecf_tipo_pagamento</param>
+      </generator>
+    </id>
+
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="24" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="160" type="String" />
+    <property name="Tef" column="TEF" caption="Tef" width="8" type="String" />
+    <property name="ImprimeVinculado" column="IMPRIME_VINCULADO" caption="Imprime Vinculado" width="8" type="String" />
+    <property name="PermiteTroco" column="PERMITE_TROCO" caption="Permite Troco" width="8" type="String" />
+    <property name="TefTipoGp" column="TEF_TIPO_GP" caption="Tef Tipo Gp" width="8" type="String" />
+    <property name="GeraParcelas" column="GERA_PARCELAS" caption="Gera Parcelas" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

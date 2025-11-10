@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ProdutoSubgrupoVO" table="produto_subgrupo" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">produto_subgrupo</param>
+      </generator>
+    </id>
+
+    <property name="IdGrupo" column="ID_GRUPO" caption="Id Grupo" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

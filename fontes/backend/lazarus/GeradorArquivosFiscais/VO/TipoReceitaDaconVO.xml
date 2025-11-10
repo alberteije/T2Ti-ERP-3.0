@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="TipoReceitaDaconVO" table="tipo_receita_dacon" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">tipo_receita_dacon</param>
+      </generator>
+    </id>
+
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="80" type="Integer" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="400" type="String" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

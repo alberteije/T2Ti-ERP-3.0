@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FinChequeEmitidoVO" table="fin_cheque_emitido" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fin_cheque_emitido</param>
+      </generator>
+    </id>
+
+    <property name="IdCheque" column="ID_CHEQUE" caption="Id Cheque" width="80" type="Integer" />
+    <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
+    <property name="BomPara" column="BOM_PARA" caption="Bom Para" width="80" type="Date" />
+    <property name="DataCompensacao" column="DATA_COMPENSACAO" caption="Data Compensacao" width="80" type="Date" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+    <property name="NominalA" column="NOMINAL_A" caption="Nominal A" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

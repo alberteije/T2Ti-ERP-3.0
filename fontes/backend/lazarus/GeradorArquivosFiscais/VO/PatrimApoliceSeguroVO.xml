@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PatrimApoliceSeguroVO" table="patrim_apolice_seguro" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">patrim_apolice_seguro</param>
+      </generator>
+    </id>
+
+    <property name="IdPatrimBem" column="ID_PATRIM_BEM" caption="Id Patrim Bem" width="80" type="Integer" />
+    <property name="IdSeguradora" column="ID_SEGURADORA" caption="Id Seguradora" width="80" type="Integer" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="160" type="String" />
+    <property name="DataContratacao" column="DATA_CONTRATACAO" caption="Data Contratacao" width="80" type="Date" />
+    <property name="DataVencimento" column="DATA_VENCIMENTO" caption="Data Vencimento" width="80" type="Date" />
+    <property name="ValorPremio" column="VALOR_PREMIO" caption="Valor Premio" width="168" type="FMTBcdField" />
+    <property name="ValorSegurado" column="VALOR_SEGURADO" caption="Valor Segurado" width="168" type="FMTBcdField" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+    <property name="Imagem" column="IMAGEM" caption="Imagem" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

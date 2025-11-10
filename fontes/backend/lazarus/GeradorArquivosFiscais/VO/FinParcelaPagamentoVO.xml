@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FinParcelaPagamentoVO" table="fin_parcela_pagamento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fin_parcela_pagamento</param>
+      </generator>
+    </id>
+
+    <property name="IdFinParcelaPagar" column="ID_FIN_PARCELA_PAGAR" caption="Id Fin Parcela Pagar" width="80" type="Integer" />
+    <property name="IdFinChequeEmitido" column="ID_FIN_CHEQUE_EMITIDO" caption="Id Fin Cheque Emitido" width="80" type="Integer" />
+    <property name="IdFinTipoPagamento" column="ID_FIN_TIPO_PAGAMENTO" caption="Id Fin Tipo Pagamento" width="80" type="Integer" />
+    <property name="IdContaCaixa" column="ID_CONTA_CAIXA" caption="Id Conta Caixa" width="80" type="Integer" />
+    <property name="DataPagamento" column="DATA_PAGAMENTO" caption="Data Pagamento" width="80" type="Date" />
+    <property name="TaxaJuro" column="TAXA_JURO" caption="Taxa Juro" width="168" type="FMTBcdField" />
+    <property name="TaxaMulta" column="TAXA_MULTA" caption="Taxa Multa" width="168" type="FMTBcdField" />
+    <property name="TaxaDesconto" column="TAXA_DESCONTO" caption="Taxa Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorJuro" column="VALOR_JURO" caption="Valor Juro" width="168" type="FMTBcdField" />
+    <property name="ValorMulta" column="VALOR_MULTA" caption="Valor Multa" width="168" type="FMTBcdField" />
+    <property name="ValorDesconto" column="VALOR_DESCONTO" caption="Valor Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorPago" column="VALOR_PAGO" caption="Valor Pago" width="168" type="FMTBcdField" />
+    <property name="Historico" column="HISTORICO" caption="Historico" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

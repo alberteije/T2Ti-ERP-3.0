@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EcfConfiguracaoVO" table="ecf_configuracao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ecf_configuracao</param>
+      </generator>
+    </id>
+
+    <property name="NomeCaixa" column="NOME_CAIXA" caption="Nome Caixa" width="240" type="String" />
+    <property name="IdGeradoCaixa" column="ID_GERADO_CAIXA" caption="Id Gerado Caixa" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdEcfImpressora" column="ID_ECF_IMPRESSORA" caption="Id Ecf Impressora" width="80" type="Integer" />
+    <property name="IdEcfResolucao" column="ID_ECF_RESOLUCAO" caption="Id Ecf Resolucao" width="80" type="Integer" />
+    <property name="IdEcfCaixa" column="ID_ECF_CAIXA" caption="Id Ecf Caixa" width="80" type="Integer" />
+    <property name="IdEcfEmpresa" column="ID_ECF_EMPRESA" caption="Id Ecf Empresa" width="80" type="Integer" />
+    <property name="MensagemCupom" column="MENSAGEM_CUPOM" caption="Mensagem Cupom" width="450" type="String" />
+    <property name="PortaEcf" column="PORTA_ECF" caption="Porta Ecf" width="80" type="String" />
+    <property name="IpServidor" column="IP_SERVIDOR" caption="Ip Servidor" width="120" type="String" />
+    <property name="IpSitef" column="IP_SITEF" caption="Ip Sitef" width="120" type="String" />
+    <property name="TipoTef" column="TIPO_TEF" caption="Tipo Tef" width="16" type="String" />
+    <property name="TituloTelaCaixa" column="TITULO_TELA_CAIXA" caption="Titulo Tela Caixa" width="450" type="String" />
+    <property name="CaminhoImagensProdutos" column="CAMINHO_IMAGENS_PRODUTOS" caption="Caminho Imagens Produtos" width="450" type="String" />
+    <property name="CaminhoImagensMarketing" column="CAMINHO_IMAGENS_MARKETING" caption="Caminho Imagens Marketing" width="450" type="String" />
+    <property name="CaminhoImagensLayout" column="CAMINHO_IMAGENS_LAYOUT" caption="Caminho Imagens Layout" width="450" type="String" />
+    <property name="CorJanelasInternas" column="COR_JANELAS_INTERNAS" caption="Cor Janelas Internas" width="160" type="String" />
+    <property name="MarketingAtivo" column="MARKETING_ATIVO" caption="Marketing Ativo" width="8" type="String" />
+    <property name="CfopEcf" column="CFOP_ECF" caption="Cfop Ecf" width="80" type="Integer" />
+    <property name="CfopNf2" column="CFOP_NF2" caption="Cfop Nf2" width="80" type="Integer" />
+    <property name="TimeoutEcf" column="TIMEOUT_ECF" caption="Timeout Ecf" width="80" type="Integer" />
+    <property name="IntervaloEcf" column="INTERVALO_ECF" caption="Intervalo Ecf" width="80" type="Integer" />
+    <property name="DescricaoSuprimento" column="DESCRICAO_SUPRIMENTO" caption="Descricao Suprimento" width="160" type="String" />
+    <property name="DescricaoSangria" column="DESCRICAO_SANGRIA" caption="Descricao Sangria" width="160" type="String" />
+    <property name="TefTipoGp" column="TEF_TIPO_GP" caption="Tef Tipo Gp" width="80" type="Integer" />
+    <property name="TefTempoEspera" column="TEF_TEMPO_ESPERA" caption="Tef Tempo Espera" width="80" type="Integer" />
+    <property name="TefEsperaSts" column="TEF_ESPERA_STS" caption="Tef Espera Sts" width="80" type="Integer" />
+    <property name="TefNumeroVias" column="TEF_NUMERO_VIAS" caption="Tef Numero Vias" width="80" type="Integer" />
+    <property name="DecimaisQuantidade" column="DECIMAIS_QUANTIDADE" caption="Decimais Quantidade" width="80" type="Integer" />
+    <property name="DecimaisValor" column="DECIMAIS_VALOR" caption="Decimais Valor" width="80" type="Integer" />
+    <property name="BitsPorSegundo" column="BITS_POR_SEGUNDO" caption="Bits Por Segundo" width="80" type="Integer" />
+    <property name="QtdeMaximaCartoes" column="QTDE_MAXIMA_CARTOES" caption="Qtde Maxima Cartoes" width="80" type="Integer" />
+    <property name="PesquisaParte" column="PESQUISA_PARTE" caption="Pesquisa Parte" width="8" type="String" />
+    <property name="ConfiguracaoBalanca" column="CONFIGURACAO_BALANCA" caption="Configuracao Balanca" width="450" type="String" />
+    <property name="ParametrosDiversos" column="PARAMETROS_DIVERSOS" caption="Parametros Diversos" width="450" type="String" />
+    <property name="UltimaExclusao" column="ULTIMA_EXCLUSAO" caption="Ultima Exclusao" width="80" type="Integer" />
+    <property name="Laudo" column="LAUDO" caption="Laudo" width="80" type="String" />
+    <property name="IndiceGerencial" column="INDICE_GERENCIAL" caption="Indice Gerencial" width="450" type="String" />
+    <property name="DataAtualizacaoEstoque" column="DATA_ATUALIZACAO_ESTOQUE" caption="Data Atualizacao Estoque" width="80" type="Date" />
+    <property name="DataSincronizacao" column="DATA_SINCRONIZACAO" caption="Data Sincronizacao" width="80" type="Date" />
+    <property name="HoraSincronizacao" column="HORA_SINCRONIZACAO" caption="Hora Sincronizacao" width="64" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

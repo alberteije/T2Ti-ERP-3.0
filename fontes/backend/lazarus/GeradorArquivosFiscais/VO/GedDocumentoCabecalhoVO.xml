@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="GedDocumentoCabecalhoVO" table="ged_documento_cabecalho" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ged_documento_cabecalho</param>
+      </generator>
+    </id>
+
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+    <property name="DataInclusao" column="DATA_INCLUSAO" caption="Data Inclusao" width="80" type="Date" />
+
+  </class>
+</t2ti-orm-mapping>

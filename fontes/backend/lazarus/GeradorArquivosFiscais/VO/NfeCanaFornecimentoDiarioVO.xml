@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeCanaFornecimentoDiarioVO" table="nfe_cana_fornecimento_diario" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_cana_fornecimento_diario</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeCana" column="ID_NFE_CANA" caption="Id Nfe Cana" width="80" type="Integer" />
+    <property name="Dia" column="DIA" caption="Dia" width="16" type="String" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="168" type="FMTBcdField" />
+    <property name="QuantidadeTotalMes" column="QUANTIDADE_TOTAL_MES" caption="Quantidade Total Mes" width="168" type="FMTBcdField" />
+    <property name="QuantidadeTotalAnterior" column="QUANTIDADE_TOTAL_ANTERIOR" caption="Quantidade Total Anterior" width="168" type="FMTBcdField" />
+    <property name="QuantidadeTotalGeral" column="QUANTIDADE_TOTAL_GERAL" caption="Quantidade Total Geral" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

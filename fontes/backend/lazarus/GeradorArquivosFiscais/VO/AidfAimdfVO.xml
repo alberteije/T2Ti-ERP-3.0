@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="AidfAimdfVO" table="aidf_aimdf" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">aidf_aimdf</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="Integer" />
+    <property name="DataValidade" column="DATA_VALIDADE" caption="Data Validade" width="80" type="Date" />
+    <property name="DataAutorizacao" column="DATA_AUTORIZACAO" caption="Data Autorizacao" width="80" type="Date" />
+    <property name="NumeroAutorizacao" column="NUMERO_AUTORIZACAO" caption="Numero Autorizacao" width="160" type="String" />
+    <property name="FormularioDisponivel" column="FORMULARIO_DISPONIVEL" caption="Formulario Disponivel" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

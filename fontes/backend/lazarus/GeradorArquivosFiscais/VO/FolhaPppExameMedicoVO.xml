@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FolhaPppExameMedicoVO" table="folha_ppp_exame_medico" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">folha_ppp_exame_medico</param>
+      </generator>
+    </id>
+
+    <property name="IdFolhaPpp" column="ID_FOLHA_PPP" caption="Id Folha Ppp" width="80" type="Integer" />
+    <property name="DataUltimo" column="DATA_ULTIMO" caption="Data Ultimo" width="80" type="Date" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="8" type="String" />
+    <property name="Natureza" column="NATUREZA" caption="Natureza" width="400" type="String" />
+    <property name="Exame" column="EXAME" caption="Exame" width="8" type="String" />
+    <property name="IndicacaoResultados" column="INDICACAO_RESULTADOS" caption="Indicacao Resultados" width="400" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

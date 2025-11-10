@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfceMovimentoVO" table="nfce_movimento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfce_movimento</param>
+      </generator>
+    </id>
+
+    <property name="IdNfceCaixa" column="ID_NFCE_CAIXA" caption="Id Nfce Caixa" width="80" type="Integer" />
+    <property name="IdNfceOperador" column="ID_NFCE_OPERADOR" caption="Id Nfce Operador" width="80" type="Integer" />
+    <property name="IdNfceTurno" column="ID_NFCE_TURNO" caption="Id Nfce Turno" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdGerenteSupervisor" column="ID_GERENTE_SUPERVISOR" caption="Id Gerente Supervisor" width="80" type="Integer" />
+    <property name="DataAbertura" column="DATA_ABERTURA" caption="Data Abertura" width="80" type="Date" />
+    <property name="HoraAbertura" column="HORA_ABERTURA" caption="Hora Abertura" width="64" type="String" />
+    <property name="DataFechamento" column="DATA_FECHAMENTO" caption="Data Fechamento" width="80" type="Date" />
+    <property name="HoraFechamento" column="HORA_FECHAMENTO" caption="Hora Fechamento" width="64" type="String" />
+    <property name="TotalSuprimento" column="TOTAL_SUPRIMENTO" caption="Total Suprimento" width="168" type="FMTBcdField" />
+    <property name="TotalSangria" column="TOTAL_SANGRIA" caption="Total Sangria" width="168" type="FMTBcdField" />
+    <property name="TotalNaoFiscal" column="TOTAL_NAO_FISCAL" caption="Total Nao Fiscal" width="168" type="FMTBcdField" />
+    <property name="TotalVenda" column="TOTAL_VENDA" caption="Total Venda" width="168" type="FMTBcdField" />
+    <property name="TotalDesconto" column="TOTAL_DESCONTO" caption="Total Desconto" width="168" type="FMTBcdField" />
+    <property name="TotalAcrescimo" column="TOTAL_ACRESCIMO" caption="Total Acrescimo" width="168" type="FMTBcdField" />
+    <property name="TotalFinal" column="TOTAL_FINAL" caption="Total Final" width="168" type="FMTBcdField" />
+    <property name="TotalRecebido" column="TOTAL_RECEBIDO" caption="Total Recebido" width="168" type="FMTBcdField" />
+    <property name="TotalTroco" column="TOTAL_TROCO" caption="Total Troco" width="168" type="FMTBcdField" />
+    <property name="TotalCancelado" column="TOTAL_CANCELADO" caption="Total Cancelado" width="168" type="FMTBcdField" />
+    <property name="StatusMovimento" column="STATUS_MOVIMENTO" caption="Status Movimento" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

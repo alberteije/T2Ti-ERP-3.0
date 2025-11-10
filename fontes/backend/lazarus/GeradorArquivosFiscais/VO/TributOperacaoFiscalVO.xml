@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="TributOperacaoFiscalVO" table="tribut_operacao_fiscal" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">tribut_operacao_fiscal</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+    <property name="DescricaoNaNf" column="DESCRICAO_NA_NF" caption="Descricao Na Nf" width="450" type="String" />
+    <property name="Cfop" column="CFOP" caption="Cfop" width="80" type="Integer" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

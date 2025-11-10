@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteRodoviarioVO" table="cte_rodoviario" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_rodoviario</param>
+      </generator>
+    </id>
+
+    <property name="IdCteCabecalho" column="ID_CTE_CABECALHO" caption="Id Cte Cabecalho" width="80" type="Integer" />
+    <property name="Rntrc" column="RNTRC" caption="Rntrc" width="64" type="String" />
+    <property name="DataPrevistaEntrega" column="DATA_PREVISTA_ENTREGA" caption="Data Prevista Entrega" width="80" type="Date" />
+    <property name="IndicadorLotacao" column="INDICADOR_LOTACAO" caption="Indicador Lotacao" width="80" type="Integer" />
+    <property name="Ciot" column="CIOT" caption="Ciot" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

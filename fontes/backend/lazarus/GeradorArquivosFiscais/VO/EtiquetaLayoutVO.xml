@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EtiquetaLayoutVO" table="etiqueta_layout" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">etiqueta_layout</param>
+      </generator>
+    </id>
+
+    <property name="IdFormatoPapel" column="ID_FORMATO_PAPEL" caption="Id Formato Papel" width="80" type="Integer" />
+    <property name="CodigoFabricante" column="CODIGO_FABRICANTE" caption="Codigo Fabricante" width="400" type="String" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="80" type="Integer" />
+    <property name="QuantidadeHorizontal" column="QUANTIDADE_HORIZONTAL" caption="Quantidade Horizontal" width="80" type="Integer" />
+    <property name="QuantidadeVertical" column="QUANTIDADE_VERTICAL" caption="Quantidade Vertical" width="80" type="Integer" />
+    <property name="MargemSuperior" column="MARGEM_SUPERIOR" caption="Margem Superior" width="80" type="Integer" />
+    <property name="MargemInferior" column="MARGEM_INFERIOR" caption="Margem Inferior" width="80" type="Integer" />
+    <property name="MargemEsquerda" column="MARGEM_ESQUERDA" caption="Margem Esquerda" width="80" type="Integer" />
+    <property name="MargemDireita" column="MARGEM_DIREITA" caption="Margem Direita" width="80" type="Integer" />
+    <property name="EspacamentoHorizontal" column="ESPACAMENTO_HORIZONTAL" caption="Espacamento Horizontal" width="80" type="Integer" />
+    <property name="EspacamentoVertical" column="ESPACAMENTO_VERTICAL" caption="Espacamento Vertical" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="OsEvolucaoVO" table="os_evolucao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">os_evolucao</param>
+      </generator>
+    </id>
+
+    <property name="OsAberturaId" column="OS_ABERTURA_ID" caption="Os Abertura Id" width="80" type="Integer" />
+    <property name="DataRegistro" column="DATA_REGISTRO" caption="Data Registro" width="80" type="Date" />
+    <property name="HoraRegistro" column="HORA_REGISTRO" caption="Hora Registro" width="64" type="String" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+    <property name="EnviarEmail" column="ENVIAR_EMAIL" caption="Enviar Email" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

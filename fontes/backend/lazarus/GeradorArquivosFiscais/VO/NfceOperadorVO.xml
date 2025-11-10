@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfceOperadorVO" table="nfce_operador" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfce_operador</param>
+      </generator>
+    </id>
+
+    <property name="Login" column="LOGIN" caption="Login" width="160" type="String" />
+    <property name="Senha" column="SENHA" caption="Senha" width="160" type="String" />
+    <property name="NivelAutorizacao" column="NIVEL_AUTORIZACAO" caption="Nivel Autorizacao" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

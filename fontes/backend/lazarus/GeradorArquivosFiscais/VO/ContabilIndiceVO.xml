@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContabilIndiceVO" table="contabil_indice" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contabil_indice</param>
+      </generator>
+    </id>
+
+    <property name="IdIndiceEconomico" column="ID_INDICE_ECONOMICO" caption="Id Indice Economico" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Periodicidade" column="PERIODICIDADE" caption="Periodicidade" width="8" type="String" />
+    <property name="DiarioAPartirDe" column="DIARIO_A_PARTIR_DE" caption="Diario A Partir De" width="80" type="Date" />
+    <property name="MensalMesAno" column="MENSAL_MES_ANO" caption="Mensal Mes Ano" width="56" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

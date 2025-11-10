@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PontoFechamentoJornadaVO" table="ponto_fechamento_jornada" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ponto_fechamento_jornada</param>
+      </generator>
+    </id>
+
+    <property name="IdPontoClassificacaoJornada" column="ID_PONTO_CLASSIFICACAO_JORNADA" caption="Id Ponto Classificacao Jornada" width="80" type="Integer" />
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="DataFechamento" column="DATA_FECHAMENTO" caption="Data Fechamento" width="80" type="Date" />
+    <property name="DiaSemana" column="DIA_SEMANA" caption="Dia Semana" width="56" type="String" />
+    <property name="CodigoHorario" column="CODIGO_HORARIO" caption="Codigo Horario" width="32" type="String" />
+    <property name="CargaHorariaEsperada" column="CARGA_HORARIA_ESPERADA" caption="Carga Horaria Esperada" width="64" type="String" />
+    <property name="CargaHorariaDiurna" column="CARGA_HORARIA_DIURNA" caption="Carga Horaria Diurna" width="64" type="String" />
+    <property name="CargaHorariaNoturna" column="CARGA_HORARIA_NOTURNA" caption="Carga Horaria Noturna" width="64" type="String" />
+    <property name="CargaHorariaTotal" column="CARGA_HORARIA_TOTAL" caption="Carga Horaria Total" width="64" type="String" />
+    <property name="Entrada01" column="ENTRADA01" caption="Entrada01" width="64" type="String" />
+    <property name="Saida01" column="SAIDA01" caption="Saida01" width="64" type="String" />
+    <property name="Entrada02" column="ENTRADA02" caption="Entrada02" width="64" type="String" />
+    <property name="Saida02" column="SAIDA02" caption="Saida02" width="64" type="String" />
+    <property name="Entrada03" column="ENTRADA03" caption="Entrada03" width="64" type="String" />
+    <property name="Saida03" column="SAIDA03" caption="Saida03" width="64" type="String" />
+    <property name="Entrada04" column="ENTRADA04" caption="Entrada04" width="64" type="String" />
+    <property name="Saida04" column="SAIDA04" caption="Saida04" width="64" type="String" />
+    <property name="Entrada05" column="ENTRADA05" caption="Entrada05" width="64" type="String" />
+    <property name="Saida05" column="SAIDA05" caption="Saida05" width="64" type="String" />
+    <property name="HoraInicioJornada" column="HORA_INICIO_JORNADA" caption="Hora Inicio Jornada" width="64" type="String" />
+    <property name="HoraFimJornada" column="HORA_FIM_JORNADA" caption="Hora Fim Jornada" width="64" type="String" />
+    <property name="HoraExtra01" column="HORA_EXTRA01" caption="Hora Extra01" width="64" type="String" />
+    <property name="PercentualHoraExtra01" column="PERCENTUAL_HORA_EXTRA01" caption="Percentual Hora Extra01" width="168" type="FMTBcdField" />
+    <property name="ModalidadeHoraExtra01" column="MODALIDADE_HORA_EXTRA01" caption="Modalidade Hora Extra01" width="8" type="String" />
+    <property name="HoraExtra02" column="HORA_EXTRA02" caption="Hora Extra02" width="64" type="String" />
+    <property name="PercentualHoraExtra02" column="PERCENTUAL_HORA_EXTRA02" caption="Percentual Hora Extra02" width="168" type="FMTBcdField" />
+    <property name="ModalidadeHoraExtra02" column="MODALIDADE_HORA_EXTRA02" caption="Modalidade Hora Extra02" width="8" type="String" />
+    <property name="HoraExtra03" column="HORA_EXTRA03" caption="Hora Extra03" width="64" type="String" />
+    <property name="PercentualHoraExtra03" column="PERCENTUAL_HORA_EXTRA03" caption="Percentual Hora Extra03" width="168" type="FMTBcdField" />
+    <property name="ModalidadeHoraExtra03" column="MODALIDADE_HORA_EXTRA03" caption="Modalidade Hora Extra03" width="8" type="String" />
+    <property name="HoraExtra04" column="HORA_EXTRA04" caption="Hora Extra04" width="64" type="String" />
+    <property name="PercentualHoraExtra04" column="PERCENTUAL_HORA_EXTRA04" caption="Percentual Hora Extra04" width="168" type="FMTBcdField" />
+    <property name="ModalidadeHoraExtra04" column="MODALIDADE_HORA_EXTRA04" caption="Modalidade Hora Extra04" width="8" type="String" />
+    <property name="FaltaAtraso" column="FALTA_ATRASO" caption="Falta Atraso" width="64" type="String" />
+    <property name="Compensar" column="COMPENSAR" caption="Compensar" width="8" type="String" />
+    <property name="BancoHoras" column="BANCO_HORAS" caption="Banco Horas" width="64" type="String" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

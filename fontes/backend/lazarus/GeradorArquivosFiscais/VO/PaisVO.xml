@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PaisVO" table="pais" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">pais</param>
+      </generator>
+    </id>
+
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="80" type="Integer" />
+    <property name="NomeEn" column="NOME_EN" caption="Nome En" width="450" type="String" />
+    <property name="NomePtbr" column="NOME_PTBR" caption="Nome Ptbr" width="450" type="String" />
+    <property name="Sigla2" column="SIGLA2" caption="Sigla2" width="16" type="String" />
+    <property name="Sigla3" column="SIGLA3" caption="Sigla3" width="24" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

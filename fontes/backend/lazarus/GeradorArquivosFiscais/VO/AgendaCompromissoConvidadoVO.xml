@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="AgendaCompromissoConvidadoVO" table="agenda_compromisso_convidado" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">agenda_compromisso_convidado</param>
+      </generator>
+    </id>
+
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="IdAgendaCompromisso" column="ID_AGENDA_COMPROMISSO" caption="Id Agenda Compromisso" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

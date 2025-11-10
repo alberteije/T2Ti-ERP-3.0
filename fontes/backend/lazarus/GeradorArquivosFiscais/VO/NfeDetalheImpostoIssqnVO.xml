@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeDetalheImpostoIssqnVO" table="nfe_detalhe_imposto_issqn" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_detalhe_imposto_issqn</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeDetalhe" column="ID_NFE_DETALHE" caption="Id Nfe Detalhe" width="80" type="Integer" />
+    <property name="BaseCalculoIssqn" column="BASE_CALCULO_ISSQN" caption="Base Calculo Issqn" width="168" type="FMTBcdField" />
+    <property name="AliquotaIssqn" column="ALIQUOTA_ISSQN" caption="Aliquota Issqn" width="168" type="FMTBcdField" />
+    <property name="ValorIssqn" column="VALOR_ISSQN" caption="Valor Issqn" width="168" type="FMTBcdField" />
+    <property name="MunicipioIssqn" column="MUNICIPIO_ISSQN" caption="Municipio Issqn" width="80" type="Integer" />
+    <property name="ItemListaServicos" column="ITEM_LISTA_SERVICOS" caption="Item Lista Servicos" width="80" type="Integer" />
+    <property name="ValorDeducao" column="VALOR_DEDUCAO" caption="Valor Deducao" width="168" type="FMTBcdField" />
+    <property name="ValorOutrasRetencoes" column="VALOR_OUTRAS_RETENCOES" caption="Valor Outras Retencoes" width="168" type="FMTBcdField" />
+    <property name="ValorDescontoIncondicionado" column="VALOR_DESCONTO_INCONDICIONADO" caption="Valor Desconto Incondicionado" width="168" type="FMTBcdField" />
+    <property name="ValorDescontoCondicionado" column="VALOR_DESCONTO_CONDICIONADO" caption="Valor Desconto Condicionado" width="168" type="FMTBcdField" />
+    <property name="ValorRetencaoIss" column="VALOR_RETENCAO_ISS" caption="Valor Retencao Iss" width="168" type="FMTBcdField" />
+    <property name="IndicadorExigibilidadeIss" column="INDICADOR_EXIGIBILIDADE_ISS" caption="Indicador Exigibilidade Iss" width="80" type="Integer" />
+    <property name="CodigoServico" column="CODIGO_SERVICO" caption="Codigo Servico" width="160" type="String" />
+    <property name="MunicipioIncidencia" column="MUNICIPIO_INCIDENCIA" caption="Municipio Incidencia" width="80" type="Integer" />
+    <property name="PaisSevicoPrestado" column="PAIS_SEVICO_PRESTADO" caption="Pais Sevico Prestado" width="80" type="Integer" />
+    <property name="NumeroProcesso" column="NUMERO_PROCESSO" caption="Numero Processo" width="240" type="String" />
+    <property name="IndicadorIncentivoFiscal" column="INDICADOR_INCENTIVO_FISCAL" caption="Indicador Incentivo Fiscal" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

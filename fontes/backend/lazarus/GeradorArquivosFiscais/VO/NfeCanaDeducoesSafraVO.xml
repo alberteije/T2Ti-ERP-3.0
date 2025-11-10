@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeCanaDeducoesSafraVO" table="nfe_cana_deducoes_safra" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_cana_deducoes_safra</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeCana" column="ID_NFE_CANA" caption="Id Nfe Cana" width="80" type="Integer" />
+    <property name="Decricao" column="DECRICAO" caption="Decricao" width="450" type="String" />
+    <property name="ValorDeducao" column="VALOR_DEDUCAO" caption="Valor Deducao" width="168" type="FMTBcdField" />
+    <property name="ValorFornecimento" column="VALOR_FORNECIMENTO" caption="Valor Fornecimento" width="168" type="FMTBcdField" />
+    <property name="ValorTotalDeducao" column="VALOR_TOTAL_DEDUCAO" caption="Valor Total Deducao" width="168" type="FMTBcdField" />
+    <property name="ValorLiquidoFornecimento" column="VALOR_LIQUIDO_FORNECIMENTO" caption="Valor Liquido Fornecimento" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

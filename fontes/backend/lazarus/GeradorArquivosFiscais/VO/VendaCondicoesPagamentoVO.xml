@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="VendaCondicoesPagamentoVO" table="venda_condicoes_pagamento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">venda_condicoes_pagamento</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="400" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+    <property name="FaturamentoMinimo" column="FATURAMENTO_MINIMO" caption="Faturamento Minimo" width="168" type="FMTBcdField" />
+    <property name="FaturamentoMaximo" column="FATURAMENTO_MAXIMO" caption="Faturamento Maximo" width="168" type="FMTBcdField" />
+    <property name="IndiceCorrecao" column="INDICE_CORRECAO" caption="Indice Correcao" width="168" type="FMTBcdField" />
+    <property name="DiasTolerancia" column="DIAS_TOLERANCIA" caption="Dias Tolerancia" width="80" type="Integer" />
+    <property name="ValorTolerancia" column="VALOR_TOLERANCIA" caption="Valor Tolerancia" width="168" type="FMTBcdField" />
+    <property name="PrazoMedio" column="PRAZO_MEDIO" caption="Prazo Medio" width="80" type="Integer" />
+    <property name="VistaPrazo" column="VISTA_PRAZO" caption="Vista Prazo" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

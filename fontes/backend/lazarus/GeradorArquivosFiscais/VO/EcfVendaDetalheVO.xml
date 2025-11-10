@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EcfVendaDetalheVO" table="ecf_venda_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ecf_venda_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="NomeCaixa" column="NOME_CAIXA" caption="Nome Caixa" width="240" type="String" />
+    <property name="IdGeradoCaixa" column="ID_GERADO_CAIXA" caption="Id Gerado Caixa" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdEcfProduto" column="ID_ECF_PRODUTO" caption="Id Ecf Produto" width="80" type="Integer" />
+    <property name="IdEcfVendaCabecalho" column="ID_ECF_VENDA_CABECALHO" caption="Id Ecf Venda Cabecalho" width="80" type="Integer" />
+    <property name="Cfop" column="CFOP" caption="Cfop" width="80" type="Integer" />
+    <property name="Gtin" column="GTIN" caption="Gtin" width="112" type="String" />
+    <property name="Ccf" column="CCF" caption="Ccf" width="80" type="Integer" />
+    <property name="Coo" column="COO" caption="Coo" width="80" type="Integer" />
+    <property name="SerieEcf" column="SERIE_ECF" caption="Serie Ecf" width="160" type="String" />
+    <property name="Item" column="ITEM" caption="Item" width="80" type="Integer" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="168" type="FMTBcdField" />
+    <property name="ValorUnitario" column="VALOR_UNITARIO" caption="Valor Unitario" width="168" type="FMTBcdField" />
+    <property name="ValorTotal" column="VALOR_TOTAL" caption="Valor Total" width="168" type="FMTBcdField" />
+    <property name="TotalItem" column="TOTAL_ITEM" caption="Total Item" width="168" type="FMTBcdField" />
+    <property name="BaseIcms" column="BASE_ICMS" caption="Base Icms" width="168" type="FMTBcdField" />
+    <property name="TaxaIcms" column="TAXA_ICMS" caption="Taxa Icms" width="168" type="FMTBcdField" />
+    <property name="Icms" column="ICMS" caption="Icms" width="168" type="FMTBcdField" />
+    <property name="TaxaDesconto" column="TAXA_DESCONTO" caption="Taxa Desconto" width="168" type="FMTBcdField" />
+    <property name="Desconto" column="DESCONTO" caption="Desconto" width="168" type="FMTBcdField" />
+    <property name="TaxaIssqn" column="TAXA_ISSQN" caption="Taxa Issqn" width="168" type="FMTBcdField" />
+    <property name="Issqn" column="ISSQN" caption="Issqn" width="168" type="FMTBcdField" />
+    <property name="TaxaPis" column="TAXA_PIS" caption="Taxa Pis" width="168" type="FMTBcdField" />
+    <property name="Pis" column="PIS" caption="Pis" width="168" type="FMTBcdField" />
+    <property name="TaxaCofins" column="TAXA_COFINS" caption="Taxa Cofins" width="168" type="FMTBcdField" />
+    <property name="Cofins" column="COFINS" caption="Cofins" width="168" type="FMTBcdField" />
+    <property name="TaxaAcrescimo" column="TAXA_ACRESCIMO" caption="Taxa Acrescimo" width="168" type="FMTBcdField" />
+    <property name="Acrescimo" column="ACRESCIMO" caption="Acrescimo" width="168" type="FMTBcdField" />
+    <property name="AcrescimoRateio" column="ACRESCIMO_RATEIO" caption="Acrescimo Rateio" width="168" type="FMTBcdField" />
+    <property name="DescontoRateio" column="DESCONTO_RATEIO" caption="Desconto Rateio" width="168" type="FMTBcdField" />
+    <property name="TotalizadorParcial" column="TOTALIZADOR_PARCIAL" caption="Totalizador Parcial" width="80" type="String" />
+    <property name="Cst" column="CST" caption="Cst" width="24" type="String" />
+    <property name="Cancelado" column="CANCELADO" caption="Cancelado" width="8" type="String" />
+    <property name="MovimentaEstoque" column="MOVIMENTA_ESTOQUE" caption="Movimenta Estoque" width="8" type="String" />
+    <property name="EcfIcmsSt" column="ECF_ICMS_ST" caption="Ecf Icms St" width="32" type="String" />
+    <property name="Logss" column="LOGSS" caption="Logss" width="256" type="String" />
+    <property name="DataSincronizacao" column="DATA_SINCRONIZACAO" caption="Data Sincronizacao" width="80" type="Date" />
+    <property name="HoraSincronizacao" column="HORA_SINCRONIZACAO" caption="Hora Sincronizacao" width="64" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

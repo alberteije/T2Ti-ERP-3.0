@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NaturezaJuridicaVO" table="natureza_juridica" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">natureza_juridica</param>
+      </generator>
+    </id>
+
+    <property name="Grupo" column="GRUPO" caption="Grupo" width="80" type="Integer" />
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="40" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

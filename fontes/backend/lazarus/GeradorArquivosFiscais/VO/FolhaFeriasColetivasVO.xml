@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FolhaFeriasColetivasVO" table="folha_ferias_coletivas" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">folha_ferias_coletivas</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="DataInicio" column="DATA_INICIO" caption="Data Inicio" width="80" type="Date" />
+    <property name="DataFim" column="DATA_FIM" caption="Data Fim" width="80" type="Date" />
+    <property name="DiasGozo" column="DIAS_GOZO" caption="Dias Gozo" width="80" type="Integer" />
+    <property name="AbonoPecuniarioInicio" column="ABONO_PECUNIARIO_INICIO" caption="Abono Pecuniario Inicio" width="80" type="Date" />
+    <property name="AbonoPecuniarioFim" column="ABONO_PECUNIARIO_FIM" caption="Abono Pecuniario Fim" width="80" type="Date" />
+    <property name="DiasAbono" column="DIAS_ABONO" caption="Dias Abono" width="80" type="Integer" />
+    <property name="DataPagamento" column="DATA_PAGAMENTO" caption="Data Pagamento" width="80" type="Date" />
+
+  </class>
+</t2ti-orm-mapping>

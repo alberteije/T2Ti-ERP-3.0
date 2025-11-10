@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewPessoaTransportadoraVO" table="view_pessoa_transportadora" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_pessoa_transportadora</param>
+      </generator>
+    </id>
+
+    <property name="IdPessoa" column="ID_PESSOA" caption="Id Pessoa" width="80" type="Integer" />
+    <property name="DataCadastro" column="DATA_CADASTRO" caption="Data Cadastro" width="80" type="Date" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+    <property name="Logradouro" column="LOGRADOURO" caption="Logradouro" width="450" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="String" />
+    <property name="Complemento" column="COMPLEMENTO" caption="Complemento" width="450" type="String" />
+    <property name="Bairro" column="BAIRRO" caption="Bairro" width="450" type="String" />
+    <property name="Cidade" column="CIDADE" caption="Cidade" width="450" type="String" />
+    <property name="Cep" column="CEP" caption="Cep" width="64" type="String" />
+    <property name="MunicipioIbge" column="MUNICIPIO_IBGE" caption="Municipio Ibge" width="80" type="Integer" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="Fone" column="FONE" caption="Fone" width="112" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="8" type="String" />
+    <property name="Email" column="EMAIL" caption="Email" width="450" type="String" />
+    <property name="Site" column="SITE" caption="Site" width="450" type="String" />
+    <property name="CpfCnpj" column="CPF_CNPJ" caption="Cpf Cnpj" width="112" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

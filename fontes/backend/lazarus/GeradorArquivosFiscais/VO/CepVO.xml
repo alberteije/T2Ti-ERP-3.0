@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CepVO" table="cep" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cep</param>
+      </generator>
+    </id>
+
+    <property name="Cep" column="CEP" caption="Cep" width="64" type="String" />
+    <property name="Logradouro" column="LOGRADOURO" caption="Logradouro" width="450" type="String" />
+    <property name="Complemento" column="COMPLEMENTO" caption="Complemento" width="450" type="String" />
+    <property name="Bairro" column="BAIRRO" caption="Bairro" width="450" type="String" />
+    <property name="Municipio" column="MUNICIPIO" caption="Municipio" width="450" type="String" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="CodigoIbgeMunicipio" column="CODIGO_IBGE_MUNICIPIO" caption="Codigo Ibge Municipio" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

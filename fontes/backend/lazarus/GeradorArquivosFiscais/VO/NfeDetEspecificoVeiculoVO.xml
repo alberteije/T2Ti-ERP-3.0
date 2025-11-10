@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeDetEspecificoVeiculoVO" table="nfe_det_especifico_veiculo" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_det_especifico_veiculo</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeDetalhe" column="ID_NFE_DETALHE" caption="Id Nfe Detalhe" width="80" type="Integer" />
+    <property name="TipoOperacao" column="TIPO_OPERACAO" caption="Tipo Operacao" width="8" type="String" />
+    <property name="Chassi" column="CHASSI" caption="Chassi" width="136" type="String" />
+    <property name="Cor" column="COR" caption="Cor" width="32" type="String" />
+    <property name="DescricaoCor" column="DESCRICAO_COR" caption="Descricao Cor" width="320" type="String" />
+    <property name="PotenciaMotor" column="POTENCIA_MOTOR" caption="Potencia Motor" width="32" type="String" />
+    <property name="Cilindradas" column="CILINDRADAS" caption="Cilindradas" width="32" type="String" />
+    <property name="PesoLiquido" column="PESO_LIQUIDO" caption="Peso Liquido" width="72" type="String" />
+    <property name="PesoBruto" column="PESO_BRUTO" caption="Peso Bruto" width="72" type="String" />
+    <property name="NumeroSerie" column="NUMERO_SERIE" caption="Numero Serie" width="72" type="String" />
+    <property name="TipoCombustivel" column="TIPO_COMBUSTIVEL" caption="Tipo Combustivel" width="16" type="String" />
+    <property name="NumeroMotor" column="NUMERO_MOTOR" caption="Numero Motor" width="168" type="String" />
+    <property name="CapacidadeMaximaTracao" column="CAPACIDADE_MAXIMA_TRACAO" caption="Capacidade Maxima Tracao" width="72" type="String" />
+    <property name="DistanciaEixos" column="DISTANCIA_EIXOS" caption="Distancia Eixos" width="32" type="String" />
+    <property name="AnoModelo" column="ANO_MODELO" caption="Ano Modelo" width="32" type="String" />
+    <property name="AnoFabricacao" column="ANO_FABRICACAO" caption="Ano Fabricacao" width="32" type="String" />
+    <property name="TipoPintura" column="TIPO_PINTURA" caption="Tipo Pintura" width="8" type="String" />
+    <property name="TipoVeiculo" column="TIPO_VEICULO" caption="Tipo Veiculo" width="16" type="String" />
+    <property name="EspecieVeiculo" column="ESPECIE_VEICULO" caption="Especie Veiculo" width="8" type="String" />
+    <property name="CondicaoVin" column="CONDICAO_VIN" caption="Condicao Vin" width="8" type="String" />
+    <property name="CondicaoVeiculo" column="CONDICAO_VEICULO" caption="Condicao Veiculo" width="8" type="String" />
+    <property name="CodigoMarcaModelo" column="CODIGO_MARCA_MODELO" caption="Codigo Marca Modelo" width="48" type="String" />
+    <property name="CodigoCor" column="CODIGO_COR" caption="Codigo Cor" width="16" type="String" />
+    <property name="Lotacao" column="LOTACAO" caption="Lotacao" width="80" type="Integer" />
+    <property name="Restricao" column="RESTRICAO" caption="Restricao" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

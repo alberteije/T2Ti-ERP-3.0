@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FinConfiguracaoBoletoVO" table="fin_configuracao_boleto" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fin_configuracao_boleto</param>
+      </generator>
+    </id>
+
+    <property name="IdContaCaixa" column="ID_CONTA_CAIXA" caption="Id Conta Caixa" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Instrucao01" column="INSTRUCAO01" caption="Instrucao01" width="450" type="String" />
+    <property name="Instrucao02" column="INSTRUCAO02" caption="Instrucao02" width="450" type="String" />
+    <property name="CaminhoArquivoRemessa" column="CAMINHO_ARQUIVO_REMESSA" caption="Caminho Arquivo Remessa" width="450" type="String" />
+    <property name="CaminhoArquivoRetorno" column="CAMINHO_ARQUIVO_RETORNO" caption="Caminho Arquivo Retorno" width="450" type="String" />
+    <property name="CaminhoArquivoLogotipo" column="CAMINHO_ARQUIVO_LOGOTIPO" caption="Caminho Arquivo Logotipo" width="450" type="String" />
+    <property name="CaminhoArquivoPdf" column="CAMINHO_ARQUIVO_PDF" caption="Caminho Arquivo Pdf" width="450" type="String" />
+    <property name="Mensagem" column="MENSAGEM" caption="Mensagem" width="450" type="String" />
+    <property name="LocalPagamento" column="LOCAL_PAGAMENTO" caption="Local Pagamento" width="450" type="String" />
+    <property name="LayoutRemessa" column="LAYOUT_REMESSA" caption="Layout Remessa" width="24" type="String" />
+    <property name="Aceite" column="ACEITE" caption="Aceite" width="8" type="String" />
+    <property name="Especie" column="ESPECIE" caption="Especie" width="16" type="String" />
+    <property name="Carteira" column="CARTEIRA" caption="Carteira" width="24" type="String" />
+    <property name="CodigoConvenio" column="CODIGO_CONVENIO" caption="Codigo Convenio" width="160" type="String" />
+    <property name="CodigoCedente" column="CODIGO_CEDENTE" caption="Codigo Cedente" width="160" type="String" />
+    <property name="TaxaMulta" column="TAXA_MULTA" caption="Taxa Multa" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContadorVO" table="contador" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contador</param>
+      </generator>
+    </id>
+
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Cpf" column="CPF" caption="Cpf" width="88" type="String" />
+    <property name="Cnpj" column="CNPJ" caption="Cnpj" width="112" type="String" />
+    <property name="InscricaoCrc" column="INSCRICAO_CRC" caption="Inscricao Crc" width="120" type="String" />
+    <property name="UfCrc" column="UF_CRC" caption="Uf Crc" width="16" type="String" />
+    <property name="Fone" column="FONE" caption="Fone" width="112" type="String" />
+    <property name="Fax" column="FAX" caption="Fax" width="112" type="String" />
+    <property name="Logradouro" column="LOGRADOURO" caption="Logradouro" width="450" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="String" />
+    <property name="Complemento" column="COMPLEMENTO" caption="Complemento" width="450" type="String" />
+    <property name="Bairro" column="BAIRRO" caption="Bairro" width="450" type="String" />
+    <property name="Cidade" column="CIDADE" caption="Cidade" width="450" type="String" />
+    <property name="Cep" column="CEP" caption="Cep" width="64" type="String" />
+    <property name="MunicipioIbge" column="MUNICIPIO_IBGE" caption="Municipio Ibge" width="80" type="Integer" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="Email" column="EMAIL" caption="Email" width="450" type="String" />
+    <property name="Site" column="SITE" caption="Site" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

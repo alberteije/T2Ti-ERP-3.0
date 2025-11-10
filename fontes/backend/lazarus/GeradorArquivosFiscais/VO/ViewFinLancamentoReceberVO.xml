@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewFinLancamentoReceberVO" table="view_fin_lancamento_receber" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_fin_lancamento_receber</param>
+      </generator>
+    </id>
+
+    <property name="EmitirCheque" column="EmitirCheque" caption="Emitir Cheque" width="80" type="String" />
+    <property name="IdLancamentoReceber" column="ID_LANCAMENTO_RECEBER" caption="Id Lancamento Receber" width="80" type="Integer" />
+    <property name="QuantidadeParcela" column="QUANTIDADE_PARCELA" caption="Quantidade Parcela" width="80" type="Integer" />
+    <property name="ValorLancamento" column="VALOR_LANCAMENTO" caption="Valor Lancamento" width="168" type="FMTBcdField" />
+    <property name="DataLancamento" column="DATA_LANCAMENTO" caption="Data Lancamento" width="80" type="Date" />
+    <property name="NumeroDocumento" column="NUMERO_DOCUMENTO" caption="Numero Documento" width="400" type="String" />
+    <property name="IdParcelaReceber" column="ID_PARCELA_RECEBER" caption="Id Parcela Receber" width="80" type="Integer" />
+    <property name="NumeroParcela" column="NUMERO_PARCELA" caption="Numero Parcela" width="80" type="Integer" />
+    <property name="DataVencimento" column="DATA_VENCIMENTO" caption="Data Vencimento" width="80" type="Date" />
+    <property name="ValorParcela" column="VALOR_PARCELA" caption="Valor Parcela" width="168" type="FMTBcdField" />
+    <property name="TaxaJuro" column="TAXA_JURO" caption="Taxa Juro" width="168" type="FMTBcdField" />
+    <property name="ValorJuro" column="VALOR_JURO" caption="Valor Juro" width="168" type="FMTBcdField" />
+    <property name="TaxaMulta" column="TAXA_MULTA" caption="Taxa Multa" width="168" type="FMTBcdField" />
+    <property name="ValorMulta" column="VALOR_MULTA" caption="Valor Multa" width="168" type="FMTBcdField" />
+    <property name="TaxaDesconto" column="TAXA_DESCONTO" caption="Taxa Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorDesconto" column="VALOR_DESCONTO" caption="Valor Desconto" width="168" type="FMTBcdField" />
+    <property name="SiglaDocumento" column="SIGLA_DOCUMENTO" caption="Sigla Documento" width="80" type="String" />
+    <property name="NomeCliente" column="NOME_CLIENTE" caption="Nome Cliente" width="450" type="String" />
+    <property name="IdStatusParcela" column="ID_STATUS_PARCELA" caption="Id Status Parcela" width="80" type="Integer" />
+    <property name="SituacaoParcela" column="SITUACAO_PARCELA" caption="Situacao Parcela" width="16" type="String" />
+    <property name="DescricaoSituacaoParcela" column="DESCRICAO_SITUACAO_PARCELA" caption="Descricao Situacao Parcela" width="240" type="String" />
+    <property name="IdContaCaixa" column="ID_CONTA_CAIXA" caption="Id Conta Caixa" width="80" type="Integer" />
+    <property name="NomeContaCaixa" column="NOME_CONTA_CAIXA" caption="Nome Conta Caixa" width="400" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PontoAbonoVO" table="ponto_abono" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ponto_abono</param>
+      </generator>
+    </id>
+
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="80" type="Integer" />
+    <property name="Utilizado" column="UTILIZADO" caption="Utilizado" width="80" type="Integer" />
+    <property name="Saldo" column="SALDO" caption="Saldo" width="80" type="Integer" />
+    <property name="DataCadastro" column="DATA_CADASTRO" caption="Data Cadastro" width="80" type="Date" />
+    <property name="InicioUtilizacao" column="INICIO_UTILIZACAO" caption="Inicio Utilizacao" width="80" type="Date" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

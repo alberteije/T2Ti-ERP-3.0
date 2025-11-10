@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ProdutoVO" table="produto" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">produto</param>
+      </generator>
+    </id>
+
+    <property name="IdTributIcmsCustomCab" column="ID_TRIBUT_ICMS_CUSTOM_CAB" caption="Id Tribut Icms Custom Cab" width="80" type="Integer" />
+    <property name="IdUnidadeProduto" column="ID_UNIDADE_PRODUTO" caption="Id Unidade Produto" width="80" type="Integer" />
+    <property name="IdAlmoxarifado" column="ID_ALMOXARIFADO" caption="Id Almoxarifado" width="80" type="Integer" />
+    <property name="IdGrupoTributario" column="ID_GRUPO_TRIBUTARIO" caption="Id Grupo Tributario" width="80" type="Integer" />
+    <property name="IdMarcaProduto" column="ID_MARCA_PRODUTO" caption="Id Marca Produto" width="80" type="Integer" />
+    <property name="IdSubgrupo" column="ID_SUBGRUPO" caption="Id Subgrupo" width="80" type="Integer" />
+    <property name="Gtin" column="GTIN" caption="Gtin" width="112" type="String" />
+    <property name="CodigoInterno" column="CODIGO_INTERNO" caption="Codigo Interno" width="450" type="String" />
+    <property name="Ncm" column="NCM" caption="Ncm" width="64" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+    <property name="DescricaoPdv" column="DESCRICAO_PDV" caption="Descricao Pdv" width="240" type="String" />
+    <property name="ValorCompra" column="VALOR_COMPRA" caption="Valor Compra" width="168" type="FMTBcdField" />
+    <property name="ValorVenda" column="VALOR_VENDA" caption="Valor Venda" width="168" type="FMTBcdField" />
+    <property name="PrecoVendaMinimo" column="PRECO_VENDA_MINIMO" caption="Preco Venda Minimo" width="168" type="FMTBcdField" />
+    <property name="PrecoSugerido" column="PRECO_SUGERIDO" caption="Preco Sugerido" width="168" type="FMTBcdField" />
+    <property name="CustoUnitario" column="CUSTO_UNITARIO" caption="Custo Unitario" width="168" type="FMTBcdField" />
+    <property name="CustoProducao" column="CUSTO_PRODUCAO" caption="Custo Producao" width="168" type="FMTBcdField" />
+    <property name="CustoMedioLiquido" column="CUSTO_MEDIO_LIQUIDO" caption="Custo Medio Liquido" width="168" type="FMTBcdField" />
+    <property name="PrecoLucroZero" column="PRECO_LUCRO_ZERO" caption="Preco Lucro Zero" width="168" type="FMTBcdField" />
+    <property name="PrecoLucroMinimo" column="PRECO_LUCRO_MINIMO" caption="Preco Lucro Minimo" width="168" type="FMTBcdField" />
+    <property name="PrecoLucroMaximo" column="PRECO_LUCRO_MAXIMO" caption="Preco Lucro Maximo" width="168" type="FMTBcdField" />
+    <property name="Markup" column="MARKUP" caption="Markup" width="168" type="FMTBcdField" />
+    <property name="QuantidadeEstoque" column="QUANTIDADE_ESTOQUE" caption="Quantidade Estoque" width="168" type="FMTBcdField" />
+    <property name="QuantidadeEstoqueAnterior" column="QUANTIDADE_ESTOQUE_ANTERIOR" caption="Quantidade Estoque Anterior" width="168" type="FMTBcdField" />
+    <property name="EstoqueMinimo" column="ESTOQUE_MINIMO" caption="Estoque Minimo" width="168" type="FMTBcdField" />
+    <property name="EstoqueMaximo" column="ESTOQUE_MAXIMO" caption="Estoque Maximo" width="168" type="FMTBcdField" />
+    <property name="EstoqueIdeal" column="ESTOQUE_IDEAL" caption="Estoque Ideal" width="168" type="FMTBcdField" />
+    <property name="Excluido" column="EXCLUIDO" caption="Excluido" width="8" type="String" />
+    <property name="Inativo" column="INATIVO" caption="Inativo" width="8" type="String" />
+    <property name="DataCadastro" column="DATA_CADASTRO" caption="Data Cadastro" width="80" type="Date" />
+    <property name="Imagem" column="IMAGEM" caption="Imagem" width="450" type="Memo" />
+    <property name="ExTipi" column="EX_TIPI" caption="Ex Tipi" width="24" type="String" />
+    <property name="CodigoLst" column="CODIGO_LST" caption="Codigo Lst" width="32" type="String" />
+    <property name="ClasseAbc" column="CLASSE_ABC" caption="Classe Abc" width="8" type="String" />
+    <property name="Iat" column="IAT" caption="Iat" width="8" type="String" />
+    <property name="Ippt" column="IPPT" caption="Ippt" width="8" type="String" />
+    <property name="TipoItemSped" column="TIPO_ITEM_SPED" caption="Tipo Item Sped" width="16" type="String" />
+    <property name="Peso" column="PESO" caption="Peso" width="168" type="FMTBcdField" />
+    <property name="PorcentoComissao" column="PORCENTO_COMISSAO" caption="Porcento Comissao" width="168" type="FMTBcdField" />
+    <property name="PontoPedido" column="PONTO_PEDIDO" caption="Ponto Pedido" width="168" type="FMTBcdField" />
+    <property name="LoteEconomicoCompra" column="LOTE_ECONOMICO_COMPRA" caption="Lote Economico Compra" width="168" type="FMTBcdField" />
+    <property name="AliquotaIcmsPaf" column="ALIQUOTA_ICMS_PAF" caption="Aliquota Icms Paf" width="168" type="FMTBcdField" />
+    <property name="AliquotaIssqnPaf" column="ALIQUOTA_ISSQN_PAF" caption="Aliquota Issqn Paf" width="168" type="FMTBcdField" />
+    <property name="TotalizadorParcial" column="TOTALIZADOR_PARCIAL" caption="Totalizador Parcial" width="80" type="String" />
+    <property name="CodigoBalanca" column="CODIGO_BALANCA" caption="Codigo Balanca" width="80" type="Integer" />
+    <property name="DataAlteracao" column="DATA_ALTERACAO" caption="Data Alteracao" width="80" type="Date" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="8" type="String" />
+    <property name="Servico" column="SERVICO" caption="Servico" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

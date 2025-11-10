@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeDetalheImpostoPisVO" table="nfe_detalhe_imposto_pis" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_detalhe_imposto_pis</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeDetalhe" column="ID_NFE_DETALHE" caption="Id Nfe Detalhe" width="80" type="Integer" />
+    <property name="CstPis" column="CST_PIS" caption="Cst Pis" width="16" type="String" />
+    <property name="QuantidadeVendida" column="QUANTIDADE_VENDIDA" caption="Quantidade Vendida" width="168" type="FMTBcdField" />
+    <property name="ValorBaseCalculoPis" column="VALOR_BASE_CALCULO_PIS" caption="Valor Base Calculo Pis" width="168" type="FMTBcdField" />
+    <property name="AliquotaPisPercentual" column="ALIQUOTA_PIS_PERCENTUAL" caption="Aliquota Pis Percentual" width="168" type="FMTBcdField" />
+    <property name="AliquotaPisReais" column="ALIQUOTA_PIS_REAIS" caption="Aliquota Pis Reais" width="168" type="FMTBcdField" />
+    <property name="ValorPis" column="VALOR_PIS" caption="Valor Pis" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

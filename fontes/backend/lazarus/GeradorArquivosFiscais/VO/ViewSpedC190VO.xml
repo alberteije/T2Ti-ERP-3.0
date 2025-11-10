@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewSpedC190VO" table="view_sped_c190" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_sped_c190</param>
+      </generator>
+    </id>
+
+    <property name="CstIcms" column="CST_ICMS" caption="Cst Icms" width="16" type="String" />
+    <property name="Cfop" column="CFOP" caption="Cfop" width="80" type="Integer" />
+    <property name="AliquotaIcms" column="ALIQUOTA_ICMS" caption="Aliquota Icms" width="168" type="FMTBcdField" />
+    <property name="DataHoraEmissao" column="DATA_HORA_EMISSAO" caption="Data Hora Emissao" width="272" type="SQLTimeStamp" />
+    <property name="SomaValorOperacao" column="SOMA_VALOR_OPERACAO" caption="Soma Valor Operacao" width="264" type="FMTBcdField" />
+    <property name="SomaBaseCalculoIcms" column="SOMA_BASE_CALCULO_ICMS" caption="Soma Base Calculo Icms" width="264" type="FMTBcdField" />
+    <property name="SomaValorIcms" column="SOMA_VALOR_ICMS" caption="Soma Valor Icms" width="264" type="FMTBcdField" />
+    <property name="SomaBaseCalculoIcmsSt" column="SOMA_BASE_CALCULO_ICMS_ST" caption="Soma Base Calculo Icms St" width="264" type="FMTBcdField" />
+    <property name="SomaValorIcmsSt" column="SOMA_VALOR_ICMS_ST" caption="Soma Valor Icms St" width="264" type="FMTBcdField" />
+    <property name="SomaVlRedBc" column="SOMA_VL_RED_BC" caption="Soma Vl Red Bc" width="264" type="FMTBcdField" />
+    <property name="SomaValorIpi" column="SOMA_VALOR_IPI" caption="Soma Valor Ipi" width="264" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

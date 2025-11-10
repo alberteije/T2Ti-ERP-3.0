@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EmpresaCnaeVO" table="empresa_cnae" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">empresa_cnae</param>
+      </generator>
+    </id>
+
+    <property name="IdCnae" column="ID_CNAE" caption="Id Cnae" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Principal" column="PRINCIPAL" caption="Principal" width="8" type="String" />
+    <property name="RamoAtividade" column="RAMO_ATIVIDADE" caption="Ramo Atividade" width="400" type="String" />
+    <property name="ObjetoSocial" column="OBJETO_SOCIAL" caption="Objeto Social" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

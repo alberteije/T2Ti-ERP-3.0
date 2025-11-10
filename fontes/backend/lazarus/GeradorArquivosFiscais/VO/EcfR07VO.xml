@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EcfR07VO" table="ecf_r07" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ecf_r07</param>
+      </generator>
+    </id>
+
+    <property name="NomeCaixa" column="NOME_CAIXA" caption="Nome Caixa" width="64" type="String" />
+    <property name="IdGeradoCaixa" column="ID_GERADO_CAIXA" caption="Id Gerado Caixa" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdR06" column="ID_R06" caption="Id R06" width="80" type="Integer" />
+    <property name="Ccf" column="CCF" caption="Ccf" width="80" type="Integer" />
+    <property name="MeioPagamento" column="MEIO_PAGAMENTO" caption="Meio Pagamento" width="160" type="String" />
+    <property name="ValorPagamento" column="VALOR_PAGAMENTO" caption="Valor Pagamento" width="168" type="FMTBcdField" />
+    <property name="Estorno" column="ESTORNO" caption="Estorno" width="8" type="String" />
+    <property name="ValorEstorno" column="VALOR_ESTORNO" caption="Valor Estorno" width="168" type="FMTBcdField" />
+    <property name="Logss" column="LOGSS" caption="Logss" width="256" type="String" />
+    <property name="DataSincronizacao" column="DATA_SINCRONIZACAO" caption="Data Sincronizacao" width="80" type="Date" />
+    <property name="HoraSincronizacao" column="HORA_SINCRONIZACAO" caption="Hora Sincronizacao" width="64" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

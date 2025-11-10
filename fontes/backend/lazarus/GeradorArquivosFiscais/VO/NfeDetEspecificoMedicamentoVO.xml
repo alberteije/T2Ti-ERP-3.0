@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeDetEspecificoMedicamentoVO" table="nfe_det_especifico_medicamento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_det_especifico_medicamento</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeDetalhe" column="ID_NFE_DETALHE" caption="Id Nfe Detalhe" width="80" type="Integer" />
+    <property name="NumeroLote" column="NUMERO_LOTE" caption="Numero Lote" width="160" type="String" />
+    <property name="QuantidadeLote" column="QUANTIDADE_LOTE" caption="Quantidade Lote" width="168" type="FMTBcdField" />
+    <property name="DataFabricacao" column="DATA_FABRICACAO" caption="Data Fabricacao" width="80" type="Date" />
+    <property name="DataValidade" column="DATA_VALIDADE" caption="Data Validade" width="80" type="Date" />
+    <property name="PrecoMaximoConsumidor" column="PRECO_MAXIMO_CONSUMIDOR" caption="Preco Maximo Consumidor" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

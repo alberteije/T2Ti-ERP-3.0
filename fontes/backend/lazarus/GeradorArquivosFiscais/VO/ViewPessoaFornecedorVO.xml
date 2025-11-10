@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewPessoaFornecedorVO" table="view_pessoa_fornecedor" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_pessoa_fornecedor</param>
+      </generator>
+    </id>
+
+    <property name="IdPessoa" column="ID_PESSOA" caption="Id Pessoa" width="80" type="Integer" />
+    <property name="IdAtividadeForCli" column="ID_ATIVIDADE_FOR_CLI" caption="Id Atividade For Cli" width="80" type="Integer" />
+    <property name="IdSituacaoForCli" column="ID_SITUACAO_FOR_CLI" caption="Id Situacao For Cli" width="80" type="Integer" />
+    <property name="Desde" column="DESDE" caption="Desde" width="80" type="Date" />
+    <property name="OptanteSimplesNacional" column="OPTANTE_SIMPLES_NACIONAL" caption="Optante Simples Nacional" width="8" type="String" />
+    <property name="Localizacao" column="LOCALIZACAO" caption="Localizacao" width="8" type="String" />
+    <property name="DataCadastro" column="DATA_CADASTRO" caption="Data Cadastro" width="80" type="Date" />
+    <property name="SofreRetencao" column="SOFRE_RETENCAO" caption="Sofre Retencao" width="8" type="String" />
+    <property name="ChequeNominalA" column="CHEQUE_NOMINAL_A" caption="Cheque Nominal A" width="450" type="String" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+    <property name="ContaRemetente" column="CONTA_REMETENTE" caption="Conta Remetente" width="240" type="String" />
+    <property name="PrazoMedioEntrega" column="PRAZO_MEDIO_ENTREGA" caption="Prazo Medio Entrega" width="80" type="Integer" />
+    <property name="GeraFaturamento" column="GERA_FATURAMENTO" caption="Gera Faturamento" width="8" type="String" />
+    <property name="NumDiasPrimeiroVencimento" column="NUM_DIAS_PRIMEIRO_VENCIMENTO" caption="Num Dias Primeiro Vencimento" width="80" type="Integer" />
+    <property name="NumDiasIntervalo" column="NUM_DIAS_INTERVALO" caption="Num Dias Intervalo" width="80" type="Integer" />
+    <property name="QuantidadeParcelas" column="QUANTIDADE_PARCELAS" caption="Quantidade Parcelas" width="80" type="Integer" />
+    <property name="Logradouro" column="LOGRADOURO" caption="Logradouro" width="450" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="String" />
+    <property name="Complemento" column="COMPLEMENTO" caption="Complemento" width="450" type="String" />
+    <property name="Bairro" column="BAIRRO" caption="Bairro" width="450" type="String" />
+    <property name="Cidade" column="CIDADE" caption="Cidade" width="450" type="String" />
+    <property name="Cep" column="CEP" caption="Cep" width="64" type="String" />
+    <property name="MunicipioIbge" column="MUNICIPIO_IBGE" caption="Municipio Ibge" width="80" type="Integer" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="Fone" column="FONE" caption="Fone" width="112" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="8" type="String" />
+    <property name="Email" column="EMAIL" caption="Email" width="450" type="String" />
+    <property name="Site" column="SITE" caption="Site" width="450" type="String" />
+    <property name="CpfCnpj" column="CPF_CNPJ" caption="Cpf Cnpj" width="112" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

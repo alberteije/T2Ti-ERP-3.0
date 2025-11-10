@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PessoaVO" table="pessoa" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">pessoa</param>
+      </generator>
+    </id>
+
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="8" type="String" />
+    <property name="Email" column="EMAIL" caption="Email" width="450" type="String" />
+    <property name="Site" column="SITE" caption="Site" width="450" type="String" />
+    <property name="Cliente" column="CLIENTE" caption="Cliente" width="8" type="String" />
+    <property name="Fornecedor" column="FORNECEDOR" caption="Fornecedor" width="8" type="String" />
+    <property name="Colaborador" column="COLABORADOR" caption="Colaborador" width="8" type="String" />
+    <property name="Transportadora" column="TRANSPORTADORA" caption="Transportadora" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

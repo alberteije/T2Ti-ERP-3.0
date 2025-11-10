@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewSpedNfeItemVO" table="view_sped_nfe_item" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_sped_nfe_item</param>
+      </generator>
+    </id>
+
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Gtin" column="GTIN" caption="Gtin" width="112" type="String" />
+    <property name="IdUnidadeProduto" column="ID_UNIDADE_PRODUTO" caption="Id Unidade Produto" width="80" type="Integer" />
+    <property name="Sigla" column="SIGLA" caption="Sigla" width="80" type="String" />
+    <property name="TipoItemSped" column="TIPO_ITEM_SPED" caption="Tipo Item Sped" width="16" type="String" />
+    <property name="Ncm" column="NCM" caption="Ncm" width="64" type="String" />
+    <property name="ExTipi" column="EX_TIPI" caption="Ex Tipi" width="24" type="String" />
+    <property name="CodigoLst" column="CODIGO_LST" caption="Codigo Lst" width="32" type="String" />
+    <property name="AliquotaIcmsPaf" column="ALIQUOTA_ICMS_PAF" caption="Aliquota Icms Paf" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

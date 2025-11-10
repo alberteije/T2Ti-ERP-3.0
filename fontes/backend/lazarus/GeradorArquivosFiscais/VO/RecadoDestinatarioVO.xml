@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="RecadoDestinatarioVO" table="recado_destinatario" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">recado_destinatario</param>
+      </generator>
+    </id>
+
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="IdRecadoRemetente" column="ID_RECADO_REMETENTE" caption="Id Recado Remetente" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

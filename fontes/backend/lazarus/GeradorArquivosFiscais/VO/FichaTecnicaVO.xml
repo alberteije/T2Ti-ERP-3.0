@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FichaTecnicaVO" table="ficha_tecnica" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ficha_tecnica</param>
+      </generator>
+    </id>
+
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+    <property name="IdProdutoFilho" column="ID_PRODUTO_FILHO" caption="Id Produto Filho" width="80" type="Integer" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="168" type="FMTBcdField" />
+    <property name="SequenciaProducao" column="SEQUENCIA_PRODUCAO" caption="Sequencia Producao" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

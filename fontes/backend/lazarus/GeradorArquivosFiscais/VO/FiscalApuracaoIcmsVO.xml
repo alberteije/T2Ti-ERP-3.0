@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FiscalApuracaoIcmsVO" table="fiscal_apuracao_icms" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fiscal_apuracao_icms</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Competencia" column="COMPETENCIA" caption="Competencia" width="56" type="String" />
+    <property name="ValorTotalDebito" column="VALOR_TOTAL_DEBITO" caption="Valor Total Debito" width="168" type="FMTBcdField" />
+    <property name="ValorAjusteDebito" column="VALOR_AJUSTE_DEBITO" caption="Valor Ajuste Debito" width="168" type="FMTBcdField" />
+    <property name="ValorTotalAjusteDebito" column="VALOR_TOTAL_AJUSTE_DEBITO" caption="Valor Total Ajuste Debito" width="168" type="FMTBcdField" />
+    <property name="ValorEstornoCredito" column="VALOR_ESTORNO_CREDITO" caption="Valor Estorno Credito" width="168" type="FMTBcdField" />
+    <property name="ValorTotalCredito" column="VALOR_TOTAL_CREDITO" caption="Valor Total Credito" width="168" type="FMTBcdField" />
+    <property name="ValorAjusteCredito" column="VALOR_AJUSTE_CREDITO" caption="Valor Ajuste Credito" width="168" type="FMTBcdField" />
+    <property name="ValorTotalAjusteCredito" column="VALOR_TOTAL_AJUSTE_CREDITO" caption="Valor Total Ajuste Credito" width="168" type="FMTBcdField" />
+    <property name="ValorEstornoDebito" column="VALOR_ESTORNO_DEBITO" caption="Valor Estorno Debito" width="168" type="FMTBcdField" />
+    <property name="ValorSaldoCredorAnterior" column="VALOR_SALDO_CREDOR_ANTERIOR" caption="Valor Saldo Credor Anterior" width="168" type="FMTBcdField" />
+    <property name="ValorSaldoApurado" column="VALOR_SALDO_APURADO" caption="Valor Saldo Apurado" width="168" type="FMTBcdField" />
+    <property name="ValorTotalDeducao" column="VALOR_TOTAL_DEDUCAO" caption="Valor Total Deducao" width="168" type="FMTBcdField" />
+    <property name="ValorIcmsRecolher" column="VALOR_ICMS_RECOLHER" caption="Valor Icms Recolher" width="168" type="FMTBcdField" />
+    <property name="ValorSaldoCredorTransp" column="VALOR_SALDO_CREDOR_TRANSP" caption="Valor Saldo Credor Transp" width="168" type="FMTBcdField" />
+    <property name="ValorDebitoEspecial" column="VALOR_DEBITO_ESPECIAL" caption="Valor Debito Especial" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

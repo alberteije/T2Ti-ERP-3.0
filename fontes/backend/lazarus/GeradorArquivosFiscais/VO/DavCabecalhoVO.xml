@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="DavCabecalhoVO" table="dav_cabecalho" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">dav_cabecalho</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdPessoa" column="ID_PESSOA" caption="Id Pessoa" width="80" type="Integer" />
+    <property name="NumeroDav" column="NUMERO_DAV" caption="Numero Dav" width="80" type="String" />
+    <property name="NumeroEcf" column="NUMERO_ECF" caption="Numero Ecf" width="32" type="String" />
+    <property name="Ccf" column="CCF" caption="Ccf" width="80" type="Integer" />
+    <property name="Coo" column="COO" caption="Coo" width="80" type="Integer" />
+    <property name="NomeDestinatario" column="NOME_DESTINATARIO" caption="Nome Destinatario" width="450" type="String" />
+    <property name="CpfCnpjDestinatario" column="CPF_CNPJ_DESTINATARIO" caption="Cpf Cnpj Destinatario" width="112" type="String" />
+    <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
+    <property name="HoraEmissao" column="HORA_EMISSAO" caption="Hora Emissao" width="64" type="String" />
+    <property name="Situacao" column="SITUACAO" caption="Situacao" width="8" type="String" />
+    <property name="TaxaAcrescimo" column="TAXA_ACRESCIMO" caption="Taxa Acrescimo" width="168" type="FMTBcdField" />
+    <property name="Acrescimo" column="ACRESCIMO" caption="Acrescimo" width="168" type="FMTBcdField" />
+    <property name="TaxaDesconto" column="TAXA_DESCONTO" caption="Taxa Desconto" width="168" type="FMTBcdField" />
+    <property name="Desconto" column="DESCONTO" caption="Desconto" width="168" type="FMTBcdField" />
+    <property name="Subtotal" column="SUBTOTAL" caption="Subtotal" width="168" type="FMTBcdField" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+    <property name="Impresso" column="IMPRESSO" caption="Impresso" width="8" type="String" />
+    <property name="Logss" column="LOGSS" caption="Logss" width="256" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FeriadosVO" table="feriados" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">feriados</param>
+      </generator>
+    </id>
+
+    <property name="Ano" column="ANO" caption="Ano" width="32" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="400" type="String" />
+    <property name="Abrangencia" column="ABRANGENCIA" caption="Abrangencia" width="8" type="String" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="MunicipioIbge" column="MUNICIPIO_IBGE" caption="Municipio Ibge" width="80" type="Integer" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="8" type="String" />
+    <property name="DataFeriado" column="DATA_FERIADO" caption="Data Feriado" width="80" type="Date" />
+
+  </class>
+</t2ti-orm-mapping>

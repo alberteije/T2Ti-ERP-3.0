@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FiscalNotaFiscalSaidaVO" table="fiscal_nota_fiscal_saida" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fiscal_nota_fiscal_saida</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeCabecalho" column="ID_NFE_CABECALHO" caption="Id Nfe Cabecalho" width="80" type="Integer" />
+    <property name="Competencia" column="COMPETENCIA" caption="Competencia" width="56" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

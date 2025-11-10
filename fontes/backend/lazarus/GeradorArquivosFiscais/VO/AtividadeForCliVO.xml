@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="AtividadeForCliVO" table="atividade_for_cli" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">atividade_for_cli</param>
+      </generator>
+    </id>
+
+    <property name="Nome" column="NOME" caption="Nome" width="400" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewConciliaClienteVO" table="view_concilia_cliente" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_concilia_cliente</param>
+      </generator>
+    </id>
+
+    <property name="IdFinParcelaReceber" column="ID_FIN_PARCELA_RECEBER" caption="Id Fin Parcela Receber" width="80" type="Integer" />
+    <property name="IdFinTipoRecebimento" column="ID_FIN_TIPO_RECEBIMENTO" caption="Id Fin Tipo Recebimento" width="80" type="Integer" />
+    <property name="IdContaCaixa" column="ID_CONTA_CAIXA" caption="Id Conta Caixa" width="80" type="Integer" />
+    <property name="DataRecebimento" column="DATA_RECEBIMENTO" caption="Data Recebimento" width="80" type="Date" />
+    <property name="TaxaJuro" column="TAXA_JURO" caption="Taxa Juro" width="168" type="FMTBcdField" />
+    <property name="TaxaMulta" column="TAXA_MULTA" caption="Taxa Multa" width="168" type="FMTBcdField" />
+    <property name="TaxaDesconto" column="TAXA_DESCONTO" caption="Taxa Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorJuro" column="VALOR_JURO" caption="Valor Juro" width="168" type="FMTBcdField" />
+    <property name="ValorMulta" column="VALOR_MULTA" caption="Valor Multa" width="168" type="FMTBcdField" />
+    <property name="ValorDesconto" column="VALOR_DESCONTO" caption="Valor Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorRecebido" column="VALOR_RECEBIDO" caption="Valor Recebido" width="168" type="FMTBcdField" />
+    <property name="Historico" column="HISTORICO" caption="Historico" width="450" type="String" />
+    <property name="IdCliente" column="ID_CLIENTE" caption="Id Cliente" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

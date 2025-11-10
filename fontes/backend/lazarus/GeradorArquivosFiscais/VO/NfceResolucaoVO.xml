@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfceResolucaoVO" table="nfce_resolucao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfce_resolucao</param>
+      </generator>
+    </id>
+
+    <property name="ResolucaoTela" column="RESOLUCAO_TELA" caption="Resolucao Tela" width="160" type="String" />
+    <property name="Largura" column="LARGURA" caption="Largura" width="80" type="Integer" />
+    <property name="Altura" column="ALTURA" caption="Altura" width="80" type="Integer" />
+    <property name="ImagemTela" column="IMAGEM_TELA" caption="Imagem Tela" width="400" type="String" />
+    <property name="ImagemMenu" column="IMAGEM_MENU" caption="Imagem Menu" width="400" type="String" />
+    <property name="ImagemSubmenu" column="IMAGEM_SUBMENU" caption="Imagem Submenu" width="400" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

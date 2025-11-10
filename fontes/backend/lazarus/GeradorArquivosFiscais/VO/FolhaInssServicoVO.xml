@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FolhaInssServicoVO" table="folha_inss_servico" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">folha_inss_servico</param>
+      </generator>
+    </id>
+
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="24" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

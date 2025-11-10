@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfseListaServicoVO" table="nfse_lista_servico" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfse_lista_servico</param>
+      </generator>
+    </id>
+
+    <property name="CodigoPrincipal" column="CODIGO_PRINCIPAL" caption="Codigo Principal" width="16" type="String" />
+    <property name="CodigoSecundario" column="CODIGO_SECUNDARIO" caption="Codigo Secundario" width="16" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

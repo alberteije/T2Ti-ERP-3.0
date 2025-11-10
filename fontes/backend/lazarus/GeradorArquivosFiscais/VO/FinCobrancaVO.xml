@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FinCobrancaVO" table="fin_cobranca" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fin_cobranca</param>
+      </generator>
+    </id>
+
+    <property name="IdCliente" column="ID_CLIENTE" caption="Id Cliente" width="80" type="Integer" />
+    <property name="DataContato" column="DATA_CONTATO" caption="Data Contato" width="80" type="Date" />
+    <property name="HoraContato" column="HORA_CONTATO" caption="Hora Contato" width="64" type="String" />
+    <property name="TelefoneContato" column="TELEFONE_CONTATO" caption="Telefone Contato" width="112" type="String" />
+    <property name="DataAcertoPagamento" column="DATA_ACERTO_PAGAMENTO" caption="Data Acerto Pagamento" width="80" type="Date" />
+    <property name="TotalReceberNaData" column="TOTAL_RECEBER_NA_DATA" caption="Total Receber Na Data" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EmpresaContatoVO" table="empresa_contato" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">empresa_contato</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Email" column="EMAIL" caption="Email" width="450" type="String" />
+    <property name="FoneComercial" column="FONE_COMERCIAL" caption="Fone Comercial" width="112" type="String" />
+    <property name="FoneResidencial" column="FONE_RESIDENCIAL" caption="Fone Residencial" width="112" type="String" />
+    <property name="FoneCelular" column="FONE_CELULAR" caption="Fone Celular" width="112" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

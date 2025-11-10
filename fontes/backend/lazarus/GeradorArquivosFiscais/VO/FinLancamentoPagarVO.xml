@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FinLancamentoPagarVO" table="fin_lancamento_pagar" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fin_lancamento_pagar</param>
+      </generator>
+    </id>
+
+    <property name="MesclarPagamento" column="MesclarPagamento" caption="Mesclar Pagamento" width="80" type="String" />
+    <property name="IdFinDocumentoOrigem" column="ID_FIN_DOCUMENTO_ORIGEM" caption="Id Fin Documento Origem" width="80" type="Integer" />
+    <property name="IdFornecedor" column="ID_FORNECEDOR" caption="Id Fornecedor" width="80" type="Integer" />
+    <property name="PagamentoCompartilhado" column="PAGAMENTO_COMPARTILHADO" caption="Pagamento Compartilhado" width="8" type="String" />
+    <property name="QuantidadeParcela" column="QUANTIDADE_PARCELA" caption="Quantidade Parcela" width="80" type="Integer" />
+    <property name="ValorTotal" column="VALOR_TOTAL" caption="Valor Total" width="168" type="FMTBcdField" />
+    <property name="ValorAPagar" column="VALOR_A_PAGAR" caption="Valor A Pagar" width="168" type="FMTBcdField" />
+    <property name="DataLancamento" column="DATA_LANCAMENTO" caption="Data Lancamento" width="80" type="Date" />
+    <property name="NumeroDocumento" column="NUMERO_DOCUMENTO" caption="Numero Documento" width="400" type="String" />
+    <property name="ImagemDocumento" column="IMAGEM_DOCUMENTO" caption="Imagem Documento" width="450" type="Memo" />
+    <property name="PrimeiroVencimento" column="PRIMEIRO_VENCIMENTO" caption="Primeiro Vencimento" width="80" type="Date" />
+    <property name="CodigoModuloLcto" column="CODIGO_MODULO_LCTO" caption="Codigo Modulo Lcto" width="24" type="String" />
+    <property name="IntervaloEntreParcelas" column="INTERVALO_ENTRE_PARCELAS" caption="Intervalo Entre Parcelas" width="80" type="Integer" />
+    <property name="MescladoPara" column="MESCLADO_PARA" caption="Mesclado Para" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

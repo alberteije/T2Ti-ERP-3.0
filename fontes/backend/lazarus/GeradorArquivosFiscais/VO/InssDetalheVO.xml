@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="InssDetalheVO" table="inss_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">inss_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdInss" column="ID_INSS" caption="Id Inss" width="80" type="Integer" />
+    <property name="Faixa" column="FAIXA" caption="Faixa" width="80" type="Integer" />
+    <property name="De" column="DE" caption="De" width="168" type="FMTBcdField" />
+    <property name="Ate" column="ATE" caption="Ate" width="168" type="FMTBcdField" />
+    <property name="Taxa" column="TAXA" caption="Taxa" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

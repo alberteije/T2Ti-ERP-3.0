@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="RequisicaoInternaCabecalhoVO" table="requisicao_interna_cabecalho" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">requisicao_interna_cabecalho</param>
+      </generator>
+    </id>
+
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="DataRequisicao" column="DATA_REQUISICAO" caption="Data Requisicao" width="80" type="Date" />
+    <property name="Situacao" column="SITUACAO" caption="Situacao" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

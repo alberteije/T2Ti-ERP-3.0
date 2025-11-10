@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewFinChequeEmitidoVO" table="view_fin_cheque_emitido" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_fin_cheque_emitido</param>
+      </generator>
+    </id>
+
+    <property name="IdContaCaixa" column="ID_CONTA_CAIXA" caption="Id Conta Caixa" width="80" type="Integer" />
+    <property name="NomeContaCaixa" column="NOME_CONTA_CAIXA" caption="Nome Conta Caixa" width="400" type="String" />
+    <property name="Talao" column="TALAO" caption="Talao" width="80" type="String" />
+    <property name="NumeroTalao" column="NUMERO_TALAO" caption="Numero Talao" width="80" type="Integer" />
+    <property name="IdCheque" column="ID_CHEQUE" caption="Id Cheque" width="80" type="Integer" />
+    <property name="NumeroCheque" column="NUMERO_CHEQUE" caption="Numero Cheque" width="80" type="Integer" />
+    <property name="StatusCheque" column="STATUS_CHEQUE" caption="Status Cheque" width="8" type="String" />
+    <property name="DataStatus" column="DATA_STATUS" caption="Data Status" width="80" type="Date" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

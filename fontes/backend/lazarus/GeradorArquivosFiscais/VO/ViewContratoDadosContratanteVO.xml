@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewContratoDadosContratanteVO" table="view_contrato_dados_contratante" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_contrato_dados_contratante</param>
+      </generator>
+    </id>
+
+    <property name="IdSolicitacao" column="ID_SOLICITACAO" caption="Id Solicitacao" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="CpfCnpj" column="CPF_CNPJ" caption="Cpf Cnpj" width="112" type="String" />
+    <property name="Logradouro" column="LOGRADOURO" caption="Logradouro" width="450" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="String" />
+    <property name="Complemento" column="COMPLEMENTO" caption="Complemento" width="450" type="String" />
+    <property name="Bairro" column="BAIRRO" caption="Bairro" width="450" type="String" />
+    <property name="Cidade" column="CIDADE" caption="Cidade" width="450" type="String" />
+    <property name="Cep" column="CEP" caption="Cep" width="64" type="String" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

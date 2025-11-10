@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="TabelaPrecoProdutoVO" table="tabela_preco_produto" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">tabela_preco_produto</param>
+      </generator>
+    </id>
+
+    <property name="IdTabelaPreco" column="ID_TABELA_PRECO" caption="Id Tabela Preco" width="80" type="Integer" />
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="Preco" column="PRECO" caption="Preco" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

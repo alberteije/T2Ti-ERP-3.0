@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewSintegra61rVO" table="view_sintegra_61r" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_sintegra_61r</param>
+      </generator>
+    </id>
+
+    <property name="Gtin" column="GTIN" caption="Gtin" width="112" type="String" />
+    <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
+    <property name="MesEmissao" column="MES_EMISSAO" caption="Mes Emissao" width="80" type="Integer" />
+    <property name="AnoEmissao" column="ANO_EMISSAO" caption="Ano Emissao" width="80" type="Integer" />
+    <property name="EcfIcmsSt" column="ECF_ICMS_ST" caption="Ecf Icms St" width="32" type="String" />
+    <property name="SomaQuantidade" column="SOMA_QUANTIDADE" caption="Soma Quantidade" width="264" type="FMTBcdField" />
+    <property name="SomaItem" column="SOMA_ITEM" caption="Soma Item" width="264" type="FMTBcdField" />
+    <property name="SomaBaseIcms" column="SOMA_BASE_ICMS" caption="Soma Base Icms" width="264" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

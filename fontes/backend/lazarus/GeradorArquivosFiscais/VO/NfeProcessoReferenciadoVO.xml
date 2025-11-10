@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeProcessoReferenciadoVO" table="nfe_processo_referenciado" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_processo_referenciado</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeCabecalho" column="ID_NFE_CABECALHO" caption="Id Nfe Cabecalho" width="80" type="Integer" />
+    <property name="Identificador" column="IDENTIFICADOR" caption="Identificador" width="450" type="String" />
+    <property name="Origem" column="ORIGEM" caption="Origem" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FolhaPlanoSaudeVO" table="folha_plano_saude" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">folha_plano_saude</param>
+      </generator>
+    </id>
+
+    <property name="IdOperadoraPlanoSaude" column="ID_OPERADORA_PLANO_SAUDE" caption="Id Operadora Plano Saude" width="80" type="Integer" />
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="DataInicio" column="DATA_INICIO" caption="Data Inicio" width="80" type="Date" />
+    <property name="Beneficiario" column="BENEFICIARIO" caption="Beneficiario" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

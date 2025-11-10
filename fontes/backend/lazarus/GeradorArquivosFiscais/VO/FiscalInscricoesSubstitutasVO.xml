@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FiscalInscricoesSubstitutasVO" table="fiscal_inscricoes_substitutas" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fiscal_inscricoes_substitutas</param>
+      </generator>
+    </id>
+
+    <property name="IdFiscalParametros" column="ID_FISCAL_PARAMETROS" caption="Id Fiscal Parametros" width="80" type="Integer" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="InscricaoEstadual" column="INSCRICAO_ESTADUAL" caption="Inscricao Estadual" width="240" type="String" />
+    <property name="Pmpf" column="PMPF" caption="Pmpf" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

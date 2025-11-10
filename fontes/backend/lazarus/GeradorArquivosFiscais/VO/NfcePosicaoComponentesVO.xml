@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfcePosicaoComponentesVO" table="nfce_posicao_componentes" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfce_posicao_componentes</param>
+      </generator>
+    </id>
+
+    <property name="IdNfceResolucao" column="ID_NFCE_RESOLUCAO" caption="Id Nfce Resolucao" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Altura" column="ALTURA" caption="Altura" width="80" type="Integer" />
+    <property name="Largura" column="LARGURA" caption="Largura" width="80" type="Integer" />
+    <property name="Topo" column="TOPO" caption="Topo" width="80" type="Integer" />
+    <property name="Esquerda" column="ESQUERDA" caption="Esquerda" width="80" type="Integer" />
+    <property name="TamanhoFonte" column="TAMANHO_FONTE" caption="Tamanho Fonte" width="80" type="Integer" />
+    <property name="Texto" column="TEXTO" caption="Texto" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

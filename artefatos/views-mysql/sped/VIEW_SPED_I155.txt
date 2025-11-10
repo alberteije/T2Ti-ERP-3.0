@@ -1,5 +1,5 @@
 	CREATE
-	VIEW t2tierp.VIEW_SPED_I155
+	VIEW view_sped_i155
 	AS
 	(
 	select 

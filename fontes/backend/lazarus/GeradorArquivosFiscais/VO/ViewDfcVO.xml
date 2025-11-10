@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewDfcVO" table="view_dfc" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_dfc</param>
+      </generator>
+    </id>
+
+    <property name="Periodo" column="PERIODO" caption="Periodo" width="56" type="String" />
+    <property name="Classificacao" column="CLASSIFICACAO" caption="Classificacao" width="240" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+    <property name="Dfc" column="DFC" caption="Dfc" width="8" type="String" />
+    <property name="Valor" column="VALOR" caption="Valor" width="264" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

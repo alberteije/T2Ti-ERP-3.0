@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContratoSolicitacaoServicoVO" table="contrato_solicitacao_servico" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contrato_solicitacao_servico</param>
+      </generator>
+    </id>
+
+    <property name="IdFornecedor" column="ID_FORNECEDOR" caption="Id Fornecedor" width="80" type="Integer" />
+    <property name="IdCliente" column="ID_CLIENTE" caption="Id Cliente" width="80" type="Integer" />
+    <property name="IdSetor" column="ID_SETOR" caption="Id Setor" width="80" type="Integer" />
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="IdContratoTipoServico" column="ID_CONTRATO_TIPO_SERVICO" caption="Id Contrato Tipo Servico" width="80" type="Integer" />
+    <property name="DataSolicitacao" column="DATA_SOLICITACAO" caption="Data Solicitacao" width="80" type="Date" />
+    <property name="DataDesejadaInicio" column="DATA_DESEJADA_INICIO" caption="Data Desejada Inicio" width="80" type="Date" />
+    <property name="Urgente" column="URGENTE" caption="Urgente" width="8" type="String" />
+    <property name="StatusSolicitacao" column="STATUS_SOLICITACAO" caption="Status Solicitacao" width="8" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

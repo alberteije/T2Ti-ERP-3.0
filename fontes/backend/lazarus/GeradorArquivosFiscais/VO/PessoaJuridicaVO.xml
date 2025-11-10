@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PessoaJuridicaVO" table="pessoa_juridica" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">pessoa_juridica</param>
+      </generator>
+    </id>
+
+    <property name="IdPessoa" column="ID_PESSOA" caption="Id Pessoa" width="80" type="Integer" />
+    <property name="Cnpj" column="CNPJ" caption="Cnpj" width="112" type="String" />
+    <property name="Fantasia" column="FANTASIA" caption="Fantasia" width="450" type="String" />
+    <property name="InscricaoMunicipal" column="INSCRICAO_MUNICIPAL" caption="Inscricao Municipal" width="240" type="String" />
+    <property name="InscricaoEstadual" column="INSCRICAO_ESTADUAL" caption="Inscricao Estadual" width="240" type="String" />
+    <property name="DataConstituicao" column="DATA_CONSTITUICAO" caption="Data Constituicao" width="80" type="Date" />
+    <property name="TipoRegime" column="TIPO_REGIME" caption="Tipo Regime" width="8" type="String" />
+    <property name="Crt" column="CRT" caption="Crt" width="8" type="String" />
+    <property name="Suframa" column="SUFRAMA" caption="Suframa" width="72" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

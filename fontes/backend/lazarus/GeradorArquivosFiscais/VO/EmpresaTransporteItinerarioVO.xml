@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EmpresaTransporteItinerarioVO" table="empresa_transporte_itinerario" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">empresa_transporte_itinerario</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresaTransporte" column="ID_EMPRESA_TRANSPORTE" caption="Id Empresa Transporte" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Tarifa" column="TARIFA" caption="Tarifa" width="168" type="FMTBcdField" />
+    <property name="Trajeto" column="TRAJETO" caption="Trajeto" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

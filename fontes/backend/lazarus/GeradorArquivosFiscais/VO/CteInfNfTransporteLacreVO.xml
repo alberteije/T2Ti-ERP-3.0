@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteInfNfTransporteLacreVO" table="cte_inf_nf_transporte_lacre" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_inf_nf_transporte_lacre</param>
+      </generator>
+    </id>
+
+    <property name="IdCteInformacaoNfTransporte" column="ID_CTE_INFORMACAO_NF_TRANSPORTE" caption="Id Cte Informacao Nf Transporte" width="80" type="Integer" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="160" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

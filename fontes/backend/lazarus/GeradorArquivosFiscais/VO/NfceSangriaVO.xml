@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfceSangriaVO" table="nfce_sangria" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfce_sangria</param>
+      </generator>
+    </id>
+
+    <property name="IdNfceMovimento" column="ID_NFCE_MOVIMENTO" caption="Id Nfce Movimento" width="80" type="Integer" />
+    <property name="DataSangria" column="DATA_SANGRIA" caption="Data Sangria" width="80" type="Date" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

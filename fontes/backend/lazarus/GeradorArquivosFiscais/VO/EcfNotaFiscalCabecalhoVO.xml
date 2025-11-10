@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EcfNotaFiscalCabecalhoVO" table="ecf_nota_fiscal_cabecalho" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ecf_nota_fiscal_cabecalho</param>
+      </generator>
+    </id>
+
+    <property name="NomeCaixa" column="NOME_CAIXA" caption="Nome Caixa" width="240" type="String" />
+    <property name="IdGeradoCaixa" column="ID_GERADO_CAIXA" caption="Id Gerado Caixa" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdEcfFuncionario" column="ID_ECF_FUNCIONARIO" caption="Id Ecf Funcionario" width="80" type="Integer" />
+    <property name="IdCliente" column="ID_CLIENTE" caption="Id Cliente" width="80" type="Integer" />
+    <property name="CpfCnpjCliente" column="CPF_CNPJ_CLIENTE" caption="Cpf Cnpj Cliente" width="112" type="String" />
+    <property name="Cfop" column="CFOP" caption="Cfop" width="80" type="Integer" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="48" type="String" />
+    <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
+    <property name="HoraEmissao" column="HORA_EMISSAO" caption="Hora Emissao" width="64" type="String" />
+    <property name="Serie" column="SERIE" caption="Serie" width="16" type="String" />
+    <property name="Subserie" column="SUBSERIE" caption="Subserie" width="16" type="String" />
+    <property name="TotalProdutos" column="TOTAL_PRODUTOS" caption="Total Produtos" width="168" type="FMTBcdField" />
+    <property name="TotalNf" column="TOTAL_NF" caption="Total Nf" width="168" type="FMTBcdField" />
+    <property name="BaseIcms" column="BASE_ICMS" caption="Base Icms" width="168" type="FMTBcdField" />
+    <property name="Icms" column="ICMS" caption="Icms" width="168" type="FMTBcdField" />
+    <property name="IcmsOutras" column="ICMS_OUTRAS" caption="Icms Outras" width="168" type="FMTBcdField" />
+    <property name="Issqn" column="ISSQN" caption="Issqn" width="168" type="FMTBcdField" />
+    <property name="Pis" column="PIS" caption="Pis" width="168" type="FMTBcdField" />
+    <property name="Cofins" column="COFINS" caption="Cofins" width="168" type="FMTBcdField" />
+    <property name="Ipi" column="IPI" caption="Ipi" width="168" type="FMTBcdField" />
+    <property name="TaxaAcrescimo" column="TAXA_ACRESCIMO" caption="Taxa Acrescimo" width="168" type="FMTBcdField" />
+    <property name="Acrescimo" column="ACRESCIMO" caption="Acrescimo" width="168" type="FMTBcdField" />
+    <property name="AcrescimoItens" column="ACRESCIMO_ITENS" caption="Acrescimo Itens" width="168" type="FMTBcdField" />
+    <property name="TaxaDesconto" column="TAXA_DESCONTO" caption="Taxa Desconto" width="168" type="FMTBcdField" />
+    <property name="Desconto" column="DESCONTO" caption="Desconto" width="168" type="FMTBcdField" />
+    <property name="DescontoItens" column="DESCONTO_ITENS" caption="Desconto Itens" width="168" type="FMTBcdField" />
+    <property name="Cancelada" column="CANCELADA" caption="Cancelada" width="8" type="String" />
+    <property name="TipoNota" column="TIPO_NOTA" caption="Tipo Nota" width="8" type="String" />
+    <property name="DataSincronizacao" column="DATA_SINCRONIZACAO" caption="Data Sincronizacao" width="80" type="Date" />
+    <property name="HoraSincronizacao" column="HORA_SINCRONIZACAO" caption="Hora Sincronizacao" width="64" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

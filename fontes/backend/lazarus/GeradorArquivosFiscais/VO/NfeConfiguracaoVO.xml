@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeConfiguracaoVO" table="nfe_configuracao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_configuracao</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="CertificadoDigitalSerie" column="CERTIFICADO_DIGITAL_SERIE" caption="Certificado Digital Serie" width="450" type="String" />
+    <property name="CertificadoDigitalCaminho" column="CERTIFICADO_DIGITAL_CAMINHO" caption="Certificado Digital Caminho" width="450" type="Memo" />
+    <property name="CertificadoDigitalSenha" column="CERTIFICADO_DIGITAL_SENHA" caption="Certificado Digital Senha" width="450" type="String" />
+    <property name="TipoEmissao" column="TIPO_EMISSAO" caption="Tipo Emissao" width="80" type="Integer" />
+    <property name="FormatoImpressaoDanfe" column="FORMATO_IMPRESSAO_DANFE" caption="Formato Impressao Danfe" width="80" type="Integer" />
+    <property name="ProcessoEmissao" column="PROCESSO_EMISSAO" caption="Processo Emissao" width="80" type="Integer" />
+    <property name="VersaoProcessoEmissao" column="VERSAO_PROCESSO_EMISSAO" caption="Versao Processo Emissao" width="160" type="String" />
+    <property name="CaminhoLogomarca" column="CAMINHO_LOGOMARCA" caption="Caminho Logomarca" width="450" type="Memo" />
+    <property name="SalvarXml" column="SALVAR_XML" caption="Salvar Xml" width="8" type="String" />
+    <property name="CaminhoSalvarXml" column="CAMINHO_SALVAR_XML" caption="Caminho Salvar Xml" width="450" type="Memo" />
+    <property name="CaminhoSchemas" column="CAMINHO_SCHEMAS" caption="Caminho Schemas" width="450" type="Memo" />
+    <property name="CaminhoArquivoDanfe" column="CAMINHO_ARQUIVO_DANFE" caption="Caminho Arquivo Danfe" width="450" type="Memo" />
+    <property name="CaminhoSalvarPdf" column="CAMINHO_SALVAR_PDF" caption="Caminho Salvar Pdf" width="450" type="Memo" />
+    <property name="WebserviceUf" column="WEBSERVICE_UF" caption="Webservice Uf" width="16" type="String" />
+    <property name="WebserviceAmbiente" column="WEBSERVICE_AMBIENTE" caption="Webservice Ambiente" width="80" type="Integer" />
+    <property name="WebserviceProxyHost" column="WEBSERVICE_PROXY_HOST" caption="Webservice Proxy Host" width="450" type="String" />
+    <property name="WebserviceProxyPorta" column="WEBSERVICE_PROXY_PORTA" caption="Webservice Proxy Porta" width="80" type="Integer" />
+    <property name="WebserviceProxyUsuario" column="WEBSERVICE_PROXY_USUARIO" caption="Webservice Proxy Usuario" width="450" type="String" />
+    <property name="WebserviceProxySenha" column="WEBSERVICE_PROXY_SENHA" caption="Webservice Proxy Senha" width="450" type="String" />
+    <property name="WebserviceVisualizar" column="WEBSERVICE_VISUALIZAR" caption="Webservice Visualizar" width="8" type="String" />
+    <property name="EmailServidorSmtp" column="EMAIL_SERVIDOR_SMTP" caption="Email Servidor Smtp" width="450" type="String" />
+    <property name="EmailPorta" column="EMAIL_PORTA" caption="Email Porta" width="80" type="Integer" />
+    <property name="EmailUsuario" column="EMAIL_USUARIO" caption="Email Usuario" width="450" type="String" />
+    <property name="EmailSenha" column="EMAIL_SENHA" caption="Email Senha" width="450" type="String" />
+    <property name="EmailAssunto" column="EMAIL_ASSUNTO" caption="Email Assunto" width="450" type="String" />
+    <property name="EmailAutenticaSsl" column="EMAIL_AUTENTICA_SSL" caption="Email Autentica Ssl" width="8" type="String" />
+    <property name="EmailTexto" column="EMAIL_TEXTO" caption="Email Texto" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

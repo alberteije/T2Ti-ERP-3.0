@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CompraRequisicaoDetalheVO" table="compra_requisicao_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">compra_requisicao_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdCompraRequisicao" column="ID_COMPRA_REQUISICAO" caption="Id Compra Requisicao" width="80" type="Integer" />
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="168" type="FMTBcdField" />
+    <property name="QuantidadeCotada" column="QUANTIDADE_COTADA" caption="Quantidade Cotada" width="168" type="FMTBcdField" />
+    <property name="ItemCotado" column="ITEM_COTADO" caption="Item Cotado" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

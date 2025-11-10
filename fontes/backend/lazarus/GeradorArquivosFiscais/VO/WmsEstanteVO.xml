@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="WmsEstanteVO" table="wms_estante" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">wms_estante</param>
+      </generator>
+    </id>
+
+    <property name="IdWmsRua" column="ID_WMS_RUA" caption="Id Wms Rua" width="80" type="Integer" />
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="80" type="String" />
+    <property name="QuantidadeCaixa" column="QUANTIDADE_CAIXA" caption="Quantidade Caixa" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

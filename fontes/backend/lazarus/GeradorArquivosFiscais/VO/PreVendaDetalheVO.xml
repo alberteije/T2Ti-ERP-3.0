@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PreVendaDetalheVO" table="pre_venda_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">pre_venda_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="IdPreVendaCabecalho" column="ID_PRE_VENDA_CABECALHO" caption="Id Pre Venda Cabecalho" width="80" type="Integer" />
+    <property name="Item" column="ITEM" caption="Item" width="80" type="Integer" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="168" type="FMTBcdField" />
+    <property name="ValorUnitario" column="VALOR_UNITARIO" caption="Valor Unitario" width="168" type="FMTBcdField" />
+    <property name="ValorTotal" column="VALOR_TOTAL" caption="Valor Total" width="168" type="FMTBcdField" />
+    <property name="Cancelado" column="CANCELADO" caption="Cancelado" width="8" type="String" />
+    <property name="GtinProduto" column="GTIN_PRODUTO" caption="Gtin Produto" width="112" type="String" />
+    <property name="NomeProduto" column="NOME_PRODUTO" caption="Nome Produto" width="450" type="String" />
+    <property name="UnidadeProduto" column="UNIDADE_PRODUTO" caption="Unidade Produto" width="80" type="String" />
+    <property name="EcfIcmsSt" column="ECF_ICMS_ST" caption="Ecf Icms St" width="32" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

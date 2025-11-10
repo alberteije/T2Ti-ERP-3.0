@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="RateioCentroResultadoDetVO" table="rateio_centro_resultado_det" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">rateio_centro_resultado_det</param>
+      </generator>
+    </id>
+
+    <property name="IdCentroResultadoDestino" column="ID_CENTRO_RESULTADO_DESTINO" caption="Id Centro Resultado Destino" width="80" type="Integer" />
+    <property name="IdRateioCentroResulCab" column="ID_RATEIO_CENTRO_RESUL_CAB" caption="Id Rateio Centro Resul Cab" width="80" type="Integer" />
+    <property name="PorcentoRateio" column="PORCENTO_RATEIO" caption="Porcento Rateio" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

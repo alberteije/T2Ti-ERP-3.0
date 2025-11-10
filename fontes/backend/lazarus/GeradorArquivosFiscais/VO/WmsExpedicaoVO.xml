@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="WmsExpedicaoVO" table="wms_expedicao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">wms_expedicao</param>
+      </generator>
+    </id>
+
+    <property name="IdWmsOrdemSeparacaoDet" column="ID_WMS_ORDEM_SEPARACAO_DET" caption="Id Wms Ordem Separacao Det" width="80" type="Integer" />
+    <property name="IdWmsArmazenamento" column="ID_WMS_ARMAZENAMENTO" caption="Id Wms Armazenamento" width="80" type="Integer" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="80" type="Integer" />
+    <property name="DataSaida" column="DATA_SAIDA" caption="Data Saida" width="80" type="Date" />
+
+  </class>
+</t2ti-orm-mapping>

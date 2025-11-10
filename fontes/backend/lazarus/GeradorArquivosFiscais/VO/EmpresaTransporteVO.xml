@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EmpresaTransporteVO" table="empresa_transporte" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">empresa_transporte</param>
+      </generator>
+    </id>
+
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="ClassificacaoContabilConta" column="CLASSIFICACAO_CONTABIL_CONTA" caption="Classificacao Contabil Conta" width="240" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

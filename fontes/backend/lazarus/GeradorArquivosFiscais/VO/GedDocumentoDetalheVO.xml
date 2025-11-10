@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="GedDocumentoDetalheVO" table="ged_documento_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ged_documento_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdGedDocumentoCabecalho" column="ID_GED_DOCUMENTO_CABECALHO" caption="Id Ged Documento Cabecalho" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdGedTipoDocumento" column="ID_GED_TIPO_DOCUMENTO" caption="Id Ged Tipo Documento" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+    <property name="PalavraChave" column="PALAVRA_CHAVE" caption="Palavra Chave" width="450" type="String" />
+    <property name="PodeExcluir" column="PODE_EXCLUIR" caption="Pode Excluir" width="8" type="String" />
+    <property name="PodeAlterar" column="PODE_ALTERAR" caption="Pode Alterar" width="8" type="String" />
+    <property name="Assinado" column="ASSINADO" caption="Assinado" width="8" type="String" />
+    <property name="DataFimVigencia" column="DATA_FIM_VIGENCIA" caption="Data Fim Vigencia" width="80" type="Date" />
+    <property name="DataExclusao" column="DATA_EXCLUSAO" caption="Data Exclusao" width="80" type="Date" />
+
+  </class>
+</t2ti-orm-mapping>

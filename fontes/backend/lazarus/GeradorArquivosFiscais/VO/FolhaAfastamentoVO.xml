@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FolhaAfastamentoVO" table="folha_afastamento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">folha_afastamento</param>
+      </generator>
+    </id>
+
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="IdFolhaTipoAfastamento" column="ID_FOLHA_TIPO_AFASTAMENTO" caption="Id Folha Tipo Afastamento" width="80" type="Integer" />
+    <property name="DataInicio" column="DATA_INICIO" caption="Data Inicio" width="80" type="Date" />
+    <property name="DataFim" column="DATA_FIM" caption="Data Fim" width="80" type="Date" />
+    <property name="DiasAfastado" column="DIAS_AFASTADO" caption="Dias Afastado" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

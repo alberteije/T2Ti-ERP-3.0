@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeCabecalhoVO" table="nfe_cabecalho" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_cabecalho</param>
+      </generator>
+    </id>
+
+    <property name="IdNfceMovimento" column="ID_NFCE_MOVIMENTO" caption="Id Nfce Movimento" width="80" type="Integer" />
+    <property name="IdVendedor" column="ID_VENDEDOR" caption="Id Vendedor" width="80" type="Integer" />
+    <property name="IdTributOperacaoFiscal" column="ID_TRIBUT_OPERACAO_FISCAL" caption="Id Tribut Operacao Fiscal" width="80" type="Integer" />
+    <property name="IdVendaCabecalho" column="ID_VENDA_CABECALHO" caption="Id Venda Cabecalho" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdFornecedor" column="ID_FORNECEDOR" caption="Id Fornecedor" width="80" type="Integer" />
+    <property name="IdCliente" column="ID_CLIENTE" caption="Id Cliente" width="80" type="Integer" />
+    <property name="UfEmitente" column="UF_EMITENTE" caption="Uf Emitente" width="80" type="Integer" />
+    <property name="CodigoNumerico" column="CODIGO_NUMERICO" caption="Codigo Numerico" width="64" type="String" />
+    <property name="NaturezaOperacao" column="NATUREZA_OPERACAO" caption="Natureza Operacao" width="450" type="String" />
+    <property name="IndicadorFormaPagamento" column="INDICADOR_FORMA_PAGAMENTO" caption="Indicador Forma Pagamento" width="80" type="Integer" />
+    <property name="CodigoModelo" column="CODIGO_MODELO" caption="Codigo Modelo" width="16" type="String" />
+    <property name="Serie" column="SERIE" caption="Serie" width="24" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="72" type="String" />
+    <property name="DataHoraEmissao" column="DATA_HORA_EMISSAO" caption="Data Hora Emissao" width="272" type="SQLTimeStamp" />
+    <property name="DataHoraEntradaSaida" column="DATA_HORA_ENTRADA_SAIDA" caption="Data Hora Entrada Saida" width="272" type="SQLTimeStamp" />
+    <property name="TipoOperacao" column="TIPO_OPERACAO" caption="Tipo Operacao" width="80" type="Integer" />
+    <property name="LocalDestino" column="LOCAL_DESTINO" caption="Local Destino" width="80" type="Integer" />
+    <property name="CodigoMunicipio" column="CODIGO_MUNICIPIO" caption="Codigo Municipio" width="80" type="Integer" />
+    <property name="FormatoImpressaoDanfe" column="FORMATO_IMPRESSAO_DANFE" caption="Formato Impressao Danfe" width="80" type="Integer" />
+    <property name="TipoEmissao" column="TIPO_EMISSAO" caption="Tipo Emissao" width="80" type="Integer" />
+    <property name="ChaveAcesso" column="CHAVE_ACESSO" caption="Chave Acesso" width="352" type="String" />
+    <property name="DigitoChaveAcesso" column="DIGITO_CHAVE_ACESSO" caption="Digito Chave Acesso" width="8" type="String" />
+    <property name="Ambiente" column="AMBIENTE" caption="Ambiente" width="80" type="Integer" />
+    <property name="FinalidadeEmissao" column="FINALIDADE_EMISSAO" caption="Finalidade Emissao" width="80" type="Integer" />
+    <property name="ConsumidorOperacao" column="CONSUMIDOR_OPERACAO" caption="Consumidor Operacao" width="80" type="Integer" />
+    <property name="ConsumidorPresenca" column="CONSUMIDOR_PRESENCA" caption="Consumidor Presenca" width="80" type="Integer" />
+    <property name="ProcessoEmissao" column="PROCESSO_EMISSAO" caption="Processo Emissao" width="80" type="Integer" />
+    <property name="VersaoProcessoEmissao" column="VERSAO_PROCESSO_EMISSAO" caption="Versao Processo Emissao" width="160" type="String" />
+    <property name="DataEntradaContingencia" column="DATA_ENTRADA_CONTINGENCIA" caption="Data Entrada Contingencia" width="272" type="SQLTimeStamp" />
+    <property name="JustificativaContingencia" column="JUSTIFICATIVA_CONTINGENCIA" caption="Justificativa Contingencia" width="450" type="String" />
+    <property name="BaseCalculoIcms" column="BASE_CALCULO_ICMS" caption="Base Calculo Icms" width="168" type="FMTBcdField" />
+    <property name="ValorIcms" column="VALOR_ICMS" caption="Valor Icms" width="168" type="FMTBcdField" />
+    <property name="ValorIcmsDesonerado" column="VALOR_ICMS_DESONERADO" caption="Valor Icms Desonerado" width="168" type="FMTBcdField" />
+    <property name="BaseCalculoIcmsSt" column="BASE_CALCULO_ICMS_ST" caption="Base Calculo Icms St" width="168" type="FMTBcdField" />
+    <property name="ValorIcmsSt" column="VALOR_ICMS_ST" caption="Valor Icms St" width="168" type="FMTBcdField" />
+    <property name="ValorTotalProdutos" column="VALOR_TOTAL_PRODUTOS" caption="Valor Total Produtos" width="168" type="FMTBcdField" />
+    <property name="ValorFrete" column="VALOR_FRETE" caption="Valor Frete" width="168" type="FMTBcdField" />
+    <property name="ValorSeguro" column="VALOR_SEGURO" caption="Valor Seguro" width="168" type="FMTBcdField" />
+    <property name="ValorDesconto" column="VALOR_DESCONTO" caption="Valor Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorImpostoImportacao" column="VALOR_IMPOSTO_IMPORTACAO" caption="Valor Imposto Importacao" width="168" type="FMTBcdField" />
+    <property name="ValorIpi" column="VALOR_IPI" caption="Valor Ipi" width="168" type="FMTBcdField" />
+    <property name="ValorPis" column="VALOR_PIS" caption="Valor Pis" width="168" type="FMTBcdField" />
+    <property name="ValorCofins" column="VALOR_COFINS" caption="Valor Cofins" width="168" type="FMTBcdField" />
+    <property name="ValorDespesasAcessorias" column="VALOR_DESPESAS_ACESSORIAS" caption="Valor Despesas Acessorias" width="168" type="FMTBcdField" />
+    <property name="ValorTotal" column="VALOR_TOTAL" caption="Valor Total" width="168" type="FMTBcdField" />
+    <property name="ValorServicos" column="VALOR_SERVICOS" caption="Valor Servicos" width="168" type="FMTBcdField" />
+    <property name="BaseCalculoIssqn" column="BASE_CALCULO_ISSQN" caption="Base Calculo Issqn" width="168" type="FMTBcdField" />
+    <property name="ValorIssqn" column="VALOR_ISSQN" caption="Valor Issqn" width="168" type="FMTBcdField" />
+    <property name="ValorPisIssqn" column="VALOR_PIS_ISSQN" caption="Valor Pis Issqn" width="168" type="FMTBcdField" />
+    <property name="ValorCofinsIssqn" column="VALOR_COFINS_ISSQN" caption="Valor Cofins Issqn" width="168" type="FMTBcdField" />
+    <property name="DataPrestacaoServico" column="DATA_PRESTACAO_SERVICO" caption="Data Prestacao Servico" width="80" type="Date" />
+    <property name="ValorDeducaoIssqn" column="VALOR_DEDUCAO_ISSQN" caption="Valor Deducao Issqn" width="168" type="FMTBcdField" />
+    <property name="OutrasRetencoesIssqn" column="OUTRAS_RETENCOES_ISSQN" caption="Outras Retencoes Issqn" width="168" type="FMTBcdField" />
+    <property name="DescontoIncondicionadoIssqn" column="DESCONTO_INCONDICIONADO_ISSQN" caption="Desconto Incondicionado Issqn" width="168" type="FMTBcdField" />
+    <property name="DescontoCondicionadoIssqn" column="DESCONTO_CONDICIONADO_ISSQN" caption="Desconto Condicionado Issqn" width="168" type="FMTBcdField" />
+    <property name="TotalRetencaoIssqn" column="TOTAL_RETENCAO_ISSQN" caption="Total Retencao Issqn" width="168" type="FMTBcdField" />
+    <property name="RegimeEspecialTributacao" column="REGIME_ESPECIAL_TRIBUTACAO" caption="Regime Especial Tributacao" width="80" type="Integer" />
+    <property name="ValorRetidoPis" column="VALOR_RETIDO_PIS" caption="Valor Retido Pis" width="168" type="FMTBcdField" />
+    <property name="ValorRetidoCofins" column="VALOR_RETIDO_COFINS" caption="Valor Retido Cofins" width="168" type="FMTBcdField" />
+    <property name="ValorRetidoCsll" column="VALOR_RETIDO_CSLL" caption="Valor Retido Csll" width="168" type="FMTBcdField" />
+    <property name="BaseCalculoIrrf" column="BASE_CALCULO_IRRF" caption="Base Calculo Irrf" width="168" type="FMTBcdField" />
+    <property name="ValorRetidoIrrf" column="VALOR_RETIDO_IRRF" caption="Valor Retido Irrf" width="168" type="FMTBcdField" />
+    <property name="BaseCalculoPrevidencia" column="BASE_CALCULO_PREVIDENCIA" caption="Base Calculo Previdencia" width="168" type="FMTBcdField" />
+    <property name="ValorRetidoPrevidencia" column="VALOR_RETIDO_PREVIDENCIA" caption="Valor Retido Previdencia" width="168" type="FMTBcdField" />
+    <property name="Troco" column="TROCO" caption="Troco" width="168" type="FMTBcdField" />
+    <property name="ComexUfEmbarque" column="COMEX_UF_EMBARQUE" caption="Comex Uf Embarque" width="16" type="String" />
+    <property name="ComexLocalEmbarque" column="COMEX_LOCAL_EMBARQUE" caption="Comex Local Embarque" width="450" type="String" />
+    <property name="ComexLocalDespacho" column="COMEX_LOCAL_DESPACHO" caption="Comex Local Despacho" width="450" type="String" />
+    <property name="CompraNotaEmpenho" column="COMPRA_NOTA_EMPENHO" caption="Compra Nota Empenho" width="176" type="String" />
+    <property name="CompraPedido" column="COMPRA_PEDIDO" caption="Compra Pedido" width="450" type="String" />
+    <property name="CompraContrato" column="COMPRA_CONTRATO" caption="Compra Contrato" width="450" type="String" />
+    <property name="InformacoesAddFisco" column="INFORMACOES_ADD_FISCO" caption="Informacoes Add Fisco" width="450" type="Memo" />
+    <property name="InformacoesAddContribuinte" column="INFORMACOES_ADD_CONTRIBUINTE" caption="Informacoes Add Contribuinte" width="450" type="Memo" />
+    <property name="StatusNota" column="STATUS_NOTA" caption="Status Nota" width="80" type="Integer" />
+    <property name="QuantidadeImpressaoDanfe" column="QUANTIDADE_IMPRESSAO_DANFE" caption="Quantidade Impressao Danfe" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

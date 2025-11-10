@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewSpedC490VO" table="view_sped_c490" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_sped_c490</param>
+      </generator>
+    </id>
+
+    <property name="Cst" column="CST" caption="Cst" width="24" type="String" />
+    <property name="Cfop" column="CFOP" caption="Cfop" width="80" type="Integer" />
+    <property name="TaxaIcms" column="TAXA_ICMS" caption="Taxa Icms" width="168" type="FMTBcdField" />
+    <property name="DataVenda" column="DATA_VENDA" caption="Data Venda" width="80" type="Date" />
+    <property name="SomaItem" column="SOMA_ITEM" caption="Soma Item" width="264" type="FMTBcdField" />
+    <property name="SomaBaseIcms" column="SOMA_BASE_ICMS" caption="Soma Base Icms" width="264" type="FMTBcdField" />
+    <property name="SomaIcms" column="SOMA_ICMS" caption="Soma Icms" width="264" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

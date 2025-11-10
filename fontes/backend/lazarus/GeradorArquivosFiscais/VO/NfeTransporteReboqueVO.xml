@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeTransporteReboqueVO" table="nfe_transporte_reboque" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_transporte_reboque</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeTransporte" column="ID_NFE_TRANSPORTE" caption="Id Nfe Transporte" width="80" type="Integer" />
+    <property name="Placa" column="PLACA" caption="Placa" width="64" type="String" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="Rntc" column="RNTC" caption="Rntc" width="160" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

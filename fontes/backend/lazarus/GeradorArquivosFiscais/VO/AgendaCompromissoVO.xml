@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="AgendaCompromissoVO" table="agenda_compromisso" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">agenda_compromisso</param>
+      </generator>
+    </id>
+
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="IdAgendaCategoriaCompromisso" column="ID_AGENDA_CATEGORIA_COMPROMISSO" caption="Id Agenda Categoria Compromisso" width="80" type="Integer" />
+    <property name="DataCompromisso" column="DATA_COMPROMISSO" caption="Data Compromisso" width="80" type="Date" />
+    <property name="Hora" column="HORA" caption="Hora" width="64" type="String" />
+    <property name="Duracao" column="DURACAO" caption="Duracao" width="80" type="Integer" />
+    <property name="Onde" column="ONDE" caption="Onde" width="450" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EstoqueCorVO" table="estoque_cor" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">estoque_cor</param>
+      </generator>
+    </id>
+
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="32" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="160" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="MaloteDigitalDocumentoVO" table="malote_digital_documento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">malote_digital_documento</param>
+      </generator>
+    </id>
+
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="NomeArquivo" column="NOME_ARQUIVO" caption="Nome Arquivo" width="80" type="Integer" />
+    <property name="Formato" column="FORMATO" caption="Formato" width="24" type="String" />
+    <property name="Tamanho" column="TAMANHO" caption="Tamanho" width="80" type="Integer" />
+    <property name="Assinado" column="ASSINADO" caption="Assinado" width="8" type="String" />
+    <property name="DataEnvio" column="DATA_ENVIO" caption="Data Envio" width="80" type="Date" />
+    <property name="Assunto" column="ASSUNTO" caption="Assunto" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

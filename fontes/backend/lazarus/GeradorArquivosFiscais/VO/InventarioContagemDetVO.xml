@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="InventarioContagemDetVO" table="inventario_contagem_det" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">inventario_contagem_det</param>
+      </generator>
+    </id>
+
+    <property name="IdInventarioContagemCab" column="ID_INVENTARIO_CONTAGEM_CAB" caption="Id Inventario Contagem Cab" width="80" type="Integer" />
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="Contagem01" column="CONTAGEM01" caption="Contagem01" width="168" type="FMTBcdField" />
+    <property name="Contagem02" column="CONTAGEM02" caption="Contagem02" width="168" type="FMTBcdField" />
+    <property name="Contagem03" column="CONTAGEM03" caption="Contagem03" width="168" type="FMTBcdField" />
+    <property name="FechadoContagem" column="FECHADO_CONTAGEM" caption="Fechado Contagem" width="16" type="String" />
+    <property name="QuantidadeSistema" column="QUANTIDADE_SISTEMA" caption="Quantidade Sistema" width="168" type="FMTBcdField" />
+    <property name="Acuracidade" column="ACURACIDADE" caption="Acuracidade" width="168" type="FMTBcdField" />
+    <property name="Divergencia" column="DIVERGENCIA" caption="Divergencia" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

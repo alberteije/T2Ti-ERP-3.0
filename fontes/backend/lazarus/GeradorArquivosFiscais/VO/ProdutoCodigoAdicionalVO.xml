@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ProdutoCodigoAdicionalVO" table="produto_codigo_adicional" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">produto_codigo_adicional</param>
+      </generator>
+    </id>
+
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="112" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

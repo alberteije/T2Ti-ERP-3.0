@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="MoedaVO" table="moeda" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">moeda</param>
+      </generator>
+    </id>
+
+    <property name="Nome" column="NOME" caption="Nome" width="400" type="String" />
+    <property name="Sigla" column="SIGLA" caption="Sigla" width="80" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

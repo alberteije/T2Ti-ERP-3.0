@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeImportacaoDetalheVO" table="nfe_importacao_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_importacao_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeDeclaracaoImportacao" column="ID_NFE_DECLARACAO_IMPORTACAO" caption="Id Nfe Declaracao Importacao" width="80" type="Integer" />
+    <property name="NumeroAdicao" column="NUMERO_ADICAO" caption="Numero Adicao" width="80" type="Integer" />
+    <property name="NumeroSequencial" column="NUMERO_SEQUENCIAL" caption="Numero Sequencial" width="80" type="Integer" />
+    <property name="CodigoFabricanteEstrangeiro" column="CODIGO_FABRICANTE_ESTRANGEIRO" caption="Codigo Fabricante Estrangeiro" width="450" type="String" />
+    <property name="ValorDesconto" column="VALOR_DESCONTO" caption="Valor Desconto" width="168" type="FMTBcdField" />
+    <property name="Drawback" column="DRAWBACK" caption="Drawback" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="OperadoraCartaoVO" table="operadora_cartao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">operadora_cartao</param>
+      </generator>
+    </id>
+
+    <property name="IdContaCaixa" column="ID_CONTA_CAIXA" caption="Id Conta Caixa" width="80" type="Integer" />
+    <property name="Bandeira" column="BANDEIRA" caption="Bandeira" width="240" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="400" type="String" />
+    <property name="TaxaAdm" column="TAXA_ADM" caption="Taxa Adm" width="168" type="FMTBcdField" />
+    <property name="TaxaAdmDebito" column="TAXA_ADM_DEBITO" caption="Taxa Adm Debito" width="168" type="FMTBcdField" />
+    <property name="ValorAluguelPosPin" column="VALOR_ALUGUEL_POS_PIN" caption="Valor Aluguel Pos Pin" width="168" type="FMTBcdField" />
+    <property name="VencimentoAluguel" column="VENCIMENTO_ALUGUEL" caption="Vencimento Aluguel" width="80" type="Integer" />
+    <property name="Fone1" column="FONE1" caption="Fone1" width="112" type="String" />
+    <property name="Fone2" column="FONE2" caption="Fone2" width="112" type="String" />
+    <property name="ClassificacaoContabilConta" column="CLASSIFICACAO_CONTABIL_CONTA" caption="Classificacao Contabil Conta" width="240" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

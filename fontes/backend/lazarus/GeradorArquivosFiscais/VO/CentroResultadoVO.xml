@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CentroResultadoVO" table="centro_resultado" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">centro_resultado</param>
+      </generator>
+    </id>
+
+    <property name="IdPlanoCentroResultado" column="ID_PLANO_CENTRO_RESULTADO" caption="Id Plano Centro Resultado" width="80" type="Integer" />
+    <property name="Classificacao" column="CLASSIFICACAO" caption="Classificacao" width="240" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+    <property name="SofreRateiro" column="SOFRE_RATEIRO" caption="Sofre Rateiro" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

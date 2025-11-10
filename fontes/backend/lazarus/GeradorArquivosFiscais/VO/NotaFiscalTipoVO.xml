@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NotaFiscalTipoVO" table="nota_fiscal_tipo" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nota_fiscal_tipo</param>
+      </generator>
+    </id>
+
+    <property name="IdNotaFiscalModelo" column="ID_NOTA_FISCAL_MODELO" caption="Id Nota Fiscal Modelo" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="400" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+    <property name="Serie" column="SERIE" caption="Serie" width="24" type="String" />
+    <property name="SerieScan" column="SERIE_SCAN" caption="Serie Scan" width="24" type="String" />
+    <property name="UltimoNumero" column="ULTIMO_NUMERO" caption="Ultimo Numero" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

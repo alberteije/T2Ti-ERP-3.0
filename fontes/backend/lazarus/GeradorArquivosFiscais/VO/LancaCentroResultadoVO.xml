@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="LancaCentroResultadoVO" table="lanca_centro_resultado" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">lanca_centro_resultado</param>
+      </generator>
+    </id>
+
+    <property name="IdCentroResultado" column="ID_CENTRO_RESULTADO" caption="Id Centro Resultado" width="80" type="Integer" />
+    <property name="GedDocumentoDetalhe" column="GED_DOCUMENTO_DETALHE" caption="Ged Documento Detalhe" width="240" type="String" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+    <property name="Historico" column="HISTORICO" caption="Historico" width="450" type="String" />
+    <property name="DataLancamento" column="DATA_LANCAMENTO" caption="Data Lancamento" width="80" type="Date" />
+    <property name="DataInclusao" column="DATA_INCLUSAO" caption="Data Inclusao" width="80" type="Date" />
+    <property name="OrigemDeRateio" column="ORIGEM_DE_RATEIO" caption="Origem De Rateio" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

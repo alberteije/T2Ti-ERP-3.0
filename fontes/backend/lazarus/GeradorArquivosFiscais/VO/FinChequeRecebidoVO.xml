@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FinChequeRecebidoVO" table="fin_cheque_recebido" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fin_cheque_recebido</param>
+      </generator>
+    </id>
+
+    <property name="IdContaCaixa" column="ID_CONTA_CAIXA" caption="Id Conta Caixa" width="80" type="Integer" />
+    <property name="IdPessoa" column="ID_PESSOA" caption="Id Pessoa" width="80" type="Integer" />
+    <property name="CpfCnpj" column="CPF_CNPJ" caption="Cpf Cnpj" width="112" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="CodigoBanco" column="CODIGO_BANCO" caption="Codigo Banco" width="80" type="String" />
+    <property name="CodigoAgencia" column="CODIGO_AGENCIA" caption="Codigo Agencia" width="80" type="String" />
+    <property name="Conta" column="CONTA" caption="Conta" width="160" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="Integer" />
+    <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
+    <property name="BomPara" column="BOM_PARA" caption="Bom Para" width="80" type="Date" />
+    <property name="DataCompensacao" column="DATA_COMPENSACAO" caption="Data Compensacao" width="80" type="Date" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+    <property name="CustodiaData" column="CUSTODIA_DATA" caption="Custodia Data" width="80" type="Date" />
+    <property name="CustodiaTarifa" column="CUSTODIA_TARIFA" caption="Custodia Tarifa" width="168" type="FMTBcdField" />
+    <property name="CustodiaComissao" column="CUSTODIA_COMISSAO" caption="Custodia Comissao" width="168" type="FMTBcdField" />
+    <property name="DescontoCheque" column="DESCONTO_CHEQUE" caption="Desconto Cheque" width="8" type="String" />
+    <property name="DescontoData" column="DESCONTO_DATA" caption="Desconto Data" width="80" type="Date" />
+    <property name="DescontoTarifa" column="DESCONTO_TARIFA" caption="Desconto Tarifa" width="168" type="FMTBcdField" />
+    <property name="DescontoComissao" column="DESCONTO_COMISSAO" caption="Desconto Comissao" width="168" type="FMTBcdField" />
+    <property name="ValorRecebido" column="VALOR_RECEBIDO" caption="Valor Recebido" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

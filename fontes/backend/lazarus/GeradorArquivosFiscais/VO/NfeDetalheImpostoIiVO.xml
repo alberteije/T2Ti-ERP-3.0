@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeDetalheImpostoIiVO" table="nfe_detalhe_imposto_ii" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_detalhe_imposto_ii</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeDetalhe" column="ID_NFE_DETALHE" caption="Id Nfe Detalhe" width="80" type="Integer" />
+    <property name="ValorBcIi" column="VALOR_BC_II" caption="Valor Bc Ii" width="168" type="FMTBcdField" />
+    <property name="ValorDespesasAduaneiras" column="VALOR_DESPESAS_ADUANEIRAS" caption="Valor Despesas Aduaneiras" width="168" type="FMTBcdField" />
+    <property name="ValorImpostoImportacao" column="VALOR_IMPOSTO_IMPORTACAO" caption="Valor Imposto Importacao" width="168" type="FMTBcdField" />
+    <property name="ValorIof" column="VALOR_IOF" caption="Valor Iof" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="WmsParametroVO" table="wms_parametro" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">wms_parametro</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="HoraPorVolume" column="HORA_POR_VOLUME" caption="Hora Por Volume" width="80" type="Integer" />
+    <property name="PessoaPorVolume" column="PESSOA_POR_VOLUME" caption="Pessoa Por Volume" width="80" type="Integer" />
+    <property name="HoraPorPeso" column="HORA_POR_PESO" caption="Hora Por Peso" width="80" type="Integer" />
+    <property name="PessoaPorPeso" column="PESSOA_POR_PESO" caption="Pessoa Por Peso" width="80" type="Integer" />
+    <property name="ItemDiferenteCaixa" column="ITEM_DIFERENTE_CAIXA" caption="Item Diferente Caixa" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

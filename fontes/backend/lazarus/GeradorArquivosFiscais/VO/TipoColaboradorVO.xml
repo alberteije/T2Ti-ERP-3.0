@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="TipoColaboradorVO" table="tipo_colaborador" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">tipo_colaborador</param>
+      </generator>
+    </id>
+
+    <property name="Nome" column="NOME" caption="Nome" width="160" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

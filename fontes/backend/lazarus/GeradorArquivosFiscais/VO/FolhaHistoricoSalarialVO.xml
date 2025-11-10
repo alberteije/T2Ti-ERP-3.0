@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FolhaHistoricoSalarialVO" table="folha_historico_salarial" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">folha_historico_salarial</param>
+      </generator>
+    </id>
+
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="Competencia" column="COMPETENCIA" caption="Competencia" width="56" type="String" />
+    <property name="SalarioAtual" column="SALARIO_ATUAL" caption="Salario Atual" width="168" type="FMTBcdField" />
+    <property name="PercentualAumento" column="PERCENTUAL_AUMENTO" caption="Percentual Aumento" width="168" type="FMTBcdField" />
+    <property name="SalarioNovo" column="SALARIO_NOVO" caption="Salario Novo" width="168" type="FMTBcdField" />
+    <property name="ValidoAPartir" column="VALIDO_A_PARTIR" caption="Valido A Partir" width="56" type="String" />
+    <property name="Motivo" column="MOTIVO" caption="Motivo" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

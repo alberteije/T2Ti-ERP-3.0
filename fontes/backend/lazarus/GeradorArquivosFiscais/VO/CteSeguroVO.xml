@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteSeguroVO" table="cte_seguro" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_seguro</param>
+      </generator>
+    </id>
+
+    <property name="IdCteCabecalho" column="ID_CTE_CABECALHO" caption="Id Cte Cabecalho" width="80" type="Integer" />
+    <property name="Responsavel" column="RESPONSAVEL" caption="Responsavel" width="80" type="Integer" />
+    <property name="Seguradora" column="SEGURADORA" caption="Seguradora" width="240" type="String" />
+    <property name="Apolice" column="APOLICE" caption="Apolice" width="160" type="String" />
+    <property name="Averbacao" column="AVERBACAO" caption="Averbacao" width="160" type="String" />
+    <property name="ValorCarga" column="VALOR_CARGA" caption="Valor Carga" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

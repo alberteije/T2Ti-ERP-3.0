@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContabilLancamentoOrcadoVO" table="contabil_lancamento_orcado" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contabil_lancamento_orcado</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdContabilConta" column="ID_CONTABIL_CONTA" caption="Id Contabil Conta" width="80" type="Integer" />
+    <property name="Ano" column="ANO" caption="Ano" width="32" type="String" />
+    <property name="Janeiro" column="JANEIRO" caption="Janeiro" width="168" type="FMTBcdField" />
+    <property name="Fevereiro" column="FEVEREIRO" caption="Fevereiro" width="168" type="FMTBcdField" />
+    <property name="Marco" column="MARCO" caption="Marco" width="168" type="FMTBcdField" />
+    <property name="Abril" column="ABRIL" caption="Abril" width="168" type="FMTBcdField" />
+    <property name="Maio" column="MAIO" caption="Maio" width="168" type="FMTBcdField" />
+    <property name="Junho" column="JUNHO" caption="Junho" width="168" type="FMTBcdField" />
+    <property name="Julho" column="JULHO" caption="Julho" width="168" type="FMTBcdField" />
+    <property name="Agosto" column="AGOSTO" caption="Agosto" width="168" type="FMTBcdField" />
+    <property name="Setembro" column="SETEMBRO" caption="Setembro" width="168" type="FMTBcdField" />
+    <property name="Outubro" column="OUTUBRO" caption="Outubro" width="168" type="FMTBcdField" />
+    <property name="Novembro" column="NOVEMBRO" caption="Novembro" width="168" type="FMTBcdField" />
+    <property name="Dezembro" column="DEZEMBRO" caption="Dezembro" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

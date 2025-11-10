@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FolhaLancamentoDetalheVO" table="folha_lancamento_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">folha_lancamento_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdFolhaEvento" column="ID_FOLHA_EVENTO" caption="Id Folha Evento" width="80" type="Integer" />
+    <property name="IdFolhaLancamentoCabecalho" column="ID_FOLHA_LANCAMENTO_CABECALHO" caption="Id Folha Lancamento Cabecalho" width="80" type="Integer" />
+    <property name="Origem" column="ORIGEM" caption="Origem" width="168" type="FMTBcdField" />
+    <property name="Provento" column="PROVENTO" caption="Provento" width="168" type="FMTBcdField" />
+    <property name="Desconto" column="DESCONTO" caption="Desconto" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

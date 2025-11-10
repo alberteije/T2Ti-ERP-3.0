@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteAereoVO" table="cte_aereo" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_aereo</param>
+      </generator>
+    </id>
+
+    <property name="IdCteCabecalho" column="ID_CTE_CABECALHO" caption="Id Cte Cabecalho" width="80" type="Integer" />
+    <property name="NumeroMinuta" column="NUMERO_MINUTA" caption="Numero Minuta" width="80" type="Integer" />
+    <property name="NumeroConhecimento" column="NUMERO_CONHECIMENTO" caption="Numero Conhecimento" width="80" type="Integer" />
+    <property name="DataPrevistaEntrega" column="DATA_PREVISTA_ENTREGA" caption="Data Prevista Entrega" width="80" type="Date" />
+    <property name="IdEmissor" column="ID_EMISSOR" caption="Id Emissor" width="160" type="String" />
+    <property name="IdInternaTomador" column="ID_INTERNA_TOMADOR" caption="Id Interna Tomador" width="112" type="String" />
+    <property name="TarifaClasse" column="TARIFA_CLASSE" caption="Tarifa Classe" width="8" type="String" />
+    <property name="TarifaCodigo" column="TARIFA_CODIGO" caption="Tarifa Codigo" width="32" type="String" />
+    <property name="TarifaValor" column="TARIFA_VALOR" caption="Tarifa Valor" width="168" type="FMTBcdField" />
+    <property name="CargaDimensao" column="CARGA_DIMENSAO" caption="Carga Dimensao" width="112" type="String" />
+    <property name="CargaInformacaoManuseio" column="CARGA_INFORMACAO_MANUSEIO" caption="Carga Informacao Manuseio" width="80" type="Integer" />
+    <property name="CargaEspecial" column="CARGA_ESPECIAL" caption="Carga Especial" width="24" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

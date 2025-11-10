@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EtiquetaTemplateVO" table="etiqueta_template" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">etiqueta_template</param>
+      </generator>
+    </id>
+
+    <property name="IdEtiquetaLayout" column="ID_ETIQUETA_LAYOUT" caption="Id Etiqueta Layout" width="80" type="Integer" />
+    <property name="Tabela" column="TABELA" caption="Tabela" width="400" type="String" />
+    <property name="Campo" column="CAMPO" caption="Campo" width="400" type="String" />
+    <property name="Formato" column="FORMATO" caption="Formato" width="80" type="Integer" />
+    <property name="QuantidadeRepeticoes" column="QUANTIDADE_REPETICOES" caption="Quantidade Repeticoes" width="80" type="Integer" />
+    <property name="Filtro" column="FILTRO" caption="Filtro" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

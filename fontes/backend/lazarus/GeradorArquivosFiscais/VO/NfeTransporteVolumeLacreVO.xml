@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeTransporteVolumeLacreVO" table="nfe_transporte_volume_lacre" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_transporte_volume_lacre</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeTransporteVolume" column="ID_NFE_TRANSPORTE_VOLUME" caption="Id Nfe Transporte Volume" width="80" type="Integer" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

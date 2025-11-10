@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContribSindPatronalDetVO" table="contrib_sind_patronal_det" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contrib_sind_patronal_det</param>
+      </generator>
+    </id>
+
+    <property name="IdContribSindPatronalCab" column="ID_CONTRIB_SIND_PATRONAL_CAB" caption="Id Contrib Sind Patronal Cab" width="80" type="Integer" />
+    <property name="De" column="DE" caption="De" width="168" type="FMTBcdField" />
+    <property name="Ate" column="ATE" caption="Ate" width="168" type="FMTBcdField" />
+    <property name="Percentual" column="PERCENTUAL" caption="Percentual" width="168" type="FMTBcdField" />
+    <property name="ValorAdicionar" column="VALOR_ADICIONAR" caption="Valor Adicionar" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

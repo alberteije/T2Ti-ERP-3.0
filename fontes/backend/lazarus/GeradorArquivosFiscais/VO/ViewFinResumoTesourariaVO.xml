@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewFinResumoTesourariaVO" table="view_fin_resumo_tesouraria" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_fin_resumo_tesouraria</param>
+      </generator>
+    </id>
+
+    <property name="IdContaCaixa" column="ID_CONTA_CAIXA" caption="Id Conta Caixa" width="80" type="Integer" />
+    <property name="NomeContaCaixa" column="NOME_CONTA_CAIXA" caption="Nome Conta Caixa" width="400" type="String" />
+    <property name="NomePessoa" column="NOME_PESSOA" caption="Nome Pessoa" width="450" type="String" />
+    <property name="DataLancamento" column="DATA_LANCAMENTO" caption="Data Lancamento" width="80" type="Date" />
+    <property name="DataPagoRecebido" column="DATA_PAGO_RECEBIDO" caption="Data Pago Recebido" width="80" type="Date" />
+    <property name="Historico" column="HISTORICO" caption="Historico" width="450" type="String" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+    <property name="DescricaoDocumentoOrigem" column="DESCRICAO_DOCUMENTO_ORIGEM" caption="Descricao Documento Origem" width="450" type="Memo" />
+    <property name="Operacao" column="OPERACAO" caption="Operacao" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

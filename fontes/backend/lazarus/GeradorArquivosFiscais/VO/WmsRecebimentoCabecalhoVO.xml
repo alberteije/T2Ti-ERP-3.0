@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="WmsRecebimentoCabecalhoVO" table="wms_recebimento_cabecalho" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">wms_recebimento_cabecalho</param>
+      </generator>
+    </id>
+
+    <property name="IdWmsAgendamento" column="ID_WMS_AGENDAMENTO" caption="Id Wms Agendamento" width="80" type="Integer" />
+    <property name="DataRecebimento" column="DATA_RECEBIMENTO" caption="Data Recebimento" width="80" type="Date" />
+    <property name="HoraInicio" column="HORA_INICIO" caption="Hora Inicio" width="64" type="String" />
+    <property name="HoraFim" column="HORA_FIM" caption="Hora Fim" width="64" type="String" />
+    <property name="VolumeRecebido" column="VOLUME_RECEBIDO" caption="Volume Recebido" width="80" type="Integer" />
+    <property name="PesoRecebido" column="PESO_RECEBIDO" caption="Peso Recebido" width="168" type="FMTBcdField" />
+    <property name="Inconsistencia" column="INCONSISTENCIA" caption="Inconsistencia" width="8" type="String" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContabilContaVO" table="contabil_conta" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contabil_conta</param>
+      </generator>
+    </id>
+
+    <property name="IdPlanoConta" column="ID_PLANO_CONTA" caption="Id Plano Conta" width="80" type="Integer" />
+    <property name="IdContabilConta" column="ID_CONTABIL_CONTA" caption="Id Contabil Conta" width="80" type="Integer" />
+    <property name="IdPlanoContaRefSped" column="ID_PLANO_CONTA_REF_SPED" caption="Id Plano Conta Ref Sped" width="80" type="Integer" />
+    <property name="Classificacao" column="CLASSIFICACAO" caption="Classificacao" width="240" type="String" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="8" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+    <property name="DataInclusao" column="DATA_INCLUSAO" caption="Data Inclusao" width="80" type="Date" />
+    <property name="Situacao" column="SITUACAO" caption="Situacao" width="8" type="String" />
+    <property name="Natureza" column="NATUREZA" caption="Natureza" width="8" type="String" />
+    <property name="PatrimonioResultado" column="PATRIMONIO_RESULTADO" caption="Patrimonio Resultado" width="8" type="String" />
+    <property name="LivroCaixa" column="LIVRO_CAIXA" caption="Livro Caixa" width="8" type="String" />
+    <property name="Dfc" column="DFC" caption="Dfc" width="8" type="String" />
+    <property name="Ordem" column="ORDEM" caption="Ordem" width="160" type="String" />
+    <property name="CodigoReduzido" column="CODIGO_REDUZIDO" caption="Codigo Reduzido" width="80" type="String" />
+    <property name="CodigoEfd" column="CODIGO_EFD" caption="Codigo Efd" width="16" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="TabelaPrecoVO" table="tabela_preco" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">tabela_preco</param>
+      </generator>
+    </id>
+
+    <property name="IdMoeda" column="ID_MOEDA" caption="Id Moeda" width="80" type="Integer" />
+    <property name="IdTabelaMestre" column="ID_TABELA_MESTRE" caption="Id Tabela Mestre" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Coeficiente" column="COEFICIENTE" caption="Coeficiente" width="168" type="FMTBcdField" />
+    <property name="Principal" column="PRINCIPAL" caption="Principal" width="8" type="String" />
+    <property name="BaseCusto" column="BASE_CUSTO" caption="Base Custo" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

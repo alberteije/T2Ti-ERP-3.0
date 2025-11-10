@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContratoHistoricoReajusteVO" table="contrato_historico_reajuste" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contrato_historico_reajuste</param>
+      </generator>
+    </id>
+
+    <property name="IdContrato" column="ID_CONTRATO" caption="Id Contrato" width="80" type="Integer" />
+    <property name="Indice" column="INDICE" caption="Indice" width="168" type="FMTBcdField" />
+    <property name="ValorAnterior" column="VALOR_ANTERIOR" caption="Valor Anterior" width="168" type="FMTBcdField" />
+    <property name="ValorAtual" column="VALOR_ATUAL" caption="Valor Atual" width="168" type="FMTBcdField" />
+    <property name="DataReajuste" column="DATA_REAJUSTE" caption="Data Reajuste" width="80" type="Date" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

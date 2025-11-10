@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteDocumentoAnteriorVO" table="cte_documento_anterior" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_documento_anterior</param>
+      </generator>
+    </id>
+
+    <property name="IdCteCabecalho" column="ID_CTE_CABECALHO" caption="Id Cte Cabecalho" width="80" type="Integer" />
+    <property name="Cnpj" column="CNPJ" caption="Cnpj" width="112" type="String" />
+    <property name="Cpf" column="CPF" caption="Cpf" width="80" type="Integer" />
+    <property name="Ie" column="IE" caption="Ie" width="160" type="String" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContratoPrevFaturamentoVO" table="contrato_prev_faturamento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contrato_prev_faturamento</param>
+      </generator>
+    </id>
+
+    <property name="IdContrato" column="ID_CONTRATO" caption="Id Contrato" width="80" type="Integer" />
+    <property name="DataPrevista" column="DATA_PREVISTA" caption="Data Prevista" width="80" type="Date" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

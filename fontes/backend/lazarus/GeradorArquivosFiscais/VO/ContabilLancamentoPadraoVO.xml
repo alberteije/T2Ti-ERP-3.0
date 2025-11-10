@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContabilLancamentoPadraoVO" table="contabil_lancamento_padrao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contabil_lancamento_padrao</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+    <property name="Historico" column="HISTORICO" caption="Historico" width="450" type="String" />
+    <property name="IdContaDebito" column="ID_CONTA_DEBITO" caption="Id Conta Debito" width="80" type="Integer" />
+    <property name="IdContaCredito" column="ID_CONTA_CREDITO" caption="Id Conta Credito" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

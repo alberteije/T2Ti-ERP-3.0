@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfceConfiguracaoLeitorSerVO" table="nfce_configuracao_leitor_ser" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfce_configuracao_leitor_ser</param>
+      </generator>
+    </id>
+
+    <property name="IdNfceConfiguracao" column="ID_NFCE_CONFIGURACAO" caption="Id Nfce Configuracao" width="80" type="Integer" />
+    <property name="Usa" column="USA" caption="Usa" width="8" type="String" />
+    <property name="Porta" column="PORTA" caption="Porta" width="32" type="String" />
+    <property name="Baud" column="BAUD" caption="Baud" width="80" type="Integer" />
+    <property name="HandShake" column="HAND_SHAKE" caption="Hand Shake" width="80" type="Integer" />
+    <property name="Parity" column="PARITY" caption="Parity" width="80" type="Integer" />
+    <property name="StopBits" column="STOP_BITS" caption="Stop Bits" width="80" type="Integer" />
+    <property name="DataBits" column="DATA_BITS" caption="Data Bits" width="80" type="Integer" />
+    <property name="Intervalo" column="INTERVALO" caption="Intervalo" width="80" type="Integer" />
+    <property name="UsarFila" column="USAR_FILA" caption="Usar Fila" width="8" type="String" />
+    <property name="HardFlow" column="HARD_FLOW" caption="Hard Flow" width="8" type="String" />
+    <property name="SoftFlow" column="SOFT_FLOW" caption="Soft Flow" width="8" type="String" />
+    <property name="Sufixo" column="SUFIXO" caption="Sufixo" width="160" type="String" />
+    <property name="ExcluirSufixo" column="EXCLUIR_SUFIXO" caption="Excluir Sufixo" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

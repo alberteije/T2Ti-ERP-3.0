@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewNfceClienteVO" table="view_nfce_cliente" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_nfce_cliente</param>
+      </generator>
+    </id>
+
+    <property name="IdOperacaoFiscal" column="ID_OPERACAO_FISCAL" caption="Id Operacao Fiscal" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Email" column="EMAIL" caption="Email" width="450" type="String" />
+    <property name="Cpf" column="CPF" caption="Cpf" width="88" type="String" />
+    <property name="Rg" column="RG" caption="Rg" width="160" type="String" />
+    <property name="OrgaoRg" column="ORGAO_RG" caption="Orgao Rg" width="160" type="String" />
+    <property name="DataEmissaoRg" column="DATA_EMISSAO_RG" caption="Data Emissao Rg" width="80" type="Date" />
+    <property name="Sexo" column="SEXO" caption="Sexo" width="8" type="String" />
+    <property name="DataCadastro" column="DATA_CADASTRO" caption="Data Cadastro" width="80" type="Date" />
+    <property name="IdPessoa" column="ID_PESSOA" caption="Id Pessoa" width="80" type="Integer" />
+    <property name="IdAtividadeForCli" column="ID_ATIVIDADE_FOR_CLI" caption="Id Atividade For Cli" width="80" type="Integer" />
+    <property name="IdSituacaoForCli" column="ID_SITUACAO_FOR_CLI" caption="Id Situacao For Cli" width="80" type="Integer" />
+    <property name="Desde" column="DESDE" caption="Desde" width="80" type="Date" />
+    <property name="Logradouro" column="LOGRADOURO" caption="Logradouro" width="450" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="String" />
+    <property name="Complemento" column="COMPLEMENTO" caption="Complemento" width="450" type="String" />
+    <property name="Bairro" column="BAIRRO" caption="Bairro" width="450" type="String" />
+    <property name="Cidade" column="CIDADE" caption="Cidade" width="450" type="String" />
+    <property name="Cep" column="CEP" caption="Cep" width="64" type="String" />
+    <property name="MunicipioIbge" column="MUNICIPIO_IBGE" caption="Municipio Ibge" width="80" type="Integer" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="Fone" column="FONE" caption="Fone" width="112" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewFinTotalPagamentosDiaVO" table="view_fin_total_pagamentos_dia" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_fin_total_pagamentos_dia</param>
+      </generator>
+    </id>
+
+    <property name="IdContaCaixa" column="ID_CONTA_CAIXA" caption="Id Conta Caixa" width="80" type="Integer" />
+    <property name="DataPagamento" column="DATA_PAGAMENTO" caption="Data Pagamento" width="80" type="Date" />
+    <property name="Total" column="TOTAL" caption="Total" width="264" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

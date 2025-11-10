@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FinParcelaReceberVO" table="fin_parcela_receber" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fin_parcela_receber</param>
+      </generator>
+    </id>
+
+    <property name="IdContaCaixa" column="ID_CONTA_CAIXA" caption="Id Conta Caixa" width="80" type="Integer" />
+    <property name="IdFinLancamentoReceber" column="ID_FIN_LANCAMENTO_RECEBER" caption="Id Fin Lancamento Receber" width="80" type="Integer" />
+    <property name="IdFinStatusParcela" column="ID_FIN_STATUS_PARCELA" caption="Id Fin Status Parcela" width="80" type="Integer" />
+    <property name="NumeroParcela" column="NUMERO_PARCELA" caption="Numero Parcela" width="80" type="Integer" />
+    <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
+    <property name="DataVencimento" column="DATA_VENCIMENTO" caption="Data Vencimento" width="80" type="Date" />
+    <property name="DescontoAte" column="DESCONTO_ATE" caption="Desconto Ate" width="80" type="Date" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+    <property name="TaxaJuro" column="TAXA_JURO" caption="Taxa Juro" width="168" type="FMTBcdField" />
+    <property name="TaxaMulta" column="TAXA_MULTA" caption="Taxa Multa" width="168" type="FMTBcdField" />
+    <property name="TaxaDesconto" column="TAXA_DESCONTO" caption="Taxa Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorJuro" column="VALOR_JURO" caption="Valor Juro" width="168" type="FMTBcdField" />
+    <property name="ValorMulta" column="VALOR_MULTA" caption="Valor Multa" width="168" type="FMTBcdField" />
+    <property name="ValorDesconto" column="VALOR_DESCONTO" caption="Valor Desconto" width="168" type="FMTBcdField" />
+    <property name="EmitiuBoleto" column="EMITIU_BOLETO" caption="Emitiu Boleto" width="8" type="String" />
+    <property name="BoletoNossoNumero" column="BOLETO_NOSSO_NUMERO" caption="Boleto Nosso Numero" width="400" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

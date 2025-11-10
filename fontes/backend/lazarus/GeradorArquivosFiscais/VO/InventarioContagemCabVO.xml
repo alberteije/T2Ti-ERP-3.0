@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="InventarioContagemCabVO" table="inventario_contagem_cab" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">inventario_contagem_cab</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="DataContagem" column="DATA_CONTAGEM" caption="Data Contagem" width="80" type="Date" />
+    <property name="EstoqueAtualizado" column="ESTOQUE_ATUALIZADO" caption="Estoque Atualizado" width="8" type="String" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

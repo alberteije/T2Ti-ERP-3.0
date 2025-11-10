@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ReuniaoSalaEventoVO" table="reuniao_sala_evento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">reuniao_sala_evento</param>
+      </generator>
+    </id>
+
+    <property name="IdAgendaCompromisso" column="ID_AGENDA_COMPROMISSO" caption="Id Agenda Compromisso" width="80" type="Integer" />
+    <property name="IdReuniaoSala" column="ID_REUNIAO_SALA" caption="Id Reuniao Sala" width="80" type="Integer" />
+    <property name="DataReserva" column="DATA_RESERVA" caption="Data Reserva" width="80" type="Date" />
+
+  </class>
+</t2ti-orm-mapping>

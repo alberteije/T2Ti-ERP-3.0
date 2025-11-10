@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CompraPedidoVO" table="compra_pedido" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">compra_pedido</param>
+      </generator>
+    </id>
+
+    <property name="IdCompraTipoPedido" column="ID_COMPRA_TIPO_PEDIDO" caption="Id Compra Tipo Pedido" width="80" type="Integer" />
+    <property name="IdFornecedor" column="ID_FORNECEDOR" caption="Id Fornecedor" width="80" type="Integer" />
+    <property name="DataPedido" column="DATA_PEDIDO" caption="Data Pedido" width="80" type="Date" />
+    <property name="DataPrevistaEntrega" column="DATA_PREVISTA_ENTREGA" caption="Data Prevista Entrega" width="80" type="Date" />
+    <property name="DataPrevisaoPagamento" column="DATA_PREVISAO_PAGAMENTO" caption="Data Previsao Pagamento" width="80" type="Date" />
+    <property name="LocalEntrega" column="LOCAL_ENTREGA" caption="Local Entrega" width="450" type="String" />
+    <property name="LocalCobranca" column="LOCAL_COBRANCA" caption="Local Cobranca" width="450" type="String" />
+    <property name="Contato" column="CONTATO" caption="Contato" width="240" type="String" />
+    <property name="ValorSubtotal" column="VALOR_SUBTOTAL" caption="Valor Subtotal" width="168" type="FMTBcdField" />
+    <property name="TaxaDesconto" column="TAXA_DESCONTO" caption="Taxa Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorDesconto" column="VALOR_DESCONTO" caption="Valor Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorTotalPedido" column="VALOR_TOTAL_PEDIDO" caption="Valor Total Pedido" width="168" type="FMTBcdField" />
+    <property name="TipoFrete" column="TIPO_FRETE" caption="Tipo Frete" width="8" type="String" />
+    <property name="FormaPagamento" column="FORMA_PAGAMENTO" caption="Forma Pagamento" width="8" type="String" />
+    <property name="BaseCalculoIcms" column="BASE_CALCULO_ICMS" caption="Base Calculo Icms" width="168" type="FMTBcdField" />
+    <property name="ValorIcms" column="VALOR_ICMS" caption="Valor Icms" width="168" type="FMTBcdField" />
+    <property name="BaseCalculoIcmsSt" column="BASE_CALCULO_ICMS_ST" caption="Base Calculo Icms St" width="168" type="FMTBcdField" />
+    <property name="ValorIcmsSt" column="VALOR_ICMS_ST" caption="Valor Icms St" width="168" type="FMTBcdField" />
+    <property name="ValorTotalProdutos" column="VALOR_TOTAL_PRODUTOS" caption="Valor Total Produtos" width="168" type="FMTBcdField" />
+    <property name="ValorFrete" column="VALOR_FRETE" caption="Valor Frete" width="168" type="FMTBcdField" />
+    <property name="ValorSeguro" column="VALOR_SEGURO" caption="Valor Seguro" width="168" type="FMTBcdField" />
+    <property name="ValorOutrasDespesas" column="VALOR_OUTRAS_DESPESAS" caption="Valor Outras Despesas" width="168" type="FMTBcdField" />
+    <property name="ValorIpi" column="VALOR_IPI" caption="Valor Ipi" width="168" type="FMTBcdField" />
+    <property name="ValorTotalNf" column="VALOR_TOTAL_NF" caption="Valor Total Nf" width="168" type="FMTBcdField" />
+    <property name="QuantidadeParcelas" column="QUANTIDADE_PARCELAS" caption="Quantidade Parcelas" width="80" type="Integer" />
+    <property name="DiasPrimeiroVencimento" column="DIAS_PRIMEIRO_VENCIMENTO" caption="Dias Primeiro Vencimento" width="80" type="Integer" />
+    <property name="DiasIntervalo" column="DIAS_INTERVALO" caption="Dias Intervalo" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfceConfiguracaoVO" table="nfce_configuracao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfce_configuracao</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdNfceCaixa" column="ID_NFCE_CAIXA" caption="Id Nfce Caixa" width="80" type="Integer" />
+    <property name="IdNfceResolucao" column="ID_NFCE_RESOLUCAO" caption="Id Nfce Resolucao" width="80" type="Integer" />
+    <property name="MensagemCupom" column="MENSAGEM_CUPOM" caption="Mensagem Cupom" width="450" type="String" />
+    <property name="TituloTelaCaixa" column="TITULO_TELA_CAIXA" caption="Titulo Tela Caixa" width="450" type="String" />
+    <property name="CaminhoImagensProdutos" column="CAMINHO_IMAGENS_PRODUTOS" caption="Caminho Imagens Produtos" width="450" type="String" />
+    <property name="CaminhoImagensMarketing" column="CAMINHO_IMAGENS_MARKETING" caption="Caminho Imagens Marketing" width="450" type="String" />
+    <property name="CaminhoImagensLayout" column="CAMINHO_IMAGENS_LAYOUT" caption="Caminho Imagens Layout" width="450" type="String" />
+    <property name="CorJanelasInternas" column="COR_JANELAS_INTERNAS" caption="Cor Janelas Internas" width="160" type="String" />
+    <property name="MarketingAtivo" column="MARKETING_ATIVO" caption="Marketing Ativo" width="8" type="String" />
+    <property name="Cfop" column="CFOP" caption="Cfop" width="80" type="Integer" />
+    <property name="DecimaisQuantidade" column="DECIMAIS_QUANTIDADE" caption="Decimais Quantidade" width="80" type="Integer" />
+    <property name="DecimaisValor" column="DECIMAIS_VALOR" caption="Decimais Valor" width="80" type="Integer" />
+    <property name="QuantidadeMaximaParcela" column="QUANTIDADE_MAXIMA_PARCELA" caption="Quantidade Maxima Parcela" width="80" type="Integer" />
+    <property name="ImprimeParcela" column="IMPRIME_PARCELA" caption="Imprime Parcela" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

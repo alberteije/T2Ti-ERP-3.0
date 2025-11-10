@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CompraFornecedorCotacaoVO" table="compra_fornecedor_cotacao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">compra_fornecedor_cotacao</param>
+      </generator>
+    </id>
+
+    <property name="IdCompraCotacao" column="ID_COMPRA_COTACAO" caption="Id Compra Cotacao" width="80" type="Integer" />
+    <property name="IdFornecedor" column="ID_FORNECEDOR" caption="Id Fornecedor" width="80" type="Integer" />
+    <property name="PrazoEntrega" column="PRAZO_ENTREGA" caption="Prazo Entrega" width="240" type="String" />
+    <property name="CondicoesPagamento" column="CONDICOES_PAGAMENTO" caption="Condicoes Pagamento" width="240" type="String" />
+    <property name="ValorSubtotal" column="VALOR_SUBTOTAL" caption="Valor Subtotal" width="168" type="FMTBcdField" />
+    <property name="TaxaDesconto" column="TAXA_DESCONTO" caption="Taxa Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorDesconto" column="VALOR_DESCONTO" caption="Valor Desconto" width="168" type="FMTBcdField" />
+    <property name="Total" column="TOTAL" caption="Total" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

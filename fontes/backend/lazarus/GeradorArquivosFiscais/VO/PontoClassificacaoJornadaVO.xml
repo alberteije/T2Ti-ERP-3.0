@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PontoClassificacaoJornadaVO" table="ponto_classificacao_jornada" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ponto_classificacao_jornada</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="24" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="400" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+    <property name="Padrao" column="PADRAO" caption="Padrao" width="8" type="String" />
+    <property name="DescontarHoras" column="DESCONTAR_HORAS" caption="Descontar Horas" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PapelVO" table="papel" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">papel</param>
+      </generator>
+    </id>
+
+    <property name="Nome" column="NOME" caption="Nome" width="160" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+    <property name="AcessoCompleto" column="ACESSO_COMPLETO" caption="Acesso Completo" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

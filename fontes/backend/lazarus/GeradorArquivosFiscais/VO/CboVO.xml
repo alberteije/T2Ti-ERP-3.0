@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CboVO" table="cbo" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cbo</param>
+      </generator>
+    </id>
+
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="80" type="String" />
+    <property name="Codigo1994" column="CODIGO_1994" caption="Codigo 1994" width="80" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

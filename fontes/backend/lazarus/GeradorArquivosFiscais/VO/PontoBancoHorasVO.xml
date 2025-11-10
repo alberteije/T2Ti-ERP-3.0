@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PontoBancoHorasVO" table="ponto_banco_horas" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ponto_banco_horas</param>
+      </generator>
+    </id>
+
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="DataTrabalho" column="DATA_TRABALHO" caption="Data Trabalho" width="80" type="Date" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="64" type="String" />
+    <property name="Situacao" column="SITUACAO" caption="Situacao" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

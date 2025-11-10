@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="MoedaCotacaoVO" table="moeda_cotacao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">moeda_cotacao</param>
+      </generator>
+    </id>
+
+    <property name="IdMoeda" column="ID_MOEDA" caption="Id Moeda" width="80" type="Integer" />
+    <property name="DataCotacao" column="DATA_COTACAO" caption="Data Cotacao" width="80" type="Date" />
+    <property name="ValorCotacao" column="VALOR_COTACAO" caption="Valor Cotacao" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

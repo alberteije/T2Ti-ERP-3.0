@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ColaboradorRelacionamentoVO" table="colaborador_relacionamento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">colaborador_relacionamento</param>
+      </generator>
+    </id>
+
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="IdTipoRelacionamento" column="ID_TIPO_RELACIONAMENTO" caption="Id Tipo Relacionamento" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="DataNascimento" column="DATA_NASCIMENTO" caption="Data Nascimento" width="80" type="Date" />
+    <property name="Cpf" column="CPF" caption="Cpf" width="88" type="String" />
+    <property name="RegistroMatricula" column="REGISTRO_MATRICULA" caption="Registro Matricula" width="400" type="String" />
+    <property name="RegistroCartorio" column="REGISTRO_CARTORIO" caption="Registro Cartorio" width="400" type="String" />
+    <property name="RegistroCartorioNumero" column="REGISTRO_CARTORIO_NUMERO" caption="Registro Cartorio Numero" width="400" type="String" />
+    <property name="RegistroNumeroLivro" column="REGISTRO_NUMERO_LIVRO" caption="Registro Numero Livro" width="80" type="String" />
+    <property name="RegistroNumeroFolha" column="REGISTRO_NUMERO_FOLHA" caption="Registro Numero Folha" width="80" type="String" />
+    <property name="DataEntregaDocumento" column="DATA_ENTREGA_DOCUMENTO" caption="Data Entrega Documento" width="80" type="Date" />
+    <property name="SalarioFamilia" column="SALARIO_FAMILIA" caption="Salario Familia" width="8" type="String" />
+    <property name="SalarioFamiliaIdadeLimite" column="SALARIO_FAMILIA_IDADE_LIMITE" caption="Salario Familia Idade Limite" width="80" type="Integer" />
+    <property name="SalarioFamiliaDataFim" column="SALARIO_FAMILIA_DATA_FIM" caption="Salario Familia Data Fim" width="80" type="Date" />
+    <property name="ImpostoRendaIdadeLimite" column="IMPOSTO_RENDA_IDADE_LIMITE" caption="Imposto Renda Idade Limite" width="80" type="Integer" />
+    <property name="ImpostoRendaDataFim" column="IMPOSTO_RENDA_DATA_FIM" caption="Imposto Renda Data Fim" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

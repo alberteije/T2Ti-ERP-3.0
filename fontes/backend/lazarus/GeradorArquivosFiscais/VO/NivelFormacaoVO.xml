@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NivelFormacaoVO" table="nivel_formacao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nivel_formacao</param>
+      </generator>
+    </id>
+
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+    <property name="GrauInstrucaoCaged" column="GRAU_INSTRUCAO_CAGED" caption="Grau Instrucao Caged" width="80" type="Integer" />
+    <property name="GrauInstrucaoSefip" column="GRAU_INSTRUCAO_SEFIP" caption="Grau Instrucao Sefip" width="80" type="Integer" />
+    <property name="GrauInstrucaoRais" column="GRAU_INSTRUCAO_RAIS" caption="Grau Instrucao Rais" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

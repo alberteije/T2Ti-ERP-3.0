@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteRodoviarioOccVO" table="cte_rodoviario_occ" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_rodoviario_occ</param>
+      </generator>
+    </id>
+
+    <property name="IdCteRodoviario" column="ID_CTE_RODOVIARIO" caption="Id Cte Rodoviario" width="80" type="Integer" />
+    <property name="Serie" column="SERIE" caption="Serie" width="24" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="Integer" />
+    <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
+    <property name="Cnpj" column="CNPJ" caption="Cnpj" width="112" type="String" />
+    <property name="CodigoInterno" column="CODIGO_INTERNO" caption="Codigo Interno" width="80" type="String" />
+    <property name="Ie" column="IE" caption="Ie" width="112" type="String" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="Telefone" column="TELEFONE" caption="Telefone" width="112" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FornecedorVO" table="fornecedor" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fornecedor</param>
+      </generator>
+    </id>
+
+    <property name="IdPessoa" column="ID_PESSOA" caption="Id Pessoa" width="80" type="Integer" />
+    <property name="IdAtividadeForCli" column="ID_ATIVIDADE_FOR_CLI" caption="Id Atividade For Cli" width="80" type="Integer" />
+    <property name="IdSituacaoForCli" column="ID_SITUACAO_FOR_CLI" caption="Id Situacao For Cli" width="80" type="Integer" />
+    <property name="Desde" column="DESDE" caption="Desde" width="80" type="Date" />
+    <property name="OptanteSimplesNacional" column="OPTANTE_SIMPLES_NACIONAL" caption="Optante Simples Nacional" width="8" type="String" />
+    <property name="Localizacao" column="LOCALIZACAO" caption="Localizacao" width="8" type="String" />
+    <property name="DataCadastro" column="DATA_CADASTRO" caption="Data Cadastro" width="80" type="Date" />
+    <property name="SofreRetencao" column="SOFRE_RETENCAO" caption="Sofre Retencao" width="8" type="String" />
+    <property name="ChequeNominalA" column="CHEQUE_NOMINAL_A" caption="Cheque Nominal A" width="450" type="String" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+    <property name="ContaRemetente" column="CONTA_REMETENTE" caption="Conta Remetente" width="240" type="String" />
+    <property name="PrazoMedioEntrega" column="PRAZO_MEDIO_ENTREGA" caption="Prazo Medio Entrega" width="80" type="Integer" />
+    <property name="GeraFaturamento" column="GERA_FATURAMENTO" caption="Gera Faturamento" width="8" type="String" />
+    <property name="NumDiasPrimeiroVencimento" column="NUM_DIAS_PRIMEIRO_VENCIMENTO" caption="Num Dias Primeiro Vencimento" width="80" type="Integer" />
+    <property name="NumDiasIntervalo" column="NUM_DIAS_INTERVALO" caption="Num Dias Intervalo" width="80" type="Integer" />
+    <property name="QuantidadeParcelas" column="QUANTIDADE_PARCELAS" caption="Quantidade Parcelas" width="80" type="Integer" />
+    <property name="ClassificacaoContabilConta" column="CLASSIFICACAO_CONTABIL_CONTA" caption="Classificacao Contabil Conta" width="240" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

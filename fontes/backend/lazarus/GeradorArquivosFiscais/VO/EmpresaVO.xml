@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EmpresaVO" table="empresa" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">empresa</param>
+      </generator>
+    </id>
+
+    <property name="IdMatriz" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdSindicatoPatronal" column="ID_SINDICATO_PATRONAL" caption="Id Sindicato Patronal" width="80" type="Integer" />
+    <property name="IdFpas" column="ID_FPAS" caption="Id Fpas" width="80" type="Integer" />
+    <property name="IdContador" column="ID_CONTADOR" caption="Id Contador" width="80" type="Integer" />
+    <property name="RazaoSocial" column="RAZAO_SOCIAL" caption="Razao Social" width="450" type="String" />
+    <property name="NomeFantasia" column="NOME_FANTASIA" caption="Nome Fantasia" width="450" type="String" />
+    <property name="Cnpj" column="CNPJ" caption="Cnpj" width="112" type="String" />
+    <property name="InscricaoEstadual" column="INSCRICAO_ESTADUAL" caption="Inscricao Estadual" width="240" type="String" />
+    <property name="InscricaoEstadualSt" column="INSCRICAO_ESTADUAL_ST" caption="Inscricao Estadual St" width="240" type="String" />
+    <property name="InscricaoMunicipal" column="INSCRICAO_MUNICIPAL" caption="Inscricao Municipal" width="240" type="String" />
+    <property name="InscricaoJuntaComercial" column="INSCRICAO_JUNTA_COMERCIAL" caption="Inscricao Junta Comercial" width="240" type="String" />
+    <property name="DataInscJuntaComercial" column="DATA_INSC_JUNTA_COMERCIAL" caption="Data Insc Junta Comercial" width="80" type="Date" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="8" type="String" />
+    <property name="DataCadastro" column="DATA_CADASTRO" caption="Data Cadastro" width="80" type="Date" />
+    <property name="DataInicioAtividades" column="DATA_INICIO_ATIVIDADES" caption="Data Inicio Atividades" width="80" type="Date" />
+    <property name="Suframa" column="SUFRAMA" caption="Suframa" width="72" type="String" />
+    <property name="Email" column="EMAIL" caption="Email" width="450" type="String" />
+    <property name="ImagemLogotipo" column="IMAGEM_LOGOTIPO" caption="Imagem Logotipo" width="450" type="Memo" />
+    <property name="Crt" column="CRT" caption="Crt" width="8" type="String" />
+    <property name="TipoRegime" column="TIPO_REGIME" caption="Tipo Regime" width="8" type="String" />
+    <property name="AliquotaPis" column="ALIQUOTA_PIS" caption="Aliquota Pis" width="168" type="FMTBcdField" />
+    <property name="Contato" column="CONTATO" caption="Contato" width="400" type="String" />
+    <property name="AliquotaCofins" column="ALIQUOTA_COFINS" caption="Aliquota Cofins" width="168" type="FMTBcdField" />
+    <property name="CodigoIbgeCidade" column="CODIGO_IBGE_CIDADE" caption="Codigo Ibge Cidade" width="80" type="Integer" />
+    <property name="CodigoIbgeUf" column="CODIGO_IBGE_UF" caption="Codigo Ibge Uf" width="80" type="Integer" />
+    <property name="CodigoTerceiros" column="CODIGO_TERCEIROS" caption="Codigo Terceiros" width="80" type="Integer" />
+    <property name="CodigoGps" column="CODIGO_GPS" caption="Codigo Gps" width="80" type="Integer" />
+    <property name="AliquotaSat" column="ALIQUOTA_SAT" caption="Aliquota Sat" width="168" type="FMTBcdField" />
+    <property name="Cei" column="CEI" caption="Cei" width="96" type="String" />
+    <property name="CodigoCnaePrincipal" column="CODIGO_CNAE_PRINCIPAL" caption="Codigo Cnae Principal" width="56" type="String" />
+    <property name="TipoControleEstoque" column="TIPO_CONTROLE_ESTOQUE" caption="Tipo Controle Estoque" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

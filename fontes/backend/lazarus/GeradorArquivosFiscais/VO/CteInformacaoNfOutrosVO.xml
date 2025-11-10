@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteInformacaoNfOutrosVO" table="cte_informacao_nf_outros" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_informacao_nf_outros</param>
+      </generator>
+    </id>
+
+    <property name="IdCteCabecalho" column="ID_CTE_CABECALHO" caption="Id Cte Cabecalho" width="80" type="Integer" />
+    <property name="NumeroRomaneio" column="NUMERO_ROMANEIO" caption="Numero Romaneio" width="160" type="String" />
+    <property name="NumeroPedido" column="NUMERO_PEDIDO" caption="Numero Pedido" width="160" type="String" />
+    <property name="ChaveAcessoNfe" column="CHAVE_ACESSO_NFE" caption="Chave Acesso Nfe" width="352" type="String" />
+    <property name="CodigoModelo" column="CODIGO_MODELO" caption="Codigo Modelo" width="16" type="String" />
+    <property name="Serie" column="SERIE" caption="Serie" width="24" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="160" type="String" />
+    <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
+    <property name="UfEmitente" column="UF_EMITENTE" caption="Uf Emitente" width="80" type="Integer" />
+    <property name="BaseCalculoIcms" column="BASE_CALCULO_ICMS" caption="Base Calculo Icms" width="168" type="FMTBcdField" />
+    <property name="ValorIcms" column="VALOR_ICMS" caption="Valor Icms" width="168" type="FMTBcdField" />
+    <property name="BaseCalculoIcmsSt" column="BASE_CALCULO_ICMS_ST" caption="Base Calculo Icms St" width="168" type="FMTBcdField" />
+    <property name="ValorIcmsSt" column="VALOR_ICMS_ST" caption="Valor Icms St" width="168" type="FMTBcdField" />
+    <property name="ValorTotalProdutos" column="VALOR_TOTAL_PRODUTOS" caption="Valor Total Produtos" width="168" type="FMTBcdField" />
+    <property name="ValorTotal" column="VALOR_TOTAL" caption="Valor Total" width="168" type="FMTBcdField" />
+    <property name="CfopPredominante" column="CFOP_PREDOMINANTE" caption="Cfop Predominante" width="80" type="Integer" />
+    <property name="PesoTotalKg" column="PESO_TOTAL_KG" caption="Peso Total Kg" width="168" type="FMTBcdField" />
+    <property name="PinSuframa" column="PIN_SUFRAMA" caption="Pin Suframa" width="80" type="Integer" />
+    <property name="DataPrevistaEntrega" column="DATA_PREVISTA_ENTREGA" caption="Data Prevista Entrega" width="80" type="Date" />
+    <property name="OutroTipoDocOrig" column="OUTRO_TIPO_DOC_ORIG" caption="Outro Tipo Doc Orig" width="16" type="String" />
+    <property name="OutroDescricao" column="OUTRO_DESCRICAO" caption="Outro Descricao" width="450" type="String" />
+    <property name="OutroValorDocumento" column="OUTRO_VALOR_DOCUMENTO" caption="Outro Valor Documento" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

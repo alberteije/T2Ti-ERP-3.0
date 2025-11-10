@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeTransporteVO" table="nfe_transporte" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_transporte</param>
+      </generator>
+    </id>
+
+    <property name="IdTransportadora" column="ID_TRANSPORTADORA" caption="Id Transportadora" width="80" type="Integer" />
+    <property name="IdNfeCabecalho" column="ID_NFE_CABECALHO" caption="Id Nfe Cabecalho" width="80" type="Integer" />
+    <property name="ModalidadeFrete" column="MODALIDADE_FRETE" caption="Modalidade Frete" width="80" type="Integer" />
+    <property name="CpfCnpj" column="CPF_CNPJ" caption="Cpf Cnpj" width="112" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="InscricaoEstadual" column="INSCRICAO_ESTADUAL" caption="Inscricao Estadual" width="112" type="String" />
+    <property name="EmpresaEndereco" column="EMPRESA_ENDERECO" caption="Empresa Endereco" width="450" type="String" />
+    <property name="NomeMunicipio" column="NOME_MUNICIPIO" caption="Nome Municipio" width="450" type="String" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="ValorServico" column="VALOR_SERVICO" caption="Valor Servico" width="168" type="FMTBcdField" />
+    <property name="ValorBcRetencaoIcms" column="VALOR_BC_RETENCAO_ICMS" caption="Valor Bc Retencao Icms" width="168" type="FMTBcdField" />
+    <property name="AliquotaRetencaoIcms" column="ALIQUOTA_RETENCAO_ICMS" caption="Aliquota Retencao Icms" width="168" type="FMTBcdField" />
+    <property name="ValorIcmsRetido" column="VALOR_ICMS_RETIDO" caption="Valor Icms Retido" width="168" type="FMTBcdField" />
+    <property name="Cfop" column="CFOP" caption="Cfop" width="80" type="Integer" />
+    <property name="Municipio" column="MUNICIPIO" caption="Municipio" width="80" type="Integer" />
+    <property name="PlacaVeiculo" column="PLACA_VEICULO" caption="Placa Veiculo" width="56" type="String" />
+    <property name="UfVeiculo" column="UF_VEICULO" caption="Uf Veiculo" width="16" type="String" />
+    <property name="RntcVeiculo" column="RNTC_VEICULO" caption="Rntc Veiculo" width="160" type="String" />
+    <property name="Vagao" column="VAGAO" caption="Vagao" width="160" type="String" />
+    <property name="Balsa" column="BALSA" caption="Balsa" width="160" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

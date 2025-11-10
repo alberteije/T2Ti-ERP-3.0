@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewPessoaClienteVO" table="view_pessoa_cliente" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_pessoa_cliente</param>
+      </generator>
+    </id>
+
+    <property name="IdOperacaoFiscal" column="ID_OPERACAO_FISCAL" caption="Id Operacao Fiscal" width="80" type="Integer" />
+    <property name="IdPessoa" column="ID_PESSOA" caption="Id Pessoa" width="80" type="Integer" />
+    <property name="IdAtividadeForCli" column="ID_ATIVIDADE_FOR_CLI" caption="Id Atividade For Cli" width="80" type="Integer" />
+    <property name="IdSituacaoForCli" column="ID_SITUACAO_FOR_CLI" caption="Id Situacao For Cli" width="80" type="Integer" />
+    <property name="IdConvenio" column="ID_CONVENIO" caption="Id Convenio" width="80" type="Integer" />
+    <property name="Desde" column="DESDE" caption="Desde" width="80" type="Date" />
+    <property name="DataCadastro" column="DATA_CADASTRO" caption="Data Cadastro" width="80" type="Date" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+    <property name="ContaTomador" column="CONTA_TOMADOR" caption="Conta Tomador" width="240" type="String" />
+    <property name="GeraFinanceiro" column="GERA_FINANCEIRO" caption="Gera Financeiro" width="8" type="String" />
+    <property name="IndicadorPreco" column="INDICADOR_PRECO" caption="Indicador Preco" width="8" type="String" />
+    <property name="PorcentoDesconto" column="PORCENTO_DESCONTO" caption="Porcento Desconto" width="168" type="FMTBcdField" />
+    <property name="FormaDesconto" column="FORMA_DESCONTO" caption="Forma Desconto" width="8" type="String" />
+    <property name="LimiteCredito" column="LIMITE_CREDITO" caption="Limite Credito" width="168" type="FMTBcdField" />
+    <property name="TipoFrete" column="TIPO_FRETE" caption="Tipo Frete" width="8" type="String" />
+    <property name="DescontoConvenio" column="DESCONTO_CONVENIO" caption="Desconto Convenio" width="168" type="FMTBcdField" />
+    <property name="Logradouro" column="LOGRADOURO" caption="Logradouro" width="450" type="String" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="String" />
+    <property name="Complemento" column="COMPLEMENTO" caption="Complemento" width="450" type="String" />
+    <property name="Bairro" column="BAIRRO" caption="Bairro" width="450" type="String" />
+    <property name="Cidade" column="CIDADE" caption="Cidade" width="450" type="String" />
+    <property name="Cep" column="CEP" caption="Cep" width="64" type="String" />
+    <property name="MunicipioIbge" column="MUNICIPIO_IBGE" caption="Municipio Ibge" width="80" type="Integer" />
+    <property name="Uf" column="UF" caption="Uf" width="16" type="String" />
+    <property name="Fone" column="FONE" caption="Fone" width="112" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="8" type="String" />
+    <property name="Email" column="EMAIL" caption="Email" width="450" type="String" />
+    <property name="Site" column="SITE" caption="Site" width="450" type="String" />
+    <property name="CpfCnpj" column="CPF_CNPJ" caption="Cpf Cnpj" width="112" type="String" />
+    <property name="RgIe" column="RG_IE" caption="Rg Ie" width="240" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

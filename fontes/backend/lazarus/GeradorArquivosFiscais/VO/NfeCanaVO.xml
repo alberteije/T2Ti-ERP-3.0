@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeCanaVO" table="nfe_cana" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_cana</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeCabecalho" column="ID_NFE_CABECALHO" caption="Id Nfe Cabecalho" width="80" type="Integer" />
+    <property name="Safra" column="SAFRA" caption="Safra" width="72" type="String" />
+    <property name="MesAnoReferencia" column="MES_ANO_REFERENCIA" caption="Mes Ano Referencia" width="72" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

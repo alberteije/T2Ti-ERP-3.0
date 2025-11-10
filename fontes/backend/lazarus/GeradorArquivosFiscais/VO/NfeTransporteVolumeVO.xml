@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeTransporteVolumeVO" table="nfe_transporte_volume" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_transporte_volume</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeTransporte" column="ID_NFE_TRANSPORTE" caption="Id Nfe Transporte" width="80" type="Integer" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="80" type="Integer" />
+    <property name="Especie" column="ESPECIE" caption="Especie" width="450" type="String" />
+    <property name="Marca" column="MARCA" caption="Marca" width="450" type="String" />
+    <property name="Numeracao" column="NUMERACAO" caption="Numeracao" width="450" type="String" />
+    <property name="PesoLiquido" column="PESO_LIQUIDO" caption="Peso Liquido" width="168" type="FMTBcdField" />
+    <property name="PesoBruto" column="PESO_BRUTO" caption="Peso Bruto" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

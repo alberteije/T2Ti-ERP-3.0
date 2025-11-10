@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteFaturaVO" table="cte_fatura" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_fatura</param>
+      </generator>
+    </id>
+
+    <property name="IdCteCabecalho" column="ID_CTE_CABECALHO" caption="Id Cte Cabecalho" width="80" type="Integer" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="450" type="String" />
+    <property name="ValorOriginal" column="VALOR_ORIGINAL" caption="Valor Original" width="168" type="FMTBcdField" />
+    <property name="ValorDesconto" column="VALOR_DESCONTO" caption="Valor Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorLiquido" column="VALOR_LIQUIDO" caption="Valor Liquido" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

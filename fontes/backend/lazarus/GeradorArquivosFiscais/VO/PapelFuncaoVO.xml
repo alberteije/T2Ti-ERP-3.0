@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PapelFuncaoVO" table="papel_funcao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">papel_funcao</param>
+      </generator>
+    </id>
+
+    <property name="IdPapel" column="ID_PAPEL" caption="Id Papel" width="80" type="Integer" />
+    <property name="IdFuncao" column="ID_FUNCAO" caption="Id Funcao" width="80" type="Integer" />
+    <property name="PodeConsultar" column="PODE_CONSULTAR" caption="Pode Consultar" width="8" type="String" />
+    <property name="PodeInserir" column="PODE_INSERIR" caption="Pode Inserir" width="8" type="String" />
+    <property name="PodeAlterar" column="PODE_ALTERAR" caption="Pode Alterar" width="8" type="String" />
+    <property name="PodeExcluir" column="PODE_EXCLUIR" caption="Pode Excluir" width="8" type="String" />
+    <property name="Habilitado" column="HABILITADO" caption="Habilitado" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

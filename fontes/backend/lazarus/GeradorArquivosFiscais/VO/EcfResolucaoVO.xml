@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EcfResolucaoVO" table="ecf_resolucao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ecf_resolucao</param>
+      </generator>
+    </id>
+
+    <property name="NomeCaixa" column="NOME_CAIXA" caption="Nome Caixa" width="240" type="String" />
+    <property name="IdGeradoCaixa" column="ID_GERADO_CAIXA" caption="Id Gerado Caixa" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="ResolucaoTela" column="RESOLUCAO_TELA" caption="Resolucao Tela" width="160" type="String" />
+    <property name="Largura" column="LARGURA" caption="Largura" width="80" type="Integer" />
+    <property name="Altura" column="ALTURA" caption="Altura" width="80" type="Integer" />
+    <property name="ImagemTela" column="IMAGEM_TELA" caption="Imagem Tela" width="400" type="String" />
+    <property name="ImagemMenu" column="IMAGEM_MENU" caption="Imagem Menu" width="400" type="String" />
+    <property name="ImagemSubmenu" column="IMAGEM_SUBMENU" caption="Imagem Submenu" width="400" type="String" />
+    <property name="HottrackColor" column="HOTTRACK_COLOR" caption="Hottrack Color" width="160" type="String" />
+    <property name="ItemStyleFontName" column="ITEM_STYLE_FONT_NAME" caption="Item Style Font Name" width="160" type="String" />
+    <property name="ItemStyleFontColor" column="ITEM_STYLE_FONT_COLOR" caption="Item Style Font Color" width="160" type="String" />
+    <property name="ItemSelStyleColor" column="ITEM_SEL_STYLE_COLOR" caption="Item Sel Style Color" width="160" type="String" />
+    <property name="LabelTotalGeralFontColor" column="LABEL_TOTAL_GERAL_FONT_COLOR" caption="Label Total Geral Font Color" width="160" type="String" />
+    <property name="ItemStyleFontStyle" column="ITEM_STYLE_FONT_STYLE" caption="Item Style Font Style" width="160" type="String" />
+    <property name="EditsColor" column="EDITS_COLOR" caption="Edits Color" width="160" type="String" />
+    <property name="EditsFontColor" column="EDITS_FONT_COLOR" caption="Edits Font Color" width="160" type="String" />
+    <property name="EditsDisabledColor" column="EDITS_DISABLED_COLOR" caption="Edits Disabled Color" width="160" type="String" />
+    <property name="EditsFontName" column="EDITS_FONT_NAME" caption="Edits Font Name" width="160" type="String" />
+    <property name="EditsFontStyle" column="EDITS_FONT_STYLE" caption="Edits Font Style" width="160" type="String" />
+    <property name="DataSincronizacao" column="DATA_SINCRONIZACAO" caption="Data Sincronizacao" width="80" type="Date" />
+    <property name="HoraSincronizacao" column="HORA_SINCRONIZACAO" caption="Hora Sincronizacao" width="64" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

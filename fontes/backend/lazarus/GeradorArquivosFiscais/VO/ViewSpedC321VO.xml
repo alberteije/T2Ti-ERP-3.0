@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewSpedC321VO" table="view_sped_c321" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_sped_c321</param>
+      </generator>
+    </id>
+
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="DescricaoUnidade" column="DESCRICAO_UNIDADE" caption="Descricao Unidade" width="80" type="String" />
+    <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
+    <property name="SomaQuantidade" column="SOMA_QUANTIDADE" caption="Soma Quantidade" width="264" type="FMTBcdField" />
+    <property name="SomaItem" column="SOMA_ITEM" caption="Soma Item" width="264" type="FMTBcdField" />
+    <property name="SomaDesconto" column="SOMA_DESCONTO" caption="Soma Desconto" width="264" type="FMTBcdField" />
+    <property name="SomaBaseIcms" column="SOMA_BASE_ICMS" caption="Soma Base Icms" width="264" type="FMTBcdField" />
+    <property name="SomaIcms" column="SOMA_ICMS" caption="Soma Icms" width="264" type="FMTBcdField" />
+    <property name="SomaPis" column="SOMA_PIS" caption="Soma Pis" width="264" type="FMTBcdField" />
+    <property name="SomaCofins" column="SOMA_COFINS" caption="Soma Cofins" width="264" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ComissaoObjetivoVO" table="comissao_objetivo" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">comissao_objetivo</param>
+      </generator>
+    </id>
+
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="IdComissaoPerfil" column="ID_COMISSAO_PERFIL" caption="Id Comissao Perfil" width="80" type="Integer" />
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="24" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+    <property name="FormaPagamento" column="FORMA_PAGAMENTO" caption="Forma Pagamento" width="8" type="String" />
+    <property name="TaxaPagamento" column="TAXA_PAGAMENTO" caption="Taxa Pagamento" width="168" type="FMTBcdField" />
+    <property name="ValorPagamento" column="VALOR_PAGAMENTO" caption="Valor Pagamento" width="168" type="FMTBcdField" />
+    <property name="ValorMeta" column="VALOR_META" caption="Valor Meta" width="168" type="FMTBcdField" />
+    <property name="Quantidade" column="QUANTIDADE" caption="Quantidade" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

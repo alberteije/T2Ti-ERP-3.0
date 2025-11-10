@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CtResultadoNtFinanceiraVO" table="ct_resultado_nt_financeira" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ct_resultado_nt_financeira</param>
+      </generator>
+    </id>
+
+    <property name="IdNaturezaFinanceira" column="ID_NATUREZA_FINANCEIRA" caption="Id Natureza Financeira" width="80" type="Integer" />
+    <property name="IdCentroResultado" column="ID_CENTRO_RESULTADO" caption="Id Centro Resultado" width="80" type="Integer" />
+    <property name="PercentualRateio" column="PERCENTUAL_RATEIO" caption="Percentual Rateio" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

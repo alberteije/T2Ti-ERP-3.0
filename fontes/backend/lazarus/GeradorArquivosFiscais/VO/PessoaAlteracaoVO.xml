@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PessoaAlteracaoVO" table="pessoa_alteracao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">pessoa_alteracao</param>
+      </generator>
+    </id>
+
+    <property name="IdPessoa" column="ID_PESSOA" caption="Id Pessoa" width="80" type="Integer" />
+    <property name="DataAlteracao" column="DATA_ALTERACAO" caption="Data Alteracao" width="80" type="Date" />
+    <property name="ObjetoAntigo" column="OBJETO_ANTIGO" caption="Objeto Antigo" width="450" type="Memo" />
+    <property name="ObjetoNovo" column="OBJETO_NOVO" caption="Objeto Novo" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

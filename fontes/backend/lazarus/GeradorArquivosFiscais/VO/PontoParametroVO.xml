@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PontoParametroVO" table="ponto_parametro" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ponto_parametro</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="MesAno" column="MES_ANO" caption="Mes Ano" width="56" type="String" />
+    <property name="DiaInicialApuracao" column="DIA_INICIAL_APURACAO" caption="Dia Inicial Apuracao" width="80" type="Integer" />
+    <property name="HoraNoturnaInicio" column="HORA_NOTURNA_INICIO" caption="Hora Noturna Inicio" width="64" type="String" />
+    <property name="HoraNoturnaFim" column="HORA_NOTURNA_FIM" caption="Hora Noturna Fim" width="64" type="String" />
+    <property name="PeriodoMinimoInterjornada" column="PERIODO_MINIMO_INTERJORNADA" caption="Periodo Minimo Interjornada" width="64" type="String" />
+    <property name="PercentualHeDiurna" column="PERCENTUAL_HE_DIURNA" caption="Percentual He Diurna" width="168" type="FMTBcdField" />
+    <property name="PercentualHeNoturna" column="PERCENTUAL_HE_NOTURNA" caption="Percentual He Noturna" width="168" type="FMTBcdField" />
+    <property name="DuracaoHoraNoturna" column="DURACAO_HORA_NOTURNA" caption="Duracao Hora Noturna" width="64" type="String" />
+    <property name="TratamentoHoraMais" column="TRATAMENTO_HORA_MAIS" caption="Tratamento Hora Mais" width="8" type="String" />
+    <property name="TratamentoHoraMenos" column="TRATAMENTO_HORA_MENOS" caption="Tratamento Hora Menos" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

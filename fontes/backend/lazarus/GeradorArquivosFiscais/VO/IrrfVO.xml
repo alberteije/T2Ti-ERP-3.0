@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="IrrfVO" table="irrf" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">irrf</param>
+      </generator>
+    </id>
+
+    <property name="Competencia" column="COMPETENCIA" caption="Competencia" width="56" type="String" />
+    <property name="DescontoPorDependente" column="DESCONTO_POR_DEPENDENTE" caption="Desconto Por Dependente" width="168" type="FMTBcdField" />
+    <property name="MinimoParaRetencao" column="MINIMO_PARA_RETENCAO" caption="Minimo Para Retencao" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CodApuracaoReceitaDaconVO" table="cod_apuracao_receita_dacon" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cod_apuracao_receita_dacon</param>
+      </generator>
+    </id>
+
+    <property name="IdCodigoApuracaoEfd" column="ID_CODIGO_APURACAO_EFD" caption="Id Codigo Apuracao Efd" width="80" type="Integer" />
+    <property name="IdTipoReceitaDacon" column="ID_TIPO_RECEITA_DACON" caption="Id Tipo Receita Dacon" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="VendaCabecalhoVO" table="venda_cabecalho" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">venda_cabecalho</param>
+      </generator>
+    </id>
+
+    <property name="IdVendaRomaneioEntrega" column="ID_VENDA_ROMANEIO_ENTREGA" caption="Id Venda Romaneio Entrega" width="80" type="Integer" />
+    <property name="IdVendaOrcamentoCabecalho" column="ID_VENDA_ORCAMENTO_CABECALHO" caption="Id Venda Orcamento Cabecalho" width="80" type="Integer" />
+    <property name="IdVendaCondicoesPagamento" column="ID_VENDA_CONDICOES_PAGAMENTO" caption="Id Venda Condicoes Pagamento" width="80" type="Integer" />
+    <property name="IdTransportadora" column="ID_TRANSPORTADORA" caption="Id Transportadora" width="80" type="Integer" />
+    <property name="IdTipoNotaFiscal" column="ID_TIPO_NOTA_FISCAL" caption="Id Tipo Nota Fiscal" width="80" type="Integer" />
+    <property name="IdCliente" column="ID_CLIENTE" caption="Id Cliente" width="80" type="Integer" />
+    <property name="IdVendedor" column="ID_VENDEDOR" caption="Id Vendedor" width="80" type="Integer" />
+    <property name="DataVenda" column="DATA_VENDA" caption="Data Venda" width="80" type="Date" />
+    <property name="DataSaida" column="DATA_SAIDA" caption="Data Saida" width="80" type="Date" />
+    <property name="HoraSaida" column="HORA_SAIDA" caption="Hora Saida" width="64" type="String" />
+    <property name="NumeroFatura" column="NUMERO_FATURA" caption="Numero Fatura" width="80" type="Integer" />
+    <property name="LocalEntrega" column="LOCAL_ENTREGA" caption="Local Entrega" width="450" type="String" />
+    <property name="LocalCobranca" column="LOCAL_COBRANCA" caption="Local Cobranca" width="450" type="String" />
+    <property name="ValorSubtotal" column="VALOR_SUBTOTAL" caption="Valor Subtotal" width="168" type="FMTBcdField" />
+    <property name="TaxaComissao" column="TAXA_COMISSAO" caption="Taxa Comissao" width="168" type="FMTBcdField" />
+    <property name="ValorComissao" column="VALOR_COMISSAO" caption="Valor Comissao" width="168" type="FMTBcdField" />
+    <property name="TaxaDesconto" column="TAXA_DESCONTO" caption="Taxa Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorDesconto" column="VALOR_DESCONTO" caption="Valor Desconto" width="168" type="FMTBcdField" />
+    <property name="ValorTotal" column="VALOR_TOTAL" caption="Valor Total" width="168" type="FMTBcdField" />
+    <property name="TipoFrete" column="TIPO_FRETE" caption="Tipo Frete" width="8" type="String" />
+    <property name="FormaPagamento" column="FORMA_PAGAMENTO" caption="Forma Pagamento" width="8" type="String" />
+    <property name="ValorFrete" column="VALOR_FRETE" caption="Valor Frete" width="168" type="FMTBcdField" />
+    <property name="ValorSeguro" column="VALOR_SEGURO" caption="Valor Seguro" width="168" type="FMTBcdField" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+    <property name="Situacao" column="SITUACAO" caption="Situacao" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

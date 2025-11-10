@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PcpOpDetalheVO" table="pcp_op_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">pcp_op_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="IdPcpOpCabecalho" column="ID_PCP_OP_CABECALHO" caption="Id Pcp Op Cabecalho" width="80" type="Integer" />
+    <property name="QuantidadeProduzir" column="QUANTIDADE_PRODUZIR" caption="Quantidade Produzir" width="168" type="FMTBcdField" />
+    <property name="QuantidadeProduzida" column="QUANTIDADE_PRODUZIDA" caption="Quantidade Produzida" width="168" type="FMTBcdField" />
+    <property name="QuantidadeEntregue" column="QUANTIDADE_ENTREGUE" caption="Quantidade Entregue" width="168" type="FMTBcdField" />
+    <property name="CustoPrevisto" column="CUSTO_PREVISTO" caption="Custo Previsto" width="168" type="FMTBcdField" />
+    <property name="CustoRealizado" column="CUSTO_REALIZADO" caption="Custo Realizado" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

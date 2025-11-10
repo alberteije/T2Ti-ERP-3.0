@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContabilLancamentoDetalheVO" table="contabil_lancamento_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">contabil_lancamento_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdContabilConta" column="ID_CONTABIL_CONTA" caption="Id Contabil Conta" width="80" type="Integer" />
+    <property name="IdContabilHistorico" column="ID_CONTABIL_HISTORICO" caption="Id Contabil Historico" width="80" type="Integer" />
+    <property name="IdContabilLancamentoCab" column="ID_CONTABIL_LANCAMENTO_CAB" caption="Id Contabil Lancamento Cab" width="80" type="Integer" />
+    <property name="Historico" column="HISTORICO" caption="Historico" width="450" type="String" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EcfTotalTipoPagamentoVO" table="ecf_total_tipo_pagamento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ecf_total_tipo_pagamento</param>
+      </generator>
+    </id>
+
+    <property name="NomeCaixa" column="NOME_CAIXA" caption="Nome Caixa" width="240" type="String" />
+    <property name="IdGeradoCaixa" column="ID_GERADO_CAIXA" caption="Id Gerado Caixa" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="IdEcfVendaCabecalho" column="ID_ECF_VENDA_CABECALHO" caption="Id Ecf Venda Cabecalho" width="80" type="Integer" />
+    <property name="IdEcfTipoPagamento" column="ID_ECF_TIPO_PAGAMENTO" caption="Id Ecf Tipo Pagamento" width="80" type="Integer" />
+    <property name="SerieEcf" column="SERIE_ECF" caption="Serie Ecf" width="160" type="String" />
+    <property name="Coo" column="COO" caption="Coo" width="80" type="Integer" />
+    <property name="Ccf" column="CCF" caption="Ccf" width="80" type="Integer" />
+    <property name="Gnf" column="GNF" caption="Gnf" width="80" type="Integer" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+    <property name="Nsu" column="NSU" caption="Nsu" width="240" type="String" />
+    <property name="Estorno" column="ESTORNO" caption="Estorno" width="8" type="String" />
+    <property name="Rede" column="REDE" caption="Rede" width="80" type="String" />
+    <property name="CartaoDc" column="CARTAO_DC" caption="Cartao Dc" width="8" type="String" />
+    <property name="DataVenda" column="DATA_VENDA" caption="Data Venda" width="80" type="Date" />
+    <property name="Logss" column="LOGSS" caption="Logss" width="256" type="String" />
+    <property name="DataSincronizacao" column="DATA_SINCRONIZACAO" caption="Data Sincronizacao" width="80" type="Date" />
+    <property name="HoraSincronizacao" column="HORA_SINCRONIZACAO" caption="Hora Sincronizacao" width="64" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FornecedorProdutoVO" table="fornecedor_produto" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fornecedor_produto</param>
+      </generator>
+    </id>
+
+    <property name="IdFornecedor" column="ID_FORNECEDOR" caption="Id Fornecedor" width="80" type="Integer" />
+    <property name="IdProduto" column="ID_PRODUTO" caption="Id Produto" width="80" type="Integer" />
+    <property name="CodigoFornecedorProduto" column="CODIGO_FORNECEDOR_PRODUTO" caption="Codigo Fornecedor Produto" width="160" type="String" />
+    <property name="DataUltimaCompra" column="DATA_ULTIMA_COMPRA" caption="Data Ultima Compra" width="80" type="Date" />
+    <property name="PrecoUltimaCompra" column="PRECO_ULTIMA_COMPRA" caption="Preco Ultima Compra" width="168" type="FMTBcdField" />
+    <property name="LoteMinimoCompra" column="LOTE_MINIMO_COMPRA" caption="Lote Minimo Compra" width="168" type="FMTBcdField" />
+    <property name="MenorEmbalagemCompra" column="MENOR_EMBALAGEM_COMPRA" caption="Menor Embalagem Compra" width="168" type="FMTBcdField" />
+    <property name="CustoUltimaCompra" column="CUSTO_ULTIMA_COMPRA" caption="Custo Ultima Compra" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

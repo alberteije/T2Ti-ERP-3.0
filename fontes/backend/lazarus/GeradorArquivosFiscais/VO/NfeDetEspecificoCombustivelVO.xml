@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeDetEspecificoCombustivelVO" table="nfe_det_especifico_combustivel" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_det_especifico_combustivel</param>
+      </generator>
+    </id>
+
+    <property name="IdNfeDetalhe" column="ID_NFE_DETALHE" caption="Id Nfe Detalhe" width="80" type="Integer" />
+    <property name="CodigoAnp" column="CODIGO_ANP" caption="Codigo Anp" width="80" type="Integer" />
+    <property name="PercentualGasNatural" column="PERCENTUAL_GAS_NATURAL" caption="Percentual Gas Natural" width="168" type="FMTBcdField" />
+    <property name="Codif" column="CODIF" caption="Codif" width="168" type="String" />
+    <property name="QuantidadeTempAmbiente" column="QUANTIDADE_TEMP_AMBIENTE" caption="Quantidade Temp Ambiente" width="168" type="FMTBcdField" />
+    <property name="UfConsumo" column="UF_CONSUMO" caption="Uf Consumo" width="16" type="String" />
+    <property name="BaseCalculoCide" column="BASE_CALCULO_CIDE" caption="Base Calculo Cide" width="168" type="FMTBcdField" />
+    <property name="AliquotaCide" column="ALIQUOTA_CIDE" caption="Aliquota Cide" width="168" type="FMTBcdField" />
+    <property name="ValorCide" column="VALOR_CIDE" caption="Valor Cide" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

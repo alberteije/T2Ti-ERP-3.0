@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="MaloteDigitalDestinatarioVO" table="malote_digital_destinatario" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">malote_digital_destinatario</param>
+      </generator>
+    </id>
+
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="IdMaloteDigitalDocumento" column="ID_MALOTE_DIGITAL_DOCUMENTO" caption="Id Malote Digital Documento" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

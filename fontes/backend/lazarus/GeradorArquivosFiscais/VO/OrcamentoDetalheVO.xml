@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="OrcamentoDetalheVO" table="orcamento_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">orcamento_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdNaturezaFinanceira" column="ID_NATUREZA_FINANCEIRA" caption="Id Natureza Financeira" width="80" type="Integer" />
+    <property name="IdOrcamentoEmpresarial" column="ID_ORCAMENTO_EMPRESARIAL" caption="Id Orcamento Empresarial" width="80" type="Integer" />
+    <property name="Periodo" column="PERIODO" caption="Periodo" width="80" type="String" />
+    <property name="ValorOrcado" column="VALOR_ORCADO" caption="Valor Orcado" width="168" type="FMTBcdField" />
+    <property name="ValorRealizado" column="VALOR_REALIZADO" caption="Valor Realizado" width="168" type="FMTBcdField" />
+    <property name="TaxaVariacao" column="TAXA_VARIACAO" caption="Taxa Variacao" width="168" type="FMTBcdField" />
+    <property name="ValorVariacao" column="VALOR_VARIACAO" caption="Valor Variacao" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

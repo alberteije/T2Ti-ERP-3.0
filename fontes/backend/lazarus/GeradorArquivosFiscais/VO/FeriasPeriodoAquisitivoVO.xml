@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FeriasPeriodoAquisitivoVO" table="ferias_periodo_aquisitivo" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ferias_periodo_aquisitivo</param>
+      </generator>
+    </id>
+
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="DataInicio" column="DATA_INICIO" caption="Data Inicio" width="80" type="Date" />
+    <property name="DataFim" column="DATA_FIM" caption="Data Fim" width="80" type="Date" />
+    <property name="Situacao" column="SITUACAO" caption="Situacao" width="8" type="String" />
+    <property name="LimiteParaGozo" column="LIMITE_PARA_GOZO" caption="Limite Para Gozo" width="80" type="Date" />
+    <property name="DescontarFaltas" column="DESCONTAR_FALTAS" caption="Descontar Faltas" width="8" type="String" />
+    <property name="DesconsiderarAfastamento" column="DESCONSIDERAR_AFASTAMENTO" caption="Desconsiderar Afastamento" width="8" type="String" />
+    <property name="AfastamentoPrevidencia" column="AFASTAMENTO_PREVIDENCIA" caption="Afastamento Previdencia" width="80" type="Integer" />
+    <property name="AfastamentoSemRemun" column="AFASTAMENTO_SEM_REMUN" caption="Afastamento Sem Remun" width="80" type="Integer" />
+    <property name="AfastamentoComRemun" column="AFASTAMENTO_COM_REMUN" caption="Afastamento Com Remun" width="80" type="Integer" />
+    <property name="DiasDireito" column="DIAS_DIREITO" caption="Dias Direito" width="80" type="Integer" />
+    <property name="DiasGozados" column="DIAS_GOZADOS" caption="Dias Gozados" width="80" type="Integer" />
+    <property name="DiasFaltas" column="DIAS_FALTAS" caption="Dias Faltas" width="80" type="Integer" />
+    <property name="DiasRestantes" column="DIAS_RESTANTES" caption="Dias Restantes" width="80" type="Integer" />
+
+  </class>
+</t2ti-orm-mapping>

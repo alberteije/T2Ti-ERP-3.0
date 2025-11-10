@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PontoHorarioVO" table="ponto_horario" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ponto_horario</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="8" type="String" />
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="32" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="400" type="String" />
+    <property name="TipoTrabalho" column="TIPO_TRABALHO" caption="Tipo Trabalho" width="8" type="String" />
+    <property name="CargaHoraria" column="CARGA_HORARIA" caption="Carga Horaria" width="64" type="String" />
+    <property name="Entrada01" column="ENTRADA01" caption="Entrada01" width="64" type="String" />
+    <property name="Saida01" column="SAIDA01" caption="Saida01" width="64" type="String" />
+    <property name="Entrada02" column="ENTRADA02" caption="Entrada02" width="64" type="String" />
+    <property name="Saida02" column="SAIDA02" caption="Saida02" width="64" type="String" />
+    <property name="Entrada03" column="ENTRADA03" caption="Entrada03" width="64" type="String" />
+    <property name="Saida03" column="SAIDA03" caption="Saida03" width="64" type="String" />
+    <property name="Entrada04" column="ENTRADA04" caption="Entrada04" width="64" type="String" />
+    <property name="Saida04" column="SAIDA04" caption="Saida04" width="64" type="String" />
+    <property name="Entrada05" column="ENTRADA05" caption="Entrada05" width="64" type="String" />
+    <property name="Saida05" column="SAIDA05" caption="Saida05" width="64" type="String" />
+    <property name="HoraInicioJornada" column="HORA_INICIO_JORNADA" caption="Hora Inicio Jornada" width="64" type="String" />
+    <property name="HoraFimJornada" column="HORA_FIM_JORNADA" caption="Hora Fim Jornada" width="64" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

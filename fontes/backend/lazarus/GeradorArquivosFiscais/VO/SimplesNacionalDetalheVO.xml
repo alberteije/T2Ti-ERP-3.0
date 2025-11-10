@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="SimplesNacionalDetalheVO" table="simples_nacional_detalhe" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">simples_nacional_detalhe</param>
+      </generator>
+    </id>
+
+    <property name="IdSimplesNacionalCabecalho" column="ID_SIMPLES_NACIONAL_CABECALHO" caption="Id Simples Nacional Cabecalho" width="80" type="Integer" />
+    <property name="Faixa" column="FAIXA" caption="Faixa" width="80" type="Integer" />
+    <property name="ValorInicial" column="VALOR_INICIAL" caption="Valor Inicial" width="168" type="FMTBcdField" />
+    <property name="ValorFinal" column="VALOR_FINAL" caption="Valor Final" width="168" type="FMTBcdField" />
+    <property name="Aliquota" column="ALIQUOTA" caption="Aliquota" width="168" type="FMTBcdField" />
+    <property name="Irpj" column="IRPJ" caption="Irpj" width="168" type="FMTBcdField" />
+    <property name="Csll" column="CSLL" caption="Csll" width="168" type="FMTBcdField" />
+    <property name="Cofins" column="COFINS" caption="Cofins" width="168" type="FMTBcdField" />
+    <property name="PisPasep" column="PIS_PASEP" caption="Pis Pasep" width="168" type="FMTBcdField" />
+    <property name="Cpp" column="CPP" caption="Cpp" width="168" type="FMTBcdField" />
+    <property name="Icms" column="ICMS" caption="Icms" width="168" type="FMTBcdField" />
+    <property name="Ipi" column="IPI" caption="Ipi" width="168" type="FMTBcdField" />
+    <property name="Iss" column="ISS" caption="Iss" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

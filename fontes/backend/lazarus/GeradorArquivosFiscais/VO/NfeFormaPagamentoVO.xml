@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfeFormaPagamentoVO" table="nfe_forma_pagamento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfe_forma_pagamento</param>
+      </generator>
+    </id>
+
+    <property name="IdNfceTipoPagamento" column="ID_NFCE_TIPO_PAGAMENTO" caption="Id Nfce Tipo Pagamento" width="80" type="Integer" />
+    <property name="IdNfeCabecalho" column="ID_NFE_CABECALHO" caption="Id Nfe Cabecalho" width="80" type="Integer" />
+    <property name="Forma" column="FORMA" caption="Forma" width="16" type="String" />
+    <property name="Valor" column="VALOR" caption="Valor" width="168" type="FMTBcdField" />
+    <property name="CnpjOperadoraCartao" column="CNPJ_OPERADORA_CARTAO" caption="Cnpj Operadora Cartao" width="112" type="String" />
+    <property name="Bandeira" column="BANDEIRA" caption="Bandeira" width="16" type="String" />
+    <property name="NumeroAutorizacao" column="NUMERO_AUTORIZACAO" caption="Numero Autorizacao" width="160" type="String" />
+    <property name="Estorno" column="ESTORNO" caption="Estorno" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

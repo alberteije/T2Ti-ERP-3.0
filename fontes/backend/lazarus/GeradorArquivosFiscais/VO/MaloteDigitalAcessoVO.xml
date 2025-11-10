@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="MaloteDigitalAcessoVO" table="malote_digital_acesso" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">malote_digital_acesso</param>
+      </generator>
+    </id>
+
+    <property name="IdMaloteDigitalDestinatario" column="ID_MALOTE_DIGITAL_DESTINATARIO" caption="Id Malote Digital Destinatario" width="80" type="Integer" />
+    <property name="DataAcesso" column="DATA_ACESSO" caption="Data Acesso" width="80" type="Date" />
+    <property name="HoraAcesso" column="HORA_ACESSO" caption="Hora Acesso" width="64" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

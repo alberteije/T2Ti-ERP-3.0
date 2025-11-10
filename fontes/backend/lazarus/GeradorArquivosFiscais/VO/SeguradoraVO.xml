@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="SeguradoraVO" table="seguradora" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">seguradora</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Nome" column="NOME" caption="Nome" width="400" type="String" />
+    <property name="Contato" column="CONTATO" caption="Contato" width="400" type="String" />
+    <property name="Telefone" column="TELEFONE" caption="Telefone" width="112" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

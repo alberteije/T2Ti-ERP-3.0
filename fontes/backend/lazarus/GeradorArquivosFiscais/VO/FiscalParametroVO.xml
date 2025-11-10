@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FiscalParametroVO" table="fiscal_parametro" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">fiscal_parametro</param>
+      </generator>
+    </id>
+
+    <property name="IdFiscalEstadualPorte" column="ID_FISCAL_ESTADUAL_PORTE" caption="Id Fiscal Estadual Porte" width="80" type="Integer" />
+    <property name="IdFiscalEstadualRegime" column="ID_FISCAL_ESTADUAL_REGIME" caption="Id Fiscal Estadual Regime" width="80" type="Integer" />
+    <property name="IdFiscalMunicipalRegime" column="ID_FISCAL_MUNICIPAL_REGIME" caption="Id Fiscal Municipal Regime" width="80" type="Integer" />
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Vigencia" column="VIGENCIA" caption="Vigencia" width="56" type="String" />
+    <property name="DescricaoVigencia" column="DESCRICAO_VIGENCIA" caption="Descricao Vigencia" width="450" type="String" />
+    <property name="CriterioLancamento" column="CRITERIO_LANCAMENTO" caption="Criterio Lancamento" width="8" type="String" />
+    <property name="Apuracao" column="APURACAO" caption="Apuracao" width="8" type="String" />
+    <property name="MicroempreeIndividual" column="MICROEMPREE_INDIVIDUAL" caption="Microempree Individual" width="8" type="String" />
+    <property name="CalcPisCofinsEfd" column="CALC_PIS_COFINS_EFD" caption="Calc Pis Cofins Efd" width="16" type="String" />
+    <property name="SimplesCodigoAcesso" column="SIMPLES_CODIGO_ACESSO" caption="Simples Codigo Acesso" width="400" type="String" />
+    <property name="SimplesTabela" column="SIMPLES_TABELA" caption="Simples Tabela" width="8" type="String" />
+    <property name="SimplesAtividade" column="SIMPLES_ATIVIDADE" caption="Simples Atividade" width="16" type="String" />
+    <property name="PerfilSped" column="PERFIL_SPED" caption="Perfil Sped" width="8" type="String" />
+    <property name="ApuracaoConsolidada" column="APURACAO_CONSOLIDADA" caption="Apuracao Consolidada" width="8" type="String" />
+    <property name="SubstituicaoTributaria" column="SUBSTITUICAO_TRIBUTARIA" caption="Substituicao Tributaria" width="8" type="String" />
+    <property name="FormaCalculoIss" column="FORMA_CALCULO_ISS" caption="Forma Calculo Iss" width="16" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

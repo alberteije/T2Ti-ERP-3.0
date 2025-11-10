@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EfdTabela4314VO" table="efd_tabela_4314" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">efd_tabela_4314</param>
+      </generator>
+    </id>
+
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="80" type="Integer" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+    <property name="Observacao" column="OBSERVACAO" caption="Observacao" width="450" type="Memo" />
+    <property name="InicioVigencia" column="INICIO_VIGENCIA" caption="Inicio Vigencia" width="80" type="Date" />
+    <property name="FimVigencia" column="FIM_VIGENCIA" caption="Fim Vigencia" width="80" type="Date" />
+
+  </class>
+</t2ti-orm-mapping>

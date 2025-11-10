@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="NfceConfiguracaoBalancaVO" table="nfce_configuracao_balanca" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">nfce_configuracao_balanca</param>
+      </generator>
+    </id>
+
+    <property name="IdNfceConfiguracao" column="ID_NFCE_CONFIGURACAO" caption="Id Nfce Configuracao" width="80" type="Integer" />
+    <property name="Modelo" column="MODELO" caption="Modelo" width="80" type="Integer" />
+    <property name="Identificador" column="IDENTIFICADOR" caption="Identificador" width="8" type="String" />
+    <property name="HandShake" column="HAND_SHAKE" caption="Hand Shake" width="80" type="Integer" />
+    <property name="Parity" column="PARITY" caption="Parity" width="80" type="Integer" />
+    <property name="StopBits" column="STOP_BITS" caption="Stop Bits" width="80" type="Integer" />
+    <property name="DataBits" column="DATA_BITS" caption="Data Bits" width="80" type="Integer" />
+    <property name="BaudRate" column="BAUD_RATE" caption="Baud Rate" width="80" type="Integer" />
+    <property name="Porta" column="PORTA" caption="Porta" width="32" type="String" />
+    <property name="Timeout" column="TIMEOUT" caption="Timeout" width="80" type="Integer" />
+    <property name="TipoConfiguracao" column="TIPO_CONFIGURACAO" caption="Tipo Configuracao" width="160" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

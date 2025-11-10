@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FolhaEventoVO" table="folha_evento" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">folha_evento</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="24" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="8" type="String" />
+    <property name="Unidade" column="UNIDADE" caption="Unidade" width="8" type="String" />
+    <property name="BaseCalculo" column="BASE_CALCULO" caption="Base Calculo" width="16" type="String" />
+    <property name="Taxa" column="TAXA" caption="Taxa" width="168" type="FMTBcdField" />
+    <property name="RubricaEsocial" column="RUBRICA_ESOCIAL" caption="Rubrica Esocial" width="32" type="String" />
+    <property name="CodIncidenciaPrevidencia" column="COD_INCIDENCIA_PREVIDENCIA" caption="Cod Incidencia Previdencia" width="16" type="String" />
+    <property name="CodIncidenciaIrrf" column="COD_INCIDENCIA_IRRF" caption="Cod Incidencia Irrf" width="16" type="String" />
+    <property name="CodIncidenciaFgts" column="COD_INCIDENCIA_FGTS" caption="Cod Incidencia Fgts" width="16" type="String" />
+    <property name="CodIncidenciaSindicato" column="COD_INCIDENCIA_SINDICATO" caption="Cod Incidencia Sindicato" width="16" type="String" />
+    <property name="RepercuteDsr" column="REPERCUTE_DSR" caption="Repercute Dsr" width="8" type="String" />
+    <property name="Repercute13" column="REPERCUTE_13" caption="Repercute 13" width="8" type="String" />
+    <property name="RepercuteFerias" column="REPERCUTE_FERIAS" caption="Repercute Ferias" width="8" type="String" />
+    <property name="RepercuteAviso" column="REPERCUTE_AVISO" caption="Repercute Aviso" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

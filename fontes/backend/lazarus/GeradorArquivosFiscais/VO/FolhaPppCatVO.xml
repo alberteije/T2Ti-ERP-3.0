@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FolhaPppCatVO" table="folha_ppp_cat" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">folha_ppp_cat</param>
+      </generator>
+    </id>
+
+    <property name="IdFolhaPpp" column="ID_FOLHA_PPP" caption="Id Folha Ppp" width="80" type="Integer" />
+    <property name="NumeroCat" column="NUMERO_CAT" caption="Numero Cat" width="80" type="Integer" />
+    <property name="DataAfastamento" column="DATA_AFASTAMENTO" caption="Data Afastamento" width="80" type="Date" />
+    <property name="DataRegistro" column="DATA_REGISTRO" caption="Data Registro" width="80" type="Date" />
+
+  </class>
+</t2ti-orm-mapping>

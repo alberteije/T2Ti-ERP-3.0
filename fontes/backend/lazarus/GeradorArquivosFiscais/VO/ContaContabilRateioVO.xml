@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ContaContabilRateioVO" table="conta_contabil_rateio" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">conta_contabil_rateio</param>
+      </generator>
+    </id>
+
+    <property name="IdCentroResultado" column="ID_CENTRO_RESULTADO" caption="Id Centro Resultado" width="80" type="Integer" />
+    <property name="IdContabilConta" column="ID_CONTABIL_CONTA" caption="Id Contabil Conta" width="80" type="Integer" />
+    <property name="PorcentoRateio" column="PORCENTO_RATEIO" caption="Porcento Rateio" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

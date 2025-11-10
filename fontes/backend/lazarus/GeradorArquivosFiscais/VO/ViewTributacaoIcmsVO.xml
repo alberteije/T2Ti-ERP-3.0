@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewTributacaoIcmsVO" table="view_tributacao_icms" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_tributacao_icms</param>
+      </generator>
+    </id>
+
+    <property name="IdTributGrupoTributario" column="ID_TRIBUT_GRUPO_TRIBUTARIO" caption="Id Tribut Grupo Tributario" width="80" type="Integer" />
+    <property name="IdTributOperacaoFiscal" column="ID_TRIBUT_OPERACAO_FISCAL" caption="Id Tribut Operacao Fiscal" width="80" type="Integer" />
+    <property name="OrigemMercadoria" column="ORIGEM_MERCADORIA" caption="Origem Mercadoria" width="8" type="String" />
+    <property name="UfDestino" column="UF_DESTINO" caption="Uf Destino" width="16" type="String" />
+    <property name="Cfop" column="CFOP" caption="Cfop" width="80" type="Integer" />
+    <property name="CsosnB" column="CSOSN_B" caption="Csosn B" width="24" type="String" />
+    <property name="CstB" column="CST_B" caption="Cst B" width="16" type="String" />
+    <property name="ModalidadeBc" column="MODALIDADE_BC" caption="Modalidade Bc" width="8" type="String" />
+    <property name="Aliquota" column="ALIQUOTA" caption="Aliquota" width="168" type="FMTBcdField" />
+    <property name="ValorPauta" column="VALOR_PAUTA" caption="Valor Pauta" width="168" type="FMTBcdField" />
+    <property name="ValorPrecoMaximo" column="VALOR_PRECO_MAXIMO" caption="Valor Preco Maximo" width="168" type="FMTBcdField" />
+    <property name="Mva" column="MVA" caption="Mva" width="168" type="FMTBcdField" />
+    <property name="PorcentoBc" column="PORCENTO_BC" caption="Porcento Bc" width="168" type="FMTBcdField" />
+    <property name="ModalidadeBcSt" column="MODALIDADE_BC_ST" caption="Modalidade Bc St" width="8" type="String" />
+    <property name="AliquotaInternaSt" column="ALIQUOTA_INTERNA_ST" caption="Aliquota Interna St" width="168" type="FMTBcdField" />
+    <property name="AliquotaInterestadualSt" column="ALIQUOTA_INTERESTADUAL_ST" caption="Aliquota Interestadual St" width="168" type="FMTBcdField" />
+    <property name="PorcentoBcSt" column="PORCENTO_BC_ST" caption="Porcento Bc St" width="168" type="FMTBcdField" />
+    <property name="AliquotaIcmsSt" column="ALIQUOTA_ICMS_ST" caption="Aliquota Icms St" width="168" type="FMTBcdField" />
+    <property name="ValorPautaSt" column="VALOR_PAUTA_ST" caption="Valor Pauta St" width="168" type="FMTBcdField" />
+    <property name="ValorPrecoMaximoSt" column="VALOR_PRECO_MAXIMO_ST" caption="Valor Preco Maximo St" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="ViewBalancoPatrimonialVO" table="view_balanco_patrimonial" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">view_balanco_patrimonial</param>
+      </generator>
+    </id>
+
+    <property name="Ano" column="ANO" caption="Ano" width="32" type="String" />
+    <property name="Classificacao" column="CLASSIFICACAO" caption="Classificacao" width="240" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="String" />
+    <property name="Valor" column="VALOR" caption="Valor" width="264" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

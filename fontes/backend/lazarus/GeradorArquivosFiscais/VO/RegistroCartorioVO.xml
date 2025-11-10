@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="RegistroCartorioVO" table="registro_cartorio" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">registro_cartorio</param>
+      </generator>
+    </id>
+
+    <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
+    <property name="NomeCartorio" column="NOME_CARTORIO" caption="Nome Cartorio" width="450" type="String" />
+    <property name="DataRegistro" column="DATA_REGISTRO" caption="Data Registro" width="80" type="Date" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="Integer" />
+    <property name="Folha" column="FOLHA" caption="Folha" width="80" type="Integer" />
+    <property name="Livro" column="LIVRO" caption="Livro" width="80" type="Integer" />
+    <property name="Nire" column="NIRE" caption="Nire" width="88" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

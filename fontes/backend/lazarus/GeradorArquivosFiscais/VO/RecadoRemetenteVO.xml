@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="RecadoRemetenteVO" table="recado_remetente" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">recado_remetente</param>
+      </generator>
+    </id>
+
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="DataEnvio" column="DATA_ENVIO" caption="Data Envio" width="80" type="Date" />
+    <property name="HoraEnvio" column="HORA_ENVIO" caption="Hora Envio" width="64" type="String" />
+    <property name="Assunto" column="ASSUNTO" caption="Assunto" width="450" type="String" />
+    <property name="Texto" column="TEXTO" caption="Texto" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

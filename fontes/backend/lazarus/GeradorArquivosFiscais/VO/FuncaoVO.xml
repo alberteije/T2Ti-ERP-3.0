@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="FuncaoVO" table="funcao" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">funcao</param>
+      </generator>
+    </id>
+
+    <property name="DescricaoMenu" column="DESCRICAO_MENU" caption="Descricao Menu" width="240" type="String" />
+    <property name="ImagemMenu" column="IMAGEM_MENU" caption="Imagem Menu" width="240" type="String" />
+    <property name="Metodo" column="METODO" caption="Metodo" width="240" type="String" />
+    <property name="Nome" column="NOME" caption="Nome" width="450" type="String" />
+    <property name="Formulario" column="FORMULARIO" caption="Formulario" width="450" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

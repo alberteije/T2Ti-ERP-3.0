@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="EcfImpressoraVO" table="ecf_impressora" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">ecf_impressora</param>
+      </generator>
+    </id>
+
+    <property name="Numero" column="NUMERO" caption="Numero" width="80" type="Integer" />
+    <property name="Codigo" column="CODIGO" caption="Codigo" width="80" type="String" />
+    <property name="Serie" column="SERIE" caption="Serie" width="200" type="String" />
+    <property name="Identificacao" column="IDENTIFICACAO" caption="Identificacao" width="450" type="String" />
+    <property name="Mc" column="MC" caption="Mc" width="16" type="String" />
+    <property name="Md" column="MD" caption="Md" width="16" type="String" />
+    <property name="Vr" column="VR" caption="Vr" width="16" type="String" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="56" type="String" />
+    <property name="Marca" column="MARCA" caption="Marca" width="240" type="String" />
+    <property name="Modelo" column="MODELO" caption="Modelo" width="240" type="String" />
+    <property name="ModeloAcbr" column="MODELO_ACBR" caption="Modelo Acbr" width="240" type="String" />
+    <property name="ModeloDocumentoFiscal" column="MODELO_DOCUMENTO_FISCAL" caption="Modelo Documento Fiscal" width="16" type="String" />
+    <property name="Versao" column="VERSAO" caption="Versao" width="240" type="String" />
+    <property name="Le" column="LE" caption="Le" width="8" type="String" />
+    <property name="Lef" column="LEF" caption="Lef" width="8" type="String" />
+    <property name="Mfd" column="MFD" caption="Mfd" width="8" type="String" />
+    <property name="LacreNaMfd" column="LACRE_NA_MFD" caption="Lacre Na Mfd" width="8" type="String" />
+    <property name="DataInstalacaoSb" column="DATA_INSTALACAO_SB" caption="Data Instalacao Sb" width="80" type="Date" />
+    <property name="HoraInstalacaoSb" column="HORA_INSTALACAO_SB" caption="Hora Instalacao Sb" width="64" type="String" />
+    <property name="Docto" column="DOCTO" caption="Docto" width="450" type="String" />
+    <property name="EcfImpressora" column="ECF_IMPRESSORA" caption="Ecf Impressora" width="24" type="String" />
+
+  </class>
+</t2ti-orm-mapping>

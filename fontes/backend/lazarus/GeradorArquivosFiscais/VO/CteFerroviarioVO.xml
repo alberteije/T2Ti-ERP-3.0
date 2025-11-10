@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="CteFerroviarioVO" table="cte_ferroviario" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">cte_ferroviario</param>
+      </generator>
+    </id>
+
+    <property name="IdCteCabecalho" column="ID_CTE_CABECALHO" caption="Id Cte Cabecalho" width="80" type="Integer" />
+    <property name="TipoTrafego" column="TIPO_TRAFEGO" caption="Tipo Trafego" width="80" type="Integer" />
+    <property name="ResponsavelFaturamento" column="RESPONSAVEL_FATURAMENTO" caption="Responsavel Faturamento" width="80" type="Integer" />
+    <property name="FerroviaEmitenteCte" column="FERROVIA_EMITENTE_CTE" caption="Ferrovia Emitente Cte" width="80" type="Integer" />
+    <property name="Fluxo" column="FLUXO" caption="Fluxo" width="80" type="String" />
+    <property name="IdTrem" column="ID_TREM" caption="Id Trem" width="56" type="String" />
+    <property name="ValorFrete" column="VALOR_FRETE" caption="Valor Frete" width="168" type="FMTBcdField" />
+
+  </class>
+</t2ti-orm-mapping>

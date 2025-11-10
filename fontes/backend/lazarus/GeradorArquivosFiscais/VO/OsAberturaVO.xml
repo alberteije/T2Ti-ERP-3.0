@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="OsAberturaVO" table="os_abertura" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">os_abertura</param>
+      </generator>
+    </id>
+
+    <property name="IdOsStatus" column="ID_OS_STATUS" caption="Id Os Status" width="80" type="Integer" />
+    <property name="IdColaborador" column="ID_COLABORADOR" caption="Id Colaborador" width="80" type="Integer" />
+    <property name="IdCliente" column="ID_CLIENTE" caption="Id Cliente" width="80" type="Integer" />
+    <property name="Numero" column="NUMERO" caption="Numero" width="160" type="String" />
+    <property name="DataInicio" column="DATA_INICIO" caption="Data Inicio" width="80" type="Date" />
+    <property name="HoraInicio" column="HORA_INICIO" caption="Hora Inicio" width="64" type="String" />
+    <property name="DataPrevisao" column="DATA_PREVISAO" caption="Data Previsao" width="80" type="Date" />
+    <property name="HoraPrevisao" column="HORA_PREVISAO" caption="Hora Previsao" width="64" type="String" />
+    <property name="DataFim" column="DATA_FIM" caption="Data Fim" width="80" type="Date" />
+    <property name="HoraFim" column="HORA_FIM" caption="Hora Fim" width="64" type="String" />
+    <property name="NomeContato" column="NOME_CONTATO" caption="Nome Contato" width="400" type="String" />
+    <property name="FoneContato" column="FONE_CONTATO" caption="Fone Contato" width="120" type="String" />
+    <property name="ObservacaoCliente" column="OBSERVACAO_CLIENTE" caption="Observacao Cliente" width="450" type="Memo" />
+    <property name="ObservacaoAbertura" column="OBSERVACAO_ABERTURA" caption="Observacao Abertura" width="450" type="Memo" />
+
+  </class>
+</t2ti-orm-mapping>

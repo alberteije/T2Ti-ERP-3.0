@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<t2ti-orm-mapping>
+  <class name="PlanoContaRefSpedVO" table="plano_conta_ref_sped" >
+
+    <id name="Id" column="ID">
+      <generator class="sequence">
+        <param name="sequence">plano_conta_ref_sped</param>
+      </generator>
+    </id>
+
+    <property name="CodCtaRef" column="COD_CTA_REF" caption="Cod Cta Ref" width="240" type="String" />
+    <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />
+    <property name="Orientacoes" column="ORIENTACOES" caption="Orientacoes" width="450" type="Memo" />
+    <property name="InicioValidade" column="INICIO_VALIDADE" caption="Inicio Validade" width="80" type="Date" />
+    <property name="FimValidade" column="FIM_VALIDADE" caption="Fim Validade" width="80" type="Date" />
+    <property name="Tipo" column="TIPO" caption="Tipo" width="8" type="String" />
+
+  </class>
+</t2ti-orm-mapping>
