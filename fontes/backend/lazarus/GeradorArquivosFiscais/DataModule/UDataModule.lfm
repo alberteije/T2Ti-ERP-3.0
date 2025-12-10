@@ -71,4 +71,23 @@ object FDataModule: TFDataModule
     Left = 505
     Top = 261
   end
+  object ACBrBoleto: TACBrBoleto
+    Banco.TamanhoMaximoNossoNum = 10
+    Banco.TipoCobranca = cobNenhum
+    Banco.LayoutVersaoArquivo = 0
+    Banco.LayoutVersaoLote = 0
+    Banco.CasasDecimaisMoraJuros = 2
+    Cedente.TipoInscricao = pJuridica
+    Cedente.PIX.TipoChavePIX = tchNenhuma
+    Cedente.IntegradoraBoleto = tibNenhum
+    NumeroArquivo = 0
+    Configuracoes.Arquivos.LogNivel = logNenhum
+    Configuracoes.WebService.SSLHttpLib = httpOpenSSL
+    Configuracoes.WebService.StoreName = 'My'
+    Configuracoes.WebService.Ambiente = tawsHomologacao
+    Configuracoes.WebService.Operacao = tpInclui
+    Configuracoes.WebService.VersaoDF = '1.2'
+    Left = 243
+    Top = 37
+  end
 end

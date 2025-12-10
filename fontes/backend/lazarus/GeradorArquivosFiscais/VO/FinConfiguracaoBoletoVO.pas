@@ -47,7 +47,7 @@ type
   TFinConfiguracaoBoletoVO = class(TVO)
   private
     FID: Integer;
-    FID_CONTA_CAIXA: Integer;
+    FID_BANCO_CONTA_CAIXA: Integer;
     FID_EMPRESA: Integer;
     FINSTRUCAO01: String;
     FINSTRUCAO02: String;
@@ -77,7 +77,7 @@ type
 
     property Id: Integer  read FID write FID;
 
-    property IdContaCaixa: Integer  read FID_CONTA_CAIXA write FID_CONTA_CAIXA;
+    property IdContaCaixa: Integer  read FID_BANCO_CONTA_CAIXA write FID_BANCO_CONTA_CAIXA;
     property ContaCaixaNome: String read FContaCaixaNome write FContaCaixaNome;
 
     property IdEmpresa: Integer  read FID_EMPRESA write FID_EMPRESA;

@@ -26,6 +26,9 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="ACBr_Boleto"/>
+      </Item>
+      <Item>
         <PackageName Value="ACBre_Social"/>
       </Item>
       <Item>
@@ -3861,6 +3864,22 @@
       </Unit>
       <Unit>
         <Filename Value="Controller\ESocialController.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Controller\EdiController.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Controller\FinConfiguracaoBoletoController.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Controller\FinParcelaReceberController.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Controller\ViewPessoaClienteController.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>

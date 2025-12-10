@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <t2ti-orm-mapping>
-  <class name="ContaCaixaVO" table="conta_caixa" >
+  <class name="ContaCaixaVO" table="banco_conta_caixa" >
 
     <id name="Id" column="ID">
       <generator class="sequence">
@@ -9,8 +9,8 @@
     </id>
 
     <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
-    <property name="IdAgenciaBanco" column="ID_AGENCIA_BANCO" caption="Id Agencia Banco" width="80" type="Integer" />
-    <property name="Codigo" column="CODIGO" caption="Codigo" width="160" type="String" />
+    <property name="IdAgenciaBanco" column="ID_BANCO_AGENCIA" caption="Id Agencia Banco" width="80" type="Integer" />
+    <property name="Codigo" column="NUMERO" caption="Codigo" width="160" type="String" />
     <property name="Digito" column="DIGITO" caption="Digito" width="8" type="String" />
     <property name="Nome" column="NOME" caption="Nome" width="400" type="String" />
     <property name="Descricao" column="DESCRICAO" caption="Descricao" width="450" type="Memo" />

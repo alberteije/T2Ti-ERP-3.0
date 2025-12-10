@@ -8,9 +8,9 @@
       </generator>
     </id>
 
-    <property name="IdContaCaixa" column="ID_CONTA_CAIXA" caption="Id Conta Caixa" width="80" type="Integer" />
     <property name="IdFinLancamentoReceber" column="ID_FIN_LANCAMENTO_RECEBER" caption="Id Fin Lancamento Receber" width="80" type="Integer" />
     <property name="IdFinStatusParcela" column="ID_FIN_STATUS_PARCELA" caption="Id Fin Status Parcela" width="80" type="Integer" />
+    <property name="IdFinTipoRecebimento" column="ID_FIN_TIPO_RECEBIMENTO" caption="Id Fin Tipo Recebimento" width="80" type="Integer" />
     <property name="NumeroParcela" column="NUMERO_PARCELA" caption="Numero Parcela" width="80" type="Integer" />
     <property name="DataEmissao" column="DATA_EMISSAO" caption="Data Emissao" width="80" type="Date" />
     <property name="DataVencimento" column="DATA_VENCIMENTO" caption="Data Vencimento" width="80" type="Date" />
@@ -24,6 +24,9 @@
     <property name="ValorDesconto" column="VALOR_DESCONTO" caption="Valor Desconto" width="168" type="FMTBcdField" />
     <property name="EmitiuBoleto" column="EMITIU_BOLETO" caption="Emitiu Boleto" width="8" type="String" />
     <property name="BoletoNossoNumero" column="BOLETO_NOSSO_NUMERO" caption="Boleto Nosso Numero" width="400" type="String" />
+    <property name="DataRecebimento" column="DATA_RECEBIMENTO" caption="Data Recebimento" width="80" type="Date" />
+    <property name="ValorRecebido" column="VALOR_RECEBIDO" caption="Valor Recebido" width="168" type="FMTBcdField" />
+    <property name="Historico" column="HISTORICO" caption="Historico" width="450" type="String" />
 
   </class>
 </t2ti-orm-mapping>

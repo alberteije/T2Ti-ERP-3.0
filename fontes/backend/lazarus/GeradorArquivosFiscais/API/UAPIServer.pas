@@ -7,7 +7,7 @@ unit UAPIServer;
 interface
 
 uses
-  Classes, SysUtils, fphttpserver, fpjson, jsonparser;
+  Classes, SysUtils, EdiController, fphttpserver, fpjson, jsonparser;
 
 type
   TAPIServer = class;
@@ -48,6 +48,10 @@ procedure HandleSpedContribuicoes(var ARequest: TFPHTTPConnectionRequest; var AR
 procedure HandleSintegra(var ARequest: TFPHTTPConnectionRequest; var AResponse: TFPHTTPConnectionResponse);
 procedure HandleReinf(var ARequest: TFPHTTPConnectionRequest; var AResponse: TFPHTTPConnectionResponse);
 procedure HandleESocial(var ARequest: TFPHTTPConnectionRequest; var AResponse: TFPHTTPConnectionResponse);
+
+procedure HandleBoletoGerarRemessa(var ARequest: TFPHTTPConnectionRequest; var AResponse: TFPHTTPConnectionResponse);
+procedure HandleBoletoProcessarRetorno(var ARequest: TFPHTTPConnectionRequest; var AResponse: TFPHTTPConnectionResponse);
+
 procedure HandleNotFound(var ARequest: TFPHTTPConnectionRequest; var AResponse: TFPHTTPConnectionResponse);
 
 var
@@ -113,6 +117,8 @@ begin
     '/api/sintegra': HandleSintegra(ARequest, AResponse);
     '/api/reinf': HandleReinf(ARequest, AResponse);
     '/api/esocial': HandleESocial(ARequest, AResponse);
+    '/api/boleto/gerar-remessa': HandleBoletoGerarRemessa(ARequest, AResponse);
+    '/api/boleto/processar-retorno': HandleBoletoProcessarRetorno(ARequest, AResponse);
   else
     HandleNotFound(ARequest, AResponse);
   end;
@@ -170,6 +176,8 @@ begin
     Endpoints.Add('/api/sintegra (POST)');
     Endpoints.Add('/api/reinf (POST)');
     Endpoints.Add('/api/esocial (POST)');
+    Endpoints.Add('/api/boleto/gerar-remessa (POST)');
+    Endpoints.Add('/api/boleto/processar-retorno (POST)');
 
     JSON.Add('endpoints', Endpoints);
 
@@ -720,6 +728,182 @@ begin
       JSONData.Free;
     if Assigned(Parser) then
       Parser.Free;
+    ResponseJSON.Free;
+  end;
+end;
+
+{
+ Para testar no PostMan:
+ http://localhost:9000/api/boleto/gerar-remessa
+ json:
+ {
+    "idEmpresa": "1",
+    "idContaCaixa": "1",
+    "idCliente": "1",
+    "filtroParcelas": "EMITIU_BOLETO='S' AND DATA_VENCIMENTO >= '2024-01-01'"
+ }
+}
+procedure HandleBoletoGerarRemessa(var ARequest: TFPHTTPConnectionRequest; var AResponse: TFPHTTPConnectionResponse);
+var
+  JSON, ResponseJSON: TJSONObject;
+  Parser: TJSONParser;
+  Filtro, ArquivoGerado: String;
+  JSONData: TJSONData;
+begin
+  if ARequest.Method <> 'POST' then
+  begin
+    AResponse.Content := '{"erro": "Método não permitido"}';
+    AResponse.ContentType := 'application/json';
+    AResponse.Code := 405;
+    Exit;
+  end;
+
+  ResponseJSON := TJSONObject.Create;
+  try
+    try
+      // Parse do JSON recebido
+      Parser := TJSONParser.Create(ARequest.Content);
+      JSONData := Parser.Parse;
+      try
+        if not (JSONData is TJSONObject) then
+          raise Exception.Create('JSON inválido');
+
+        JSON := TJSONObject(JSONData);
+
+        // Verifica campos obrigatórios
+        if not (JSON.Find('idEmpresa') <> nil) or
+           not (JSON.Find('idContaCaixa') <> nil) then
+          raise Exception.Create('Campos obrigatórios faltando: idEmpresa, idContaCaixa');
+
+        // Montar filtro com pipes
+        Filtro := JSON.Get('idEmpresa', '') + '|' +
+                  JSON.Get('idContaCaixa', '') + '|' +
+                  JSON.Get('idCliente', '0') + '|' +
+                  JSON.Get('filtroParcelas', '');
+
+        // Chama o controller do boleto
+        ArquivoGerado := TEdiController.GerarRemessa(Filtro);
+
+        ResponseJSON.Add('sucesso', True);
+        ResponseJSON.Add('arquivo', ArquivoGerado);
+        ResponseJSON.Add('mensagem', 'Arquivo de remessa gerado com sucesso');
+        ResponseJSON.Add('boletosProcessados', '0'); // Pode-se obter da controller
+
+        AResponse.Content := ResponseJSON.AsJSON;
+        AResponse.ContentType := 'application/json';
+        AResponse.Code := 200;
+      finally
+        JSONData.Free;
+        Parser.Free;
+      end;
+    except
+      on E: Exception do
+      begin
+        ResponseJSON.Add('sucesso', False);
+        ResponseJSON.Add('erro', E.Message);
+        ResponseJSON.Add('observacao', 'Verifique a configuração da conta/caixa e dos parâmetros enviados.');
+        AResponse.Content := ResponseJSON.AsJSON;
+        AResponse.ContentType := 'application/json';
+        AResponse.Code := 500;
+      end;
+    end;
+  finally
+    ResponseJSON.Free;
+  end;
+end;
+
+{
+ Para testar no PostMan:
+ http://localhost:9000/api/boleto/processar-retorno
+ json:
+ {
+    "caminhoArquivo": "C:\\Arquivos\\Retorno\\RETORNO_BB.REM",
+    "idContaCaixa": 1
+ }
+}
+procedure HandleBoletoProcessarRetorno(var ARequest: TFPHTTPConnectionRequest; var AResponse: TFPHTTPConnectionResponse);
+var
+  JSON, ResponseJSON: TJSONObject;
+  Parser: TJSONParser;
+  CaminhoArquivo, Resultado: String;
+  JSONData: TJSONData;
+  LogArray: TJSONArray;
+  LogLines: TStringList;
+  I: Integer;
+begin
+  if ARequest.Method <> 'POST' then
+  begin
+    AResponse.Content := '{"erro": "Método não permitido"}';
+    AResponse.ContentType := 'application/json';
+    AResponse.Code := 405;
+    Exit;
+  end;
+
+  ResponseJSON := TJSONObject.Create;
+  LogLines := TStringList.Create;
+  try
+    try
+      // Parse do JSON recebido
+      Parser := TJSONParser.Create(ARequest.Content);
+      JSONData := Parser.Parse;
+      try
+        if not (JSONData is TJSONObject) then
+          raise Exception.Create('JSON inválido');
+
+        JSON := TJSONObject(JSONData);
+
+        // Verifica campos obrigatórios
+        if not (JSON.Find('caminhoArquivo') <> nil) then
+          raise Exception.Create('Campo obrigatório faltando: caminhoArquivo');
+
+        CaminhoArquivo := JSON.Get('caminhoArquivo', '');
+
+        // Verificar se arquivo existe
+        if not FileExists(CaminhoArquivo) then
+          raise Exception.Create('Arquivo não encontrado: ' + CaminhoArquivo);
+
+        // Configurar a conta/caixa no ACBrBoleto se informado
+        if JSON.Find('idContaCaixa') <> nil then
+        begin
+          // Aqui você pode configurar o ACBrBoleto com a conta informada
+          // Isso é necessário para leitura correta do retorno
+        end;
+
+        // Chama o controller para processar retorno
+        Resultado := TEdiController.ProcessarRetorno(CaminhoArquivo);
+
+        // Converter resultado para JSON array
+        LogLines.Text := Resultado;
+        LogArray := TJSONArray.Create;
+        for I := 0 to LogLines.Count - 1 do
+          LogArray.Add(LogLines[I]);
+
+        ResponseJSON.Add('sucesso', True);
+        ResponseJSON.Add('mensagem', 'Arquivo de retorno processado com sucesso');
+        ResponseJSON.Add('arquivo', CaminhoArquivo);
+        ResponseJSON.Add('registrosProcessados', LogLines.Count);
+        ResponseJSON.Add('log', LogArray);
+
+        AResponse.Content := ResponseJSON.AsJSON;
+        AResponse.ContentType := 'application/json';
+        AResponse.Code := 200;
+      finally
+        JSONData.Free;
+        Parser.Free;
+      end;
+    except
+      on E: Exception do
+      begin
+        ResponseJSON.Add('sucesso', False);
+        ResponseJSON.Add('erro', E.Message);
+        ResponseJSON.Add('observacao', 'Erro ao processar arquivo de retorno.');
+        AResponse.Content := ResponseJSON.AsJSON;
+        AResponse.ContentType := 'application/json';
+        AResponse.Code := 500;
+      end;
+    end;
+  finally
+    LogLines.Free;
     ResponseJSON.Free;
   end;
 end;

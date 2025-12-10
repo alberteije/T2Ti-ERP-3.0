@@ -50,6 +50,7 @@ type
     FID_CONTA_CAIXA: Integer;
     FID_FIN_LANCAMENTO_RECEBER: Integer;
     FID_FIN_STATUS_PARCELA: Integer;
+    FID_FIN_TIPO_RECEBIMENTO: Integer;
     FNUMERO_PARCELA: Integer;
     FDATA_EMISSAO: TDateTime;
     FDATA_VENCIMENTO: TDateTime;
@@ -63,6 +64,9 @@ type
     FVALOR_DESCONTO: Extended;
     FEMITIU_BOLETO: String;
     FBOLETO_NOSSO_NUMERO: String;
+    FDATA_RECEBIMENTO: TDateTime;
+    FVALOR_RECEBIDO: Extended;
+    FHISTORICO: String;
 
     //Objetos utilizados apenas para persistência - Não serão utilizados nas consultas
     //Serão usados no método BaixarParcela
@@ -76,6 +80,7 @@ type
     property IdContaCaixa: Integer  read FID_CONTA_CAIXA write FID_CONTA_CAIXA;
     property IdFinLancamentoReceber: Integer  read FID_FIN_LANCAMENTO_RECEBER write FID_FIN_LANCAMENTO_RECEBER;
     property IdFinStatusParcela: Integer  read FID_FIN_STATUS_PARCELA write FID_FIN_STATUS_PARCELA;
+    property IdFinTipoRecebimento: Integer  read FID_FIN_TIPO_RECEBIMENTO write FID_FIN_TIPO_RECEBIMENTO;
     property NumeroParcela: Integer  read FNUMERO_PARCELA write FNUMERO_PARCELA;
     property DataEmissao: TDateTime  read FDATA_EMISSAO write FDATA_EMISSAO;
     property DataVencimento: TDateTime  read FDATA_VENCIMENTO write FDATA_VENCIMENTO;
@@ -89,6 +94,9 @@ type
     property ValorDesconto: Extended  read FVALOR_DESCONTO write FVALOR_DESCONTO;
     property EmitiuBoleto: String  read FEMITIU_BOLETO write FEMITIU_BOLETO;
     property BoletoNossoNumero: String  read FBOLETO_NOSSO_NUMERO write FBOLETO_NOSSO_NUMERO;
+    property DataRecebimento: TDateTime  read FDATA_RECEBIMENTO write FDATA_RECEBIMENTO;
+    property ValorRecebido: Extended  read FVALOR_RECEBIDO write FVALOR_RECEBIDO;
+    property Historico: String  read FHISTORICO write FHISTORICO;
 
 
     //Objetos utilizados apenas para persistência - Não serão utilizados nas consultas

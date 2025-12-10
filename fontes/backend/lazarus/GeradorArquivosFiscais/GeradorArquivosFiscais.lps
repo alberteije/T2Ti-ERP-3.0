@@ -21,7 +21,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFormPrincipal"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="19"/>
+        <TopLine Value="18"/>
         <CursorPos X="43" Y="35"/>
         <UsageCount Value="356"/>
       </Unit>
@@ -68,18 +68,15 @@
         <Filename Value="VO\AgenciaBancoVO.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
+        <TopLine Value="35"/>
+        <CursorPos Y="35"/>
         <UsageCount Value="356"/>
       </Unit>
       <Unit>
         <Filename Value="VO\AgenciaBancoVO.xml"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
+        <CursorPos X="49" Y="4"/>
         <UsageCount Value="356"/>
         <DefaultSyntaxHighlighter Value="XML"/>
       </Unit>
@@ -811,9 +808,8 @@
         <Filename Value="VO\ContabilHistoricoVO.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
+        <TopLine Value="49"/>
+        <CursorPos X="3" Y="72"/>
         <UsageCount Value="356"/>
       </Unit>
       <Unit>
@@ -1020,18 +1016,15 @@
         <Filename Value="VO\ContaCaixaVO.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
+        <TopLine Value="37"/>
+        <CursorPos Y="57"/>
         <UsageCount Value="356"/>
       </Unit>
       <Unit>
         <Filename Value="VO\ContaCaixaVO.xml"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
+        <CursorPos X="43" Y="13"/>
         <UsageCount Value="356"/>
         <DefaultSyntaxHighlighter Value="XML"/>
       </Unit>
@@ -3136,18 +3129,13 @@
         <Filename Value="VO\FinCobrancaParcelaReceberVO.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
         <UsageCount Value="356"/>
       </Unit>
       <Unit>
         <Filename Value="VO\FinCobrancaParcelaReceberVO.xml"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
+        <CursorPos Y="24"/>
         <UsageCount Value="356"/>
         <DefaultSyntaxHighlighter Value="XML"/>
       </Unit>
@@ -3174,18 +3162,15 @@
         <Filename Value="VO\FinConfiguracaoBoletoVO.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
+        <TopLine Value="75"/>
+        <CursorPos X="91" Y="109"/>
         <UsageCount Value="356"/>
       </Unit>
       <Unit>
         <Filename Value="VO\FinConfiguracaoBoletoVO.xml"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
+        <CursorPos X="52" Y="11"/>
         <UsageCount Value="356"/>
         <DefaultSyntaxHighlighter Value="XML"/>
       </Unit>
@@ -3383,37 +3368,32 @@
         <Filename Value="VO\FinParcelaReceberVO.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
+        <TopLine Value="72"/>
+        <CursorPos Y="83"/>
         <UsageCount Value="356"/>
       </Unit>
       <Unit>
         <Filename Value="VO\FinParcelaReceberVO.xml"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
+        <EditorIndex Value="4"/>
+        <CursorPos Y="25"/>
         <UsageCount Value="356"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="XML"/>
       </Unit>
       <Unit>
         <Filename Value="VO\FinParcelaRecebimentoVO.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
+        <TopLine Value="58"/>
+        <CursorPos Y="82"/>
         <UsageCount Value="356"/>
       </Unit>
       <Unit>
         <Filename Value="VO\FinParcelaRecebimentoVO.xml"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
+        <CursorPos Y="24"/>
         <UsageCount Value="356"/>
         <DefaultSyntaxHighlighter Value="XML"/>
       </Unit>
@@ -8941,35 +8921,33 @@
         <Filename Value="Controller\EmpresaController.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="74"/>
-        <CursorPos X="42" Y="85"/>
+        <TopLine Value="66"/>
+        <CursorPos X="109" Y="85"/>
         <UsageCount Value="356"/>
       </Unit>
       <Unit>
         <Filename Value="Controller\SpedContabilController.pas"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="42"/>
-        <CursorPos Y="57"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="461"/>
+        <CursorPos X="15" Y="480"/>
         <UsageCount Value="356"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Controller\SpedContribuicoesController.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="65"/>
-        <CursorPos Y="74"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="796"/>
+        <CursorPos X="3" Y="799"/>
         <UsageCount Value="299"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Controller\SpedFiscalController.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="36"/>
-        <CursorPos Y="53"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="973"/>
+        <CursorPos X="21" Y="1001"/>
         <UsageCount Value="342"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Infra\Biblioteca.pas"/>
@@ -8989,19 +8967,19 @@
       <Unit>
         <Filename Value="Infra\SessaoUsuario.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="85"/>
         <CursorPos X="29" Y="104"/>
         <UsageCount Value="356"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Infra\T2TiORM.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="526"/>
-        <CursorPos Y="536"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="493"/>
+        <CursorPos X="14" Y="498"/>
         <UsageCount Value="356"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Infra\Tipos.pas"/>
@@ -9018,165 +8996,213 @@
         <ComponentName Value="FDataModule"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="10"/>
-        <CursorPos X="3" Y="40"/>
+        <CursorPos X="3"/>
         <UsageCount Value="356"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="API\UAPIServer.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="7"/>
-        <TopLine Value="586"/>
-        <CursorPos X="17" Y="614"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="736"/>
+        <CursorPos X="24" Y="743"/>
         <UsageCount Value="351"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Controller\SintegraController.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="34"/>
-        <CursorPos X="23" Y="57"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="443"/>
+        <CursorPos X="23" Y="452"/>
         <UsageCount Value="259"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Controller\ReinfController.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="468"/>
-        <CursorPos X="47" Y="494"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="482"/>
+        <CursorPos X="6" Y="509"/>
         <UsageCount Value="256"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Controller\ESocialController.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="66"/>
-        <CursorPos Y="77"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="501"/>
+        <CursorPos X="33" Y="501"/>
         <UsageCount Value="254"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Controller\EdiController.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="305"/>
+        <CursorPos Y="324"/>
+        <UsageCount Value="110"/>
         <Loaded Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Controller\FinConfiguracaoBoletoController.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="63"/>
+        <CursorPos Y="79"/>
+        <UsageCount Value="110"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Controller\FinParcelaReceberController.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="30"/>
+        <CursorPos X="36" Y="44"/>
+        <UsageCount Value="109"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Controller\ViewPessoaClienteController.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="66"/>
+        <CursorPos X="78" Y="100"/>
+        <UsageCount Value="109"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\objpas\fgl.pp"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1061"/>
+        <CursorPos Y="1078"/>
+        <UsageCount Value="2"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\ACBr\Fontes\ACBrBoleto\ACBrBoleto.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3558"/>
+        <CursorPos Y="3563"/>
+        <UsageCount Value="2"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="28">
+    <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="234" TopLine="221"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="314" TopLine="303"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="238" TopLine="221"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="315" TopLine="303"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="235" TopLine="221"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="316" TopLine="303"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="238" TopLine="221"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="317" TopLine="303"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="235" TopLine="221"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="318" TopLine="303"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="238" TopLine="221"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="319" TopLine="303"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="236" TopLine="221"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="322" TopLine="306"/>
       </Position>
       <Position>
-        <Filename Value="Controller\SpedContabilController.pas"/>
-        <Caret Line="46" Column="17" TopLine="42"/>
+        <Filename Value="VO\FinParcelaReceberVO.xml"/>
+        <Caret Line="11" Column="52"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="232" Column="137" TopLine="199"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="282" TopLine="271"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="212" TopLine="199"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="312" TopLine="303"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="213" TopLine="199"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="313" TopLine="303"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="214" TopLine="199"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="314" TopLine="303"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="216" Column="52" TopLine="199"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="312" TopLine="303"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="217" Column="15" TopLine="199"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="322" TopLine="306"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="219" TopLine="199"/>
+        <Filename Value="VO\FinParcelaReceberVO.xml"/>
+        <Caret Line="25"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="222" TopLine="199"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="282" TopLine="271"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="234" Column="41" TopLine="211"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="322" TopLine="313"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="226" TopLine="211"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="323" TopLine="294"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="242" TopLine="214"/>
+        <Filename Value="Infra\T2TiORM.pas"/>
+        <Caret Line="574" TopLine="540"/>
       </Position>
       <Position>
-        <Filename Value="Controller\SpedFiscalController.pas"/>
-        <Caret Line="70" Column="23" TopLine="42"/>
+        <Filename Value="Infra\T2TiORM.pas"/>
+        <Caret Line="498" Column="14" TopLine="493"/>
       </Position>
       <Position>
-        <Filename Value="Controller\SpedFiscalController.pas"/>
-        <Caret Line="46" Column="37" TopLine="29"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="282" TopLine="271"/>
       </Position>
       <Position>
-        <Filename Value="Controller\SpedFiscalController.pas"/>
-        <Caret Line="70" Column="23" TopLine="36"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="322" TopLine="313"/>
       </Position>
       <Position>
-        <Filename Value="Controller\SpedFiscalController.pas"/>
-        <Caret Line="120" Column="53" TopLine="92"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="314" Column="21" TopLine="313"/>
       </Position>
       <Position>
-        <Filename Value="Controller\SpedFiscalController.pas"/>
-        <Caret Line="379" Column="30" TopLine="351"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="25" Column="27"/>
       </Position>
       <Position>
-        <Filename Value="Controller\SpedFiscalController.pas"/>
-        <Caret Line="671" Column="38" TopLine="643"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="251" Column="81" TopLine="236"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="277" Column="41" TopLine="277"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="21" Column="21" TopLine="3"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="326" Column="41" TopLine="317"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="234" Column="25" TopLine="208"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="405" Column="41" TopLine="384"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="19" Column="29"/>
       </Position>
       <Position>
-        <Filename Value="API\UAPIServer.pas"/>
-        <Caret Line="604" Column="39" TopLine="576"/>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="77" Column="78" TopLine="59"/>
+      </Position>
+      <Position>
+        <Filename Value="Controller\EdiController.pas"/>
+        <Caret Line="322" TopLine="305"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -9184,4 +9210,27 @@
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
+  <Debugging>
+    <BreakPoints>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="Controller\FinParcelaReceberController.pas"/>
+        <Line Value="76"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="Controller\EdiController.pas"/>
+        <Line Value="322"/>
+      </Item>
+    </BreakPoints>
+    <Watches>
+      <Item>
+        <Expression Value="ConteudoFiltro"/>
+      </Item>
+    </Watches>
+  </Debugging>
 </CONFIG>

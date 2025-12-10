@@ -410,7 +410,12 @@ var
   Props: TFPList;
   PropMap: TORMPropertyMap;
   TipoProp: PPropInfo;
+  TipoNome: String;
   IdValue: Integer;
+  DataValue: TDateTime;
+  FloatValue: Double;
+  IntValue: Int64;
+  StrValue: String;
 begin
   Result := False;
   Con := TT2TiConnectionManager.GetConnection;
@@ -427,6 +432,7 @@ begin
       PropMap := TORMPropertyMap(Props[I]);
       if SameText(PropMap.Propriedade, 'Id') then
         Continue;
+
       SQLCampos := SQLCampos + PropMap.Coluna + ' = :' + PropMap.Coluna + ',';
     end;
 
@@ -442,19 +448,73 @@ begin
     begin
       PropMap := TORMPropertyMap(Props[I]);
       TipoProp := GetPropInfo(pObjeto, PropMap.Propriedade);
+
       if Assigned(TipoProp) then
       begin
+        TipoNome := TipoProp^.PropType^.Name;
+
         case TipoProp^.PropType^.Kind of
-          tkInteger, tkInt64: Query.ParamByName(PropMap.Coluna).AsInteger := GetInt64Prop(pObjeto, PropMap.Propriedade);
-          tkFloat: Query.ParamByName(PropMap.Coluna).AsFloat := GetFloatProp(pObjeto, PropMap.Propriedade);
-          tkString, tkUString, tkAString: Query.ParamByName(PropMap.Coluna).AsString := GetStrProp(pObjeto, PropMap.Propriedade);
-          else Query.ParamByName(PropMap.Coluna).AsString := VarToStrDef(GetPropValue(pObjeto, PropMap.Propriedade), '');
+          tkInteger, tkInt64:
+          begin
+            IntValue := GetInt64Prop(pObjeto, PropMap.Propriedade);
+            // Se for ID relacionado (que começa com "Id") e for 0, trata como nulo
+            if (LowerCase(Copy(PropMap.Propriedade, 1, 2)) = 'id') and (IntValue = 0) then
+              Query.ParamByName(PropMap.Coluna).Clear
+            else
+              Query.ParamByName(PropMap.Coluna).AsInteger := IntValue;
+          end;
+
+          tkFloat:
+          begin
+            FloatValue := GetFloatProp(pObjeto, PropMap.Propriedade);
+
+            // Verifica se é TDateTime pelo nome do tipo
+            if (TipoNome = 'TDateTime') or (TipoNome = 'TDate') or (TipoNome = 'TTime') then
+            begin
+              // É um campo de data/hora
+              DataValue := FloatValue;
+              if DataValue > 0 then
+                Query.ParamByName(PropMap.Coluna).AsDateTime := DataValue
+              else
+                Query.ParamByName(PropMap.Coluna).Clear; // ou .AsDateTime := 0
+            end
+            else
+            begin
+              // É um número float normal (Double, Currency, etc.)
+              if FloatValue = 0 then
+                Query.ParamByName(PropMap.Coluna).AsFloat := 0
+              else
+                Query.ParamByName(PropMap.Coluna).AsFloat := FloatValue;
+            end;
+          end;
+
+          tkString, tkUString, tkAString, tkLString, tkWString:
+          begin
+            StrValue := GetStrProp(pObjeto, PropMap.Propriedade);
+            if StrValue <> '' then
+              Query.ParamByName(PropMap.Coluna).AsString := StrValue
+            else
+              Query.ParamByName(PropMap.Coluna).Clear;
+          end
+          else
+          begin
+            // Tipo não tratado específicamente
+            StrValue := VarToStrDef(GetPropValue(pObjeto, PropMap.Propriedade), '');
+            if StrValue <> '' then
+              Query.ParamByName(PropMap.Coluna).AsString := StrValue
+            else
+              Query.ParamByName(PropMap.Coluna).Clear;
+          end;
         end;
       end;
     end;
 
+    // Parâmetro ID
     IdValue := GetInt64Prop(pObjeto, 'Id');
-    Query.ParamByName('ID').AsInteger := IdValue;
+    if IdValue > 0 then
+      Query.ParamByName('ID').AsInteger := IdValue
+    else
+      raise Exception.Create('ID do objeto não informado ou inválido');
 
     try
       Con.StartTransaction;
@@ -465,8 +525,10 @@ begin
       except
         on E: Exception do
         begin
-          if Con.InTransaction then Con.Rollback;
-          raise Exception.Create('Erro ao alterar: ' + E.Message);
+          if Con.InTransaction then
+            Con.Rollback;
+          raise Exception.CreateFmt('Erro ao alterar registro na tabela %s (ID: %d): %s',
+            [TableName, IdValue, E.Message]);
         end;
       end;
     finally

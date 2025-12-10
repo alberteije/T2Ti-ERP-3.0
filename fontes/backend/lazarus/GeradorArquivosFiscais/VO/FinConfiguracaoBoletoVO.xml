@@ -8,7 +8,7 @@
       </generator>
     </id>
 
-    <property name="IdContaCaixa" column="ID_CONTA_CAIXA" caption="Id Conta Caixa" width="80" type="Integer" />
+    <property name="IdContaCaixa" column="ID_BANCO_CONTA_CAIXA" caption="Id Conta Caixa" width="80" type="Integer" />
     <property name="IdEmpresa" column="ID_EMPRESA" caption="Id Empresa" width="80" type="Integer" />
     <property name="Instrucao01" column="INSTRUCAO01" caption="Instrucao01" width="450" type="String" />
     <property name="Instrucao02" column="INSTRUCAO02" caption="Instrucao02" width="450" type="String" />
